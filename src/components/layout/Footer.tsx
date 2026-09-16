@@ -1,6 +1,8 @@
 "use client";
 
+import Link from "next/link";
 import Image from "next/image";
+import { NAV_ITEMS } from "./Header";
 
 export default function Footer() {
   return (
@@ -23,11 +25,11 @@ export default function Footer() {
                 </span>
               </div>
               <p className="font-sans text-sm text-brand-platinum max-w-md font-light leading-relaxed">
-                Fashprism Internationals is a digital couture atelier and global fashion ecosystem bridging haute couture traditions with visionary digital identity.
+                Fashprism Internationals creates fashion experiences that move beyond the runway. Where fashion, culture, and experience converge.
               </p>
             </div>
             <div className="mt-8 text-xs font-syne tracking-micro text-brand-orange">
-              PARIS — DUBAI
+              FASHION BEYOND BORDERS
             </div>
           </div>
 
@@ -37,81 +39,36 @@ export default function Footer() {
               NAVIGATION
             </h4>
             <ul className="space-y-3 font-syne text-xs tracking-caps text-brand-off-white/80">
-              <li>
-                <a href="#hero" className="hover:text-brand-orange transition-colors">
-                  HOME
-                </a>
-              </li>
-              <li>
-                <a href="#manifesto" className="hover:text-brand-orange transition-colors">
-                  MANIFESTO
-                </a>
-              </li>
-              <li>
-                <a href="#projects" className="hover:text-brand-orange transition-colors">
-                  PROJECTS
-                </a>
-              </li>
-              <li>
-                <a href="#lifestyle-2026" className="hover:text-brand-orange transition-colors">
-                  LIFESTYLE 2026
-                </a>
-              </li>
-              <li>
-                <a href="#faces" className="hover:text-brand-orange transition-colors">
-                  THE FACES
-                </a>
-              </li>
-              <li>
-                <a href="#gallery" className="hover:text-brand-orange transition-colors">
-                  ARCHIVE GALLERY
-                </a>
-              </li>
-              <li>
-                <a href="#accreditation" className="hover:text-brand-orange transition-colors">
-                  ACCREDITATION
-                </a>
-              </li>
+              {NAV_ITEMS.map((item) => (
+                <li key={item.href}>
+                  <Link href={item.href} className="hover:text-brand-orange transition-colors">
+                    {item.label}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
 
-          {/* Connect & Accreditation */}
+          {/* Connect & Enquiries */}
           <div className="md:col-span-4 flex flex-col justify-between">
             <div>
               <h4 className="font-syne text-xs tracking-micro text-brand-gold mb-6">
-                ACCREDITATION & PRESS
+                ENQUIRIES & PARTICIPATION
               </h4>
               <p className="font-sans text-xs text-brand-platinum mb-6 leading-relaxed">
-                Direct inquiries for designer participations, VIP press passes, or strategic partnerships.
+                For collaborations, press, sponsorships, and designer participation for upcoming events.
               </p>
-              <a
-                href="#accreditation"
+              <Link
+                href="/contact"
                 className="inline-block bg-brand-orange px-6 py-3 text-xs font-syne tracking-caps font-bold text-brand-void hover:bg-brand-gold transition-colors"
               >
-                REQUEST ACCREDITATION ↗
-              </a>
+                CONTACT US ↗
+              </Link>
             </div>
 
             <div className="mt-8 pt-6 border-t border-hairline flex items-center justify-between text-xs font-syne text-brand-platinum">
-              <span>SOCIAL</span>
-              <div className="flex gap-4">
-                <a
-                  href="https://instagram.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="hover:text-brand-orange transition-colors"
-                >
-                  INSTAGRAM
-                </a>
-                <a
-                  href="https://linkedin.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="hover:text-brand-orange transition-colors"
-                >
-                  LINKEDIN
-                </a>
-              </div>
+              <span>LOCATIONS</span>
+              <span className="text-brand-off-white">DUBAI — PARIS</span>
             </div>
           </div>
         </div>
@@ -122,11 +79,13 @@ export default function Footer() {
             © {new Date().getFullYear()} FASHPRISM INTERNATIONALS. ALL RIGHTS RESERVED.
           </div>
           <div className="flex gap-6">
-            <span>TERMS OF ACCREDITATION</span>
-            <span>PRIVACY POLICY</span>
+            <Link href="/contact" className="hover:text-brand-orange transition-colors">
+              GET IN TOUCH
+            </Link>
           </div>
         </div>
       </div>
     </footer>
   );
 }
+

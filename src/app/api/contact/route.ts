@@ -3,41 +3,41 @@ import { NextResponse } from "next/server";
 export async function POST(request: Request) {
   try {
     const body = await request.json();
-    const { name, email, phone, inquiryType, message } = body;
+    const { name, email, phone, interest, inquiryType, message } = body;
+    const selectedCategory = interest || inquiryType;
 
-    if (!name || !email || !inquiryType || !message) {
+    if (!name || !email || !selectedCategory || !message) {
       return NextResponse.json(
         { error: "Please complete all required fields." },
         { status: 400 }
       );
     }
 
-    // Server-side validation
+    // Server-side email format validation
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(email)) {
       return NextResponse.json(
-        { error: "Invalid email format." },
+        { error: "Please enter a valid email address." },
         { status: 400 }
       );
     }
 
-    // Here a real email service (e.g. Resend, SendGrid, or Vercel Email) can be invoked.
-    console.log("Accreditation Submission Received:", {
+    console.log("Fashprism Contact Enquiry Received:", {
       name,
       email,
       phone,
-      inquiryType,
+      interest: selectedCategory,
       message,
       timestamp: new Date().toISOString(),
     });
 
     return NextResponse.json({
       success: true,
-      message: "Accreditation request recorded successfully.",
+      message: "Enquiry recorded successfully.",
     });
   } catch (error) {
     return NextResponse.json(
-      { error: "Failed to process inquiry. Please try again." },
+      { error: "Failed to process enquiry. Please try again." },
       { status: 500 }
     );
   }

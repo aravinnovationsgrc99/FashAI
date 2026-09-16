@@ -4,70 +4,48 @@ import { motion } from "framer-motion";
 
 export default function EditorialIntro() {
   return (
-    <section
-      id="manifesto"
-      className="relative py-24 sm:py-32 px-6 sm:px-12 bg-brand-atelier border-t border-b border-hairline overflow-hidden"
-    >
+    <section className="relative py-28 sm:py-36 px-6 sm:px-12 bg-brand-atelier border-t border-b border-hairline overflow-hidden">
       <div className="mx-auto max-w-7xl">
-        {/* Section Header Label */}
+        {/* Eyebrow Label */}
         <div className="flex items-center gap-4 mb-12">
           <span className="text-xs font-syne tracking-micro text-brand-orange">
-            01 / MANIFESTO
+            01 / BRAND STATEMENT
           </span>
           <span className="h-[1px] w-24 bg-brand-orange/40" />
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
-          {/* Left Main Editorial Statement */}
-          <motion.div
+        <div className="max-w-5xl">
+          {/* Main Statement */}
+          <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="lg:col-span-8"
+            className="font-serif-display text-4xl sm:text-6xl md:text-7xl lg:text-8xl text-brand-off-white font-light leading-[1.05]"
           >
-            <h2 className="font-serif-display text-3xl sm:text-5xl md:text-6xl text-brand-off-white font-light leading-tight">
-              WE BRING HAUTE COUTURE INTO THE{" "}
-              <span className="italic text-brand-orange">DIGITAL AGE</span> — REDEFINING HIGH FASHION PRESENTATIONS ACROSS INTERNATIONAL BORDERS.
-            </h2>
-            <p className="mt-8 font-sans text-base sm:text-lg text-brand-platinum font-light leading-relaxed max-w-2xl">
-              Fashprism Internationals is curated for global couturiers, patrons, models, and visionaries. By pairing classical garment sculpture with digital spatial identity, we create transcendent physical and virtual fashion moments.
-            </p>
-          </motion.div>
+            Fashprism Internationals creates fashion experiences that move{" "}
+            <span className="italic text-brand-orange font-normal">
+              beyond the runway.
+            </span>
+          </motion.h2>
 
-          {/* Right Micro Specifications Matrix */}
+          {/* Supporting Paragraph */}
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="lg:col-span-4 border border-hairline p-8 bg-brand-charcoal"
+            className="mt-12 grid grid-cols-1 md:grid-cols-12 gap-8 items-start border-t border-hairline pt-10"
           >
-            <h3 className="font-syne text-xs tracking-micro text-brand-gold mb-6 border-b border-hairline pb-3">
-              ATELIER PARAMETERS
-            </h3>
-
-            <div className="space-y-6 font-syne text-xs tracking-caps">
-              <div className="flex justify-between border-b border-hairline-light pb-3">
-                <span className="text-brand-platinum">FORMAT</span>
-                <span className="text-brand-off-white">HYBRID RUNWAY</span>
-              </div>
-              <div className="flex justify-between border-b border-hairline-light pb-3">
-                <span className="text-brand-platinum">SPECTRUM</span>
-                <span className="text-brand-orange">ORANGE & COUTURE</span>
-              </div>
-              <div className="flex justify-between border-b border-hairline-light pb-3">
-                <span className="text-brand-platinum">HUB 01</span>
-                <span className="text-brand-off-white">PARIS, FRANCE</span>
-              </div>
-              <div className="flex justify-between border-b border-hairline-light pb-3">
-                <span className="text-brand-platinum">HUB 02</span>
-                <span className="text-brand-off-white">DUBAI, UAE</span>
-              </div>
-              <div className="flex justify-between">
-                <span className="text-brand-platinum">ARCHIVE</span>
-                <span className="text-brand-gold">DIGITAL MONOGRAPH</span>
-              </div>
+            <div className="md:col-span-8">
+              <p className="font-sans text-base sm:text-lg md:text-xl text-brand-platinum font-light leading-relaxed">
+                We synthesize classical haute couture artistry with atmospheric spatial production. Uniting global visionaries, luxury patrons, and pioneering designers, Fashprism Internationals transforms traditional runway presentations into immersive cultural landmarks.
+              </p>
+            </div>
+            <div className="md:col-span-4 flex flex-col justify-end items-start md:items-end text-xs font-syne tracking-caps text-brand-gold space-y-2">
+              <span>PARIS</span>
+              <span>DUBAI</span>
+              <span className="text-brand-orange font-bold">EST. 2025</span>
             </div>
           </motion.div>
         </div>
@@ -75,3 +53,4 @@ export default function EditorialIntro() {
     </section>
   );
 }
+

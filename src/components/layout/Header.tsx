@@ -1,75 +1,72 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { Menu } from "lucide-react";
 import MobileMenu from "./MobileMenu";
-import { useActiveSection } from "@/lib/hooks/useActiveSection";
 
-const NAV_ITEMS = [
-  { label: "HOME", href: "#hero", id: "hero" },
-  { label: "MANIFESTO", href: "#manifesto", id: "manifesto" },
-  { label: "PROJECTS", href: "#projects", id: "projects" },
-  { label: "LIFESTYLE 2026", href: "#lifestyle-2026", id: "lifestyle-2026" },
-  { label: "THE FACES", href: "#faces", id: "faces" },
-  { label: "ARCHIVE", href: "#gallery", id: "gallery" },
-  { label: "ACCREDITATION", href: "#accreditation", id: "accreditation" },
+export const NAV_ITEMS = [
+  { label: "HOME", href: "/" },
+  { label: "PROJECTS", href: "/projects" },
+  { label: "UPCOMING", href: "/upcoming" },
+  { label: "GALLERY", href: "/gallery" },
+  { label: "CONTACT", href: "/contact" },
 ];
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const activeSection = useActiveSection([
-    "hero",
-    "manifesto",
-    "projects",
-    "lifestyle-2026",
-    "faces",
-    "gallery",
-    "accreditation",
-  ]);
+  const pathname = usePathname();
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-brand-void/85 backdrop-blur-md border-b border-hairline transition-all duration-300">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
         {/* Brand Logo / Monogram */}
-        <a href="#hero" className="flex items-center gap-2 group">
+        <Link href="/" className="flex items-center gap-2 group">
           <span className="font-serif-display text-2xl font-light tracking-tight text-brand-off-white group-hover:text-brand-orange transition-colors">
             FASHPRISM
           </span>
           <span className="hidden sm:inline-block text-[9px] font-syne tracking-micro text-brand-orange border border-brand-orange/40 px-1.5 py-0.5">
             INTL
           </span>
-        </a>
+        </Link>
 
         {/* Desktop Navigation Links */}
-        <nav className="hidden lg:flex items-center space-x-6 text-[11px] font-syne tracking-caps">
+        <nav className="hidden lg:flex items-center space-x-8 text-[11px] font-syne tracking-caps">
           {NAV_ITEMS.map((item) => {
-            const isActive = activeSection === item.id;
+            const isActive =
+              item.href === "/"
+                ? pathname === "/"
+                : pathname.startsWith(item.href);
+
             return (
-              <a
-                key={item.id}
+              <Link
+                key={item.href}
                 href={item.href}
                 className={`relative py-1 transition-colors ${
-                  isActive ? "text-brand-orange font-bold" : "text-brand-off-white/80 hover:text-brand-gold"
+                  isActive
+                    ? "text-brand-orange font-bold"
+                    : "text-brand-off-white/80 hover:text-brand-gold"
                 }`}
               >
                 {item.label}
                 {isActive && (
                   <span className="absolute bottom-0 left-0 right-0 h-[1px] bg-brand-orange" />
                 )}
-              </a>
+              </Link>
             );
           })}
         </nav>
 
         {/* Action Button & Mobile Toggle */}
         <div className="flex items-center gap-4">
-          <a
-            href="#accreditation"
+          <Link
+            href="/contact"
             className="hidden sm:inline-flex items-center justify-center bg-brand-orange px-5 py-2 text-[11px] font-syne tracking-caps font-bold text-brand-void hover:bg-brand-gold transition-colors"
             data-cursor="explore"
           >
             BE A PART ↗
-          </a>
+          </Link>
 
           {/* Mobile Hamburger Button */}
           <button
@@ -87,8 +84,9 @@ export default function Header() {
         isOpen={mobileMenuOpen}
         onClose={() => setMobileMenuOpen(false)}
         items={NAV_ITEMS}
-        activeSection={activeSection}
+        currentPath={pathname}
       />
     </header>
   );
 }
+

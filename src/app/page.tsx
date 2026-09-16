@@ -1,21 +1,22 @@
 import Hero from "@/components/sections/Hero";
 import EditorialIntro from "@/components/sections/EditorialIntro";
-import Projects from "@/components/sections/Projects";
-import UpcomingCampaign from "@/components/sections/UpcomingCampaign";
-import Faces from "@/components/sections/Faces";
-import Gallery from "@/components/sections/Gallery";
-import ContactSection from "@/components/sections/ContactSection";
+import HomeFeaturedProjects from "@/components/sections/HomeFeaturedProjects";
+import HomeUpcomingFeature from "@/components/sections/HomeUpcomingFeature";
+import HomeManifesto from "@/components/sections/HomeManifesto";
+import HomeGalleryPreview from "@/components/sections/HomeGalleryPreview";
+import HomeContactInvitation from "@/components/sections/HomeContactInvitation";
 
 export default function Home() {
   return (
     <>
       <Hero />
       <EditorialIntro />
-      <Projects />
-      <UpcomingCampaign />
-      <Faces />
-      <Gallery />
-      <ContactSection />
+      <HomeFeaturedProjects />
+      <HomeUpcomingFeature />
+      <HomeManifesto />
+      <HomeGalleryPreview />
+      <HomeContactInvitation />
     </>
   );
 }
+
