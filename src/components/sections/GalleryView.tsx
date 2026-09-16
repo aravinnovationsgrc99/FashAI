@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import { GALLERY_DATA, GalleryItem } from "@/data/gallery";
@@ -38,10 +38,10 @@ export default function GalleryView() {
   };
 
   return (
-    <section className="px-6 sm:px-12 py-16 max-w-7xl mx-auto">
+    <section className="px-6 sm:px-12 py-20 max-w-7xl mx-auto">
       {/* Category Filter Tabs */}
-      <div className="flex flex-wrap items-center gap-3 mb-16 font-syne text-xs tracking-caps border-b border-hairline pb-6">
-        <span className="text-brand-platinum text-[10px] tracking-micro mr-4">
+      <div className="flex flex-wrap items-center gap-3 mb-20 font-syne text-xs tracking-caps border-b border-hairline pb-8">
+        <span className="text-brand-gold text-[10px] tracking-micro mr-4">
           FILTER EXHIBITION:
         </span>
         {(
@@ -55,10 +55,10 @@ export default function GalleryView() {
             <button
               key={cat}
               onClick={() => setActiveCategory(cat)}
-              className={`px-5 py-2.5 transition-all duration-300 ${
+              className={`px-6 py-3 transition-all duration-300 ${
                 isActive
-                  ? "bg-brand-orange text-brand-void font-bold"
-                  : "bg-brand-charcoal text-brand-off-white/70 hover:text-brand-gold border border-hairline"
+                  ? "bg-gradient-to-r from-[#F5DFB3] via-[#D4AF37] to-[#A37F2C] text-brand-void font-bold shadow-md"
+                  : "bg-brand-charcoal/80 text-brand-off-white/70 hover:text-brand-gold border border-hairline hover:border-hairline-gold"
               }`}
             >
               {cat} ({count})
@@ -68,7 +68,7 @@ export default function GalleryView() {
       </div>
 
       {/* Asymmetric Varied Aspect-Ratio Grid */}
-      <motion.div layout className="grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
+      <motion.div layout className="grid grid-cols-1 md:grid-cols-12 gap-10 items-start">
         <AnimatePresence>
           {filteredItems.map((item, index) => {
             // Editorial grid span variation for visual rhythm
@@ -105,7 +105,7 @@ export default function GalleryView() {
                 onClick={() => openLightbox(item)}
                 data-cursor="view"
               >
-                <div className={`relative ${aspectClass} w-full overflow-hidden border border-hairline bg-brand-charcoal`}>
+                <div className={`relative ${aspectClass} w-full overflow-hidden border border-hairline-gold bg-brand-charcoal transition-colors duration-500 hover:border-brand-gold`}>
                   <Image
                     src={item.image}
                     alt={item.title}
@@ -116,14 +116,14 @@ export default function GalleryView() {
                   <div className="absolute inset-0 bg-gradient-to-t from-brand-void/90 via-transparent to-transparent opacity-80 group-hover:opacity-40 transition-opacity" />
 
                   {/* Top Category Badge */}
-                  <div className="absolute top-4 left-4 bg-brand-void/80 border border-hairline px-2.5 py-1 text-[9px] font-syne tracking-micro text-brand-gold">
+                  <div className="absolute top-4 left-4 bg-brand-void/90 border border-hairline-gold px-3 py-1 text-[9px] font-syne tracking-micro text-brand-gold">
                     {item.tag}
                   </div>
 
                   {/* Bottom Information Overlay */}
                   <div className="absolute bottom-6 left-6 right-6 flex justify-between items-end">
                     <div>
-                      <div className="text-[10px] font-syne tracking-micro text-brand-orange font-bold">
+                      <div className="text-[10px] font-syne tracking-micro text-brand-gold font-bold uppercase">
                         {item.category} / {item.year}
                       </div>
                       <h3 className="font-serif-display text-xl sm:text-2xl font-light text-brand-off-white group-hover:text-brand-gold transition-colors mt-1">
@@ -134,7 +134,7 @@ export default function GalleryView() {
                       </p>
                     </div>
 
-                    <div className="h-9 w-9 flex items-center justify-center border border-brand-gold/40 text-brand-gold group-hover:bg-brand-orange group-hover:border-brand-orange group-hover:text-brand-void transition-all duration-300">
+                    <div className="h-10 w-10 flex items-center justify-center border border-hairline-gold text-brand-gold group-hover:bg-gradient-to-r group-hover:from-[#F5DFB3] group-hover:to-[#D4AF37] group-hover:border-transparent group-hover:text-brand-void transition-all duration-300">
                       ↗
                     </div>
                   </div>
@@ -157,3 +157,4 @@ export default function GalleryView() {
     </section>
   );
 }
+

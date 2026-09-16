@@ -74,7 +74,7 @@ export default function MobileMenu({
             </Link>
             <button
               onClick={onClose}
-              className="p-2 text-brand-off-white hover:text-brand-orange transition-colors"
+              className="p-2 text-brand-off-white hover:text-brand-gold transition-colors"
               aria-label="Close Navigation Menu"
             >
               <X className="h-6 w-6" />
@@ -99,8 +99,8 @@ export default function MobileMenu({
                   <Link
                     href={item.href}
                     onClick={onClose}
-                    className={`group flex items-center justify-between text-3xl font-serif-display ${
-                      isActive ? "text-brand-orange" : "text-brand-off-white hover:text-brand-gold"
+                    className={`group flex items-center justify-between text-3xl sm:text-4xl font-serif-display ${
+                      isActive ? "text-brand-gold" : "text-brand-off-white hover:text-brand-gold"
                     } transition-colors`}
                   >
                     <span className="flex items-center gap-4">
@@ -109,7 +109,7 @@ export default function MobileMenu({
                       </span>
                       {item.label}
                     </span>
-                    <span className="text-xs font-syne text-brand-orange opacity-0 group-hover:opacity-100 transition-opacity">
+                    <span className="text-xs font-syne text-brand-gold opacity-0 group-hover:opacity-100 transition-opacity">
                       ↗
                     </span>
                   </Link>
@@ -123,13 +123,13 @@ export default function MobileMenu({
             <Link
               href="/contact"
               onClick={onClose}
-              className="w-full bg-brand-orange py-4 text-center text-xs font-syne tracking-caps font-bold text-brand-void hover:bg-brand-gold transition-colors"
+              className="w-full bg-brand-gold py-4 text-center text-xs font-syne tracking-caps font-bold text-brand-black hover:bg-brand-gold-pure transition-colors"
             >
               BE A PART ↗
             </Link>
             <div className="flex justify-between text-[10px] font-syne tracking-micro text-brand-platinum">
               <span>FASHPRISM INTERNATIONALS</span>
-              <span>PARIS — DUBAI</span>
+              <span className="text-brand-gold">PARIS — DUBAI</span>
             </div>
           </div>
         </motion.div>
@@ -137,5 +137,6 @@ export default function MobileMenu({
     </AnimatePresence>
   );
 }
+
 
 

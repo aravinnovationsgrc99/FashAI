@@ -4,12 +4,13 @@ import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import CursorInteraction from "@/components/cinematic/CursorInteraction";
 import Preloader from "@/components/cinematic/Preloader";
+import PageTransition from "@/components/cinematic/PageTransition";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://fashprism.com"),
   title: "FASHPRISM INTERNATIONALS — Fashion Beyond Borders",
   description:
-    "Fashprism Internationals is a haute couture digital atelier uniting international runway presentations, bespoke fashion symposiums, and luxury lifestyle experiences across Paris and Dubai.",
+    "Fashprism Internationals is a digital fashion atelier uniting international runway presentations, bespoke fashion symposiums, and luxury lifestyle experiences across Paris and Dubai.",
   keywords: [
     "Fashprism",
     "Fashion Beyond Borders",
@@ -17,7 +18,6 @@ export const metadata: Metadata = {
     "Runway 2025",
     "Dubai Fashion 2026",
     "Digital Atelier",
-    "Couture Models",
     "Luxury Fashion",
   ],
   authors: [{ name: "Fashprism Internationals" }],
@@ -61,7 +61,7 @@ export default function RootLayout({
       <head>
         <link rel="icon" href="/favicon.ico" sizes="any" />
       </head>
-      <body className="bg-brand-void text-brand-off-white selection:bg-brand-orange selection:text-brand-void font-sans-body">
+      <body className="bg-brand-void text-brand-off-white selection:bg-brand-gold-pure selection:text-brand-black font-sans-body">
         {/* Cinematic Initial Preloader */}
         <Preloader />
 
@@ -72,7 +72,9 @@ export default function RootLayout({
         <Header />
 
         {/* Main Content Sections */}
-        <main>{children}</main>
+        <main>
+          <PageTransition>{children}</PageTransition>
+        </main>
 
         {/* Haute Couture Footer */}
         <Footer />
@@ -80,3 +82,4 @@ export default function RootLayout({
     </html>
   );
 }
+

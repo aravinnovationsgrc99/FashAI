@@ -6,7 +6,7 @@ import { NAV_ITEMS } from "./Header";
 
 export default function Footer() {
   return (
-    <footer className="border-t border-hairline bg-brand-void pt-16 pb-12 text-brand-off-white">
+    <footer className="border-t border-hairline bg-brand-void pt-20 pb-12 text-brand-off-white">
       <div className="mx-auto max-w-7xl px-6">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-12 pb-16 border-b border-hairline">
           {/* Brand Col */}
@@ -27,7 +27,7 @@ export default function Footer() {
                 Fashprism Internationals creates fashion experiences that move beyond the runway. Where fashion, culture, and experience converge.
               </p>
             </div>
-            <div className="mt-8 text-xs font-syne tracking-micro text-brand-orange">
+            <div className="mt-8 text-xs font-syne tracking-micro text-brand-gold font-bold">
               FASHION BEYOND BORDERS
             </div>
           </div>
@@ -37,10 +37,10 @@ export default function Footer() {
             <h4 className="font-syne text-xs tracking-micro text-brand-gold mb-6">
               NAVIGATION
             </h4>
-            <ul className="space-y-3 font-syne text-xs tracking-caps text-brand-off-white/80">
+            <ul className="space-y-3 font-syne text-xs tracking-caps text-brand-off-white/70">
               {NAV_ITEMS.map((item) => (
                 <li key={item.href}>
-                  <Link href={item.href} className="hover:text-brand-orange transition-colors">
+                  <Link href={item.href} className="hover:text-brand-gold transition-colors">
                     {item.label}
                   </Link>
                 </li>
@@ -59,7 +59,7 @@ export default function Footer() {
               </p>
               <Link
                 href="/contact"
-                className="inline-block bg-brand-orange px-6 py-3 text-xs font-syne tracking-caps font-bold text-brand-void hover:bg-brand-gold transition-colors"
+                className="inline-block bg-brand-gold px-6 py-3 text-xs font-syne tracking-caps font-bold text-brand-black hover:bg-brand-gold-pure transition-colors"
               >
                 CONTACT US ↗
               </Link>
@@ -67,7 +67,7 @@ export default function Footer() {
 
             <div className="mt-8 pt-6 border-t border-hairline flex items-center justify-between text-xs font-syne text-brand-platinum">
               <span>LOCATIONS</span>
-              <span className="text-brand-off-white">DUBAI — PARIS</span>
+              <span className="text-brand-gold font-bold">DUBAI — PARIS</span>
             </div>
           </div>
         </div>
@@ -78,7 +78,7 @@ export default function Footer() {
             © {new Date().getFullYear()} FASHPRISM INTERNATIONALS. ALL RIGHTS RESERVED.
           </div>
           <div className="flex gap-6">
-            <Link href="/contact" className="hover:text-brand-orange transition-colors">
+            <Link href="/contact" className="hover:text-brand-gold transition-colors">
               GET IN TOUCH
             </Link>
           </div>
@@ -87,5 +87,6 @@ export default function Footer() {
     </footer>
   );
 }
+
 
 

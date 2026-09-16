@@ -20,7 +20,7 @@ export default function Header() {
   const pathname = usePathname();
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-brand-void/85 backdrop-blur-md border-b border-hairline transition-all duration-300">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-brand-void/90 backdrop-blur-md border-b border-hairline transition-all duration-300">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-3">
         {/* Official Brand Logo */}
         <Link href="/" className="flex items-center gap-2 group py-1">
@@ -48,13 +48,13 @@ export default function Header() {
                 href={item.href}
                 className={`relative py-1 transition-colors ${
                   isActive
-                    ? "text-brand-orange font-bold"
-                    : "text-brand-off-white/80 hover:text-brand-gold"
+                    ? "text-brand-gold font-bold"
+                    : "text-brand-off-white/70 hover:text-brand-gold"
                 }`}
               >
                 {item.label}
                 {isActive && (
-                  <span className="absolute bottom-0 left-0 right-0 h-[1px] bg-brand-orange" />
+                  <span className="absolute bottom-0 left-0 right-0 h-[1px] bg-brand-gold" />
                 )}
               </Link>
             );
@@ -65,7 +65,7 @@ export default function Header() {
         <div className="flex items-center gap-4">
           <Link
             href="/contact"
-            className="hidden sm:inline-flex items-center justify-center bg-brand-orange px-5 py-2 text-[11px] font-syne tracking-caps font-bold text-brand-void hover:bg-brand-gold transition-colors"
+            className="hidden sm:inline-flex items-center justify-center bg-brand-gold px-5 py-2 text-[11px] font-syne tracking-caps font-bold text-brand-black hover:bg-brand-gold-pure transition-colors"
             data-cursor="explore"
           >
             BE A PART ↗
@@ -74,7 +74,7 @@ export default function Header() {
           {/* Mobile Hamburger Button */}
           <button
             onClick={() => setMobileMenuOpen(true)}
-            className="lg:hidden p-2 text-brand-off-white hover:text-brand-orange transition-colors"
+            className="lg:hidden p-2 text-brand-off-white hover:text-brand-gold transition-colors"
             aria-label="Open Navigation Menu"
           >
             <Menu className="h-6 w-6" />
@@ -92,5 +92,6 @@ export default function Header() {
     </header>
   );
 }
+
 
 

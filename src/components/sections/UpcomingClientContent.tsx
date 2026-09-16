@@ -21,7 +21,7 @@ export default function UpcomingClientContent() {
       <div className="flex flex-col sm:flex-row gap-4 w-full justify-center">
         <button
           onClick={() => setShowModal(true)}
-          className="bg-brand-orange px-8 py-4 text-xs font-syne tracking-caps font-bold text-brand-void hover:bg-brand-gold transition-colors text-center"
+          className="bg-gradient-to-r from-[#F5DFB3] via-[#D4AF37] to-[#A37F2C] px-8 py-4 text-xs font-syne tracking-caps font-bold text-brand-void hover:opacity-90 transition-opacity text-center shadow-lg"
           data-cursor="explore"
         >
           STAY UPDATED ↗
@@ -29,7 +29,7 @@ export default function UpcomingClientContent() {
 
         <Link
           href="/contact"
-          className="border border-brand-gold/40 bg-brand-charcoal px-8 py-4 text-xs font-syne tracking-caps text-brand-off-white hover:bg-brand-gold/10 transition-colors text-center"
+          className="border border-hairline-gold bg-brand-charcoal/80 px-8 py-4 text-xs font-syne tracking-caps text-brand-off-white hover:bg-brand-gold/10 hover:border-brand-gold transition-colors text-center"
           data-cursor="view"
         >
           CONTACT US ↗
@@ -39,10 +39,10 @@ export default function UpcomingClientContent() {
       {/* Stay Updated Modal */}
       {showModal && (
         <div className="fixed inset-0 z-[100] flex items-center justify-center bg-brand-void/90 p-6 backdrop-blur-md">
-          <div className="bg-brand-charcoal border border-hairline p-8 sm:p-10 max-w-md w-full relative text-left">
+          <div className="bg-brand-charcoal border border-hairline-gold p-8 sm:p-10 max-w-md w-full relative text-left">
             <button
               onClick={() => setShowModal(false)}
-              className="absolute top-4 right-4 text-brand-platinum hover:text-brand-orange text-xs font-syne"
+              className="absolute top-4 right-4 text-brand-gold/60 hover:text-brand-gold text-xs font-syne tracking-caps"
             >
               [ CLOSE ]
             </button>
@@ -50,7 +50,7 @@ export default function UpcomingClientContent() {
             {!subscribed ? (
               <form onSubmit={handleSubscribe} className="space-y-6">
                 <div>
-                  <span className="text-[10px] font-syne tracking-micro text-brand-orange block mb-2">
+                  <span className="text-[10px] font-syne tracking-micro text-brand-gold block mb-2">
                     DUBAI 2026 NOTIFICATIONS
                   </span>
                   <h3 className="font-serif-display text-2xl text-brand-off-white font-light">
@@ -71,20 +71,20 @@ export default function UpcomingClientContent() {
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     placeholder="name@company.com"
-                    className="w-full bg-transparent border-b border-hairline py-2 text-sm text-brand-off-white placeholder:text-brand-platinum/40 focus:border-brand-orange focus:outline-none"
+                    className="w-full bg-transparent border-b border-hairline-gold py-2 text-sm text-brand-off-white placeholder:text-brand-platinum/40 focus:border-brand-gold focus:outline-none"
                   />
                 </div>
 
                 <button
                   type="submit"
-                  className="w-full bg-brand-orange py-3 text-xs font-syne tracking-caps font-bold text-brand-void hover:bg-brand-gold transition-colors"
+                  className="w-full bg-gradient-to-r from-[#F5DFB3] via-[#D4AF37] to-[#A37F2C] py-3 text-xs font-syne tracking-caps font-bold text-brand-void hover:opacity-90 transition-opacity"
                 >
                   NOTIFY ME ↗
                 </button>
               </form>
             ) : (
               <div className="py-8 text-center flex flex-col items-center">
-                <CheckCircle2 className="h-12 w-12 text-brand-orange mb-4" />
+                <CheckCircle2 className="h-12 w-12 text-brand-gold mb-4" />
                 <h3 className="font-serif-display text-xl text-brand-off-white mb-2">
                   NOTIFICATION REGISTERED
                 </h3>
@@ -97,7 +97,7 @@ export default function UpcomingClientContent() {
                     setSubscribed(false);
                     setEmail("");
                   }}
-                  className="bg-brand-orange px-6 py-2.5 text-xs font-syne text-brand-void font-bold"
+                  className="bg-gradient-to-r from-[#F5DFB3] via-[#D4AF37] to-[#A37F2C] px-6 py-2.5 text-xs font-syne text-brand-void font-bold"
                 >
                   DONE
                 </button>
@@ -109,3 +109,4 @@ export default function UpcomingClientContent() {
     </div>
   );
 }
+

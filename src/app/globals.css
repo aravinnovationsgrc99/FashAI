@@ -5,12 +5,14 @@
 @tailwind utilities;
 
 :root {
-  --bg-void: #080808;
-  --bg-atelier: #0C0B0A;
-  --bg-charcoal: #141312;
+  --bg-void: #050505;
+  --bg-atelier: #0A0A09;
+  --bg-charcoal: #121110;
   --color-orange: #F15E1C;
   --color-gold: #E5C287;
+  --color-gold-pure: #D4AF37;
   --color-gold-luster: #FAB60A;
+  --color-gold-deep: #C5A059;
   --color-off-white: #FDFBF7;
   --color-platinum: #8E8B85;
   
@@ -44,9 +46,9 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Custom Selection */
+/* Metallic Gold Selection */
 ::selection {
-  background-color: var(--color-orange);
+  background-color: var(--color-gold-pure);
   color: #000000;
 }
 
@@ -60,12 +62,12 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #252422;
+  background: #201E1A;
   border-radius: 0px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--color-orange);
+  background: var(--color-gold);
 }
 
 /* Typography Utility Classes */
@@ -89,10 +91,22 @@ body {
   letter-spacing: 0.28em;
 }
 
-/* Hairline Borders */
+/* Metallic Gold Text Gradient */
+.text-gold-gradient {
+  background: linear-gradient(135deg, #F5DFB3 0%, #D4AF37 50%, #A37F2C 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Hairline Gold Borders */
 .border-hairline {
   border-width: 1px;
-  border-color: rgba(229, 194, 135, 0.15);
+  border-color: rgba(229, 194, 135, 0.2);
+}
+
+.border-hairline-gold {
+  border-width: 1px;
+  border-color: rgba(212, 175, 55, 0.35);
 }
 
 .border-hairline-light {
@@ -100,18 +114,13 @@ body {
   border-color: rgba(255, 255, 255, 0.08);
 }
 
-.border-hairline-orange {
-  border-width: 1px;
-  border-color: rgba(241, 94, 28, 0.3);
-}
-
 /* Vignette & Grain Effect */
 .bg-vignette {
-  background: radial-gradient(circle at center, transparent 40%, rgba(8, 8, 8, 0.85) 100%);
+  background: radial-gradient(circle at center, transparent 35%, rgba(5, 5, 5, 0.92) 100%);
 }
 
 .bg-cinematic-overlay {
-  background: linear-gradient(180deg, rgba(8,8,8,0.7) 0%, rgba(8,8,8,0.2) 50%, rgba(8,8,8,0.95) 100%);
+  background: linear-gradient(180deg, rgba(5,5,5,0.75) 0%, rgba(5,5,5,0.2) 50%, rgba(5,5,5,0.98) 100%);
 }
 
 /* Cursor pointer states */
@@ -120,3 +129,4 @@ body {
     cursor: default;
   }
 }
+

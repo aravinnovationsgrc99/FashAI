@@ -59,9 +59,10 @@ export default function ContactForm() {
     <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
       {/* Left Column: Context Info */}
       <div className="lg:col-span-5">
-        <span className="text-xs font-syne tracking-micro text-brand-orange block mb-3">
-          DIRECT ATELIER ENQUIRIES
-        </span>
+        <div className="flex items-center gap-3 text-xs font-syne tracking-micro text-brand-gold mb-3">
+          <span className="h-px w-6 bg-brand-gold" />
+          <span>DIRECT ATELIER ENQUIRIES</span>
+        </div>
         <h2 className="font-serif-display text-3xl sm:text-4xl font-light text-brand-off-white leading-tight mb-6">
           CONNECT WITH THE ATELIER
         </h2>
@@ -69,27 +70,27 @@ export default function ContactForm() {
           Fashprism Internationals welcomes enquiries from fashion houses, press correspondents, luxury sponsors, visionaries, and prospective participants.
         </p>
 
-        <div className="space-y-6 border-t border-hairline pt-6 text-xs font-syne tracking-caps">
+        <div className="space-y-6 border-t border-hairline-gold pt-6 text-xs font-syne tracking-caps">
           <div>
-            <div className="text-brand-platinum mb-1">GLOBAL HUBS</div>
+            <div className="text-brand-gold/60 mb-1">GLOBAL HUBS</div>
             <div className="text-brand-off-white font-bold">DUBAI — PARIS</div>
           </div>
           <div>
-            <div className="text-brand-platinum mb-1">RESPONSE DESK</div>
-            <div className="text-brand-orange font-bold">EXECUTIVE COMMUNICATIONS</div>
+            <div className="text-brand-gold/60 mb-1">RESPONSE DESK</div>
+            <div className="text-brand-gold font-bold">EXECUTIVE COMMUNICATIONS</div>
           </div>
         </div>
       </div>
 
       {/* Right Column: Editorial Form */}
-      <div className="lg:col-span-7 bg-brand-charcoal p-8 sm:p-12 border border-hairline relative">
+      <div className="lg:col-span-7 bg-brand-charcoal/80 p-8 sm:p-12 border border-hairline-gold relative shadow-2xl">
         {status === "success" ? (
           <motion.div
             initial={{ opacity: 0, scale: 0.96 }}
             animate={{ opacity: 1, scale: 1 }}
             className="py-16 text-center flex flex-col items-center"
           >
-            <CheckCircle2 className="h-16 w-16 text-brand-orange mb-6" />
+            <CheckCircle2 className="h-16 w-16 text-brand-gold mb-6" />
             <h3 className="font-serif-display text-3xl text-brand-off-white mb-3">
               ENQUIRY RECEIVED
             </h3>
@@ -98,7 +99,7 @@ export default function ContactForm() {
             </p>
             <button
               onClick={() => setStatus("idle")}
-              className="bg-brand-orange px-8 py-3.5 text-xs font-syne tracking-caps text-brand-void font-bold hover:bg-brand-gold transition-colors"
+              className="bg-gradient-to-r from-[#F5DFB3] via-[#D4AF37] to-[#A37F2C] px-8 py-4 text-xs font-syne tracking-caps text-brand-void font-bold hover:opacity-90 transition-opacity"
             >
               SEND ANOTHER MESSAGE ↗
             </button>
@@ -124,7 +125,7 @@ export default function ContactForm() {
                 value={formData.name}
                 onChange={handleChange}
                 placeholder="Enter your full name"
-                className="w-full bg-transparent border-b border-hairline py-3 text-sm text-brand-off-white placeholder:text-brand-platinum/40 focus:border-brand-orange focus:outline-none transition-colors"
+                className="w-full bg-transparent border-b border-hairline-gold py-3 text-sm text-brand-off-white placeholder:text-brand-platinum/30 focus:border-brand-gold focus:outline-none transition-colors"
               />
             </div>
 
@@ -140,7 +141,7 @@ export default function ContactForm() {
                 value={formData.email}
                 onChange={handleChange}
                 placeholder="name@company.com"
-                className="w-full bg-transparent border-b border-hairline py-3 text-sm text-brand-off-white placeholder:text-brand-platinum/40 focus:border-brand-orange focus:outline-none transition-colors"
+                className="w-full bg-transparent border-b border-hairline-gold py-3 text-sm text-brand-off-white placeholder:text-brand-platinum/30 focus:border-brand-gold focus:outline-none transition-colors"
               />
             </div>
 
@@ -155,7 +156,7 @@ export default function ContactForm() {
                 value={formData.phone}
                 onChange={handleChange}
                 placeholder="+1 (555) 000-0000"
-                className="w-full bg-transparent border-b border-hairline py-3 text-sm text-brand-off-white placeholder:text-brand-platinum/40 focus:border-brand-orange focus:outline-none transition-colors"
+                className="w-full bg-transparent border-b border-hairline-gold py-3 text-sm text-brand-off-white placeholder:text-brand-platinum/30 focus:border-brand-gold focus:outline-none transition-colors"
               />
             </div>
 
@@ -168,7 +169,7 @@ export default function ContactForm() {
                 name="interest"
                 value={formData.interest}
                 onChange={handleChange}
-                className="w-full bg-brand-void border-b border-hairline py-3 text-sm text-brand-off-white focus:border-brand-orange focus:outline-none transition-colors cursor-pointer"
+                className="w-full bg-brand-void border-b border-hairline-gold py-3 text-sm text-brand-off-white focus:border-brand-gold focus:outline-none transition-colors cursor-pointer"
               >
                 <option value="General Enquiry">General Enquiry</option>
                 <option value="Fashprism Lifestyle 2026">Fashprism Lifestyle 2026</option>
@@ -192,7 +193,7 @@ export default function ContactForm() {
                 value={formData.message}
                 onChange={handleChange}
                 placeholder="Details regarding your enquiry..."
-                className="w-full bg-transparent border-b border-hairline py-3 text-sm text-brand-off-white placeholder:text-brand-platinum/40 focus:border-brand-orange focus:outline-none transition-colors resize-none"
+                className="w-full bg-transparent border-b border-hairline-gold py-3 text-sm text-brand-off-white placeholder:text-brand-platinum/30 focus:border-brand-gold focus:outline-none transition-colors resize-none"
               />
             </div>
 
@@ -201,7 +202,7 @@ export default function ContactForm() {
               <button
                 type="submit"
                 disabled={status === "loading"}
-                className="w-full bg-brand-orange py-4 text-xs font-syne tracking-caps font-bold text-brand-void hover:bg-brand-gold transition-colors flex items-center justify-center gap-3 disabled:opacity-50"
+                className="w-full bg-gradient-to-r from-[#F5DFB3] via-[#D4AF37] to-[#A37F2C] py-4 text-xs font-syne tracking-caps font-bold text-brand-void hover:opacity-90 transition-opacity flex items-center justify-center gap-3 disabled:opacity-50 shadow-lg"
                 data-cursor="explore"
               >
                 {status === "loading" ? (
@@ -220,3 +221,4 @@ export default function ContactForm() {
     </div>
   );
 }
+
