@@ -1,0 +1,122 @@
+@import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Plus+Jakarta+Sans:ital,wght@0,300..700;1,300..700&family=Syne:wght@400..800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg-void: #080808;
+  --bg-atelier: #0C0B0A;
+  --bg-charcoal: #141312;
+  --color-orange: #F15E1C;
+  --color-gold: #E5C287;
+  --color-gold-luster: #FAB60A;
+  --color-off-white: #FDFBF7;
+  --color-platinum: #8E8B85;
+  
+  --font-bodoni-moda: 'Bodoni Moda', Didot, serif;
+  --font-plus-jakarta: 'Plus Jakarta Sans', sans-serif;
+  --font-syne: 'Syne', sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border-radius: 0px !important; /* Strict sharp 0px corners */
+}
+
+html {
+  scroll-behavior: smooth;
+  background-color: var(--bg-void);
+  color: var(--color-off-white);
+  font-family: var(--font-plus-jakarta);
+  overflow-x: hidden;
+}
+
+body {
+  background-color: var(--bg-void);
+  color: var(--color-off-white);
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Custom Selection */
+::selection {
+  background-color: var(--color-orange);
+  color: #000000;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-void);
+}
+
+::-webkit-scrollbar-thumb {
+  background: #252422;
+  border-radius: 0px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-orange);
+}
+
+/* Typography Utility Classes */
+.font-serif-display {
+  font-family: var(--font-bodoni-moda);
+}
+
+.font-sans-body {
+  font-family: var(--font-plus-jakarta);
+}
+
+.font-syne-caps {
+  font-family: var(--font-syne);
+  text-transform: uppercase;
+  letter-spacing: 0.24em;
+}
+
+.font-syne-micro {
+  font-family: var(--font-syne);
+  text-transform: uppercase;
+  letter-spacing: 0.28em;
+}
+
+/* Hairline Borders */
+.border-hairline {
+  border-width: 1px;
+  border-color: rgba(229, 194, 135, 0.15);
+}
+
+.border-hairline-light {
+  border-width: 1px;
+  border-color: rgba(255, 255, 255, 0.08);
+}
+
+.border-hairline-orange {
+  border-width: 1px;
+  border-color: rgba(241, 94, 28, 0.3);
+}
+
+/* Vignette & Grain Effect */
+.bg-vignette {
+  background: radial-gradient(circle at center, transparent 40%, rgba(8, 8, 8, 0.85) 100%);
+}
+
+.bg-cinematic-overlay {
+  background: linear-gradient(180deg, rgba(8,8,8,0.7) 0%, rgba(8,8,8,0.2) 50%, rgba(8,8,8,0.95) 100%);
+}
+
+/* Cursor pointer states */
+@media (hover: hover) and (pointer: fine) {
+  body {
+    cursor: default;
+  }
+}
