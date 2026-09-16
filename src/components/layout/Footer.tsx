@@ -13,16 +13,15 @@ export default function Footer() {
           <div className="md:col-span-5 flex flex-col justify-between">
             <div>
               <div className="flex items-center gap-3 mb-6">
-                <Image
-                  src="/assets/brand/logo.jpeg"
-                  alt="Fashprism Logo"
-                  width={40}
-                  height={40}
-                  className="object-contain"
-                />
-                <span className="font-serif-display text-3xl font-light tracking-tight">
-                  FASHPRISM
-                </span>
+                <Link href="/" className="inline-block">
+                  <Image
+                    src="/assets/brand/logo_transparent.png"
+                    alt="Fashprism Internationals Logo"
+                    width={280}
+                    height={80}
+                    className="h-14 w-auto object-contain"
+                  />
+                </Link>
               </div>
               <p className="font-sans text-sm text-brand-platinum max-w-md font-light leading-relaxed">
                 Fashprism Internationals creates fashion experiences that move beyond the runway. Where fashion, culture, and experience converge.
@@ -88,4 +87,5 @@ export default function Footer() {
     </footer>
   );
 }
+
 

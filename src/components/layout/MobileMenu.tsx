@@ -2,6 +2,7 @@
 
 import { useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { X } from "lucide-react";
 
@@ -61,8 +62,15 @@ export default function MobileMenu({
         >
           {/* Top Bar */}
           <div className="flex items-center justify-between border-b border-hairline pb-4">
-            <Link href="/" onClick={onClose} className="font-serif-display text-xl tracking-tight">
-              FASHPRISM
+            <Link href="/" onClick={onClose} className="flex items-center">
+              <Image
+                src="/assets/brand/logo_transparent.png"
+                alt="Fashprism Internationals Logo"
+                width={180}
+                height={50}
+                priority
+                className="h-8 w-auto object-contain"
+              />
             </Link>
             <button
               onClick={onClose}
@@ -129,4 +137,5 @@ export default function MobileMenu({
     </AnimatePresence>
   );
 }
+
 

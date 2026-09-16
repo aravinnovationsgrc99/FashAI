@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { Menu } from "lucide-react";
 import MobileMenu from "./MobileMenu";
@@ -20,15 +21,17 @@ export default function Header() {
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-brand-void/85 backdrop-blur-md border-b border-hairline transition-all duration-300">
-      <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
-        {/* Brand Logo / Monogram */}
-        <Link href="/" className="flex items-center gap-2 group">
-          <span className="font-serif-display text-2xl font-light tracking-tight text-brand-off-white group-hover:text-brand-orange transition-colors">
-            FASHPRISM
-          </span>
-          <span className="hidden sm:inline-block text-[9px] font-syne tracking-micro text-brand-orange border border-brand-orange/40 px-1.5 py-0.5">
-            INTL
-          </span>
+      <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-3">
+        {/* Official Brand Logo */}
+        <Link href="/" className="flex items-center gap-2 group py-1">
+          <Image
+            src="/assets/brand/logo_transparent.png"
+            alt="Fashprism Internationals Logo"
+            width={240}
+            height={70}
+            priority
+            className="h-9 sm:h-11 w-auto object-contain transition-opacity duration-300 group-hover:opacity-90"
+          />
         </Link>
 
         {/* Desktop Navigation Links */}
@@ -89,4 +92,5 @@ export default function Header() {
     </header>
   );
 }
+
 
