@@ -2,25 +2,11 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
-import Image from "next/image";
 import PrismScene from "../cinematic/PrismScene";
 
 export default function Hero() {
   return (
     <section className="relative min-h-screen w-full flex flex-col justify-between pt-28 pb-12 px-6 sm:px-12 overflow-hidden bg-brand-void">
-      {/* Background Fashion Imagery Layer */}
-      <div className="absolute inset-0 z-0 opacity-15 pointer-events-none">
-        <Image
-          src="/assets/models/model_01.jpeg"
-          alt="Fashprism Fashion Hero"
-          fill
-          priority
-          sizes="100vw"
-          className="object-cover object-center filter grayscale contrast-125 scale-105"
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-brand-void via-brand-void/85 to-brand-void/65" />
-      </div>
-
       {/* Three.js Metallic Gold Prism Scene Layer */}
       <PrismScene />
 
