@@ -29,7 +29,7 @@ export default function PrismScene() {
     });
 
     renderer.setSize(window.innerWidth, window.innerHeight);
-    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio, isMobile ? 1 : 1.5));
     containerRef.current.appendChild(renderer.domElement);
 
     // Root Group for floating cursor-responsive 3D gold elements
@@ -37,17 +37,17 @@ export default function PrismScene() {
     scene.add(mainGroup);
 
     // 1. Central Transparent Metallic Gold Monolithic Prism
-    const prismGeometry = new THREE.CylinderGeometry(1.1, 1.1, 2.4, 3, 1, false);
+    const prismGeometry = new THREE.CylinderGeometry(1.1, 1.1, 2.4, isMobile ? 3 : 3, 1, false);
     const prismMaterial = new THREE.MeshPhysicalMaterial({
       color: new THREE.Color("#E5C287"),
-      transmission: 0.9,
+      transmission: isMobile ? 0.4 : 0.85,
       opacity: 0.65,
       transparent: true,
-      roughness: 0.08,
+      roughness: 0.1,
       metalness: 0.4,
-      ior: 1.65,
-      reflectivity: 0.9,
-      clearcoat: 0.6,
+      ior: 1.5,
+      reflectivity: 0.8,
+      clearcoat: isMobile ? 0 : 0.5,
       side: THREE.DoubleSide,
     });
     const prismMesh = new THREE.Mesh(prismGeometry, prismMaterial);
@@ -57,7 +57,7 @@ export default function PrismScene() {
     const edgesGeometry = new THREE.EdgesGeometry(prismGeometry);
     const lineMaterial = new THREE.LineBasicMaterial({
       color: new THREE.Color("#D4AF37"),
-      linewidth: 1.5,
+      linewidth: 1,
       transparent: true,
       opacity: 0.7,
     });
@@ -73,7 +73,7 @@ export default function PrismScene() {
       transparent: true,
       opacity: 0.45,
     });
-    const ringGeo1 = new THREE.RingGeometry(2.3, 2.31, isMobile ? 32 : 64);
+    const ringGeo1 = new THREE.RingGeometry(2.3, 2.31, isMobile ? 24 : 48);
     const ring1 = new THREE.LineLoop(ringGeo1, ringMatGold1);
     ring1.rotation.x = Math.PI / 3;
     ringGroup.add(ring1);
@@ -83,32 +83,37 @@ export default function PrismScene() {
       transparent: true,
       opacity: 0.3,
     });
-    const ringGeo2 = new THREE.RingGeometry(2.8, 2.81, isMobile ? 32 : 64);
+    const ringGeo2 = new THREE.RingGeometry(2.8, 2.81, isMobile ? 24 : 48);
     const ring2 = new THREE.LineLoop(ringGeo2, ringMatGold2);
     ring2.rotation.y = Math.PI / 4;
     ring2.rotation.x = -Math.PI / 6;
     ringGroup.add(ring2);
 
-    // 3. Floating Interactive Crystal Gold Nodes
+    // 3. Floating Interactive Crystal Gold Nodes (Reduced on Mobile)
     const nodesGroup = new THREE.Group();
     mainGroup.add(nodesGroup);
 
-    const nodeGeo = new THREE.OctahedronGeometry(0.22, 0);
+    const nodeGeo = new THREE.OctahedronGeometry(0.2, 0);
     const nodeMat = new THREE.MeshPhysicalMaterial({
       color: new THREE.Color("#FAB60A"),
-      transmission: 0.85,
-      opacity: 0.75,
+      transmission: isMobile ? 0.3 : 0.8,
+      opacity: 0.7,
       transparent: true,
       roughness: 0.1,
       metalness: 0.4,
     });
 
-    const nodePositions = [
-      { x: -2.2, y: 1.4, z: 0.5 },
-      { x: 2.4, y: -1.2, z: -0.5 },
-      { x: 1.8, y: 1.8, z: 0.8 },
-      { x: -2.0, y: -1.6, z: 0.2 },
-    ];
+    const nodePositions = isMobile
+      ? [
+          { x: -1.8, y: 1.2, z: 0.4 },
+          { x: 1.8, y: -1.0, z: -0.4 },
+        ]
+      : [
+          { x: -2.2, y: 1.4, z: 0.5 },
+          { x: 2.4, y: -1.2, z: -0.5 },
+          { x: 1.8, y: 1.8, z: 0.8 },
+          { x: -2.0, y: -1.6, z: 0.2 },
+        ];
 
     const nodes: THREE.Mesh[] = [];
     nodePositions.forEach((pos) => {
@@ -126,19 +131,19 @@ export default function PrismScene() {
     });
 
     // 4. Gold Lighting & Spotlight
-    const ambientLight = new THREE.AmbientLight(0xffffff, 0.4);
+    const ambientLight = new THREE.AmbientLight(0xffffff, 0.5);
     scene.add(ambientLight);
 
-    const goldCursorLight = new THREE.PointLight(new THREE.Color("#D4AF37"), 2.5, 12);
+    const goldCursorLight = new THREE.PointLight(new THREE.Color("#D4AF37"), 2, 10);
     goldCursorLight.position.set(0, 0, 3);
     scene.add(goldCursorLight);
 
-    const warmLight = new THREE.PointLight(new THREE.Color("#E5C287"), 2, 10);
+    const warmLight = new THREE.PointLight(new THREE.Color("#E5C287"), 1.5, 8);
     warmLight.position.set(-2, -2, 2);
     scene.add(warmLight);
 
     // 5. Restrained Gold Particle Field
-    const particleCount = isMobile ? 25 : 60;
+    const particleCount = isMobile ? 15 : 45;
     const particlesGeometry = new THREE.BufferGeometry();
     const positions = new Float32Array(particleCount * 3);
 
@@ -155,9 +160,9 @@ export default function PrismScene() {
 
     const particlesMaterial = new THREE.PointsMaterial({
       color: new THREE.Color("#E5C287"),
-      size: 0.035,
+      size: 0.03,
       transparent: true,
-      opacity: 0.45,
+      opacity: 0.4,
     });
 
     const particleSystem = new THREE.Points(particlesGeometry, particlesMaterial);
@@ -174,7 +179,9 @@ export default function PrismScene() {
       targetMouseY = -(event.clientY / window.innerHeight) * 2 + 1;
     };
 
-    window.addEventListener("mousemove", handleMouseMove, { passive: true });
+    if (!isMobile) {
+      window.addEventListener("mousemove", handleMouseMove, { passive: true });
+    }
 
     const handleResize = () => {
       camera.aspect = window.innerWidth / window.innerHeight;
@@ -184,35 +191,46 @@ export default function PrismScene() {
 
     window.addEventListener("resize", handleResize);
 
-    // Animation Loop
+    // Visibility & Pause Control
+    let isRunning = true;
     let animationFrameId: number;
 
+    const handleVisibilityChange = () => {
+      if (document.hidden) {
+        isRunning = false;
+        cancelAnimationFrame(animationFrameId);
+      } else {
+        if (!isRunning) {
+          isRunning = true;
+          animate();
+        }
+      }
+    };
+
+    document.addEventListener("visibilitychange", handleVisibilityChange);
+
+    // Animation Loop
     const animate = () => {
+      if (!isRunning) return;
+
       animationFrameId = requestAnimationFrame(animate);
 
       currentMouseX += (targetMouseX - currentMouseX) * 0.05;
       currentMouseY += (targetMouseY - currentMouseY) * 0.05;
 
-      mainGroup.position.x = currentMouseX * 0.7;
-      mainGroup.position.y = currentMouseY * 0.4;
+      mainGroup.position.x = currentMouseX * 0.5;
+      mainGroup.position.y = currentMouseY * 0.3;
 
-      mainGroup.rotation.y = currentMouseX * 0.6 + Date.now() * 0.00035;
-      mainGroup.rotation.x = currentMouseY * 0.5;
+      mainGroup.rotation.y = currentMouseX * 0.4 + Date.now() * 0.0003;
+      mainGroup.rotation.x = currentMouseY * 0.3;
 
-      camera.position.x = currentMouseX * 0.25;
-      camera.position.y = currentMouseY * 0.15;
-
-      ring1.rotation.z += 0.0012;
-      ring2.rotation.z -= 0.0016;
+      ring1.rotation.z += 0.001;
+      ring2.rotation.z -= 0.0012;
 
       nodes.forEach((node, i) => {
-        node.rotation.x += 0.008 * (i + 1);
-        node.rotation.y += 0.012 * (i + 1);
-        node.position.y += Math.sin(Date.now() * 0.0015 + i) * 0.0015;
+        node.rotation.x += 0.006 * (i + 1);
+        node.rotation.y += 0.008 * (i + 1);
       });
-
-      goldCursorLight.position.x = currentMouseX * 3.5;
-      goldCursorLight.position.y = currentMouseY * 3.5;
 
       renderer.render(scene, camera);
     };
@@ -220,8 +238,12 @@ export default function PrismScene() {
     animate();
 
     return () => {
+      isRunning = false;
       cancelAnimationFrame(animationFrameId);
-      window.removeEventListener("mousemove", handleMouseMove);
+      document.removeEventListener("visibilitychange", handleVisibilityChange);
+      if (!isMobile) {
+        window.removeEventListener("mousemove", handleMouseMove);
+      }
       window.removeEventListener("resize", handleResize);
       if (containerRef.current && renderer.domElement) {
         containerRef.current.removeChild(renderer.domElement);

@@ -19,6 +19,12 @@
   --font-bodoni-moda: 'Bodoni Moda', Didot, serif;
   --font-plus-jakarta: 'Plus Jakarta Sans', sans-serif;
   --font-syne: 'Syne', sans-serif;
+
+  /* Safe Area Insets for Mobile */
+  --sat: env(safe-area-inset-top, 0px);
+  --sab: env(safe-area-inset-bottom, 0px);
+  --sal: env(safe-area-inset-left, 0px);
+  --sar: env(safe-area-inset-right, 0px);
 }
 
 * {
@@ -34,16 +40,27 @@ html {
   color: var(--color-off-white);
   font-family: var(--font-plus-jakarta);
   overflow-x: hidden;
+  width: 100%;
 }
 
 body {
   background-color: var(--bg-void);
   color: var(--color-off-white);
   min-height: 100vh;
+  min-height: 100dvh;
   position: relative;
   overflow-x: hidden;
+  width: 100%;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+/* Safe area padding utilities */
+.pt-safe {
+  padding-top: max(1rem, var(--sat));
+}
+.pb-safe {
+  padding-bottom: max(1rem, var(--sab));
 }
 
 /* Metallic Gold Selection */

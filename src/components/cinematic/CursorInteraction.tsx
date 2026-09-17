@@ -7,17 +7,24 @@ export default function CursorInteraction() {
   const [position, setPosition] = useState({ x: -100, y: -100 });
   const [cursorType, setCursorType] = useState<"default" | "hover" | "view" | "explore">("default");
   const [isVisible, setIsVisible] = useState(false);
-  const [isTouch, setIsTouch] = useState(false);
+  const [isTouchDevice, setIsTouchDevice] = useState(true);
 
   useEffect(() => {
-    // Detect touch device
-    const checkTouch = () => {
-      setIsTouch(window.matchMedia("(pointer: coarse)").matches);
+    // Strictly verify if device supports hover and fine pointer (mouse/trackpad)
+    const mediaQuery = window.matchMedia("(hover: hover) and (pointer: fine)");
+    const updatePointerType = () => {
+      setIsTouchDevice(!mediaQuery.matches);
     };
-    checkTouch();
-    window.addEventListener("resize", checkTouch);
 
-    if (isTouch) return;
+    updatePointerType();
+    
+    if (mediaQuery.addEventListener) {
+      mediaQuery.addEventListener("change", updatePointerType);
+    } else {
+      mediaQuery.addListener(updatePointerType);
+    }
+
+    if (!mediaQuery.matches) return;
 
     const onMouseMove = (e: MouseEvent) => {
       setPosition({ x: e.clientX, y: e.clientY });
@@ -53,11 +60,15 @@ export default function CursorInteraction() {
     return () => {
       window.removeEventListener("mousemove", onMouseMove);
       document.removeEventListener("mouseleave", onMouseLeave);
-      window.removeEventListener("resize", checkTouch);
+      if (mediaQuery.removeEventListener) {
+        mediaQuery.removeEventListener("change", updatePointerType);
+      } else {
+        mediaQuery.removeListener(updatePointerType);
+      }
     };
-  }, [isVisible, isTouch]);
+  }, [isVisible]);
 
-  if (isTouch || !isVisible) return null;
+  if (isTouchDevice || !isVisible) return null;
 
   return (
     <motion.div

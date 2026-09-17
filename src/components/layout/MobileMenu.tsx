@@ -28,11 +28,14 @@ export default function MobileMenu({
   useEffect(() => {
     if (isOpen) {
       document.body.style.overflow = "hidden";
+      document.documentElement.style.overflow = "hidden";
     } else {
       document.body.style.overflow = "";
+      document.documentElement.style.overflow = "";
     }
     return () => {
       document.body.style.overflow = "";
+      document.documentElement.style.overflow = "";
     };
   }, [isOpen]);
 
@@ -51,18 +54,23 @@ export default function MobileMenu({
     <AnimatePresence>
       {isOpen && (
         <motion.div
-          initial={{ opacity: 0, y: "-100%" }}
-          animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: "-100%" }}
-          transition={{ duration: 0.6, ease: [0.76, 0, 0.24, 1] }}
-          className="fixed inset-0 z-[100] flex flex-col justify-between bg-brand-void/98 px-6 py-8 text-brand-off-white backdrop-blur-xl lg:hidden"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
+          className="fixed inset-0 z-[100] flex flex-col justify-between bg-brand-void/98 px-6 pt-safe pb-safe text-brand-off-white backdrop-blur-2xl lg:hidden min-h-[100dvh] w-full"
           role="dialog"
           aria-modal="true"
           aria-label="Mobile Navigation Menu"
         >
           {/* Top Bar */}
-          <div className="flex items-center justify-between border-b border-hairline pb-4">
-            <Link href="/" onClick={onClose} className="flex items-center">
+          <motion.div
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.1, duration: 0.3 }}
+            className="flex items-center justify-between border-b border-hairline-gold pb-4 pt-2"
+          >
+            <Link href="/" onClick={onClose} className="flex items-center min-h-[44px]">
               <Image
                 src="/assets/brand/logo_transparent.png"
                 alt="Fashprism Internationals Logo"
@@ -74,15 +82,15 @@ export default function MobileMenu({
             </Link>
             <button
               onClick={onClose}
-              className="p-2 text-brand-off-white hover:text-brand-gold transition-colors"
+              className="p-3 min-w-[44px] min-h-[44px] flex items-center justify-center text-brand-off-white hover:text-brand-gold transition-colors"
               aria-label="Close Navigation Menu"
             >
               <X className="h-6 w-6" />
             </button>
-          </div>
+          </motion.div>
 
           {/* Nav Links */}
-          <nav className="flex flex-col space-y-6 my-auto">
+          <nav className="flex flex-col space-y-5 my-auto py-6">
             {items.map((item, index) => {
               const isActive =
                 item.href === "/"
@@ -92,24 +100,24 @@ export default function MobileMenu({
               return (
                 <motion.div
                   key={item.href}
-                  initial={{ opacity: 0, x: -20 }}
+                  initial={{ opacity: 0, x: -30 }}
                   animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: 0.1 + index * 0.05, duration: 0.4 }}
+                  transition={{ delay: 0.15 + index * 0.06, duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
                 >
                   <Link
                     href={item.href}
                     onClick={onClose}
-                    className={`group flex items-center justify-between text-3xl sm:text-4xl font-serif-display ${
-                      isActive ? "text-brand-gold" : "text-brand-off-white hover:text-brand-gold"
+                    className={`group flex items-center justify-between py-2 min-h-[44px] text-2xl xs:text-3xl sm:text-4xl font-serif-display ${
+                      isActive ? "text-gold-gradient font-normal" : "text-brand-off-white hover:text-brand-gold"
                     } transition-colors`}
                   >
                     <span className="flex items-center gap-4">
-                      <span className="text-xs font-syne text-brand-platinum font-normal">
+                      <span className="text-xs font-syne text-brand-gold/60 font-normal">
                         0{index + 1}
                       </span>
                       {item.label}
                     </span>
-                    <span className="text-xs font-syne text-brand-gold opacity-0 group-hover:opacity-100 transition-opacity">
+                    <span className={`text-xs font-syne text-brand-gold ${isActive ? "opacity-100" : "opacity-0 group-hover:opacity-100"} transition-opacity`}>
                       ↗
                     </span>
                   </Link>
@@ -118,20 +126,25 @@ export default function MobileMenu({
             })}
           </nav>
 
-          {/* Bottom Action CTA */}
-          <div className="border-t border-hairline pt-6 flex flex-col space-y-4">
+          {/* Bottom Action CTA & Details */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.45, duration: 0.4 }}
+            className="border-t border-hairline-gold pt-6 pb-4 flex flex-col space-y-4"
+          >
             <Link
               href="/contact"
               onClick={onClose}
-              className="w-full bg-brand-gold py-4 text-center text-xs font-syne tracking-caps font-bold text-brand-black hover:bg-brand-gold-pure transition-colors"
+              className="w-full bg-gradient-to-r from-[#F5DFB3] via-[#D4AF37] to-[#A37F2C] py-4 text-center text-xs font-syne tracking-caps font-bold text-brand-void hover:opacity-90 transition-opacity min-h-[48px] flex items-center justify-center shadow-lg"
             >
               BE A PART ↗
             </Link>
-            <div className="flex justify-between text-[10px] font-syne tracking-micro text-brand-platinum">
+            <div className="flex justify-between items-center text-[10px] font-syne tracking-micro text-brand-platinum pt-1">
               <span>FASHPRISM INTERNATIONALS</span>
-              <span className="text-brand-gold">PARIS — DUBAI</span>
+              <span className="text-brand-gold font-bold">PARIS — DUBAI</span>
             </div>
-          </div>
+          </motion.div>
         </motion.div>
       )}
     </AnimatePresence>

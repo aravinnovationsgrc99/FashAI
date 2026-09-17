@@ -11,39 +11,39 @@ export const metadata: Metadata = {
 
 export default function ProjectsPage() {
   return (
-    <div className="pt-28 pb-32 bg-brand-void text-brand-off-white min-h-screen">
+    <div className="bg-brand-void text-brand-off-white min-h-screen">
       {/* Page Opening Hero */}
-      <section className="min-h-[70vh] flex flex-col justify-center px-6 sm:px-12 py-20 max-w-7xl mx-auto border-b border-hairline relative">
+      <section className="min-h-[60vh] sm:min-h-[70vh] flex flex-col justify-center px-4 sm:px-12 pt-28 pb-16 max-w-7xl mx-auto border-b border-hairline relative">
         <span className="text-xs font-syne tracking-micro text-brand-gold block mb-4 font-bold">
           CHAPTER 02 / COMPLETED INITIATIVES
         </span>
-        <h1 className="font-serif-display text-6xl sm:text-8xl md:text-9xl lg:text-[130px] font-light leading-none tracking-tight">
+        <h1 className="font-serif-display text-4xl xs:text-5xl sm:text-7xl md:text-9xl lg:text-[130px] font-light leading-none tracking-tight">
           PROJECTS
         </h1>
-        <p className="font-serif-display text-2xl sm:text-4xl text-gold-gradient italic font-light mt-6">
+        <p className="font-serif-display text-xl sm:text-3xl md:text-4xl text-gold-gradient italic font-light mt-6">
           "Moments that have already happened."
         </p>
       </section>
 
       {/* Projects Full-Screen Visual Chapters */}
-      <div className="space-y-40">
+      <div className="space-y-24 sm:space-y-40">
         {PROJECTS_DATA.map((project: ProjectItem) => (
           <article
             key={project.id}
-            className="min-h-screen w-full flex flex-col justify-between py-24 px-6 sm:px-12 border-b border-hairline relative"
+            className="min-h-[100svh] w-full flex flex-col justify-between py-16 sm:py-24 px-4 sm:px-12 border-b border-hairline relative"
           >
             <div className="max-w-7xl mx-auto w-full">
               {/* Project Hero Header */}
-              <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-end mb-16">
+              <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-end mb-12 sm:mb-16">
                 <div className="lg:col-span-8">
-                  <div className="flex items-center gap-4 text-xs font-syne tracking-micro text-brand-gold mb-3 font-bold">
+                  <div className="flex flex-wrap items-center gap-2 sm:gap-4 text-[10px] sm:text-xs font-syne tracking-micro text-brand-gold mb-3 font-bold">
                     <span>PROJECT {project.number}</span>
                     <span>•</span>
                     <span>{project.year}</span>
                     <span>•</span>
                     <span>{project.location}</span>
                   </div>
-                  <h2 className="font-serif-display text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-light leading-tight">
+                  <h2 className="font-serif-display text-3xl xs:text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-light leading-tight">
                     {project.title}
                   </h2>
                 </div>
