@@ -22,7 +22,7 @@ export default function Hero() {
         >
           <div className="inline-flex items-center gap-2 bg-brand-gold/10 border border-brand-gold/40 px-3 py-1 mb-6 sm:mb-8 text-[9px] sm:text-[10px] font-syne tracking-micro text-brand-gold">
             <span className="h-1.5 w-1.5 bg-brand-gold animate-pulse" />
-            <span>FASHPRISM INTERNATIONALS</span>
+            <span>FASHAI UNIVERSAL</span>
           </div>
 
           <h1 className="font-serif-display text-4xl xs:text-5xl sm:text-7xl md:text-8xl lg:text-[130px] font-light text-brand-off-white leading-[0.92] sm:leading-[0.88] tracking-tight">

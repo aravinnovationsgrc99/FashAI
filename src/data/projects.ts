@@ -22,7 +22,7 @@ export const PROJECTS_DATA: ProjectItem[] = [
   {
     id: "project-runway-2025",
     number: "01",
-    title: "FASHPRISM RUNWAY 2025",
+    title: "FASHAI RUNWAY 2025",
     subtitle: "HAUTE COUTURE PRESENTATION",
     category: "RUNWAY PRESENTATION",
     year: "2025",
@@ -40,7 +40,7 @@ export const PROJECTS_DATA: ProjectItem[] = [
       {
         type: "text",
         title: "THE VISUAL DIALECTIC",
-        text: "Every garment in Fashprism Runway 2025 responds to light, space, and architectural motion. Where craftsmanship meets digital spatial dimension.",
+        text: "Every garment in FashAI Runway 2025 responds to light, space, and architectural motion. Where craftsmanship meets digital spatial dimension.",
       },
       {
         type: "image",
@@ -64,7 +64,7 @@ export const PROJECTS_DATA: ProjectItem[] = [
   {
     id: "project-lifestyle-2025",
     number: "02",
-    title: "FASHPRISM LIFESTYLE 2025 — DUBAI",
+    title: "FASHAI LIFESTYLE 2025 — DUBAI",
     subtitle: "DUBAI SYMPOSIUM",
     category: "LIFESTYLE & ART",
     year: "2025",

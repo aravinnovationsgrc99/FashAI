@@ -1,7 +1,7 @@
 import { MetadataRoute } from "next";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = "https://fashprism.com";
+  const baseUrl = "https://fashaiuniversal.com";
 
   return [
     {

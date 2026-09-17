@@ -26,7 +26,7 @@ export default function Header() {
         <Link href="/" className="flex items-center gap-2 group py-1.5 min-h-[44px]">
           <Image
             src="/assets/brand/logo_transparent.png"
-            alt="Fashprism Internationals Logo"
+            alt="FashAI Universal Logo"
             width={240}
             height={70}
             priority

@@ -71,7 +71,7 @@ export default function ContactSection() {
               JOIN THE <span className="italic text-brand-gold">ATELIER</span>
             </h2>
             <p className="font-sans text-base text-brand-platinum font-light leading-relaxed mb-8">
-              Fashprism Internationals invites couture designers, press correspondents, patrons, and strategic partners to request official accreditation for upcoming runway presentations and lifestyle symposiums.
+              FashAI Universal invites couture designers, press correspondents, patrons, and strategic partners to request official accreditation for upcoming runway presentations and lifestyle symposiums.
             </p>
 
             <div className="space-y-6 border-t border-hairline pt-6 text-xs font-syne tracking-caps">
@@ -99,7 +99,7 @@ export default function ContactSection() {
                   ACCREDITATION REQUEST RECEIVED
                 </h3>
                 <p className="font-sans text-sm text-brand-platinum max-w-md font-light leading-relaxed mb-8">
-                  Thank you for contacting Fashprism Internationals. Our delegate desk will review your submission promptly.
+                  Thank you for contacting FashAI Universal. Our delegate desk will review your submission promptly.
                 </p>
                 <button
                   onClick={() => setStatus("idle")}
@@ -176,7 +176,7 @@ export default function ContactSection() {
                     className="w-full bg-brand-void border-b border-hairline py-3 text-sm text-brand-off-white focus:border-brand-orange focus:outline-none transition-colors cursor-pointer"
                   >
                     <option value="General Enquiry">General Enquiry</option>
-                    <option value="Fashprism Lifestyle 2026">Fashprism Lifestyle 2026</option>
+                    <option value="FashAI Lifestyle 2026">FashAI Lifestyle 2026</option>
                     <option value="Partnership">Partnership</option>
                     <option value="Sponsorship">Sponsorship</option>
                     <option value="Designer / Talent">Designer / Talent</option>

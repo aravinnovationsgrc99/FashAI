@@ -67,7 +67,7 @@ export default function ContactForm() {
           CONNECT WITH THE ATELIER
         </h2>
         <p className="font-sans text-sm text-brand-platinum font-light leading-relaxed mb-8">
-          Fashprism Internationals welcomes enquiries from fashion houses, press correspondents, luxury sponsors, visionaries, and prospective participants.
+          FashAI Universal welcomes enquiries from fashion houses, press correspondents, luxury sponsors, visionaries, and prospective participants.
         </p>
 
         <div className="space-y-6 border-t border-hairline-gold pt-6 text-xs font-syne tracking-caps">
@@ -95,7 +95,7 @@ export default function ContactForm() {
               ENQUIRY RECEIVED
             </h3>
             <p className="font-sans text-sm text-brand-platinum max-w-md font-light leading-relaxed mb-8">
-              Thank you for contacting Fashprism Internationals. Our executive team will review your message promptly.
+              Thank you for contacting FashAI Universal. Our executive team will review your message promptly.
             </p>
             <button
               onClick={() => setStatus("idle")}
@@ -172,7 +172,7 @@ export default function ContactForm() {
                 className="w-full bg-brand-void border-b border-hairline-gold py-3 text-sm text-brand-off-white focus:border-brand-gold focus:outline-none transition-colors cursor-pointer"
               >
                 <option value="General Enquiry">General Enquiry</option>
-                <option value="Fashprism Lifestyle 2026">Fashprism Lifestyle 2026</option>
+                <option value="FashAI Lifestyle 2026">FashAI Lifestyle 2026</option>
                 <option value="Partnership">Partnership</option>
                 <option value="Sponsorship">Sponsorship</option>
                 <option value="Designer / Talent">Designer / Talent</option>

@@ -31,7 +31,7 @@ export default function UpcomingCampaign() {
 
           {/* Monolithic 2026 Typography */}
           <h2 className="font-serif-display text-6xl sm:text-8xl md:text-9xl font-light text-brand-off-white tracking-tighter leading-none mb-4">
-            FASHPRISM
+            FASHAI
             <span className="block text-brand-orange font-normal italic">
               LIFESTYLE 2026
             </span>

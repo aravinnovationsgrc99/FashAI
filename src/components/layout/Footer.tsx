@@ -16,7 +16,7 @@ export default function Footer() {
                 <Link href="/" className="inline-block">
                   <Image
                     src="/assets/brand/logo_transparent.png"
-                    alt="Fashprism Internationals Logo"
+                    alt="FashAI Universal Logo"
                     width={280}
                     height={80}
                     className="h-14 w-auto object-contain"
@@ -24,7 +24,7 @@ export default function Footer() {
                 </Link>
               </div>
               <p className="font-sans text-sm text-brand-platinum max-w-md font-light leading-relaxed">
-                Fashprism Internationals creates fashion experiences that move beyond the runway. Where fashion, culture, and experience converge.
+                FashAI Universal creates fashion experiences that move beyond the runway. Where fashion, culture, and experience converge.
               </p>
             </div>
             <div className="mt-8 text-xs font-syne tracking-micro text-brand-gold font-bold">
@@ -75,7 +75,7 @@ export default function Footer() {
         {/* Bottom Bar */}
         <div className="flex flex-col sm:flex-row justify-between items-center pt-8 text-[10px] font-syne tracking-micro text-brand-platinum gap-4">
           <div>
-            © {new Date().getFullYear()} FASHPRISM INTERNATIONALS. ALL RIGHTS RESERVED.
+            © {new Date().getFullYear()} FASHAI UNIVERSAL. ALL RIGHTS RESERVED.
           </div>
           <div className="flex gap-6">
             <Link href="/contact" className="hover:text-brand-gold transition-colors">

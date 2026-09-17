@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import GalleryView from "@/components/sections/GalleryView";
 
 export const metadata: Metadata = {
-  title: "GALLERY — FASHPRISM INTERNATIONALS",
+  title: "GALLERY — FASHAI UNIVERSAL",
   description:
     "Moments. Movement. Light. High-definition digital fashion exhibition showcasing couture moments across Paris and Dubai.",
 };

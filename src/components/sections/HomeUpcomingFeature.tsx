@@ -11,7 +11,7 @@ export default function HomeUpcomingFeature() {
       <div className="absolute inset-0 pointer-events-none opacity-20">
         <Image
           src="/assets/models/model_11.jpeg"
-          alt="Fashprism Lifestyle 2026 Dubai"
+          alt="FashAI Lifestyle 2026 Dubai"
           fill
           sizes="100vw"
           className="object-cover object-center filter grayscale contrast-125"
@@ -36,7 +36,7 @@ export default function HomeUpcomingFeature() {
           </div>
 
           <h2 className="font-serif-display text-4xl sm:text-6xl md:text-7xl font-light text-brand-off-white tracking-tight mb-2">
-            FASHPRISM LIFESTYLE
+            FASHAI LIFESTYLE
           </h2>
 
           {/* Oversized Metallic Gold 2026 Typography */}

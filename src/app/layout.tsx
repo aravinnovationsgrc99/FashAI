@@ -7,12 +7,13 @@ import Preloader from "@/components/cinematic/Preloader";
 import PageTransition from "@/components/cinematic/PageTransition";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://fashprism.com"),
-  title: "FASHPRISM INTERNATIONALS — Fashion Beyond Borders",
+  metadataBase: new URL("https://fashaiuniversal.com"),
+  title: "FASHAI UNIVERSAL — Fashion Beyond Borders",
   description:
-    "Fashprism Internationals is a digital fashion atelier uniting international runway presentations, bespoke fashion symposiums, and luxury lifestyle experiences across Paris and Dubai.",
+    "FashAI Universal is a digital fashion atelier uniting international runway presentations, bespoke fashion symposiums, and luxury lifestyle experiences across Paris and Dubai.",
   keywords: [
-    "Fashprism",
+    "FashAI Universal",
+    "FashAI",
     "Fashion Beyond Borders",
     "Haute Couture",
     "Runway 2025",
@@ -20,19 +21,19 @@ export const metadata: Metadata = {
     "Digital Atelier",
     "Luxury Fashion",
   ],
-  authors: [{ name: "Fashprism Internationals" }],
+  authors: [{ name: "FashAI Universal" }],
   openGraph: {
-    title: "FASHPRISM INTERNATIONALS — Fashion Beyond Borders",
+    title: "FASHAI UNIVERSAL — Fashion Beyond Borders",
     description:
       "A digital couture atelier synthesizing haute couture craftsmanship, international fashion films, and virtual runway presentations.",
-    url: "https://fashprism.com",
-    siteName: "Fashprism Internationals",
+    url: "https://fashaiuniversal.com",
+    siteName: "FashAI Universal",
     images: [
       {
         url: "/assets/models/model_01.jpeg",
         width: 1200,
         height: 630,
-        alt: "Fashprism Internationals Haute Couture",
+        alt: "FashAI Universal Haute Couture",
       },
     ],
     locale: "en_US",
@@ -40,7 +41,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "FASHPRISM INTERNATIONALS — Fashion Beyond Borders",
+    title: "FASHAI UNIVERSAL — Fashion Beyond Borders",
     description:
       "Haute couture digital atelier uniting international runway presentations and luxury lifestyle experiences.",
     images: ["/assets/models/model_01.jpeg"],

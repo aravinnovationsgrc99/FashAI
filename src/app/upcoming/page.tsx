@@ -3,9 +3,9 @@ import Image from "next/image";
 import UpcomingClientContent from "@/components/sections/UpcomingClientContent";
 
 export const metadata: Metadata = {
-  title: "UPCOMING — FASHPRISM LIFESTYLE 2026 DUBAI",
+  title: "UPCOMING — FASHAI LIFESTYLE 2026 DUBAI",
   description:
-    "The next chapter of Fashprism Internationals. Fashprism Lifestyle returns to Dubai in 2026.",
+    "The next chapter of FashAI Universal. FashAI Lifestyle returns to Dubai in 2026.",
 };
 
 export default function UpcomingPage() {
@@ -38,7 +38,7 @@ export default function UpcomingPage() {
         {/* Centerpiece Monolithic Typography */}
         <div className="relative z-10 max-w-7xl mx-auto w-full my-auto text-center flex flex-col items-center justify-center py-8 sm:py-12">
           <span className="font-syne text-[10px] sm:text-xs md:text-sm tracking-[0.3em] sm:tracking-[0.4em] text-brand-platinum uppercase mb-3 sm:mb-4">
-            FASHPRISM LIFESTYLE
+            FASHAI LIFESTYLE
           </span>
 
           <h1 className="font-serif-display text-[72px] xs:text-[96px] sm:text-[180px] md:text-[240px] lg:text-[320px] font-light leading-none tracking-tighter select-none bg-gradient-to-b from-[#FFF5DC] via-[#D4AF37] to-[#7A5B18] bg-clip-text text-transparent drop-shadow-2xl">
@@ -86,7 +86,7 @@ export default function UpcomingPage() {
 
           <div className="lg:col-span-6 border-l border-hairline-gold pl-6 sm:pl-12 space-y-4 sm:space-y-6">
             <p className="font-serif-display text-xl sm:text-3xl text-brand-off-white font-light leading-snug">
-              Fashprism Lifestyle 2026 — Dubai.
+              FashAI Lifestyle 2026 — Dubai.
             </p>
             <p className="font-sans text-sm sm:text-base text-brand-platinum font-light leading-relaxed">
               An anticipatory edition synthesizing international couture, bespoke luxury installations, and curated delegate assemblies set against Dubai’s monumental architectural canvas.

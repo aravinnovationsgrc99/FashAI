@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import ContactForm from "@/components/sections/ContactForm";
 
 export const metadata: Metadata = {
-  title: "CONTACT US — FASHPRISM INTERNATIONALS",
+  title: "CONTACT US — FASHAI UNIVERSAL",
   description:
-    "For enquiries, collaborations, partnerships, media and participation in Fashprism Internationals.",
+    "For enquiries, collaborations, partnerships, media and participation in FashAI Universal.",
 };
 
 export default function ContactPage() {

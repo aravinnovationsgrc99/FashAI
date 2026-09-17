@@ -72,7 +72,7 @@ export default function Lightbox({
         >
           <div className="flex items-center gap-3">
             <span className="font-serif-display text-base sm:text-xl text-brand-off-white">
-              FASHPRISM ARCHIVE
+              FASHAI ARCHIVE
             </span>
             <span className="font-syne text-[9px] sm:text-[10px] tracking-micro text-brand-gold border border-hairline-gold px-2 py-0.5">
               {currentIndex + 1} / {items.length}

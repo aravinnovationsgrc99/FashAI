@@ -89,7 +89,7 @@ export default function UpcomingClientContent() {
                   NOTIFICATION REGISTERED
                 </h3>
                 <p className="font-sans text-xs text-brand-platinum font-light mb-6">
-                  You will receive verified announcements regarding Fashprism Lifestyle 2026.
+                  You will receive verified announcements regarding FashAI Lifestyle 2026.
                 </p>
                 <button
                   onClick={() => {

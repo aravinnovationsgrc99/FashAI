@@ -31,7 +31,7 @@ export default function HomeContactInvitation() {
           transition={{ duration: 0.9, delay: 0.2 }}
           className="font-sans text-base sm:text-lg text-brand-platinum font-light max-w-xl leading-relaxed mb-12"
         >
-          For enquiries, collaborations, partnerships, media and participation in upcoming Fashprism Internationals presentations.
+          For enquiries, collaborations, partnerships, media and participation in upcoming FashAI Universal presentations.
         </motion.p>
 
         <motion.div

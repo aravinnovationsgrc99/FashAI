@@ -34,7 +34,7 @@ export default function Preloader() {
         >
           {/* Header Tag */}
           <div className="flex w-full justify-between text-xs font-syne tracking-micro text-brand-platinum border-b border-hairline pb-4 max-w-7xl">
-            <span>FASHPRISM INTERNATIONALS</span>
+            <span>FASHAI UNIVERSAL</span>
             <span>DIGITAL ATELIER</span>
           </div>
 
@@ -48,7 +48,7 @@ export default function Preloader() {
             >
               <Image
                 src="/assets/brand/logo_transparent.png"
-                alt="Fashprism Internationals Logo"
+                alt="FashAI Universal Logo"
                 width={360}
                 height={100}
                 priority

@@ -4,9 +4,9 @@ import Link from "next/link";
 import { PROJECTS_DATA, ProjectItem } from "@/data/projects";
 
 export const metadata: Metadata = {
-  title: "PROJECTS — FASHPRISM INTERNATIONALS",
+  title: "PROJECTS — FASHAI UNIVERSAL",
   description:
-    "Moments that have already happened. Explore completed Fashprism runway presentations and luxury lifestyle symposiums.",
+    "Moments that have already happened. Explore completed FashAI runway presentations and luxury lifestyle symposiums.",
 };
 
 export default function ProjectsPage() {

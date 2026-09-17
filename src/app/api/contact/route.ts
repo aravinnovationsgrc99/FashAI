@@ -22,7 +22,7 @@ export async function POST(request: Request) {
       );
     }
 
-    console.log("Fashprism Contact Enquiry Received:", {
+    console.log("FashAI Universal Contact Enquiry Received:", {
       name,
       email,
       phone,

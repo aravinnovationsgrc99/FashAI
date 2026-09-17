@@ -30,7 +30,7 @@ export default function Faces() {
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 border-b border-hairline pb-8">
           <div>
             <span className="text-xs font-syne tracking-micro text-brand-orange block mb-2">
-              03 / THE FACES OF FASHPRISM
+              03 / THE FACES OF FASHAI
             </span>
             <h2 className="font-serif-display text-4xl sm:text-6xl font-light text-brand-off-white">
               DELEGATES & TALENT

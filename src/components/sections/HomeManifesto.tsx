@@ -37,7 +37,7 @@ export default function HomeManifesto() {
             transition={{ duration: 0.9, delay: 0.2 }}
             className="font-sans text-base sm:text-lg md:text-xl text-brand-platinum font-light leading-relaxed border-l border-brand-gold/60 pl-6 sm:pl-8 py-2"
           >
-            Fashion exists beyond garment lines and runway tracks. It is a living dialogue of culture, kinetic movement, and international identity. Fashprism Internationals connects creative visionaries across Paris and Dubai to create transcendent physical and digital fashion experiences.
+            Fashion exists beyond garment lines and runway tracks. It is a living dialogue of culture, kinetic movement, and international identity. FashAI Universal connects creative visionaries across Paris and Dubai to create transcendent physical and digital fashion experiences.
           </motion.p>
         </div>
       </div>
