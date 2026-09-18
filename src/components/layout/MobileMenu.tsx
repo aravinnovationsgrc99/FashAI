@@ -73,11 +73,11 @@ export default function MobileMenu({
             <Link href="/" onClick={onClose} className="flex items-center min-h-[44px]">
               <Image
                 src="/assets/brand/logo_transparent.png"
-                alt="FashAI Universal Logo"
-                width={180}
-                height={50}
+                alt="Fashprism Internationals Logo"
+                width={190}
+                height={54}
                 priority
-                className="h-8 w-auto object-contain"
+                className="h-9 w-auto object-contain"
               />
             </Link>
             <button
@@ -141,8 +141,8 @@ export default function MobileMenu({
               BE A PART ↗
             </Link>
             <div className="flex justify-between items-center text-[10px] font-syne tracking-micro text-brand-platinum pt-1">
-              <span>FASHAI UNIVERSAL</span>
-              <span className="text-brand-gold font-bold">PARIS — DUBAI</span>
+              <span>FASHPRISM INTERNATIONALS</span>
+              <span className="text-brand-gold font-bold">DUBAI — PARIS</span>
             </div>
           </motion.div>
         </motion.div>

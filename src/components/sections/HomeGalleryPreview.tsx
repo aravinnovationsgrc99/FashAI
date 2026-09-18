@@ -10,8 +10,8 @@ export default function HomeGalleryPreview() {
   const previewItems = MODELS_DATA.allImages.slice(0, 6);
 
   return (
-    <section className="relative py-24 px-6 sm:px-12 bg-brand-void border-b border-hairline-gold overflow-hidden">
-      <div className="mx-auto max-w-7xl w-full">
+    <section className="relative py-24 bg-brand-void border-b border-hairline-gold overflow-hidden">
+      <div className="container-editorial">
         {/* Section Header */}
         <div className="flex flex-col sm:flex-row justify-between items-start sm:items-end mb-16 border-b border-hairline-gold pb-8">
           <div>
