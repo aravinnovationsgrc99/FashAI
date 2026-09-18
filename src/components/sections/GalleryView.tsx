@@ -11,7 +11,7 @@ type ViewMode = "INDEX" | "COLLECTION";
 export default function GalleryView() {
   const [activeFilter, setActiveFilter] = useState<string>("ALL");
   const [selectedModelId, setSelectedModelId] = useState<string | null>(null);
-  const [viewMode, setViewMode] = useState<ViewMode>("INDEX");
+  const [viewMode, setViewMode] = useState<ViewMode>("COLLECTION");
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(0);
 
