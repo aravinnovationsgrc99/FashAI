@@ -215,14 +215,15 @@ export default function PrismScene() {
 
       animationFrameId = requestAnimationFrame(animate);
 
-      currentMouseX += (targetMouseX - currentMouseX) * 0.05;
-      currentMouseY += (targetMouseY - currentMouseY) * 0.05;
+      currentMouseX += (targetMouseX - currentMouseX) * 0.04;
+      currentMouseY += (targetMouseY - currentMouseY) * 0.04;
 
-      mainGroup.position.x = currentMouseX * 0.5;
-      mainGroup.position.y = currentMouseY * 0.3;
+      const baseX = isMobile ? 0 : 1.8;
+      mainGroup.position.x = baseX + currentMouseX * 0.35;
+      mainGroup.position.y = currentMouseY * 0.25;
 
-      mainGroup.rotation.y = currentMouseX * 0.4 + Date.now() * 0.0003;
-      mainGroup.rotation.x = currentMouseY * 0.3;
+      mainGroup.rotation.y = currentMouseX * 0.3 + Date.now() * 0.00025;
+      mainGroup.rotation.x = currentMouseY * 0.2;
 
       ring1.rotation.z += 0.001;
       ring2.rotation.z -= 0.0012;

@@ -115,7 +115,22 @@ body {
   -webkit-text-fill-color: transparent;
 }
 
-/* Hairline Gold Borders */
+/* Container & Grid Utilities for 88-94% screen width utilization */
+.container-editorial {
+  width: 92%;
+  max-width: 1536px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (min-width: 1920px) {
+  .container-editorial {
+    max-width: 1720px;
+    width: 90%;
+  }
+}
+
+/* Hairline Gold Borders & Dividers */
 .border-hairline {
   border-width: 1px;
   border-color: rgba(229, 194, 135, 0.2);
@@ -133,7 +148,7 @@ body {
 
 /* Vignette & Grain Effect */
 .bg-vignette {
-  background: radial-gradient(circle at center, transparent 35%, rgba(5, 5, 5, 0.92) 100%);
+  background: radial-gradient(circle at center, transparent 30%, rgba(5, 5, 5, 0.94) 100%);
 }
 
 .bg-cinematic-overlay {
@@ -146,4 +161,5 @@ body {
     cursor: default;
   }
 }
+
 

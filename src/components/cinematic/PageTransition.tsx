@@ -8,16 +8,19 @@ export default function PageTransition({ children }: { children: React.ReactNode
 
   return (
     <AnimatePresence mode="wait">
-      <motion.div key={pathname} className="min-h-screen flex flex-col">
-        {/* Subtle Gold Curtain Reveal Overlay */}
+      <motion.div key={pathname} className="min-h-screen w-full">
+        {/* Subtle Black + Gold Overlay Reveal on Route Transition */}
         <motion.div
-          initial={{ scaleY: 1 }}
-          animate={{ scaleY: 0 }}
-          exit={{ scaleY: 1 }}
-          transition={{ duration: 0.5, ease: [0.76, 0, 0.24, 1] }}
-          style={{ originY: 0 }}
-          className="fixed inset-0 z-[90] bg-brand-void pointer-events-none border-b border-brand-gold/40"
-        />
+          initial={{ opacity: 1 }}
+          animate={{ opacity: 0 }}
+          exit={{ opacity: 1 }}
+          transition={{ duration: 0.45, ease: [0.16, 1, 0.3, 1] }}
+          className="fixed inset-0 z-[300] pointer-events-none bg-brand-void flex flex-col justify-between p-8"
+        >
+          <div className="w-full h-px bg-gradient-to-r from-transparent via-brand-gold to-transparent opacity-60" />
+          <div className="w-full h-px bg-gradient-to-r from-transparent via-brand-gold to-transparent opacity-60" />
+        </motion.div>
+
         {children}
       </motion.div>
     </AnimatePresence>

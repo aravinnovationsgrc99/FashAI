@@ -20,22 +20,22 @@ export default function Header() {
   const pathname = usePathname();
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-brand-void/90 backdrop-blur-md border-b border-hairline transition-all duration-300">
-      <div className="mx-auto flex max-w-7xl items-center justify-between px-4 sm:px-6 py-3 min-h-[56px]">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-brand-void/90 backdrop-blur-md border-b border-hairline-gold/40 transition-all duration-300">
+      <div className="container-editorial flex items-center justify-between py-3 min-h-[64px]">
         {/* Official Brand Logo */}
-        <Link href="/" className="flex items-center gap-2 group py-1.5 min-h-[44px]">
+        <Link href="/" className="flex items-center gap-2 group py-1 min-h-[44px]">
           <Image
             src="/assets/brand/logo_transparent.png"
-            alt="FashAI Universal Logo"
-            width={240}
-            height={70}
+            alt="Fashprism Internationals Logo"
+            width={260}
+            height={76}
             priority
-            className="h-8 sm:h-11 w-auto object-contain transition-opacity duration-300 group-hover:opacity-90"
+            className="h-10 sm:h-12 w-auto object-contain transition-opacity duration-300 group-hover:opacity-90"
           />
         </Link>
 
         {/* Desktop Navigation Links */}
-        <nav className="hidden lg:flex items-center space-x-8 text-[11px] font-syne tracking-caps">
+        <nav className="hidden lg:flex items-center space-x-10 text-[11px] font-syne tracking-caps font-medium">
           {NAV_ITEMS.map((item) => {
             const isActive =
               item.href === "/"
@@ -46,7 +46,7 @@ export default function Header() {
               <Link
                 key={item.href}
                 href={item.href}
-                className={`relative py-1 transition-colors ${
+                className={`relative py-1.5 transition-colors ${
                   isActive
                     ? "text-brand-gold font-bold"
                     : "text-brand-off-white/70 hover:text-brand-gold"
@@ -54,7 +54,7 @@ export default function Header() {
               >
                 {item.label}
                 {isActive && (
-                  <span className="absolute bottom-0 left-0 right-0 h-[1px] bg-brand-gold" />
+                  <span className="absolute bottom-0 left-0 right-0 h-[1.5px] bg-gradient-to-r from-[#F5DFB3] via-[#D4AF37] to-[#A37F2C]" />
                 )}
               </Link>
             );

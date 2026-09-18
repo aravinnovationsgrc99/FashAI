@@ -7,13 +7,13 @@ import Preloader from "@/components/cinematic/Preloader";
 import PageTransition from "@/components/cinematic/PageTransition";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://fashaiuniversal.com"),
-  title: "FASHAI UNIVERSAL — Fashion Beyond Borders",
+  metadataBase: new URL("https://fashprisminternationals.com"),
+  title: "FASHPRISM INTERNATIONALS — Fashion Beyond Borders",
   description:
-    "FashAI Universal is a digital fashion atelier uniting international runway presentations, bespoke fashion symposiums, and luxury lifestyle experiences across Paris and Dubai.",
+    "Fashprism Internationals is a digital fashion atelier uniting international runway presentations, bespoke fashion symposiums, and luxury lifestyle experiences across Paris and Dubai.",
   keywords: [
-    "FashAI Universal",
-    "FashAI",
+    "Fashprism Internationals",
+    "Fashprism",
     "Fashion Beyond Borders",
     "Haute Couture",
     "Runway 2025",
@@ -21,13 +21,13 @@ export const metadata: Metadata = {
     "Digital Atelier",
     "Luxury Fashion",
   ],
-  authors: [{ name: "FashAI Universal" }],
+  authors: [{ name: "Fashprism Internationals" }],
   openGraph: {
-    title: "FASHAI UNIVERSAL — Fashion Beyond Borders",
+    title: "FASHPRISM INTERNATIONALS — Fashion Beyond Borders",
     description:
       "A digital couture atelier synthesizing haute couture craftsmanship, international fashion films, and virtual runway presentations.",
-    url: "https://fashaiuniversal.com",
-    siteName: "FashAI Universal",
+    url: "https://fashprisminternationals.com",
+    siteName: "Fashprism Internationals",
     images: [
       {
         url: "/assets/models/model_01.jpeg",

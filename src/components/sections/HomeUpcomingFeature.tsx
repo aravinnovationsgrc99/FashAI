@@ -19,7 +19,7 @@ export default function HomeUpcomingFeature() {
         <div className="absolute inset-0 bg-gradient-to-t from-brand-void via-brand-void/90 to-brand-void/80" />
       </div>
 
-      <div className="relative z-10 mx-auto max-w-7xl w-full">
+      <div className="relative z-10 container-editorial">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -28,15 +28,15 @@ export default function HomeUpcomingFeature() {
           className="flex flex-col items-center text-center max-w-5xl mx-auto"
         >
           {/* Tagline */}
-          <div className="inline-flex items-center gap-3 border border-brand-gold/40 px-4 py-1.5 mb-8 bg-brand-void/90">
-            <span className="h-1.5 w-1.5 bg-brand-gold animate-pulse" />
-            <span className="font-syne text-xs tracking-micro text-brand-gold font-bold">
+          <div className="inline-flex items-center gap-3 border border-hairline-gold px-4 py-1.5 mb-8 bg-brand-void/90">
+            <span className="h-1.5 w-1.5 rounded-full bg-brand-gold animate-pulse" />
+            <span className="font-syne text-xs tracking-micro text-brand-gold font-bold uppercase">
               UPCOMING CHAPTER / DUBAI
             </span>
           </div>
 
           <h2 className="font-serif-display text-4xl sm:text-6xl md:text-7xl font-light text-brand-off-white tracking-tight mb-2">
-            FASHAI LIFESTYLE
+            FASHPRISM LIFESTYLE
           </h2>
 
           {/* Oversized Metallic Gold 2026 Typography */}
@@ -44,7 +44,7 @@ export default function HomeUpcomingFeature() {
             2026
           </div>
 
-          <p className="font-syne text-xs sm:text-sm tracking-caps text-brand-gold font-bold mb-6">
+          <p className="font-syne text-xs sm:text-sm tracking-caps text-brand-gold font-bold mb-6 uppercase">
             DUBAI, UNITED ARAB EMIRATES
           </p>
 
@@ -53,7 +53,7 @@ export default function HomeUpcomingFeature() {
           </p>
 
           {/* Factually Verified Status Banner */}
-          <div className="inline-flex items-center gap-6 border border-hairline bg-brand-charcoal/90 px-8 py-3.5 mb-10 text-xs font-syne tracking-caps">
+          <div className="inline-flex items-center gap-6 border border-hairline-gold bg-brand-charcoal/90 px-8 py-3.5 mb-10 text-xs font-syne tracking-caps">
             <span className="text-brand-platinum">STATUS:</span>
             <span className="text-brand-gold font-bold">COMING SOON</span>
             <span className="text-brand-platinum">|</span>
@@ -65,7 +65,7 @@ export default function HomeUpcomingFeature() {
           <div>
             <Link
               href="/upcoming"
-              className="bg-brand-gold px-10 py-5 text-xs font-syne tracking-caps font-bold text-brand-black hover:bg-brand-gold-pure transition-colors inline-block"
+              className="bg-gradient-to-r from-[#F5DFB3] via-[#D4AF37] to-[#A37F2C] px-10 py-5 text-xs font-syne tracking-caps font-bold text-brand-void hover:opacity-90 transition-opacity shadow-lg inline-block"
               data-cursor="explore"
             >
               DISCOVER 2026 ↗
