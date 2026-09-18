@@ -108,7 +108,14 @@ export default function Gallery() {
       <Lightbox
         isOpen={lightboxOpen}
         currentIndex={currentIndex}
-        items={GALLERY_DATA}
+        items={GALLERY_DATA.map((g) => ({
+          id: g.id,
+          title: g.title,
+          subtitle: `${g.subtitle} — ${g.category} (${g.year})`,
+          src: g.image,
+          category: g.category,
+          tag: g.tag,
+        }))}
         onClose={() => setLightboxOpen(false)}
         onNext={handleNext}
         onPrev={handlePrev}

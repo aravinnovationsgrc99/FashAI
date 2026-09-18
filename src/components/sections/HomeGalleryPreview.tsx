@@ -3,39 +3,40 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
-import { GALLERY_DATA } from "@/data/gallery";
+import { MODELS_DATA } from "@/data/models";
 
 export default function HomeGalleryPreview() {
-  // Select first 5 strong items for preview
-  const previewItems = GALLERY_DATA.slice(0, 5);
+  // Select top model covers for homepage preview
+  const previewItems = MODELS_DATA.allImages.slice(0, 6);
 
   return (
-    <section className="relative min-h-screen w-full flex flex-col justify-center py-24 px-6 sm:px-12 bg-brand-void border-b border-hairline overflow-hidden">
+    <section className="relative py-24 px-6 sm:px-12 bg-brand-void border-b border-hairline-gold overflow-hidden">
       <div className="mx-auto max-w-7xl w-full">
         {/* Section Header */}
-        <div className="flex flex-col sm:flex-row justify-between items-start sm:items-end mb-16 border-b border-hairline pb-8">
+        <div className="flex flex-col sm:flex-row justify-between items-start sm:items-end mb-16 border-b border-hairline-gold pb-8">
           <div>
-            <span className="text-xs font-syne tracking-micro text-brand-gold block mb-3 font-bold">
-              04 / CURATED PHOTOGRAPHY
+            <span className="text-xs font-syne tracking-micro text-brand-gold block mb-3 font-bold uppercase">
+              04 / THE FACES OF FASHPRISM
             </span>
             <h2 className="font-serif-display text-4xl sm:text-6xl font-light text-brand-off-white">
-              A GLIMPSE
+              THE VISUAL ARCHIVE
             </h2>
           </div>
           <p className="font-sans text-xs sm:text-sm text-brand-platinum max-w-xs mt-4 sm:mt-0 font-light">
-            Moments. Movement. Light. High-definition exhibition preview.
+            Moments. Movement. Light. High-definition digital fashion exhibition showcasing {MODELS_DATA.totalImages} official captures.
           </p>
         </div>
 
-        {/* 5-Image Editorial Grid */}
+        {/* 6-Image Editorial Grid */}
         <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
           {previewItems.map((item, index) => {
             const spans = [
               "md:col-span-7",
               "md:col-span-5",
               "md:col-span-4",
-              "md:col-span-4",
-              "md:col-span-4",
+              "md:col-span-8",
+              "md:col-span-6",
+              "md:col-span-6",
             ];
             const colSpan = spans[index % spans.length];
 
@@ -45,28 +46,33 @@ export default function HomeGalleryPreview() {
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                className={`${colSpan} group relative overflow-hidden bg-brand-charcoal border border-hairline`}
-                data-cursor="view"
+                transition={{ duration: 0.6, delay: index * 0.08 }}
+                className={`${colSpan} group relative overflow-hidden bg-brand-charcoal border border-hairline-gold/60 hover:border-brand-gold transition-colors`}
               >
                 <Link href="/gallery">
-                  <div className="relative aspect-[4/5] sm:aspect-auto sm:min-h-[360px] w-full overflow-hidden">
+                  <div className="relative aspect-[4/5] w-full overflow-hidden">
                     <Image
-                      src={item.image}
-                      alt={item.title}
+                      src={item.thumb}
+                      alt={item.modelName}
                       fill
                       sizes="(max-width: 768px) 100vw, 50vw"
-                      className="object-cover filter grayscale contrast-125 transition-transform duration-700 ease-out group-hover:scale-105 group-hover:grayscale-0"
+                      className="object-cover filter contrast-110 transition-transform duration-700 ease-out group-hover:scale-105"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-brand-void/90 via-transparent to-transparent opacity-80 group-hover:opacity-40 transition-opacity" />
 
+                    <div className="absolute top-4 left-4">
+                      <span className="bg-brand-void/90 border border-hairline-gold px-2.5 py-1 text-[9px] font-syne tracking-micro text-brand-gold font-bold">
+                        {item.tag}
+                      </span>
+                    </div>
+
                     <div className="absolute bottom-6 left-6 right-6 flex justify-between items-end">
                       <div>
-                        <div className="text-[10px] font-syne tracking-micro text-brand-gold font-bold">
-                          {item.category} / {item.year}
+                        <div className="text-[10px] font-syne tracking-micro text-brand-gold font-bold uppercase">
+                          {item.modelName} • {item.category}
                         </div>
-                        <h3 className="font-serif-display text-lg sm:text-xl font-light text-brand-off-white group-hover:text-brand-gold transition-colors mt-1">
-                          {item.title}
+                        <h3 className="font-serif-display text-lg sm:text-xl font-light text-brand-off-white group-hover:text-brand-gold transition-colors mt-0.5">
+                          FASHPRISM EXHIBITION
                         </h3>
                       </div>
                       <span className="text-xs font-syne text-brand-gold group-hover:translate-x-1 transition-transform">
@@ -81,17 +87,18 @@ export default function HomeGalleryPreview() {
         </div>
 
         {/* CTA */}
-        <div className="mt-16 text-center border-t border-hairline pt-10">
+        <div className="mt-16 text-center border-t border-hairline-gold pt-10">
           <Link
             href="/gallery"
-            className="inline-flex items-center gap-3 bg-brand-gold px-10 py-5 text-xs font-syne tracking-caps font-bold text-brand-black hover:bg-brand-gold-pure transition-colors"
+            className="inline-flex items-center gap-3 bg-gradient-to-r from-[#F5DFB3] via-[#D4AF37] to-[#A37F2C] px-10 py-5 text-xs font-syne tracking-caps font-bold text-brand-void hover:opacity-90 transition-opacity shadow-lg"
             data-cursor="explore"
           >
-            <span>ENTER GALLERY ↗</span>
+            <span>EXPLORE COMPLETE VISUAL ARCHIVE ({MODELS_DATA.totalImages} IMAGES) ↗</span>
           </Link>
         </div>
       </div>
     </section>
   );
 }
+
 

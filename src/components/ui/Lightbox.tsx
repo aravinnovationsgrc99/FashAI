@@ -1,15 +1,25 @@
 "use client";
 
-import { useEffect, useCallback } from "react";
+import { useEffect, useCallback, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import { X, ChevronLeft, ChevronRight } from "lucide-react";
-import { GalleryItem } from "@/data/gallery";
+import { ModelImageItem } from "@/data/models";
+
+export interface UnifiedLightboxItem {
+  id: string;
+  title: string;
+  subtitle?: string;
+  src: string;
+  category?: string;
+  tag?: string;
+  modelName?: string;
+}
 
 interface LightboxProps {
   isOpen: boolean;
   currentIndex: number;
-  items: GalleryItem[];
+  items: (UnifiedLightboxItem | ModelImageItem)[];
   onClose: () => void;
   onNext: () => void;
   onPrev: () => void;
@@ -23,7 +33,27 @@ export default function Lightbox({
   onNext,
   onPrev,
 }: LightboxProps) {
-  const currentItem = items[currentIndex];
+  const [touchStartX, setTouchStartX] = useState<number | null>(null);
+
+  const rawItem = items[currentIndex];
+
+  const currentItem: UnifiedLightboxItem | null = rawItem
+    ? {
+        id: rawItem.id,
+        title:
+          "modelName" in rawItem
+            ? `${rawItem.modelName} — ${rawItem.tag}`
+            : rawItem.title,
+        subtitle:
+          "filename" in rawItem
+            ? `${rawItem.orientation.toUpperCase()} • ${rawItem.width}×${rawItem.height}`
+            : rawItem.subtitle,
+        src: "src" in rawItem ? rawItem.src : (rawItem as any).image,
+        category: "category" in rawItem ? rawItem.category : undefined,
+        tag: "tag" in rawItem ? rawItem.tag : undefined,
+        modelName: "modelName" in rawItem ? rawItem.modelName : undefined,
+      }
+    : null;
 
   const handleKeyDown = useCallback(
     (e: KeyboardEvent) => {
@@ -51,6 +81,25 @@ export default function Lightbox({
     };
   }, [isOpen, handleKeyDown]);
 
+  const handleTouchStart = (e: React.TouchEvent) => {
+    setTouchStartX(e.touches[0].clientX);
+  };
+
+  const handleTouchEnd = (e: React.TouchEvent) => {
+    if (touchStartX === null) return;
+    const touchEndX = e.changedTouches[0].clientX;
+    const diff = touchStartX - touchEndX;
+
+    if (Math.abs(diff) > 40) {
+      if (diff > 0) {
+        onNext();
+      } else {
+        onPrev();
+      }
+    }
+    setTouchStartX(null);
+  };
+
   if (!isOpen || !currentItem) return null;
 
   return (
@@ -62,8 +111,10 @@ export default function Lightbox({
         className="fixed inset-0 z-[200] flex flex-col justify-between bg-brand-void/98 p-4 sm:p-8 pt-safe pb-safe backdrop-blur-2xl min-h-[100dvh]"
         role="dialog"
         aria-modal="true"
-        aria-label="Digital Exhibition Lightbox"
+        aria-label="Digital Exhibition Fullscreen Lightbox"
         onClick={onClose}
+        onTouchStart={handleTouchStart}
+        onTouchEnd={handleTouchEnd}
       >
         {/* Top Control Bar */}
         <div
@@ -71,20 +122,20 @@ export default function Lightbox({
           onClick={(e) => e.stopPropagation()}
         >
           <div className="flex items-center gap-3">
-            <span className="font-serif-display text-base sm:text-xl text-brand-off-white">
-              FASHAI ARCHIVE
+            <span className="font-serif-display text-base sm:text-xl text-brand-off-white tracking-wide">
+              FASHPRISM VISUAL ARCHIVE
             </span>
-            <span className="font-syne text-[9px] sm:text-[10px] tracking-micro text-brand-gold border border-hairline-gold px-2 py-0.5">
-              {currentIndex + 1} / {items.length}
+            <span className="font-syne text-[10px] sm:text-xs tracking-micro text-brand-gold border border-hairline-gold px-2.5 py-0.5 font-semibold">
+              {String(currentIndex + 1).padStart(2, "0")} / {String(items.length).padStart(2, "0")}
             </span>
           </div>
 
           <button
             onClick={onClose}
-            className="p-3 min-w-[44px] min-h-[44px] flex items-center justify-center text-brand-off-white hover:text-brand-gold transition-colors"
+            className="p-2.5 min-w-[44px] min-h-[44px] flex items-center justify-center text-brand-off-white hover:text-brand-gold transition-colors border border-hairline hover:border-hairline-gold"
             aria-label="Close Lightbox"
           >
-            <X className="h-6 w-6" />
+            <X className="h-5 w-5" />
           </button>
         </div>
 
@@ -105,14 +156,14 @@ export default function Lightbox({
           {/* Main Image Frame */}
           <motion.div
             key={currentItem.id}
-            initial={{ scale: 0.95, opacity: 0 }}
+            initial={{ scale: 0.96, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
-            exit={{ scale: 0.95, opacity: 0 }}
-            transition={{ duration: 0.3 }}
-            className="relative h-[55vh] sm:h-[65vh] w-[88vw] max-w-5xl border border-hairline-gold bg-brand-charcoal overflow-hidden shadow-2xl"
+            exit={{ scale: 0.96, opacity: 0 }}
+            transition={{ duration: 0.25 }}
+            className="relative h-[65vh] sm:h-[72vh] w-[90vw] max-w-5xl border border-hairline-gold bg-black/90 overflow-hidden shadow-2xl"
           >
             <Image
-              src={currentItem.image}
+              src={currentItem.src}
               alt={currentItem.title}
               fill
               priority
@@ -137,16 +188,18 @@ export default function Lightbox({
           onClick={(e) => e.stopPropagation()}
         >
           <div>
-            <h3 className="font-serif-display text-lg sm:text-2xl font-light text-brand-off-white">
+            <h3 className="font-serif-display text-lg sm:text-2xl font-light text-brand-off-white tracking-wide">
               {currentItem.title}
             </h3>
-            <p className="font-syne text-[10px] sm:text-xs tracking-micro text-brand-platinum mt-0.5">
-              {currentItem.subtitle} — {currentItem.category} ({currentItem.year})
-            </p>
+            {currentItem.subtitle && (
+              <p className="font-syne text-[10px] sm:text-xs tracking-micro text-brand-platinum mt-0.5">
+                {currentItem.subtitle} {currentItem.category ? `• ${currentItem.category}` : ""}
+              </p>
+            )}
           </div>
 
-          <div className="text-[9px] sm:text-[10px] font-syne tracking-micro text-brand-gold">
-            SWIPE / ARROWS TO NAVIGATE • ESC TO CLOSE
+          <div className="text-[9px] sm:text-[10px] font-syne tracking-micro text-brand-gold uppercase">
+            KEYBOARD ← / → • SWIPE MOBILE • ESC CLOSE
           </div>
         </div>
       </motion.div>

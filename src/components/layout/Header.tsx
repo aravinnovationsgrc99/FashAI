@@ -65,7 +65,7 @@ export default function Header() {
         <div className="flex items-center gap-3">
           <Link
             href="/contact"
-            className="hidden sm:inline-flex items-center justify-center bg-brand-gold px-5 py-2 text-[11px] font-syne tracking-caps font-bold text-brand-black hover:bg-brand-gold-pure transition-colors"
+            className="hidden sm:inline-flex items-center justify-center bg-gradient-to-r from-[#F5DFB3] via-[#D4AF37] to-[#A37F2C] px-5 py-2 text-[11px] font-syne tracking-caps font-bold text-brand-void hover:opacity-90 transition-opacity shadow-sm"
             data-cursor="explore"
           >
             BE A PART ↗
