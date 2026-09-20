@@ -6,19 +6,18 @@ import Link from "next/link";
 import { MODELS_DATA } from "@/data/models";
 
 export default function HomeGalleryPreview() {
-  // Select top model covers for homepage preview
   const previewItems = MODELS_DATA.allImages.slice(0, 6);
 
   return (
     <section className="relative py-24 bg-brand-void border-b border-hairline-orange overflow-hidden">
-      <div className="container-editorial">
+      <div className="w-[94%] max-w-[1800px] mx-auto px-4 sm:px-8">
         {/* Section Header */}
-        <div className="flex flex-col sm:flex-row justify-between items-start sm:items-end mb-16 border-b border-hairline-orange pb-8">
+        <div className="flex flex-col sm:flex-row justify-between items-start sm:items-end mb-16 border-b border-hairline-orange/50 pb-8">
           <div>
             <span className="text-xs font-syne tracking-micro text-brand-orange block mb-3 font-bold uppercase">
-              04 / THE FACES OF FASHPRISM
+              GALLERY / FASHAI UNIVERSE
             </span>
-            <h2 className="font-serif-display text-4xl sm:text-6xl font-light text-brand-white">
+            <h2 className="font-serif-display text-4xl sm:text-6xl font-light text-brand-white uppercase">
               THE VISUAL ARCHIVE
             </h2>
           </div>
@@ -28,7 +27,7 @@ export default function HomeGalleryPreview() {
         </div>
 
         {/* 6-Image Editorial Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-6 sm:gap-8 items-start">
           {previewItems.map((item, index) => {
             const spans = [
               "md:col-span-7",
@@ -39,8 +38,6 @@ export default function HomeGalleryPreview() {
               "md:col-span-6",
             ];
             const colSpan = spans[index % spans.length];
-
-            const isGreenTag = index % 2 === 0;
 
             return (
               <motion.div
@@ -55,7 +52,7 @@ export default function HomeGalleryPreview() {
                   <div className="relative aspect-[4/5] w-full overflow-hidden">
                     <Image
                       src={item.thumb}
-                      alt={item.modelName}
+                      alt={`FashAI Universe Capture ${index + 1}`}
                       fill
                       sizes="(max-width: 768px) 100vw, 50vw"
                       className="object-cover filter contrast-110 transition-transform duration-700 ease-out group-hover:scale-105"
@@ -64,11 +61,7 @@ export default function HomeGalleryPreview() {
 
                     {/* Tag badge */}
                     <div className="absolute top-4 left-4">
-                      <span className={`bg-brand-void/90 px-2.5 py-1 text-[9px] font-syne tracking-micro font-bold border ${
-                        isGreenTag
-                          ? "border-brand-green/50 text-brand-green"
-                          : "border-brand-lemon/50 text-brand-lemon"
-                      }`}>
+                      <span className="bg-brand-void/90 px-3 py-1 text-[9px] font-syne tracking-micro font-bold border border-brand-orange/40 text-brand-orange uppercase">
                         {item.tag}
                       </span>
                     </div>
@@ -78,11 +71,11 @@ export default function HomeGalleryPreview() {
 
                     <div className="absolute bottom-6 left-6 right-6 flex justify-between items-end">
                       <div>
-                        <div className="text-[10px] font-syne tracking-micro text-brand-lemon font-bold uppercase">
-                          {item.modelName} • {item.category}
+                        <div className="text-[10px] font-syne tracking-micro text-brand-yellow-golden font-bold uppercase">
+                          FASHAI UNIVERSE • {item.category}
                         </div>
                         <h3 className="font-serif-display text-lg sm:text-xl font-light text-brand-white group-hover:text-brand-orange transition-colors duration-300 mt-0.5">
-                          FASHPRISM EXHIBITION
+                          EDITORIAL EXHIBITION
                         </h3>
                       </div>
                       <span className="text-xs font-syne text-brand-orange group-hover:translate-x-1 transition-transform duration-300">
@@ -97,10 +90,10 @@ export default function HomeGalleryPreview() {
         </div>
 
         {/* CTA */}
-        <div className="mt-16 text-center border-t border-hairline-orange pt-10">
+        <div className="mt-16 text-center border-t border-hairline-orange/50 pt-10">
           <Link
             href="/gallery"
-            className="inline-flex items-center gap-3 bg-brand-orange px-10 py-5 text-xs font-syne tracking-caps font-bold text-white hover:bg-[#ff6f2d] hover:translate-y-[-2px] transition-all duration-300 shadow-xl"
+            className="inline-flex items-center gap-3 bg-brand-orange px-10 py-5 text-xs font-syne tracking-caps font-bold text-white hover:bg-[#ff6f2d] hover:shadow-[0_0_25px_rgba(241,94,28,0.4)] hover:-translate-y-0.5 transition-all duration-300 shadow-xl"
             data-cursor="explore"
           >
             <span>EXPLORE COMPLETE VISUAL ARCHIVE ({MODELS_DATA.totalImages} IMAGES) ↗</span>
@@ -110,5 +103,6 @@ export default function HomeGalleryPreview() {
     </section>
   );
 }
+
 
 

@@ -1,20 +1,19 @@
 import Hero from "@/components/sections/Hero";
-import FeshAiIntro from "@/components/sections/FeshAiIntro";
-import Chapter2025 from "@/components/sections/Chapter2025";
-import Transition2025to2026 from "@/components/sections/Transition2025to2026";
-import Chapter2026 from "@/components/sections/Chapter2026";
-import HomeContactInvitation from "@/components/sections/HomeContactInvitation";
+import HomeFeaturedProjects from "@/components/sections/HomeFeaturedProjects";
+import HomeUpcomingFeature from "@/components/sections/HomeUpcomingFeature";
+import HomeGalleryPreview from "@/components/sections/HomeGalleryPreview";
+import InstagramSection from "@/components/sections/InstagramSection";
+import ContactSection from "@/components/sections/ContactSection";
 
 export default function Home() {
   return (
-    <>
+    <main className="min-h-screen bg-brand-void text-brand-white selection:bg-brand-orange selection:text-white">
       <Hero />
-      <FeshAiIntro />
-      <Chapter2025 />
-      <Transition2025to2026 />
-      <Chapter2026 />
-      <HomeContactInvitation />
-    </>
+      <HomeFeaturedProjects />
+      <HomeUpcomingFeature />
+      <HomeGalleryPreview />
+      <InstagramSection />
+      <ContactSection />
+    </main>
   );
 }
-

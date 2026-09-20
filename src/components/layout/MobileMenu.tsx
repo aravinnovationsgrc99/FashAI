@@ -71,11 +71,11 @@ export default function MobileMenu({
             className="flex items-center justify-between border-b border-hairline-orange pb-4 pt-2"
           >
             <Link href="/" onClick={onClose} className="flex flex-col min-h-[44px]">
-              <span className="font-syne text-base tracking-[0.2em] font-extrabold text-brand-white">
-                FESH AI UNIVERSE
+              <span className="font-syne text-base sm:text-lg tracking-[0.18em] font-extrabold text-brand-white">
+                FashAI Universe
               </span>
               <span className="font-syne text-[10px] tracking-micro text-brand-orange font-semibold uppercase">
-                Powered by RA Innovation
+                Powered by Arav Innovation
               </span>
             </Link>
             <button
@@ -132,15 +132,15 @@ export default function MobileMenu({
             className="border-t border-hairline-orange pt-6 pb-4 flex flex-col space-y-4"
           >
             <Link
-              href="/2026"
+              href="/contact"
               onClick={onClose}
               className="w-full bg-brand-orange py-4 text-center text-xs font-syne tracking-caps font-bold text-white hover:bg-[#ff6f2d] transition-colors min-h-[48px] flex items-center justify-center shadow-lg"
             >
-              EXPLORE 2026 ↗
+              CONTACT US ↗
             </Link>
             <div className="flex justify-between items-center text-[10px] font-syne tracking-micro text-brand-platinum pt-1">
-              <span>FESH AI UNIVERSE</span>
-              <span className="text-brand-orange font-bold">A PROJECT WITHIN FESH PRISM</span>
+              <span>FashAI Universe</span>
+              <span className="text-brand-orange font-bold uppercase">Powered by Arav Innovation</span>
             </div>
           </motion.div>
         </motion.div>

@@ -1,12 +1,18 @@
 import type { Metadata } from "next";
-import Page2026 from "@/app/2026/page";
+import HomeUpcomingFeature from "@/components/sections/HomeUpcomingFeature";
+import InstagramSection from "@/components/sections/InstagramSection";
 
 export const metadata: Metadata = {
-  title: "2026 DUBAI — FESH AI UNIVERSE",
+  title: "Upcoming 2026 Dubai — FashAI Universe",
   description:
-    "The upcoming 2026 Dubai chapter of Fesh AI Universe. Powered by RA Innovation.",
+    "The upcoming 2026 Dubai chapter of FashAI Universe. Powered by Arav Innovation.",
 };
 
 export default function UpcomingPage() {
-  return <Page2026 />;
+  return (
+    <div className="bg-brand-void text-brand-white pt-24 min-h-screen">
+      <HomeUpcomingFeature />
+      <InstagramSection />
+    </div>
+  );
 }

@@ -49,7 +49,7 @@ export default function Chapter2025() {
             </h3>
 
             <p className="font-sans text-sm sm:text-base text-brand-platinum font-light leading-relaxed mb-8">
-              The inaugural 2025 chapter laid the structural foundation of the Fesh AI Universe, demonstrating initial spatial runway concepts and digital couture identity.
+              The inaugural 2025 chapter laid the structural foundation of the FashAI Universe, demonstrating initial spatial runway concepts and digital couture identity.
             </p>
 
             <div className="grid grid-cols-2 gap-6 border-t border-hairline-orange pt-6 text-xs font-syne tracking-caps">
@@ -76,13 +76,13 @@ export default function Chapter2025() {
                 FIRST CHAPTER ARCHITECTURE
               </h4>
               <p className="font-sans text-sm text-brand-platinum font-light leading-relaxed">
-                A milestone establishing the convergence of physical garment art with atmospheric digital production under the Fesh Prism umbrella.
+                A milestone establishing the convergence of physical garment art with atmospheric digital production under the FashAI Universe umbrella.
               </p>
             </div>
 
             <div className="bg-brand-atelier p-6 border border-hairline-orange/30 space-y-3">
               <span className="text-[10px] font-syne tracking-micro text-brand-lemon font-bold uppercase">
-                FESH AI UNIVERSE — ROADMAP
+                FASHAI UNIVERSE — ROADMAP
               </span>
               <p className="font-sans text-xs text-brand-platinum font-light leading-relaxed">
                 Official archive summaries, retrospective footage, and event documentation will be updated as confirmed records are published.

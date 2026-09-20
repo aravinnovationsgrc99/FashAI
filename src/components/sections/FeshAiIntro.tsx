@@ -45,17 +45,25 @@ export default function FeshAiIntro() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.9, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-            className="mt-14 grid grid-cols-1 md:grid-cols-12 gap-8 items-start border-t border-hairline-orange pt-10"
+            className="mt-14"
           >
-            <div className="md:col-span-8">
-              <p className="font-sans text-base sm:text-lg text-brand-platinum font-light leading-relaxed">
-                Developing spatial fashion environments, computational silhouettes, and international cultural milestones. Fash AI Universe represents the intersection of creative vision and technology engineering across the 2025 and 2026 roadmap.
-              </p>
-            </div>
-            <div className="md:col-span-4 flex flex-col justify-end items-start md:items-end text-xs font-syne tracking-caps text-brand-yellow-golden space-y-2">
-              <span className="text-brand-orange font-bold uppercase">FESH AI UNIVERSE</span>
-              <span className="text-brand-lemon font-semibold">POWERED BY RA INNOVATION</span>
-              <span className="text-brand-platinum text-[10px]">A PROJECT WITHIN FESH PRISM</span>
+            <p className="font-sans text-base sm:text-lg text-brand-platinum font-light leading-relaxed mb-8">
+              FashAI Universe connects fashion, technology and imagination within a global digital framework.
+            </p>
+
+            <div className="pt-8 border-t border-hairline-orange grid grid-cols-1 md:grid-cols-12 gap-6 items-center">
+              <div className="md:col-span-8">
+                <span className="font-syne text-[10px] tracking-micro text-brand-orange uppercase font-bold block mb-1">
+                  FASHION × AI × EXPERIENCE
+                </span>
+                <p className="font-sans text-xs text-brand-platinum font-light">
+                  Bridging physical garment art with spatial lighting and high-couture identity.
+                </p>
+              </div>
+              <div className="md:col-span-4 flex flex-col justify-end items-start md:items-end text-xs font-syne tracking-caps text-brand-yellow-golden space-y-2">
+                <span className="text-brand-orange font-bold uppercase">FASHAI UNIVERSE</span>
+                <span className="text-brand-lemon font-semibold">POWERED BY ARAV INNOVATION</span>
+              </div>
             </div>
           </motion.div>
         </div>

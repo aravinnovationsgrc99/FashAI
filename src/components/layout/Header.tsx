@@ -8,10 +8,11 @@ import { Menu } from "lucide-react";
 import MobileMenu from "./MobileMenu";
 
 export const NAV_ITEMS = [
-  { label: "HOME", href: "/" },
-  { label: "2025", href: "/2025" },
-  { label: "2026", href: "/2026" },
-  { label: "CONTACT", href: "/contact" },
+  { label: "Landing", href: "/" },
+  { label: "Contact Us", href: "/contact" },
+  { label: "Projects", href: "/projects" },
+  { label: "Upcoming", href: "/upcoming" },
+  { label: "Gallery", href: "/gallery" },
 ];
 
 export default function Header() {
@@ -21,18 +22,18 @@ export default function Header() {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-brand-void/90 backdrop-blur-md border-b border-hairline-orange/40 transition-all duration-300">
       <div className="container-editorial flex items-center justify-between py-3 min-h-[64px]">
-        {/* Official Fesh AI Universe Brand Lockup */}
+        {/* Official FashAI Universe Brand Lockup */}
         <Link href="/" className="flex flex-col group py-1 min-h-[44px]">
-          <span className="font-syne text-sm sm:text-base tracking-[0.2em] font-extrabold text-brand-white group-hover:text-brand-orange transition-colors">
-            FESH AI UNIVERSE
+          <span className="font-syne text-base sm:text-lg tracking-[0.18em] font-extrabold text-brand-white group-hover:text-brand-orange transition-colors">
+            FashAI Universe
           </span>
           <span className="font-syne text-[9px] sm:text-[10px] tracking-micro text-brand-orange font-semibold uppercase">
-            Powered by RA Innovation
+            Powered by Arav Innovation
           </span>
         </Link>
 
         {/* Desktop Navigation Links */}
-        <nav className="hidden lg:flex items-center space-x-10 text-[11px] font-syne tracking-caps font-medium">
+        <nav className="hidden lg:flex items-center space-x-9 text-[11px] font-syne tracking-caps font-medium">
           {NAV_ITEMS.map((item) => {
             const isActive =
               item.href === "/"
@@ -61,11 +62,11 @@ export default function Header() {
         {/* Action Button & Mobile Toggle */}
         <div className="flex items-center gap-3">
           <Link
-            href="/2026"
+            href="/contact"
             className="hidden sm:inline-flex items-center justify-center bg-brand-orange px-5 py-2 text-[11px] font-syne tracking-caps font-bold text-white hover:bg-[#ff6f2d] hover:translate-y-[-1px] transition-all duration-200 shadow-md"
             data-cursor="explore"
           >
-            EXPLORE ↗
+            CONTACT US ↗
           </Link>
 
           {/* Mobile Hamburger Button */}

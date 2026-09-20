@@ -1,12 +1,16 @@
 import type { Metadata } from "next";
-import Page2026 from "@/app/2026/page";
+import GalleryView from "@/components/sections/GalleryView";
 
 export const metadata: Metadata = {
-  title: "2026 DUBAI — FESH AI UNIVERSE",
+  title: "Gallery — FashAI Universe",
   description:
-    "The upcoming 2026 Dubai chapter of Fesh AI Universe. Powered by RA Innovation.",
+    "Editorial visual archive of FashAI Universe captures. Runway, backstage, architecture, lighting and couture details. Powered by Arav Innovation.",
 };
 
 export default function GalleryPage() {
-  return <Page2026 />;
+  return (
+    <div className="bg-brand-void text-brand-white pt-24 min-h-screen">
+      <GalleryView />
+    </div>
+  );
 }

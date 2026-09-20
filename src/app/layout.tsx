@@ -7,33 +7,33 @@ import Preloader from "@/components/cinematic/Preloader";
 import PageTransition from "@/components/cinematic/PageTransition";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://fashprisminternationals.com"),
-  title: "FASHPRISM INTERNATIONALS — Fashion Beyond Borders",
+  metadataBase: new URL("https://fashai-beryl.vercel.app"),
+  title: "FashAI Universe — Powered by Arav Innovation",
   description:
-    "Fashprism Internationals is a digital fashion atelier uniting international runway presentations, bespoke fashion symposiums, and luxury lifestyle experiences across Paris and Dubai.",
+    "FashAI Universe: Where fashion, technology and imagination converge. An architectural integration of computational fashion, spatial lighting, and high-couture identity.",
   keywords: [
-    "Fashprism Internationals",
-    "Fashprism",
-    "Fashion Beyond Borders",
+    "FashAI Universe",
+    "Arav Innovation",
+    "Powered by Arav Innovation",
+    "Fashion AI",
     "Haute Couture",
-    "Runway 2025",
-    "Dubai Fashion 2026",
+    "2026 Dubai",
     "Digital Atelier",
     "Luxury Fashion",
   ],
-  authors: [{ name: "Fashprism Internationals" }],
+  authors: [{ name: "FashAI Universe — Powered by Arav Innovation" }],
   openGraph: {
-    title: "FASHPRISM INTERNATIONALS — Fashion Beyond Borders",
+    title: "FashAI Universe — Powered by Arav Innovation",
     description:
-      "A digital couture atelier synthesizing haute couture craftsmanship, international fashion films, and virtual runway presentations.",
-    url: "https://fashprisminternationals.com",
-    siteName: "Fashprism Internationals",
+      "Where fashion, technology and imagination converge. Powered by Arav Innovation.",
+    url: "https://fashai-beryl.vercel.app",
+    siteName: "FashAI Universe",
     images: [
       {
         url: "/assets/models/model_01.jpeg",
         width: 1200,
         height: 630,
-        alt: "FashAI Universal Haute Couture",
+        alt: "FashAI Universe",
       },
     ],
     locale: "en_US",
@@ -41,9 +41,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "FASHAI UNIVERSAL — Fashion Beyond Borders",
+    title: "FashAI Universe — Powered by Arav Innovation",
     description:
-      "Haute couture digital atelier uniting international runway presentations and luxury lifestyle experiences.",
+      "Where fashion, technology and imagination converge.",
     images: ["/assets/models/model_01.jpeg"],
   },
   robots: {

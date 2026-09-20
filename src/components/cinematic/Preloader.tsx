@@ -34,8 +34,8 @@ export default function Preloader() {
         >
           {/* Header Tag */}
           <div className="flex w-full justify-between text-xs font-syne tracking-micro text-brand-platinum border-b border-hairline-orange pb-4 max-w-7xl">
-            <span className="text-brand-orange font-bold">FESH AI UNIVERSE</span>
-            <span>Powered by RA Innovation</span>
+            <span className="text-brand-orange font-bold">FASHAI UNIVERSE</span>
+            <span className="text-brand-yellow-golden font-bold uppercase">Powered by Arav Innovation</span>
           </div>
 
           {/* Central Logo & Progress */}
@@ -47,10 +47,10 @@ export default function Preloader() {
               className="mb-4 flex flex-col items-center"
             >
               <h1 className="font-serif-display text-4xl sm:text-6xl font-light text-brand-white tracking-widest uppercase">
-                FESH AI UNIVERSE
+                FASHAI UNIVERSE
               </h1>
-              <p className="font-syne text-xs sm:text-sm tracking-[0.25em] text-brand-lemon mt-2 font-bold uppercase">
-                Powered by RA Innovation
+              <p className="font-syne text-xs sm:text-sm tracking-[0.25em] text-brand-yellow-golden mt-2 font-bold uppercase">
+                Powered by Arav Innovation
               </p>
             </motion.div>
 
@@ -60,7 +60,7 @@ export default function Preloader() {
               transition={{ delay: 0.3, duration: 0.8 }}
               className="font-syne text-[10px] sm:text-xs tracking-caps text-brand-orange mt-2 font-bold uppercase"
             >
-              A PROJECT WITHIN FESH PRISM
+              FASHION × AI × EXPERIENCE
             </motion.p>
 
             {/* Progress Bar & Percentage */}
@@ -79,9 +79,9 @@ export default function Preloader() {
           </div>
 
           {/* Footer Metadata */}
-          <div className="flex w-full justify-between text-[10px] font-syne tracking-micro text-brand-platinum pt-4 border-t border-hairline max-w-7xl">
-            <span>FESH PRISM ECOSYSTEM</span>
-            <span className="text-brand-orange font-bold">2025 / 2026 ROADMAP</span>
+          <div className="flex w-full justify-between text-[10px] font-syne tracking-micro text-brand-platinum pt-4 border-t border-hairline-orange/40 max-w-7xl">
+            <span>FASHAI UNIVERSE</span>
+            <span className="text-brand-orange font-bold uppercase">POWERED BY ARAV INNOVATION</span>
           </div>
         </motion.div>
       )}

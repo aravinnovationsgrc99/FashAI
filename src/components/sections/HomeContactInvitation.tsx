@@ -15,7 +15,7 @@ export default function HomeContactInvitation() {
         </span>
 
         <span className="text-[10px] font-syne tracking-[0.25em] text-brand-lemon uppercase font-bold mb-6">
-          Powered by RA Innovation
+          Powered by Arav Innovation
         </span>
 
         <motion.h2
@@ -27,7 +27,7 @@ export default function HomeContactInvitation() {
         >
           ENTER THE <br />
           <span className="italic font-normal text-brand-orange">
-            FESH AI UNIVERSE.
+            FASHAI UNIVERSE.
           </span>
         </motion.h2>
 
@@ -38,7 +38,7 @@ export default function HomeContactInvitation() {
           transition={{ duration: 0.9, delay: 0.2 }}
           className="font-sans text-base sm:text-lg text-brand-platinum font-light max-w-xl leading-relaxed mb-12"
         >
-          For enquiries, collaborations, partnerships, press accreditation, and delegate interest across the Fesh AI Universe roadmap.
+          For enquiries, collaborations, partnerships, press accreditation, and delegate interest across the FashAI Universe roadmap.
         </motion.p>
 
         <motion.div

@@ -41,17 +41,16 @@ export default function Lightbox({
     ? {
         id: rawItem.id,
         title:
-          "modelName" in rawItem
-            ? `${rawItem.modelName} — ${rawItem.tag}`
+          "tag" in rawItem
+            ? `FashAI Universe Capture — ${rawItem.tag}`
             : rawItem.title,
         subtitle:
-          "filename" in rawItem
-            ? `${rawItem.orientation.toUpperCase()} • ${rawItem.width}×${rawItem.height}`
+          "orientation" in rawItem
+            ? `${rawItem.orientation.toUpperCase()} • HIGH-DEFINITION ARCHIVE CAPTURE`
             : rawItem.subtitle,
         src: "src" in rawItem ? rawItem.src : (rawItem as any).image,
         category: "category" in rawItem ? rawItem.category : undefined,
         tag: "tag" in rawItem ? rawItem.tag : undefined,
-        modelName: "modelName" in rawItem ? rawItem.modelName : undefined,
       }
     : null;
 
@@ -122,8 +121,8 @@ export default function Lightbox({
           onClick={(e) => e.stopPropagation()}
         >
           <div className="flex items-center gap-3">
-            <span className="font-serif-display text-base sm:text-xl text-brand-off-white tracking-wide">
-              FASHPRISM VISUAL ARCHIVE
+            <span className="font-serif-display text-base sm:text-xl text-brand-white tracking-wide uppercase">
+              FASHAI UNIVERSE VISUAL ARCHIVE
             </span>
             <span className="font-syne text-[10px] sm:text-xs tracking-micro text-brand-gold border border-hairline-gold px-2.5 py-0.5 font-semibold">
               {String(currentIndex + 1).padStart(2, "0")} / {String(items.length).padStart(2, "0")}
