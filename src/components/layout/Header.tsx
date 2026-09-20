@@ -8,7 +8,7 @@ import { Menu } from "lucide-react";
 import MobileMenu from "./MobileMenu";
 
 export const NAV_ITEMS = [
-  { label: "Landing", href: "/" },
+  { label: "Home", href: "/" },
   { label: "Contact Us", href: "/contact" },
   { label: "Projects", href: "/projects" },
   { label: "Upcoming", href: "/upcoming" },
