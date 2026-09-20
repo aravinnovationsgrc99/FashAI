@@ -108,16 +108,16 @@ export default function MobileMenu({
                     href={item.href}
                     onClick={onClose}
                     className={`group flex items-center justify-between py-2 min-h-[44px] text-2xl xs:text-3xl sm:text-4xl font-serif-display ${
-                      isActive ? "text-gold-gradient font-normal" : "text-brand-off-white hover:text-brand-gold"
-                    } transition-colors`}
+                      isActive ? "text-brand-orange font-medium" : "text-brand-white hover:text-brand-lemon"
+                    } transition-colors duration-200`}
                   >
                     <span className="flex items-center gap-4">
-                      <span className="text-xs font-syne text-brand-gold/60 font-normal">
+                      <span className="text-xs font-syne text-brand-orange/80 font-normal">
                         0{index + 1}
                       </span>
                       {item.label}
                     </span>
-                    <span className={`text-xs font-syne text-brand-gold ${isActive ? "opacity-100" : "opacity-0 group-hover:opacity-100"} transition-opacity`}>
+                    <span className={`text-xs font-syne text-brand-orange ${isActive ? "opacity-100" : "opacity-0 group-hover:opacity-100"} transition-opacity`}>
                       ↗
                     </span>
                   </Link>
@@ -131,18 +131,18 @@ export default function MobileMenu({
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.45, duration: 0.4 }}
-            className="border-t border-hairline-gold pt-6 pb-4 flex flex-col space-y-4"
+            className="border-t border-hairline-orange pt-6 pb-4 flex flex-col space-y-4"
           >
             <Link
               href="/contact"
               onClick={onClose}
-              className="w-full bg-gradient-to-r from-[#F5DFB3] via-[#D4AF37] to-[#A37F2C] py-4 text-center text-xs font-syne tracking-caps font-bold text-brand-void hover:opacity-90 transition-opacity min-h-[48px] flex items-center justify-center shadow-lg"
+              className="w-full bg-brand-orange py-4 text-center text-xs font-syne tracking-caps font-bold text-white hover:bg-[#ff6f2d] transition-colors min-h-[48px] flex items-center justify-center shadow-lg"
             >
               BE A PART ↗
             </Link>
             <div className="flex justify-between items-center text-[10px] font-syne tracking-micro text-brand-platinum pt-1">
               <span>FASHPRISM INTERNATIONALS</span>
-              <span className="text-brand-gold font-bold">DUBAI — PARIS</span>
+              <span className="text-brand-orange font-bold">DUBAI — PARIS</span>
             </div>
           </motion.div>
         </motion.div>

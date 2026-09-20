@@ -46,15 +46,15 @@ export default function Header() {
               <Link
                 key={item.href}
                 href={item.href}
-                className={`relative py-1.5 transition-colors ${
+                className={`relative py-1.5 transition-colors duration-200 ${
                   isActive
-                    ? "text-brand-gold font-bold"
-                    : "text-brand-off-white/70 hover:text-brand-gold"
+                    ? "text-brand-orange font-bold"
+                    : "text-brand-white/80 hover:text-brand-lemon"
                 }`}
               >
                 {item.label}
                 {isActive && (
-                  <span className="absolute bottom-0 left-0 right-0 h-[1.5px] bg-gradient-to-r from-[#F5DFB3] via-[#D4AF37] to-[#A37F2C]" />
+                  <span className="absolute bottom-0 left-0 right-0 h-[2px] bg-brand-orange" />
                 )}
               </Link>
             );
@@ -65,7 +65,7 @@ export default function Header() {
         <div className="flex items-center gap-3">
           <Link
             href="/contact"
-            className="hidden sm:inline-flex items-center justify-center bg-gradient-to-r from-[#F5DFB3] via-[#D4AF37] to-[#A37F2C] px-5 py-2 text-[11px] font-syne tracking-caps font-bold text-brand-void hover:opacity-90 transition-opacity shadow-sm"
+            className="hidden sm:inline-flex items-center justify-center bg-brand-orange px-5 py-2 text-[11px] font-syne tracking-caps font-bold text-white hover:bg-[#ff6f2d] hover:translate-y-[-1px] transition-all duration-200 shadow-md"
             data-cursor="explore"
           >
             BE A PART ↗

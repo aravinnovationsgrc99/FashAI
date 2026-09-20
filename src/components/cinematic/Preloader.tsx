@@ -33,8 +33,8 @@ export default function Preloader() {
           className="fixed inset-0 z-[100] flex flex-col items-center justify-between bg-brand-void px-6 py-12 text-brand-off-white"
         >
           {/* Header Tag */}
-          <div className="flex w-full justify-between text-xs font-syne tracking-micro text-brand-platinum border-b border-hairline pb-4 max-w-7xl">
-            <span>FASHAI UNIVERSAL</span>
+          <div className="flex w-full justify-between text-xs font-syne tracking-micro text-brand-platinum border-b border-hairline-orange pb-4 max-w-7xl">
+            <span className="text-brand-orange font-bold">FASHPRISM INTERNATIONALS</span>
             <span>DIGITAL ATELIER</span>
           </div>
 

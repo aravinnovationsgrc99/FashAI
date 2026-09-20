@@ -23,24 +23,24 @@ export default function Footer() {
                   />
                 </Link>
               </div>
-              <p className="font-sans text-sm text-brand-platinum max-w-md font-light leading-relaxed">
-                FashAI Universal creates fashion experiences that move beyond the runway. Where fashion, culture, and experience converge.
+                  <p className="font-sans text-sm text-brand-platinum max-w-md font-light leading-relaxed">
+                Fashprism Internationals creates fashion experiences that move beyond the runway. Where fashion, culture, and experience converge.
               </p>
             </div>
-            <div className="mt-8 text-xs font-syne tracking-micro text-brand-gold font-bold">
+            <div className="mt-8 text-xs font-syne tracking-micro text-brand-orange font-bold">
               FASHION BEYOND BORDERS
             </div>
           </div>
 
           {/* Quick Navigation Links */}
           <div className="md:col-span-3">
-            <h4 className="font-syne text-xs tracking-micro text-brand-gold mb-6">
+            <h4 className="font-syne text-xs tracking-micro text-brand-orange mb-6 font-bold">
               NAVIGATION
             </h4>
             <ul className="space-y-3 font-syne text-xs tracking-caps text-brand-off-white/70">
               {NAV_ITEMS.map((item) => (
                 <li key={item.href}>
-                  <Link href={item.href} className="hover:text-brand-gold transition-colors">
+                  <Link href={item.href} className="hover:text-brand-orange transition-colors">
                     {item.label}
                   </Link>
                 </li>
@@ -51,7 +51,7 @@ export default function Footer() {
           {/* Connect & Enquiries */}
           <div className="md:col-span-4 flex flex-col justify-between">
             <div>
-              <h4 className="font-syne text-xs tracking-micro text-brand-gold mb-6">
+              <h4 className="font-syne text-xs tracking-micro text-brand-orange mb-6 font-bold">
                 ENQUIRIES & PARTICIPATION
               </h4>
               <p className="font-sans text-xs text-brand-platinum mb-6 leading-relaxed">
@@ -59,15 +59,15 @@ export default function Footer() {
               </p>
               <Link
                 href="/contact"
-                className="inline-block bg-brand-gold px-6 py-3 text-xs font-syne tracking-caps font-bold text-brand-black hover:bg-brand-gold-pure transition-colors"
+                className="inline-block bg-brand-orange px-6 py-3 text-xs font-syne tracking-caps font-bold text-white hover:bg-[#ff6f2d] transition-colors shadow-md"
               >
                 CONTACT US ↗
               </Link>
             </div>
 
-            <div className="mt-8 pt-6 border-t border-hairline flex items-center justify-between text-xs font-syne text-brand-platinum">
+            <div className="mt-8 pt-6 border-t border-hairline-orange flex items-center justify-between text-xs font-syne text-brand-platinum">
               <span>LOCATIONS</span>
-              <span className="text-brand-gold font-bold">DUBAI — PARIS</span>
+              <span className="text-brand-yellow-golden font-bold">DUBAI — PARIS</span>
             </div>
           </div>
         </div>
@@ -75,10 +75,10 @@ export default function Footer() {
         {/* Bottom Bar */}
         <div className="flex flex-col sm:flex-row justify-between items-center pt-8 text-[10px] font-syne tracking-micro text-brand-platinum gap-4">
           <div>
-            © {new Date().getFullYear()} FASHAI UNIVERSAL. ALL RIGHTS RESERVED.
+            © {new Date().getFullYear()} FASHPRISM INTERNATIONALS. ALL RIGHTS RESERVED.
           </div>
           <div className="flex gap-6">
-            <Link href="/contact" className="hover:text-brand-gold transition-colors">
+            <Link href="/contact" className="hover:text-brand-orange transition-colors">
               GET IN TOUCH
             </Link>
           </div>

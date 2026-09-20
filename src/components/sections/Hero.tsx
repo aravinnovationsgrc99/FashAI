@@ -35,24 +35,25 @@ export default function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.85, ease: [0.16, 1, 0.3, 1] }}
         >
-          <div className="inline-flex items-center gap-2.5 bg-brand-gold/10 border border-hairline-gold px-4 py-1.5 mb-8 text-[10px] font-syne tracking-micro text-brand-gold uppercase font-semibold">
-            <span className="h-1.5 w-1.5 rounded-full bg-brand-gold animate-pulse" />
+          <div className="inline-flex items-center gap-2.5 bg-brand-lemon/10 border border-brand-lemon/30 px-4 py-1.5 mb-8 text-[10px] font-syne tracking-micro text-brand-lemon uppercase font-semibold">
+            <span className="h-1.5 w-1.5 rounded-full bg-brand-green animate-pulse" />
             <span>FASHPRISM INTERNATIONALS</span>
           </div>
 
           <h1 className="font-serif-display leading-[0.88] tracking-tight">
-            <span className="block text-2xl xs:text-3xl sm:text-5xl md:text-6xl tracking-[0.2em] font-syne font-light text-brand-off-white/90 uppercase mb-3">
+            <span className="block text-3xl xs:text-4xl sm:text-6xl md:text-7xl tracking-[0.2em] font-syne font-light text-brand-white uppercase mb-3">
               FASHION
             </span>
-            <span className="block italic text-5xl xs:text-6xl sm:text-8xl md:text-9xl lg:text-[135px] font-serif font-normal text-gold-gradient leading-[0.85] tracking-tight">
-              BEYOND BORDERS
+            <span className="block font-serif font-normal leading-[0.85] tracking-tight text-5xl xs:text-6xl sm:text-8xl md:text-9xl lg:text-[135px]">
+              <span className="italic text-brand-orange mr-4 font-normal">BEYOND</span>
+              <span className="italic text-brand-yellow-golden font-normal">BORDERS</span>
             </span>
           </h1>
 
-          <div className="mt-10 sm:mt-14 grid grid-cols-1 md:grid-cols-12 items-end gap-8 border-t border-hairline-gold pt-8">
+          <div className="mt-10 sm:mt-14 grid grid-cols-1 md:grid-cols-12 items-end gap-8 border-t border-hairline-orange pt-8">
             <div className="md:col-span-7">
-              <p className="font-serif-display text-xl sm:text-3xl text-brand-gold font-light mb-3">
-                Where fashion, culture and digital experience converge.
+              <p className="font-serif-display text-xl sm:text-3xl text-brand-white font-light mb-3">
+                Where fashion, culture and digital experience <span className="text-brand-yellow-golden italic font-normal">converge.</span>
               </p>
               <p className="font-sans text-xs sm:text-sm font-light text-brand-platinum max-w-xl leading-relaxed">
                 Creating international haute runway presentations, bespoke fashion symposiums, and luxury lifestyle experiences across Dubai and Paris.
@@ -62,14 +63,15 @@ export default function Hero() {
             <div className="md:col-span-5 flex flex-col sm:flex-row items-stretch sm:items-center justify-end gap-4 w-full">
               <Link
                 href="/gallery"
-                className="bg-gradient-to-r from-[#F5DFB3] via-[#D4AF37] to-[#A37F2C] px-8 py-4 text-xs font-syne tracking-caps font-bold text-brand-void hover:opacity-95 transition-opacity text-center min-h-[46px] flex items-center justify-center shadow-xl"
+                className="bg-brand-orange px-8 py-4 text-xs font-syne tracking-caps font-bold text-white hover:bg-[#ff6f2d] hover:translate-y-[-2px] transition-all duration-300 text-center min-h-[46px] flex items-center justify-center shadow-xl group"
                 data-cursor="explore"
               >
-                VIEW VISUAL ARCHIVE ↘
+                <span>EXPLORE ARCHIVE</span>
+                <span className="ml-2 group-hover:translate-x-1 transition-transform">↘</span>
               </Link>
               <Link
                 href="/projects"
-                className="border border-hairline-gold bg-brand-charcoal/80 px-8 py-4 text-xs font-syne tracking-caps text-brand-off-white hover:bg-brand-gold/10 hover:border-brand-gold transition-colors text-center min-h-[46px] flex items-center justify-center"
+                className="border border-brand-yellow-golden/40 bg-brand-charcoal/80 px-8 py-4 text-xs font-syne tracking-caps text-brand-white hover:bg-brand-yellow-golden/10 hover:border-brand-yellow-golden transition-all duration-300 text-center min-h-[46px] flex items-center justify-center"
                 data-cursor="view"
               >
                 OUR PROJECTS ↗
@@ -80,9 +82,9 @@ export default function Hero() {
       </div>
 
       {/* Bottom Editorial Metadata Indicator */}
-      <div className="relative z-10 flex flex-col sm:flex-row justify-between items-start sm:items-center text-[10px] font-syne tracking-micro text-brand-platinum pt-4 border-t border-hairline-gold/50 container-editorial gap-2">
+      <div className="relative z-10 flex flex-col sm:flex-row justify-between items-start sm:items-center text-[10px] font-syne tracking-micro text-brand-platinum pt-4 border-t border-hairline-orange/40 container-editorial gap-2">
         <span>HAUTE COUTURE PRESENTATIONS</span>
-        <span className="text-brand-gold font-bold">DUBAI — PARIS — INTERNATIONAL VISUAL ARCHIVE</span>
+        <span className="text-brand-orange font-bold">DUBAI — PARIS — INTERNATIONAL VISUAL ARCHIVE</span>
       </div>
     </section>
   );

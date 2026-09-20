@@ -9,10 +9,11 @@
   --bg-atelier: #0A0A09;
   --bg-charcoal: #121110;
   --color-orange: #F15E1C;
-  --color-gold: #E5C287;
-  --color-gold-pure: #D4AF37;
-  --color-gold-luster: #FAB60A;
-  --color-gold-deep: #C5A059;
+  --color-green: #2E936F;
+  --color-white: #FFFFFF;
+  --color-lemon: #FFEC69;
+  --color-golden: #FAB60A;
+  --color-peach: #F7D7B0;
   --color-off-white: #FDFBF7;
   --color-platinum: #8E8B85;
   
@@ -63,10 +64,10 @@ body {
   padding-bottom: max(1rem, var(--sab));
 }
 
-/* Metallic Gold Selection */
+/* Fashprism Primary Orange Selection */
 ::selection {
-  background-color: var(--color-gold-pure);
-  color: #000000;
+  background-color: var(--color-orange);
+  color: #FFFFFF;
 }
 
 /* Scrollbar */
@@ -84,7 +85,7 @@ body {
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--color-gold);
+  background: var(--color-orange);
 }
 
 /* Typography Utility Classes */
@@ -108,9 +109,21 @@ body {
   letter-spacing: 0.28em;
 }
 
-/* Metallic Gold Text Gradient */
+/* Fashprism Brand Gradients */
+.text-orange-gradient {
+  background: linear-gradient(135deg, #FF8243 0%, #F15E1C 50%, #D14506 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
 .text-gold-gradient {
-  background: linear-gradient(135deg, #F5DFB3 0%, #D4AF37 50%, #A37F2C 100%);
+  background: linear-gradient(135deg, #FFEC69 0%, #FAB60A 50%, #D4AF37 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-peach-gradient {
+  background: linear-gradient(135deg, #FFFFFF 0%, #F7D7B0 60%, #E2B886 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -130,15 +143,25 @@ body {
   }
 }
 
-/* Hairline Gold Borders & Dividers */
+/* Fashprism Hairline Borders & Dividers */
 .border-hairline {
   border-width: 1px;
-  border-color: rgba(229, 194, 135, 0.2);
+  border-color: rgba(241, 94, 28, 0.2);
+}
+
+.border-hairline-orange {
+  border-width: 1px;
+  border-color: rgba(241, 94, 28, 0.35);
+}
+
+.border-hairline-green {
+  border-width: 1px;
+  border-color: rgba(46, 147, 111, 0.35);
 }
 
 .border-hairline-gold {
   border-width: 1px;
-  border-color: rgba(212, 175, 55, 0.35);
+  border-color: rgba(250, 182, 10, 0.35);
 }
 
 .border-hairline-light {

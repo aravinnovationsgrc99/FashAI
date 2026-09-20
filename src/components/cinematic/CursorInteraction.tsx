@@ -89,7 +89,7 @@ export default function CursorInteraction() {
     >
       {cursorType === "default" && (
         <motion.div
-          className="h-2 w-2 bg-brand-gold"
+          className="h-2 w-2 bg-brand-orange"
           initial={{ scale: 0 }}
           animate={{ scale: 1 }}
           exit={{ scale: 0 }}
@@ -98,7 +98,7 @@ export default function CursorInteraction() {
 
       {cursorType === "hover" && (
         <motion.div
-          className="h-8 w-8 border border-brand-gold bg-brand-gold/20"
+          className="h-8 w-8 border border-brand-orange bg-brand-orange/20"
           initial={{ scale: 0.5 }}
           animate={{ scale: 1 }}
           exit={{ scale: 0.5 }}
@@ -107,7 +107,7 @@ export default function CursorInteraction() {
 
       {cursorType === "view" && (
         <motion.div
-          className="flex h-16 w-16 items-center justify-center border border-brand-gold bg-brand-void/95 text-[10px] font-syne tracking-micro text-brand-gold shadow-2xl"
+          className="flex h-16 w-16 items-center justify-center border border-brand-orange bg-brand-void/95 text-[10px] font-syne tracking-micro text-brand-orange shadow-2xl font-bold"
           initial={{ scale: 0.5 }}
           animate={{ scale: 1 }}
           exit={{ scale: 0.5 }}
@@ -118,7 +118,7 @@ export default function CursorInteraction() {
 
       {cursorType === "explore" && (
         <motion.div
-          className="flex h-20 w-20 items-center justify-center border border-brand-gold-pure bg-brand-gold/90 text-[10px] font-syne tracking-micro text-brand-void font-bold shadow-2xl"
+          className="flex h-20 w-20 items-center justify-center border border-brand-orange bg-brand-orange text-[10px] font-syne tracking-micro text-white font-bold shadow-2xl"
           initial={{ scale: 0.5 }}
           animate={{ scale: 1 }}
           exit={{ scale: 0.5 }}

@@ -104,7 +104,7 @@ export default function ContactSection() {
                 </p>
                 <button
                   onClick={() => setStatus("idle")}
-                  className="bg-gradient-to-r from-[#F5DFB3] via-[#D4AF37] to-[#A37F2C] px-8 py-4 text-xs font-syne tracking-caps text-brand-void font-bold hover:opacity-90 transition-opacity"
+                  className="bg-brand-orange px-8 py-4 text-xs font-syne tracking-caps font-bold text-white hover:bg-[#ff6f2d] transition-colors shadow-md"
                 >
                   SUBMIT ANOTHER INQUIRY ↗
                 </button>
@@ -207,7 +207,7 @@ export default function ContactSection() {
                   <button
                     type="submit"
                     disabled={status === "loading"}
-                    className="w-full bg-gradient-to-r from-[#F5DFB3] via-[#D4AF37] to-[#A37F2C] py-4 text-xs font-syne tracking-caps font-bold text-brand-void hover:opacity-90 transition-opacity flex items-center justify-center gap-3 disabled:opacity-50 shadow-lg"
+                    className="w-full bg-brand-orange py-4 text-xs font-syne tracking-caps font-bold text-white hover:bg-[#ff6f2d] transition-colors flex items-center justify-center gap-3 disabled:opacity-50 shadow-lg"
                     data-cursor="explore"
                   >
                     {status === "loading" ? (
