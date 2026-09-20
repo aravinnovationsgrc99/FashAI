@@ -26,16 +26,23 @@ export default function Hero() {
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
           className="flex flex-col items-start"
         >
-          {/* Kicker Badge */}
-          <div className="inline-flex items-center gap-2.5 bg-brand-void/90 border border-brand-orange/40 backdrop-blur-md px-3.5 py-1.5 mb-6 sm:mb-8 rounded-full shadow-lg">
-            <span className="h-2 w-2 rounded-full bg-brand-orange animate-pulse" />
-            <span className="text-[10px] sm:text-xs font-syne tracking-micro text-brand-orange uppercase font-bold">
-              FASHION × AI × EXPERIENCE
-            </span>
+          {/* Eyebrow Badges */}
+          <div className="flex flex-wrap items-center gap-2.5 mb-6 sm:mb-8">
+            <div className="inline-flex items-center gap-2 bg-brand-void/90 border border-brand-orange/40 backdrop-blur-md px-3.5 py-1.5 rounded-full shadow-lg">
+              <span className="h-2 w-2 rounded-full bg-brand-orange animate-pulse" />
+              <span className="text-[10px] sm:text-xs font-syne tracking-micro text-brand-orange uppercase font-bold">
+                FASHION × AI × EXPERIENCE
+              </span>
+            </div>
+            <div className="inline-flex items-center gap-2 bg-brand-green/10 border border-brand-green/40 backdrop-blur-md px-3.5 py-1.5 rounded-full shadow-lg">
+              <span className="text-[10px] sm:text-xs font-syne tracking-micro text-brand-green uppercase font-bold">
+                LIFESTYLE 2026 • DUBAI
+              </span>
+            </div>
           </div>
 
-          {/* Primary Title: FashAI Universe */}
-          <h1 className="font-serif-display leading-[0.95] tracking-tight mb-6 select-none w-full">
+          {/* Primary Platform Title: FashAI Universe */}
+          <h1 className="font-serif-display leading-[0.95] tracking-tight mb-4 select-none w-full">
             <span className="block text-4xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-serif font-light text-brand-white uppercase">
               FashAI
             </span>
@@ -44,42 +51,47 @@ export default function Hero() {
             </span>
           </h1>
 
-          {/* Subtitle / Positioning Statement */}
-          <p className="font-serif text-lg sm:text-2xl lg:text-3xl text-brand-white/95 font-light italic max-w-3xl leading-snug mb-4">
-            Where fashion, technology and imagination converge.
+          {/* Event Focus Subtitle */}
+          <p className="font-serif text-xl sm:text-3xl lg:text-4xl text-brand-white/95 font-light italic max-w-3xl leading-snug mb-4">
+            An international fashion and lifestyle experience.
           </p>
 
-          {/* Supporting Paragraph */}
-          <p className="font-sans text-sm sm:text-base text-brand-platinum/80 max-w-2xl font-light leading-relaxed mb-8">
-            An architectural integration of computational fashion, spatial lighting, generative art, and high-couture identity.
-          </p>
+          {/* Open Registration & Sponsorship Banner */}
+          <div className="border-l-2 border-brand-orange pl-4 my-4">
+            <p className="font-syne text-xs sm:text-sm tracking-caps text-brand-orange font-bold uppercase mb-1">
+              REGISTRATIONS &amp; SPONSORSHIPS ARE OPEN
+            </p>
+            <p className="font-sans text-xs sm:text-sm text-brand-platinum/80 font-light max-w-xl">
+              LifeStyle 2026 • Dubai — Open for delegates, international designers, press, and brand sponsors.
+            </p>
+          </div>
 
           {/* Action CTAs */}
-          <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 w-full sm:w-auto">
+          <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 w-full sm:w-auto mt-4">
             <Link
-              href="/projects"
+              href="/contact?type=Registration"
               className="bg-brand-orange px-8 py-4 text-xs font-syne tracking-caps font-bold text-white hover:bg-[#ff6f2d] hover:shadow-[0_0_25px_rgba(241,94,28,0.4)] transition-all duration-300 text-center min-h-[48px] flex items-center justify-center rounded-none group"
               data-cursor="explore"
             >
-              <span>EXPLORE THE UNIVERSE</span>
-              <span className="ml-2.5 group-hover:translate-x-1 transition-transform">→</span>
+              <span>REGISTER NOW</span>
+              <span className="ml-2 group-hover:translate-x-1 transition-transform">→</span>
             </Link>
             <Link
-              href="/upcoming"
+              href="/contact?type=Sponsorship"
               className="border border-brand-yellow-golden/50 bg-brand-void/80 backdrop-blur-md px-8 py-4 text-xs font-syne tracking-caps font-bold text-brand-white hover:bg-brand-yellow-golden/10 hover:border-brand-yellow-golden transition-all duration-300 text-center min-h-[48px] flex items-center justify-center rounded-none"
               data-cursor="view"
             >
-              UPCOMING ↗
+              SPONSORSHIP ENQUIRY ↗
             </Link>
           </div>
         </motion.div>
       </div>
 
-      {/* Bottom Editorial Bar (Clean Metadata, no duplicated brand lockup) */}
+      {/* Bottom Bar */}
       <div className="relative z-10 w-full max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-start sm:items-center text-[10px] sm:text-xs font-syne tracking-micro text-brand-platinum/70 pt-4 border-t border-white/10 gap-2">
-        <span>2026 DUBAI EDITION — HAUTE COUTURE & COMPUTATIONAL ART</span>
+        <span>LIFESTYLE 2026 — DUBAI • INTERNATIONAL EVENT</span>
         <span className="text-brand-orange font-bold uppercase tracking-widest">
-          INTERNATIONAL EXPERIENCE
+          POWERED BY ARAV INNOVATION
         </span>
       </div>
     </section>

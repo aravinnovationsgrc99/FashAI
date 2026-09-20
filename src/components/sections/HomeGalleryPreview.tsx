@@ -15,14 +15,14 @@ export default function HomeGalleryPreview() {
         <div className="flex flex-col sm:flex-row justify-between items-start sm:items-end mb-16 border-b border-hairline-orange/50 pb-8">
           <div>
             <span className="text-xs font-syne tracking-micro text-brand-orange block mb-3 font-bold uppercase">
-              GALLERY / FASHAI UNIVERSE
+              LIFESTYLE 2025 / VISUAL ARCHIVE
             </span>
             <h2 className="font-serif-display text-4xl sm:text-6xl font-light text-brand-white uppercase">
               THE VISUAL ARCHIVE
             </h2>
           </div>
           <p className="font-sans text-xs sm:text-sm text-brand-platinum max-w-xs mt-4 sm:mt-0 font-light">
-            Moments. Movement. Light. High-definition digital fashion exhibition showcasing {MODELS_DATA.totalImages} official captures.
+            Moments. Movement. Light. Visual photo archive capturing the LifeStyle 2025 experience.
           </p>
         </div>
 
@@ -52,7 +52,7 @@ export default function HomeGalleryPreview() {
                   <div className="relative aspect-[4/5] w-full overflow-hidden">
                     <Image
                       src={item.thumb}
-                      alt={`FashAI Universe Capture ${index + 1}`}
+                      alt={`LifeStyle 2025 Capture ${index + 1}`}
                       fill
                       sizes="(max-width: 768px) 100vw, 50vw"
                       className="object-cover filter contrast-110 transition-transform duration-700 ease-out group-hover:scale-105"
@@ -62,7 +62,7 @@ export default function HomeGalleryPreview() {
                     {/* Tag badge */}
                     <div className="absolute top-4 left-4">
                       <span className="bg-brand-void/90 px-3 py-1 text-[9px] font-syne tracking-micro font-bold border border-brand-orange/40 text-brand-orange uppercase">
-                        {item.tag}
+                        LIFESTYLE 2025
                       </span>
                     </div>
 
@@ -72,10 +72,10 @@ export default function HomeGalleryPreview() {
                     <div className="absolute bottom-6 left-6 right-6 flex justify-between items-end">
                       <div>
                         <div className="text-[10px] font-syne tracking-micro text-brand-yellow-golden font-bold uppercase">
-                          FASHAI UNIVERSE • {item.category}
+                          LIFESTYLE 2025 • ARCHIVE
                         </div>
                         <h3 className="font-serif-display text-lg sm:text-xl font-light text-brand-white group-hover:text-brand-orange transition-colors duration-300 mt-0.5">
-                          EDITORIAL EXHIBITION
+                          VISUAL RETROSPECTIVE
                         </h3>
                       </div>
                       <span className="text-xs font-syne text-brand-orange group-hover:translate-x-1 transition-transform duration-300">
@@ -96,13 +96,10 @@ export default function HomeGalleryPreview() {
             className="inline-flex items-center gap-3 bg-brand-orange px-10 py-5 text-xs font-syne tracking-caps font-bold text-white hover:bg-[#ff6f2d] hover:shadow-[0_0_25px_rgba(241,94,28,0.4)] hover:-translate-y-0.5 transition-all duration-300 shadow-xl"
             data-cursor="explore"
           >
-            <span>EXPLORE COMPLETE VISUAL ARCHIVE ({MODELS_DATA.totalImages} IMAGES) ↗</span>
+            <span>EXPLORE FULL 2025 VISUAL ARCHIVE ↗</span>
           </Link>
         </div>
       </div>
     </section>
   );
 }
-
-
-

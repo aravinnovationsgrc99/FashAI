@@ -1,17 +1,27 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect, Suspense } from "react";
+import { useSearchParams } from "next/navigation";
 import { motion } from "framer-motion";
-import { Loader2, CheckCircle, AlertCircle } from "lucide-react";
+import { Loader2, CheckCircle, AlertCircle, Phone, MessageSquare, MapPin, ExternalLink } from "lucide-react";
 
-export default function ContactSection() {
+function ContactContent() {
+  const searchParams = useSearchParams();
+  const initialType = searchParams?.get("type") || "Registration";
+
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     phone: "",
-    subject: "Collaboration",
+    subject: initialType,
     message: "",
   });
+
+  useEffect(() => {
+    if (searchParams?.get("type")) {
+      setFormData((prev) => ({ ...prev, subject: searchParams.get("type")! }));
+    }
+  }, [searchParams]);
 
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
   const [errorMessage, setErrorMessage] = useState("");
@@ -42,7 +52,7 @@ export default function ContactSection() {
           name: "",
           email: "",
           phone: "",
-          subject: "Collaboration",
+          subject: "Registration",
           message: "",
         });
       } else {
@@ -55,194 +65,274 @@ export default function ContactSection() {
     }
   };
 
-  return (
-    <section
-      id="contact"
-      className="py-24 sm:py-32 bg-brand-void border-b border-hairline-orange overflow-hidden"
-    >
-      <div className="w-[94%] max-w-[1800px] mx-auto px-4 sm:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
-          {/* Left Column: Section Details */}
-          <div className="lg:col-span-5">
-            <span className="text-xs font-syne tracking-micro text-brand-orange block mb-3 font-bold uppercase">
-              CONTACT US / FASHAI UNIVERSE
-            </span>
-            <h2 className="font-serif-display text-4xl sm:text-6xl lg:text-7xl font-light text-brand-white leading-[0.95] mb-6 tracking-tight uppercase">
-              LET'S CREATE <br />
-              <span className="italic text-transparent bg-clip-text bg-gradient-to-r from-brand-orange to-brand-yellow-golden font-normal">
-                THE NEXT EXPERIENCE.
-              </span>
-            </h2>
-            <p className="font-sans text-base text-brand-platinum font-light leading-relaxed mb-8">
-              FashAI Universe connects fashion visionaries, technology innovators, press correspondents, and strategic partners across Dubai and global capitals.
-            </p>
+  const googleMapsUrl =
+    "https://www.google.com/maps/search/?api=1&query=2,+Humayun+Rd,+Sujan+Sing+Park+North,+Sujan+Singh+Park,+New+Delhi,+Delhi+110003,+India";
 
-            <div className="space-y-6 border-t border-hairline-orange/50 pt-6 text-xs font-syne tracking-caps">
-              <div>
-                <div className="text-brand-platinum/70 mb-1">PROJECT LOCKUP</div>
-                <div className="text-brand-white font-bold">FASHAI UNIVERSE</div>
+  return (
+    <section id="contact" className="relative py-24 sm:py-32 bg-brand-void border-b border-hairline-orange overflow-hidden">
+      {/* Background Soft Glow */}
+      <div className="absolute top-1/2 right-10 w-96 h-96 bg-brand-orange/5 blur-3xl pointer-events-none rounded-full" />
+
+      <div className="container-editorial relative z-10">
+        {/* Section Header */}
+        <div className="max-w-3xl mb-16">
+          <div className="flex items-center gap-3 text-xs font-syne tracking-micro text-brand-orange font-bold uppercase mb-3">
+            <span className="h-px w-8 bg-brand-orange" />
+            <span>CONTACT &amp; ENQUIRIES</span>
+          </div>
+          <h2 className="font-serif-display text-4xl sm:text-6xl lg:text-7xl font-light text-brand-white uppercase mb-4">
+            LET&apos;S CREATE THE <span className="italic text-brand-orange font-normal">NEXT CHAPTER.</span>
+          </h2>
+          <p className="font-sans text-base sm:text-lg text-brand-platinum/90 font-light leading-relaxed">
+            For registrations, sponsorships, partnerships, press and general enquiries, connect with the FashAI Universe team.
+          </p>
+        </div>
+
+        {/* Split Layout: Contact Info Left, Enquiry Form Right */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+          {/* Left Column: Official Contact Information */}
+          <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="lg:col-span-5 bg-brand-charcoal/80 border border-brand-orange/30 p-8 sm:p-10 space-y-8"
+          >
+            {/* Announcement Box */}
+            <div className="border-l-2 border-brand-orange pl-4 bg-brand-orange/10 p-4 border border-brand-orange/20">
+              <span className="font-syne text-xs tracking-caps text-brand-orange font-bold uppercase block mb-1">
+                REGISTRATIONS &amp; SPONSORSHIPS
+              </span>
+              <span className="font-sans text-xs text-brand-white font-medium">
+                Open for LifeStyle 2026 • Dubai
+              </span>
+            </div>
+
+            {/* Phone */}
+            <div className="space-y-1.5">
+              <div className="flex items-center gap-2 text-xs font-syne tracking-caps text-brand-platinum/70 uppercase">
+                <Phone className="w-4 h-4 text-brand-orange" />
+                <span>PHONE</span>
               </div>
-              <div>
-                <div className="text-brand-platinum/70 mb-1">POWERED BY</div>
-                <div className="text-brand-yellow-golden font-bold">ARAV INNOVATION</div>
+              <a
+                href="tel:+917521555792"
+                className="font-syne text-lg sm:text-xl text-brand-white font-bold hover:text-brand-orange transition-colors block"
+              >
+                +91 7521555792
+              </a>
+            </div>
+
+            {/* WhatsApp */}
+            <div className="space-y-2 pt-2 border-t border-white/10">
+              <div className="flex items-center gap-2 text-xs font-syne tracking-caps text-brand-platinum/70 uppercase">
+                <MessageSquare className="w-4 h-4 text-brand-green" />
+                <span>WHATSAPP</span>
               </div>
+              <a
+                href="https://wa.me/919891276713"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-syne text-lg sm:text-xl text-brand-white font-bold hover:text-brand-green transition-colors block"
+              >
+                +91 9891276713
+              </a>
               <div>
-                <div className="text-brand-platinum/70 mb-1">OFFICIAL INSTAGRAM</div>
                 <a
-                  href="https://www.instagram.com/fashai_universal"
+                  href="https://wa.me/919891276713"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-brand-orange font-bold hover:underline"
+                  className="inline-flex items-center gap-2 bg-brand-green/20 border border-brand-green/40 px-4 py-2 text-xs font-syne tracking-caps font-bold text-brand-green hover:bg-brand-green hover:text-black transition-all mt-1"
                 >
-                  @fashai_universal ↗
+                  <span>CHAT ON WHATSAPP</span>
+                  <ExternalLink className="w-3.5 h-3.5" />
                 </a>
               </div>
             </div>
-          </div>
 
-          {/* Right Column: Contact Form */}
-          <div className="lg:col-span-7 bg-brand-void/90 p-8 sm:p-12 border border-hairline-orange/60 relative shadow-2xl backdrop-blur-md">
+            {/* Official Address */}
+            <div className="space-y-2 pt-2 border-t border-white/10">
+              <div className="flex items-center gap-2 text-xs font-syne tracking-caps text-brand-platinum/70 uppercase">
+                <MapPin className="w-4 h-4 text-brand-orange" />
+                <span>ADDRESS</span>
+              </div>
+              <address className="font-sans text-xs sm:text-sm text-brand-platinum leading-relaxed not-italic">
+                2, Humayun Rd,<br />
+                Sujan Sing Park North,<br />
+                Sujan Singh Park,<br />
+                New Delhi, Delhi 110003,<br />
+                India
+              </address>
+              <div className="pt-2">
+                <a
+                  href={googleMapsUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 border border-brand-orange/40 bg-brand-void px-4 py-2 text-xs font-syne tracking-caps font-bold text-brand-white hover:bg-brand-orange hover:border-brand-orange transition-all"
+                >
+                  <span>VIEW ON GOOGLE MAPS</span>
+                  <ExternalLink className="w-3.5 h-3.5" />
+                </a>
+              </div>
+            </div>
+          </motion.div>
+
+          {/* Right Column: Professional Enquiry Form */}
+          <motion.div
+            initial={{ opacity: 0, x: 20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="lg:col-span-7 bg-brand-charcoal/80 border border-brand-orange/30 p-8 sm:p-10"
+          >
+            <h3 className="font-syne text-lg tracking-caps font-bold text-brand-white uppercase mb-6 border-b border-white/10 pb-4">
+              SUBMIT AN ENQUIRY
+            </h3>
+
             {status === "success" ? (
-              <motion.div
-                initial={{ opacity: 0, scale: 0.95 }}
-                animate={{ opacity: 1, scale: 1 }}
-                className="py-12 text-center flex flex-col items-center"
-              >
-                <CheckCircle className="h-16 w-16 text-brand-orange mb-6" />
-                <h3 className="font-serif-display text-3xl text-brand-white mb-3 uppercase">
-                  MESSAGE RECEIVED
-                </h3>
-                <p className="font-sans text-sm text-brand-platinum max-w-md font-light leading-relaxed mb-8">
+              <div className="bg-brand-green/10 border border-brand-green/40 p-8 text-center space-y-4">
+                <CheckCircle className="w-12 h-12 text-brand-green mx-auto" />
+                <h4 className="font-syne text-xl text-brand-white font-bold uppercase">
+                  Enquiry Received
+                </h4>
+                <p className="font-sans text-sm text-brand-platinum">
                   Thank you for reaching out to FashAI Universe. Powered by Arav Innovation. Our team will review your message promptly.
                 </p>
                 <button
                   onClick={() => setStatus("idle")}
-                  className="bg-brand-orange px-8 py-4 text-xs font-syne tracking-caps font-bold text-white hover:bg-[#ff6f2d] transition-colors shadow-md"
+                  className="bg-brand-green text-black px-6 py-2.5 text-xs font-syne tracking-caps font-bold uppercase hover:bg-brand-green/80 transition-colors"
                 >
-                  SEND ANOTHER MESSAGE ↗
+                  Send Another Enquiry
                 </button>
-              </motion.div>
+              </div>
             ) : (
               <form onSubmit={handleSubmit} className="space-y-6">
                 {status === "error" && (
-                  <div className="flex items-center gap-3 border border-red-500/50 bg-red-500/10 p-4 text-xs font-syne text-red-400">
-                    <AlertCircle className="h-5 w-5 flex-shrink-0" />
+                  <div className="bg-red-500/10 border border-red-500/40 p-4 text-xs font-sans text-red-200 flex items-center gap-3">
+                    <AlertCircle className="w-5 h-5 text-red-400 flex-shrink-0" />
                     <span>{errorMessage}</span>
                   </div>
                 )}
 
-                {/* Name Field */}
-                <div className="relative">
-                  <label htmlFor="name-field" className="block text-[10px] font-syne tracking-micro text-brand-orange mb-2 font-bold uppercase">
-                    NAME *
-                  </label>
-                  <input
-                    id="name-field"
-                    type="text"
-                    name="name"
-                    required
-                    value={formData.name}
-                    onChange={handleChange}
-                    placeholder="Enter your full name"
-                    className="w-full bg-brand-charcoal/50 border-b border-hairline-orange/60 py-3 px-3 text-sm text-brand-white placeholder:text-brand-platinum/30 focus:border-brand-orange focus:outline-none transition-colors"
-                  />
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                  {/* Name */}
+                  <div className="space-y-2">
+                    <label htmlFor="name" className="block text-xs font-syne tracking-caps text-brand-platinum uppercase font-bold">
+                      NAME *
+                    </label>
+                    <input
+                      type="text"
+                      id="name"
+                      name="name"
+                      required
+                      value={formData.name}
+                      onChange={handleChange}
+                      placeholder="Your Full Name"
+                      className="w-full bg-brand-void border border-white/20 px-4 py-3 text-sm text-brand-white placeholder-brand-platinum/40 focus:border-brand-orange focus:outline-none transition-colors"
+                    />
+                  </div>
+
+                  {/* Email */}
+                  <div className="space-y-2">
+                    <label htmlFor="email" className="block text-xs font-syne tracking-caps text-brand-platinum uppercase font-bold">
+                      EMAIL *
+                    </label>
+                    <input
+                      type="email"
+                      id="email"
+                      name="email"
+                      required
+                      value={formData.email}
+                      onChange={handleChange}
+                      placeholder="name@company.com"
+                      className="w-full bg-brand-void border border-white/20 px-4 py-3 text-sm text-brand-white placeholder-brand-platinum/40 focus:border-brand-orange focus:outline-none transition-colors"
+                    />
+                  </div>
                 </div>
 
-                {/* Email Field */}
-                <div className="relative">
-                  <label htmlFor="email-field" className="block text-[10px] font-syne tracking-micro text-brand-orange mb-2 font-bold uppercase">
-                    EMAIL *
-                  </label>
-                  <input
-                    id="email-field"
-                    type="email"
-                    name="email"
-                    required
-                    value={formData.email}
-                    onChange={handleChange}
-                    placeholder="name@company.com"
-                    className="w-full bg-brand-charcoal/50 border-b border-hairline-orange/60 py-3 px-3 text-sm text-brand-white placeholder:text-brand-platinum/30 focus:border-brand-orange focus:outline-none transition-colors"
-                  />
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                  {/* Phone / WhatsApp */}
+                  <div className="space-y-2">
+                    <label htmlFor="phone" className="block text-xs font-syne tracking-caps text-brand-platinum uppercase font-bold">
+                      PHONE / WHATSAPP
+                    </label>
+                    <input
+                      type="tel"
+                      id="phone"
+                      name="phone"
+                      value={formData.phone}
+                      onChange={handleChange}
+                      placeholder="+91 00000 00000"
+                      className="w-full bg-brand-void border border-white/20 px-4 py-3 text-sm text-brand-white placeholder-brand-platinum/40 focus:border-brand-orange focus:outline-none transition-colors"
+                    />
+                  </div>
+
+                  {/* Enquiry Type Dropdown */}
+                  <div className="space-y-2">
+                    <label htmlFor="subject" className="block text-xs font-syne tracking-caps text-brand-platinum uppercase font-bold">
+                      ENQUIRY TYPE *
+                    </label>
+                    <select
+                      id="subject"
+                      name="subject"
+                      required
+                      value={formData.subject}
+                      onChange={handleChange}
+                      className="w-full bg-brand-void border border-white/20 px-4 py-3 text-sm text-brand-white focus:border-brand-orange focus:outline-none transition-colors"
+                    >
+                      <option value="Registration">Registration</option>
+                      <option value="Sponsorship">Sponsorship</option>
+                      <option value="Partnership">Partnership</option>
+                      <option value="Press / Media">Press / Media</option>
+                      <option value="General Enquiry">General Enquiry</option>
+                    </select>
+                  </div>
                 </div>
 
-                {/* Phone / WhatsApp Field */}
-                <div className="relative">
-                  <label htmlFor="phone-field" className="block text-[10px] font-syne tracking-micro text-brand-orange mb-2 font-bold uppercase">
-                    PHONE / WHATSAPP
-                  </label>
-                  <input
-                    id="phone-field"
-                    type="tel"
-                    name="phone"
-                    value={formData.phone}
-                    onChange={handleChange}
-                    placeholder="+971 (00) 000-0000"
-                    className="w-full bg-brand-charcoal/50 border-b border-hairline-orange/60 py-3 px-3 text-sm text-brand-white placeholder:text-brand-platinum/30 focus:border-brand-orange focus:outline-none transition-colors"
-                  />
-                </div>
-
-                {/* Subject / Interest Field */}
-                <div className="relative">
-                  <label htmlFor="subject-field" className="block text-[10px] font-syne tracking-micro text-brand-orange mb-2 font-bold uppercase">
-                    SUBJECT / INTEREST *
-                  </label>
-                  <select
-                    id="subject-field"
-                    name="subject"
-                    value={formData.subject}
-                    onChange={handleChange}
-                    className="w-full bg-brand-charcoal border-b border-hairline-orange/60 py-3 px-3 text-sm text-brand-white focus:border-brand-orange focus:outline-none transition-colors cursor-pointer"
-                  >
-                    <option value="Collaboration">Collaboration</option>
-                    <option value="Partnership">Partnership</option>
-                    <option value="Project">Project</option>
-                    <option value="Event">Event</option>
-                    <option value="Media">Media</option>
-                    <option value="General Enquiry">General Enquiry</option>
-                  </select>
-                </div>
-
-                {/* Message Field */}
-                <div className="relative">
-                  <label htmlFor="message-field" className="block text-[10px] font-syne tracking-micro text-brand-orange mb-2 font-bold uppercase">
+                {/* Message */}
+                <div className="space-y-2">
+                  <label htmlFor="message" className="block text-xs font-syne tracking-caps text-brand-platinum uppercase font-bold">
                     MESSAGE *
                   </label>
                   <textarea
-                    id="message-field"
+                    id="message"
                     name="message"
                     required
-                    rows={4}
+                    rows={5}
                     value={formData.message}
                     onChange={handleChange}
-                    placeholder="Share details regarding your inquiry..."
-                    className="w-full bg-brand-charcoal/50 border-b border-hairline-orange/60 py-3 px-3 text-sm text-brand-white placeholder:text-brand-platinum/30 focus:border-brand-orange focus:outline-none transition-colors resize-none"
+                    placeholder="Tell us about your interest or enquiry..."
+                    className="w-full bg-brand-void border border-white/20 px-4 py-3 text-sm text-brand-white placeholder-brand-platinum/40 focus:border-brand-orange focus:outline-none transition-colors resize-none"
                   />
                 </div>
 
                 {/* Submit Button */}
-                <div>
-                  <button
-                    type="submit"
-                    disabled={status === "loading"}
-                    className="w-full bg-brand-orange py-4 text-xs font-syne tracking-caps font-bold text-white hover:bg-[#ff6f2d] hover:shadow-[0_0_25px_rgba(241,94,28,0.4)] transition-all flex items-center justify-center gap-3 disabled:opacity-50 shadow-lg"
-                    data-cursor="explore"
-                  >
-                    {status === "loading" ? (
-                      <>
-                        <Loader2 className="h-4 w-4 animate-spin" />
-                        <span>SENDING MESSAGE...</span>
-                      </>
-                    ) : (
-                      <span>SEND MESSAGE ↗</span>
-                    )}
-                  </button>
-                </div>
+                <button
+                  type="submit"
+                  disabled={status === "loading"}
+                  className="w-full bg-brand-orange py-4 text-xs font-syne tracking-caps font-bold text-white hover:bg-[#ff6f2d] transition-all duration-300 flex items-center justify-center gap-2 shadow-lg disabled:opacity-50"
+                >
+                  {status === "loading" ? (
+                    <>
+                      <Loader2 className="w-4 h-4 animate-spin" />
+                      <span>SENDING ENQUIRY...</span>
+                    </>
+                  ) : (
+                    <span>SEND ENQUIRY ↗</span>
+                  )}
+                </button>
               </form>
             )}
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>
   );
 }
 
+export default function ContactSection() {
+  return (
+    <Suspense fallback={<div className="py-24 bg-brand-void text-center text-brand-platinum">Loading Contact Form...</div>}>
+      <ContactContent />
+    </Suspense>
+  );
+}

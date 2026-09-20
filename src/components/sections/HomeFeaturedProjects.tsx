@@ -12,14 +12,14 @@ export default function HomeFeaturedProjects() {
       <div className="py-20 container-editorial border-b border-hairline-orange flex flex-col sm:flex-row justify-between items-start sm:items-end">
         <div>
           <span className="text-xs font-syne tracking-micro text-brand-orange block mb-3 font-bold uppercase">
-            02 / FEATURED PROJECTS
+            02 / LIFESTYLE EDITIONS
           </span>
           <h2 className="font-serif-display text-4xl sm:text-6xl lg:text-7xl font-light text-brand-white">
-            THE MOMENTS WE CREATE
+            LIFESTYLE EDITIONS
           </h2>
         </div>
         <p className="font-sans text-xs sm:text-sm text-brand-platinum max-w-xs mt-4 sm:mt-0 font-light leading-relaxed">
-          International haute runway presentations and luxury lifestyle symposiums across Paris and Dubai.
+          LifeStyle 2025 Previous Edition &amp; LifeStyle 2026 Upcoming Dubai Edition.
         </p>
       </div>
 
