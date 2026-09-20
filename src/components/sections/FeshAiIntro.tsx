@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 
-export default function FeshAiIntro() {
+export default function FashAiIntro() {
   return (
     <section className="relative min-h-[75vh] w-full flex flex-col justify-center py-24 bg-gradient-to-b from-brand-void via-[#0E0C0B] to-brand-atelier border-t border-b border-hairline-orange overflow-hidden">
       {/* Soft Atmosphere Glow */}

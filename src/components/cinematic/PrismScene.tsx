@@ -301,7 +301,7 @@ export default function PrismScene() {
   return (
     <div
       ref={containerRef}
-      className="absolute inset-0 pointer-events-none z-0 overflow-hidden"
+      className="absolute inset-0 pointer-events-none z-0 overflow-hidden opacity-35 sm:opacity-85 transition-opacity duration-500"
       aria-hidden="true"
     />
   );

@@ -3,8 +3,8 @@ import { NextResponse } from "next/server";
 export async function POST(request: Request) {
   try {
     const body = await request.json();
-    const { name, email, phone, interest, inquiryType, message } = body;
-    const selectedCategory = interest || inquiryType;
+    const { name, email, phone, interest, inquiryType, subject, message } = body;
+    const selectedCategory = interest || inquiryType || subject;
 
     if (!name || !email || !selectedCategory || !message) {
       return NextResponse.json(

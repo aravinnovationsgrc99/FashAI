@@ -1,6 +1,7 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+import { createPortal } from "react-dom";
 import Link from "next/link";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
@@ -24,6 +25,12 @@ export default function MobileMenu({
   items,
   currentPath,
 }: MobileMenuProps) {
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
   // Prevent background scrolling when open
   useEffect(() => {
     if (isOpen) {
@@ -50,116 +57,136 @@ export default function MobileMenu({
     return () => window.removeEventListener("keydown", handleKeyDown);
   }, [isOpen, onClose]);
 
-  return (
+  if (!mounted) return null;
+
+  const content = (
     <AnimatePresence>
       {isOpen && (
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
-          className="fixed inset-0 z-[100] flex flex-col justify-between bg-brand-void/98 px-6 pt-safe pb-safe text-brand-off-white backdrop-blur-2xl lg:hidden min-h-[100dvh] w-full"
-          role="dialog"
-          aria-modal="true"
-          aria-label="Mobile Navigation Menu"
-        >
-          {/* Top Bar */}
+        <div className="fixed inset-0 z-[100] lg:hidden flex flex-col">
+          {/* Dark Backdrop Overlay with Heavy Blur */}
           <motion.div
-            initial={{ opacity: 0, y: -10 }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.3 }}
+            onClick={onClose}
+            className="absolute inset-0 bg-black/92 backdrop-blur-2xl"
+            style={{
+              WebkitBackdropFilter: "blur(24px)",
+              backdropFilter: "blur(24px)",
+            }}
+          />
+
+          {/* Mobile Panel Content */}
+          <motion.div
+            initial={{ opacity: 0, y: -15 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.1, duration: 0.3 }}
-            className="flex items-center justify-between border-b border-hairline-orange pb-4 pt-2"
+            exit={{ opacity: 0, y: -15 }}
+            transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
+            className="relative z-[110] flex flex-col justify-between h-full w-full bg-[#080808]/95 px-6 pt-6 pb-8 text-brand-off-white overflow-y-auto"
           >
-            <Link href="/" onClick={onClose} className="flex items-center gap-3 min-h-[44px]">
-              <div className="relative w-8 h-8 flex-shrink-0 overflow-hidden rounded-md border border-brand-orange/30 bg-black shadow-md">
-                <Image
-                  src="/assets/logo/main-logo.jpeg"
-                  alt="FashAI Universe Official Logo"
-                  fill
-                  priority
-                  sizes="32px"
-                  className="object-cover"
-                />
-              </div>
-              <div className="flex flex-col">
-                <span className="font-syne text-base tracking-[0.18em] font-extrabold text-brand-white">
-                  FashAI Universe
-                </span>
-                <span className="font-syne text-[10px] tracking-micro text-brand-orange font-semibold uppercase">
+            {/* Header Lockup in Mobile Menu */}
+            <div className="flex items-center justify-between border-b border-brand-orange/20 pb-5 pt-2 flex-shrink-0">
+              <Link href="/" onClick={onClose} className="flex items-center gap-3 min-h-[44px]">
+                <div className="relative w-9 h-9 flex-shrink-0 overflow-hidden rounded-md border border-brand-orange/40 bg-black shadow-lg">
+                  <Image
+                    src="/assets/logo/main-logo.jpeg"
+                    alt="FashAI Universe Official Logo"
+                    fill
+                    priority
+                    sizes="36px"
+                    className="object-cover"
+                  />
+                </div>
+                <div className="flex flex-col">
+                  <span className="font-syne text-base tracking-[0.16em] font-extrabold text-brand-white leading-snug">
+                    FashAI Universe
+                  </span>
+                  <span className="font-syne text-[9px] tracking-micro text-brand-orange font-semibold uppercase leading-snug">
+                    Powered by Arav Innovation
+                  </span>
+                </div>
+              </Link>
+              <button
+                onClick={onClose}
+                className="p-2.5 rounded-full bg-brand-void border border-brand-orange/40 text-brand-white hover:text-brand-orange transition-colors min-w-[44px] min-h-[44px] flex items-center justify-center z-[120]"
+                aria-label="Close Navigation Menu"
+              >
+                <X className="h-6 w-6" />
+              </button>
+            </div>
+
+            {/* Navigation Links */}
+            <nav className="flex flex-col space-y-3 my-auto py-6 flex-shrink-0">
+              {items.map((item, index) => {
+                const isActive =
+                  item.href === "/"
+                    ? currentPath === "/"
+                    : currentPath.startsWith(item.href);
+
+                return (
+                  <motion.div
+                    key={item.href}
+                    initial={{ opacity: 0, x: -20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: 0.08 + index * 0.05, duration: 0.3 }}
+                  >
+                    <Link
+                      href={item.href}
+                      onClick={onClose}
+                      className={`group flex items-center justify-between py-3 px-4 rounded-lg border ${
+                        isActive
+                          ? "text-brand-orange bg-brand-orange/10 font-bold border-brand-orange/40"
+                          : "text-brand-white border-transparent hover:border-brand-orange/30 hover:bg-brand-orange/5"
+                      } transition-all duration-200`}
+                    >
+                      <span className="flex items-center gap-4">
+                        <span className="text-xs font-syne text-brand-orange/90 font-bold">
+                          0{index + 1}
+                        </span>
+                        <span className="font-syne text-2xl xs:text-3xl font-extrabold tracking-wide uppercase">
+                          {item.label}
+                        </span>
+                      </span>
+                      <span
+                        className={`text-sm font-syne text-brand-orange ${
+                          isActive ? "opacity-100" : "opacity-0 group-hover:opacity-100"
+                        } transition-opacity`}
+                      >
+                        ↗
+                      </span>
+                    </Link>
+                  </motion.div>
+                );
+              })}
+            </nav>
+
+            {/* Footer Details in Menu */}
+            <motion.div
+              initial={{ opacity: 0, y: 15 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.35, duration: 0.3 }}
+              className="border-t border-brand-orange/20 pt-6 flex flex-col space-y-4 flex-shrink-0"
+            >
+              <Link
+                href="/contact"
+                onClick={onClose}
+                className="w-full bg-brand-orange py-4 text-center text-xs font-syne tracking-caps font-bold text-white hover:bg-[#ff6f2d] transition-colors min-h-[48px] flex items-center justify-center shadow-lg rounded-none"
+              >
+                CONTACT US ↗
+              </Link>
+              <div className="flex justify-between items-center text-[10px] font-syne tracking-micro text-brand-platinum/80 pt-1">
+                <span>@fashai_universal</span>
+                <span className="text-brand-orange font-bold uppercase">
                   Powered by Arav Innovation
                 </span>
               </div>
-            </Link>
-            <button
-              onClick={onClose}
-              className="p-3 min-w-[44px] min-h-[44px] flex items-center justify-center text-brand-off-white hover:text-brand-orange transition-colors"
-              aria-label="Close Navigation Menu"
-            >
-              <X className="h-6 w-6" />
-            </button>
+            </motion.div>
           </motion.div>
-
-          {/* Nav Links */}
-          <nav className="flex flex-col space-y-5 my-auto py-6">
-            {items.map((item, index) => {
-              const isActive =
-                item.href === "/"
-                  ? currentPath === "/"
-                  : currentPath.startsWith(item.href);
-
-              return (
-                <motion.div
-                  key={item.href}
-                  initial={{ opacity: 0, x: -30 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: 0.15 + index * 0.06, duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
-                >
-                  <Link
-                    href={item.href}
-                    onClick={onClose}
-                    className={`group flex items-center justify-between py-2 min-h-[44px] text-2xl xs:text-3xl sm:text-4xl font-serif-display ${
-                      isActive ? "text-brand-orange font-medium" : "text-brand-white hover:text-brand-lemon"
-                    } transition-colors duration-200`}
-                  >
-                    <span className="flex items-center gap-4">
-                      <span className="text-xs font-syne text-brand-orange/80 font-normal">
-                        0{index + 1}
-                      </span>
-                      {item.label}
-                    </span>
-                    <span className={`text-xs font-syne text-brand-orange ${isActive ? "opacity-100" : "opacity-0 group-hover:opacity-100"} transition-opacity`}>
-                      ↗
-                    </span>
-                  </Link>
-                </motion.div>
-              );
-            })}
-          </nav>
-
-          {/* Bottom Action CTA & Details */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.45, duration: 0.4 }}
-            className="border-t border-hairline-orange pt-6 pb-4 flex flex-col space-y-4"
-          >
-            <Link
-              href="/contact"
-              onClick={onClose}
-              className="w-full bg-brand-orange py-4 text-center text-xs font-syne tracking-caps font-bold text-white hover:bg-[#ff6f2d] transition-colors min-h-[48px] flex items-center justify-center shadow-lg"
-            >
-              CONTACT US ↗
-            </Link>
-            <div className="flex justify-between items-center text-[10px] font-syne tracking-micro text-brand-platinum pt-1">
-              <span>FashAI Universe</span>
-              <span className="text-brand-orange font-bold uppercase">Powered by Arav Innovation</span>
-            </div>
-          </motion.div>
-        </motion.div>
+        </div>
       )}
     </AnimatePresence>
   );
+
+  return createPortal(content, document.body);
 }
-
-
-

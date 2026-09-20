@@ -46,12 +46,12 @@ export default function ContactSection() {
           message: "",
         });
       } else {
-        // Fallback for client demonstration if API endpoint is static
-        setStatus("success");
+        setStatus("error");
+        setErrorMessage(data.error || "Failed to submit enquiry. Please try again.");
       }
     } catch {
-      // Prepared client-side handling without fake server errors
-      setStatus("success");
+      setStatus("error");
+      setErrorMessage("Network error. Please check your connection and try again.");
     }
   };
 
