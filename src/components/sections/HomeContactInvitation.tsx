@@ -5,13 +5,17 @@ import Link from "next/link";
 
 export default function HomeContactInvitation() {
   return (
-    <section className="relative min-h-screen w-full flex flex-col justify-center py-24 px-6 sm:px-12 bg-gradient-to-b from-brand-void via-[#0C0A09] to-brand-atelier border-b border-hairline-orange overflow-hidden">
+    <section id="contact" className="relative min-h-screen w-full flex flex-col justify-center py-24 px-6 sm:px-12 bg-gradient-to-b from-brand-void via-[#0C0A09] to-brand-atelier border-b border-hairline-orange overflow-hidden">
       {/* Atmosphere Glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-[#F15E1C]/5 blur-3xl pointer-events-none rounded-full" />
 
       <div className="mx-auto max-w-7xl text-center flex flex-col items-center w-full relative z-10">
-        <span className="text-xs font-syne tracking-micro text-brand-orange font-bold block mb-6 uppercase">
-          05 / INVITATION
+        <span className="text-xs font-syne tracking-micro text-brand-orange font-bold block mb-4 uppercase">
+          04 / CONNECTION
+        </span>
+
+        <span className="text-[10px] font-syne tracking-[0.25em] text-brand-lemon uppercase font-bold mb-6">
+          Powered by RA Innovation
         </span>
 
         <motion.h2
@@ -19,11 +23,11 @@ export default function HomeContactInvitation() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.9 }}
-          className="font-serif-display text-5xl sm:text-7xl md:text-8xl lg:text-9xl font-light text-brand-white leading-[0.95] tracking-tight mb-8"
+          className="font-serif-display text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-light text-brand-white leading-[1.05] tracking-tight mb-8"
         >
-          LET’S CREATE <br />
+          ENTER THE <br />
           <span className="italic font-normal text-brand-orange">
-            THE NEXT MOMENT.
+            FESH AI UNIVERSE.
           </span>
         </motion.h2>
 
@@ -34,7 +38,7 @@ export default function HomeContactInvitation() {
           transition={{ duration: 0.9, delay: 0.2 }}
           className="font-sans text-base sm:text-lg text-brand-platinum font-light max-w-xl leading-relaxed mb-12"
         >
-          For enquiries, collaborations, partnerships, media and participation in upcoming Fashprism Internationals presentations.
+          For enquiries, collaborations, partnerships, press accreditation, and delegate interest across the Fesh AI Universe roadmap.
         </motion.p>
 
         <motion.div
@@ -42,6 +46,7 @@ export default function HomeContactInvitation() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.9, delay: 0.3 }}
+          className="flex flex-col sm:flex-row items-center gap-4"
         >
           <Link
             href="/contact"

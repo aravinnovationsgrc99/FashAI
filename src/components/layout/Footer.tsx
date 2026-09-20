@@ -12,23 +12,20 @@ export default function Footer() {
           {/* Brand Col */}
           <div className="md:col-span-5 flex flex-col justify-between">
             <div>
-              <div className="flex items-center gap-3 mb-6">
-                <Link href="/" className="inline-block">
-                  <Image
-                    src="/assets/brand/logo_transparent.png"
-                    alt="FashAI Universal Logo"
-                    width={280}
-                    height={80}
-                    className="h-14 w-auto object-contain"
-                  />
-                </Link>
-              </div>
-                  <p className="font-sans text-sm text-brand-platinum max-w-md font-light leading-relaxed">
-                Fashprism Internationals creates fashion experiences that move beyond the runway. Where fashion, culture, and experience converge.
+              <Link href="/" className="inline-flex flex-col mb-6">
+                <span className="font-syne text-xl tracking-[0.2em] font-extrabold text-brand-white">
+                  FESH AI UNIVERSE
+                </span>
+                <span className="font-syne text-xs tracking-micro text-brand-orange font-bold uppercase mt-1">
+                  Powered by RA Innovation
+                </span>
+              </Link>
+              <p className="font-sans text-sm text-brand-platinum max-w-md font-light leading-relaxed">
+                A digital project within the Fesh Prism ecosystem. Where fashion, technology and experience converge across the 2025 and 2026 journey.
               </p>
             </div>
-            <div className="mt-8 text-xs font-syne tracking-micro text-brand-orange font-bold">
-              FASHION BEYOND BORDERS
+            <div className="mt-8 text-xs font-syne tracking-micro text-brand-orange font-bold uppercase">
+              A PROJECT WITHIN FESH PRISM
             </div>
           </div>
 
@@ -52,10 +49,10 @@ export default function Footer() {
           <div className="md:col-span-4 flex flex-col justify-between">
             <div>
               <h4 className="font-syne text-xs tracking-micro text-brand-orange mb-6 font-bold">
-                ENQUIRIES & PARTICIPATION
+                ENQUIRIES & DELEGATES
               </h4>
               <p className="font-sans text-xs text-brand-platinum mb-6 leading-relaxed">
-                For collaborations, press, sponsorships, and designer participation for upcoming events.
+                For collaborations, delegate inquiries, press accreditation, and updates regarding the Fesh AI Universe roadmap.
               </p>
               <Link
                 href="/contact"
@@ -66,8 +63,8 @@ export default function Footer() {
             </div>
 
             <div className="mt-8 pt-6 border-t border-hairline-orange flex items-center justify-between text-xs font-syne text-brand-platinum">
-              <span>LOCATIONS</span>
-              <span className="text-brand-yellow-golden font-bold">DUBAI — PARIS</span>
+              <span>DESTINATION</span>
+              <span className="text-brand-yellow-golden font-bold">DUBAI — 2026</span>
             </div>
           </div>
         </div>
@@ -75,11 +72,11 @@ export default function Footer() {
         {/* Bottom Bar */}
         <div className="flex flex-col sm:flex-row justify-between items-center pt-8 text-[10px] font-syne tracking-micro text-brand-platinum gap-4">
           <div>
-            © {new Date().getFullYear()} FASHPRISM INTERNATIONALS. ALL RIGHTS RESERVED.
+            © {new Date().getFullYear()} FESH AI UNIVERSE. POWERED BY RA INNOVATION. ALL RIGHTS RESERVED.
           </div>
           <div className="flex gap-6">
             <Link href="/contact" className="hover:text-brand-orange transition-colors">
-              GET IN TOUCH
+              ENTER UNIVERSE
             </Link>
           </div>
         </div>

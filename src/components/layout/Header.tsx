@@ -9,9 +9,8 @@ import MobileMenu from "./MobileMenu";
 
 export const NAV_ITEMS = [
   { label: "HOME", href: "/" },
-  { label: "PROJECTS", href: "/projects" },
-  { label: "UPCOMING", href: "/upcoming" },
-  { label: "GALLERY", href: "/gallery" },
+  { label: "2025", href: "/2025" },
+  { label: "2026", href: "/2026" },
   { label: "CONTACT", href: "/contact" },
 ];
 
@@ -20,18 +19,16 @@ export default function Header() {
   const pathname = usePathname();
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-brand-void/90 backdrop-blur-md border-b border-hairline-gold/40 transition-all duration-300">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-brand-void/90 backdrop-blur-md border-b border-hairline-orange/40 transition-all duration-300">
       <div className="container-editorial flex items-center justify-between py-3 min-h-[64px]">
-        {/* Official Brand Logo */}
-        <Link href="/" className="flex items-center gap-2 group py-1 min-h-[44px]">
-          <Image
-            src="/assets/brand/logo_transparent.png"
-            alt="Fashprism Internationals Logo"
-            width={260}
-            height={76}
-            priority
-            className="h-10 sm:h-12 w-auto object-contain transition-opacity duration-300 group-hover:opacity-90"
-          />
+        {/* Official Fesh AI Universe Brand Lockup */}
+        <Link href="/" className="flex flex-col group py-1 min-h-[44px]">
+          <span className="font-syne text-sm sm:text-base tracking-[0.2em] font-extrabold text-brand-white group-hover:text-brand-orange transition-colors">
+            FESH AI UNIVERSE
+          </span>
+          <span className="font-syne text-[9px] sm:text-[10px] tracking-micro text-brand-orange font-semibold uppercase">
+            Powered by RA Innovation
+          </span>
         </Link>
 
         {/* Desktop Navigation Links */}
@@ -64,11 +61,11 @@ export default function Header() {
         {/* Action Button & Mobile Toggle */}
         <div className="flex items-center gap-3">
           <Link
-            href="/contact"
+            href="/2026"
             className="hidden sm:inline-flex items-center justify-center bg-brand-orange px-5 py-2 text-[11px] font-syne tracking-caps font-bold text-white hover:bg-[#ff6f2d] hover:translate-y-[-1px] transition-all duration-200 shadow-md"
             data-cursor="explore"
           >
-            BE A PART ↗
+            EXPLORE ↗
           </Link>
 
           {/* Mobile Hamburger Button */}

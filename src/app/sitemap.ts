@@ -1,7 +1,7 @@
 import { MetadataRoute } from "next";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = "https://fashaiuniversal.com";
+  const baseUrl = "https://feshaiuniverse.com";
 
   return [
     {
@@ -11,22 +11,16 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 1.0,
     },
     {
-      url: `${baseUrl}/projects`,
+      url: `${baseUrl}/2025`,
       lastModified: new Date(),
       changeFrequency: "weekly",
       priority: 0.9,
     },
     {
-      url: `${baseUrl}/upcoming`,
+      url: `${baseUrl}/2026`,
       lastModified: new Date(),
       changeFrequency: "weekly",
       priority: 0.9,
-    },
-    {
-      url: `${baseUrl}/gallery`,
-      lastModified: new Date(),
-      changeFrequency: "weekly",
-      priority: 0.8,
     },
     {
       url: `${baseUrl}/contact`,
@@ -36,4 +30,3 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
   ];
 }
-

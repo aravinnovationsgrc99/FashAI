@@ -68,21 +68,19 @@ export default function MobileMenu({
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1, duration: 0.3 }}
-            className="flex items-center justify-between border-b border-hairline-gold pb-4 pt-2"
+            className="flex items-center justify-between border-b border-hairline-orange pb-4 pt-2"
           >
-            <Link href="/" onClick={onClose} className="flex items-center min-h-[44px]">
-              <Image
-                src="/assets/brand/logo_transparent.png"
-                alt="Fashprism Internationals Logo"
-                width={190}
-                height={54}
-                priority
-                className="h-9 w-auto object-contain"
-              />
+            <Link href="/" onClick={onClose} className="flex flex-col min-h-[44px]">
+              <span className="font-syne text-base tracking-[0.2em] font-extrabold text-brand-white">
+                FESH AI UNIVERSE
+              </span>
+              <span className="font-syne text-[10px] tracking-micro text-brand-orange font-semibold uppercase">
+                Powered by RA Innovation
+              </span>
             </Link>
             <button
               onClick={onClose}
-              className="p-3 min-w-[44px] min-h-[44px] flex items-center justify-center text-brand-off-white hover:text-brand-gold transition-colors"
+              className="p-3 min-w-[44px] min-h-[44px] flex items-center justify-center text-brand-off-white hover:text-brand-orange transition-colors"
               aria-label="Close Navigation Menu"
             >
               <X className="h-6 w-6" />
@@ -134,15 +132,15 @@ export default function MobileMenu({
             className="border-t border-hairline-orange pt-6 pb-4 flex flex-col space-y-4"
           >
             <Link
-              href="/contact"
+              href="/2026"
               onClick={onClose}
               className="w-full bg-brand-orange py-4 text-center text-xs font-syne tracking-caps font-bold text-white hover:bg-[#ff6f2d] transition-colors min-h-[48px] flex items-center justify-center shadow-lg"
             >
-              BE A PART ↗
+              EXPLORE 2026 ↗
             </Link>
             <div className="flex justify-between items-center text-[10px] font-syne tracking-micro text-brand-platinum pt-1">
-              <span>FASHPRISM INTERNATIONALS</span>
-              <span className="text-brand-orange font-bold">DUBAI — PARIS</span>
+              <span>FESH AI UNIVERSE</span>
+              <span className="text-brand-orange font-bold">A PROJECT WITHIN FESH PRISM</span>
             </div>
           </motion.div>
         </motion.div>

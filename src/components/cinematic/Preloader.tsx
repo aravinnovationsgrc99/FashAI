@@ -34,8 +34,8 @@ export default function Preloader() {
         >
           {/* Header Tag */}
           <div className="flex w-full justify-between text-xs font-syne tracking-micro text-brand-platinum border-b border-hairline-orange pb-4 max-w-7xl">
-            <span className="text-brand-orange font-bold">FASHPRISM INTERNATIONALS</span>
-            <span>DIGITAL ATELIER</span>
+            <span className="text-brand-orange font-bold">FESH AI UNIVERSE</span>
+            <span>Powered by RA Innovation</span>
           </div>
 
           {/* Central Logo & Progress */}
@@ -44,25 +44,23 @@ export default function Preloader() {
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.8 }}
-              className="mb-4"
+              className="mb-4 flex flex-col items-center"
             >
-              <Image
-                src="/assets/brand/logo_transparent.png"
-                alt="FashAI Universal Logo"
-                width={360}
-                height={100}
-                priority
-                className="h-20 sm:h-28 w-auto object-contain"
-              />
+              <h1 className="font-serif-display text-4xl sm:text-6xl font-light text-brand-white tracking-widest uppercase">
+                FESH AI UNIVERSE
+              </h1>
+              <p className="font-syne text-xs sm:text-sm tracking-[0.25em] text-brand-lemon mt-2 font-bold uppercase">
+                Powered by RA Innovation
+              </p>
             </motion.div>
 
             <motion.p
               initial={{ opacity: 0 }}
               animate={{ opacity: 0.8 }}
               transition={{ delay: 0.3, duration: 0.8 }}
-              className="font-syne text-[10px] sm:text-xs tracking-caps text-brand-orange mt-2 font-bold"
+              className="font-syne text-[10px] sm:text-xs tracking-caps text-brand-orange mt-2 font-bold uppercase"
             >
-              FASHION BEYOND BORDERS
+              A PROJECT WITHIN FESH PRISM
             </motion.p>
 
             {/* Progress Bar & Percentage */}
@@ -74,16 +72,16 @@ export default function Preloader() {
                 />
               </div>
               <div className="flex justify-between items-center mt-3 text-[10px] font-syne tracking-micro text-brand-platinum">
-                <span>INITIALIZING DIGITAL ATELIER</span>
-                <span className="text-brand-orange">{progress}%</span>
+                <span>INITIALIZING UNIVERSE</span>
+                <span className="text-brand-orange font-bold">{progress}%</span>
               </div>
             </div>
           </div>
 
           {/* Footer Metadata */}
           <div className="flex w-full justify-between text-[10px] font-syne tracking-micro text-brand-platinum pt-4 border-t border-hairline max-w-7xl">
-            <span>PARIS — DUBAI</span>
-            <span>HAUTE COUTURE</span>
+            <span>FESH PRISM ECOSYSTEM</span>
+            <span className="text-brand-orange font-bold">2025 / 2026 ROADMAP</span>
           </div>
         </motion.div>
       )}

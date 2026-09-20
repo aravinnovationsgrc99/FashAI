@@ -227,6 +227,15 @@ export default function PrismScene() {
 
     document.addEventListener("visibilitychange", handleVisibilityChange);
 
+    let targetScrollY = 0;
+    let currentScrollY = 0;
+
+    const handleScroll = () => {
+      targetScrollY = window.scrollY || document.documentElement.scrollTop;
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+
     // Animation Loop
     const animate = () => {
       if (!isRunning) return;
@@ -235,13 +244,20 @@ export default function PrismScene() {
 
       currentMouseX += (targetMouseX - currentMouseX) * 0.04;
       currentMouseY += (targetMouseY - currentMouseY) * 0.04;
+      currentScrollY += (targetScrollY - currentScrollY) * 0.05;
+
+      const scrollFactor = Math.min(currentScrollY / (window.innerHeight || 800), 4);
 
       const baseX = isMobile ? 0 : 1.8;
-      mainGroup.position.x = baseX + currentMouseX * 0.35;
-      mainGroup.position.y = currentMouseY * 0.25;
+      mainGroup.position.x = baseX + currentMouseX * 0.35 + Math.sin(scrollFactor * Math.PI) * 0.4;
+      mainGroup.position.y = currentMouseY * 0.25 - scrollFactor * 0.3;
+      mainGroup.position.z = -scrollFactor * 0.2;
 
-      mainGroup.rotation.y = currentMouseX * 0.3 + Date.now() * 0.00025;
-      mainGroup.rotation.x = currentMouseY * 0.2;
+      mainGroup.rotation.y = currentMouseX * 0.3 + Date.now() * 0.00025 + scrollFactor * 0.6;
+      mainGroup.rotation.x = currentMouseY * 0.2 + scrollFactor * 0.15;
+
+      // Dynamic Light refraction shift
+      orangePointLight.intensity = 2.2 + Math.sin(scrollFactor * Math.PI) * 0.8;
 
       ring1.rotation.z += 0.001;
       ring2.rotation.z -= 0.0012;
@@ -261,6 +277,7 @@ export default function PrismScene() {
       isRunning = false;
       cancelAnimationFrame(animationFrameId);
       document.removeEventListener("visibilitychange", handleVisibilityChange);
+      window.removeEventListener("scroll", handleScroll);
       if (!isMobile) {
         window.removeEventListener("mousemove", handleMouseMove);
       }
