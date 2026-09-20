@@ -32,11 +32,10 @@ export default function FeshAiIntro() {
             transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
             className="font-serif-display text-3xl sm:text-5xl md:text-6xl lg:text-7xl text-brand-white font-light leading-[1.1]"
           >
-            Fesh AI Universe is a digital project within{" "}
-            <span className="italic font-normal text-brand-orange">
-              Fesh Prism,
-            </span>{" "}
-            bringing technology and haute fashion into one continuous experience.
+            FashAI Universe is an international digital experience{" "}
+            <span className="text-brand-orange italic font-normal">
+              where fashion, technology and imagination converge.
+            </span>
           </motion.h2>
 
           {/* Supporting Paragraph */}
