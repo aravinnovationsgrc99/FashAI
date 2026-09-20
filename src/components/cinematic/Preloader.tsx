@@ -46,6 +46,16 @@ export default function Preloader() {
               transition={{ duration: 0.8 }}
               className="mb-4 flex flex-col items-center"
             >
+              <div className="relative w-20 h-20 sm:w-28 sm:h-28 mb-6 rounded-xl border border-brand-orange/40 bg-black shadow-[0_0_30px_rgba(241,94,28,0.3)] overflow-hidden">
+                <Image
+                  src="/assets/logo/main-logo.jpeg"
+                  alt="FashAI Universe Official Logo"
+                  fill
+                  priority
+                  sizes="(max-width: 640px) 80px, 112px"
+                  className="object-cover"
+                />
+              </div>
               <h1 className="font-serif-display text-4xl sm:text-6xl font-light text-brand-white tracking-widest uppercase">
                 FASHAI UNIVERSE
               </h1>

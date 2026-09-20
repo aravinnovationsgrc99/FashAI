@@ -12,13 +12,24 @@ export default function Footer() {
           {/* Brand Col */}
           <div className="md:col-span-5 flex flex-col justify-between">
             <div>
-              <Link href="/" className="inline-flex flex-col mb-6">
-                <span className="font-syne text-xl tracking-[0.18em] font-extrabold text-brand-white">
-                  FashAI Universe
-                </span>
-                <span className="font-syne text-xs tracking-micro text-brand-orange font-bold uppercase mt-1">
-                  Powered by Arav Innovation
-                </span>
+              <Link href="/" className="inline-flex items-center gap-3.5 mb-6 group">
+                <div className="relative w-10 h-10 flex-shrink-0 overflow-hidden rounded-md border border-brand-orange/30 bg-black shadow-md">
+                  <Image
+                    src="/assets/logo/main-logo.jpeg"
+                    alt="FashAI Universe Official Logo"
+                    fill
+                    sizes="40px"
+                    className="object-cover group-hover:scale-105 transition-transform duration-300"
+                  />
+                </div>
+                <div className="flex flex-col">
+                  <span className="font-syne text-xl tracking-[0.18em] font-extrabold text-brand-white group-hover:text-brand-orange transition-colors">
+                    FashAI Universe
+                  </span>
+                  <span className="font-syne text-xs tracking-micro text-brand-orange font-bold uppercase mt-0.5">
+                    Powered by Arav Innovation
+                  </span>
+                </div>
               </Link>
               <p className="font-sans text-sm text-brand-platinum max-w-md font-light leading-relaxed">
                 Where fashion, technology and imagination converge. An international fashion-meets-technology digital experience.

@@ -23,13 +23,25 @@ export default function Header() {
     <header className="fixed top-0 left-0 right-0 z-50 bg-brand-void/90 backdrop-blur-md border-b border-hairline-orange/40 transition-all duration-300">
       <div className="container-editorial flex items-center justify-between py-3 min-h-[64px]">
         {/* Official FashAI Universe Brand Lockup */}
-        <Link href="/" className="flex flex-col group py-1 min-h-[44px]">
-          <span className="font-syne text-base sm:text-lg tracking-[0.18em] font-extrabold text-brand-white group-hover:text-brand-orange transition-colors">
-            FashAI Universe
-          </span>
-          <span className="font-syne text-[9px] sm:text-[10px] tracking-micro text-brand-orange font-semibold uppercase">
-            Powered by Arav Innovation
-          </span>
+        <Link href="/" className="flex items-center gap-3.5 group py-1 min-h-[44px]">
+          <div className="relative w-8 h-8 sm:w-10 sm:h-10 flex-shrink-0 overflow-hidden rounded-md border border-brand-orange/30 bg-black shadow-md">
+            <Image
+              src="/assets/logo/main-logo.jpeg"
+              alt="FashAI Universe Official Logo"
+              fill
+              priority
+              sizes="(max-width: 640px) 32px, 40px"
+              className="object-cover group-hover:scale-105 transition-transform duration-300"
+            />
+          </div>
+          <div className="flex flex-col justify-center">
+            <span className="font-syne text-base sm:text-lg tracking-[0.18em] font-extrabold text-brand-white group-hover:text-brand-orange transition-colors leading-tight">
+              FashAI Universe
+            </span>
+            <span className="font-syne text-[9px] sm:text-[10px] tracking-micro text-brand-orange font-semibold uppercase leading-tight mt-0.5">
+              Powered by Arav Innovation
+            </span>
+          </div>
         </Link>
 
         {/* Desktop Navigation Links */}

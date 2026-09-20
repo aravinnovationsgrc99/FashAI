@@ -70,13 +70,25 @@ export default function MobileMenu({
             transition={{ delay: 0.1, duration: 0.3 }}
             className="flex items-center justify-between border-b border-hairline-orange pb-4 pt-2"
           >
-            <Link href="/" onClick={onClose} className="flex flex-col min-h-[44px]">
-              <span className="font-syne text-base sm:text-lg tracking-[0.18em] font-extrabold text-brand-white">
-                FashAI Universe
-              </span>
-              <span className="font-syne text-[10px] tracking-micro text-brand-orange font-semibold uppercase">
-                Powered by Arav Innovation
-              </span>
+            <Link href="/" onClick={onClose} className="flex items-center gap-3 min-h-[44px]">
+              <div className="relative w-8 h-8 flex-shrink-0 overflow-hidden rounded-md border border-brand-orange/30 bg-black shadow-md">
+                <Image
+                  src="/assets/logo/main-logo.jpeg"
+                  alt="FashAI Universe Official Logo"
+                  fill
+                  priority
+                  sizes="32px"
+                  className="object-cover"
+                />
+              </div>
+              <div className="flex flex-col">
+                <span className="font-syne text-base tracking-[0.18em] font-extrabold text-brand-white">
+                  FashAI Universe
+                </span>
+                <span className="font-syne text-[10px] tracking-micro text-brand-orange font-semibold uppercase">
+                  Powered by Arav Innovation
+                </span>
+              </div>
             </Link>
             <button
               onClick={onClose}
