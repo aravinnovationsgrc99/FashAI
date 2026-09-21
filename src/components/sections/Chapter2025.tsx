@@ -14,8 +14,15 @@ export default function Chapter2025() {
 
   return (
     <section id="lifestyle-2025" className="relative min-h-[85vh] w-full flex flex-col justify-center py-20 bg-brand-void border-b border-hairline-orange overflow-hidden">
-      {/* Background Soft Glow */}
-      <div className="absolute top-1/2 left-0 w-80 h-80 bg-[#FAB60A]/5 blur-3xl pointer-events-none rounded-full" />
+      {/* Rich Background Atmosphere Layer */}
+      <div className="absolute inset-0 pointer-events-none select-none overflow-hidden">
+        <div className="absolute top-1/2 left-0 -translate-y-1/2 w-[500px] h-[500px] bg-[#FAB60A]/10 blur-[160px] rounded-full" />
+        <div className="absolute top-1/4 right-0 w-[450px] h-[450px] bg-brand-orange/10 blur-[150px] rounded-full" />
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff03_1px,transparent_1px),linear-gradient(to_bottom,#ffffff03_1px,transparent_1px)] bg-[size:4rem_4rem]" />
+        <div className="absolute bottom-4 left-1/2 -translate-x-1/2 text-[18vw] font-serif-display font-light text-white/[0.015] uppercase tracking-tighter leading-none">
+          2025
+        </div>
+      </div>
 
       <div className="container-editorial relative z-10">
         <div className="flex flex-col sm:flex-row justify-between items-start sm:items-end mb-12 border-b border-hairline-orange pb-8">

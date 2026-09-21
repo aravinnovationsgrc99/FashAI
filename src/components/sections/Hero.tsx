@@ -8,11 +8,23 @@ import PrismScene from "../cinematic/PrismScene";
 export default function Hero() {
   return (
     <section className="relative min-h-[92svh] sm:min-h-[100dvh] w-full flex flex-col justify-between pt-24 sm:pt-28 pb-8 px-4 sm:px-8 lg:px-12 overflow-hidden bg-brand-void">
-      {/* Background Atmosphere Layer */}
-      <div className="absolute inset-0 z-0 pointer-events-none">
+      {/* Background Atmosphere & Graphical Layer */}
+      <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden select-none">
         <div className="absolute inset-0 bg-gradient-to-b from-brand-void via-brand-void/80 to-brand-void" />
-        <div className="absolute top-1/4 left-1/4 w-[40vw] h-[40vw] max-w-[500px] max-h-[500px] rounded-full bg-brand-orange/10 blur-[120px] pointer-events-none" />
-        <div className="absolute bottom-1/3 right-1/4 w-[35vw] h-[35vw] max-w-[450px] max-h-[450px] rounded-full bg-brand-green/10 blur-[130px] pointer-events-none" />
+        
+        {/* Glowing Atmospheric Radial Orbs */}
+        <div className="absolute top-1/4 left-1/4 w-[45vw] h-[45vw] max-w-[550px] max-h-[550px] rounded-full bg-brand-orange/15 blur-[140px]" />
+        <div className="absolute bottom-1/3 right-1/4 w-[40vw] h-[40vw] max-w-[500px] max-h-[500px] rounded-full bg-brand-green/12 blur-[150px]" />
+        <div className="absolute top-1/2 right-1/3 w-[30vw] h-[30vw] max-w-[400px] max-h-[400px] rounded-full bg-brand-yellow-golden/10 blur-[130px]" />
+
+        {/* Subtle Architectural Grid Pattern */}
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff05_1px,transparent_1px),linear-gradient(to_bottom,#ffffff05_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,#000_70%,transparent_100%)] opacity-60" />
+
+        {/* Giant Background Editorial Watermark */}
+        <div className="absolute -bottom-10 right-0 text-[18vw] font-serif-display font-light text-white/[0.02] uppercase tracking-tighter leading-none pointer-events-none select-none">
+          UNIVERSAL
+        </div>
+
         <div className="absolute inset-0 bg-vignette opacity-70" />
       </div>
 

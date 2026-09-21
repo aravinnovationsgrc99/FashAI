@@ -20,9 +20,14 @@ export default function HomeUpcomingFeature() {
         <div className="absolute inset-0 bg-gradient-to-t from-brand-void via-brand-void/90 to-brand-void/80" />
       </div>
 
-      {/* Subtle Radial Backdrop Glow */}
-      <div className="absolute top-1/2 left-1/4 -translate-y-1/2 w-[450px] h-[450px] bg-brand-orange/10 blur-[130px] pointer-events-none rounded-full" />
-      <div className="absolute bottom-1/4 right-1/4 w-[350px] h-[350px] bg-brand-green/10 blur-[140px] pointer-events-none rounded-full" />
+      {/* Subtle Radial Backdrop Glow & Graphic Elements */}
+      <div className="absolute top-1/2 left-1/4 -translate-y-1/2 w-[550px] h-[550px] bg-brand-orange/15 blur-[150px] pointer-events-none rounded-full" />
+      <div className="absolute bottom-1/4 right-1/4 w-[450px] h-[450px] bg-brand-green/12 blur-[160px] pointer-events-none rounded-full" />
+      <div className="absolute top-1/3 right-10 w-[350px] h-[350px] bg-brand-yellow-golden/10 blur-[140px] pointer-events-none rounded-full" />
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff03_1px,transparent_1px),linear-gradient(to_bottom,#ffffff03_1px,transparent_1px)] bg-[size:4rem_4rem] pointer-events-none" />
+      <div className="absolute top-10 right-0 text-[16vw] font-serif-display font-light text-white/[0.015] uppercase tracking-tighter leading-none pointer-events-none select-none">
+        DUBAI
+      </div>
 
       <div className="relative z-10 w-full max-w-6xl mx-auto">
         <motion.div
