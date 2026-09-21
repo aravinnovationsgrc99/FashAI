@@ -8,11 +8,11 @@ import PageTransition from "@/components/cinematic/PageTransition";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://fashai-beryl.vercel.app"),
-  title: "FashAI Universe — Powered by Arav Innovation",
+  title: "FashAI Universal — Powered by Arav Innovation",
   description:
-    "FashAI Universe: Where fashion, technology and imagination converge. An architectural integration of computational fashion, spatial lighting, and high-couture identity.",
+    "FashAI Universal: Where fashion, technology and imagination converge. An architectural integration of computational fashion, spatial lighting, and high-couture identity.",
   keywords: [
-    "FashAI Universe",
+    "FashAI Universal",
     "Arav Innovation",
     "Powered by Arav Innovation",
     "Fashion AI",
@@ -21,19 +21,19 @@ export const metadata: Metadata = {
     "Digital Atelier",
     "Luxury Fashion",
   ],
-  authors: [{ name: "FashAI Universe — Powered by Arav Innovation" }],
+  authors: [{ name: "FashAI Universal — Powered by Arav Innovation" }],
   openGraph: {
-    title: "FashAI Universe — Powered by Arav Innovation",
+    title: "FashAI Universal — Powered by Arav Innovation",
     description:
       "Where fashion, technology and imagination converge. Powered by Arav Innovation.",
     url: "https://fashai-beryl.vercel.app",
-    siteName: "FashAI Universe",
+    siteName: "FashAI Universal",
     images: [
       {
         url: "/assets/models/model_01.jpeg",
         width: 1200,
         height: 630,
-        alt: "FashAI Universe",
+        alt: "FashAI Universal",
       },
     ],
     locale: "en_US",
@@ -41,7 +41,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "FashAI Universe — Powered by Arav Innovation",
+    title: "FashAI Universal — Powered by Arav Innovation",
     description:
       "Where fashion, technology and imagination converge.",
     images: ["/assets/models/model_01.jpeg"],

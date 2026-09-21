@@ -68,7 +68,7 @@ export default function ContactForm() {
           <span className="italic text-gold-gradient font-normal">THE NEXT MOMENT.</span>
         </h2>
         <p className="font-sans text-sm text-brand-platinum font-light leading-relaxed mb-8">
-          Fashprism Internationals welcomes enquiries from fashion houses, press correspondents, luxury sponsors, visionaries, and prospective participants.
+          FashAI Universal welcomes enquiries from fashion houses, press correspondents, luxury sponsors, visionaries, and prospective participants.
         </p>
 
         <div className="space-y-6 border-t border-hairline-gold pt-6 text-xs font-syne tracking-caps">
@@ -96,7 +96,7 @@ export default function ContactForm() {
               ENQUIRY RECEIVED
             </h3>
             <p className="font-sans text-sm text-brand-platinum max-w-md font-light leading-relaxed mb-8">
-              Thank you for contacting Fashprism Internationals. Our executive team will review your message promptly.
+              Thank you for contacting FashAI Universal. Our executive team will review your message promptly.
             </p>
             <button
               onClick={() => setStatus("idle")}

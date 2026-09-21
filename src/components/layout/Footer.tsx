@@ -2,12 +2,11 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { ExternalLink, Phone, MessageSquare, MapPin } from "lucide-react";
+import { ExternalLink, MessageSquare } from "lucide-react";
 import { NAV_ITEMS } from "./Header";
 
 export default function Footer() {
-  const googleMapsUrl =
-    "https://www.google.com/maps/search/?api=1&query=2,+Humayun+Rd,+Sujan+Sing+ParkNorth,+Sujan+Singh+Park,+New+Delhi,+Delhi+110003,+India";
+  const aravWebsiteUrl = "https://aravinnovations.com/";
 
   return (
     <footer className="border-t border-brand-orange/30 bg-brand-void pt-16 pb-10 text-brand-off-white">
@@ -21,27 +20,39 @@ export default function Footer() {
                 <div className="relative w-10 h-10 flex-shrink-0 overflow-hidden rounded-md border border-brand-orange/40 bg-black shadow-md">
                   <Image
                     src="/assets/logo/main-logo.jpeg"
-                    alt="FashAI Universe Official Logo"
+                    alt="FashAI Universal Official Logo"
                     fill
                     sizes="40px"
                     className="object-cover group-hover:scale-105 transition-transform duration-300"
                   />
                 </div>
                 <div className="flex flex-col">
-                  <span className="font-syne text-xl tracking-[0.18em] font-extrabold text-brand-white group-hover:text-brand-orange transition-colors">
-                    FashAI Universe
+                  <span className="font-syne text-xl tracking-[0.16em] font-extrabold text-brand-white group-hover:text-brand-orange transition-colors">
+                    FashAI Universal
                   </span>
-                  <span className="font-syne text-[10px] tracking-micro text-brand-orange font-bold uppercase mt-0.5">
-                    Powered by Arav Innovation
-                  </span>
+                  <div className="mt-1">
+                    <Image
+                      src="/assets/brand/PoweredByAravInnovation.jpeg"
+                      alt="Powered by Arav Innovation"
+                      width={180}
+                      height={47}
+                      className="h-6 w-auto object-contain"
+                    />
+                  </div>
                 </div>
               </Link>
               <p className="font-sans text-xs sm:text-sm text-brand-platinum/80 font-light leading-relaxed max-w-sm">
                 Where fashion, technology and imagination converge. An international luxury fashion and lifestyle experience platform.
               </p>
             </div>
-            <div className="text-[10px] font-syne tracking-micro text-brand-orange font-bold uppercase">
-              POWERED BY ARAV INNOVATION
+            <div className="my-2">
+              <Image
+                src="/assets/brand/PoweredByAravInnovation.jpeg"
+                alt="Powered by Arav Innovation"
+                width={220}
+                height={58}
+                className="h-8 sm:h-9 w-auto object-contain"
+              />
             </div>
           </div>
 
@@ -61,21 +72,24 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Col 3: LifeStyle Event Editions (lg:col-span-2) */}
+          {/* Col 3: Events & LifeStyle (lg:col-span-2) */}
           <div className="lg:col-span-2">
             <h4 className="font-syne text-xs tracking-caps text-brand-orange mb-4 font-bold uppercase">
-              LIFESTYLE
+              OUR EVENTS
             </h4>
             <ul className="space-y-2.5 font-syne text-xs tracking-wider text-brand-platinum/90">
               <li>
-                <Link href="/2025" className="hover:text-brand-orange transition-colors">
+                <Link href="/2025" className="hover:text-brand-orange transition-colors font-semibold">
                   LifeStyle 2025
                 </Link>
               </li>
               <li>
-                <Link href="/2026" className="hover:text-brand-orange transition-colors">
+                <Link href="/2026" className="hover:text-brand-orange transition-colors font-semibold">
                   LifeStyle 2026 — Dubai
                 </Link>
+              </li>
+              <li className="pt-1 text-brand-platinum/60">
+                <span>Runway</span>
               </li>
             </ul>
           </div>
@@ -98,18 +112,12 @@ export default function Footer() {
                 </a>
               </li>
               <li className="flex items-center gap-1.5">
-                <Phone className="w-3.5 h-3.5 text-brand-orange" />
-                <a href="tel:+917521555792" className="hover:text-brand-orange transition-colors">
-                  +91 7521555792
-                </a>
-              </li>
-              <li className="flex items-center gap-1.5">
                 <MessageSquare className="w-3.5 h-3.5 text-brand-green" />
                 <a
                   href="https://wa.me/919891276713"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="hover:text-brand-green transition-colors"
+                  className="hover:text-brand-green transition-colors font-syne text-xs"
                 >
                   +91 9891276713
                 </a>
@@ -117,26 +125,31 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Col 5: Visit & Address (lg:col-span-2) */}
+          {/* Col 5: Arav Innovations Company Link (lg:col-span-2) */}
           <div className="lg:col-span-2">
-            <h4 className="font-syne text-xs tracking-caps text-brand-orange mb-4 font-bold uppercase">
-              VISIT
+            <h4 className="font-syne text-xs tracking-caps text-brand-orange mb-3 font-bold uppercase">
+              ARAV INNOVATIONS
             </h4>
-            <address className="font-sans text-[11px] text-brand-platinum/80 leading-relaxed not-italic mb-3">
-              2, Humayun Rd,<br />
-              Sujan Sing Park North,<br />
-              Sujan Singh Park,<br />
-              New Delhi, Delhi 110003,<br />
-              India
-            </address>
+            <div className="mb-3">
+              <Image
+                src="/assets/brand/PoweredByAravInnovation.jpeg"
+                alt="Powered by Arav Innovation"
+                width={180}
+                height={47}
+                className="h-7 w-auto object-contain"
+              />
+            </div>
+            <p className="font-sans text-[11px] text-brand-platinum/80 leading-relaxed mb-3">
+              Official supporting entity and digital innovation enterprise.
+            </p>
             <a
-              href={googleMapsUrl}
+              href={aravWebsiteUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 border border-brand-orange/40 bg-brand-void px-3 py-1.5 text-[10px] font-syne tracking-caps font-bold text-brand-white hover:bg-brand-orange transition-all"
+              className="inline-flex items-center gap-1.5 border border-brand-orange/40 bg-brand-void px-3 py-2 text-[10px] font-syne tracking-caps font-bold text-brand-white hover:bg-brand-orange hover:border-brand-orange transition-all group"
             >
-              <span>VIEW ON MAPS</span>
-              <ExternalLink className="w-3 h-3" />
+              <span>VISIT ARAV INNOVATIONS</span>
+              <ExternalLink className="w-3 h-3 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
             </a>
           </div>
         </div>
@@ -148,7 +161,7 @@ export default function Footer() {
               REGISTRATIONS &amp; SPONSORSHIPS ARE OPEN
             </span>
             <p className="font-sans text-xs text-brand-platinum/80 font-light">
-              Registrations and sponsorships are open for LifeStyle 2026 Dubai.
+              Registrations and sponsorships are open for LifeStyle 2026 · Dubai.
             </p>
           </div>
           <div className="flex flex-wrap items-center gap-3">
@@ -156,21 +169,29 @@ export default function Footer() {
               href="/contact?type=Registration"
               className="bg-brand-orange px-5 py-2.5 text-[11px] font-syne tracking-caps font-bold text-white hover:bg-[#ff6f2d] transition-colors"
             >
-              REGISTER NOW
+              REGISTER / ENQUIRE
             </Link>
             <Link
               href="/contact?type=Sponsorship"
               className="border border-brand-yellow-golden/40 bg-brand-void px-5 py-2.5 text-[11px] font-syne tracking-caps font-bold text-brand-white hover:bg-brand-yellow-golden/10 hover:border-brand-yellow-golden transition-colors"
             >
-              SPONSORSHIP
+              SPONSORSHIP ENQUIRY
             </Link>
           </div>
         </div>
 
         {/* Bottom Bar */}
         <div className="flex flex-col sm:flex-row justify-between items-center pt-8 text-[11px] font-syne tracking-micro text-brand-platinum/70 gap-4">
-          <div>
-            © {new Date().getFullYear()} FASHAI UNIVERSE. POWERED BY ARAV INNOVATION. ALL RIGHTS RESERVED.
+          <div className="flex flex-wrap items-center gap-3">
+            <span>© 2026 FASHAI UNIVERSAL.</span>
+            <Image
+              src="/assets/brand/PoweredByAravInnovation.jpeg"
+              alt="Powered by Arav Innovation"
+              width={180}
+              height={47}
+              className="h-6 sm:h-7 w-auto object-contain"
+            />
+            <span>ALL RIGHTS RESERVED.</span>
           </div>
           <div className="flex gap-6 text-[10px] uppercase font-bold text-brand-orange/90">
             <span>LIFESTYLE 2026 • DUBAI</span>

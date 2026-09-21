@@ -42,7 +42,7 @@ export default function Lightbox({
         id: rawItem.id,
         title:
           "tag" in rawItem
-            ? `FashAI Universe Capture — ${rawItem.tag}`
+            ? `FashAI Universal Capture — ${rawItem.tag}`
             : rawItem.title,
         subtitle:
           "orientation" in rawItem
@@ -122,7 +122,7 @@ export default function Lightbox({
         >
           <div className="flex items-center gap-3">
             <span className="font-serif-display text-base sm:text-xl text-brand-white tracking-wide uppercase">
-              FASHAI UNIVERSE VISUAL ARCHIVE
+              FASHAI UNIVERSAL VISUAL ARCHIVE
             </span>
             <span className="font-syne text-[10px] sm:text-xs tracking-micro text-brand-gold border border-hairline-gold px-2.5 py-0.5 font-semibold">
               {String(currentIndex + 1).padStart(2, "0")} / {String(items.length).padStart(2, "0")}

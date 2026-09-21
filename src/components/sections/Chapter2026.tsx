@@ -26,7 +26,7 @@ export default function Chapter2026() {
           </div>
 
           <h2 className="font-serif-display text-4xl sm:text-6xl md:text-7xl font-light text-brand-white tracking-tight mb-2 uppercase">
-            FashAI Universe
+            FashAI Universal
           </h2>
 
           {/* Oversized Golden Yellow 2026 Typography */}
@@ -39,7 +39,7 @@ export default function Chapter2026() {
           </p>
 
           <p className="font-sans text-base sm:text-lg text-brand-platinum font-light leading-relaxed max-w-2xl mb-10">
-            The next evolution of the FashAI Universe initiative. Bringing together computational fashion, spatial design, and exclusive delegate salons set against Dubai’s monumental landscape.
+            The next evolution of the FashAI Universal initiative. Bringing together computational fashion, spatial design, and exclusive delegate salons set against Dubai’s monumental landscape.
           </p>
 
           {/* Factual Specifications Banner */}

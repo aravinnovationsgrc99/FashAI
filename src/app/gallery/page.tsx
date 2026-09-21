@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import GalleryView from "@/components/sections/GalleryView";
 
 export const metadata: Metadata = {
-  title: "Gallery — FashAI Universe",
+  title: "Gallery — FashAI Universal",
   description:
-    "Editorial visual archive of FashAI Universe captures. Runway, backstage, architecture, lighting and couture details. Powered by Arav Innovation.",
+    "Editorial visual archive of FashAI Universal captures. Runway, backstage, architecture, lighting and couture details. Powered by Arav Innovation.",
 };
 
 export default function GalleryPage() {

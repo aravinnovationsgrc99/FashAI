@@ -3,9 +3,9 @@ import HomeUpcomingFeature from "@/components/sections/HomeUpcomingFeature";
 import InstagramSection from "@/components/sections/InstagramSection";
 
 export const metadata: Metadata = {
-  title: "Upcoming 2026 Dubai — FashAI Universe",
+  title: "Upcoming 2026 Dubai — FashAI Universal",
   description:
-    "The upcoming 2026 Dubai chapter of FashAI Universe. Powered by Arav Innovation.",
+    "The upcoming 2026 Dubai chapter of FashAI Universal. Powered by Arav Innovation.",
 };
 
 export default function UpcomingPage() {

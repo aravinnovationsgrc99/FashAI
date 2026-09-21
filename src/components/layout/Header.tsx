@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
@@ -17,17 +17,47 @@ export const NAV_ITEMS = [
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
   const pathname = usePathname();
 
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 20) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+    };
+
+    handleScroll();
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-brand-void/90 backdrop-blur-md border-b border-hairline-orange/40 transition-all duration-300">
-      <div className="container-editorial flex items-center justify-between py-3 min-h-[64px]">
-        {/* Official FashAI Universe Brand Lockup */}
-        <Link href="/" className="flex items-center gap-3.5 group py-1 min-h-[44px]">
+    <header
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+        isScrolled
+          ? "bg-black/50 backdrop-blur-md border-b border-white/10 shadow-lg py-2.5"
+          : "bg-transparent border-b border-transparent py-4"
+      }`}
+      style={
+        isScrolled
+          ? {
+              backgroundColor: "rgba(0, 0, 0, 0.45)",
+              backdropFilter: "blur(16px)",
+              WebkitBackdropFilter: "blur(16px)",
+            }
+          : undefined
+      }
+    >
+      <div className="container-editorial flex items-center justify-between min-h-[56px]">
+        {/* Official FashAI Universal Brand Lockup */}
+        <Link href="/" className="flex items-center gap-3 group py-1 min-h-[44px]">
           <div className="relative w-8 h-8 sm:w-10 sm:h-10 flex-shrink-0 overflow-hidden rounded-md border border-brand-orange/30 bg-black shadow-md">
             <Image
               src="/assets/logo/main-logo.jpeg"
-              alt="FashAI Universe Official Logo"
+              alt="FashAI Universal Official Logo"
               fill
               priority
               sizes="(max-width: 640px) 32px, 40px"
@@ -35,12 +65,19 @@ export default function Header() {
             />
           </div>
           <div className="flex flex-col justify-center">
-            <span className="font-syne text-base sm:text-lg tracking-[0.18em] font-extrabold text-brand-white group-hover:text-brand-orange transition-colors leading-tight">
-              FashAI Universe
+            <span className="font-syne text-base sm:text-lg tracking-[0.16em] font-extrabold text-brand-white group-hover:text-brand-orange transition-colors leading-tight">
+              FashAI Universal
             </span>
-            <span className="font-syne text-[9px] sm:text-[10px] tracking-micro text-brand-orange font-semibold uppercase leading-tight mt-0.5">
-              Powered by Arav Innovation
-            </span>
+            <div className="mt-0.5">
+              <Image
+                src="/assets/brand/PoweredByAravInnovation.jpeg"
+                alt="Powered by Arav Innovation"
+                width={160}
+                height={42}
+                priority
+                className="h-5 sm:h-6 w-auto object-contain hover:opacity-95 transition-opacity"
+              />
+            </div>
           </div>
         </Link>
 
@@ -84,7 +121,7 @@ export default function Header() {
           {/* Mobile Hamburger Button */}
           <button
             onClick={() => setMobileMenuOpen(true)}
-            className="lg:hidden p-3 min-w-[44px] min-h-[44px] flex items-center justify-center text-brand-off-white hover:text-brand-gold transition-colors"
+            className="lg:hidden p-2.5 min-w-[44px] min-h-[44px] flex items-center justify-center text-brand-off-white hover:text-brand-gold transition-colors"
             aria-label="Open Navigation Menu"
           >
             <Menu className="h-6 w-6" />

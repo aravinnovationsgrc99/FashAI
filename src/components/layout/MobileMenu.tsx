@@ -91,7 +91,7 @@ export default function MobileMenu({
                 <div className="relative w-9 h-9 flex-shrink-0 overflow-hidden rounded-md border border-brand-orange/40 bg-black shadow-lg">
                   <Image
                     src="/assets/logo/main-logo.jpeg"
-                    alt="FashAI Universe Official Logo"
+                    alt="FashAI Universal Official Logo"
                     fill
                     priority
                     sizes="36px"
@@ -100,11 +100,17 @@ export default function MobileMenu({
                 </div>
                 <div className="flex flex-col">
                   <span className="font-syne text-base tracking-[0.16em] font-extrabold text-brand-white leading-snug">
-                    FashAI Universe
+                    FashAI Universal
                   </span>
-                  <span className="font-syne text-[9px] tracking-micro text-brand-orange font-semibold uppercase leading-snug">
-                    Powered by Arav Innovation
-                  </span>
+                  <div className="mt-0.5">
+                    <Image
+                      src="/assets/brand/PoweredByAravInnovation.jpeg"
+                      alt="Powered by Arav Innovation"
+                      width={160}
+                      height={42}
+                      className="h-5 w-auto object-contain"
+                    />
+                  </div>
                 </div>
               </Link>
               <button
@@ -175,11 +181,15 @@ export default function MobileMenu({
               >
                 CONTACT US ↗
               </Link>
-              <div className="flex justify-between items-center text-[10px] font-syne tracking-micro text-brand-platinum/80 pt-1">
+              <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2 text-[10px] font-syne tracking-micro text-brand-platinum/80 pt-1">
                 <span>@fashai_universal</span>
-                <span className="text-brand-orange font-bold uppercase">
-                  Powered by Arav Innovation
-                </span>
+                <Image
+                  src="/assets/brand/PoweredByAravInnovation.jpeg"
+                  alt="Powered by Arav Innovation"
+                  width={180}
+                  height={47}
+                  className="h-6 w-auto object-contain"
+                />
               </div>
             </motion.div>
           </motion.div>

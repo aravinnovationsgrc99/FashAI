@@ -32,7 +32,7 @@ export default function FashAiIntro() {
             transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
             className="font-serif-display text-3xl sm:text-5xl md:text-6xl lg:text-7xl text-brand-white font-light leading-[1.1]"
           >
-            FashAI Universe is an international digital experience{" "}
+            FashAI Universal is an international digital experience{" "}
             <span className="text-brand-orange italic font-normal">
               where fashion, technology and imagination converge.
             </span>
@@ -47,7 +47,7 @@ export default function FashAiIntro() {
             className="mt-14"
           >
             <p className="font-sans text-base sm:text-lg text-brand-platinum font-light leading-relaxed mb-8">
-              FashAI Universe connects fashion, technology and imagination within a global digital framework.
+              FashAI Universal connects fashion, technology and imagination within a global digital framework.
             </p>
 
             <div className="pt-8 border-t border-hairline-orange grid grid-cols-1 md:grid-cols-12 gap-6 items-center">
@@ -60,7 +60,7 @@ export default function FashAiIntro() {
                 </p>
               </div>
               <div className="md:col-span-4 flex flex-col justify-end items-start md:items-end text-xs font-syne tracking-caps text-brand-yellow-golden space-y-2">
-                <span className="text-brand-orange font-bold uppercase">FASHAI UNIVERSE</span>
+                <span className="text-brand-orange font-bold uppercase">FASHAI UNIVERSAL</span>
                 <span className="text-brand-lemon font-semibold">POWERED BY ARAV INNOVATION</span>
               </div>
             </div>

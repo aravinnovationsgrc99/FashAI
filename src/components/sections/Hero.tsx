@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
+import Image from "next/image";
 import PrismScene from "../cinematic/PrismScene";
 
 export default function Hero() {
@@ -27,7 +28,7 @@ export default function Hero() {
           className="flex flex-col items-start"
         >
           {/* Eyebrow Badges */}
-          <div className="flex flex-wrap items-center gap-2.5 mb-6 sm:mb-8">
+          <div className="flex flex-wrap items-center gap-3 mb-6 sm:mb-8">
             <div className="inline-flex items-center gap-2 bg-brand-void/90 border border-brand-orange/40 backdrop-blur-md px-3.5 py-1.5 rounded-full shadow-lg">
               <span className="h-2 w-2 rounded-full bg-brand-orange animate-pulse" />
               <span className="text-[10px] sm:text-xs font-syne tracking-micro text-brand-orange uppercase font-bold">
@@ -39,15 +40,25 @@ export default function Hero() {
                 LIFESTYLE 2026 • DUBAI
               </span>
             </div>
+            <div className="inline-flex items-center">
+              <Image
+                src="/assets/brand/PoweredByAravInnovation.jpeg"
+                alt="Powered by Arav Innovation"
+                width={200}
+                height={52}
+                priority
+                className="h-7 sm:h-8 w-auto object-contain hover:scale-105 transition-transform"
+              />
+            </div>
           </div>
 
-          {/* Primary Platform Title: FashAI Universe */}
+          {/* Primary Platform Title: FashAI Universal */}
           <h1 className="font-serif-display leading-[0.95] tracking-tight mb-4 select-none w-full">
             <span className="block text-4xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-serif font-light text-brand-white uppercase">
               FashAI
             </span>
             <span className="block text-4xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-serif font-normal text-transparent bg-clip-text bg-gradient-to-r from-brand-orange via-[#ff8833] to-brand-yellow-golden italic">
-              Universe
+              Universal
             </span>
           </h1>
 
@@ -73,7 +84,7 @@ export default function Hero() {
               className="bg-brand-orange px-8 py-4 text-xs font-syne tracking-caps font-bold text-white hover:bg-[#ff6f2d] hover:shadow-[0_0_25px_rgba(241,94,28,0.4)] transition-all duration-300 text-center min-h-[48px] flex items-center justify-center rounded-none group"
               data-cursor="explore"
             >
-              <span>REGISTER NOW</span>
+              <span>REGISTER / ENQUIRE</span>
               <span className="ml-2 group-hover:translate-x-1 transition-transform">→</span>
             </Link>
             <Link
@@ -90,9 +101,15 @@ export default function Hero() {
       {/* Bottom Bar */}
       <div className="relative z-10 w-full max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-start sm:items-center text-[10px] sm:text-xs font-syne tracking-micro text-brand-platinum/70 pt-4 border-t border-white/10 gap-2">
         <span>LIFESTYLE 2026 — DUBAI • INTERNATIONAL EVENT</span>
-        <span className="text-brand-orange font-bold uppercase tracking-widest">
-          POWERED BY ARAV INNOVATION
-        </span>
+        <div className="flex items-center">
+          <Image
+            src="/assets/brand/PoweredByAravInnovation.jpeg"
+            alt="Powered by Arav Innovation"
+            width={220}
+            height={58}
+            className="h-8 sm:h-9 w-auto object-contain hover:scale-105 transition-transform"
+          />
+        </div>
       </div>
     </section>
   );

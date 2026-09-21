@@ -3,9 +3,9 @@ import ContactSection from "@/components/sections/ContactSection";
 import InstagramSection from "@/components/sections/InstagramSection";
 
 export const metadata: Metadata = {
-  title: "Contact Us — FashAI Universe",
+  title: "Contact Us — FashAI Universal",
   description:
-    "Let's create the next experience. Contact FashAI Universe. Powered by Arav Innovation.",
+    "Let's create the next experience. Contact FashAI Universal. Powered by Arav Innovation.",
 };
 
 export default function ContactPage() {

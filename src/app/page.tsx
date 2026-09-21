@@ -1,5 +1,6 @@
 import Hero from "@/components/sections/Hero";
 import FashAiIntro from "@/components/sections/FeshAiIntro";
+import OurEventsSection from "@/components/sections/OurEventsSection";
 import Chapter2025 from "@/components/sections/Chapter2025";
 import HomeUpcomingFeature from "@/components/sections/HomeUpcomingFeature";
 import HomeGalleryPreview from "@/components/sections/HomeGalleryPreview";
@@ -12,22 +13,25 @@ export default function Home() {
       {/* 01 LANDING HERO */}
       <Hero />
 
-      {/* 02 ABOUT / UNIVERSE */}
+      {/* 02 ABOUT / UNIVERSAL */}
       <FashAiIntro />
 
-      {/* 03 LIFESTYLE 2025 — PREVIOUS EDITION */}
+      {/* 03 OUR EVENTS — LIFESTYLE & RUNWAY */}
+      <OurEventsSection />
+
+      {/* 04 LIFESTYLE 2025 — PREVIOUS EDITION */}
       <Chapter2025 />
 
-      {/* 04 LIFESTYLE 2026 — UPCOMING EVENT */}
+      {/* 05 LIFESTYLE 2026 — UPCOMING EVENT */}
       <HomeUpcomingFeature />
 
-      {/* 05 GALLERY — LIFESTYLE 2025 VISUAL ARCHIVE */}
+      {/* 06 GALLERY — VISUAL ARCHIVE */}
       <HomeGalleryPreview />
 
-      {/* 06 INSTAGRAM — @FASHAI_UNIVERSAL */}
+      {/* 07 INSTAGRAM — @FASHAI_UNIVERSAL */}
       <InstagramSection />
 
-      {/* 07 CONTACT — ENQUIRIES, ADDRESS & MAPS */}
+      {/* 08 CONTACT — ENQUIRIES & ARAV INNOVATIONS */}
       <ContactSection />
     </main>
   );

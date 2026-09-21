@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import HomeFeaturedProjects from "@/components/sections/HomeFeaturedProjects";
 
 export const metadata: Metadata = {
-  title: "LifeStyle Editions — FashAI Universe",
+  title: "LifeStyle Editions — FashAI Universal",
   description:
-    "Explore previous and upcoming editions of LifeStyle by FashAI Universe. Powered by Arav Innovation.",
+    "Explore previous and upcoming editions of LifeStyle by FashAI Universal. Powered by Arav Innovation.",
 };
 
 export default function ProjectsPage() {

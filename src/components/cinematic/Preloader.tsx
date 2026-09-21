@@ -33,9 +33,19 @@ export default function Preloader() {
           className="fixed inset-0 z-[100] flex flex-col items-center justify-between bg-brand-void px-6 py-12 text-brand-off-white"
         >
           {/* Header Tag */}
-          <div className="flex w-full justify-between text-xs font-syne tracking-micro text-brand-platinum border-b border-hairline-orange pb-4 max-w-7xl">
-            <span className="text-brand-orange font-bold">FASHAI UNIVERSE</span>
-            <span className="text-brand-yellow-golden font-bold uppercase">Powered by Arav Innovation</span>
+          <div className="flex w-full justify-between items-center text-xs font-syne tracking-micro text-brand-platinum border-b border-hairline-orange pb-4 max-w-7xl">
+            <span className="text-brand-orange font-bold">FASHAI UNIVERSAL</span>
+            <div className="flex items-center gap-1.5">
+              <div className="relative w-4 h-4 flex-shrink-0 overflow-hidden rounded-[2px] bg-black border border-brand-orange/40">
+                <Image
+                  src="/assets/brand/PoweredByAravInnovation.jpeg"
+                  alt="Arav Innovation Logo"
+                  fill
+                  className="object-contain"
+                />
+              </div>
+              <span className="text-brand-yellow-golden font-bold uppercase">Powered by Arav Innovation</span>
+            </div>
           </div>
 
           {/* Central Logo & Progress */}
@@ -49,7 +59,7 @@ export default function Preloader() {
               <div className="relative w-20 h-20 sm:w-28 sm:h-28 mb-6 rounded-xl border border-brand-orange/40 bg-black shadow-[0_0_30px_rgba(241,94,28,0.3)] overflow-hidden">
                 <Image
                   src="/assets/logo/main-logo.jpeg"
-                  alt="FashAI Universe Official Logo"
+                  alt="FashAI Universal Official Logo"
                   fill
                   priority
                   sizes="(max-width: 640px) 80px, 112px"
@@ -57,11 +67,21 @@ export default function Preloader() {
                 />
               </div>
               <h1 className="font-serif-display text-4xl sm:text-6xl font-light text-brand-white tracking-widest uppercase">
-                FASHAI UNIVERSE
+                FASHAI UNIVERSAL
               </h1>
-              <p className="font-syne text-xs sm:text-sm tracking-[0.25em] text-brand-yellow-golden mt-2 font-bold uppercase">
-                Powered by Arav Innovation
-              </p>
+              <div className="flex items-center gap-2 mt-3">
+                <div className="relative w-5 h-5 flex-shrink-0 overflow-hidden rounded-[2px] bg-black border border-brand-orange/40">
+                  <Image
+                    src="/assets/brand/PoweredByAravInnovation.jpeg"
+                    alt="Arav Innovation Logo"
+                    fill
+                    className="object-contain"
+                  />
+                </div>
+                <p className="font-syne text-xs sm:text-sm tracking-[0.2em] text-brand-yellow-golden font-bold uppercase">
+                  Powered by Arav Innovation
+                </p>
+              </div>
             </motion.div>
 
             <motion.p
@@ -82,16 +102,26 @@ export default function Preloader() {
                 />
               </div>
               <div className="flex justify-between items-center mt-3 text-[10px] font-syne tracking-micro text-brand-platinum">
-                <span>INITIALIZING UNIVERSE</span>
+                <span>INITIALIZING SYSTEM</span>
                 <span className="text-brand-orange font-bold">{progress}%</span>
               </div>
             </div>
           </div>
 
           {/* Footer Metadata */}
-          <div className="flex w-full justify-between text-[10px] font-syne tracking-micro text-brand-platinum pt-4 border-t border-hairline-orange/40 max-w-7xl">
-            <span>FASHAI UNIVERSE</span>
-            <span className="text-brand-orange font-bold uppercase">POWERED BY ARAV INNOVATION</span>
+          <div className="flex w-full justify-between items-center text-[10px] font-syne tracking-micro text-brand-platinum pt-4 border-t border-hairline-orange/40 max-w-7xl">
+            <span>FASHAI UNIVERSAL</span>
+            <div className="flex items-center gap-1.5">
+              <div className="relative w-3.5 h-3.5 flex-shrink-0 overflow-hidden rounded-[2px] bg-black border border-brand-orange/40">
+                <Image
+                  src="/assets/brand/PoweredByAravInnovation.jpeg"
+                  alt="Arav Innovation Logo"
+                  fill
+                  className="object-contain"
+                />
+              </div>
+              <span className="text-brand-orange font-bold uppercase">POWERED BY ARAV INNOVATION</span>
+            </div>
           </div>
         </motion.div>
       )}

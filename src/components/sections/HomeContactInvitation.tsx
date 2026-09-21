@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
+import Image from "next/image";
 
 export default function HomeContactInvitation() {
   return (
@@ -14,9 +15,19 @@ export default function HomeContactInvitation() {
           04 / CONNECTION
         </span>
 
-        <span className="text-[10px] font-syne tracking-[0.25em] text-brand-lemon uppercase font-bold mb-6">
-          Powered by Arav Innovation
-        </span>
+        <div className="flex items-center gap-2 mb-6">
+          <div className="relative w-4 h-4 flex-shrink-0 overflow-hidden rounded-[2px] bg-black border border-brand-orange/40">
+            <Image
+              src="/assets/brand/PoweredByAravInnovation.jpeg"
+              alt="Arav Innovation Logo"
+              fill
+              className="object-contain"
+            />
+          </div>
+          <span className="text-[10px] font-syne tracking-[0.25em] text-brand-lemon uppercase font-bold">
+            Powered by Arav Innovation
+          </span>
+        </div>
 
         <motion.h2
           initial={{ opacity: 0, y: 30 }}
@@ -27,7 +38,7 @@ export default function HomeContactInvitation() {
         >
           ENTER THE <br />
           <span className="italic font-normal text-brand-orange">
-            FASHAI UNIVERSE.
+            FASHAI UNIVERSAL.
           </span>
         </motion.h2>
 
@@ -38,7 +49,7 @@ export default function HomeContactInvitation() {
           transition={{ duration: 0.9, delay: 0.2 }}
           className="font-sans text-base sm:text-lg text-brand-platinum font-light max-w-xl leading-relaxed mb-12"
         >
-          For enquiries, collaborations, partnerships, press accreditation, and delegate interest across the FashAI Universe roadmap.
+          For enquiries, collaborations, partnerships, press accreditation, and delegate interest across the FashAI Universal roadmap.
         </motion.p>
 
         <motion.div

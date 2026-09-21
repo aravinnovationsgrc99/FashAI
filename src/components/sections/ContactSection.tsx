@@ -2,8 +2,9 @@
 
 import { useState, useEffect, Suspense } from "react";
 import { useSearchParams } from "next/navigation";
+import Image from "next/image";
 import { motion } from "framer-motion";
-import { Loader2, CheckCircle, AlertCircle, Phone, MessageSquare, MapPin, ExternalLink } from "lucide-react";
+import { Loader2, CheckCircle, AlertCircle, MessageSquare, ExternalLink } from "lucide-react";
 
 function ContactContent() {
   const searchParams = useSearchParams();
@@ -65,8 +66,7 @@ function ContactContent() {
     }
   };
 
-  const googleMapsUrl =
-    "https://www.google.com/maps/search/?api=1&query=2,+Humayun+Rd,+Sujan+Sing+Park+North,+Sujan+Singh+Park,+New+Delhi,+Delhi+110003,+India";
+  const aravWebsiteUrl = "https://aravinnovations.com/";
 
   return (
     <section id="contact" className="relative py-24 sm:py-32 bg-brand-void border-b border-hairline-orange overflow-hidden">
@@ -84,7 +84,7 @@ function ContactContent() {
             LET&apos;S CREATE THE <span className="italic text-brand-orange font-normal">NEXT CHAPTER.</span>
           </h2>
           <p className="font-sans text-base sm:text-lg text-brand-platinum/90 font-light leading-relaxed">
-            For registrations, sponsorships, partnerships, press and general enquiries, connect with the FashAI Universe team.
+            For registrations, sponsorships, partnerships, press and general enquiries, connect with the FashAI Universal team.
           </p>
         </div>
 
@@ -108,25 +108,38 @@ function ContactContent() {
               </span>
             </div>
 
-            {/* Phone */}
-            <div className="space-y-1.5">
-              <div className="flex items-center gap-2 text-xs font-syne tracking-caps text-brand-platinum/70 uppercase">
-                <Phone className="w-4 h-4 text-brand-orange" />
-                <span>PHONE</span>
+            {/* Supporting Entity: ARAV INNOVATIONS WEBSITE */}
+            <div className="space-y-3 pt-2 border-t border-white/10">
+              <div className="mb-2">
+                <Image
+                  src="/assets/brand/PoweredByAravInnovation.jpeg"
+                  alt="Powered by Arav Innovation"
+                  width={240}
+                  height={63}
+                  className="h-10 sm:h-12 w-auto object-contain"
+                />
               </div>
-              <a
-                href="tel:+917521555792"
-                className="font-syne text-lg sm:text-xl text-brand-white font-bold hover:text-brand-orange transition-colors block"
-              >
-                +91 7521555792
-              </a>
+              <p className="font-sans text-xs text-brand-platinum/80 leading-relaxed">
+                Official digital innovation entity supporting FashAI Universal initiatives.
+              </p>
+              <div>
+                <a
+                  href={aravWebsiteUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 border border-brand-orange/40 bg-brand-void px-5 py-3 text-xs font-syne tracking-caps font-bold text-brand-white hover:bg-brand-orange hover:border-brand-orange transition-all group shadow-md"
+                >
+                  <span>VISIT ARAV INNOVATIONS</span>
+                  <ExternalLink className="w-3.5 h-3.5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+                </a>
+              </div>
             </div>
 
             {/* WhatsApp */}
-            <div className="space-y-2 pt-2 border-t border-white/10">
+            <div className="space-y-2 pt-4 border-t border-white/10">
               <div className="flex items-center gap-2 text-xs font-syne tracking-caps text-brand-platinum/70 uppercase">
                 <MessageSquare className="w-4 h-4 text-brand-green" />
-                <span>WHATSAPP</span>
+                <span>WHATSAPP DIRECT ENQUIRIES</span>
               </div>
               <a
                 href="https://wa.me/919891276713"
@@ -144,32 +157,6 @@ function ContactContent() {
                   className="inline-flex items-center gap-2 bg-brand-green/20 border border-brand-green/40 px-4 py-2 text-xs font-syne tracking-caps font-bold text-brand-green hover:bg-brand-green hover:text-black transition-all mt-1"
                 >
                   <span>CHAT ON WHATSAPP</span>
-                  <ExternalLink className="w-3.5 h-3.5" />
-                </a>
-              </div>
-            </div>
-
-            {/* Official Address */}
-            <div className="space-y-2 pt-2 border-t border-white/10">
-              <div className="flex items-center gap-2 text-xs font-syne tracking-caps text-brand-platinum/70 uppercase">
-                <MapPin className="w-4 h-4 text-brand-orange" />
-                <span>ADDRESS</span>
-              </div>
-              <address className="font-sans text-xs sm:text-sm text-brand-platinum leading-relaxed not-italic">
-                2, Humayun Rd,<br />
-                Sujan Sing Park North,<br />
-                Sujan Singh Park,<br />
-                New Delhi, Delhi 110003,<br />
-                India
-              </address>
-              <div className="pt-2">
-                <a
-                  href={googleMapsUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 border border-brand-orange/40 bg-brand-void px-4 py-2 text-xs font-syne tracking-caps font-bold text-brand-white hover:bg-brand-orange hover:border-brand-orange transition-all"
-                >
-                  <span>VIEW ON GOOGLE MAPS</span>
                   <ExternalLink className="w-3.5 h-3.5" />
                 </a>
               </div>
@@ -195,7 +182,7 @@ function ContactContent() {
                   Enquiry Received
                 </h4>
                 <p className="font-sans text-sm text-brand-platinum">
-                  Thank you for reaching out to FashAI Universe. Powered by Arav Innovation. Our team will review your message promptly.
+                  Thank you for reaching out to FashAI Universal. Powered by Arav Innovation. Our team will review your message promptly.
                 </p>
                 <button
                   onClick={() => setStatus("idle")}

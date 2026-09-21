@@ -52,7 +52,7 @@ export default function GalleryView() {
       <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16 border-b border-hairline-orange/50 pb-8">
         <div>
           <span className="text-xs font-syne tracking-micro text-brand-orange block mb-3 font-bold uppercase">
-            EDITORIAL VISUAL ARCHIVE / FASHAI UNIVERSE
+            EDITORIAL VISUAL ARCHIVE / FASHAI UNIVERSAL
           </span>
           <h1 className="font-serif-display text-4xl sm:text-6xl lg:text-7xl font-light text-brand-white uppercase">
             THE GALLERY
@@ -129,7 +129,7 @@ export default function GalleryView() {
                 >
                   <Image
                     src={item.thumb}
-                    alt={`FashAI Universe Capture ${index + 1}`}
+                    alt={`FashAI Universal Capture ${index + 1}`}
                     fill
                     sizes="(max-width: 768px) 100vw, 50vw"
                     className="object-cover filter contrast-110 transition-transform duration-700 ease-out group-hover:scale-105"
@@ -150,7 +150,7 @@ export default function GalleryView() {
                   <div className="absolute bottom-5 left-5 right-5 flex justify-between items-end">
                     <div>
                       <div className="text-[10px] font-syne tracking-micro text-brand-yellow-golden font-bold uppercase">
-                        FASHAI UNIVERSE EXHIBITION
+                        FASHAI UNIVERSAL EXHIBITION
                       </div>
                       <h4 className="font-serif-display text-lg sm:text-2xl font-light text-brand-white group-hover:text-brand-orange transition-colors mt-0.5">
                         {titleText}
