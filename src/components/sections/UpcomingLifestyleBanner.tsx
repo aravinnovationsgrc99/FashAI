@@ -2,16 +2,16 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
-import Image from "next/image";
 import { ArrowUpRight, Sparkles } from "lucide-react";
 
 export default function UpcomingLifestyleBanner() {
   return (
     <section className="relative py-20 sm:py-28 bg-brand-void border-b border-white/10 overflow-hidden">
-      {/* Atmosphere Ambient Glows */}
-      <div className="absolute top-1/2 left-1/4 -translate-y-1/2 w-[500px] h-[500px] bg-brand-orange/10 blur-[150px] pointer-events-none rounded-full" />
-      <div className="absolute top-1/3 right-1/4 w-[450px] h-[450px] bg-brand-green/8 blur-[160px] pointer-events-none rounded-full" />
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff03_1px,transparent_1px),linear-gradient(to_bottom,#ffffff03_1px,transparent_1px)] bg-[size:4rem_4rem] opacity-40 pointer-events-none" />
+      {/* Minimal Atmosphere Radial Glows */}
+      <div className="absolute top-1/2 left-1/4 -translate-y-1/2 w-[550px] h-[550px] bg-brand-orange/10 blur-[170px] pointer-events-none rounded-full" />
+      <div className="absolute top-1/3 right-1/4 w-[500px] h-[500px] bg-brand-green/8 blur-[180px] pointer-events-none rounded-full" />
+      <div className="absolute bottom-1/4 left-1/2 -translate-x-1/2 w-[400px] h-[400px] bg-brand-yellow-golden/5 blur-[160px] pointer-events-none rounded-full" />
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff03_1px,transparent_1px),linear-gradient(to_bottom,#ffffff03_1px,transparent_1px)] bg-[size:4rem_4rem] opacity-30 pointer-events-none" />
 
       <div className="container-editorial relative z-10">
         <motion.div
@@ -19,21 +19,9 @@ export default function UpcomingLifestyleBanner() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="relative bg-[#0B0908]/90 border border-brand-orange/40 p-8 sm:p-12 lg:p-16 overflow-hidden shadow-[0_0_50px_rgba(241,94,28,0.15)]"
+          className="relative bg-[#0B0908] border border-brand-orange/30 p-8 sm:p-12 lg:p-16 overflow-hidden shadow-[0_0_50px_rgba(241,94,28,0.12)]"
         >
-          {/* Background Editorial Photographic Art */}
-          <div className="absolute inset-0 z-0 opacity-20 pointer-events-none">
-            <Image
-              src="/assets/models/model_01.jpeg"
-              alt="LifeStyle 2026 Dubai"
-              fill
-              priority
-              sizes="100vw"
-              className="object-cover filter contrast-125 grayscale"
-            />
-            <div className="absolute inset-0 bg-gradient-to-r from-brand-void via-brand-void/90 to-brand-void/60" />
-          </div>
-
+          {/* Editorial Clean Minimal Content Layout */}
           <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
             
             {/* Left Column: Event Title & Announcement */}

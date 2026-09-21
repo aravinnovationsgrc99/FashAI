@@ -12,20 +12,19 @@ export default function EventInfoModal() {
   const modalRef = useRef<HTMLDivElement>(null);
   const triggerElementRef = useRef<HTMLElement | null>(null);
 
-  // Close modal and set seen in localStorage safely
+  // Close modal and record closed state
   const handleClose = useCallback(() => {
     setIsOpen(false);
     try {
-      localStorage.setItem("fashai_event_popup_seen", "true");
+      sessionStorage.setItem("fashai_event_popup_closed", "true");
     } catch {
-      // Safe fallback if localStorage is disabled
+      // Safe fallback if sessionStorage is disabled
     }
 
     // Restore background page scrolling
     document.body.style.overflow = "";
     document.documentElement.style.overflow = "";
 
-    // Return focus if practical
     if (triggerElementRef.current) {
       triggerElementRef.current.focus?.();
     }
@@ -37,38 +36,51 @@ export default function EventInfoModal() {
     router.push(`/contact?type=${type}`);
   };
 
-  // 1. First-Visit Scroll Listener Logic
+  // 1. Popup Trigger Logic: Open on initial page entry/refresh & on any user action
   useEffect(() => {
-    // Check if user has already seen popup
+    // If closed during current session, do not re-open continuously on simple route transitions
     try {
-      const hasSeen = localStorage.getItem("fashai_event_popup_seen");
-      if (hasSeen === "true") {
+      const isClosed = sessionStorage.getItem("fashai_event_popup_closed");
+      if (isClosed === "true") {
         return;
       }
     } catch {
-      // Continue if localStorage read fails
+      // safe fallback
     }
 
     let triggered = false;
 
-    const handleScroll = () => {
+    const triggerPopup = () => {
       if (triggered) return;
-
-      const scrollTop = window.scrollY || document.documentElement.scrollTop;
-      const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
-      const scrollPercentage = scrollHeight > 0 ? (scrollTop / scrollHeight) * 100 : 0;
-
-      // Trigger after 15–25% first meaningful scroll or at least 220px scroll offset
-      if (scrollTop > 220 || scrollPercentage >= 15) {
-        triggered = true;
-        triggerElementRef.current = document.activeElement as HTMLElement;
-        setIsOpen(true);
-        window.removeEventListener("scroll", handleScroll);
-      }
+      triggered = true;
+      triggerElementRef.current = document.activeElement as HTMLElement;
+      setIsOpen(true);
+      removeListeners();
     };
 
+    const handleScroll = () => triggerPopup();
+    const handleClick = () => triggerPopup();
+    const handleKey = () => triggerPopup();
+
+    const removeListeners = () => {
+      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("click", handleClick);
+      window.removeEventListener("keydown", handleKey);
+    };
+
+    // Auto-trigger on page load/refresh after a short 1.2s delay
+    const autoTimer = setTimeout(() => {
+      triggerPopup();
+    }, 1200);
+
     window.addEventListener("scroll", handleScroll, { passive: true });
-    return () => window.removeEventListener("scroll", handleScroll);
+    window.addEventListener("click", handleClick, { passive: true });
+    window.addEventListener("keydown", handleKey, { passive: true });
+
+    return () => {
+      clearTimeout(autoTimer);
+      removeListeners();
+    };
   }, []);
 
   // 2. Manage Lock Scroll & Escape Key Listener when Open
@@ -104,10 +116,10 @@ export default function EventInfoModal() {
             exit={{ opacity: 0 }}
             transition={{ duration: 0.35 }}
             onClick={handleClose}
-            className="fixed inset-0 bg-black/80 backdrop-blur-md z-[300]"
+            className="fixed inset-0 bg-black/85 backdrop-blur-md z-[300]"
             style={{
-              backdropFilter: "blur(12px)",
-              WebkitBackdropFilter: "blur(12px)",
+              backdropFilter: "blur(14px)",
+              WebkitBackdropFilter: "blur(14px)",
             }}
           />
 
@@ -118,11 +130,11 @@ export default function EventInfoModal() {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 15, scale: 0.98 }}
             transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
-            className="relative z-[310] w-full max-w-2xl bg-[#0B0908]/95 border border-brand-orange/40 p-6 sm:p-10 shadow-[0_0_60px_rgba(241,94,28,0.25)] text-brand-white overflow-hidden max-h-[88vh] flex flex-col justify-between my-auto rounded-none"
+            className="relative z-[310] w-full max-w-2xl bg-[#0B0908] border border-brand-orange/40 p-6 sm:p-10 shadow-[0_0_70px_rgba(241,94,28,0.25)] text-brand-white overflow-hidden max-h-[88vh] flex flex-col justify-between my-auto rounded-none"
           >
-            {/* Corner Decorative Accent */}
-            <div className="absolute top-0 left-0 w-24 h-24 bg-gradient-to-br from-brand-orange/15 via-transparent to-transparent pointer-events-none" />
-            <div className="absolute bottom-0 right-0 w-32 h-32 bg-gradient-to-tl from-brand-green/10 via-transparent to-transparent pointer-events-none" />
+            {/* Corner Decorative Ambient Accent */}
+            <div className="absolute top-0 left-0 w-28 h-28 bg-gradient-to-br from-brand-orange/15 via-transparent to-transparent pointer-events-none" />
+            <div className="absolute bottom-0 right-0 w-36 h-36 bg-gradient-to-tl from-brand-green/10 via-transparent to-transparent pointer-events-none" />
 
             {/* Close Button (Z-320) */}
             <button
@@ -158,7 +170,7 @@ export default function EventInfoModal() {
                   LIFESTYLE 2026
                 </h2>
                 <p className="font-sans text-xs sm:text-sm text-brand-platinum/90 font-light">
-                  An international fashion and lifestyle experience.
+                  An international fashion and lifestyle experience in Dubai.
                 </p>
               </div>
 
@@ -183,7 +195,7 @@ export default function EventInfoModal() {
                     </span>
                   </div>
                   <span className="font-syne text-xs text-brand-white font-bold uppercase">
-                    TO BE ANNOUNCED
+                    NOVEMBER 2026
                   </span>
                 </div>
 
