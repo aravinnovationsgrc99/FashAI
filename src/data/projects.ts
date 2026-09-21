@@ -20,15 +20,51 @@ export interface ProjectItem {
 
 export const PROJECTS_DATA: ProjectItem[] = [
   {
-    id: "lifestyle-2025",
+    id: "runway-2025",
     number: "01",
-    title: "LIFESTYLE 2025",
-    subtitle: "PREVIOUS EDITION — VISUAL ARCHIVE",
-    category: "PREVIOUS EDITION",
+    title: "RUNWAY 2025",
+    subtitle: "PREVIOUS EDITION — HAUTE RUNWAY PRESENTATION",
+    category: "COMPLETED EDITION",
     year: "2025",
     location: "DUBAI",
     description:
-      "A visual record of the LifeStyle 2025 experience. Bringing together fashion, computational design, and high-couture identity.",
+      "A high-couture catwalk presentation within the FashAI Universal ecosystem. Highlighting spatial choreography, lighting art, and designer silhouettes.",
+    heroImage: "/assets/models/model_12.jpeg",
+    sequence: [
+      {
+        type: "image",
+        image: "/assets/models/model_07.jpeg",
+        caption: "Runway 2025 — Catwalk Presentation",
+        aspect: "aspect-[4/5]",
+      },
+      {
+        type: "text",
+        title: "THE RUNWAY PRESENTATION",
+        text: "Runway 2025 presented physical garment artistry integrated with spatial light installations and couture music direction.",
+      },
+      {
+        type: "image",
+        image: "/assets/models/model_09.jpeg",
+        caption: "Runway 2025 — Silhouette & Lighting Study",
+        aspect: "aspect-[3/4]",
+      },
+      {
+        type: "full-width",
+        image: "/assets/models/model_14.jpeg",
+        caption: "Runway 2025 — Grand Finale Catwalk",
+      },
+    ],
+  },
+  {
+    id: "lifestyle-2025",
+    number: "02",
+    title: "LIFESTYLE 2025",
+    subtitle: "PREVIOUS EDITION — VISUAL ARCHIVE",
+    category: "COMPLETED EDITION",
+    year: "2025",
+    location: "DUBAI",
+    description:
+      "A visual record of the LifeStyle 2025 experience. Bringing together physical garment art with spatial light and luxury fashion identity.",
     heroImage: "/assets/models/model_01.jpeg",
     sequence: [
       {
@@ -53,24 +89,18 @@ export const PROJECTS_DATA: ProjectItem[] = [
         image: "/assets/models/model_05.jpeg",
         caption: "LifeStyle 2025 — Editorial Presentation",
       },
-      {
-        type: "detail",
-        image: "/assets/models/model_07.jpeg",
-        caption: "LifeStyle 2025 — Textile & Material Study",
-        aspect: "aspect-square",
-      },
     ],
   },
   {
     id: "lifestyle-2026",
-    number: "02",
+    number: "03",
     title: "LIFESTYLE 2026",
-    subtitle: "UPCOMING EVENT — DUBAI 2026",
+    subtitle: "UPCOMING EVENT — DUBAI NOVEMBER 2026",
     category: "UPCOMING EVENT",
     year: "2026",
-    location: "DUBAI, UNITED ARAB EMIRATES",
+    location: "DUBAI · UNITED ARAB EMIRATES",
     description:
-      "An international fashion and lifestyle experience in Dubai. Registrations and sponsorships are open for delegates, designers, and brand partners.",
+      "An international fashion and lifestyle experience in Dubai. Registrations and sponsorships are open for delegates, international designers, press, and brand partners.",
     heroImage: "/assets/models/model_03.jpeg",
     sequence: [
       {
@@ -92,14 +122,8 @@ export const PROJECTS_DATA: ProjectItem[] = [
       },
       {
         type: "full-width",
-        image: "/assets/models/model_10.jpeg",
+        image: "/assets/models/model_11.jpeg",
         caption: "LifeStyle 2026 — Dubai Horizon Series",
-      },
-      {
-        type: "detail",
-        image: "/assets/models/model_12.jpeg",
-        caption: "LifeStyle 2026 — High-Couture Innovation",
-        aspect: "aspect-[4/5]",
       },
     ],
   },
