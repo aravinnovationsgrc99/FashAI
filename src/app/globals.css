@@ -81,42 +81,113 @@ html.light body {
   color: #0A0A09;
 }
 
-html.light .bg-brand-void {
+html.light .bg-brand-void,
+html.light .bg-brand-atelier,
+html.light .bg-brand-charcoal,
+html.light .bg-\[\#0B0908\],
+html.light .bg-\[\#080808\],
+html.light .bg-\[\#050505\],
+html.light .bg-black {
   background-color: #FAF8F5 !important;
 }
 
-html.light .bg-brand-atelier {
+html.light .bg-brand-atelier,
+html.light .bg-white\/80,
+html.light .bg-white\/90 {
   background-color: #FFFFFF !important;
 }
 
-html.light .bg-brand-charcoal {
-  background-color: #F5F2EC !important;
+/* Translucent Overlays & Backdrop Elements in Light Mode */
+html.light .bg-black\/95,
+html.light .bg-black\/90,
+html.light .bg-black\/85,
+html.light .bg-black\/80,
+html.light .bg-black\/75,
+html.light .bg-black\/40 {
+  background-color: rgba(250, 248, 245, 0.92) !important;
 }
 
-html.light .bg-\[\#0B0908\] {
-  background-color: #FFFFFF !important;
+html.light .bg-brand-void\/90,
+html.light .bg-brand-void\/80,
+html.light .bg-brand-charcoal\/80,
+html.light .bg-brand-charcoal\/90 {
+  background-color: rgba(255, 255, 255, 0.94) !important;
 }
 
-html.light .bg-\[\#080808\] {
-  background-color: #FAF8F5 !important;
+/* Sticky Header in Light Mode */
+html.light .html-light-header-scrolled {
+  background-color: rgba(255, 255, 255, 0.92) !important;
+  border-bottom-color: rgba(10, 10, 9, 0.12) !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05) !important;
 }
 
-html.light .text-brand-white {
+/* Typography Overrides in Light Mode */
+html.light .text-brand-white,
+html.light .text-brand-off-white,
+html.light .text-brand-platinum,
+html.light .text-white {
   color: #0A0A09 !important;
 }
 
-html.light .text-brand-off-white {
-  color: #121110 !important;
+/* Preserve Crisp White Text for Colored CTA Buttons & Badges */
+html.light .bg-brand-orange,
+html.light .bg-brand-orange *,
+html.light .bg-\[\#ff6f2d\],
+html.light .bg-\[\#ff6f2d\] *,
+html.light .bg-brand-green,
+html.light .bg-brand-green * {
+  color: #FFFFFF !important;
 }
 
-html.light .text-brand-platinum {
-  color: #4A4742 !important;
+/* Retain Brand Accent Colors (Orange, Green, Gold) */
+html.light .text-brand-orange {
+  color: #F15E1C !important;
 }
 
+html.light .text-brand-green {
+  color: #2E936F !important;
+}
+
+html.light .text-brand-yellow-golden,
+html.light .text-brand-gold {
+  color: #D49000 !important;
+}
+
+html.light .text-brand-lemon {
+  color: #C79500 !important;
+}
+
+/* Hairline Borders in Light Mode */
 html.light .border-white\/10,
 html.light .border-white\/15,
-html.light .border-white\/20 {
+html.light .border-white\/20,
+html.light .border-hairline-light {
   border-color: rgba(10, 10, 9, 0.12) !important;
+}
+
+html.light .border-hairline-orange,
+html.light .border-brand-orange\/30,
+html.light .border-brand-orange\/40 {
+  border-color: rgba(241, 94, 28, 0.4) !important;
+}
+
+html.light .border-hairline-gold,
+html.light .border-brand-yellow-golden\/40,
+html.light .border-brand-yellow-golden\/50 {
+  border-color: rgba(250, 182, 10, 0.5) !important;
+}
+
+/* Atmospheric Overlays & Canvas in Light Mode */
+html.light .bg-vignette {
+  background: radial-gradient(circle at center, transparent 30%, rgba(250, 248, 245, 0.94) 100%) !important;
+}
+
+html.light .bg-cinematic-overlay {
+  background: linear-gradient(180deg, rgba(250,248,245,0.75) 0%, rgba(250,248,245,0.2) 50%, rgba(250,248,245,0.98) 100%) !important;
+}
+
+html.light canvas {
+  opacity: 0.65;
 }
 
 /* Safe area padding utilities */
