@@ -134,43 +134,23 @@ export default function GalleryView() {
         </div>
       </div>
 
-      {/* 3. EDITORIAL MASONRY COMPOSITION (Asymmetric Grid Matching Reference Screenshot) */}
-      <motion.div layout className="grid grid-cols-1 md:grid-cols-12 gap-5 sm:gap-6 lg:gap-8 items-start">
+      {/* 3. ZERO-GAP MASONRY LAYOUT (Tight vertical column packing) */}
+      <div className="columns-1 sm:columns-2 md:columns-3 lg:columns-3 xl:columns-4 gap-5 sm:gap-6 lg:gap-8 space-y-5 sm:space-y-6 lg:space-y-8">
         <AnimatePresence>
           {displayedImages.map((item, index) => {
-            // Asymmetric Column Spans to emulate screenshot editorial layout
-            const spans = [
-              "md:col-span-4 lg:col-span-4", // Tall left portrait
-              "md:col-span-5 lg:col-span-5", // Wide center top
-              "md:col-span-3 lg:col-span-3", // Portrait right top
-              "md:col-span-5 lg:col-span-5", // Center bottom
-              "md:col-span-3 lg:col-span-3", // Dark wide right bottom
-              "md:col-span-3 lg:col-span-3", // Left bottom
-              "md:col-span-3 lg:col-span-3", // Runway center
-              "md:col-span-3 lg:col-span-3", // Experience square
-              "md:col-span-3 lg:col-span-3", // B&W right
-              "md:col-span-6 lg:col-span-6", // Wide feature
-              "md:col-span-6 lg:col-span-6", // Wide feature
-            ];
-            const colSpan = spans[index % spans.length];
-
-            // Aspect Ratios
+            // Varied aspect ratio sequence
             const aspectClass =
-              index % 9 === 0
+              index % 7 === 0
                 ? "aspect-[3/4]"
-                : index % 9 === 1
-                ? "aspect-[16/10]"
-                : index % 9 === 2
-                ? "aspect-[3/4]"
-                : index % 9 === 3
+                : index % 7 === 1
+                ? "aspect-[16/11]"
+                : index % 7 === 2
                 ? "aspect-[4/5]"
-                : index % 9 === 4
+                : index % 7 === 3
+                ? "aspect-[3/4]"
+                : index % 7 === 4
                 ? "aspect-[16/10]"
-                : index % 9 === 5
-                ? "aspect-[3/4]"
-                : index % 9 === 6
-                ? "aspect-[3/4]"
-                : index % 9 === 7
+                : index % 7 === 5
                 ? "aspect-square"
                 : "aspect-[3/4]";
 
@@ -184,17 +164,17 @@ export default function GalleryView() {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, scale: 0.96 }}
                 transition={{ duration: 0.4, delay: (index % 6) * 0.04 }}
-                className={`${colSpan} group cursor-pointer`}
+                className="break-inside-avoid group cursor-pointer"
                 onClick={() => openLightbox(item)}
               >
                 <div
-                  className={`relative ${aspectClass} w-full overflow-hidden border border-white/10 bg-brand-charcoal/90 transition-all duration-500 hover:border-brand-orange hover:shadow-[0_0_35px_rgba(241,94,28,0.3)]`}
+                  className={`relative ${aspectClass} w-full overflow-hidden border border-white/10 bg-brand-charcoal/90 transition-all duration-500 hover:border-brand-orange hover:shadow-[0_0_35px_rgba(241,94,28,0.35)]`}
                 >
                   <Image
                     src={item.thumb}
                     alt={`FashAI Universal Visual Archive ${index + 1}`}
                     fill
-                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
                     className="object-cover filter contrast-105 transition-transform duration-700 ease-out group-hover:scale-[1.03]"
                     loading={index > 6 ? "lazy" : "eager"}
                   />
@@ -221,7 +201,7 @@ export default function GalleryView() {
             );
           })}
         </AnimatePresence>
-      </motion.div>
+      </div>
 
       {/* 4. LOAD MORE BUTTON */}
       {visibleCount < filteredImages.length && (
@@ -236,7 +216,7 @@ export default function GalleryView() {
         </div>
       )}
 
-      {/* 5. EDITORIAL QUOTE FOOTER BANNER (Matching reference screenshot) */}
+      {/* 5. EDITORIAL QUOTE FOOTER BANNER */}
       <div className="mt-20 pt-12 border-t border-white/10 text-center space-y-2">
         <p className="font-serif italic text-xl sm:text-3xl text-brand-white/90 font-light">
           “More than events, a movement in fashion.”
