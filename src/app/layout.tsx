@@ -5,6 +5,7 @@ import Footer from "@/components/layout/Footer";
 import CursorInteraction from "@/components/cinematic/CursorInteraction";
 import Preloader from "@/components/cinematic/Preloader";
 import PageTransition from "@/components/cinematic/PageTransition";
+import EventInfoModal from "@/components/ui/EventInfoModal";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://fashai-beryl.vercel.app"),
@@ -65,6 +66,9 @@ export default function RootLayout({
       <body className="bg-brand-void text-brand-off-white selection:bg-brand-gold-pure selection:text-brand-black font-sans-body">
         {/* Cinematic Initial Preloader */}
         <Preloader />
+
+        {/* First-Visit Event Information Popup (Triggered on Scroll) */}
+        <EventInfoModal />
 
         {/* Custom Fine-Pointer Editorial Cursor */}
         <CursorInteraction />
