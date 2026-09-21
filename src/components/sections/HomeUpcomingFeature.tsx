@@ -109,7 +109,7 @@ export default function HomeUpcomingFeature() {
                 Dress Code
               </h4>
               <p className="font-syne text-sm text-brand-orange font-bold uppercase">
-                FAHSIONABLE &amp; HAUTE COUTURE
+                FASHIONABLE &amp; HAUTE COUTURE
               </p>
               <p className="font-sans text-[11px] text-brand-platinum/70 uppercase mt-1">
                 Luxury Aesthetic

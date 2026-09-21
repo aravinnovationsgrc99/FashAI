@@ -208,8 +208,8 @@ export default function EventInfoModal() {
                       DRESS CODE
                     </span>
                   </div>
-                  <span className="font-syne text-xs text-brand-green font-bold uppercase">
-                    HAUTE COUTURE
+                  <span className="font-syne text-[11px] text-brand-green font-bold uppercase leading-tight">
+                    FASHIONABLE &amp; HAUTE COUTURE
                   </span>
                 </div>
               </div>

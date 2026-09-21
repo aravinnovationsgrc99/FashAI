@@ -7,16 +7,17 @@ import PrismScene from "../cinematic/PrismScene";
 
 export default function Hero() {
   return (
-    <section className="relative min-h-[92svh] sm:min-h-[100dvh] w-full flex flex-col justify-between pt-24 sm:pt-28 pb-8 px-4 sm:px-8 lg:px-12 overflow-hidden bg-brand-void">
-      {/* Background Atmosphere & Radial Glows (z-0) */}
+    <section className="relative min-h-[88vh] lg:min-h-[92vh] w-full flex flex-col justify-between pt-24 sm:pt-28 pb-6 px-4 sm:px-6 lg:px-10 overflow-hidden bg-brand-void">
+      {/* Background Atmosphere & Graphical Layer (z-0) */}
       <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden select-none">
         <div className="absolute inset-0 bg-gradient-to-b from-brand-void via-brand-void/90 to-brand-void" />
         
         {/* Soft Ambient Radial Orbs */}
-        <div className="absolute top-1/4 left-1/4 w-[40vw] h-[40vw] max-w-[500px] max-h-[500px] rounded-full bg-brand-orange/10 blur-[140px]" />
-        <div className="absolute bottom-1/3 right-1/4 w-[35vw] h-[35vw] max-w-[450px] max-h-[450px] rounded-full bg-brand-green/10 blur-[150px]" />
+        <div className="absolute top-1/4 left-1/4 w-[45vw] h-[45vw] max-w-[600px] max-h-[600px] rounded-full bg-brand-orange/10 blur-[150px]" />
+        <div className="absolute bottom-1/3 right-1/4 w-[40vw] h-[40vw] max-w-[550px] max-h-[550px] rounded-full bg-brand-green/10 blur-[160px]" />
+        <div className="absolute top-1/2 right-1/3 w-[30vw] h-[30vw] max-w-[450px] max-h-[450px] rounded-full bg-brand-yellow-golden/8 blur-[140px]" />
 
-        {/* Subtle Architectural Grid Pattern */}
+        {/* Fine Architectural Grid Pattern */}
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff04_1px,transparent_1px),linear-gradient(to_bottom,#ffffff04_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,#000_70%,transparent_100%)] opacity-50" />
 
         {/* Editorial Watermark */}
@@ -27,41 +28,51 @@ export default function Hero() {
         <div className="absolute inset-0 bg-vignette opacity-60" />
       </div>
 
-      {/* Three.js Refractive Prism Background Layer (Z-1: positioned safely behind content) */}
+      {/* Three.js Refractive Prism Background Layer (Z-1) */}
       <PrismScene />
 
-      {/* Main Content Composition Layer (Z-10: Strict Layer Priority) */}
-      <div className="relative z-10 my-auto w-full max-w-7xl mx-auto py-6 sm:py-10">
+      {/* Main Content Composition Layer (Z-10: Fluid 92vw Grid Container) */}
+      <div className="relative z-10 my-auto w-[92vw] max-w-[1600px] mx-auto py-4 sm:py-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
           
-          {/* LEFT COLUMN (Brand + Typography + Positioning + CTAs) */}
+          {/* LEFT COLUMN (Primary Content — 48–52% Width on Desktop) */}
           <motion.div
             initial={{ opacity: 0, y: 25 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-            className="lg:col-span-7 flex flex-col items-start space-y-5 sm:space-y-6"
+            className="lg:col-span-7 xl:col-span-6 flex flex-col items-start space-y-4 sm:space-y-5 max-w-3xl"
           >
-
+            {/* 1. Official FashAI Logo — Prominent Top Branding */}
+            <div className="mb-1 sm:mb-2">
+              <Image
+                src="/assets/brand/logo_transparent.png"
+                alt="FashAI Universal Official Logo"
+                width={360}
+                height={120}
+                priority
+                className="h-[65px] sm:h-[80px] md:h-[95px] lg:h-[110px] w-auto object-contain hover:scale-[1.02] transition-transform duration-300 drop-shadow-[0_0_25px_rgba(241,94,28,0.25)]"
+              />
+            </div>
 
             {/* 2. Official Brand Name: FashAI Universal */}
             <h1 className="font-serif-display leading-[0.95] tracking-tight select-none w-full">
-              <span className="block text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-serif font-light text-brand-white uppercase">
+              <span className="block text-4xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-serif font-light text-brand-white uppercase">
                 FashAI
               </span>
-              <span className="block text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-serif font-normal text-transparent bg-clip-text bg-gradient-to-r from-brand-orange via-[#ff8833] to-brand-yellow-golden italic mt-1">
+              <span className="block text-4xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-serif font-normal text-transparent bg-clip-text bg-gradient-to-r from-brand-orange via-[#ff8833] to-brand-yellow-golden italic mt-1">
                 Universal
               </span>
             </h1>
 
-            {/* 3. Official Arav Innovation Logo Badge (Increased Size, Text Removed) */}
-            <div className="pt-2">
+            {/* 3. Official Arav Innovation Logo Badge */}
+            <div className="pt-1">
               <Image
                 src="/assets/brand/PoweredByAravInnovation.jpeg"
                 alt="Powered by Arav Innovation"
-                width={360}
-                height={94}
+                width={320}
+                height={84}
                 priority
-                className="h-10 sm:h-12 md:h-14 lg:h-16 w-auto object-contain hover:scale-105 transition-transform duration-300 drop-shadow-[0_0_20px_rgba(241,94,28,0.25)]"
+                className="h-8 sm:h-10 md:h-12 lg:h-14 w-auto object-contain hover:scale-105 transition-transform duration-300 drop-shadow-[0_0_20px_rgba(241,94,28,0.25)]"
               />
             </div>
 
@@ -70,7 +81,7 @@ export default function Hero() {
               Fashion × AI × Experience
             </p>
 
-            {/* 5. Event Metadata & Registration Status */}
+            {/* 5. Event Metadata & Registration Status Banner */}
             <div className="border-l-2 border-brand-orange pl-4 py-1 space-y-1 my-2">
               <div className="inline-flex items-center gap-2 bg-brand-orange/10 border border-brand-orange/30 px-3 py-1 rounded-full mb-1">
                 <span className="h-2 w-2 rounded-full bg-brand-orange animate-pulse" />
@@ -86,7 +97,7 @@ export default function Hero() {
               </p>
             </div>
 
-            {/* 6. Primary CTA Buttons */}
+            {/* 6. Primary Action CTA Buttons */}
             <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 w-full sm:w-auto pt-2">
               <Link
                 href="/contact?type=Registration"
@@ -106,14 +117,14 @@ export default function Hero() {
             </div>
           </motion.div>
 
-          {/* RIGHT COLUMN (3D Visual Framing Space on Desktop) */}
-          <div className="hidden lg:block lg:col-span-5 h-full pointer-events-none" />
+          {/* RIGHT COLUMN (3D Visual Framing Space on Desktop — 48–52% Width) */}
+          <div className="hidden lg:block lg:col-span-5 xl:col-span-6 h-full pointer-events-none" />
 
         </div>
       </div>
 
-      {/* Clean Bottom Bar (Global Level) */}
-      <div className="relative z-10 w-full max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-start sm:items-center text-[10px] sm:text-xs font-syne tracking-micro text-brand-platinum/70 pt-4 border-t border-white/10 gap-2">
+      {/* Clean Bottom Bar (Fluid Container) */}
+      <div className="relative z-10 w-[92vw] max-w-[1600px] mx-auto flex flex-col sm:flex-row justify-between items-start sm:items-center text-[10px] sm:text-xs font-syne tracking-micro text-brand-platinum/70 pt-4 border-t border-white/10 gap-2">
         <span>LIFESTYLE 2026 — DUBAI • INTERNATIONAL EVENT PLATFORM</span>
         <span className="text-brand-orange font-semibold uppercase">FASHAI UNIVERSAL</span>
       </div>
