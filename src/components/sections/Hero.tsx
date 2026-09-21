@@ -42,17 +42,7 @@ export default function Hero() {
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
             className="lg:col-span-7 xl:col-span-6 flex flex-col items-start space-y-4 sm:space-y-5 max-w-3xl"
           >
-            {/* 1. Official FashAI Logo — Prominent Top Branding */}
-            <div className="mb-1 sm:mb-2">
-              <Image
-                src="/assets/brand/logo_transparent.png"
-                alt="FashAI Universal Official Logo"
-                width={360}
-                height={120}
-                priority
-                className="h-[65px] sm:h-[80px] md:h-[95px] lg:h-[110px] w-auto object-contain hover:scale-[1.02] transition-transform duration-300 drop-shadow-[0_0_25px_rgba(241,94,28,0.25)]"
-              />
-            </div>
+
 
             {/* 2. Official Brand Name: FashAI Universal */}
             <h1 className="font-serif-display leading-[0.95] tracking-tight select-none w-full">

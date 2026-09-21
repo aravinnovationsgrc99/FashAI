@@ -77,7 +77,7 @@ export default function Footer() {
             <ul className="space-y-2.5 font-syne text-xs tracking-wider text-brand-platinum/90">
               <li>
                 <Link href="/" className="hover:text-brand-orange transition-colors">
-                  Landing
+                  Home
                 </Link>
               </li>
               <li>
