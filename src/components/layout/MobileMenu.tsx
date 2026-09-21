@@ -88,19 +88,24 @@ export default function MobileMenu({
             {/* Header Brand Lockup in Mobile Menu */}
             <div className="flex items-center justify-between border-b border-white/10 pb-5 pt-2 flex-shrink-0">
               <Link href="/" onClick={onClose} className="flex items-center gap-3 min-h-[44px]">
-                <div className="relative w-8 h-8 flex-shrink-0 overflow-hidden rounded-md border border-brand-orange/40 bg-black shadow-lg">
+                <div className="relative w-8 h-8 flex-shrink-0 overflow-hidden bg-black/90 border border-brand-orange/40 shadow-[0_0_15px_rgba(241,94,28,0.2)]">
                   <Image
                     src="/assets/brand/logo_transparent.png"
-                    alt="FashAI Logo"
+                    alt="FashAI Universal Logo"
                     fill
                     priority
                     sizes="32px"
                     className="object-contain p-0.5"
                   />
                 </div>
-                <span className="font-syne text-base tracking-[0.16em] font-extrabold text-brand-white leading-snug">
-                  FashAI Universal
-                </span>
+                <div className="flex flex-col justify-center">
+                  <span className="font-serif-display text-lg font-light tracking-wider text-brand-white uppercase leading-none">
+                    FashAI <span className="font-serif italic font-normal text-transparent bg-clip-text bg-gradient-to-r from-brand-orange via-[#ff8833] to-brand-yellow-golden capitalize">Universal</span>
+                  </span>
+                  <span className="text-[8px] font-syne tracking-[0.22em] text-brand-platinum/70 uppercase font-bold mt-0.5">
+                    DUBAI · EST. 2026
+                  </span>
+                </div>
               </Link>
 
               {/* Close Button (z-[120]) */}

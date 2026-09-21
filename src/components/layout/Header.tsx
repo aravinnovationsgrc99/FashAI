@@ -52,21 +52,26 @@ export default function Header() {
       }
     >
       <div className="container-editorial flex items-center justify-between min-h-[50px]">
-        {/* Official Clean Brand Lockup: [OFFICIAL LOGO] FashAI Universal */}
+        {/* Official Editorial Brand Lockup: [OFFICIAL LOGO] FashAI Universal */}
         <Link href="/" className="flex items-center gap-3 group py-1 min-h-[44px]">
-          <div className="relative w-8 h-8 sm:w-9 sm:h-9 flex-shrink-0 overflow-hidden rounded-md border border-brand-orange/30 bg-black shadow-md">
+          <div className="relative w-8 h-8 sm:w-9 sm:h-9 flex-shrink-0 overflow-hidden bg-black/90 border border-brand-orange/40 shadow-[0_0_15px_rgba(241,94,28,0.2)] group-hover:border-brand-orange group-hover:shadow-[0_0_22px_rgba(241,94,28,0.4)] transition-all duration-300">
             <Image
               src="/assets/brand/logo_transparent.png"
-              alt="FashAI Logo"
+              alt="FashAI Universal Logo"
               fill
               priority
               sizes="36px"
               className="object-contain p-0.5 group-hover:scale-105 transition-transform duration-300"
             />
           </div>
-          <span className="font-syne text-base sm:text-lg tracking-[0.16em] font-extrabold text-brand-white group-hover:text-brand-orange transition-colors leading-tight">
-            FashAI Universal
-          </span>
+          <div className="flex flex-col justify-center">
+            <span className="font-serif-display text-lg sm:text-xl font-light tracking-wider text-brand-white uppercase group-hover:text-brand-orange transition-colors leading-none">
+              FashAI <span className="font-serif italic font-normal text-transparent bg-clip-text bg-gradient-to-r from-brand-orange via-[#ff8833] to-brand-yellow-golden capitalize">Universal</span>
+            </span>
+            <span className="text-[8px] font-syne tracking-[0.22em] text-brand-platinum/70 uppercase font-bold mt-0.5">
+              DUBAI · EST. 2026
+            </span>
+          </div>
         </Link>
 
         {/* Desktop Navigation Links */}
