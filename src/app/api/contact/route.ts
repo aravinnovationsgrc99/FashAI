@@ -3,12 +3,25 @@ import { NextResponse } from "next/server";
 export async function POST(request: Request) {
   try {
     const body = await request.json();
-    const { name, email, phone, interest, inquiryType, subject, message } = body;
-    const selectedCategory = interest || inquiryType || subject;
+    const {
+      name,
+      email,
+      phone,
+      country,
+      city,
+      organization,
+      role,
+      enquiryType,
+      eventInterest,
+      message,
+    } = body;
 
-    if (!name || !email || !selectedCategory || !message) {
+    const selectedEnquiryType = enquiryType || body.subject || body.inquiryType || "Registration";
+    const selectedEventInterest = eventInterest || body.interest || "LifeStyle 2026";
+
+    if (!name || !email || !selectedEnquiryType || !selectedEventInterest || !message) {
       return NextResponse.json(
-        { error: "Please complete all required fields." },
+        { error: "Please complete all required fields (*)." },
         { status: 400 }
       );
     }
@@ -22,20 +35,32 @@ export async function POST(request: Request) {
       );
     }
 
-    console.log("FashAI Universal Contact Enquiry Received:", {
+    if (message.trim().length < 10) {
+      return NextResponse.json(
+        { error: "Please provide a detailed message (minimum 10 characters)." },
+        { status: 400 }
+      );
+    }
+
+    console.log("FashAI Universal Official Enquiry Received:", {
       name,
       email,
       phone,
-      interest: selectedCategory,
+      country,
+      city,
+      organization,
+      role,
+      enquiryType: selectedEnquiryType,
+      eventInterest: selectedEventInterest,
       message,
       timestamp: new Date().toISOString(),
     });
 
     return NextResponse.json({
       success: true,
-      message: "Enquiry recorded successfully.",
+      message: "Your enquiry has been submitted successfully to FashAI Universal.",
     });
-  } catch (error) {
+  } catch {
     return NextResponse.json(
       { error: "Failed to process enquiry. Please try again." },
       { status: 500 }

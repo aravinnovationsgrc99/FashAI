@@ -31,8 +31,8 @@ export default function Hero() {
       {/* Three.js Refractive Prism Background Layer (Z-1) */}
       <PrismScene />
 
-      {/* Main Content Composition Layer (Z-10: Fluid 92vw Grid Container) */}
-      <div className="relative z-10 my-auto w-[92vw] max-w-[1600px] mx-auto py-4 sm:py-8">
+      {/* Main Content Composition Layer (Z-10: Fluid Grid Container) */}
+      <div className="relative z-10 my-auto container-editorial py-4 sm:py-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
           
           {/* LEFT COLUMN (Primary Content — 48–52% Width on Desktop) */}
@@ -114,7 +114,7 @@ export default function Hero() {
       </div>
 
       {/* Clean Bottom Bar (Fluid Container) */}
-      <div className="relative z-10 w-[92vw] max-w-[1600px] mx-auto flex flex-col sm:flex-row justify-between items-start sm:items-center text-[10px] sm:text-xs font-syne tracking-micro text-brand-platinum/70 pt-4 border-t border-white/10 gap-2">
+      <div className="relative z-10 container-editorial flex flex-col sm:flex-row justify-between items-start sm:items-center text-[10px] sm:text-xs font-syne tracking-micro text-brand-platinum/70 pt-4 border-t border-white/10 gap-2">
         <span>LIFESTYLE 2026 — DUBAI • INTERNATIONAL EVENT PLATFORM</span>
         <span className="text-brand-orange font-semibold uppercase">FASHAI UNIVERSAL</span>
       </div>

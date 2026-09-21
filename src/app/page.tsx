@@ -1,37 +1,31 @@
 import Hero from "@/components/sections/Hero";
-import FashAiIntro from "@/components/sections/FeshAiIntro";
+import UpcomingLifestyleBanner from "@/components/sections/UpcomingLifestyleBanner";
 import OurEventsSection from "@/components/sections/OurEventsSection";
 import Chapter2025 from "@/components/sections/Chapter2025";
-import HomeUpcomingFeature from "@/components/sections/HomeUpcomingFeature";
-import HomeGalleryPreview from "@/components/sections/HomeGalleryPreview";
+import FashionCommunitySection from "@/components/sections/FashionCommunitySection";
 import InstagramSection from "@/components/sections/InstagramSection";
 import ContactSection from "@/components/sections/ContactSection";
 
 export default function Home() {
   return (
     <main className="min-h-screen bg-brand-void text-brand-white selection:bg-brand-orange selection:text-white">
-      {/* 01 LANDING HERO */}
+      {/* 01. HERO SECTION */}
       <Hero />
 
-      {/* 02 ABOUT / UNIVERSAL */}
-      <FashAiIntro />
+      {/* 02. LIFESTYLE 2026 UPCOMING EVENT BANNER */}
+      <UpcomingLifestyleBanner />
 
-      {/* 03 OUR EVENTS — LIFESTYLE & RUNWAY */}
+      {/* 03. EVENTS & PROJECTS (OUR EVENTS + 2025 ARCHIVE) */}
       <OurEventsSection />
-
-      {/* 04 LIFESTYLE 2025 — PREVIOUS EDITION */}
       <Chapter2025 />
 
-      {/* 05 LIFESTYLE 2026 — UPCOMING EVENT */}
-      <HomeUpcomingFeature />
+      {/* 04. PEOPLE / INDUSTRY CATEGORIES (FASHION COMMUNITY) */}
+      <FashionCommunitySection />
 
-      {/* 06 GALLERY — VISUAL ARCHIVE */}
-      <HomeGalleryPreview />
-
-      {/* 07 INSTAGRAM — @FASHAI_UNIVERSAL */}
+      {/* 05. INSTAGRAM (@FASHAI_UNIVERSAL) */}
       <InstagramSection />
 
-      {/* 08 CONTACT — ENQUIRIES & ARAV INNOVATION */}
+      {/* 06. CONTACT & ENQUIRIES */}
       <ContactSection />
     </main>
   );
