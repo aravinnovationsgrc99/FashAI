@@ -6,6 +6,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { X } from "lucide-react";
+import ThemeToggle from "../ui/ThemeToggle";
 
 interface NavItem {
   label: string;
@@ -108,14 +109,17 @@ export default function MobileMenu({
                 </div>
               </Link>
 
-              {/* Close Button (z-[120]) */}
-              <button
-                onClick={onClose}
-                className="p-2.5 rounded-full bg-brand-void border border-brand-orange/40 text-brand-white hover:text-brand-orange transition-colors min-w-[44px] min-h-[44px] flex items-center justify-center z-[120]"
-                aria-label="Close Navigation Menu"
-              >
-                <X className="h-6 w-6" />
-              </button>
+              {/* Theme Toggle & Close Button (z-[120]) */}
+              <div className="flex items-center gap-2 z-[120]">
+                <ThemeToggle />
+                <button
+                  onClick={onClose}
+                  className="p-2.5 rounded-full bg-brand-void border border-brand-orange/40 text-brand-white hover:text-brand-orange transition-colors min-w-[44px] min-h-[44px] flex items-center justify-center"
+                  aria-label="Close Navigation Menu"
+                >
+                  <X className="h-6 w-6" />
+                </button>
+              </div>
             </div>
 
             {/* Navigation Links */}

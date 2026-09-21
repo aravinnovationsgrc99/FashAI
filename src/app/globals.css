@@ -5,17 +5,13 @@
 @tailwind utilities;
 
 :root {
-  --bg-void: #050505;
-  --bg-atelier: #0A0A09;
-  --bg-charcoal: #121110;
+  /* Approved Brand Color Tokens (Hex values preserved strictly) */
   --color-orange: #F15E1C;
   --color-green: #2E936F;
   --color-white: #FFFFFF;
   --color-lemon: #FFEC69;
   --color-golden: #FAB60A;
   --color-peach: #F7D7B0;
-  --color-off-white: #FDFBF7;
-  --color-platinum: #8E8B85;
   
   --font-bodoni-moda: 'Bodoni Moda', Didot, serif;
   --font-plus-jakarta: 'Plus Jakarta Sans', sans-serif;
@@ -28,6 +24,28 @@
   --sar: env(safe-area-inset-right, 0px);
 }
 
+/* Default Dark Mode Surface Variables */
+html.dark, :root {
+  --bg-void: #050505;
+  --bg-atelier: #0A0A09;
+  --bg-charcoal: #121110;
+  --color-text-main: #FFFFFF;
+  --color-text-muted: #8E8B85;
+  --border-color-light: rgba(255, 255, 255, 0.1);
+  --border-color-orange: rgba(241, 94, 28, 0.35);
+}
+
+/* Approved Light Mode Surface Variables (Warm, Clean, Airy Editorial White) */
+html.light {
+  --bg-void: #FAF8F5;
+  --bg-atelier: #FFFFFF;
+  --bg-charcoal: #F5F2EC;
+  --color-text-main: #0A0A09;
+  --color-text-muted: #57544E;
+  --border-color-light: rgba(10, 10, 9, 0.12);
+  --border-color-orange: rgba(241, 94, 28, 0.4);
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -38,7 +56,7 @@
 html {
   scroll-behavior: smooth;
   background-color: var(--bg-void);
-  color: var(--color-off-white);
+  color: var(--color-text-main);
   font-family: var(--font-plus-jakarta);
   overflow-x: hidden;
   width: 100%;
@@ -46,7 +64,7 @@ html {
 
 body {
   background-color: var(--bg-void);
-  color: var(--color-off-white);
+  color: var(--color-text-main);
   min-height: 100vh;
   min-height: 100dvh;
   position: relative;
@@ -54,6 +72,51 @@ body {
   width: 100%;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Light mode specific element text and surface overrides */
+html.light body {
+  background-color: #FAF8F5;
+  color: #0A0A09;
+}
+
+html.light .bg-brand-void {
+  background-color: #FAF8F5 !important;
+}
+
+html.light .bg-brand-atelier {
+  background-color: #FFFFFF !important;
+}
+
+html.light .bg-brand-charcoal {
+  background-color: #F5F2EC !important;
+}
+
+html.light .bg-\[\#0B0908\] {
+  background-color: #FFFFFF !important;
+}
+
+html.light .bg-\[\#080808\] {
+  background-color: #FAF8F5 !important;
+}
+
+html.light .text-brand-white {
+  color: #0A0A09 !important;
+}
+
+html.light .text-brand-off-white {
+  color: #121110 !important;
+}
+
+html.light .text-brand-platinum {
+  color: #4A4742 !important;
+}
+
+html.light .border-white\/10,
+html.light .border-white\/15,
+html.light .border-white\/20 {
+  border-color: rgba(10, 10, 9, 0.12) !important;
 }
 
 /* Safe area padding utilities */
@@ -64,7 +127,7 @@ body {
   padding-bottom: max(1rem, var(--sab));
 }
 
-/* Fashprism Primary Orange Selection */
+/* FashAI Primary Selection */
 ::selection {
   background-color: var(--color-orange);
   color: #FFFFFF;
@@ -109,7 +172,7 @@ body {
   letter-spacing: 0.28em;
 }
 
-/* Fashprism Brand Gradients */
+/* Brand Gradients (Strictly approved colors only) */
 .text-orange-gradient {
   background: linear-gradient(135deg, #FF8243 0%, #F15E1C 50%, #D14506 100%);
   -webkit-background-clip: text;
@@ -159,7 +222,7 @@ body {
   }
 }
 
-/* Fashprism Hairline Borders & Dividers */
+/* Hairline Borders & Dividers */
 .border-hairline {
   border-width: 1px;
   border-color: rgba(241, 94, 28, 0.2);
@@ -185,7 +248,7 @@ body {
   border-color: rgba(255, 255, 255, 0.08);
 }
 
-/* Vignette & Grain Effect */
+/* Atmospheric Overlays */
 .bg-vignette {
   background: radial-gradient(circle at center, transparent 30%, rgba(5, 5, 5, 0.94) 100%);
 }
@@ -193,12 +256,3 @@ body {
 .bg-cinematic-overlay {
   background: linear-gradient(180deg, rgba(5,5,5,0.75) 0%, rgba(5,5,5,0.2) 50%, rgba(5,5,5,0.98) 100%);
 }
-
-/* Cursor pointer states */
-@media (hover: hover) and (pointer: fine) {
-  body {
-    cursor: default;
-  }
-}
-
-

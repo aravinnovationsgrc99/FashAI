@@ -78,6 +78,16 @@ export default function Footer() {
                   Contact Us
                 </Link>
               </li>
+              <li>
+                <Link href="/privacy" className="hover:text-brand-orange transition-colors">
+                  Privacy Policy
+                </Link>
+              </li>
+              <li>
+                <Link href="/terms" className="hover:text-brand-orange transition-colors">
+                  Terms &amp; Conditions
+                </Link>
+              </li>
             </ul>
           </div>
 
@@ -220,8 +230,16 @@ export default function Footer() {
 
         {/* Bottom Copyright Bar */}
         <div className="flex flex-col sm:flex-row justify-between items-center pt-8 text-[11px] font-syne tracking-micro text-brand-platinum/70 gap-4">
-          <div>
+          <div className="flex items-center gap-4 flex-wrap">
             <span>2024–2026 FashAI Universal. All Rights Reserved.</span>
+            <span className="text-white/20">|</span>
+            <Link href="/privacy" className="hover:text-brand-orange transition-colors">
+              Privacy Policy
+            </Link>
+            <span className="text-white/20">|</span>
+            <Link href="/terms" className="hover:text-brand-orange transition-colors">
+              Terms &amp; Conditions
+            </Link>
           </div>
           <div className="flex items-center gap-6 text-[10px] uppercase font-bold text-brand-orange">
             <span>LIFESTYLE 2026 · DUBAI</span>
