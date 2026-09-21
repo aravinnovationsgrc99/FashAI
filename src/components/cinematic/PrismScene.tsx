@@ -36,99 +36,99 @@ export default function PrismScene() {
     const mainGroup = new THREE.Group();
     scene.add(mainGroup);
 
-    // 1. Central Transparent Fashprism Refractive Monolithic Prism
-    const prismGeometry = new THREE.CylinderGeometry(1.1, 1.1, 2.4, isMobile ? 3 : 3, 1, false);
+    // 1. Central Refractive Glass-Sculpture Prism (Sleek, transparent, non-obtrusive)
+    const prismGeometry = new THREE.CylinderGeometry(0.85, 0.85, 1.8, isMobile ? 3 : 3, 1, false);
     const prismMaterial = new THREE.MeshPhysicalMaterial({
-      color: new THREE.Color("#F15E1C"),
-      transmission: isMobile ? 0.4 : 0.82,
-      opacity: 0.65,
+      color: new THREE.Color("#FAB60A"),
+      transmission: isMobile ? 0.3 : 0.88,
+      opacity: 0.45,
       transparent: true,
-      roughness: 0.08,
-      metalness: 0.35,
-      ior: 1.52,
-      reflectivity: 0.85,
-      clearcoat: isMobile ? 0 : 0.6,
+      roughness: 0.05,
+      metalness: 0.2,
+      ior: 1.45,
+      reflectivity: 0.7,
+      clearcoat: isMobile ? 0 : 0.4,
       side: THREE.DoubleSide,
     });
     const prismMesh = new THREE.Mesh(prismGeometry, prismMaterial);
     mainGroup.add(prismMesh);
 
-    // Wireframe Overlay for Fashprism Prism (Golden Yellow Highlight)
+    // Wireframe Overlay for Fashprism Prism (Subtle Amber/Gold Wireframe)
     const edgesGeometry = new THREE.EdgesGeometry(prismGeometry);
     const lineMaterial = new THREE.LineBasicMaterial({
-      color: new THREE.Color("#FAB60A"),
+      color: new THREE.Color("#FFEC69"),
       linewidth: 1,
       transparent: true,
-      opacity: 0.75,
+      opacity: 0.4,
     });
     const wireframe = new THREE.LineSegments(edgesGeometry, lineMaterial);
     prismMesh.add(wireframe);
 
-    // 2. Multi-Spectral Orbital Rings (Orange, Green, Light Yellow)
+    // 2. Multi-Spectral Orbital Rings (Refined & Compact)
     const ringGroup = new THREE.Group();
     mainGroup.add(ringGroup);
 
-    // Ring 1: Signature Primary Orange
+    // Ring 1: Primary Warm Amber/Orange (Soft)
     const ringMatOrange = new THREE.LineBasicMaterial({
       color: new THREE.Color("#F15E1C"),
       transparent: true,
-      opacity: 0.5,
+      opacity: 0.35,
     });
-    const ringGeo1 = new THREE.RingGeometry(2.3, 2.31, isMobile ? 24 : 48);
+    const ringGeo1 = new THREE.RingGeometry(1.6, 1.61, isMobile ? 24 : 48);
     const ring1 = new THREE.LineLoop(ringGeo1, ringMatOrange);
     ring1.rotation.x = Math.PI / 3;
     ringGroup.add(ring1);
 
-    // Ring 2: Fashprism Culture Green
+    // Ring 2: Emerald Green Accent
     const ringMatGreen = new THREE.LineBasicMaterial({
       color: new THREE.Color("#2E936F"),
       transparent: true,
-      opacity: 0.4,
+      opacity: 0.3,
     });
-    const ringGeo2 = new THREE.RingGeometry(2.8, 2.81, isMobile ? 24 : 48);
+    const ringGeo2 = new THREE.RingGeometry(2.0, 2.01, isMobile ? 24 : 48);
     const ring2 = new THREE.LineLoop(ringGeo2, ringMatGreen);
     ring2.rotation.y = Math.PI / 4;
     ring2.rotation.x = -Math.PI / 6;
     ringGroup.add(ring2);
 
-    // Ring 3: Light Yellow Highlight Ring
+    // Ring 3: Light Golden Highlight
     const ringMatYellow = new THREE.LineBasicMaterial({
       color: new THREE.Color("#FFEC69"),
       transparent: true,
-      opacity: 0.35,
+      opacity: 0.25,
     });
-    const ringGeo3 = new THREE.RingGeometry(3.3, 3.31, isMobile ? 24 : 48);
+    const ringGeo3 = new THREE.RingGeometry(2.4, 2.41, isMobile ? 24 : 48);
     const ring3 = new THREE.LineLoop(ringGeo3, ringMatYellow);
     ring3.rotation.z = Math.PI / 5;
     ringGroup.add(ring3);
 
-    // 3. Floating Interactive Crystal Brand Nodes
+    // 3. Floating Interactive Crystal Brand Nodes (Scaled & Subdued)
     const nodesGroup = new THREE.Group();
     mainGroup.add(nodesGroup);
 
-    const nodeGeo = new THREE.OctahedronGeometry(0.2, 0);
+    const nodeGeo = new THREE.OctahedronGeometry(0.14, 0);
 
     const nodePositions = isMobile
       ? [
-          { x: -1.8, y: 1.2, z: 0.4, color: "#FAB60A", edge: "#F15E1C" },
-          { x: 1.8, y: -1.0, z: -0.4, color: "#2E936F", edge: "#FFEC69" },
+          { x: -1.2, y: 0.9, z: 0.3, color: "#FAB60A", edge: "#F15E1C" },
+          { x: 1.2, y: -0.8, z: -0.3, color: "#2E936F", edge: "#FFEC69" },
         ]
       : [
-          { x: -2.2, y: 1.4, z: 0.5, color: "#FAB60A", edge: "#F15E1C" },
-          { x: 2.4, y: -1.2, z: -0.5, color: "#2E936F", edge: "#FFEC69" },
-          { x: 1.8, y: 1.8, z: 0.8, color: "#F15E1C", edge: "#FAB60A" },
-          { x: -2.0, y: -1.6, z: 0.2, color: "#FFEC69", edge: "#2E936F" },
+          { x: -1.5, y: 1.1, z: 0.4, color: "#FAB60A", edge: "#F15E1C" },
+          { x: 1.7, y: -0.9, z: -0.4, color: "#2E936F", edge: "#FFEC69" },
+          { x: 1.3, y: 1.3, z: 0.6, color: "#F15E1C", edge: "#FAB60A" },
+          { x: -1.4, y: -1.1, z: 0.2, color: "#FFEC69", edge: "#2E936F" },
         ];
 
     const nodes: THREE.Mesh[] = [];
     nodePositions.forEach((pos) => {
       const nodeMat = new THREE.MeshPhysicalMaterial({
         color: new THREE.Color(pos.color),
-        transmission: isMobile ? 0.3 : 0.8,
-        opacity: 0.75,
+        transmission: isMobile ? 0.3 : 0.7,
+        opacity: 0.5,
         transparent: true,
         roughness: 0.1,
-        metalness: 0.3,
+        metalness: 0.2,
       });
 
       const nodeMesh = new THREE.Mesh(nodeGeo, nodeMat);
@@ -136,7 +136,7 @@ export default function PrismScene() {
 
       const nodeEdge = new THREE.LineSegments(
         new THREE.EdgesGeometry(nodeGeo),
-        new THREE.LineBasicMaterial({ color: new THREE.Color(pos.edge), transparent: true, opacity: 0.7 })
+        new THREE.LineBasicMaterial({ color: new THREE.Color(pos.edge), transparent: true, opacity: 0.4 })
       );
       nodeMesh.add(nodeEdge);
 
@@ -144,31 +144,31 @@ export default function PrismScene() {
       nodes.push(nodeMesh);
     });
 
-    // 4. Multi-Colored Brand Lighting & Refractions
-    const ambientLight = new THREE.AmbientLight(0xffffff, 0.6);
+    // 4. Multi-Colored Soft Atmospheric Lighting
+    const ambientLight = new THREE.AmbientLight(0xffffff, 0.5);
     scene.add(ambientLight);
 
-    const orangePointLight = new THREE.PointLight(new THREE.Color("#F15E1C"), 2.2, 10);
+    const orangePointLight = new THREE.PointLight(new THREE.Color("#F15E1C"), 1.5, 8);
     orangePointLight.position.set(0, 0, 3);
     scene.add(orangePointLight);
 
-    const greenFillLight = new THREE.PointLight(new THREE.Color("#2E936F"), 1.8, 8);
-    greenFillLight.position.set(-2.5, -2, 2);
+    const greenFillLight = new THREE.PointLight(new THREE.Color("#2E936F"), 1.2, 7);
+    greenFillLight.position.set(-2, -1.5, 2);
     scene.add(greenFillLight);
 
-    const goldenHighlight = new THREE.PointLight(new THREE.Color("#FAB60A"), 1.5, 7);
-    goldenHighlight.position.set(2.5, 2, 2);
+    const goldenHighlight = new THREE.PointLight(new THREE.Color("#FAB60A"), 1.2, 6);
+    goldenHighlight.position.set(2, 1.5, 2);
     scene.add(goldenHighlight);
 
-    // 5. Light Yellow Kinetic Particle Field
-    const particleCount = isMobile ? 15 : 45;
+    // 5. Light Kinetic Particle Field
+    const particleCount = isMobile ? 12 : 30;
     const particlesGeometry = new THREE.BufferGeometry();
     const positions = new Float32Array(particleCount * 3);
 
     for (let i = 0; i < particleCount * 3; i += 3) {
-      positions[i] = (Math.random() - 0.5) * 10;
-      positions[i + 1] = (Math.random() - 0.5) * 10;
-      positions[i + 2] = (Math.random() - 0.5) * 8;
+      positions[i] = (Math.random() - 0.5) * 8;
+      positions[i + 1] = (Math.random() - 0.5) * 8;
+      positions[i + 2] = (Math.random() - 0.5) * 6;
     }
 
     particlesGeometry.setAttribute(
@@ -178,9 +178,9 @@ export default function PrismScene() {
 
     const particlesMaterial = new THREE.PointsMaterial({
       color: new THREE.Color("#FFEC69"),
-      size: 0.035,
+      size: 0.025,
       transparent: true,
-      opacity: 0.45,
+      opacity: 0.35,
     });
 
     const particleSystem = new THREE.Points(particlesGeometry, particlesMaterial);
@@ -248,24 +248,25 @@ export default function PrismScene() {
 
       const scrollFactor = Math.min(currentScrollY / (window.innerHeight || 800), 4);
 
-      const baseX = isMobile ? 0 : 1.8;
-      mainGroup.position.x = baseX + currentMouseX * 0.35 + Math.sin(scrollFactor * Math.PI) * 0.4;
-      mainGroup.position.y = currentMouseY * 0.25 - scrollFactor * 0.3;
+      // On Desktop: offset 3D scene to the right (+2.4) so it never collides with left hero typography!
+      const baseX = isMobile ? 0 : 2.4;
+      mainGroup.position.x = baseX + currentMouseX * 0.25 + Math.sin(scrollFactor * Math.PI) * 0.3;
+      mainGroup.position.y = currentMouseY * 0.2 - scrollFactor * 0.25;
       mainGroup.position.z = -scrollFactor * 0.2;
 
-      mainGroup.rotation.y = currentMouseX * 0.3 + Date.now() * 0.00025 + scrollFactor * 0.6;
-      mainGroup.rotation.x = currentMouseY * 0.2 + scrollFactor * 0.15;
+      mainGroup.rotation.y = currentMouseX * 0.25 + Date.now() * 0.0002 + scrollFactor * 0.5;
+      mainGroup.rotation.x = currentMouseY * 0.15 + scrollFactor * 0.1;
 
       // Dynamic Light refraction shift
-      orangePointLight.intensity = 2.2 + Math.sin(scrollFactor * Math.PI) * 0.8;
+      orangePointLight.intensity = 1.5 + Math.sin(scrollFactor * Math.PI) * 0.5;
 
       ring1.rotation.z += 0.001;
       ring2.rotation.z -= 0.0012;
       ring3.rotation.z += 0.0008;
 
       nodes.forEach((node, i) => {
-        node.rotation.x += 0.006 * (i + 1);
-        node.rotation.y += 0.008 * (i + 1);
+        node.rotation.x += 0.005 * (i + 1);
+        node.rotation.y += 0.006 * (i + 1);
       });
 
       renderer.render(scene, camera);

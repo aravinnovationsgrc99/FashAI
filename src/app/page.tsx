@@ -31,7 +31,7 @@ export default function Home() {
       {/* 07 INSTAGRAM — @FASHAI_UNIVERSAL */}
       <InstagramSection />
 
-      {/* 08 CONTACT — ENQUIRIES & ARAV INNOVATIONS */}
+      {/* 08 CONTACT — ENQUIRIES & ARAV INNOVATION */}
       <ContactSection />
     </main>
   );

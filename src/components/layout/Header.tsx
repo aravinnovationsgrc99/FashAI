@@ -8,7 +8,7 @@ import { Menu } from "lucide-react";
 import MobileMenu from "./MobileMenu";
 
 export const NAV_ITEMS = [
-  { label: "Home", href: "/" },
+  { label: "Landing", href: "/" },
   { label: "Contact Us", href: "/contact" },
   { label: "Projects", href: "/projects" },
   { label: "Upcoming", href: "/upcoming" },
@@ -36,53 +36,41 @@ export default function Header() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? "bg-black/50 backdrop-blur-md border-b border-white/10 shadow-lg py-2.5"
+          ? "bg-black/40 border-b border-white/10 shadow-lg py-2.5"
           : "bg-transparent border-b border-transparent py-4"
       }`}
       style={
         isScrolled
           ? {
-              backgroundColor: "rgba(0, 0, 0, 0.45)",
+              backgroundColor: "rgba(0, 0, 0, 0.40)",
               backdropFilter: "blur(16px)",
               WebkitBackdropFilter: "blur(16px)",
             }
           : undefined
       }
     >
-      <div className="container-editorial flex items-center justify-between min-h-[56px]">
-        {/* Official FashAI Universal Brand Lockup */}
+      <div className="container-editorial flex items-center justify-between min-h-[50px]">
+        {/* Official Clean Brand Lockup: [OFFICIAL LOGO] FashAI Universal */}
         <Link href="/" className="flex items-center gap-3 group py-1 min-h-[44px]">
-          <div className="relative w-8 h-8 sm:w-10 sm:h-10 flex-shrink-0 overflow-hidden rounded-md border border-brand-orange/30 bg-black shadow-md">
+          <div className="relative w-8 h-8 sm:w-9 sm:h-9 flex-shrink-0 overflow-hidden rounded-md border border-brand-orange/30 bg-black shadow-md">
             <Image
-              src="/assets/logo/main-logo.jpeg"
-              alt="FashAI Universal Official Logo"
+              src="/assets/brand/logo_transparent.png"
+              alt="FashAI Logo"
               fill
               priority
-              sizes="(max-width: 640px) 32px, 40px"
-              className="object-cover group-hover:scale-105 transition-transform duration-300"
+              sizes="36px"
+              className="object-contain p-0.5 group-hover:scale-105 transition-transform duration-300"
             />
           </div>
-          <div className="flex flex-col justify-center">
-            <span className="font-syne text-base sm:text-lg tracking-[0.16em] font-extrabold text-brand-white group-hover:text-brand-orange transition-colors leading-tight">
-              FashAI Universal
-            </span>
-            <div className="mt-0.5">
-              <Image
-                src="/assets/brand/PoweredByAravInnovation.jpeg"
-                alt="Powered by Arav Innovation"
-                width={160}
-                height={42}
-                priority
-                className="h-5 sm:h-6 w-auto object-contain hover:opacity-95 transition-opacity"
-              />
-            </div>
-          </div>
+          <span className="font-syne text-base sm:text-lg tracking-[0.16em] font-extrabold text-brand-white group-hover:text-brand-orange transition-colors leading-tight">
+            FashAI Universal
+          </span>
         </Link>
 
         {/* Desktop Navigation Links */}
-        <nav className="hidden lg:flex items-center space-x-9 text-[11px] font-syne tracking-caps font-medium">
+        <nav className="hidden lg:flex items-center space-x-8 text-[11px] font-syne tracking-caps font-medium">
           {NAV_ITEMS.map((item) => {
             const isActive =
               item.href === "/"
@@ -115,7 +103,7 @@ export default function Header() {
             className="hidden sm:inline-flex items-center justify-center bg-brand-orange px-5 py-2 text-[11px] font-syne tracking-caps font-bold text-white hover:bg-[#ff6f2d] hover:translate-y-[-1px] transition-all duration-200 shadow-md"
             data-cursor="explore"
           >
-            CONTACT US ↗
+            CONTACT US →
           </Link>
 
           {/* Mobile Hamburger Button */}
@@ -139,6 +127,3 @@ export default function Header() {
     </header>
   );
 }
-
-
-

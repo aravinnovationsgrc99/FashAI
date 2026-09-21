@@ -108,7 +108,7 @@ function ContactContent() {
               </span>
             </div>
 
-            {/* Supporting Entity: ARAV INNOVATIONS WEBSITE */}
+            {/* Supporting Entity: ARAV INNOVATION WEBSITE */}
             <div className="space-y-3 pt-2 border-t border-white/10">
               <div className="mb-2">
                 <Image
@@ -129,7 +129,7 @@ function ContactContent() {
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 border border-brand-orange/40 bg-brand-void px-5 py-3 text-xs font-syne tracking-caps font-bold text-brand-white hover:bg-brand-orange hover:border-brand-orange transition-all group shadow-md"
                 >
-                  <span>VISIT ARAV INNOVATIONS</span>
+                  <span>VISIT ARAV INNOVATION</span>
                   <ExternalLink className="w-3.5 h-3.5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
                 </a>
               </div>

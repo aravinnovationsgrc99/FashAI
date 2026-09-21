@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 export default function FashAiIntro() {
   return (
@@ -68,7 +69,13 @@ export default function FashAiIntro() {
               </div>
               <div className="md:col-span-4 flex flex-col justify-end items-start md:items-end text-xs font-syne tracking-caps text-brand-yellow-golden space-y-2">
                 <span className="text-brand-orange font-bold uppercase">FASHAI UNIVERSAL</span>
-                <span className="text-brand-lemon font-semibold">POWERED BY ARAV INNOVATION</span>
+                <Image
+                  src="/assets/brand/PoweredByAravInnovation.jpeg"
+                  alt="Powered by Arav Innovation"
+                  width={220}
+                  height={58}
+                  className="h-7 sm:h-9 w-auto object-contain"
+                />
               </div>
             </div>
           </motion.div>
