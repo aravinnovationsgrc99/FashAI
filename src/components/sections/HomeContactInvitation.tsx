@@ -18,9 +18,10 @@ export default function HomeContactInvitation() {
         <div className="flex items-center gap-2 mb-6">
           <div className="relative w-4 h-4 flex-shrink-0 overflow-hidden rounded-[2px] bg-black border border-brand-orange/40">
             <Image
-              src="/assets/brand/Final_Powered_by_logo.png"
+              src="/assets/brand/logo_transparent.png"
               alt="Powered by Arav Innovation Logo"
               fill
+              sizes="16px"
               className="object-contain"
             />
           </div>

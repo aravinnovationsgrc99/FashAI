@@ -1,12 +1,14 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import dynamic from "next/dynamic";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import CursorInteraction from "@/components/cinematic/CursorInteraction";
 import Preloader from "@/components/cinematic/Preloader";
 import PageTransition from "@/components/cinematic/PageTransition";
-import EventInfoModal from "@/components/ui/EventInfoModal";
 import { ThemeProvider } from "@/context/ThemeContext";
+
+const EventInfoModal = dynamic(() => import("@/components/ui/EventInfoModal"));
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://fashai-beryl.vercel.app"),
