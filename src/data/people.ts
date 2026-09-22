@@ -1,11 +1,13 @@
 export interface PeopleCategory {
   id: string;
+  categoryId: "fashion_designer" | "model" | "makeup_artist" | "fashion_stylist" | "influencer_creator" | "celebrity_public_figure";
   title: string;
   subtitle: string;
+  ctaLabel: string;
   tagline: string;
   primaryImage: string;
   secondaryImages: string[];
-  objectPosition: string; // Tailored object position to prevent face/head cropping
+  objectPosition: string;
   aspectRatioClass: string;
   gridSpan: string;
 }
@@ -13,8 +15,10 @@ export interface PeopleCategory {
 export const PEOPLE_MASTER_DATA: PeopleCategory[] = [
   {
     id: "designers",
-    title: "DESIGNERS",
-    subtitle: "Discover international couture designers and garment artistry",
+    categoryId: "fashion_designer",
+    title: "FASHION DESIGNER",
+    subtitle: "Showcase your design language and collaborate across fashion experiences.",
+    ctaLabel: "JOIN AS A FASHION DESIGNER",
     tagline: "COUTURE ATELIER & DIRECTION",
     primaryImage: "/assets/master/designer/designer_01.png",
     secondaryImages: [
@@ -28,8 +32,10 @@ export const PEOPLE_MASTER_DATA: PeopleCategory[] = [
   },
   {
     id: "models",
-    title: "MODELS",
-    subtitle: "Explore featured runway talent and silhouette choreography",
+    categoryId: "model",
+    title: "MODEL",
+    subtitle: "Explore featured runway talent and silhouette choreography.",
+    ctaLabel: "BECOME A MODEL",
     tagline: "RUNWAY & CATWALK DIRECTION",
     primaryImage: "/assets/master/models/model_01.png",
     secondaryImages: ["/assets/master/models/model_02.jpg"],
@@ -39,8 +45,10 @@ export const PEOPLE_MASTER_DATA: PeopleCategory[] = [
   },
   {
     id: "makeup-artists",
-    title: "MAKEUP ARTISTS",
-    subtitle: "Beauty direction, backstage artistry, and spatial cosmetics",
+    categoryId: "makeup_artist",
+    title: "MAKEUP ARTIST",
+    subtitle: "Bring beauty direction, editorial artistry and professional makeup expertise to our productions.",
+    ctaLabel: "JOIN AS A MAKEUP ARTIST",
     tagline: "BEAUTY & BACKSTAGE ARTISTRY",
     primaryImage: "/assets/master/makeup/makeup_01.png",
     secondaryImages: [
@@ -53,20 +61,27 @@ export const PEOPLE_MASTER_DATA: PeopleCategory[] = [
     gridSpan: "lg:col-span-4",
   },
   {
-    id: "celebrities",
-    title: "CELEBRITIES",
-    subtitle: "Featured personalities, guests of honor, and VIP appearances",
-    tagline: "GLOBAL PATRONS & VIP SALONS",
-    primaryImage: "/assets/master/celebrity/celebrity_01.png",
-    secondaryImages: ["/assets/master/celebrity/celebrity_02.jpg"],
+    id: "stylists",
+    categoryId: "fashion_stylist",
+    title: "FASHION STYLIST",
+    subtitle: "Shape the visual language of fashion campaigns, editorials and runway experiences.",
+    ctaLabel: "JOIN AS A FASHION STYLIST",
+    tagline: "WARDROBE & STYLING DIRECTION",
+    primaryImage: "/assets/master/stylist/stylist_01.png",
+    secondaryImages: [
+      "/assets/master/stylist/stylist_02.png",
+      "/assets/master/stylist/stylist_03.png",
+    ],
     objectPosition: "object-top",
     aspectRatioClass: "aspect-[4/5]",
     gridSpan: "lg:col-span-4",
   },
   {
     id: "influencers",
-    title: "INFLUENCERS",
-    subtitle: "Creators, digital ambassadors, and international media voices",
+    categoryId: "influencer_creator",
+    title: "INFLUENCER / CONTENT CREATOR",
+    subtitle: "Create fashion, beauty and lifestyle stories with FashAI Universal.",
+    ctaLabel: "JOIN AS A CREATOR",
     tagline: "DIGITAL CREATORS & VOICES",
     primaryImage: "/assets/master/influencers/influencer_01.png",
     secondaryImages: [
@@ -78,15 +93,14 @@ export const PEOPLE_MASTER_DATA: PeopleCategory[] = [
     gridSpan: "lg:col-span-4",
   },
   {
-    id: "stylists",
-    title: "STYLISTS",
-    subtitle: "Fashion preparation, wardrobe curation, and visual direction",
-    tagline: "WARDROBE & STYLING DIRECTION",
-    primaryImage: "/assets/master/stylist/stylist_01.png",
-    secondaryImages: [
-      "/assets/master/stylist/stylist_02.png",
-      "/assets/master/stylist/stylist_03.png",
-    ],
+    id: "celebrities",
+    categoryId: "celebrity_public_figure",
+    title: "CELEBRITY / PUBLIC FIGURE",
+    subtitle: "Explore opportunities across fashion campaigns, events, shoots and brand experiences.",
+    ctaLabel: "JOIN AS A CELEBRITY / PUBLIC FIGURE",
+    tagline: "GLOBAL PATRONS & VIP SALONS",
+    primaryImage: "/assets/master/celebrity/celebrity_01.png",
+    secondaryImages: ["/assets/master/celebrity/celebrity_02.jpg"],
     objectPosition: "object-top",
     aspectRatioClass: "aspect-[4/5]",
     gridSpan: "lg:col-span-4",
