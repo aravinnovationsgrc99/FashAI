@@ -249,7 +249,7 @@ export default function EventInfoModal() {
             <div className="pt-5 mt-4 border-t border-white/10 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2">
               <div className="flex items-center gap-3">
                 <Image
-                  src="/assets/brand/PoweredByAravInnovation.jpeg"
+                  src="/assets/brand/Final_Powered_by_logo.png"
                   alt="Powered by Arav Innovation"
                   width={220}
                   height={58}

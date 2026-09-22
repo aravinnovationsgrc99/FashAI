@@ -126,7 +126,7 @@ function ContactContent() {
             <div className="space-y-4 pt-2 border-t border-white/10">
               <div>
                 <Image
-                  src="/assets/brand/PoweredByAravInnovation.jpeg"
+                  src="/assets/brand/Final_Powered_by_logo.png"
                   alt="Powered by Arav Innovation"
                   width={280}
                   height={74}

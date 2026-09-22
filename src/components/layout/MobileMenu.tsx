@@ -184,7 +184,7 @@ export default function MobileMenu({
               <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2 text-[10px] font-syne tracking-micro text-brand-platinum/80 pt-1">
                 <span>@fashai_universal</span>
                 <Image
-                  src="/assets/brand/PoweredByAravInnovation.jpeg"
+                  src="/assets/brand/Final_Powered_by_logo.png"
                   alt="Powered by Arav Innovation"
                   width={180}
                   height={47}

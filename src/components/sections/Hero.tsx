@@ -57,7 +57,7 @@ export default function Hero() {
             {/* 3. Official Arav Innovation Logo Badge */}
             <div className="pt-1">
               <Image
-                src="/assets/brand/PoweredByAravInnovation.jpeg"
+                src="/assets/brand/Final_Powered_by_logo.png"
                 alt="Powered by Arav Innovation"
                 width={320}
                 height={84}

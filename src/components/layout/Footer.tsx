@@ -33,7 +33,7 @@ export default function Footer() {
 
               <div className="mt-2 mb-4">
                 <Image
-                  src="/assets/brand/PoweredByAravInnovation.jpeg"
+                  src="/assets/brand/Final_Powered_by_logo.png"
                   alt="Powered by Arav Innovation"
                   width={220}
                   height={58}

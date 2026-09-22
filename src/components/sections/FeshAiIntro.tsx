@@ -70,7 +70,7 @@ export default function FashAiIntro() {
               <div className="md:col-span-4 flex flex-col justify-end items-start md:items-end text-xs font-syne tracking-caps text-brand-yellow-golden space-y-2">
                 <span className="text-brand-orange font-bold uppercase">FASHAI UNIVERSAL</span>
                 <Image
-                  src="/assets/brand/PoweredByAravInnovation.jpeg"
+                  src="/assets/brand/Final_Powered_by_logo.png"
                   alt="Powered by Arav Innovation"
                   width={220}
                   height={58}
