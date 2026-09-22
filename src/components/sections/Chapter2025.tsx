@@ -19,8 +19,8 @@ export default function Chapter2025() {
         <div className="absolute top-1/2 left-0 -translate-y-1/2 w-[500px] h-[500px] bg-[#FAB60A]/10 blur-[160px] rounded-full" />
         <div className="absolute top-1/4 right-0 w-[450px] h-[450px] bg-brand-orange/10 blur-[150px] rounded-full" />
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff03_1px,transparent_1px),linear-gradient(to_bottom,#ffffff03_1px,transparent_1px)] bg-[size:4rem_4rem]" />
-        <div className="absolute bottom-4 left-1/2 -translate-x-1/2 text-[18vw] font-serif-display font-light text-white/[0.015] uppercase tracking-tighter leading-none">
-          2025
+        <div className="editorial-watermark absolute bottom-4 left-1/2 -translate-x-1/2 text-[18vw] font-serif-display font-light uppercase tracking-tighter leading-none pointer-events-none select-none">
+          2025 ARCHIVE
         </div>
       </div>
 

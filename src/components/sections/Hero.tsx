@@ -21,7 +21,7 @@ export default function Hero() {
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff04_1px,transparent_1px),linear-gradient(to_bottom,#ffffff04_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,#000_70%,transparent_100%)] opacity-50" />
 
         {/* Editorial Watermark */}
-        <div className="absolute -bottom-10 right-0 text-[16vw] font-serif-display font-light text-white/[0.015] uppercase tracking-tighter leading-none pointer-events-none select-none">
+        <div className="editorial-watermark absolute -bottom-10 right-0 text-[16vw] font-serif-display font-light uppercase tracking-tighter leading-none pointer-events-none select-none">
           UNIVERSAL
         </div>
 

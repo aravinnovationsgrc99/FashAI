@@ -12,8 +12,8 @@ export default function InstagramSection() {
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[400px] bg-brand-orange/15 blur-[160px] rounded-full" />
         <div className="absolute bottom-0 right-1/4 w-[400px] h-[400px] bg-brand-green/10 blur-[150px] rounded-full" />
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff03_1px,transparent_1px),linear-gradient(to_bottom,#ffffff03_1px,transparent_1px)] bg-[size:4rem_4rem]" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-[14vw] font-serif-display font-light text-white/[0.015] uppercase tracking-tighter leading-none whitespace-nowrap">
-          JOURNEY
+        <div className="editorial-watermark absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-[14vw] font-serif-display font-light uppercase tracking-tighter leading-none whitespace-nowrap pointer-events-none select-none">
+          INSTAGRAM
         </div>
       </div>
 

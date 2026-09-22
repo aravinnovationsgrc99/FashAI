@@ -25,8 +25,8 @@ export default function HomeUpcomingFeature() {
       <div className="absolute bottom-1/4 right-1/4 w-[450px] h-[450px] bg-brand-green/12 blur-[160px] pointer-events-none rounded-full" />
       <div className="absolute top-1/3 right-10 w-[350px] h-[350px] bg-brand-yellow-golden/10 blur-[140px] pointer-events-none rounded-full" />
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff03_1px,transparent_1px),linear-gradient(to_bottom,#ffffff03_1px,transparent_1px)] bg-[size:4rem_4rem] pointer-events-none" />
-      <div className="absolute top-10 right-0 text-[16vw] font-serif-display font-light text-white/[0.015] uppercase tracking-tighter leading-none pointer-events-none select-none">
-        DUBAI
+      <div className="editorial-watermark absolute top-10 right-0 text-[16vw] font-serif-display font-light uppercase tracking-tighter leading-none pointer-events-none select-none">
+        DUBAI 2026
       </div>
 
       <div className="relative z-10 w-full max-w-6xl mx-auto">

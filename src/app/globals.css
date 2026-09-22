@@ -146,16 +146,32 @@ html.light .html-light-header-scrolled {
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05) !important;
 }
 
-/* Universal Light Mode Typography System — Targets ALL Tailwind Opacity Variants */
-html.light .text-brand-white,
-html.light .text-brand-off-white,
-html.light .text-brand-platinum,
-html.light .text-white,
-html.light [class*="text-brand-white"],
-html.light [class*="text-brand-off-white"],
-html.light [class*="text-brand-platinum"],
-html.light [class*="text-white/"] {
+/* Universal Light Mode Typography System (Excluding Watermark Elements) */
+html.light .text-brand-white:not(.editorial-watermark),
+html.light .text-brand-off-white:not(.editorial-watermark),
+html.light .text-brand-platinum:not(.editorial-watermark),
+html.light .text-white:not(.editorial-watermark),
+html.light [class*="text-brand-white"]:not(.editorial-watermark),
+html.light [class*="text-brand-off-white"]:not(.editorial-watermark),
+html.light [class*="text-brand-platinum"]:not(.editorial-watermark),
+html.light [class*="text-white/"]:not(.editorial-watermark) {
   color: #111111 !important;
+}
+
+/* Background Watermark Typography Rule for Both Themes */
+.editorial-watermark,
+html.dark .editorial-watermark {
+  color: rgba(255, 255, 255, 0.015) !important;
+  opacity: 0.02 !important;
+  pointer-events: none !important;
+  user-select: none !important;
+}
+
+html.light .editorial-watermark {
+  color: rgba(17, 17, 17, 0.035) !important;
+  opacity: 0.04 !important;
+  pointer-events: none !important;
+  user-select: none !important;
 }
 
 /* Preserve Crisp White Typography for Primary Buttons & Solid Badges */

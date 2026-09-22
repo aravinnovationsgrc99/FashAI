@@ -11,8 +11,8 @@ export default function FashAiIntro() {
         <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-brand-orange/10 blur-[150px] rounded-full" />
         <div className="absolute bottom-0 left-10 w-[450px] h-[450px] bg-brand-green/10 blur-[160px] rounded-full" />
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff03_1px,transparent_1px),linear-gradient(to_bottom,#ffffff03_1px,transparent_1px)] bg-[size:3rem_3rem]" />
-        <div className="absolute top-1/2 left-0 -translate-y-1/2 text-[15vw] font-serif-display font-light text-white/[0.015] uppercase tracking-tighter leading-none">
-          IDENTITY
+        <div className="editorial-watermark absolute top-1/2 left-0 -translate-y-1/2 text-[15vw] font-serif-display font-light uppercase tracking-tighter leading-none pointer-events-none select-none">
+          FASHAI
         </div>
       </div>
 
