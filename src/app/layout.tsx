@@ -9,6 +9,7 @@ import PageTransition from "@/components/cinematic/PageTransition";
 import { ThemeProvider } from "@/context/ThemeContext";
 
 const EventInfoModal = dynamic(() => import("@/components/ui/EventInfoModal"));
+const FashAiConcierge = dynamic(() => import("@/components/concierge/FashAiConcierge"));
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://fashai-beryl.vercel.app"),
@@ -89,6 +90,9 @@ export default function RootLayout({
 
           {/* Haute Couture Footer */}
           <Footer />
+
+          {/* FashAI Universal AI Concierge Assistant */}
+          <FashAiConcierge />
         </ThemeProvider>
       </body>
     </html>
