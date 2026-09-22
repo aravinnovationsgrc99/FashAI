@@ -234,19 +234,18 @@ export default function ConciergePanel({ isOpen, onClose }: ConciergePanelProps)
           aria-label="FashAI Concierge Assistant"
         >
           {/* Top Bar Header */}
-          <div className="flex items-center justify-between p-4 border-b border-white/10 bg-brand-void/80 flex-shrink-0">
-            <div className="flex items-center gap-3">
-              <div className="relative w-7 h-7 overflow-hidden rounded-md bg-black border border-brand-orange/40 p-0.5">
-                <Image
-                  src="/assets/brand/logo_transparent.png"
-                  alt="FashAI Logo"
-                  fill
-                  sizes="28px"
-                  className="object-contain"
-                />
-              </div>
-              <div className="flex flex-col">
-                <span className="font-serif-display text-sm font-light text-brand-white uppercase leading-none tracking-wide">
+          <div className="flex items-center justify-between p-3.5 sm:p-4 border-b border-white/10 bg-brand-void/80 flex-shrink-0">
+            <div className="flex items-center gap-2.5">
+              <Image
+                src="/assets/brand/Final_Powered_by_logo.png"
+                alt="Powered by Arav Innovation"
+                width={140}
+                height={38}
+                sizes="120px"
+                className="h-6 sm:h-7 w-auto object-contain"
+              />
+              <div className="flex flex-col border-l border-white/15 pl-2.5">
+                <span className="font-serif-display text-xs sm:text-sm font-light text-brand-white uppercase leading-none tracking-wide">
                   FashAI <span className="font-serif italic text-brand-orange font-normal capitalize">Concierge</span>
                 </span>
                 <span className="text-[8px] font-syne tracking-micro text-brand-platinum/70 uppercase font-bold mt-0.5">
@@ -265,7 +264,7 @@ export default function ConciergePanel({ isOpen, onClose }: ConciergePanelProps)
           </div>
 
           {/* Chat Messages Body Area */}
-          <div className="flex-1 overflow-y-auto p-4 space-y-4 no-scrollbar">
+          <div className="flex-1 overflow-y-auto p-3.5 sm:p-4 space-y-3.5 no-scrollbar">
             {/* Optional Personalization Consent Banner */}
             {showConsentPrompt && (
               <ConsentNotice
@@ -283,7 +282,7 @@ export default function ConciergePanel({ isOpen, onClose }: ConciergePanelProps)
                 className={`flex flex-col ${msg.sender === "user" ? "items-end" : "items-start"}`}
               >
                 <div
-                  className={`max-w-[85%] p-3.5 text-xs font-sans leading-relaxed ${
+                  className={`max-w-[88%] p-3 text-xs font-sans leading-relaxed ${
                     msg.sender === "user"
                       ? "bg-brand-orange text-white font-medium shadow-md"
                       : "bg-[#141210] border border-white/10 text-brand-white/95"
@@ -295,7 +294,7 @@ export default function ConciergePanel({ isOpen, onClose }: ConciergePanelProps)
                   {msg.navigationTarget && (
                     <button
                       onClick={() => router.push(msg.navigationTarget!)}
-                      className="mt-2.5 inline-flex items-center gap-1.5 text-[10px] font-syne font-bold text-brand-orange hover:text-brand-yellow-golden uppercase tracking-micro pt-1 border-t border-white/10 w-full"
+                      className="mt-2 inline-flex items-center gap-1.5 text-[10px] font-syne font-bold text-brand-orange hover:text-brand-yellow-golden uppercase tracking-micro pt-1 border-t border-white/10 w-full"
                     >
                       <span>GO TO SECTION ({msg.navigationTarget})</span>
                       <ArrowUpRight className="w-3 h-3" />
@@ -309,12 +308,12 @@ export default function ConciergePanel({ isOpen, onClose }: ConciergePanelProps)
 
                 {/* Inline Quick Action Buttons */}
                 {msg.quickActions && msg.quickActions.length > 0 && (
-                  <div className="flex flex-wrap gap-2 mt-2 max-w-[95%]">
+                  <div className="flex flex-wrap gap-1.5 mt-2 max-w-[95%]">
                     {msg.quickActions.map((qa) => (
                       <button
                         key={qa.id}
                         onClick={() => handleQuickActionClick(qa)}
-                        className="px-3 py-1.5 bg-brand-void/90 border border-brand-orange/40 hover:border-brand-orange hover:bg-brand-orange/15 text-[10px] font-syne font-bold tracking-micro text-brand-white hover:text-brand-orange transition-all duration-200"
+                        className="px-2.5 py-1 bg-brand-void/90 border border-brand-orange/40 hover:border-brand-orange hover:bg-brand-orange/15 text-[10px] font-syne font-bold tracking-micro text-brand-white hover:text-brand-orange transition-all duration-200"
                       >
                         {qa.label}
                       </button>
@@ -324,23 +323,23 @@ export default function ConciergePanel({ isOpen, onClose }: ConciergePanelProps)
               </motion.div>
             ))}
 
-            {/* Initial Intent Question Options (Shown after first bot greeting) */}
+            {/* Initial Intent Question Options (Compact 2-Column Responsive Grid) */}
             {messages.length === 1 && !profile?.intent && (
               <motion.div
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.2 }}
+                transition={{ delay: 0.15 }}
                 className="p-3 bg-[#110F0D] border border-brand-yellow-golden/30 space-y-2 my-2"
               >
                 <span className="text-[10px] font-syne font-bold text-brand-yellow-golden uppercase tracking-micro block">
                   WHAT BRINGS YOU TO FASHAI UNIVERSAL?
                 </span>
-                <div className="grid grid-cols-1 gap-1.5">
+                <div className="grid grid-cols-2 gap-1.5">
                   {FASHAI_KNOWLEDGE.intentOptions.map((opt) => (
                     <button
                       key={opt.id}
                       onClick={() => handleIntentSelection(opt)}
-                      className="text-left px-3 py-1.5 bg-brand-void border border-white/10 hover:border-brand-orange hover:bg-brand-orange/10 text-[11px] font-sans text-brand-white transition-colors"
+                      className="text-left px-2.5 py-1.5 bg-brand-void border border-white/10 hover:border-brand-orange hover:bg-brand-orange/10 text-[10px] sm:text-[11px] font-syne font-bold text-brand-white transition-colors truncate"
                     >
                       • {opt.label}
                     </button>

@@ -34,24 +34,23 @@ export const FASHAI_KNOWLEDGE = {
 
   guardrailResponse: "Details regarding exact schedules, full guest lists, and specific venue addresses are yet to be announced. Registrations and sponsorships are currently open.",
 
-  initialGreeting: "Welcome to FashAI Universal. What would you like to explore?",
+  initialGreeting: "Welcome to FashAI Universal. How can I guide you today?",
   
   initialQuickActions: [
     { id: "lifestyle-2026", label: "LifeStyle 2026", actionType: "query", target: "LifeStyle 2026" },
     { id: "runway", label: "Runway", actionType: "query", target: "Runway" },
     { id: "registration", label: "Registration", actionType: "enquiry", target: "Registration" },
     { id: "sponsorship", label: "Sponsorship", actionType: "enquiry", target: "Sponsorship" },
-    { id: "gallery", label: "Gallery Archive", actionType: "navigate", target: "/gallery" },
-    { id: "about", label: "About FashAI", actionType: "query", target: "About FashAI" },
+    { id: "gallery", label: "Gallery", actionType: "navigate", target: "/gallery" },
   ] as QuickAction[],
 
   intentOptions: [
-    { id: "attend", label: "I want to attend", intent: "attendee" },
-    { id: "sponsor", label: "I’m interested in sponsorship", intent: "sponsor" },
-    { id: "designer", label: "I’m a designer / fashion professional", intent: "designer" },
-    { id: "media", label: "I’m from media", intent: "media" },
-    { id: "collaboration", label: "I’m interested in collaboration", intent: "collaboration" },
-    { id: "exploring", label: "I’m exploring the fashion experience", intent: "exploring" },
+    { id: "attend", label: "Attend Event", intent: "attendee" },
+    { id: "sponsor", label: "Sponsorship", intent: "sponsor" },
+    { id: "designer", label: "Designer / Professional", intent: "designer" },
+    { id: "media", label: "Press & Media", intent: "media" },
+    { id: "collaboration", label: "Collaboration", intent: "collaboration" },
+    { id: "exploring", label: "Explore Experience", intent: "exploring" },
   ]
 };
 
@@ -163,7 +162,31 @@ export function queryKnowledgeBase(query: string, intentContext?: string | null)
     };
   }
 
-  // 7. General Brand & Arav Innovation Queries
+  // 7. Designers, Makeup Artists, Models, Stylists & Community Queries
+  if (q.includes("designer") || q.includes("makeup") || q.includes("model") || q.includes("stylist") || q.includes("influencer") || q.includes("community")) {
+    return {
+      message: "FashAI Universal connects international designers, runway models, makeup artists, celebrities, influencers, and stylists across our Dubai 2026 platform. Applications for designer showcases and creative participation are open.",
+      quickActions: [
+        { id: "community-reg", label: "Apply as Professional →", actionType: "enquiry", target: "Registration" },
+        { id: "view-community", label: "Explore Fashion Community", actionType: "navigate", target: "/#people" },
+      ],
+      navigationTarget: "/#people"
+    };
+  }
+
+  // 8. Contact & Communication Queries
+  if (q.includes("contact") || q.includes("email") || q.includes("reach") || q.includes("phone") || q.includes("location")) {
+    return {
+      message: "You can reach the FashAI Universal team directly through our official enquiry portal or by registering your details online.",
+      quickActions: [
+        { id: "contact-form-nav", label: "Contact Form ↗", actionType: "navigate", target: "/contact" },
+        { id: "direct-enquiry", label: "Submit Direct Enquiry", actionType: "enquiry", target: "General Enquiry" },
+      ],
+      navigationTarget: "/contact"
+    };
+  }
+
+  // 9. General Brand & Arav Innovation Queries
   if (q.includes("arav") || q.includes("about") || q.includes("who") || q.includes("fashai")) {
     return {
       message: "FashAI Universal is an international architectural fashion platform powered by Arav Innovation, bringing together computational design, spatial lighting, luxury couture, and artificial intelligence.",
