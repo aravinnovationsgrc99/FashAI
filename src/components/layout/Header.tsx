@@ -9,7 +9,7 @@ import MobileMenu from "./MobileMenu";
 import ThemeToggle from "../ui/ThemeToggle";
 
 export const NAV_ITEMS = [
-  { label: "Home", href: "/" },
+  { label: "Landing", href: "/" },
   { label: "Contact Us", href: "/contact" },
   { label: "Projects", href: "/projects" },
   { label: "Upcoming", href: "/upcoming" },

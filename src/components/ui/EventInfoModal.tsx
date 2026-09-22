@@ -195,7 +195,7 @@ export default function EventInfoModal() {
                     </span>
                   </div>
                   <span className="font-syne text-xs text-brand-white font-bold uppercase">
-                    NOVEMBER 2026
+                    TO BE ANNOUNCED
                   </span>
                 </div>
 
@@ -232,14 +232,14 @@ export default function EventInfoModal() {
                   onClick={() => handleCtaClick("Registration")}
                   className="bg-brand-orange px-6 py-3.5 text-xs font-syne tracking-caps font-bold text-white hover:bg-[#ff6f2d] hover:shadow-[0_0_20px_rgba(241,94,28,0.4)] transition-all duration-300 text-center min-h-[44px] flex items-center justify-center rounded-none group flex-1"
                 >
-                  <span>REGISTER / ENQUIRE</span>
+                  <span>REGISTER</span>
                   <span className="ml-2 group-hover:translate-x-1 transition-transform">→</span>
                 </button>
                 <button
                   onClick={() => handleCtaClick("Sponsorship")}
                   className="border border-brand-yellow-golden/50 bg-brand-void/80 backdrop-blur-md px-6 py-3.5 text-xs font-syne tracking-caps font-bold text-brand-white hover:bg-brand-yellow-golden/10 hover:border-brand-yellow-golden transition-all duration-300 text-center min-h-[44px] flex items-center justify-center rounded-none flex-1"
                 >
-                  SPONSORSHIP ENQUIRY ↗
+                  SPONSOR ↗
                 </button>
               </div>
 

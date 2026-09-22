@@ -55,7 +55,7 @@ export default function Footer() {
             <ul className="space-y-2.5 font-syne text-xs tracking-wider text-brand-platinum/90">
               <li>
                 <Link href="/" className="hover:text-brand-orange transition-colors">
-                  Home
+                  Landing
                 </Link>
               </li>
               <li>
@@ -98,8 +98,8 @@ export default function Footer() {
             </h4>
             <ul className="space-y-2.5 font-syne text-xs tracking-wider text-brand-platinum/90">
               <li>
-                <Link href="/gallery" className="hover:text-brand-orange transition-colors">
-                  Runway — 2025
+                <Link href="/projects" className="hover:text-brand-orange transition-colors">
+                  Runway
                 </Link>
               </li>
               <li>
@@ -169,17 +169,6 @@ export default function Footer() {
                 >
                   <span>@fashai_universal</span>
                   <ExternalLink className="w-3.5 h-3.5" />
-                </a>
-              </li>
-              <li className="flex items-center gap-1.5 pt-1">
-                <MessageSquare className="w-3.5 h-3.5 text-brand-green" />
-                <a
-                  href="https://wa.me/919891276713"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="hover:text-brand-green transition-colors font-syne text-xs font-bold"
-                >
-                  +91 9891276713
                 </a>
               </li>
             </ul>

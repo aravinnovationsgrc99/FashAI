@@ -63,15 +63,15 @@ export default function UpcomingLifestyleBanner() {
                     EVENT DATE
                   </span>
                   <span className="text-brand-white font-bold text-sm uppercase">
-                    NOVEMBER 2026
+                    DATE — TO BE ANNOUNCED
                   </span>
                 </div>
                 <div>
                   <span className="text-brand-platinum/70 uppercase tracking-micro text-[10px] block font-bold">
-                    LOCATION
+                    LOCATION / VENUE
                   </span>
                   <span className="text-brand-yellow-golden font-bold text-sm uppercase">
-                    DUBAI · UNITED ARAB EMIRATES
+                    DUBAI · VENUE TO BE ANNOUNCED
                   </span>
                 </div>
                 <div>
@@ -91,14 +91,14 @@ export default function UpcomingLifestyleBanner() {
                   className="bg-brand-orange px-6 py-3.5 text-xs font-syne tracking-caps font-bold text-white hover:bg-[#ff6f2d] hover:shadow-[0_0_25px_rgba(241,94,28,0.4)] transition-all duration-300 text-center flex items-center justify-center gap-2 group"
                   data-cursor="explore"
                 >
-                  <span>REGISTER / ENQUIRE</span>
+                  <span>REGISTRATION</span>
                   <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
                 </Link>
                 <Link
                   href="/contact?type=Sponsorship"
                   className="border border-brand-yellow-golden/50 bg-brand-void/80 px-6 py-3.5 text-xs font-syne tracking-caps font-bold text-brand-white hover:bg-brand-yellow-golden/10 hover:border-brand-yellow-golden transition-all duration-300 text-center flex items-center justify-center gap-2"
                 >
-                  <span>SPONSORSHIP ENQUIRY ↗</span>
+                  <span>SPONSORSHIP ↗</span>
                 </Link>
               </div>
             </div>

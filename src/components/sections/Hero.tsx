@@ -31,31 +31,61 @@ export default function Hero() {
       {/* Three.js Refractive Prism Background Layer (Z-1) */}
       <PrismScene />
 
-      {/* Main Content Composition Layer (Z-10: Fluid Grid Container) */}
-      <div className="relative z-10 my-auto container-editorial py-4 sm:py-8">
+      {/* Main Content Composition Layer (Z-10: 88-92vw Editorial Grid Container) */}
+      <div className="relative z-10 my-auto container-editorial py-6 sm:py-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
           
-          {/* LEFT COLUMN (Primary Content — 48–52% Width on Desktop) */}
+          {/* LEFT COLUMN (Primary Content — 52% Width on Desktop) */}
           <motion.div
-            initial={{ opacity: 0, y: 25 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-            className="lg:col-span-7 xl:col-span-6 flex flex-col items-start space-y-4 sm:space-y-5 max-w-3xl"
+            initial="hidden"
+            animate="visible"
+            variants={{
+              hidden: { opacity: 0 },
+              visible: {
+                opacity: 1,
+                transition: { staggerChildren: 0.15, delayChildren: 0.1 }
+              }
+            }}
+            className="lg:col-span-7 xl:col-span-6 flex flex-col items-start space-y-5 sm:space-y-6 max-w-3xl"
           >
+            {/* 1. Small Editorial Label */}
+            <motion.div
+              variants={{
+                hidden: { opacity: 0, y: 15 },
+                visible: { opacity: 1, y: 0, transition: { duration: 0.6 } }
+              }}
+              className="flex items-center gap-3"
+            >
+              <span className="h-2 w-2 rounded-full bg-brand-orange animate-pulse" />
+              <span className="text-xs font-syne tracking-micro text-brand-orange font-bold uppercase">
+                FASHAI UNIVERSAL
+              </span>
+            </motion.div>
 
-
-            {/* 2. Official Brand Name: FashAI Universal */}
-            <h1 className="font-serif-display leading-[0.95] tracking-tight select-none w-full">
-              <span className="block text-4xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-serif font-light text-brand-white uppercase">
+            {/* 2. Large Editorial Headline: FashAI Universal */}
+            <motion.h1
+              variants={{
+                hidden: { opacity: 0, y: 20 },
+                visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] } }
+              }}
+              className="font-serif-display leading-[0.92] tracking-tight select-none w-full"
+            >
+              <span className="block text-5xl sm:text-7xl md:text-8xl lg:text-8xl xl:text-9xl font-serif font-light text-brand-white uppercase">
                 FashAI
               </span>
-              <span className="block text-4xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-serif font-normal text-transparent bg-clip-text bg-gradient-to-r from-brand-orange via-[#ff8833] to-brand-yellow-golden italic mt-1">
+              <span className="block text-5xl sm:text-7xl md:text-8xl lg:text-8xl xl:text-9xl font-serif font-normal text-transparent bg-clip-text bg-gradient-to-r from-brand-orange via-[#ff8833] to-brand-yellow-golden italic mt-1">
                 Universal
               </span>
-            </h1>
+            </motion.h1>
 
-            {/* 3. Official Arav Innovation Logo Badge */}
-            <div className="pt-1">
+            {/* 3. Official Arav Innovation Brand Lockup */}
+            <motion.div
+              variants={{
+                hidden: { opacity: 0, y: 15 },
+                visible: { opacity: 1, y: 0, transition: { duration: 0.6 } }
+              }}
+              className="pt-1 flex items-center gap-4"
+            >
               <Image
                 src="/assets/brand/Final_Powered_by_logo.png"
                 alt="Powered by Arav Innovation"
@@ -65,17 +95,29 @@ export default function Hero() {
                 sizes="(max-width: 640px) 180px, (max-width: 1024px) 240px, 320px"
                 className="h-8 sm:h-10 md:h-12 lg:h-14 w-auto object-contain hover:scale-105 transition-transform duration-300 drop-shadow-[0_0_20px_rgba(241,94,28,0.25)]"
               />
-            </div>
+            </motion.div>
 
             {/* 4. Short Positioning Statement */}
-            <p className="font-serif text-lg sm:text-2xl lg:text-3xl text-brand-white/95 font-light italic max-w-xl leading-snug pt-1">
+            <motion.p
+              variants={{
+                hidden: { opacity: 0, y: 15 },
+                visible: { opacity: 1, y: 0, transition: { duration: 0.6 } }
+              }}
+              className="font-serif text-xl sm:text-2xl lg:text-3xl text-brand-white/95 font-light italic max-w-xl leading-snug pt-1"
+            >
               Fashion × AI × Experience
-            </p>
+            </motion.p>
 
             {/* 5. Event Metadata & Registration Status Banner */}
-            <div className="border-l-2 border-brand-orange pl-4 py-1 space-y-1 my-2">
+            <motion.div
+              variants={{
+                hidden: { opacity: 0, y: 15 },
+                visible: { opacity: 1, y: 0, transition: { duration: 0.6 } }
+              }}
+              className="border-l-2 border-brand-orange pl-4 py-1.5 space-y-1 my-2"
+            >
               <div className="inline-flex items-center gap-2 bg-brand-orange/10 border border-brand-orange/30 px-3 py-1 rounded-full mb-1">
-                <span className="h-2 w-2 rounded-full bg-brand-orange animate-pulse" />
+                <span className="h-1.5 w-1.5 rounded-full bg-brand-orange animate-pulse" />
                 <span className="text-[10px] sm:text-xs font-syne tracking-micro text-brand-orange uppercase font-bold">
                   LIFESTYLE 2026 · DUBAI
                 </span>
@@ -86,26 +128,32 @@ export default function Hero() {
               <p className="font-sans text-xs sm:text-sm text-brand-platinum/80 font-light max-w-md">
                 Open for delegates, international designers, press, and brand partners.
               </p>
-            </div>
+            </motion.div>
 
-            {/* 6. Primary Action CTA Buttons */}
-            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 w-full sm:w-auto pt-2">
+            {/* 6. Primary Action CTAs */}
+            <motion.div
+              variants={{
+                hidden: { opacity: 0, y: 15 },
+                visible: { opacity: 1, y: 0, transition: { duration: 0.6 } }
+              }}
+              className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 w-full sm:w-auto pt-2"
+            >
               <Link
-                href="/contact?type=Registration"
+                href="/projects"
                 className="bg-brand-orange px-8 py-4 text-xs font-syne tracking-caps font-bold text-white hover:bg-[#ff6f2d] hover:shadow-[0_0_25px_rgba(241,94,28,0.4)] transition-all duration-300 text-center min-h-[48px] flex items-center justify-center rounded-none group"
                 data-cursor="explore"
               >
-                <span>REGISTER / ENQUIRE</span>
+                <span>EXPLORE FASHAI</span>
                 <span className="ml-2 group-hover:translate-x-1 transition-transform">→</span>
               </Link>
               <Link
-                href="/contact?type=Sponsorship"
+                href="/contact"
                 className="border border-brand-yellow-golden/50 bg-brand-void/80 backdrop-blur-md px-8 py-4 text-xs font-syne tracking-caps font-bold text-brand-white hover:bg-brand-yellow-golden/10 hover:border-brand-yellow-golden transition-all duration-300 text-center min-h-[48px] flex items-center justify-center rounded-none"
                 data-cursor="view"
               >
-                SPONSORSHIP ENQUIRY ↗
+                GET INVOLVED ↗
               </Link>
-            </div>
+            </motion.div>
           </motion.div>
 
           {/* RIGHT COLUMN (3D Visual Framing Space on Desktop — 48–52% Width) */}
