@@ -209,16 +209,34 @@ export default function PrismScene() {
 
     window.addEventListener("resize", handleResize);
 
-    // Visibility & Pause Control
+    // Visibility & Scroll Intersection Control
     let isRunning = true;
+    let isIntersecting = true;
     let animationFrameId: number;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          isIntersecting = entry.isIntersecting;
+          if (isIntersecting && !isRunning && !document.hidden) {
+            isRunning = true;
+            animate();
+          }
+        });
+      },
+      { threshold: 0.01 }
+    );
+
+    if (containerRef.current) {
+      observer.observe(containerRef.current);
+    }
 
     const handleVisibilityChange = () => {
       if (document.hidden) {
         isRunning = false;
         cancelAnimationFrame(animationFrameId);
       } else {
-        if (!isRunning) {
+        if (!isRunning && isIntersecting) {
           isRunning = true;
           animate();
         }
@@ -238,7 +256,10 @@ export default function PrismScene() {
 
     // Animation Loop
     const animate = () => {
-      if (!isRunning) return;
+      if (!isRunning || !isIntersecting) {
+        isRunning = false;
+        return;
+      }
 
       animationFrameId = requestAnimationFrame(animate);
 
@@ -277,6 +298,7 @@ export default function PrismScene() {
     return () => {
       isRunning = false;
       cancelAnimationFrame(animationFrameId);
+      observer.disconnect();
       document.removeEventListener("visibilitychange", handleVisibilityChange);
       window.removeEventListener("scroll", handleScroll);
       if (!isMobile) {

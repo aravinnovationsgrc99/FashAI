@@ -59,7 +59,6 @@ export default function FashionCommunitySection() {
                   fill
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 100vw"
                   className={`object-cover ${category.objectPosition} filter contrast-110 grayscale group-hover:grayscale-0 group-hover:scale-[1.03] transition-all duration-700 ease-out opacity-85 group-hover:opacity-100`}
-                  priority={category.id === "designers"}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#0B0908] via-transparent to-transparent opacity-80 group-hover:opacity-50 transition-opacity" />
 

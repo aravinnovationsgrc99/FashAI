@@ -63,6 +63,8 @@ export default function RootLayout({
     <html lang="en" className="dark scroll-smooth">
       <head>
         <link rel="icon" href="/favicon.ico" sizes="any" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
       </head>
       <body className="bg-brand-void text-brand-off-white selection:bg-brand-orange selection:text-white font-sans-body">
         <ThemeProvider>

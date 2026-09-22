@@ -27,52 +27,51 @@ export default function Preloader() {
     document.body.style.overflow = "hidden";
     document.documentElement.style.overflow = "hidden";
 
-    // 3. Smooth non-linear progress progression (~3.2s total duration)
+    // 3. Smooth non-linear progress progression (~1.4s on fast load, ~2.2s max)
     const startTime = Date.now();
-    const duration = 3200; // Target duration in ms
+    let isLoaded = document.readyState === "complete";
+
+    const handleLoad = () => {
+      isLoaded = true;
+    };
+
+    if (!isLoaded) {
+      window.addEventListener("load", handleLoad);
+    }
+
+    const targetDuration = isLoaded ? 1200 : 2000;
 
     const updateProgress = () => {
       if (hasCompletedRef.current) return;
 
       const elapsed = Date.now() - startTime;
-      const rawRatio = Math.min(elapsed / duration, 1);
+      const effectiveDuration = isLoaded ? Math.min(targetDuration, 1200) : targetDuration;
+      const rawRatio = Math.min(elapsed / effectiveDuration, 1);
 
-      // Easing curve: Slow start (0-20%), steady middle (20-70%), smooth finish (70-100%)
-      let easedProgress = 0;
-      if (rawRatio < 0.2) {
-        easedProgress = (rawRatio / 0.2) * 20 * 0.9;
-      } else if (rawRatio < 0.7) {
-        easedProgress = 18 + ((rawRatio - 0.2) / 0.5) * 52;
-      } else if (rawRatio < 0.95) {
-        easedProgress = 70 + ((rawRatio - 0.7) / 0.25) * 25;
-      } else {
-        easedProgress = 95 + ((rawRatio - 0.95) / 0.05) * 5;
-      }
+      // Smooth cubic curve
+      const easedProgress = Math.min(Math.round(rawRatio * 100), 100);
+      setProgress(easedProgress);
 
-      const currentPercent = Math.min(Math.round(easedProgress), 100);
-      setProgress(currentPercent);
-
-      if (rawRatio < 1 && currentPercent < 100) {
+      if (rawRatio < 1 && easedProgress < 100) {
         requestAnimationFrame(updateProgress);
       } else {
-        // Complete sequence
         finishLoading();
       }
     };
 
     const animFrame = requestAnimationFrame(updateProgress);
 
-    // 4. Hard Safety Timeout Maximum (4.8s limit guarantees user is never stuck)
+    // 4. Hard Safety Timeout Maximum (3.0s limit guarantees user is never stuck)
     const hardTimeout = setTimeout(() => {
       finishLoading();
-    }, 4800);
+    }, 3000);
 
     const finishLoading = () => {
       if (hasCompletedRef.current) return;
       hasCompletedRef.current = true;
       setProgress(100);
 
-      // Brief hold at 100% completed state (300ms) before smooth reveal
+      // Brief hold at 100% completed state (200ms) before smooth reveal
       setTimeout(() => {
         setIsLoading(false);
 
@@ -90,13 +89,14 @@ export default function Preloader() {
         // Unmount after reveal animation ends
         setTimeout(() => {
           setShouldRender(false);
-        }, 800);
-      }, 300);
+        }, 600);
+      }, 200);
     };
 
     return () => {
       cancelAnimationFrame(animFrame);
       clearTimeout(hardTimeout);
+      window.removeEventListener("load", handleLoad);
       document.body.style.overflow = "";
       document.documentElement.style.overflow = "";
     };
@@ -112,7 +112,7 @@ export default function Preloader() {
           exit={{
             opacity: 0,
             y: -20,
-            transition: { duration: 0.7, ease: [0.76, 0, 0.24, 1] },
+            transition: { duration: 0.5, ease: [0.76, 0, 0.24, 1] },
           }}
           className="fixed inset-0 z-[9999] flex flex-col items-center justify-between bg-[#050505] px-6 py-12 text-brand-off-white overflow-hidden select-none"
           role="progressbar"
@@ -138,7 +138,7 @@ export default function Preloader() {
             <motion.div
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.6 }}
+              transition={{ duration: 0.4 }}
               className="flex flex-col items-center mb-8"
             >
               {/* Official FashAI Logo Mark Container */}
@@ -177,9 +177,9 @@ export default function Preloader() {
             {/* Smooth Progress Track & Counter */}
             <div className="w-full max-w-xs sm:max-w-sm px-2">
               <div className="relative h-[2px] w-full bg-white/10 rounded-full overflow-hidden">
-                <motion.div
-                  className="absolute left-0 top-0 h-full bg-brand-orange shadow-[0_0_15px_#F15E1C]"
-                  style={{ width: `${progress}%` }}
+                <div
+                  className="absolute left-0 top-0 h-full w-full bg-brand-orange shadow-[0_0_15px_#F15E1C] origin-left transition-transform duration-75 ease-out"
+                  style={{ transform: `scaleX(${progress / 100})` }}
                 />
               </div>
 
