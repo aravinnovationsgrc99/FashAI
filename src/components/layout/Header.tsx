@@ -39,18 +39,9 @@ export default function Header() {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? "bg-black/40 border-b border-white/10 shadow-lg py-2.5"
+          ? "bg-black/40 html-light-header-scrolled border-b border-white/10 shadow-lg py-2.5 backdrop-blur-md"
           : "bg-transparent border-b border-transparent py-4"
       }`}
-      style={
-        isScrolled
-          ? {
-              backgroundColor: "rgba(0, 0, 0, 0.40)",
-              backdropFilter: "blur(16px)",
-              WebkitBackdropFilter: "blur(16px)",
-            }
-          : undefined
-      }
     >
       <div className="container-editorial flex items-center justify-between min-h-[50px]">
         {/* Official Editorial Brand Lockup: [OFFICIAL LOGO] FashAI Universal */}
