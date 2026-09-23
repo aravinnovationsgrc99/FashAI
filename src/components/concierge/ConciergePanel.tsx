@@ -205,21 +205,19 @@ export default function ConciergePanel({ isOpen, onClose }: ConciergePanelProps)
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
+          transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
           onClick={onClose}
           className="fixed inset-0 bg-black/70 backdrop-blur-md sm:hidden pointer-events-auto z-[241]"
         />
 
-        {/* Chat Panel Box - Black + Gold Visual Identity */}
+        {/* Chat Panel Box - Black + Gold Visual Identity with Ultra-Smooth Motion */}
         <motion.div
-          initial={{ opacity: 0, y: 30, scale: 0.96 }}
+          initial={{ opacity: 0, y: 24, scale: 0.96 }}
           animate={{ opacity: 1, y: 0, scale: 1 }}
-          exit={{ opacity: 0, y: 30, scale: 0.96 }}
-          transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
+          exit={{ opacity: 0, y: 24, scale: 0.96 }}
+          transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
+          style={{ willChange: "transform, opacity" }}
           className="relative z-[242] pointer-events-auto w-full sm:w-[420px] h-[85vh] sm:h-[620px] max-h-[100dvh] bg-[#080808] sm:bg-[#080808]/95 border border-brand-yellow-golden/50 shadow-[0_0_60px_rgba(250,182,10,0.25)] flex flex-col justify-between overflow-hidden rounded-none text-brand-white"
-          style={{
-            backdropFilter: "blur(20px)",
-            WebkitBackdropFilter: "blur(20px)",
-          }}
           role="dialog"
           aria-label="FashAI Assistant"
         >
@@ -249,7 +247,7 @@ export default function ConciergePanel({ isOpen, onClose }: ConciergePanelProps)
 
             <button
               onClick={onClose}
-              className="p-2 text-brand-white/80 hover:text-brand-yellow-golden transition-colors min-w-[44px] min-h-[44px] flex items-center justify-center"
+              className="p-2 text-brand-white/80 hover:text-brand-yellow-golden transition-colors duration-200 min-w-[44px] min-h-[44px] flex items-center justify-center"
               aria-label="Close Chatbot"
             >
               <X className="w-5 h-5" />
@@ -270,8 +268,10 @@ export default function ConciergePanel({ isOpen, onClose }: ConciergePanelProps)
             {messages.map((msg) => (
               <motion.div
                 key={msg.id}
-                initial={{ opacity: 0, y: 10 }}
+                initial={{ opacity: 0, y: 8 }}
                 animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
+                style={{ willChange: "transform, opacity" }}
                 className={`flex flex-col ${msg.sender === "user" ? "items-end" : "items-start"}`}
               >
                 <div
@@ -321,7 +321,7 @@ export default function ConciergePanel({ isOpen, onClose }: ConciergePanelProps)
               <motion.div
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.15 }}
+                transition={{ delay: 0.15, duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
                 className="p-3 bg-[#110F0D] border border-brand-yellow-golden/30 space-y-2 my-2"
               >
                 <span className="text-[10px] font-syne font-bold text-brand-yellow-golden uppercase tracking-micro block">
@@ -332,7 +332,7 @@ export default function ConciergePanel({ isOpen, onClose }: ConciergePanelProps)
                     <button
                       key={opt.id}
                       onClick={() => handleIntentSelection(opt)}
-                      className="text-left px-2.5 py-1.5 bg-black border border-white/10 hover:border-brand-yellow-golden hover:bg-brand-yellow-golden/10 text-[10px] sm:text-[11px] font-syne font-bold text-brand-white transition-colors truncate"
+                      className="text-left px-2.5 py-1.5 bg-black border border-white/10 hover:border-brand-yellow-golden hover:bg-brand-yellow-golden/10 text-[10px] sm:text-[11px] font-syne font-bold text-brand-white transition-colors duration-200 truncate"
                     >
                       • {opt.label}
                     </button>
@@ -390,12 +390,12 @@ export default function ConciergePanel({ isOpen, onClose }: ConciergePanelProps)
                 value={inputValue}
                 onChange={(e) => setInputValue(e.target.value)}
                 placeholder="Ask FashAI Assistant..."
-                className="flex-1 bg-[#141210] border border-white/15 px-3 py-2.5 text-xs text-brand-white placeholder:text-brand-platinum/50 focus:border-brand-yellow-golden focus:outline-none transition-colors"
+                className="flex-1 bg-[#141210] border border-white/15 px-3 py-2.5 text-xs text-brand-white placeholder:text-brand-platinum/50 focus:border-brand-yellow-golden focus:outline-none transition-colors duration-200"
               />
               <button
                 type="submit"
                 disabled={isLoading || !inputValue.trim()}
-                className="p-2.5 bg-brand-yellow-golden text-black font-bold hover:bg-[#ffec69] disabled:opacity-50 transition-colors min-w-[44px] min-h-[44px] flex items-center justify-center"
+                className="p-2.5 bg-brand-yellow-golden text-black font-bold hover:bg-[#ffec69] disabled:opacity-50 transition-colors duration-200 min-w-[44px] min-h-[44px] flex items-center justify-center"
                 aria-label="Send Message"
               >
                 <Send className="w-4 h-4" />

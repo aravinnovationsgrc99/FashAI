@@ -14,11 +14,12 @@ export default function PageTransition({ children }: { children: React.ReactNode
           initial={{ opacity: 1 }}
           animate={{ opacity: 0 }}
           exit={{ opacity: 1 }}
-          transition={{ duration: 0.45, ease: [0.16, 1, 0.3, 1] }}
+          transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
+          style={{ willChange: "opacity" }}
           className="fixed inset-0 z-[300] pointer-events-none bg-brand-void flex flex-col justify-between p-8"
         >
-          <div className="w-full h-px bg-gradient-to-r from-transparent via-brand-gold to-transparent opacity-60" />
-          <div className="w-full h-px bg-gradient-to-r from-transparent via-brand-gold to-transparent opacity-60" />
+          <div className="w-full h-px bg-gradient-to-r from-transparent via-brand-yellow-golden to-transparent opacity-60" />
+          <div className="w-full h-px bg-gradient-to-r from-transparent via-brand-yellow-golden to-transparent opacity-60" />
         </motion.div>
 
         {children}

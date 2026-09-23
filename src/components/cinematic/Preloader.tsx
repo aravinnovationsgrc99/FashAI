@@ -111,9 +111,10 @@ export default function Preloader() {
           initial={{ opacity: 1 }}
           exit={{
             opacity: 0,
-            y: -20,
-            transition: { duration: 0.5, ease: [0.76, 0, 0.24, 1] },
+            y: -24,
+            transition: { duration: 0.55, ease: [0.76, 0, 0.24, 1] },
           }}
+          style={{ willChange: "transform, opacity" }}
           className="fixed inset-0 z-[9999] flex flex-col items-center justify-between bg-[#050505] px-6 py-12 text-brand-off-white overflow-hidden select-none"
           role="progressbar"
           aria-valuenow={progress}
@@ -122,12 +123,12 @@ export default function Preloader() {
           aria-label="FashAI Universal Loading Experience"
         >
           {/* Subtle Ambient Radial Glow */}
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-brand-orange/10 blur-[160px] pointer-events-none rounded-full" />
-          <div className="absolute top-1/4 right-1/4 w-[400px] h-[400px] bg-brand-green/8 blur-[150px] pointer-events-none rounded-full" />
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-brand-yellow-golden/10 blur-[160px] pointer-events-none rounded-full" />
+          <div className="absolute top-1/4 right-1/4 w-[400px] h-[400px] bg-brand-orange/8 blur-[150px] pointer-events-none rounded-full" />
 
           {/* Top Tag Bar */}
           <div className="relative z-10 flex w-full justify-between items-center text-[10px] sm:text-xs font-syne tracking-micro text-brand-platinum/70 border-b border-white/10 pb-4 max-w-7xl">
-            <span className="text-brand-orange font-bold uppercase tracking-widest">
+            <span className="text-brand-yellow-golden font-bold uppercase tracking-widest">
               FASHAI UNIVERSAL
             </span>
             <span>DUBAI · 2026</span>
@@ -138,11 +139,11 @@ export default function Preloader() {
             <motion.div
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.4 }}
+              transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
               className="flex flex-col items-center mb-8"
             >
               {/* Official FashAI Logo Mark Container */}
-              <div className="relative w-20 h-20 sm:w-24 sm:h-24 mb-5 overflow-hidden rounded-xl border border-brand-orange/40 bg-black shadow-[0_0_35px_rgba(241,94,28,0.3)] p-2">
+              <div className="relative w-20 h-20 sm:w-24 sm:h-24 mb-5 overflow-hidden rounded-none border border-brand-yellow-golden/50 bg-black shadow-[0_0_35px_rgba(250,182,10,0.3)] p-2">
                 <Image
                   src="/assets/brand/logo_transparent.png"
                   alt="FashAI Universal Official Logo"
@@ -176,10 +177,10 @@ export default function Preloader() {
 
             {/* Smooth Progress Track & Counter */}
             <div className="w-full max-w-xs sm:max-w-sm px-2">
-              <div className="relative h-[2px] w-full bg-white/10 rounded-full overflow-hidden">
+              <div className="relative h-[2px] w-full bg-white/10 rounded-none overflow-hidden">
                 <div
-                  className="absolute left-0 top-0 h-full w-full bg-brand-orange shadow-[0_0_15px_#F15E1C] origin-left transition-transform duration-75 ease-out"
-                  style={{ transform: `scaleX(${progress / 100})` }}
+                  className="absolute left-0 top-0 h-full w-full bg-brand-yellow-golden shadow-[0_0_15px_#FAB60A] origin-left transition-transform duration-100 ease-out"
+                  style={{ transform: `scaleX(${progress / 100})`, willChange: "transform" }}
                 />
               </div>
 
@@ -187,7 +188,7 @@ export default function Preloader() {
                 <span className="text-brand-platinum/80 uppercase">
                   ENTERING FASHAI UNIVERSAL
                 </span>
-                <span className="text-brand-orange font-bold text-xs sm:text-sm">
+                <span className="text-brand-yellow-golden font-bold text-xs sm:text-sm">
                   {progress}%
                 </span>
               </div>

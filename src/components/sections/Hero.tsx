@@ -9,9 +9,9 @@ export default function Hero() {
   const [videoError, setVideoError] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
 
-  // Enforce strict 0s -> 9s smooth looping
+  // Enforce strict 0s -> 7.9s smooth looping boundary
   const handleTimeUpdate = () => {
-    if (videoRef.current && videoRef.current.currentTime >= 9) {
+    if (videoRef.current && videoRef.current.currentTime >= 7.9) {
       videoRef.current.currentTime = 0;
       videoRef.current.play().catch(() => {});
     }
@@ -26,7 +26,7 @@ export default function Hero() {
   return (
     <section className="relative min-h-[100vh] min-h-[100svh] w-full flex flex-col justify-between pt-24 sm:pt-28 pb-8 px-4 sm:px-8 lg:px-12 overflow-hidden bg-black text-brand-white">
       
-      {/* LAYER 1: Full-Screen Crisp Background Video (No CSS Blur) */}
+      {/* LAYER 1: Full-Screen Crisp Background Video (No CSS Blur, Exactly 8.2s Loop) */}
       {!videoError ? (
         <video
           ref={videoRef}
@@ -34,11 +34,11 @@ export default function Hero() {
           muted
           playsInline
           loop
-          preload="metadata"
+          preload="auto"
           poster="/assets/models/model_01.jpeg"
           onTimeUpdate={handleTimeUpdate}
           onError={() => setVideoError(true)}
-          className="absolute inset-0 w-full h-full object-cover object-center scale-[1.04] origin-center z-0 pointer-events-none select-none"
+          className="absolute inset-0 w-full h-full object-cover object-center scale-[1.05] origin-center z-0 pointer-events-none select-none"
         >
           <source src="/videos/homepage-main.mp4" type="video/mp4" />
         </video>
@@ -53,9 +53,9 @@ export default function Hero() {
         />
       )}
 
-      {/* LAYER 2: Localized Readability Gradients (Video remains 100% clear in center/right) */}
+      {/* LAYER 2: Localized Readability Gradients (Video remains 100% sharp & clear in center & right) */}
       {/* Left-side gradient for text readability */}
-      <div className="absolute inset-y-0 left-0 w-full lg:w-[58%] bg-gradient-to-r from-black/85 via-black/35 to-transparent pointer-events-none z-[1]" />
+      <div className="absolute inset-y-0 left-0 w-full lg:w-[55%] bg-gradient-to-r from-black/85 via-black/35 to-transparent pointer-events-none z-[1]" />
       
       {/* Top vignette for navbar contrast */}
       <div className="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-black/75 via-black/20 to-transparent pointer-events-none z-[1]" />
@@ -63,8 +63,8 @@ export default function Hero() {
       {/* Bottom gradient for footer status contrast */}
       <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-black/85 via-black/30 to-transparent pointer-events-none z-[1]" />
       
-      {/* Localized bottom-right gradient mask to cleanly hide Gemini mark */}
-      <div className="absolute bottom-0 right-0 w-64 h-36 bg-gradient-to-tl from-black/95 via-black/40 to-transparent pointer-events-none z-[1]" />
+      {/* Localized right-side gradient mask to cleanly hide Gemini mark without touching FashAI Assistant */}
+      <div className="absolute bottom-0 right-0 w-64 h-36 bg-gradient-to-tl from-black/90 via-black/30 to-transparent pointer-events-none z-[1]" />
 
       {/* LAYER 4: Main Content Composition Overlay (Z-10) */}
       <div className="relative z-10 my-auto container-editorial py-4 sm:py-6">
@@ -78,7 +78,7 @@ export default function Hero() {
               hidden: { opacity: 0 },
               visible: {
                 opacity: 1,
-                transition: { staggerChildren: 0.12, delayChildren: 0.1 }
+                transition: { staggerChildren: 0.1, delayChildren: 0.1 }
               }
             }}
             className="lg:col-span-8 xl:col-span-7 flex flex-col items-start space-y-4 sm:space-y-6 max-w-3xl"
@@ -86,9 +86,10 @@ export default function Hero() {
             {/* 1. Eyebrow Tag */}
             <motion.div
               variants={{
-                hidden: { opacity: 0, y: 15 },
-                visible: { opacity: 1, y: 0, transition: { duration: 0.6 } }
+                hidden: { opacity: 0, y: 16 },
+                visible: { opacity: 1, y: 0, transition: { duration: 0.7, ease: [0.22, 1, 0.36, 1] } }
               }}
+              style={{ willChange: "transform, opacity" }}
               className="flex items-center gap-2"
             >
               <span className="h-2 w-2 rounded-none bg-brand-yellow-golden" />
@@ -100,9 +101,10 @@ export default function Hero() {
             {/* 2. Main Headline Typography: FASHAI Universal */}
             <motion.h1
               variants={{
-                hidden: { opacity: 0, y: 20 },
-                visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] } }
+                hidden: { opacity: 0, y: 24 },
+                visible: { opacity: 1, y: 0, transition: { duration: 0.85, ease: [0.22, 1, 0.36, 1] } }
               }}
+              style={{ willChange: "transform, opacity" }}
               className="font-serif-display leading-[0.88] tracking-tight select-none w-full"
             >
               <span className="block text-6xl sm:text-8xl md:text-9xl xl:text-[10rem] font-serif font-light text-brand-white uppercase">
@@ -116,9 +118,10 @@ export default function Hero() {
             {/* 3. Positioning Statement */}
             <motion.p
               variants={{
-                hidden: { opacity: 0, y: 15 },
-                visible: { opacity: 1, y: 0, transition: { duration: 0.6 } }
+                hidden: { opacity: 0, y: 16 },
+                visible: { opacity: 1, y: 0, transition: { duration: 0.7, ease: [0.22, 1, 0.36, 1] } }
               }}
+              style={{ willChange: "transform, opacity" }}
               className="font-serif text-2xl sm:text-3xl lg:text-4xl text-brand-white/95 font-light italic tracking-wide"
             >
               Fashion × AI × Experience
@@ -127,9 +130,10 @@ export default function Hero() {
             {/* 4. Event Information Card over Video */}
             <motion.div
               variants={{
-                hidden: { opacity: 0, y: 15 },
-                visible: { opacity: 1, y: 0, transition: { duration: 0.6 } }
+                hidden: { opacity: 0, y: 16 },
+                visible: { opacity: 1, y: 0, transition: { duration: 0.7, ease: [0.22, 1, 0.36, 1] } }
               }}
+              style={{ willChange: "transform, opacity" }}
               className="border border-brand-yellow-golden/40 bg-black/60 p-4 sm:p-5 max-w-lg space-y-2 rounded-none"
             >
               <div className="inline-flex items-center gap-2 bg-brand-yellow-golden/10 border border-brand-yellow-golden/40 px-2.5 py-1 text-[10px] sm:text-xs font-syne tracking-micro text-brand-yellow-golden font-bold uppercase">
@@ -146,21 +150,22 @@ export default function Hero() {
             {/* 5. Primary Action CTAs */}
             <motion.div
               variants={{
-                hidden: { opacity: 0, y: 15 },
-                visible: { opacity: 1, y: 0, transition: { duration: 0.6 } }
+                hidden: { opacity: 0, y: 16 },
+                visible: { opacity: 1, y: 0, transition: { duration: 0.7, ease: [0.22, 1, 0.36, 1] } }
               }}
+              style={{ willChange: "transform, opacity" }}
               className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 w-full sm:w-auto pt-2"
             >
               <Link
                 href="/projects"
-                className="bg-brand-yellow-golden px-8 py-4 text-xs font-syne tracking-caps font-bold text-black hover:bg-[#FFEC69] transition-all duration-300 text-center min-h-[48px] flex items-center justify-center rounded-none group shadow-[0_0_20px_rgba(250,182,10,0.3)]"
+                className="bg-brand-yellow-golden px-8 py-4 text-xs font-syne tracking-caps font-bold text-black hover:bg-[#FFEC69] hover:scale-[1.02] active:scale-[0.98] transition-all duration-300 text-center min-h-[48px] flex items-center justify-center rounded-none group shadow-[0_0_20px_rgba(250,182,10,0.3)]"
                 data-cursor="explore"
               >
                 <span>EXPLORE FASHAI →</span>
               </Link>
               <Link
                 href="/contact"
-                className="border border-brand-yellow-golden/60 bg-black/60 px-8 py-4 text-xs font-syne tracking-caps font-bold text-brand-white hover:bg-brand-yellow-golden/10 hover:border-brand-yellow-golden transition-all duration-300 text-center min-h-[48px] flex items-center justify-center rounded-none"
+                className="border border-brand-yellow-golden/60 bg-black/60 px-8 py-4 text-xs font-syne tracking-caps font-bold text-brand-white hover:bg-brand-yellow-golden/10 hover:border-brand-yellow-golden hover:scale-[1.02] active:scale-[0.98] transition-all duration-300 text-center min-h-[48px] flex items-center justify-center rounded-none"
                 data-cursor="view"
               >
                 GET INVOLVED ↗
@@ -171,10 +176,10 @@ export default function Hero() {
           {/* RIGHT COLUMN: Right-Side Micro-Content Stack (Desktop) */}
           <div className="hidden lg:flex lg:col-span-4 xl:col-span-5 flex-col items-end justify-center space-y-3 text-right pr-2">
             <div className="flex flex-col items-end space-y-2 text-[11px] font-syne tracking-micro text-brand-white/80 font-bold uppercase">
-              <span className="hover:text-brand-yellow-golden transition-colors">PEOPLE</span>
-              <span className="hover:text-brand-yellow-golden transition-colors">FASHION</span>
-              <span className="hover:text-brand-yellow-golden transition-colors">IDEAS</span>
-              <span className="hover:text-brand-yellow-golden transition-colors">EXPERIENCES</span>
+              <span className="hover:text-brand-yellow-golden transition-colors duration-200">PEOPLE</span>
+              <span className="hover:text-brand-yellow-golden transition-colors duration-200">FASHION</span>
+              <span className="hover:text-brand-yellow-golden transition-colors duration-200">IDEAS</span>
+              <span className="hover:text-brand-yellow-golden transition-colors duration-200">EXPERIENCES</span>
               <span className="w-12 h-[1px] bg-brand-yellow-golden/60 mt-2" />
             </div>
           </div>

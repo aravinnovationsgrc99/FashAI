@@ -84,23 +84,25 @@ export default function EventInfoModal() {
           aria-modal="true"
           aria-labelledby="event-modal-title"
         >
-          {/* Backdrop (Z-300): Dark Translucent Overlay (Subtle temporary visual treatment) */}
+          {/* Backdrop (Z-300): Dark Translucent Overlay */}
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
+            transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
+            style={{ willChange: "opacity" }}
             onClick={handleClose}
             className="fixed inset-0 bg-black/85 backdrop-blur-md z-[300]"
           />
 
-          {/* Modal Container Card (Z-310) - Smooth Entrance & Exit Animations */}
+          {/* Modal Container Card (Z-310) - Silky Smooth Entrance & Exit Animations */}
           <motion.div
             ref={modalRef}
-            initial={{ opacity: 0, y: 20, scale: 0.96 }}
+            initial={{ opacity: 0, y: 24, scale: 0.96 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
-            exit={{ opacity: 0, y: 12, scale: 0.98 }}
-            transition={{ duration: 0.45, ease: [0.16, 1, 0.3, 1] }}
+            exit={{ opacity: 0, y: 16, scale: 0.98 }}
+            transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+            style={{ willChange: "transform, opacity" }}
             className="relative z-[310] w-full max-w-2xl bg-[#080808] border border-brand-yellow-golden/50 p-6 sm:p-10 shadow-[0_0_80px_rgba(250,182,10,0.25)] text-brand-white overflow-hidden max-h-[88vh] flex flex-col justify-between my-auto rounded-none"
           >
             {/* Ambient Gold & Orange Subtle Glows */}
@@ -110,7 +112,7 @@ export default function EventInfoModal() {
             {/* Close Button (Z-320) */}
             <button
               onClick={handleClose}
-              className="absolute top-4 right-4 sm:top-5 sm:right-5 p-2.5 bg-black/80 border border-brand-yellow-golden/40 text-brand-white hover:text-brand-yellow-golden hover:border-brand-yellow-golden transition-colors min-w-[44px] min-h-[44px] flex items-center justify-center z-[320] focus:outline-none focus:ring-1 focus:ring-brand-yellow-golden"
+              className="absolute top-4 right-4 sm:top-5 sm:right-5 p-2.5 bg-black/80 border border-brand-yellow-golden/40 text-brand-white hover:text-brand-yellow-golden hover:border-brand-yellow-golden transition-colors duration-200 min-w-[44px] min-h-[44px] flex items-center justify-center z-[320] focus:outline-none focus:ring-1 focus:ring-brand-yellow-golden"
               aria-label="Close event information"
             >
               <X className="h-5 w-5" />
@@ -204,7 +206,7 @@ export default function EventInfoModal() {
                   className="bg-brand-yellow-golden px-6 py-3.5 text-xs font-syne tracking-caps font-bold text-black hover:bg-[#ffec69] transition-all duration-300 text-center min-h-[44px] flex items-center justify-center rounded-none group flex-1 shadow-[0_0_20px_rgba(250,182,10,0.3)]"
                 >
                   <span>REGISTER / ENQUIRE</span>
-                  <span className="ml-2 group-hover:translate-x-1 transition-transform">→</span>
+                  <span className="ml-2 group-hover:translate-x-1 transition-transform duration-200">→</span>
                 </button>
                 <button
                   onClick={() => handleCtaClick("Sponsorship")}
