@@ -212,8 +212,6 @@ export default function Footer() {
               </li>
             </ul>
           </div>
-          </div>
-
         </div>
 
         {/* Action Callout Banner */}

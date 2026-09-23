@@ -21,7 +21,7 @@ export default function Chapter2026() {
           <div className="inline-flex items-center gap-3 border border-brand-orange/40 px-4 py-1.5 mb-8 bg-brand-void/90">
             <span className="h-1.5 w-1.5 rounded-full bg-brand-orange animate-pulse" />
             <span className="font-syne text-xs tracking-micro text-brand-orange font-bold uppercase">
-              03 / UPCOMING CHAPTER
+              UPCOMING CHAPTER
             </span>
           </div>
 

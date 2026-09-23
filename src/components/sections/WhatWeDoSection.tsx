@@ -52,7 +52,7 @@ export default function WhatWeDoSection() {
           <div>
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-yellow-golden/10 border border-brand-yellow-golden/40 text-brand-yellow-golden text-xs font-syne tracking-micro font-bold uppercase mb-3">
               <Layers className="w-3.5 h-3.5" />
-              <span>02 — WHAT WE DO</span>
+              <span>WHAT WE DO</span>
             </div>
             <h2 className="font-serif-display text-4xl sm:text-6xl font-light text-brand-white uppercase">
               EVENT FORMATS &amp; <span className="font-serif italic text-brand-yellow-golden">Services</span>

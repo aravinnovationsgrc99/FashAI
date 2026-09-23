@@ -12,49 +12,19 @@ interface FaqItem {
 
 const FAQS: FaqItem[] = [
   {
-    question: "What is FashAI Universal?",
-    answer: "FashAI Universal is an international fashion and events platform operating across the UAE (Dubai) and India. It bridges fashion experiences, talent recruitment, lifestyle events, corporate gatherings, and IT event formats.",
+    question: "WHAT IS FASHAI UNIVERSAL?",
+    answer: "FashAI Universal is an international fashion and events platform operating across the UAE (Dubai) and India. It bridges luxury fashion experiences, talent recruitment, lifestyle events, corporate gatherings, and IT event formats into a unified creative platform.",
     category: "ABOUT PLATFORM",
   },
   {
-    question: "What types of events does FashAI Universal offer?",
-    answer: "FashAI Universal curates and manages five core event categories: Fashion Events (runway & couture showcases), Lifestyle Events (such as LifeStyle 2026 Dubai), Product Launch Events, Corporate Events, and IT Events.",
-    category: "EVENT FORMATS",
-  },
-  {
-    question: "Who can apply to the FashAI Universal fashion community?",
-    answer: "Applications are open for Designers, Models, Makeup Artists, Fashion Stylists, Choreographers, Influencers/Content Creators, and Celebrities or Public Figures seeking participation in curated shows and campaigns.",
+    question: "WHO CAN APPLY OR BE NOMINATED?",
+    answer: "Applications and nominations are open for Designers, Models, Makeup Artists, Fashion Stylists, Choreographers, Influencers/Creators, and Celebrities or Public Figures seeking participation in curated showcases and campaigns.",
     category: "COMMUNITY & TALENT",
   },
   {
-    question: "How can I apply as a designer?",
-    answer: "Designers can apply directly through our website by selecting 'Apply as a Designer' in the Open Nominations or Designers section. Complete the 3-step application form with your brand name, portfolio link, and work samples.",
-    category: "APPLICATIONS",
-  },
-  {
-    question: "How can I apply as a model?",
-    answer: "Models can select 'Apply as a Model' to submit their details including measurements/stats, portfolio, Instagram profile, and experience. Our recruitment team reviews submissions for upcoming show castings.",
-    category: "APPLICATIONS",
-  },
-  {
-    question: "How can I apply as a choreographer?",
-    answer: "Choreographers can apply via the dedicated Choreographer application form under Open Nominations. Share your specialization (Runway, Contemporary, Stage), showreel video URL, and experience details.",
-    category: "APPLICATIONS",
-  },
-  {
-    question: "How can I nominate a creative professional?",
-    answer: "Use our dedicated 'Nominate Someone' flow in the Open Nominations section. You can submit the name, role, contact info, and portfolio of any designer, model, or artist you believe should be considered.",
-    category: "NOMINATIONS",
-  },
-  {
-    question: "Are LifeStyle 2026 Dubai registrations open?",
-    answer: "Yes, enquiries and delegate/designer registrations for LifeStyle 2026 Dubai are active. You can register your interest or enquire about participation directly through our Contact section.",
-    category: "LIFESTYLE 2026",
-  },
-  {
-    question: "How can I enquire about event sponsorship?",
-    answer: "Navigate to the Contact Us section at the bottom of the page and select 'Sponsorship Enquiry' from the intelligent enquiry selector to submit your organization's sponsorship details directly to our team.",
-    category: "SPONSORSHIP",
+    question: "HOW CAN I ENQUIRE ABOUT AN EVENT, SPONSORSHIP OR PARTICIPATION?",
+    answer: "You can submit an enquiry directly through the Contact section on our website by selecting your specific enquiry type (Registration, Sponsorship, Designer Participation, Talent, or Media). Our team will review your submission promptly.",
+    category: "ENQUIRIES & SPONSORSHIP",
   },
 ];
 
@@ -74,20 +44,20 @@ export default function FaqSection() {
 
       <div className="container-editorial relative z-10 max-w-4xl mx-auto">
         {/* Section Header */}
-        <div className="text-center mb-16">
-          <div className="inline-flex items-center gap-2 text-xs font-syne tracking-micro text-brand-yellow-golden font-bold uppercase mb-3 bg-brand-yellow-golden/10 border border-brand-yellow-golden/30 px-3 py-1 rounded-full">
+        <div className="text-center mb-14">
+          <div className="inline-flex items-center gap-2 text-xs font-syne tracking-micro text-brand-yellow-golden font-bold uppercase mb-3 bg-brand-yellow-golden/10 border border-brand-yellow-golden/30 px-3.5 py-1.5 rounded-full">
             <Sparkles className="w-3.5 h-3.5" />
-            <span>13 — FREQUENTLY ASKED QUESTIONS</span>
+            <span>FREQUENTLY ASKED QUESTIONS</span>
           </div>
           <h2 className="font-serif-display text-4xl sm:text-6xl font-light text-brand-white uppercase mb-4">
-            QUESTIONS & ANSWERS
+            QUESTIONS &amp; <span className="font-serif italic text-brand-yellow-golden">ANSWERS</span>
           </h2>
           <p className="font-sans text-xs sm:text-sm text-brand-platinum/80 font-light max-w-xl mx-auto leading-relaxed">
-            Essential information regarding FashAI Universal, event participation, talent applications, and sponsorship enquiries.
+            Key information regarding FashAI Universal, event participation, talent applications, and sponsorship enquiries.
           </p>
         </div>
 
-        {/* FAQ Accordion List */}
+        {/* 3-Question Accordion List */}
         <div className="space-y-4">
           {FAQS.map((item, idx) => {
             const isOpen = openIndex === idx;

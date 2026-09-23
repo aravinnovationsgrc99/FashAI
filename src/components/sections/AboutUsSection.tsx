@@ -25,7 +25,7 @@ export default function AboutUsSection() {
             <div>
               <div className="flex items-center gap-2 text-xs font-syne tracking-micro text-brand-orange font-bold uppercase mb-3">
                 <Sparkles className="w-4 h-4 text-brand-yellow-golden" />
-                <span>11 — ABOUT FASHAI UNIVERSAL</span>
+                <span>ABOUT FASHAI UNIVERSAL</span>
               </div>
               <h2 className="font-serif-display text-4xl sm:text-6xl font-light text-brand-white uppercase leading-tight mb-6">
                 INTERNATIONAL FASHION & <br />

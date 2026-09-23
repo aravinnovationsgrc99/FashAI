@@ -78,7 +78,7 @@ export default function OpenNominationsSection() {
           <div>
             <div className="flex items-center gap-2 text-xs font-syne tracking-micro text-brand-yellow-golden font-bold uppercase mb-3">
               <Sparkles className="w-4 h-4" />
-              <span>05 — SELECTION & RECRUITMENT GATEWAY</span>
+              <span>SELECTION & RECRUITMENT</span>
             </div>
             <h2 className="font-serif-display text-4xl sm:text-6xl lg:text-7xl font-light text-brand-white uppercase">
               OPEN NOMINATIONS
