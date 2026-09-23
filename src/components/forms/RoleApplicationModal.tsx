@@ -14,16 +14,41 @@ export type ApplicationRole =
   | "Celebrity"
   | "Nomination";
 
+export type RoleType = ApplicationRole | "choreographer" | "designer" | "model" | "makeup_artist" | "stylist" | "influencer" | "celebrity" | "nomination";
+
 interface RoleApplicationModalProps {
-  role: ApplicationRole | null;
+  role: RoleType | null;
+  isOpen?: boolean;
   onClose: () => void;
 }
 
-export default function RoleApplicationModal({ role, onClose }: RoleApplicationModalProps) {
+const roleMap: Record<string, ApplicationRole> = {
+  choreographer: "Choreographer",
+  designer: "Designer",
+  model: "Model",
+  makeup_artist: "Makeup Artist",
+  stylist: "Stylist",
+  influencer: "Influencer",
+  celebrity: "Celebrity",
+  nomination: "Nomination",
+  Choreographer: "Choreographer",
+  Designer: "Designer",
+  Model: "Model",
+  "Makeup Artist": "Makeup Artist",
+  Stylist: "Stylist",
+  Influencer: "Influencer",
+  Celebrity: "Celebrity",
+  Nomination: "Nomination",
+};
+
+export default function RoleApplicationModal({ role: rawRole, isOpen = true, onClose }: RoleApplicationModalProps) {
   const [step, setStep] = useState(1);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
+
+  if (isOpen === false || !rawRole) return null;
+  const role: ApplicationRole = roleMap[rawRole] || "Designer";
 
   // Generic form state
   const [formData, setFormData] = useState({

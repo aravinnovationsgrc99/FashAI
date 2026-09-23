@@ -8,7 +8,7 @@ export default function Footer() {
   const aravWebsiteUrl = "https://aravinnovations.com/";
 
   return (
-    <footer className="w-full border-t border-white/10 bg-brand-void pt-16 pb-12 text-brand-off-white">
+    <footer className="w-full border-t border-white/10 bg-black pt-16 pb-12 text-brand-off-white">
       <div className="container-editorial">
         {/* Global 5-Column Editorial Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 pb-12 border-b border-white/10">
@@ -17,7 +17,7 @@ export default function Footer() {
           <div className="lg:col-span-4 flex flex-col justify-between space-y-6">
             <div>
               <Link href="/" className="inline-flex items-center gap-3 mb-4 group">
-                <div className="relative w-9 h-9 flex-shrink-0 overflow-hidden rounded-none border border-brand-orange/40 bg-black shadow-md">
+                <div className="relative w-9 h-9 flex-shrink-0 overflow-hidden rounded-xl border border-brand-orange/40 bg-black shadow-md">
                   <Image
                     src="/assets/brand/logo_transparent.png"
                     alt="FashAI Universal Logo"
@@ -26,7 +26,7 @@ export default function Footer() {
                     className="object-contain p-0.5 group-hover:scale-105 transition-transform duration-300"
                   />
                 </div>
-                <span className="font-serif-display text-2xl tracking-tight font-light text-brand-white group-hover:text-brand-orange transition-colors">
+                <span className="font-serif-display text-2xl tracking-tight font-light text-brand-white group-hover:text-brand-yellow-golden transition-colors">
                   FashAI Universal
                 </span>
               </Link>
@@ -42,49 +42,44 @@ export default function Footer() {
               </div>
 
               <p className="font-sans text-xs sm:text-sm text-brand-platinum/80 font-light leading-relaxed max-w-sm">
-                Where fashion, technology and imagination converge. An international luxury fashion, lifestyle and event platform.
+                FashAI Universal is an international fashion and events platform focused on couture showcases, creative talent recruitment, lifestyle events, corporate gatherings, and IT event formats across Dubai, UAE and India.
               </p>
             </div>
           </div>
 
-          {/* COLUMN 2: EXPLORE (lg:col-span-2) */}
+          {/* COLUMN 2: NAVIGATION (lg:col-span-2) */}
           <div className="lg:col-span-2">
-            <h4 className="font-syne text-xs tracking-caps text-brand-orange mb-4 font-bold uppercase">
-              EXPLORE
+            <h4 className="font-syne text-xs tracking-caps text-brand-yellow-golden mb-4 font-bold uppercase">
+              NAVIGATION
             </h4>
             <ul className="space-y-2.5 font-syne text-xs tracking-wider text-brand-platinum/90">
               <li>
-                <Link href="/" className="hover:text-brand-orange transition-colors">
-                  Landing
+                <Link href="/" className="hover:text-brand-yellow-golden transition-colors">
+                  Home
                 </Link>
               </li>
               <li>
-                <Link href="/projects" className="hover:text-brand-orange transition-colors">
-                  Projects
-                </Link>
-              </li>
-              <li>
-                <Link href="/upcoming" className="hover:text-brand-orange transition-colors">
+                <Link href="#upcoming" className="hover:text-brand-yellow-golden transition-colors">
                   Upcoming
                 </Link>
               </li>
               <li>
-                <Link href="/gallery" className="hover:text-brand-orange transition-colors">
+                <Link href="/gallery" className="hover:text-brand-yellow-golden transition-colors">
                   Gallery
                 </Link>
               </li>
               <li>
-                <Link href="/contact" className="hover:text-brand-orange transition-colors">
-                  Contact Us
+                <Link href="#contact" className="hover:text-brand-yellow-golden transition-colors">
+                  Contact
                 </Link>
               </li>
               <li>
-                <Link href="/privacy" className="hover:text-brand-orange transition-colors">
+                <Link href="/privacy" className="hover:text-brand-yellow-golden transition-colors">
                   Privacy Policy
                 </Link>
               </li>
               <li>
-                <Link href="/terms" className="hover:text-brand-orange transition-colors">
+                <Link href="/terms" className="hover:text-brand-yellow-golden transition-colors">
                   Terms &amp; Conditions
                 </Link>
               </li>
@@ -98,65 +93,111 @@ export default function Footer() {
             </h4>
             <ul className="space-y-2.5 font-syne text-xs tracking-wider text-brand-platinum/90">
               <li>
-                <Link href="/projects" className="hover:text-brand-orange transition-colors">
-                  Runway
+                <Link href="#events" className="hover:text-brand-orange transition-colors">
+                  Fashion Events
                 </Link>
               </li>
               <li>
-                <Link href="/2025" className="hover:text-brand-orange transition-colors">
-                  LifeStyle — 2025
+                <Link href="#events" className="hover:text-brand-orange transition-colors">
+                  Lifestyle Events
                 </Link>
               </li>
               <li>
-                <Link href="/2026" className="hover:text-brand-orange transition-colors text-brand-yellow-golden font-bold">
+                <Link href="#events" className="hover:text-brand-orange transition-colors">
+                  Product Events
+                </Link>
+              </li>
+              <li>
+                <Link href="#events" className="hover:text-brand-orange transition-colors">
+                  Corporate Events
+                </Link>
+              </li>
+              <li>
+                <Link href="#events" className="hover:text-brand-orange transition-colors">
+                  IT Events
+                </Link>
+              </li>
+              <li>
+                <Link href="#upcoming" className="hover:text-brand-yellow-golden transition-colors font-bold">
                   LifeStyle 2026 · Dubai
                 </Link>
               </li>
             </ul>
           </div>
 
-          {/* COLUMN 4: PEOPLE (lg:col-span-2) */}
+          {/* COLUMN 4: COMMUNITY (lg:col-span-2) */}
           <div className="lg:col-span-2">
-            <h4 className="font-syne text-xs tracking-caps text-brand-orange mb-4 font-bold uppercase">
-              PEOPLE
+            <h4 className="font-syne text-xs tracking-caps text-brand-yellow-golden mb-4 font-bold uppercase">
+              COMMUNITY
             </h4>
             <ul className="space-y-2.5 font-syne text-xs tracking-wider text-brand-platinum/90">
               <li>
-                <Link href="/#people" className="hover:text-brand-orange transition-colors">
-                  Designers
+                <Link href="#nominations" className="hover:text-brand-yellow-golden transition-colors">
+                  Designer
                 </Link>
               </li>
               <li>
-                <Link href="/#people" className="hover:text-brand-orange transition-colors">
-                  Models
+                <Link href="#nominations" className="hover:text-brand-yellow-golden transition-colors">
+                  Model
                 </Link>
               </li>
               <li>
-                <Link href="/#people" className="hover:text-brand-orange transition-colors">
-                  Makeup Artists
+                <Link href="#nominations" className="hover:text-brand-yellow-golden transition-colors">
+                  Makeup Artist
                 </Link>
               </li>
               <li>
-                <Link href="/#people" className="hover:text-brand-orange transition-colors">
-                  Celebrities
+                <Link href="#nominations" className="hover:text-brand-yellow-golden transition-colors">
+                  Stylist
                 </Link>
               </li>
               <li>
-                <Link href="/#people" className="hover:text-brand-orange transition-colors">
-                  Influencers
+                <Link href="#nominations" className="hover:text-brand-yellow-golden transition-colors">
+                  Choreographer
                 </Link>
               </li>
               <li>
-                <Link href="/#people" className="hover:text-brand-orange transition-colors">
-                  Stylists
+                <Link href="#nominations" className="hover:text-brand-yellow-golden transition-colors">
+                  Influencer / Creator
+                </Link>
+              </li>
+              <li>
+                <Link href="#nominations" className="hover:text-brand-yellow-golden transition-colors">
+                  Celebrity / Public Figure
                 </Link>
               </li>
             </ul>
           </div>
 
-          {/* COLUMN 5: CONNECT (lg:col-span-2) */}
+          {/* COLUMN 5: INFORMATION & CONNECT (lg:col-span-2) */}
           <div className="lg:col-span-2 space-y-4">
             <h4 className="font-syne text-xs tracking-caps text-brand-orange mb-4 font-bold uppercase">
+              INFORMATION
+            </h4>
+            <ul className="space-y-2.5 font-syne text-xs tracking-wider text-brand-platinum/90 mb-6">
+              <li>
+                <Link href="#magazine" className="hover:text-brand-orange transition-colors font-bold text-brand-yellow-golden">
+                  Fashion Magazine
+                </Link>
+              </li>
+              <li>
+                <Link href="#about" className="hover:text-brand-orange transition-colors">
+                  About Us
+                </Link>
+              </li>
+              <li>
+                <Link href="#faq" className="hover:text-brand-orange transition-colors">
+                  FAQ
+                </Link>
+              </li>
+              <li>
+                <Link href="#nominations" className="hover:text-brand-orange transition-colors">
+                  Open Nominations
+                </Link>
+              </li>
+            </ul>
+
+            <h4 className="font-syne text-xs tracking-caps text-brand-yellow-golden mb-2 font-bold uppercase">
               CONNECT
             </h4>
             <ul className="space-y-3 font-sans text-xs text-brand-platinum/90">
@@ -181,7 +222,7 @@ export default function Footer() {
                 href={aravWebsiteUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-1.5 border border-brand-orange/40 bg-brand-void/90 px-3.5 py-2 text-[10px] font-syne tracking-caps font-bold text-brand-white hover:bg-brand-orange hover:border-brand-orange transition-all duration-300 group"
+                className="inline-flex items-center gap-1.5 border border-brand-orange/40 bg-black px-3.5 py-2 text-[10px] font-syne tracking-caps font-bold text-brand-white rounded-xl hover:bg-brand-orange hover:border-brand-orange transition-all duration-300 group"
               >
                 <span>VISIT WEBSITE →</span>
                 <ExternalLink className="w-3 h-3 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
@@ -194,25 +235,19 @@ export default function Footer() {
         {/* Action Callout Banner */}
         <div className="py-6 border-b border-white/10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
           <div>
-            <span className="font-syne text-xs tracking-caps text-brand-orange font-bold uppercase block mb-0.5">
-              REGISTRATIONS &amp; SPONSORSHIPS ARE OPEN
+            <span className="font-syne text-xs tracking-caps text-brand-yellow-golden font-bold uppercase block mb-0.5">
+              REGISTRATIONS &amp; SPONSORSHIPS OPEN
             </span>
             <p className="font-sans text-xs text-brand-platinum/80 font-light">
-              Official delegate registrations and sponsorship enquiries open for LifeStyle 2026 · Dubai.
+              Delegate registrations, artist nominations, and sponsorship enquiries open for LifeStyle 2026 · Dubai.
             </p>
           </div>
           <div className="flex flex-wrap items-center gap-3">
             <Link
-              href="/contact?type=Registration"
-              className="bg-brand-orange px-6 py-2.5 text-[11px] font-syne tracking-caps font-bold text-white hover:bg-[#ff6f2d] transition-colors"
+              href="#contact"
+              className="bg-gradient-to-r from-brand-orange to-brand-yellow-golden px-6 py-2.5 text-[11px] font-syne tracking-caps font-bold text-black rounded-xl hover:opacity-90 transition-opacity"
             >
               REGISTER / ENQUIRE →
-            </Link>
-            <Link
-              href="/contact?type=Sponsorship"
-              className="border border-brand-yellow-golden/50 bg-brand-void px-6 py-2.5 text-[11px] font-syne tracking-caps font-bold text-brand-white hover:bg-brand-yellow-golden/10 hover:border-brand-yellow-golden transition-colors"
-            >
-              SPONSORSHIP ENQUIRY →
             </Link>
           </div>
         </div>
@@ -220,7 +255,7 @@ export default function Footer() {
         {/* Bottom Copyright Bar */}
         <div className="flex flex-col sm:flex-row justify-between items-center pt-8 text-[11px] font-syne tracking-micro text-brand-platinum/70 gap-4">
           <div className="flex items-center gap-4 flex-wrap">
-            <span>2024–2026 FashAI Universal. All Rights Reserved.</span>
+            <span>© 2024–2026 FashAI Universal. All Rights Reserved.</span>
             <span className="text-white/20">|</span>
             <Link href="/privacy" className="hover:text-brand-orange transition-colors">
               Privacy Policy
@@ -230,9 +265,9 @@ export default function Footer() {
               Terms &amp; Conditions
             </Link>
           </div>
-          <div className="flex items-center gap-6 text-[10px] uppercase font-bold text-brand-orange">
+          <div className="flex items-center gap-6 text-[10px] uppercase font-bold text-brand-yellow-golden">
             <span>LIFESTYLE 2026 · DUBAI</span>
-            <span>POWERED BY ARAV INNOVATION</span>
+            <span>DUBAI, UAE &amp; INDIA</span>
           </div>
         </div>
       </div>

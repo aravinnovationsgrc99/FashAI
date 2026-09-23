@@ -5,25 +5,35 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import { ArrowRight, Sparkles } from "lucide-react";
 import { PEOPLE_MASTER_DATA, PeopleCategory } from "@/data/people";
-import TalentApplicationModal, { CategoryId } from "@/components/talent/TalentApplicationModal";
+import RoleApplicationModal, { RoleType } from "@/components/forms/RoleApplicationModal";
 
 export default function FashionCommunitySection() {
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [selectedCategoryId, setSelectedCategoryId] = useState<CategoryId>("fashion_designer");
+  const [selectedRole, setSelectedRole] = useState<RoleType>("designer");
 
-  const handleOpenApplication = (categoryId: CategoryId) => {
-    setSelectedCategoryId(categoryId);
+  const categoryToRoleMap: Record<string, RoleType> = {
+    fashion_designer: "designer",
+    model: "model",
+    makeup_artist: "makeup_artist",
+    fashion_stylist: "stylist",
+    influencer_creator: "influencer",
+    celebrity_public_figure: "celebrity",
+    choreographer: "choreographer",
+  };
+
+  const handleOpenApplication = (categoryId: string) => {
+    const role = categoryToRoleMap[categoryId] || "designer";
+    setSelectedRole(role);
     setIsModalOpen(true);
   };
 
   return (
-    <section id="people" className="relative py-24 sm:py-32 bg-brand-void border-b border-white/10 overflow-hidden">
+    <section id="community" className="relative py-24 sm:py-32 bg-black border-b border-white/10 overflow-hidden">
       {/* Atmosphere Background Glows */}
       <div className="absolute inset-0 pointer-events-none select-none overflow-hidden">
         <div className="absolute top-1/3 right-10 w-[550px] h-[550px] bg-brand-orange/10 blur-[170px] rounded-full" />
         <div className="absolute bottom-1/3 left-10 w-[500px] h-[500px] bg-brand-green/10 blur-[180px] rounded-full" />
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] bg-brand-yellow-golden/8 blur-[160px] rounded-full" />
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff03_1px,transparent_1px),linear-gradient(to_bottom,#ffffff03_1px,transparent_1px)] bg-[size:4rem_4rem]" />
         <div className="editorial-watermark absolute -bottom-10 right-0 text-[14vw] font-serif-display font-light uppercase tracking-tighter leading-none pointer-events-none select-none">
           TALENT
         </div>
@@ -38,15 +48,15 @@ export default function FashionCommunitySection() {
               <span>OFFICIAL TALENT NETWORK & RECRUITMENT</span>
             </div>
             <h2 className="font-serif-display text-4xl sm:text-6xl lg:text-7xl font-light text-brand-white uppercase">
-              JOIN OUR COMMUNITY
+              FASHION COMMUNITY & TALENT
             </h2>
           </div>
           <p className="font-sans text-xs sm:text-sm text-brand-platinum/90 max-w-md font-light leading-relaxed">
-            Join the creative network behind fashion, beauty, runway and lifestyle experiences. Explore opportunities across couture, modeling, makeup, styling, digital media, and public appearances.
+            Join the creative network behind fashion, beauty, runway and lifestyle experiences. Explore opportunities across couture, modeling, makeup, styling, choreography, digital media, and public appearances.
           </p>
         </div>
 
-        {/* 6 Category Editorial Card Composition Grid */}
+        {/* Category Editorial Card Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
           {PEOPLE_MASTER_DATA.map((category: PeopleCategory) => (
             <motion.div
@@ -55,12 +65,12 @@ export default function FashionCommunitySection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
-              className="group relative bg-[#0D0B0A] border border-brand-orange/30 overflow-hidden flex flex-col justify-between p-6 sm:p-8 hover:border-brand-orange transition-all duration-500 shadow-2xl"
+              className="group relative bg-[#0D0B0A] border border-brand-orange/30 rounded-2xl overflow-hidden flex flex-col justify-between p-6 sm:p-8 hover:border-brand-yellow-golden transition-all duration-500 shadow-2xl"
             >
               {/* Card Top Information */}
               <div className="space-y-3 mb-6">
                 <div className="flex items-center justify-between">
-                  <span className="text-[10px] font-syne tracking-micro text-brand-orange font-bold uppercase bg-brand-orange/10 border border-brand-orange/30 px-3 py-1">
+                  <span className="text-[10px] font-syne tracking-micro text-brand-orange font-bold uppercase bg-brand-orange/10 border border-brand-orange/30 px-3 py-1 rounded-full">
                     {category.tagline}
                   </span>
                 </div>
@@ -75,7 +85,7 @@ export default function FashionCommunitySection() {
               </div>
 
               {/* Image Frame */}
-              <div className="relative aspect-[4/5] w-full overflow-hidden mb-6 bg-black border border-white/10 group-hover:border-brand-orange/50 transition-colors">
+              <div className="relative aspect-[4/5] w-full overflow-hidden mb-6 bg-black rounded-xl border border-white/10 group-hover:border-brand-yellow-golden/50 transition-colors">
                 <Image
                   src={category.primaryImage}
                   alt={category.title}
@@ -88,34 +98,24 @@ export default function FashionCommunitySection() {
 
               {/* Card Bottom CTA Block */}
               <div className="pt-4 border-t border-white/10 space-y-3">
-                <div className="text-xs font-syne tracking-wider text-brand-orange font-bold uppercase">
-                  {category.ctaLabel}
-                </div>
-
                 <button
                   onClick={() => handleOpenApplication(category.categoryId)}
-                  className="w-full bg-brand-orange hover:bg-[#ff6f2d] text-white py-3 px-5 text-xs font-syne tracking-caps font-bold transition-all flex items-center justify-between shadow-lg hover:shadow-brand-orange/30 group-hover:scale-[1.01]"
+                  className="w-full bg-gradient-to-r from-brand-orange to-brand-yellow-golden hover:opacity-95 text-black py-3 px-5 text-xs font-syne tracking-caps font-bold transition-all flex items-center justify-between rounded-xl shadow-lg group-hover:scale-[1.01]"
                 >
-                  <span>APPLY NOW</span>
+                  <span>{category.ctaLabel}</span>
                   <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
                 </button>
-              </div>
-
-              {/* Subtle Corner Accent */}
-              <div className="absolute top-0 right-0 w-10 h-10 pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity">
-                <div className="absolute top-0 right-0 w-px h-5 bg-brand-orange" />
-                <div className="absolute top-0 right-0 h-px w-5 bg-brand-orange" />
               </div>
             </motion.div>
           ))}
         </div>
       </div>
 
-      {/* Full Recruitment Application Modal Drawer */}
-      <TalentApplicationModal
+      {/* Role-Specific Application Modal */}
+      <RoleApplicationModal
         isOpen={isModalOpen}
         onClose={() => setIsModalOpen(false)}
-        initialCategory={selectedCategoryId}
+        role={selectedRole}
       />
     </section>
   );
