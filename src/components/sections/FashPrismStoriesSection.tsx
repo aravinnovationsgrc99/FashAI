@@ -151,7 +151,7 @@ export default function FashPrismStoriesSection() {
                 <div className="absolute inset-0 bg-gradient-to-t from-[#080706] via-transparent to-black/40 opacity-90 group-hover:opacity-75 transition-opacity" />
 
                 {/* Top Badge */}
-                <div className="absolute top-4 left-4 inline-flex items-center px-3 py-1 bg-black/60 backdrop-blur-md border border-brand-yellow-golden/40 rounded-full text-[10px] font-syne text-brand-yellow-golden font-bold uppercase tracking-wider">
+                <div className="absolute top-4 left-4 text-[10px] font-syne text-brand-yellow-golden font-bold uppercase tracking-wider">
                   <span>{card.badge}</span>
                 </div>
               </div>
@@ -199,7 +199,7 @@ export default function FashPrismStoriesSection() {
                 <h4 className="font-serif-display text-lg sm:text-xl font-light uppercase tracking-wider text-brand-white">
                   {currentCategoryObj.title}
                 </h4>
-                <span className="text-xs font-syne text-brand-yellow-golden font-bold uppercase tracking-widest ml-2 px-2.5 py-0.5 border border-brand-yellow-golden/30 rounded-full bg-brand-yellow-golden/10">
+                <span className="text-xs font-syne text-brand-yellow-golden font-bold uppercase tracking-widest ml-2">
                   {activeImageIndex + 1} / {currentImages.length}
                 </span>
               </div>

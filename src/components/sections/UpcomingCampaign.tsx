@@ -22,9 +22,9 @@ export default function UpcomingCampaign() {
           className="flex flex-col items-center text-center"
         >
           {/* Eyebrow Label */}
-          <div className="inline-flex items-center gap-3 border border-brand-orange px-4 py-1.5 mb-8">
+          <div className="flex items-center gap-2 mb-6">
             <span className="h-1.5 w-1.5 bg-brand-orange animate-pulse" />
-            <span className="font-syne text-xs tracking-micro text-brand-orange font-bold">
+            <span className="font-syne text-xs tracking-micro text-brand-orange font-bold uppercase">
               THE NEXT CHAPTER / DUBAI 2026
             </span>
           </div>

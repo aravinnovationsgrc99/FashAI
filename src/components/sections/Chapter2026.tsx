@@ -17,8 +17,8 @@ export default function Chapter2026() {
           transition={{ duration: 0.9 }}
           className="flex flex-col items-center text-center max-w-5xl mx-auto"
         >
-          {/* Tagline Badge */}
-          <div className="inline-flex items-center gap-3 border border-brand-orange/40 px-4 py-1.5 mb-8 bg-brand-void/90">
+          {/* Unboxed Clean Eyebrow */}
+          <div className="flex items-center gap-3 mb-6">
             <span className="h-1.5 w-1.5 rounded-full bg-brand-orange animate-pulse" />
             <span className="font-syne text-xs tracking-micro text-brand-orange font-bold uppercase">
               UPCOMING CHAPTER

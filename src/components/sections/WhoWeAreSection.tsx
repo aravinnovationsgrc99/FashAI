@@ -17,9 +17,9 @@ export default function WhoWeAreSection() {
           transition={{ duration: 0.8 }}
           className="space-y-6 sm:space-y-8 text-center"
         >
-          {/* Label Header */}
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-brand-yellow-golden/10 border border-brand-yellow-golden/30 text-brand-yellow-golden text-xs font-syne tracking-micro font-bold uppercase">
-            <Sparkles className="w-3.5 h-3.5" />
+          {/* Unboxed Clean Editorial Label */}
+          <div className="flex items-center justify-center gap-2 text-xs font-syne tracking-micro text-brand-yellow-golden font-bold uppercase mb-2">
+            <Sparkles className="w-3.5 h-3.5 text-brand-yellow-golden" />
             <span>WHO WE ARE</span>
           </div>
 

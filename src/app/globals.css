@@ -5,7 +5,7 @@
 @tailwind utilities;
 
 :root {
-  /* Approved Brand Color Tokens (Hex values preserved strictly) */
+  /* Approved Brand Color Tokens */
   --color-orange: #F15E1C;
   --color-green: #2E936F;
   --color-white: #FFFFFF;
@@ -33,24 +33,26 @@ html.dark, :root {
   --color-text-muted: #8E8B85;
   --border-color-light: rgba(255, 255, 255, 0.1);
   --border-color-orange: rgba(241, 94, 28, 0.35);
+  color-scheme: dark;
 }
 
-/* Approved Light Mode Surface Variables (Warm, Clean, Airy Editorial White) */
+/* Approved Light Mode Surface Variables (Clean, Airy Editorial White & Cream) */
 html.light {
-  --bg-void: #FAF8F5;
-  --bg-atelier: #FFFFFF;
+  --bg-void: #FFFFFF;
+  --bg-atelier: #FAF8F5;
   --bg-charcoal: #F5F2EC;
-  --color-text-main: #0A0A09;
+  --color-text-main: #111111;
   --color-text-muted: #57544E;
-  --border-color-light: rgba(10, 10, 9, 0.12);
+  --border-color-light: rgba(17, 17, 17, 0.12);
   --border-color-orange: rgba(241, 94, 28, 0.4);
+  color-scheme: light;
 }
 
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  border-radius: 0px !important; /* Strict sharp 0px corners */
+  border-radius: 0px !important;
 }
 
 html {
@@ -75,90 +77,111 @@ body {
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* Approved Light Mode Surface & Typography Tokens */
-html.light {
-  --bg-void: #FFFFFF;
-  --bg-atelier: #FAF8F5;
-  --bg-charcoal: #F7D7B0;
-  --color-text-main: #111111;
-  --color-text-muted: #57544E;
-  --border-color-light: rgba(17, 17, 17, 0.12);
-  --border-color-orange: rgba(241, 94, 28, 0.4);
-}
-
 /* Base Body Surface in Light Mode */
 html.light body {
-  background-color: #FFFFFF;
-  color: #111111;
+  background-color: #FFFFFF !important;
+  color: #111111 !important;
 }
 
-/* Global Section & Surface Overrides for Light Mode */
-html.light .bg-brand-void {
+/* ==================================================== */
+/* COMPREHENSIVE LIGHT MODE OVERRIDE ENGINE */
+/* ==================================================== */
+
+/* Primary Section & Card Background Inversions in Light Mode */
+html.light .bg-brand-void,
+html.light .bg-brand-atelier,
+html.light [class*="bg-[#050505]"],
+html.light [class*="bg-[#030303]"],
+html.light [class*="bg-[#060606]"],
+html.light [class*="bg-[#070605]"],
+html.light [class*="bg-[#070707]"],
+html.light [class*="bg-[#080706]"],
+html.light [class*="bg-[#080707]"],
+html.light [class*="bg-[#080808]"],
+html.light [class*="bg-[#090807]"],
+html.light [class*="bg-[#0A0908]"],
+html.light [class*="bg-[#0A0A09]"],
+html.light [class*="bg-[#0A0A0A]"],
+html.light [class*="bg-[#0B0908]"],
+html.light [class*="bg-[#0B0A09]"],
+html.light [class*="bg-[#0D0C0A]"],
+html.light [class*="bg-[#0D0D0D]"],
+html.light [class*="bg-[#0E0D0B]"],
+html.light [class*="bg-[#121110]"],
+html.light [class*="bg-[#121212]"],
+html.light [class*="bg-[#141210]"],
+html.light [class*="bg-[#181614]"],
+html.light [class*="bg-[#000000]"],
+html.light [class*="bg-[#040404]"],
+html.light .bg-black:not(.bg-brand-yellow-golden):not(button.bg-brand-yellow-golden) {
   background-color: #FFFFFF !important;
 }
 
-html.light .bg-brand-atelier {
-  background-color: #FAF8F5 !important;
+/* Elevated Light Card Surfaces */
+html.light [class*="bg-[#080706]"],
+html.light [class*="bg-[#0A0908]"],
+html.light [class*="bg-[#090807]"],
+html.light [class*="bg-[#0E0D0B]"],
+html.light [class*="bg-[#060504]"],
+html.light [class*="bg-[#090706]"] {
+  background-color: #F8F6F2 !important;
 }
 
-html.light .bg-brand-charcoal {
-  background-color: #F7D7B0 !important;
+/* Translucent Surface Overlays in Light Mode */
+html.light [class*="bg-black/95"],
+html.light [class*="bg-black/90"],
+html.light [class*="bg-black/85"],
+html.light [class*="bg-black/80"],
+html.light [class*="bg-black/75"] {
+  background-color: rgba(255, 255, 255, 0.96) !important;
 }
 
-html.light .bg-\[\#0B0908\],
-html.light .bg-\[\#080808\],
-html.light .bg-\[\#050505\],
-html.light .bg-black {
-  background-color: #FFFFFF !important;
+html.light [class*="bg-black/60"],
+html.light [class*="bg-black/50"],
+html.light [class*="bg-black/40"] {
+  background-color: rgba(248, 246, 242, 0.92) !important;
 }
 
-html.light .bg-brand-void\/90,
-html.light .bg-brand-void\/80,
-html.light .bg-brand-charcoal\/80,
-html.light .bg-brand-charcoal\/90,
-html.light .bg-\[\#0B0908\]\/90,
-html.light .bg-\[\#080808\]\/95 {
-  background-color: rgba(255, 255, 255, 0.95) !important;
-}
-
-/* Translucent Overlays (Non-Image containers) */
-html.light .bg-black\/95,
-html.light .bg-black\/90,
-html.light .bg-black\/85,
-html.light .bg-black\/80,
-html.light .bg-black\/75 {
-  background-color: rgba(250, 248, 245, 0.94) !important;
-}
-
-html.light .bg-black\/40 {
-  background-color: rgba(255, 255, 255, 0.92) !important;
-}
-
-/* Header & Sticky Navbar System in Light Mode (Screenshot 4 Fix) */
+/* Header & Scrolled Navbar System in Light Mode */
 html.light header {
   transition: background-color 0.3s ease, border-color 0.3s ease;
 }
 
-html.light header.bg-black\/40,
+html.light header[class*="bg-black"],
 html.light .html-light-header-scrolled {
-  background-color: rgba(255, 255, 255, 0.95) !important;
+  background-color: rgba(255, 255, 255, 0.96) !important;
   border-bottom-color: rgba(17, 17, 17, 0.1) !important;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05) !important;
 }
 
-/* Universal Light Mode Typography System (Excluding Watermark Elements) */
-html.light .text-brand-white:not(.editorial-watermark),
-html.light .text-brand-off-white:not(.editorial-watermark),
-html.light .text-brand-platinum:not(.editorial-watermark),
-html.light .text-white:not(.editorial-watermark),
-html.light [class*="text-brand-white"]:not(.editorial-watermark),
-html.light [class*="text-brand-off-white"]:not(.editorial-watermark),
-html.light [class*="text-brand-platinum"]:not(.editorial-watermark),
-html.light [class*="text-white/"]:not(.editorial-watermark) {
+/* Mobile Menu Container in Light Mode */
+html.light .mobile-menu-container,
+html.light [class*="bg-[#080808]"] {
+  background-color: #FFFFFF !important;
   color: #111111 !important;
 }
 
-/* Background Watermark Typography Rule for Both Themes */
+/* Light Mode Typography System */
+html.light .text-brand-white:not(.editorial-watermark):not(.keep-white),
+html.light .text-brand-off-white:not(.editorial-watermark):not(.keep-white),
+html.light .text-brand-platinum:not(.editorial-watermark):not(.keep-white),
+html.light .text-white:not(.editorial-watermark):not(.keep-white),
+html.light [class*="text-brand-white"]:not(.editorial-watermark):not(.keep-white),
+html.light [class*="text-brand-off-white"]:not(.editorial-watermark):not(.keep-white),
+html.light [class*="text-brand-platinum"]:not(.editorial-watermark):not(.keep-white),
+html.light [class*="text-white/"]:not(.editorial-watermark):not(.keep-white) {
+  color: #111111 !important;
+}
+
+html.light [class*="text-brand-platinum/80"],
+html.light [class*="text-brand-platinum/90"],
+html.light [class*="text-white/80"],
+html.light [class*="text-white/70"],
+html.light [class*="text-white/60"] {
+  color: #444444 !important;
+}
+
+/* Background Watermark Typography Rule */
 .editorial-watermark,
 html.dark .editorial-watermark {
   color: rgba(255, 255, 255, 0.015) !important;
@@ -174,19 +197,7 @@ html.light .editorial-watermark {
   user-select: none !important;
 }
 
-/* Preserve Crisp White Typography for Primary Buttons & Solid Badges */
-html.light .bg-brand-orange,
-html.light .bg-brand-orange *,
-html.light .bg-\[\#ff6f2d\],
-html.light .bg-\[\#ff6f2d\] *,
-html.light .bg-brand-green,
-html.light .bg-brand-green *,
-html.light a.bg-brand-orange,
-html.light button.bg-brand-orange {
-  color: #FFFFFF !important;
-}
-
-/* Retain Approved Brand Accent Color Tokens */
+/* Brand Accent Color Tokens in Light Mode */
 html.light .text-brand-orange {
   color: #F15E1C !important;
 }
@@ -200,47 +211,41 @@ html.light .text-brand-gold {
   color: #FAB60A !important;
 }
 
-html.light .text-brand-lemon {
-  color: #C79500 !important;
-}
-
-html.light .text-brand-peach {
-  color: #F7D7B0 !important;
+/* Primary Gold CTA Buttons in Light Mode: Black text for contrast */
+html.light .bg-brand-yellow-golden,
+html.light .bg-brand-yellow-golden * {
+  color: #000000 !important;
 }
 
 /* Hairline Borders in Light Mode */
-html.light .border-white\/10,
-html.light .border-white\/15,
-html.light .border-white\/20,
-html.light .border-white\/30,
+html.light [class*="border-white/10"],
+html.light [class*="border-white/15"],
+html.light [class*="border-white/20"],
+html.light [class*="border-white/30"],
+html.light [class*="border-white/5"],
 html.light .border-hairline-light {
   border-color: rgba(17, 17, 17, 0.12) !important;
 }
 
-html.light .border-hairline-orange,
-html.light .border-brand-orange\/30,
-html.light .border-brand-orange\/40 {
-  border-color: rgba(241, 94, 28, 0.4) !important;
+html.light [class*="border-brand-yellow-golden/40"],
+html.light [class*="border-brand-yellow-golden/50"],
+html.light [class*="border-brand-yellow-golden/60"],
+html.light [class*="border-brand-yellow-golden/70"] {
+  border-color: rgba(250, 182, 10, 0.6) !important;
 }
 
-html.light .border-hairline-gold,
-html.light .border-brand-yellow-golden\/40,
-html.light .border-brand-yellow-golden\/50 {
-  border-color: rgba(250, 182, 10, 0.5) !important;
-}
-
-/* Form Controls, Inputs, Selects & Placeholders in Light Mode (Screenshot 3 Fix) */
+/* Form Controls, Inputs, Selects & Placeholders in Light Mode */
 html.light input,
 html.light textarea,
 html.light select {
   background-color: #FFFFFF !important;
   color: #111111 !important;
-  border-color: rgba(247, 215, 176, 0.9) !important;
+  border-color: rgba(17, 17, 17, 0.2) !important;
 }
 
 html.light input::placeholder,
 html.light textarea::placeholder {
-  color: rgba(17, 17, 17, 0.55) !important;
+  color: rgba(17, 17, 17, 0.5) !important;
 }
 
 html.light select option {
@@ -252,46 +257,35 @@ html.light input:focus,
 html.light textarea:focus,
 html.light select:focus {
   border-color: #F15E1C !important;
+  box-shadow: 0 0 0 2px rgba(241, 94, 28, 0.2) !important;
   outline: none !important;
 }
 
-/* Image Background Gradient Overlays in Light Mode (Screenshot 2 Fix — Keeps Photographs Vivid) */
-html.light .from-brand-void,
-html.light .from-\[\#0B0908\] {
-  --tw-gradient-from: rgba(255, 255, 255, 0.85) var(--tw-gradient-from-position) !important;
-  --tw-gradient-to: rgba(255, 255, 255, 0) var(--tw-gradient-to-position) !important;
-  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to) !important;
-}
-
-html.light .via-brand-void\/80 {
-  --tw-gradient-via-stops: var(--tw-gradient-from), rgba(255, 255, 255, 0.5) var(--tw-gradient-via-position), var(--tw-gradient-to) !important;
-}
-
-html.light .bg-vignette {
-  background: radial-gradient(circle at center, transparent 40%, rgba(255, 255, 255, 0.85) 100%) !important;
-}
-
-html.light .bg-cinematic-overlay {
-  background: linear-gradient(180deg, rgba(255,255,255,0.4) 0%, rgba(255,255,255,0.1) 50%, rgba(255,255,255,0.85) 100%) !important;
-}
-
-/* Footer Background in Light Mode */
-html.light footer {
-  background-color: #F7D7B0 !important;
+/* Modals & Dialogs in Light Mode */
+html.light [role="dialog"] {
+  background-color: #FFFFFF !important;
   color: #111111 !important;
+  border-color: rgba(250, 182, 10, 0.5) !important;
+}
+
+/* Footer Surface in Light Mode */
+html.light footer {
+  background-color: #FAF8F5 !important;
+  color: #111111 !important;
+  border-top-color: rgba(17, 17, 17, 0.1) !important;
 }
 
 html.light footer a {
-  color: #111111;
+  color: #333333 !important;
 }
 
 html.light footer a:hover {
   color: #F15E1C !important;
 }
 
-/* 3D Canvas Canvas Opacity in Light Mode */
+/* 3D Canvas Opacity in Light Mode */
 html.light canvas {
-  opacity: 0.45 !important;
+  opacity: 0.35 !important;
 }
 
 /* Safe area padding utilities */
@@ -347,7 +341,7 @@ html.light canvas {
   letter-spacing: 0.28em;
 }
 
-/* Brand Gradients (Strictly approved colors only) */
+/* Brand Gradients */
 .text-orange-gradient {
   background: linear-gradient(135deg, #FF8243 0%, #F15E1C 50%, #D14506 100%);
   -webkit-background-clip: text;
@@ -366,7 +360,7 @@ html.light canvas {
   -webkit-text-fill-color: transparent;
 }
 
-/* Unified Editorial Container & Grid Utilities for exact page alignment */
+/* Unified Editorial Container & Grid Utilities */
 .container-editorial {
   width: 92vw;
   max-width: 1600px;

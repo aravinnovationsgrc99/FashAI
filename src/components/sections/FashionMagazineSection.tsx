@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
-import { ArrowRight, Sparkles, BookOpen } from "lucide-react";
+import { ArrowRight, Sparkles } from "lucide-react";
 import MagazineArticleModal, { MagazineArticle } from "@/components/magazine/MagazineArticleModal";
 
 const ARTICLES_DATA: MagazineArticle[] = [
@@ -144,7 +144,7 @@ export default function FashionMagazineSection() {
         {/* Magazine Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-8 sm:mb-10 border-b border-white/10 pb-6 sm:pb-8">
           <div>
-            <div className="flex items-center gap-2 text-xs font-syne tracking-micro text-brand-yellow-golden font-bold uppercase mb-3 bg-brand-yellow-golden/10 border border-brand-yellow-golden/30 px-3 py-1 rounded-full w-fit">
+            <div className="flex items-center gap-2 text-xs font-syne tracking-micro text-brand-yellow-golden font-bold uppercase mb-3">
               <Sparkles className="w-3.5 h-3.5" />
               <span>FASHAI UNIVERSAL EDITORIAL</span>
             </div>
@@ -206,7 +206,7 @@ export default function FashionMagazineSection() {
               <div className="lg:col-span-5 p-6 sm:p-10 flex flex-col justify-between space-y-6">
                 <div>
                   <div className="flex items-center gap-3 mb-4">
-                    <span className="text-[10px] font-syne text-brand-yellow-golden font-bold uppercase tracking-wider bg-brand-yellow-golden/10 border border-brand-yellow-golden/30 px-3 py-1 rounded-full">
+                    <span className="text-[10px] font-syne text-brand-yellow-golden font-bold uppercase tracking-wider">
                       FEATURED ARTICLE · {featuredArticle.category}
                     </span>
                     <span className="text-[10px] font-syne text-brand-platinum/60 uppercase">
@@ -263,7 +263,7 @@ export default function FashionMagazineSection() {
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-[#090807] via-transparent to-transparent opacity-60" />
                       <div className="absolute top-3 left-3">
-                        <span className="text-[9px] font-syne text-brand-yellow-golden font-bold uppercase tracking-wider bg-black/80 backdrop-blur-sm border border-white/15 px-2.5 py-1 rounded-full">
+                        <span className="text-[9px] font-syne text-brand-yellow-golden font-bold uppercase tracking-wider">
                           {article.category}
                         </span>
                       </div>

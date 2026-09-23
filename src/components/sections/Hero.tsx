@@ -7,82 +7,79 @@ import Image from "next/image";
 
 export default function Hero() {
   const [videoError, setVideoError] = useState(false);
-  const [videoLoaded, setVideoLoaded] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
 
-  // Enforce strict 0s -> 7.9s smooth looping boundary
+  // Enforce smooth looping boundary at 7.9s
   const handleTimeUpdate = () => {
     if (videoRef.current && videoRef.current.currentTime >= 7.9) {
       videoRef.current.currentTime = 0;
-      videoRef.current.play().catch(() => {
-        setVideoError(true);
-      });
     }
   };
 
   useEffect(() => {
-    if (videoRef.current) {
-      videoRef.current.currentTime = 0;
-      const playPromise = videoRef.current.play();
-      if (playPromise !== undefined) {
-        playPromise
-          .then(() => {
-            setVideoLoaded(true);
-          })
-          .catch(() => {
-            // If autoplay or playback fails critically, activate fallback image
-            setVideoError(true);
-          });
+    const video = videoRef.current;
+    if (!video) return;
+
+    video.currentTime = 0;
+
+    const startVideo = async () => {
+      try {
+        await video.play();
+      } catch {
+        // Retry playing on first touch/click interaction if browser autoplay policy delays startup
+        const handleUserInteraction = () => {
+          video.play().catch(() => {});
+          window.removeEventListener("touchstart", handleUserInteraction);
+          window.removeEventListener("click", handleUserInteraction);
+        };
+        window.addEventListener("touchstart", handleUserInteraction, { once: true });
+        window.addEventListener("click", handleUserInteraction, { once: true });
       }
-    }
+    };
+
+    startVideo();
   }, []);
 
   return (
     <section className="relative min-h-[100vh] min-h-[100svh] w-full flex flex-col justify-between pt-24 sm:pt-28 pb-6 px-4 sm:px-8 lg:px-12 overflow-hidden bg-black text-brand-white">
       
-      {/* LAYER 1: Primary Video & Defensive Fallback Media Container */}
-      <div className="absolute inset-0 w-full h-full z-0 pointer-events-none select-none overflow-hidden">
-        {/* Fallback Backup Image (Rendered in exact same container, activates smoothly on video error) */}
-        <Image
-          src="/assets/hero/fallback.png"
-          alt=""
-          role="presentation"
-          aria-hidden="true"
-          fill
-          priority
-          sizes="100vw"
-          className={`object-cover object-center scale-[1.05] transition-opacity duration-500 ease-in-out ${
-            videoError ? "opacity-100" : "opacity-0"
-          }`}
-        />
-
-        {/* Primary Hero Background Video */}
-        {!videoError && (
-          <video
-            ref={videoRef}
-            autoPlay
-            muted
-            playsInline
-            loop
-            preload="auto"
-            poster="/assets/hero/fallback.png"
-            onTimeUpdate={handleTimeUpdate}
-            onCanPlay={() => setVideoLoaded(true)}
-            onError={() => setVideoError(true)}
-            className={`absolute inset-0 w-full h-full object-cover object-center scale-[1.05] origin-center transition-opacity duration-500 ease-in-out ${
-              videoLoaded ? "opacity-100" : "opacity-90"
-            }`}
-          >
-            <source src="/videos/homepage-main.mp4" type="video/mp4" />
-          </video>
+      {/* LAYER 1: Primary Video & Backup Media Container */}
+      <div className="absolute inset-0 w-full h-full z-0 pointer-events-none select-none overflow-hidden bg-black">
+        {/* Fallback Backup Image (Only rendered if video has a fatal decode/file error) */}
+        {videoError && (
+          <Image
+            src="/assets/hero/fallback.png"
+            alt=""
+            role="presentation"
+            aria-hidden="true"
+            fill
+            priority
+            sizes="100vw"
+            className="object-cover object-center scale-[1.05]"
+          />
         )}
+
+        {/* Primary Hero Background Video - Plays Continuously */}
+        <video
+          ref={videoRef}
+          autoPlay
+          muted
+          playsInline
+          loop
+          preload="auto"
+          onTimeUpdate={handleTimeUpdate}
+          onError={() => setVideoError(true)}
+          className="absolute inset-0 w-full h-full object-cover object-center scale-[1.05] origin-center opacity-100"
+        >
+          <source src="/videos/homepage-main.mp4" type="video/mp4" />
+        </video>
       </div>
 
-      {/* LAYER 2: Readability Gradients (Video remains sharp & visible) */}
+      {/* LAYER 2: Readability Gradients */}
       <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/35 to-black/85 pointer-events-none z-[1]" />
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-black/65 via-transparent to-transparent pointer-events-none z-[1]" />
 
-      {/* LAYER 3: Main Centered Editorial Composition (Z-10) */}
+      {/* LAYER 3: Main Centered Editorial Composition */}
       <div className="relative z-10 my-auto container-editorial py-4 sm:py-6 flex flex-col items-center justify-center text-center">
         <motion.div
           initial="hidden"

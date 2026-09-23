@@ -28,7 +28,7 @@ export default function VipGuestsSection() {
           <div>
             <div className="flex items-center gap-2 text-xs font-syne tracking-micro text-brand-yellow-golden font-bold uppercase mb-3">
               <Award className="w-4 h-4 text-brand-yellow-golden" />
-              <span>EDITORIAL CHAPTER 03</span>
+              <span>DISTINGUISHED GUESTS</span>
             </div>
             <h2 className="font-serif-display text-4xl sm:text-6xl lg:text-7xl font-light text-brand-white uppercase leading-none">
               VIP <span className="font-serif italic font-normal text-brand-yellow-golden capitalize">Guests</span>
@@ -61,9 +61,7 @@ export default function VipGuestsSection() {
             <div className="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent opacity-90" />
 
             <div className="relative z-10 p-6 sm:p-8 space-y-2">
-              <div className="inline-flex items-center gap-2 px-3 py-1 bg-brand-yellow-golden/10 border border-brand-yellow-golden/40 rounded-full text-[10px] font-syne text-brand-yellow-golden font-bold uppercase tracking-wider">
-                <span>{featuredGuest.tag}</span>
-              </div>
+              <span className="text-[10px] font-syne text-brand-yellow-golden font-bold uppercase tracking-wider block">{featuredGuest.tag}</span>
               <h3 className="font-serif-display text-2xl sm:text-3xl text-brand-white font-light uppercase">
                 {featuredGuest.title}
               </h3>

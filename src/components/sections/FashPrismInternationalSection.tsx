@@ -28,7 +28,7 @@ export default function FashPrismInternationalSection() {
           <div>
             <div className="flex items-center gap-2 text-xs font-syne tracking-micro text-brand-yellow-golden font-bold uppercase mb-3">
               <Globe className="w-4 h-4 text-brand-yellow-golden" />
-              <span>EDITORIAL CHAPTER 02</span>
+              <span>GLOBAL STAGE & EXPERIENCES</span>
             </div>
             <h2 className="font-serif-display text-4xl sm:text-6xl lg:text-7xl font-light text-brand-white uppercase leading-none">
               FASHPRISM <span className="font-serif italic font-normal text-brand-yellow-golden capitalize">International</span>
@@ -103,9 +103,8 @@ export default function FashPrismInternationalSection() {
               </div>
 
               <div className="p-4 sm:p-5 flex flex-col justify-between flex-grow bg-[#050505] space-y-2 border-t border-white/5">
-                <div className="flex items-center justify-between text-[10px] font-syne tracking-wider text-brand-yellow-golden uppercase font-bold">
+                <div className="text-[10px] font-syne tracking-wider text-brand-yellow-golden uppercase font-bold">
                   <span>{img.tag}</span>
-                  <span className="text-white/40">CHAPTER 02 · 0{idx + 2}</span>
                 </div>
                 <h4 className="font-serif-display text-lg font-light text-brand-white uppercase leading-snug">
                   {img.title}

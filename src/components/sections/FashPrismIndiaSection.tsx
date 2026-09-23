@@ -29,7 +29,7 @@ export default function FashPrismIndiaSection() {
           <div>
             <div className="flex items-center gap-2 text-xs font-syne tracking-micro text-brand-yellow-golden font-bold uppercase mb-3">
               <Sparkles className="w-4 h-4 text-brand-yellow-golden" />
-              <span>EDITORIAL CHAPTER 01</span>
+              <span>COUTURE & ARCHIVE</span>
             </div>
             <h2 className="font-serif-display text-4xl sm:text-6xl lg:text-7xl font-light text-brand-white uppercase leading-none">
               FASHPRISM <span className="font-serif italic font-normal text-brand-yellow-golden capitalize">India</span>
@@ -100,9 +100,8 @@ export default function FashPrismIndiaSection() {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-transparent to-transparent opacity-80 group-hover:opacity-60 transition-opacity" />
 
-                  <div className="absolute bottom-3 left-4 right-4 flex items-center justify-between text-[10px] font-syne text-brand-yellow-golden uppercase font-bold tracking-wider">
+                  <div className="absolute bottom-3 left-4 right-4 text-[10px] font-syne text-brand-yellow-golden uppercase font-bold tracking-wider">
                     <span>{img.tag}</span>
-                    <span className="text-white/60">0{idx + 2}</span>
                   </div>
                 </div>
               </motion.div>

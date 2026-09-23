@@ -9,11 +9,11 @@ export const metadata: Metadata = {
     "Official application interface for Model, Designer, Makeup Artist, Fashion Stylist, Choreographer, Influencer, Celebrity, CSTP, and Fashion Commentary opportunities.",
 };
 
-export default function ApplyIndexPage() {
+export default function ApplicationsPage() {
   return (
     <main className="min-h-screen bg-[#050505] text-brand-white pt-20">
       <Header />
-      <ApplicationSelectionPage basePath="/apply" />
+      <ApplicationSelectionPage basePath="/applications" />
       <Footer />
     </main>
   );

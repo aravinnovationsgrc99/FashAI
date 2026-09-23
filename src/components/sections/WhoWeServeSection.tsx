@@ -86,8 +86,8 @@ export default function WhoWeServeSection() {
         {/* Section Editorial Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-8 sm:mb-10 border-b border-white/10 pb-6 sm:pb-8">
           <div>
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-yellow-golden/10 border border-brand-yellow-golden/30 text-brand-yellow-golden text-xs font-syne tracking-micro font-bold uppercase mb-4">
-              <Sparkles className="w-3.5 h-3.5" />
+            <div className="flex items-center gap-2 text-xs font-syne tracking-micro text-brand-yellow-golden font-bold uppercase mb-3">
+              <Sparkles className="w-3.5 h-3.5 text-brand-yellow-golden" />
               <span>THE CREATIVE ECOSYSTEM</span>
             </div>
             <h2 className="font-serif-display text-4xl sm:text-6xl lg:text-7xl font-light text-brand-white uppercase leading-[0.95]">
@@ -106,7 +106,7 @@ export default function WhoWeServeSection() {
           </div>
         </div>
 
-        {/* Asymmetric Full-Width Editorial Layout (No Card Grid) */}
+        {/* Asymmetric Full-Width Editorial Layout */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
           {/* LEFT: Flowing Typographic Discipline Navigation */}
           <div className="lg:col-span-6 space-y-2">
@@ -172,7 +172,7 @@ export default function WhoWeServeSection() {
             })}
           </div>
 
-          {/* RIGHT: Dynamic Editorial Image Showcase (100% Existing Website Imagery) */}
+          {/* RIGHT: Dynamic Editorial Image Showcase */}
           <div className="lg:col-span-6 relative">
             <div className="relative aspect-[4/5] w-full rounded-3xl overflow-hidden border border-brand-yellow-golden/40 shadow-2xl bg-[#090807]">
               <AnimatePresence mode="wait">

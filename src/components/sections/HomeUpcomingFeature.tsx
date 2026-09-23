@@ -38,7 +38,7 @@ export default function HomeUpcomingFeature() {
           className="flex flex-col items-center text-center"
         >
           {/* Eyebrow */}
-          <div className="inline-flex items-center gap-2.5 border border-brand-orange/40 px-4 py-1.5 mb-6 bg-brand-void/90 rounded-full backdrop-blur-md">
+          <div className="flex items-center gap-2 mb-4">
             <span className="h-2 w-2 rounded-full bg-brand-orange animate-pulse" />
             <span className="font-syne text-xs tracking-micro text-brand-orange font-bold uppercase">
               UPCOMING EVENT • DUBAI 2026

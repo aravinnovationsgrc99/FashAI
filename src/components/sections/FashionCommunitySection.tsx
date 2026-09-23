@@ -45,10 +45,10 @@ export default function FashionCommunitySection() {
           <div>
             <div className="flex items-center gap-3 text-xs font-syne tracking-micro text-brand-orange font-bold uppercase mb-3">
               <Sparkles className="w-4 h-4 text-brand-yellow-golden" />
-              <span>OFFICIAL TALENT NETWORK & RECRUITMENT</span>
+              <span>OFFICIAL TALENT NETWORK &amp; RECRUITMENT</span>
             </div>
             <h2 className="font-serif-display text-4xl sm:text-6xl lg:text-7xl font-light text-brand-white uppercase">
-              FASHION COMMUNITY & TALENT
+              FASHION COMMUNITY &amp; TALENT
             </h2>
           </div>
           <p className="font-sans text-xs sm:text-sm text-brand-platinum/90 max-w-md font-light leading-relaxed">
@@ -70,7 +70,7 @@ export default function FashionCommunitySection() {
               {/* Card Top Information */}
               <div className="space-y-3 mb-6">
                 <div className="flex items-center justify-between">
-                  <span className="text-[10px] font-syne tracking-micro text-brand-orange font-bold uppercase bg-brand-orange/10 border border-brand-orange/30 px-3 py-1 rounded-full">
+                  <span className="text-[10px] font-syne tracking-micro text-brand-orange font-bold uppercase">
                     {category.tagline}
                   </span>
                 </div>

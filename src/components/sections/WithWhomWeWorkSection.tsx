@@ -196,11 +196,11 @@ export default function WithWhomWeWorkSection() {
                 {/* Content Details Below Image */}
                 <div className="space-y-4 pt-2">
                   <div className="flex items-center gap-3">
-                    <span className="text-[10px] font-syne tracking-micro text-brand-yellow-golden font-bold uppercase px-3 py-1 bg-brand-yellow-golden/10 border border-brand-yellow-golden/30 rounded-full">
+                    <span className="text-[10px] font-syne tracking-micro text-brand-yellow-golden font-bold uppercase">
                       {activeDiscipline.badge}
                     </span>
                     <span className="text-xs font-syne tracking-wider text-white/50 uppercase font-bold">
-                      DISCIPLINE {activeDiscipline.number}
+                      DISCIPLINE
                     </span>
                   </div>
 
@@ -232,7 +232,7 @@ export default function WithWhomWeWorkSection() {
           <div className="lg:col-span-5 space-y-4">
             <div className="hidden lg:flex items-center justify-between text-xs font-syne tracking-wider text-brand-yellow-golden font-bold uppercase mb-2">
               <span>DISCIPLINES</span>
-              <span>08 DISCIPLINES</span>
+              <span>DISCIPLINES</span>
             </div>
 
             {/* DESKTOP VERTICAL DISCIPLINE SELECTOR */}
@@ -254,13 +254,6 @@ export default function WithWhomWeWorkSection() {
                     }`}
                   >
                     <div className="flex items-center gap-4">
-                      <span
-                        className={`font-syne text-xs font-bold transition-colors ${
-                          isActive ? "text-brand-yellow-golden" : "text-white/40"
-                        }`}
-                      >
-                        {item.number}
-                      </span>
                       <span className="font-syne text-lg sm:text-xl font-bold tracking-wider uppercase group-hover:translate-x-1.5 transition-transform duration-300">
                         {item.label}
                       </span>

@@ -17,8 +17,8 @@ export default function WhatWeDoSection() {
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-8 sm:mb-10 border-b border-white/10 pb-6 sm:pb-8">
           <div>
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-yellow-golden/10 border border-brand-yellow-golden/40 text-brand-yellow-golden text-xs font-syne tracking-micro font-bold uppercase mb-3">
-              <Layers className="w-3.5 h-3.5" />
+            <div className="flex items-center gap-2 text-xs font-syne tracking-micro text-brand-yellow-golden font-bold uppercase mb-3">
+              <Layers className="w-3.5 h-3.5 text-brand-yellow-golden" />
               <span>EVENT FORMATS &amp; SERVICES</span>
             </div>
             <h2 className="font-serif-display text-4xl sm:text-6xl font-light text-brand-white uppercase leading-none">
@@ -42,7 +42,7 @@ export default function WhatWeDoSection() {
           >
             <div>
               <div className="flex items-center justify-between mb-4">
-                <span className="text-[10px] font-syne tracking-widest text-brand-yellow-golden uppercase font-bold px-3 py-1 bg-brand-yellow-golden/10 rounded-full border border-brand-yellow-golden/40">
+                <span className="text-[10px] font-syne tracking-widest text-brand-yellow-golden uppercase font-bold">
                   FLAGSHIP FORMAT
                 </span>
                 <Sparkles className="w-4 h-4 text-brand-yellow-golden/70" />

@@ -43,7 +43,7 @@ export default function Countdown({ targetDate }: CountdownProps) {
 
   if (!targetDate || !timeLeft) {
     return (
-      <div className="inline-flex items-center gap-4 border border-brand-orange/40 bg-brand-void/80 px-6 py-4">
+      <div className="flex items-center gap-3">
         <span className="h-2 w-2 bg-brand-orange animate-ping" />
         <span className="font-syne text-xs tracking-micro text-brand-gold font-bold">
           STATUS: NEXT CHAPTER / 2026 DUBAI

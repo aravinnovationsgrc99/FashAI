@@ -60,7 +60,7 @@ export default function OurEventsSection() {
 
             <div className="relative z-10">
               <div className="flex justify-between items-start mb-8">
-                <span className="text-[10px] font-syne tracking-micro text-brand-yellow-golden bg-black/80 px-3 py-1.5 border border-brand-yellow-golden/40 uppercase font-bold rounded-full">
+                <span className="text-[10px] font-syne tracking-micro text-brand-yellow-golden uppercase font-bold">
                   FLAGSHIP EXPERIENCE
                 </span>
               </div>
@@ -127,7 +127,7 @@ export default function OurEventsSection() {
 
             <div className="relative z-10">
               <div className="flex justify-between items-start mb-8">
-                <span className="text-[10px] font-syne tracking-micro text-brand-yellow-golden bg-black/80 px-3 py-1.5 border border-brand-yellow-golden/40 uppercase font-bold rounded-full">
+                <span className="text-[10px] font-syne tracking-micro text-brand-yellow-golden uppercase font-bold">
                   PRESENTATION EXPERIENCE
                 </span>
               </div>
