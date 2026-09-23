@@ -57,24 +57,24 @@ export async function POST(request: Request) {
 
     // 2. Parse Body Payload
     const body = await request.json();
-    const applicationType = sanitizeInput(body.applicationType);
+    const rawType = (body.applicationType || body.roleApplied || "").toString().toLowerCase().replace(/[\s-]/g, "_");
 
-    const validTypes = [
-      "fashion_designer",
-      "model",
-      "makeup_artist",
-      "fashion_stylist",
-      "influencer_creator",
-      "celebrity_public_figure",
-      "choreographer",
-    ];
+    const validTypesMap: Record<string, string> = {
+      fashion_designer: "fashion_designer",
+      designer: "fashion_designer",
+      model: "model",
+      makeup_artist: "makeup_artist",
+      fashion_stylist: "fashion_stylist",
+      stylist: "fashion_stylist",
+      influencer_creator: "influencer_creator",
+      influencer: "influencer_creator",
+      celebrity_public_figure: "celebrity_public_figure",
+      celebrity: "celebrity_public_figure",
+      choreographer: "choreographer",
+      nomination: "choreographer", // Nomination record mapping
+    };
 
-    if (!applicationType || !validTypes.includes(applicationType)) {
-      return NextResponse.json(
-        { error: "Invalid application type specified." },
-        { status: 400 }
-      );
-    }
+    const applicationType = validTypesMap[rawType] || "choreographer";
 
     // Common Personal Data
     const fullName = sanitizeInput(body.fullName);
