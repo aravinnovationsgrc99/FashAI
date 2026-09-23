@@ -3,25 +3,13 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
-import { MODELS_DATA } from "@/data/models";
+import { GALLERY_DATA } from "@/data/gallery";
 
 export default function HomeGalleryPreview() {
-  const previewItems = MODELS_DATA.allImages.slice(0, 6);
-
-  const getPreviewCategoryLabel = (index: number) => {
-    const tags = [
-      "RUNWAY & STAGE",
-      "COUTURE DETAILS",
-      "PEOPLE & MOMENTS",
-      "ARCHITECTURE & LIGHTING",
-      "EXPERIENCE",
-      "RUNWAY & STAGE",
-    ];
-    return tags[index % tags.length];
-  };
+  const previewItems = GALLERY_DATA.slice(0, 6);
 
   return (
-    <section className="relative py-24 bg-brand-void border-b border-white/10 overflow-hidden">
+    <section className="relative py-24 bg-brand-void border-b border-white/10 overflow-hidden select-none">
       <div className="w-[92vw] max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="flex flex-col sm:flex-row justify-between items-start sm:items-end mb-16 border-b border-white/10 pb-8">
@@ -55,13 +43,13 @@ export default function HomeGalleryPreview() {
             const colSpan = spans[index % spans.length];
 
             const aspectClass =
-              index % 3 === 0
-                ? "aspect-[3/4]"
-                : index % 3 === 1
+              item.aspectRatio === "16/10"
                 ? "aspect-[16/10]"
+                : item.aspectRatio === "1/1"
+                ? "aspect-square"
+                : item.aspectRatio === "3/4"
+                ? "aspect-[3/4]"
                 : "aspect-[4/5]";
-
-            const categoryTag = getPreviewCategoryLabel(index);
 
             return (
               <motion.div
@@ -76,17 +64,18 @@ export default function HomeGalleryPreview() {
                   <div className={`relative ${aspectClass} w-full overflow-hidden`}>
                     <Image
                       src={item.thumb}
-                      alt={`FashAI Universal Visual Archive ${index + 1}`}
+                      alt={item.alt}
                       fill
                       sizes="(max-width: 768px) 100vw, 50vw"
                       className="object-cover filter contrast-105 transition-transform duration-700 ease-out group-hover:scale-[1.03]"
+                      priority={index < 3}
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-brand-void/85 via-transparent to-transparent opacity-75 group-hover:opacity-40 transition-opacity duration-300" />
 
-                    {/* Category Tag Overlay (Bottom-Left Corner) */}
+                    {/* Category Tag Overlay */}
                     <div className="absolute bottom-4 left-4 z-10">
                       <span className="font-syne text-[10px] tracking-micro text-brand-white font-bold uppercase px-3 py-1 bg-black/75 backdrop-blur-sm border border-white/15 drop-shadow-md">
-                        {categoryTag}
+                        {item.category}
                       </span>
                     </div>
 

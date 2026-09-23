@@ -46,7 +46,7 @@ export default function Gallery() {
 
         {/* Asymmetric Gallery Grid */}
         <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
-          {GALLERY_DATA.map((item, index) => {
+          {GALLERY_DATA.slice(0, 6).map((item, index) => {
             // Asymmetric col span layout for editorial feel
             const spans = [
               "md:col-span-7",
@@ -71,7 +71,7 @@ export default function Gallery() {
               >
                 <div className="relative aspect-[4/5] sm:aspect-auto sm:min-h-[420px] w-full overflow-hidden border border-hairline bg-brand-charcoal">
                   <Image
-                    src={item.image}
+                    src={item.thumb}
                     alt={item.title}
                     fill
                     sizes="(max-width: 768px) 100vw, 50vw"
@@ -82,7 +82,7 @@ export default function Gallery() {
                   {/* Caption & Metadata overlay */}
                   <div className="absolute bottom-6 left-6 right-6 flex justify-between items-end">
                     <div>
-                      <div className="text-[10px] font-syne tracking-micro text-brand-orange">
+                      <div className="text-[10px] font-syne tracking-micro text-brand-orange uppercase font-bold">
                         {item.category} / {item.year}
                       </div>
                       <h3 className="font-serif-display text-xl sm:text-2xl font-light text-brand-off-white group-hover:text-brand-gold transition-colors mt-1">
@@ -112,7 +112,7 @@ export default function Gallery() {
           id: g.id,
           title: g.title,
           subtitle: `${g.subtitle} — ${g.category} (${g.year})`,
-          src: g.image,
+          src: g.src,
           category: g.category,
           tag: g.tag,
         }))}
