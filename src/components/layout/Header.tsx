@@ -1,20 +1,16 @@
 "use client";
 
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
-import { Menu, ChevronDown, ArrowUpRight, Sparkles } from "lucide-react";
+import { Menu } from "lucide-react";
 import MobileMenu from "./MobileMenu";
 import ThemeToggle from "../ui/ThemeToggle";
-import { SERVICES_DATA } from "@/data/services";
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-  const [servicesDropdownOpen, setServicesDropdownOpen] = useState(false);
-  const dropdownTimeoutRef = useRef<NodeJS.Timeout | null>(null);
   const pathname = usePathname();
 
   useEffect(() => {
@@ -30,33 +26,6 @@ export default function Header() {
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
-
-  // Keyboard navigation: Escape key closes dropdown
-  useEffect(() => {
-    const handleKeyDown = (e: KeyboardEvent) => {
-      if (e.key === "Escape") {
-        setServicesDropdownOpen(false);
-      }
-    };
-    window.addEventListener("keydown", handleKeyDown);
-    return () => window.removeEventListener("keydown", handleKeyDown);
-  }, []);
-
-  const handleMouseEnter = () => {
-    if (dropdownTimeoutRef.current) clearTimeout(dropdownTimeoutRef.current);
-    setServicesDropdownOpen(true);
-  };
-
-  const handleMouseLeave = () => {
-    dropdownTimeoutRef.current = setTimeout(() => {
-      setServicesDropdownOpen(false);
-    }, 250);
-  };
-
-  const handleOpenMobileServices = () => {
-    setMobileServicesOpen(true);
-    setMobileMenuOpen(true);
-  };
 
   return (
     <header
@@ -101,82 +70,6 @@ export default function Header() {
             HOME
             {pathname === "/" && <span className="absolute bottom-0 left-0 right-0 h-[2px] bg-brand-orange" />}
           </Link>
-
-          {/* SERVICES DROPDOWN TRIGGER */}
-          <div
-            className="relative"
-            onMouseEnter={handleMouseEnter}
-            onMouseLeave={handleMouseLeave}
-          >
-            <button
-              id="header-services-trigger"
-              onClick={() => setServicesDropdownOpen((prev) => !prev)}
-              aria-expanded={servicesDropdownOpen}
-              aria-haspopup="true"
-              aria-controls="desktop-services-dropdown"
-              className={`flex items-center gap-1.5 py-1.5 transition-colors duration-200 ${
-                servicesDropdownOpen ? "text-brand-yellow-golden font-bold" : "text-brand-white/80 hover:text-brand-yellow-golden"
-              }`}
-            >
-              <span>SERVICES</span>
-              <ChevronDown className={`w-3.5 h-3.5 text-brand-yellow-golden transition-transform duration-300 ${servicesDropdownOpen ? "rotate-180" : ""}`} />
-            </button>
-
-            {/* DESKTOP DROPDOWN PANEL (BLACK + GOLD EDITORIAL UI) */}
-            {servicesDropdownOpen && (
-              <div
-                id="desktop-services-dropdown"
-                className="absolute top-full left-1/2 -translate-x-1/2 mt-3 w-[680px] bg-[#0B0908] border border-brand-yellow-golden/40 p-6 shadow-[0_20px_60px_rgba(0,0,0,0.9)] z-[300] backdrop-blur-xl animate-fadeIn"
-              >
-                {/* Header Lockup in Dropdown */}
-                <div className="flex items-center justify-between border-b border-white/10 pb-4 mb-4">
-                  <div className="flex items-center gap-2 text-[10px] font-syne tracking-micro text-brand-yellow-golden font-bold uppercase">
-                    <Sparkles className="w-3.5 h-3.5 text-brand-orange" />
-                    <span>ARAV INNOVATIONS ENTERPRISE SERVICES</span>
-                  </div>
-                  <span className="text-[10px] font-mono text-brand-platinum/50">8 PORTFOLIO CAPABILITIES</span>
-                </div>
-
-                {/* 2-Column Services Grid */}
-                <div className="grid grid-cols-2 gap-3">
-                  {SERVICES_DATA.map((service) => (
-                    <a
-                      key={service.number}
-                      href={service.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="group flex items-start justify-between p-3 bg-black/60 border border-white/10 hover:border-brand-yellow-golden/60 hover:bg-[#15120E] transition-all duration-300 relative overflow-hidden"
-                    >
-                      <div className="space-y-1 pr-2">
-                        <div className="flex items-center gap-2">
-                          <span className="text-[10px] font-mono text-brand-yellow-golden font-bold group-hover:text-brand-orange transition-colors">
-                            {service.number}
-                          </span>
-                          <h4 className="font-syne text-xs font-bold text-brand-white group-hover:text-brand-yellow-golden uppercase tracking-wide transition-colors leading-snug">
-                            {service.name}
-                          </h4>
-                        </div>
-                        <p className="text-[10px] font-sans text-brand-platinum/70 font-light truncate max-w-[240px]">
-                          {service.shortDesc}
-                        </p>
-                      </div>
-
-                      <ArrowUpRight className="w-4 h-4 text-brand-yellow-golden/60 group-hover:text-brand-orange group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all flex-shrink-0 mt-0.5" />
-
-                      {/* Fine Gold Line Indicator on Hover */}
-                      <span className="absolute bottom-0 left-0 w-0 h-[2px] bg-brand-yellow-golden group-hover:w-full transition-all duration-300" />
-                    </a>
-                  ))}
-                </div>
-
-                {/* Footer Bar */}
-                <div className="mt-4 pt-3 border-t border-white/10 flex items-center justify-between text-[10px] font-syne text-brand-platinum/60">
-                  <span>Visit Arav Innovations Official Platform</span>
-                  <span className="text-brand-yellow-golden font-bold uppercase tracking-wider">https://aravinnovations.com →</span>
-                </div>
-              </div>
-            )}
-          </div>
 
           {/* UPCOMING */}
           <Link
@@ -237,10 +130,7 @@ export default function Header() {
       {/* Fullscreen Mobile Navigation Menu */}
       <MobileMenu
         isOpen={mobileMenuOpen}
-        onClose={() => {
-          setMobileMenuOpen(false);
-          setMobileServicesOpen(false);
-        }}
+        onClose={() => setMobileMenuOpen(false)}
         items={[
           { label: "Home", href: "/" },
           { label: "Upcoming", href: "/upcoming" },
@@ -248,7 +138,6 @@ export default function Header() {
           { label: "Contact", href: "/contact" },
         ]}
         currentPath={pathname}
-        servicesOpenDefault={mobileServicesOpen}
       />
     </header>
   );
