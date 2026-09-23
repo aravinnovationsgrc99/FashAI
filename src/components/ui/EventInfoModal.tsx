@@ -24,7 +24,7 @@ export default function EventInfoModal() {
     router.push(`/contact?type=${type}`);
   };
 
-  // Route-aware 3-second delay popup trigger
+  // Route-aware 5-second delay popup trigger
   useEffect(() => {
     // Clear any existing timer when route changes or component mounts
     if (timerRef.current) {
@@ -35,10 +35,10 @@ export default function EventInfoModal() {
     // Reset modal state on route transition
     setIsOpen(false);
 
-    // Schedule popup display exactly 3 seconds after entering page
+    // Schedule popup display exactly 5 seconds after entering page
     timerRef.current = setTimeout(() => {
       setIsOpen(true);
-    }, 3000);
+    }, 5000);
 
     return () => {
       if (timerRef.current) {
