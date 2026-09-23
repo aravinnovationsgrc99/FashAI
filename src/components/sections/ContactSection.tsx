@@ -2,9 +2,8 @@
 
 import { useState, useEffect, Suspense } from "react";
 import { useSearchParams } from "next/navigation";
-import Image from "next/image";
 import { motion } from "framer-motion";
-import { Loader2, CheckCircle, AlertCircle, MessageSquare, ExternalLink } from "lucide-react";
+import { Loader2, CheckCircle, AlertCircle } from "lucide-react";
 
 function ContactContent() {
   const searchParams = useSearchParams();
@@ -77,8 +76,6 @@ function ContactContent() {
     }
   };
 
-  const aravWebsiteUrl = "https://aravinnovations.com/";
-
   return (
     <section id="contact" className="relative py-24 sm:py-32 bg-brand-void border-b border-hairline-orange overflow-hidden">
       {/* Background Soft Glow */}
@@ -101,91 +98,16 @@ function ContactContent() {
           </p>
         </div>
 
-        {/* Split Layout: Contact Info Left, Expanded 2-Column Enquiry Form Right */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
-          
-          {/* Left Column: Official Brand & Contact Information */}
+        {/* Single Centered Professional Enquiry Form Container */}
+        <div className="max-w-4xl mx-auto">
           <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="lg:col-span-5 bg-[#0B0908]/90 border border-brand-orange/30 p-8 sm:p-10 space-y-8 shadow-2xl"
+            className="bg-[#0B0908]/90 border border-brand-orange/30 p-8 sm:p-12 shadow-2xl rounded-3xl"
           >
-            {/* Announcement Callout */}
-            <div className="border-l-2 border-brand-orange pl-4 bg-brand-orange/10 p-4 border border-brand-orange/20">
-              <span className="font-syne text-xs tracking-caps text-brand-orange font-bold uppercase block mb-1">
-                REGISTRATIONS &amp; SPONSORSHIPS ARE OPEN
-              </span>
-              <span className="font-sans text-xs text-brand-white font-light">
-                Open for LifeStyle 2026 • Dubai · November 2026
-              </span>
-            </div>
-
-            {/* Supporting Company: ARAV INNOVATION */}
-            <div className="space-y-4 pt-2 border-t border-white/10">
-              <div>
-                <Image
-                  src="/assets/brand/Final_Powered_by_logo.png"
-                  alt="Powered by Arav Innovation"
-                  width={280}
-                  height={74}
-                  className="h-10 sm:h-12 w-auto object-contain drop-shadow-[0_0_15px_rgba(241,94,28,0.2)]"
-                />
-              </div>
-              <p className="font-sans text-xs text-brand-platinum/80 leading-relaxed font-light">
-                Official digital innovation entity supporting FashAI Universal initiatives.
-              </p>
-              <div>
-                <a
-                  href={aravWebsiteUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 border border-brand-orange/50 bg-brand-void/90 px-5 py-3 text-xs font-syne tracking-caps font-bold text-brand-white hover:bg-brand-orange hover:border-brand-orange transition-all duration-300 group shadow-md"
-                >
-                  <span>VISIT ARAV INNOVATION</span>
-                  <ExternalLink className="w-3.5 h-3.5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
-                </a>
-              </div>
-            </div>
-
-            {/* Official WhatsApp Direct Contact */}
-            <div className="space-y-3 pt-6 border-t border-white/10">
-              <div className="flex items-center gap-2 text-xs font-syne tracking-caps text-brand-platinum/80 uppercase font-bold">
-                <MessageSquare className="w-4 h-4 text-brand-green" />
-                <span>WHATSAPP DIRECT ENQUIRIES</span>
-              </div>
-              <a
-                href="https://wa.me/919891276713"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="font-syne text-xl sm:text-2xl text-brand-white font-bold hover:text-brand-green transition-colors block"
-              >
-                +91 9891276713
-              </a>
-              <div>
-                <a
-                  href="https://wa.me/919891276713"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 bg-brand-green/20 border border-brand-green/40 px-5 py-2.5 text-xs font-syne tracking-caps font-bold text-brand-green hover:bg-brand-green hover:text-black transition-all mt-1"
-                >
-                  <span>CHAT ON WHATSAPP</span>
-                  <ExternalLink className="w-3.5 h-3.5" />
-                </a>
-              </div>
-            </div>
-          </motion.div>
-
-          {/* Right Column: Expanded Professional 2-Column Form Grid */}
-          <motion.div
-            initial={{ opacity: 0, x: 20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="lg:col-span-7 bg-[#0B0908]/90 border border-brand-orange/30 p-8 sm:p-10 shadow-2xl"
-          >
-            <h3 className="font-serif-display text-2xl sm:text-3xl text-brand-white uppercase font-light mb-6 border-b border-white/10 pb-4">
+            <h3 className="font-serif-display text-2xl sm:text-4xl text-brand-white uppercase font-light mb-8 border-b border-white/10 pb-4">
               SUBMIT AN ENQUIRY
             </h3>
 
@@ -196,7 +118,7 @@ function ContactContent() {
                   Enquiry Received
                 </h4>
                 <p className="font-sans text-sm text-brand-platinum font-light leading-relaxed max-w-md mx-auto">
-                  Thank you for reaching out to FashAI Universal. Powered by Arav Innovation. Our delegate team will review your submission promptly.
+                  Thank you for reaching out to FashAI Universal. Our delegate team will review your submission promptly.
                 </p>
                 <button
                   onClick={() => setStatus("idle")}

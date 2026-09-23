@@ -15,9 +15,7 @@ export interface ConciergeMessageResponse {
 
 export const FASHAI_KNOWLEDGE = {
   brand: "FashAI Universal",
-  parentEntity: "Powered by Arav Innovation",
   websiteUrl: "https://fashai-beryl.vercel.app",
-  officialParentUrl: "https://aravinnovations.com/",
   officialInstagram: "https://www.instagram.com/fashai_universal",
   upcomingEdition: "LifeStyle 2026",
   upcomingLocation: "Dubai · 2026",

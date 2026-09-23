@@ -5,7 +5,7 @@ import { ArrowLeft, Shield } from "lucide-react";
 export const metadata: Metadata = {
   title: "Privacy Policy — FashAI Universal",
   description:
-    "Official Privacy Policy of FashAI Universal. Powered by Arav Innovation.",
+    "Official Privacy Policy of FashAI Universal.",
 };
 
 export default function PrivacyPage() {
@@ -29,7 +29,7 @@ export default function PrivacyPage() {
             PRIVACY POLICY
           </h1>
           <p className="font-sans text-xs text-brand-platinum mt-2 font-light">
-            Effective Date: September 2026 · FashAI Universal (Powered by Arav Innovation)
+            Effective Date: September 2026 · FashAI Universal
           </p>
         </div>
 
@@ -39,7 +39,7 @@ export default function PrivacyPage() {
               1. Overview
             </h2>
             <p>
-              FashAI Universal, powered by Arav Innovation, respects your privacy and is committed to protecting the personal information you share with us when registering for delegate access, submitting sponsorship enquiries, or interacting with our digital event platform.
+              FashAI Universal respects your privacy and is committed to protecting the personal information you share with us when registering for delegate access, submitting sponsorship enquiries, or interacting with our digital event platform.
             </p>
           </section>
 
@@ -52,7 +52,7 @@ export default function PrivacyPage() {
             </p>
             <ul className="list-disc pl-6 space-y-1 text-brand-platinum/90">
               <li>Full Name</li>
-              <li>Work Email Address &amp; Contact Number / WhatsApp</li>
+              <li>Work Email Address</li>
               <li>Country and City of Residence</li>
               <li>Organization, Brand Name, and Professional Role</li>
               <li>Event Interest and Specific Enquiry Details</li>
@@ -88,16 +88,7 @@ export default function PrivacyPage() {
               5. Contact &amp; Enquiries
             </h2>
             <p>
-              For any questions regarding this Privacy Policy or to request updating your delegate details, please contact the FashAI Universal team via our official contact channel or visit{" "}
-              <a
-                href="https://aravinnovations.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-brand-orange font-bold hover:underline"
-              >
-                Arav Innovation
-              </a>
-              .
+              For any questions regarding this Privacy Policy or to request updating your delegate details, please contact the FashAI Universal team via our official contact channel.
             </p>
           </section>
         </div>

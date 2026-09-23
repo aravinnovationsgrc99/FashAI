@@ -5,8 +5,6 @@ import Image from "next/image";
 import { ExternalLink, MessageSquare } from "lucide-react";
 
 export default function Footer() {
-  const aravWebsiteUrl = "https://aravinnovations.com/";
-
   return (
     <footer className="w-full border-t border-white/10 bg-black pt-16 pb-12 text-brand-off-white">
       <div className="container-editorial">
@@ -213,21 +211,7 @@ export default function Footer() {
                 </a>
               </li>
             </ul>
-
-            <div className="pt-2">
-              <span className="block text-[10px] font-syne tracking-micro text-brand-platinum/60 uppercase mb-1">
-                Arav Innovation
-              </span>
-              <a
-                href={aravWebsiteUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-1.5 border border-brand-orange/40 bg-black px-3.5 py-2 text-[10px] font-syne tracking-caps font-bold text-brand-white rounded-xl hover:bg-brand-orange hover:border-brand-orange transition-all duration-300 group"
-              >
-                <span>VISIT WEBSITE →</span>
-                <ExternalLink className="w-3 h-3 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
-              </a>
-            </div>
+          </div>
           </div>
 
         </div>

@@ -5,7 +5,7 @@ import { ArrowLeft, FileText } from "lucide-react";
 export const metadata: Metadata = {
   title: "Terms & Conditions — FashAI Universal",
   description:
-    "Official Terms & Conditions of FashAI Universal. Powered by Arav Innovation.",
+    "Official Terms & Conditions of FashAI Universal.",
 };
 
 export default function TermsPage() {
@@ -29,7 +29,7 @@ export default function TermsPage() {
             TERMS &amp; CONDITIONS
           </h1>
           <p className="font-sans text-xs text-brand-platinum mt-2 font-light">
-            Effective Date: September 2026 · FashAI Universal (Powered by Arav Innovation)
+            Effective Date: September 2026 · FashAI Universal
           </p>
         </div>
 
@@ -39,7 +39,7 @@ export default function TermsPage() {
               1. Platform Acceptance
             </h2>
             <p>
-              By accessing or using the FashAI Universal platform, registering for delegate entry, or submitting sponsorship enquiries for LifeStyle 2026 Dubai, you agree to be bound by these Terms &amp; Conditions and all applicable regulations enforced by FashAI Universal and Arav Innovation.
+              By accessing or using the FashAI Universal platform, registering for delegate entry, or submitting sponsorship enquiries for LifeStyle 2026 Dubai, you agree to be bound by these Terms &amp; Conditions and all applicable regulations enforced by FashAI Universal.
             </p>
           </section>
 
@@ -57,7 +57,7 @@ export default function TermsPage() {
               3. Intellectual Property
             </h2>
             <p>
-              All trademarks, logos, haute couture photography, spatial lighting art, computational fashion media, and official brand assets associated with FashAI Universal and Powered by Arav Innovation remain the exclusive property of their respective owners.
+              All trademarks, logos, haute couture photography, spatial lighting art, computational fashion media, and official brand assets associated with FashAI Universal remain the exclusive property of their respective owners.
             </p>
           </section>
 
@@ -75,7 +75,7 @@ export default function TermsPage() {
               5. Governing Law
             </h2>
             <p>
-              These terms shall be governed and construed in accordance with applicable corporate and event laws under the jurisdiction of Arav Innovation initiatives.
+              These terms shall be governed and construed in accordance with applicable corporate and event laws under the jurisdiction of FashAI Universal initiatives.
             </p>
           </section>
         </div>
