@@ -89,7 +89,7 @@ export default function MobileMenu({
             {/* Header Brand Lockup in Mobile Menu */}
             <div className="flex items-center justify-between border-b border-white/10 pb-5 pt-2 flex-shrink-0">
               <Link href="/" onClick={onClose} className="flex items-center gap-3 min-h-[44px]">
-                <div className="relative w-8 h-8 flex-shrink-0 overflow-hidden bg-black/90 border border-brand-orange/40 shadow-[0_0_15px_rgba(241,94,28,0.2)]">
+                <div className="relative w-8 h-8 flex-shrink-0 overflow-hidden bg-black border border-brand-yellow-golden/50 shadow-[0_0_15px_rgba(250,182,10,0.2)]">
                   <Image
                     src="/assets/brand/logo_transparent.png"
                     alt="FashAI Universal Logo"
@@ -101,9 +101,9 @@ export default function MobileMenu({
                 </div>
                 <div className="flex flex-col justify-center">
                   <span className="font-serif-display text-lg font-light tracking-wider text-brand-white uppercase leading-none">
-                    FashAI <span className="font-serif italic font-normal text-transparent bg-clip-text bg-gradient-to-r from-brand-orange via-[#ff8833] to-brand-yellow-golden capitalize">Universal</span>
+                    FashAI <span className="font-serif italic font-normal text-transparent bg-clip-text bg-gradient-to-r from-brand-yellow-golden via-[#FFEC69] to-brand-orange capitalize">Universal</span>
                   </span>
-                  <span className="text-[8px] font-syne tracking-[0.22em] text-brand-platinum/70 uppercase font-bold mt-0.5">
+                  <span className="text-[8px] font-syne tracking-[0.22em] text-brand-yellow-golden/70 uppercase font-bold mt-0.5">
                     DUBAI · EST. 2026
                   </span>
                 </div>
@@ -114,7 +114,7 @@ export default function MobileMenu({
                 <ThemeToggle />
                 <button
                   onClick={onClose}
-                  className="p-2.5 rounded-full bg-brand-void border border-brand-orange/40 text-brand-white hover:text-brand-orange transition-colors min-w-[44px] min-h-[44px] flex items-center justify-center"
+                  className="p-2.5 rounded-none bg-black border border-brand-yellow-golden/50 text-brand-white hover:text-brand-yellow-golden transition-colors min-w-[44px] min-h-[44px] flex items-center justify-center"
                   aria-label="Close Navigation Menu"
                 >
                   <X className="h-6 w-6" />
@@ -140,21 +140,21 @@ export default function MobileMenu({
                     <Link
                       href={item.href}
                       onClick={onClose}
-                      className={`group flex items-center justify-between py-3 px-4 rounded-lg border ${
+                      className={`group flex items-center justify-between py-3 px-4 rounded-none border ${
                         isActive
-                          ? "text-brand-orange bg-brand-orange/10 font-bold border-brand-orange/40"
-                          : "text-brand-white border-transparent hover:border-brand-orange/30 hover:bg-brand-orange/5"
+                          ? "text-brand-yellow-golden bg-brand-yellow-golden/10 font-bold border-brand-yellow-golden/50"
+                          : "text-brand-white border-transparent hover:border-brand-yellow-golden/30 hover:bg-brand-yellow-golden/5"
                       } transition-all duration-200 min-h-[48px]`}
                     >
                       <span className="flex items-center gap-4">
-                        <span className="text-xs font-syne text-brand-orange/90 font-bold">
+                        <span className="text-xs font-syne text-brand-yellow-golden font-bold">
                           0{index + 1}
                         </span>
                         <span className="font-syne text-2xl xs:text-3xl font-extrabold tracking-wide uppercase">
                           {item.label}
                         </span>
                       </span>
-                      <span className="text-sm font-syne text-brand-orange opacity-0 group-hover:opacity-100 transition-opacity">
+                      <span className="text-sm font-syne text-brand-yellow-golden opacity-0 group-hover:opacity-100 transition-opacity">
                         →
                       </span>
                     </Link>
@@ -173,7 +173,7 @@ export default function MobileMenu({
               <Link
                 href="/contact"
                 onClick={onClose}
-                className="w-full bg-brand-orange py-4 text-center text-xs font-syne tracking-caps font-bold text-white hover:bg-[#ff6f2d] transition-colors min-h-[48px] flex items-center justify-center shadow-lg rounded-none"
+                className="w-full bg-brand-yellow-golden py-4 text-center text-xs font-syne tracking-caps font-bold text-black hover:bg-[#FFEC69] transition-colors min-h-[48px] flex items-center justify-center shadow-lg rounded-none"
               >
                 CONTACT US →
               </Link>

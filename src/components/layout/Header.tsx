@@ -31,14 +31,14 @@ export default function Header() {
     <header
       className={`fixed top-0 left-0 right-0 z-[200] transition-all duration-300 ${
         isScrolled
-          ? "bg-black/80 html-light-header-scrolled border-b border-white/10 shadow-lg py-2.5 backdrop-blur-md"
+          ? "bg-black/85 html-light-header-scrolled border-b border-brand-yellow-golden/20 shadow-lg py-2.5 backdrop-blur-md"
           : "bg-transparent border-b border-transparent py-4"
       }`}
     >
       <div className="container-editorial flex items-center justify-between min-h-[50px] relative">
         {/* Official Editorial Brand Lockup */}
         <Link href="/" className="flex items-center gap-3 group py-1 min-h-[44px]">
-          <div className="relative w-8 h-8 sm:w-9 sm:h-9 flex-shrink-0 overflow-hidden bg-black/90 border border-brand-orange/40 shadow-[0_0_15px_rgba(241,94,28,0.2)] group-hover:border-brand-orange group-hover:shadow-[0_0_22px_rgba(241,94,28,0.4)] transition-all duration-300">
+          <div className="relative w-8 h-8 sm:w-9 sm:h-9 flex-shrink-0 overflow-hidden bg-black border border-brand-yellow-golden/50 shadow-[0_0_15px_rgba(250,182,10,0.2)] group-hover:border-brand-yellow-golden group-hover:shadow-[0_0_22px_rgba(250,182,10,0.4)] transition-all duration-300">
             <Image
               src="/assets/brand/logo_transparent.png"
               alt="FashAI Universal Logo"
@@ -49,10 +49,10 @@ export default function Header() {
             />
           </div>
           <div className="flex flex-col justify-center">
-            <span className="font-serif-display text-lg sm:text-xl font-light tracking-wider text-brand-white uppercase group-hover:text-brand-orange transition-colors leading-none">
-              FashAI <span className="font-serif italic font-normal text-transparent bg-clip-text bg-gradient-to-r from-brand-orange via-[#ff8833] to-brand-yellow-golden capitalize">Universal</span>
+            <span className="font-serif-display text-lg sm:text-xl font-light tracking-wider text-brand-white uppercase group-hover:text-brand-yellow-golden transition-colors leading-none">
+              FashAI <span className="font-serif italic font-normal text-transparent bg-clip-text bg-gradient-to-r from-brand-yellow-golden via-[#FFEC69] to-brand-orange capitalize">Universal</span>
             </span>
-            <span className="text-[8px] font-syne tracking-[0.22em] text-brand-platinum/70 uppercase font-bold mt-0.5">
+            <span className="text-[8px] font-syne tracking-[0.22em] text-brand-yellow-golden/70 uppercase font-bold mt-0.5">
               DUBAI · EST. 2026
             </span>
           </div>
@@ -64,44 +64,44 @@ export default function Header() {
           <Link
             href="/"
             className={`relative py-1.5 transition-colors duration-200 ${
-              pathname === "/" ? "text-brand-orange font-bold" : "text-brand-white/80 hover:text-brand-lemon"
+              pathname === "/" ? "text-brand-yellow-golden font-bold" : "text-brand-white/80 hover:text-brand-yellow-golden"
             }`}
           >
             HOME
-            {pathname === "/" && <span className="absolute bottom-0 left-0 right-0 h-[2px] bg-brand-orange" />}
+            {pathname === "/" && <span className="absolute bottom-0 left-0 right-0 h-[2px] bg-brand-yellow-golden" />}
           </Link>
 
           {/* UPCOMING */}
           <Link
             href="/upcoming"
             className={`relative py-1.5 transition-colors duration-200 ${
-              pathname.startsWith("/upcoming") ? "text-brand-orange font-bold" : "text-brand-white/80 hover:text-brand-lemon"
+              pathname.startsWith("/upcoming") ? "text-brand-yellow-golden font-bold" : "text-brand-white/80 hover:text-brand-yellow-golden"
             }`}
           >
             UPCOMING
-            {pathname.startsWith("/upcoming") && <span className="absolute bottom-0 left-0 right-0 h-[2px] bg-brand-orange" />}
+            {pathname.startsWith("/upcoming") && <span className="absolute bottom-0 left-0 right-0 h-[2px] bg-brand-yellow-golden" />}
           </Link>
 
           {/* GALLERY */}
           <Link
             href="/gallery"
             className={`relative py-1.5 transition-colors duration-200 ${
-              pathname.startsWith("/gallery") ? "text-brand-orange font-bold" : "text-brand-white/80 hover:text-brand-lemon"
+              pathname.startsWith("/gallery") ? "text-brand-yellow-golden font-bold" : "text-brand-white/80 hover:text-brand-yellow-golden"
             }`}
           >
             GALLERY
-            {pathname.startsWith("/gallery") && <span className="absolute bottom-0 left-0 right-0 h-[2px] bg-brand-orange" />}
+            {pathname.startsWith("/gallery") && <span className="absolute bottom-0 left-0 right-0 h-[2px] bg-brand-yellow-golden" />}
           </Link>
 
           {/* CONTACT */}
           <Link
             href="/contact"
             className={`relative py-1.5 transition-colors duration-200 ${
-              pathname.startsWith("/contact") ? "text-brand-orange font-bold" : "text-brand-white/80 hover:text-brand-lemon"
+              pathname.startsWith("/contact") ? "text-brand-yellow-golden font-bold" : "text-brand-white/80 hover:text-brand-yellow-golden"
             }`}
           >
             CONTACT
-            {pathname.startsWith("/contact") && <span className="absolute bottom-0 left-0 right-0 h-[2px] bg-brand-orange" />}
+            {pathname.startsWith("/contact") && <span className="absolute bottom-0 left-0 right-0 h-[2px] bg-brand-yellow-golden" />}
           </Link>
         </nav>
 
@@ -110,7 +110,7 @@ export default function Header() {
           <ThemeToggle />
           <Link
             href="/contact"
-            className="hidden sm:inline-flex items-center justify-center bg-brand-orange px-5 py-2 text-[11px] font-syne tracking-caps font-bold text-white hover:bg-[#ff6f2d] hover:translate-y-[-1px] transition-all duration-200 shadow-md"
+            className="hidden sm:inline-flex items-center justify-center bg-brand-yellow-golden px-5 py-2 text-[11px] font-syne tracking-caps font-bold text-black hover:bg-[#FFEC69] hover:translate-y-[-1px] transition-all duration-200 shadow-[0_0_15px_rgba(250,182,10,0.3)]"
             data-cursor="explore"
           >
             CONTACT US →
@@ -119,7 +119,7 @@ export default function Header() {
           {/* Mobile Hamburger Button */}
           <button
             onClick={() => setMobileMenuOpen(true)}
-            className="lg:hidden p-2.5 min-w-[44px] min-h-[44px] flex items-center justify-center text-brand-off-white hover:text-brand-gold transition-colors"
+            className="lg:hidden p-2.5 min-w-[44px] min-h-[44px] flex items-center justify-center text-brand-off-white hover:text-brand-yellow-golden transition-colors"
             aria-label="Open Navigation Menu"
           >
             <Menu className="h-6 w-6" />

@@ -58,25 +58,13 @@ export default function ConciergePanel({ isOpen, onClose }: ConciergePanelProps)
       // Lock body scroll on mobile
       if (window.innerWidth < 768) {
         document.body.style.overflow = "hidden";
+        document.documentElement.style.overflow = "hidden";
       }
 
       // Initial Greeting setup if chat is empty
       if (messages.length === 0) {
-        let greetingText = FASHAI_KNOWLEDGE.initialGreeting;
-        let actions = FASHAI_KNOWLEDGE.initialQuickActions;
-
-        // Subtle returning visitor greeting
-        if (p.consent.personalization && p.intent) {
-          const intentMap: Record<string, string> = {
-            attendee: "Would you like to continue exploring LifeStyle 2026 or registration?",
-            sponsor: "Would you like to continue exploring sponsorship opportunities?",
-            designer: "Would you like to explore designer participation at LifeStyle 2026?",
-            media: "Would you like to review press & media accreditation for Dubai 2026?",
-          };
-          if (intentMap[p.intent]) {
-            greetingText = `Welcome back to FashAI Universal. ${intentMap[p.intent]}`;
-          }
-        }
+        const greetingText = FASHAI_KNOWLEDGE.initialGreeting;
+        const actions = FASHAI_KNOWLEDGE.initialQuickActions;
 
         setMessages([
           {
@@ -90,12 +78,14 @@ export default function ConciergePanel({ isOpen, onClose }: ConciergePanelProps)
       }
     } else {
       document.body.style.overflow = "";
+      document.documentElement.style.overflow = "";
     }
 
     return () => {
       document.body.style.overflow = "";
+      document.documentElement.style.overflow = "";
     };
-  }, [isOpen]);
+  }, [isOpen, messages.length]);
 
   // Scroll to bottom on new message
   useEffect(() => {
@@ -164,10 +154,10 @@ export default function ConciergePanel({ isOpen, onClose }: ConciergePanelProps)
         {
           id: "bot-err-" + Date.now(),
           sender: "bot",
-          text: "FashAI Concierge is temporarily unavailable. You can still explore the website or contact our team directly.",
+          text: "FashAI Assistant is temporarily offline. You can explore our pages directly or reach out via our contact portal.",
           quickActions: [
-            { id: "explore-site", label: "Explore Website", actionType: "navigate", target: "/projects" },
-            { id: "contact-us", label: "Contact Us", actionType: "navigate", target: "/contact" },
+            { id: "explore-site", label: "Explore LifeStyle 2026", actionType: "navigate", target: "/upcoming" },
+            { id: "contact-us", label: "Contact FashAI", actionType: "navigate", target: "/contact" },
           ],
           timestamp: new Date().toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" }),
         },
@@ -216,47 +206,50 @@ export default function ConciergePanel({ isOpen, onClose }: ConciergePanelProps)
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           onClick={onClose}
-          className="fixed inset-0 bg-black/60 sm:hidden pointer-events-auto z-[241]"
+          className="fixed inset-0 bg-black/70 backdrop-blur-md sm:hidden pointer-events-auto z-[241]"
         />
 
-        {/* Chat Panel Box */}
+        {/* Chat Panel Box - Black + Gold Visual Identity */}
         <motion.div
           initial={{ opacity: 0, y: 30, scale: 0.96 }}
           animate={{ opacity: 1, y: 0, scale: 1 }}
           exit={{ opacity: 0, y: 30, scale: 0.96 }}
           transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
-          className="relative z-[242] pointer-events-auto w-full sm:w-[420px] h-[85vh] sm:h-[620px] max-h-[100dvh] bg-[#0A0908] sm:bg-[#0A0908]/95 border border-brand-orange/40 shadow-[0_0_60px_rgba(241,94,28,0.3)] flex flex-col justify-between overflow-hidden rounded-none text-brand-white"
+          className="relative z-[242] pointer-events-auto w-full sm:w-[420px] h-[85vh] sm:h-[620px] max-h-[100dvh] bg-[#080808] sm:bg-[#080808]/95 border border-brand-yellow-golden/50 shadow-[0_0_60px_rgba(250,182,10,0.25)] flex flex-col justify-between overflow-hidden rounded-none text-brand-white"
           style={{
             backdropFilter: "blur(20px)",
             WebkitBackdropFilter: "blur(20px)",
           }}
           role="dialog"
-          aria-label="FashAI Concierge Assistant"
+          aria-label="FashAI Assistant"
         >
-          {/* Top Bar Header */}
-          <div className="flex items-center justify-between p-3.5 sm:p-4 border-b border-white/10 bg-brand-void/80 flex-shrink-0">
-            <div className="flex items-center gap-2.5">
-              <Image
-                src="/assets/brand/Final_Powered_by_logo.png"
-                alt="Powered by Arav Innovation"
-                width={140}
-                height={38}
-                sizes="120px"
-                className="h-6 sm:h-7 w-auto object-contain"
-              />
-              <div className="flex flex-col border-l border-white/15 pl-2.5">
-                <span className="font-serif-display text-xs sm:text-sm font-light text-brand-white uppercase leading-none tracking-wide">
-                  FashAI <span className="font-serif italic text-brand-orange font-normal capitalize">Concierge</span>
+          {/* Header Bar */}
+          <div className="flex items-center justify-between p-3.5 sm:p-4 border-b border-white/10 bg-black flex-shrink-0">
+            <div className="flex items-center gap-3">
+              <div className="relative w-7 h-7 sm:w-8 sm:h-8 flex-shrink-0 overflow-hidden bg-black border border-brand-yellow-golden/60 p-0.5">
+                <Image
+                  src="/assets/brand/logo_transparent.png"
+                  alt="FashAI Assistant Logo"
+                  fill
+                  priority
+                  sizes="32px"
+                  className="object-contain p-0.5"
+                />
+              </div>
+              <div className="flex flex-col justify-center">
+                <span className="font-serif-display text-sm font-light text-brand-white uppercase leading-none tracking-wide flex items-center gap-1.5">
+                  <span>FashAI Assistant</span>
+                  <Sparkles className="w-3 h-3 text-brand-yellow-golden" />
                 </span>
-                <span className="text-[8px] font-syne tracking-micro text-brand-platinum/70 uppercase font-bold mt-0.5">
-                  PERSONAL GUIDANCE · DUBAI 2026
+                <span className="text-[9px] font-syne tracking-micro text-brand-yellow-golden/80 uppercase font-bold mt-0.5">
+                  Your Fashion &amp; Event Guide
                 </span>
               </div>
             </div>
 
             <button
               onClick={onClose}
-              className="p-2 text-brand-white/80 hover:text-brand-orange transition-colors min-w-[44px] min-h-[44px] flex items-center justify-center"
+              className="p-2 text-brand-white/80 hover:text-brand-yellow-golden transition-colors min-w-[44px] min-h-[44px] flex items-center justify-center"
               aria-label="Close Chatbot"
             >
               <X className="w-5 h-5" />
@@ -265,7 +258,7 @@ export default function ConciergePanel({ isOpen, onClose }: ConciergePanelProps)
 
           {/* Chat Messages Body Area */}
           <div className="flex-1 overflow-y-auto p-3.5 sm:p-4 space-y-3.5 no-scrollbar">
-            {/* Optional Personalization Consent Banner */}
+            {/* Optional Consent Banner */}
             {showConsentPrompt && (
               <ConsentNotice
                 onAllow={() => handleConsentDecision(true)}
@@ -284,8 +277,8 @@ export default function ConciergePanel({ isOpen, onClose }: ConciergePanelProps)
                 <div
                   className={`max-w-[88%] p-3 text-xs font-sans leading-relaxed ${
                     msg.sender === "user"
-                      ? "bg-brand-orange text-white font-medium shadow-md"
-                      : "bg-[#141210] border border-white/10 text-brand-white/95"
+                      ? "bg-brand-yellow-golden text-black font-semibold shadow-md"
+                      : "bg-[#12100E] border border-white/10 text-brand-white/95"
                   }`}
                 >
                   <p>{msg.text}</p>
@@ -294,7 +287,7 @@ export default function ConciergePanel({ isOpen, onClose }: ConciergePanelProps)
                   {msg.navigationTarget && (
                     <button
                       onClick={() => router.push(msg.navigationTarget!)}
-                      className="mt-2 inline-flex items-center gap-1.5 text-[10px] font-syne font-bold text-brand-orange hover:text-brand-yellow-golden uppercase tracking-micro pt-1 border-t border-white/10 w-full"
+                      className="mt-2 inline-flex items-center gap-1.5 text-[10px] font-syne font-bold text-brand-yellow-golden hover:text-white uppercase tracking-micro pt-1 border-t border-white/10 w-full"
                     >
                       <span>GO TO SECTION ({msg.navigationTarget})</span>
                       <ArrowUpRight className="w-3 h-3" />
@@ -306,16 +299,16 @@ export default function ConciergePanel({ isOpen, onClose }: ConciergePanelProps)
                   {msg.timestamp}
                 </span>
 
-                {/* Inline Quick Action Buttons */}
+                {/* Inline Quick Action Chips */}
                 {msg.quickActions && msg.quickActions.length > 0 && (
                   <div className="flex flex-wrap gap-1.5 mt-2 max-w-[95%]">
                     {msg.quickActions.map((qa) => (
                       <button
                         key={qa.id}
                         onClick={() => handleQuickActionClick(qa)}
-                        className="px-2.5 py-1 bg-brand-void/90 border border-brand-orange/40 hover:border-brand-orange hover:bg-brand-orange/15 text-[10px] font-syne font-bold tracking-micro text-brand-white hover:text-brand-orange transition-all duration-200"
+                        className="px-2.5 py-1.5 bg-black border border-brand-yellow-golden/50 hover:border-brand-yellow-golden hover:bg-brand-yellow-golden/15 text-[10px] font-syne font-bold tracking-micro text-brand-white hover:text-brand-yellow-golden transition-all duration-200"
                       >
-                        {qa.label}
+                        [{qa.label}]
                       </button>
                     ))}
                   </div>
@@ -323,7 +316,7 @@ export default function ConciergePanel({ isOpen, onClose }: ConciergePanelProps)
               </motion.div>
             ))}
 
-            {/* Initial Intent Question Options (Compact 2-Column Responsive Grid) */}
+            {/* Initial Intent Question Options */}
             {messages.length === 1 && !profile?.intent && (
               <motion.div
                 initial={{ opacity: 0, y: 10 }}
@@ -339,7 +332,7 @@ export default function ConciergePanel({ isOpen, onClose }: ConciergePanelProps)
                     <button
                       key={opt.id}
                       onClick={() => handleIntentSelection(opt)}
-                      className="text-left px-2.5 py-1.5 bg-brand-void border border-white/10 hover:border-brand-orange hover:bg-brand-orange/10 text-[10px] sm:text-[11px] font-syne font-bold text-brand-white transition-colors truncate"
+                      className="text-left px-2.5 py-1.5 bg-black border border-white/10 hover:border-brand-yellow-golden hover:bg-brand-yellow-golden/10 text-[10px] sm:text-[11px] font-syne font-bold text-brand-white transition-colors truncate"
                     >
                       • {opt.label}
                     </button>
@@ -348,7 +341,7 @@ export default function ConciergePanel({ isOpen, onClose }: ConciergePanelProps)
               </motion.div>
             )}
 
-            {/* Conversational Guided Enquiry Modal / Sub-flow */}
+            {/* Conversational Guided Enquiry Modal */}
             {activeEnquiryType && (
               <ConversationalEnquiry
                 initialType={activeEnquiryType}
@@ -361,7 +354,7 @@ export default function ConciergePanel({ isOpen, onClose }: ConciergePanelProps)
                       sender: "bot",
                       text: summary,
                       quickActions: [
-                        { id: "explore-more", label: "Explore LifeStyle 2026", actionType: "navigate", target: "/upcoming" },
+                        { id: "explore-more", label: "LifeStyle 2026", actionType: "navigate", target: "/upcoming" },
                       ],
                       timestamp: new Date().toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" }),
                     },
@@ -373,9 +366,9 @@ export default function ConciergePanel({ isOpen, onClose }: ConciergePanelProps)
 
             {/* Loading Indicator */}
             {isLoading && (
-              <div className="flex items-center gap-2 text-brand-orange text-xs p-2 font-syne">
+              <div className="flex items-center gap-2 text-brand-yellow-golden text-xs p-2 font-syne">
                 <RefreshCw className="w-3.5 h-3.5 animate-spin" />
-                <span className="tracking-micro uppercase text-[10px]">FashAI is formulating guidance...</span>
+                <span className="tracking-micro uppercase text-[10px]">FashAI Assistant is formulating guidance...</span>
               </div>
             )}
 
@@ -383,7 +376,7 @@ export default function ConciergePanel({ isOpen, onClose }: ConciergePanelProps)
           </div>
 
           {/* Bottom Chat Input Form */}
-          <div className="p-3 bg-brand-void border-t border-white/10 flex-shrink-0">
+          <div className="p-3 bg-black border-t border-white/10 flex-shrink-0">
             <form
               onSubmit={(e) => {
                 e.preventDefault();
@@ -396,13 +389,13 @@ export default function ConciergePanel({ isOpen, onClose }: ConciergePanelProps)
                 type="text"
                 value={inputValue}
                 onChange={(e) => setInputValue(e.target.value)}
-                placeholder="Ask FashAI Universal..."
-                className="flex-1 bg-brand-charcoal border border-white/15 px-3 py-2.5 text-xs text-brand-white placeholder:text-brand-platinum/50 focus:border-brand-orange focus:outline-none transition-colors"
+                placeholder="Ask FashAI Assistant..."
+                className="flex-1 bg-[#141210] border border-white/15 px-3 py-2.5 text-xs text-brand-white placeholder:text-brand-platinum/50 focus:border-brand-yellow-golden focus:outline-none transition-colors"
               />
               <button
                 type="submit"
                 disabled={isLoading || !inputValue.trim()}
-                className="p-2.5 bg-brand-orange text-white hover:bg-[#ff6f2d] disabled:opacity-50 transition-colors min-w-[44px] min-h-[44px] flex items-center justify-center"
+                className="p-2.5 bg-brand-yellow-golden text-black font-bold hover:bg-[#ffec69] disabled:opacity-50 transition-colors min-w-[44px] min-h-[44px] flex items-center justify-center"
                 aria-label="Send Message"
               >
                 <Send className="w-4 h-4" />

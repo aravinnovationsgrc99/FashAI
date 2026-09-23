@@ -2,32 +2,20 @@
 
 import { useEffect, useState, useCallback, useRef } from "react";
 import Image from "next/image";
-import { useRouter } from "next/navigation";
+import { useRouter, usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { X, Calendar, MapPin, Sparkles } from "lucide-react";
 
 export default function EventInfoModal() {
   const [isOpen, setIsOpen] = useState(false);
   const router = useRouter();
+  const pathname = usePathname();
   const modalRef = useRef<HTMLDivElement>(null);
-  const triggerElementRef = useRef<HTMLElement | null>(null);
+  const timerRef = useRef<NodeJS.Timeout | null>(null);
 
-  // Close modal and record closed state
+  // Close modal and initiate smooth exit animation
   const handleClose = useCallback(() => {
     setIsOpen(false);
-    try {
-      sessionStorage.setItem("fashai_event_popup_closed", "true");
-    } catch {
-      // Safe fallback if sessionStorage is disabled
-    }
-
-    // Restore background page scrolling
-    document.body.style.overflow = "";
-    document.documentElement.style.overflow = "";
-
-    if (triggerElementRef.current) {
-      triggerElementRef.current.focus?.();
-    }
   }, []);
 
   // Handle CTA Navigation
@@ -36,54 +24,31 @@ export default function EventInfoModal() {
     router.push(`/contact?type=${type}`);
   };
 
-  // 1. Popup Trigger Logic: Open on initial page entry/refresh & on any user action
+  // Route-aware 3-second delay popup trigger
   useEffect(() => {
-    // If closed during current session, do not re-open continuously on simple route transitions
-    try {
-      const isClosed = sessionStorage.getItem("fashai_event_popup_closed");
-      if (isClosed === "true") {
-        return;
-      }
-    } catch {
-      // safe fallback
+    // Clear any existing timer when route changes or component mounts
+    if (timerRef.current) {
+      clearTimeout(timerRef.current);
+      timerRef.current = null;
     }
 
-    let triggered = false;
+    // Reset modal state on route transition
+    setIsOpen(false);
 
-    const triggerPopup = () => {
-      if (triggered) return;
-      triggered = true;
-      triggerElementRef.current = document.activeElement as HTMLElement;
+    // Schedule popup display exactly 3 seconds after entering page
+    timerRef.current = setTimeout(() => {
       setIsOpen(true);
-      removeListeners();
-    };
-
-    const handleScroll = () => triggerPopup();
-    const handleClick = () => triggerPopup();
-    const handleKey = () => triggerPopup();
-
-    const removeListeners = () => {
-      window.removeEventListener("scroll", handleScroll);
-      window.removeEventListener("click", handleClick);
-      window.removeEventListener("keydown", handleKey);
-    };
-
-    // Auto-trigger on page load/refresh after a short 1.2s delay
-    const autoTimer = setTimeout(() => {
-      triggerPopup();
-    }, 1200);
-
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    window.addEventListener("click", handleClick, { passive: true });
-    window.addEventListener("keydown", handleKey, { passive: true });
+    }, 3000);
 
     return () => {
-      clearTimeout(autoTimer);
-      removeListeners();
+      if (timerRef.current) {
+        clearTimeout(timerRef.current);
+        timerRef.current = null;
+      }
     };
-  }, []);
+  }, [pathname]);
 
-  // 2. Manage Lock Scroll & Escape Key Listener when Open
+  // Manage body scroll locking when open & handle Escape key for smooth exit
   useEffect(() => {
     if (isOpen) {
       document.body.style.overflow = "hidden";
@@ -96,12 +61,22 @@ export default function EventInfoModal() {
       };
 
       window.addEventListener("keydown", handleKeyDown);
-      return () => window.removeEventListener("keydown", handleKeyDown);
+      return () => {
+        window.removeEventListener("keydown", handleKeyDown);
+      };
+    } else {
+      document.body.style.overflow = "";
+      document.documentElement.style.overflow = "";
     }
   }, [isOpen, handleClose]);
 
   return (
-    <AnimatePresence>
+    <AnimatePresence
+      onExitComplete={() => {
+        document.body.style.overflow = "";
+        document.documentElement.style.overflow = "";
+      }}
+    >
       {isOpen && (
         <div
           className="fixed inset-0 z-[300] flex items-center justify-center p-4 sm:p-6 md:p-8 overflow-y-auto"
@@ -109,55 +84,51 @@ export default function EventInfoModal() {
           aria-modal="true"
           aria-labelledby="event-modal-title"
         >
-          {/* Backdrop (Z-300): Dark Translucent Blur */}
+          {/* Backdrop (Z-300): Dark Translucent Overlay (Subtle temporary visual treatment) */}
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            transition={{ duration: 0.35 }}
+            transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
             onClick={handleClose}
             className="fixed inset-0 bg-black/85 backdrop-blur-md z-[300]"
-            style={{
-              backdropFilter: "blur(14px)",
-              WebkitBackdropFilter: "blur(14px)",
-            }}
           />
 
-          {/* Modal Container Card (Z-310) */}
+          {/* Modal Container Card (Z-310) - Smooth Entrance & Exit Animations */}
           <motion.div
             ref={modalRef}
-            initial={{ opacity: 0, y: 20, scale: 0.98 }}
+            initial={{ opacity: 0, y: 20, scale: 0.96 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
-            exit={{ opacity: 0, y: 15, scale: 0.98 }}
-            transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
-            className="relative z-[310] w-full max-w-2xl bg-[#0B0908] border border-brand-orange/40 p-6 sm:p-10 shadow-[0_0_70px_rgba(241,94,28,0.25)] text-brand-white overflow-hidden max-h-[88vh] flex flex-col justify-between my-auto rounded-none"
+            exit={{ opacity: 0, y: 12, scale: 0.98 }}
+            transition={{ duration: 0.45, ease: [0.16, 1, 0.3, 1] }}
+            className="relative z-[310] w-full max-w-2xl bg-[#080808] border border-brand-yellow-golden/50 p-6 sm:p-10 shadow-[0_0_80px_rgba(250,182,10,0.25)] text-brand-white overflow-hidden max-h-[88vh] flex flex-col justify-between my-auto rounded-none"
           >
-            {/* Corner Decorative Ambient Accent */}
-            <div className="absolute top-0 left-0 w-28 h-28 bg-gradient-to-br from-brand-orange/15 via-transparent to-transparent pointer-events-none" />
-            <div className="absolute bottom-0 right-0 w-36 h-36 bg-gradient-to-tl from-brand-green/10 via-transparent to-transparent pointer-events-none" />
+            {/* Ambient Gold & Orange Subtle Glows */}
+            <div className="absolute top-0 left-0 w-32 h-32 bg-gradient-to-br from-brand-yellow-golden/20 via-transparent to-transparent pointer-events-none" />
+            <div className="absolute bottom-0 right-0 w-36 h-36 bg-gradient-to-tl from-brand-orange/15 via-transparent to-transparent pointer-events-none" />
 
             {/* Close Button (Z-320) */}
             <button
               onClick={handleClose}
-              className="absolute top-4 right-4 sm:top-5 sm:right-5 p-2.5 rounded-full bg-brand-void border border-brand-orange/40 text-brand-white hover:text-brand-orange hover:border-brand-orange transition-colors min-w-[44px] min-h-[44px] flex items-center justify-center z-[320] focus:outline-none focus:ring-2 focus:ring-brand-orange"
+              className="absolute top-4 right-4 sm:top-5 sm:right-5 p-2.5 bg-black/80 border border-brand-yellow-golden/40 text-brand-white hover:text-brand-yellow-golden hover:border-brand-yellow-golden transition-colors min-w-[44px] min-h-[44px] flex items-center justify-center z-[320] focus:outline-none focus:ring-1 focus:ring-brand-yellow-golden"
               aria-label="Close event information"
             >
               <X className="h-5 w-5" />
             </button>
 
-            {/* Modal Body Content (Scrollable if viewport is small) */}
+            {/* Modal Body Content */}
             <div className="overflow-y-auto pr-1 space-y-5">
               
-              {/* Eyebrow Label & Tagline */}
+              {/* Eyebrow Tagline & Gold Indicator */}
               <div>
                 <div className="flex items-center gap-2 mb-2">
-                  <span className="h-2 w-2 rounded-full bg-brand-orange animate-pulse" />
-                  <span className="text-[10px] sm:text-xs font-syne tracking-micro text-brand-orange font-bold uppercase">
-                    UPCOMING EVENT · DUBAI 2026
+                  <span className="h-2 w-2 rounded-full bg-brand-yellow-golden animate-pulse" />
+                  <span className="text-[10px] sm:text-xs font-syne tracking-micro text-brand-yellow-golden font-bold uppercase">
+                    LIFESTYLE 2026 · DUBAI · 2026
                   </span>
                 </div>
-                <p className="font-serif italic text-xs sm:text-sm text-brand-yellow-golden font-light tracking-wide">
-                  “BIGGEST INTERNATIONAL FASHION EVENTS, DUBAI | 2026”
+                <p className="font-serif italic text-xs sm:text-sm text-brand-yellow-golden/90 font-light tracking-wide">
+                  An international fashion and lifestyle experience.
                 </p>
               </div>
 
@@ -169,14 +140,14 @@ export default function EventInfoModal() {
                 >
                   LIFESTYLE 2026
                 </h2>
-                <p className="font-sans text-xs sm:text-sm text-brand-platinum/90 font-light">
-                  An international fashion and lifestyle experience in Dubai.
+                <p className="font-syne text-xs sm:text-sm text-brand-yellow-golden font-bold uppercase tracking-wide">
+                  DUBAI · 2026
                 </p>
               </div>
 
               {/* Status Banner Box */}
-              <div className="border-l-2 border-brand-orange pl-4 py-2.5 bg-brand-orange/10 border border-brand-orange/20">
-                <span className="font-syne text-xs tracking-caps text-brand-orange font-bold uppercase block mb-0.5">
+              <div className="border-l-2 border-brand-yellow-golden pl-4 py-3 bg-brand-yellow-golden/10 border border-brand-yellow-golden/30">
+                <span className="font-syne text-xs tracking-caps text-brand-yellow-golden font-bold uppercase block mb-1">
                   REGISTRATIONS &amp; SPONSORSHIPS ARE OPEN
                 </span>
                 <span className="font-sans text-xs text-brand-white/90 font-light">
@@ -184,11 +155,11 @@ export default function EventInfoModal() {
                 </span>
               </div>
 
-              {/* Key Event Information Grid */}
+              {/* Key Event Details Grid */}
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-2">
                 {/* Event Date */}
-                <div className="bg-brand-charcoal/80 border border-white/10 p-3.5 flex flex-col justify-between">
-                  <div className="flex items-center gap-2 text-brand-orange text-xs mb-2">
+                <div className="bg-black/80 border border-white/10 p-3.5 flex flex-col justify-between">
+                  <div className="flex items-center gap-2 text-brand-yellow-golden text-xs mb-2">
                     <Calendar className="w-3.5 h-3.5" />
                     <span className="font-syne text-[9px] tracking-micro uppercase font-bold text-brand-platinum">
                       EVENT DATE
@@ -200,8 +171,8 @@ export default function EventInfoModal() {
                 </div>
 
                 {/* Event Venue */}
-                <div className="bg-brand-charcoal/80 border border-white/10 p-3.5 flex flex-col justify-between">
-                  <div className="flex items-center gap-2 text-brand-orange text-xs mb-2">
+                <div className="bg-black/80 border border-white/10 p-3.5 flex flex-col justify-between">
+                  <div className="flex items-center gap-2 text-brand-yellow-golden text-xs mb-2">
                     <MapPin className="w-3.5 h-3.5" />
                     <span className="font-syne text-[9px] tracking-micro uppercase font-bold text-brand-platinum">
                       EVENT VENUE
@@ -213,39 +184,39 @@ export default function EventInfoModal() {
                 </div>
 
                 {/* Dress Code */}
-                <div className="bg-brand-charcoal/80 border border-white/10 p-3.5 flex flex-col justify-between">
-                  <div className="flex items-center gap-2 text-brand-green text-xs mb-2">
+                <div className="bg-black/80 border border-white/10 p-3.5 flex flex-col justify-between">
+                  <div className="flex items-center gap-2 text-brand-yellow-golden text-xs mb-2">
                     <Sparkles className="w-3.5 h-3.5" />
                     <span className="font-syne text-[9px] tracking-micro uppercase font-bold text-brand-platinum">
                       DRESS CODE
                     </span>
                   </div>
-                  <span className="font-syne text-[11px] text-brand-green font-bold uppercase leading-tight">
+                  <span className="font-syne text-[11px] text-brand-yellow-golden font-bold uppercase leading-tight">
                     FASHIONABLE &amp; HAUTE COUTURE
                   </span>
                 </div>
               </div>
 
-              {/* CTA Action Buttons */}
+              {/* Action Buttons */}
               <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 pt-3">
                 <button
                   onClick={() => handleCtaClick("Registration")}
-                  className="bg-brand-orange px-6 py-3.5 text-xs font-syne tracking-caps font-bold text-white hover:bg-[#ff6f2d] hover:shadow-[0_0_20px_rgba(241,94,28,0.4)] transition-all duration-300 text-center min-h-[44px] flex items-center justify-center rounded-none group flex-1"
+                  className="bg-brand-yellow-golden px-6 py-3.5 text-xs font-syne tracking-caps font-bold text-black hover:bg-[#ffec69] transition-all duration-300 text-center min-h-[44px] flex items-center justify-center rounded-none group flex-1 shadow-[0_0_20px_rgba(250,182,10,0.3)]"
                 >
-                  <span>REGISTER</span>
+                  <span>REGISTER / ENQUIRE</span>
                   <span className="ml-2 group-hover:translate-x-1 transition-transform">→</span>
                 </button>
                 <button
                   onClick={() => handleCtaClick("Sponsorship")}
-                  className="border border-brand-yellow-golden/50 bg-brand-void/80 backdrop-blur-md px-6 py-3.5 text-xs font-syne tracking-caps font-bold text-brand-white hover:bg-brand-yellow-golden/10 hover:border-brand-yellow-golden transition-all duration-300 text-center min-h-[44px] flex items-center justify-center rounded-none flex-1"
+                  className="border border-brand-yellow-golden/60 bg-black/80 px-6 py-3.5 text-xs font-syne tracking-caps font-bold text-brand-white hover:bg-brand-yellow-golden/10 hover:border-brand-yellow-golden transition-all duration-300 text-center min-h-[44px] flex items-center justify-center rounded-none flex-1"
                 >
-                  SPONSOR ↗
+                  SPONSORSHIP ENQUIRY ↗
                 </button>
               </div>
 
             </div>
 
-            {/* Modal Footer Lockup: Supporting Arav Innovation Branding */}
+            {/* Modal Footer Lockup: Powered by Arav Innovation */}
             <div className="pt-5 mt-4 border-t border-white/10 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2">
               <div className="flex items-center gap-3">
                 <Image
@@ -256,7 +227,7 @@ export default function EventInfoModal() {
                   className="h-7 sm:h-8 w-auto object-contain"
                 />
               </div>
-              <span className="font-syne text-[10px] tracking-micro text-brand-platinum/70 uppercase">
+              <span className="font-syne text-[10px] tracking-micro text-brand-platinum/70 uppercase font-bold">
                 FASHAI UNIVERSAL · DUBAI 2026
               </span>
             </div>
