@@ -66,6 +66,7 @@ export async function POST(request: Request) {
       "fashion_stylist",
       "influencer_creator",
       "celebrity_public_figure",
+      "choreographer",
     ];
 
     if (!applicationType || !validTypes.includes(applicationType)) {
@@ -299,6 +300,40 @@ export async function POST(request: Request) {
           managementContact,
           interests,
           availableTravel,
+        };
+        break;
+      }
+
+      case "choreographer": {
+        const stageName = sanitizeInput(body.stageName);
+        const experience = sanitizeInput(body.experience);
+        const specializations = Array.isArray(body.specializations)
+          ? body.specializations.map(sanitizeInput)
+          : [sanitizeInput(body.specializations)];
+        const danceStyles = sanitizeInput(body.danceStyles);
+        const instagramUrl = sanitizeInput(body.instagramUrl);
+        const showreelUrl = sanitizeInput(body.showreelUrl);
+        const previousProjects = sanitizeInput(body.previousProjects);
+        const availableTravel = body.availableTravel === true || body.availableTravel === "Yes";
+        const availableCollab = body.availableCollab === true || body.availableCollab === "Yes";
+
+        if (instagramUrl && !isValidUrl(instagramUrl)) {
+          return NextResponse.json({ error: "Please enter a valid Instagram / Social Profile URL." }, { status: 400 });
+        }
+        if (showreelUrl && !isValidUrl(showreelUrl)) {
+          return NextResponse.json({ error: "Please enter a valid Portfolio / Showreel Link." }, { status: 400 });
+        }
+
+        categoryDetails = {
+          stageName,
+          experience,
+          specializations,
+          danceStyles,
+          instagramUrl,
+          showreelUrl,
+          previousProjects,
+          availableTravel,
+          availableCollab,
         };
         break;
       }

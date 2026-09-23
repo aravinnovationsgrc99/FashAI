@@ -1,6 +1,13 @@
 export interface PeopleCategory {
   id: string;
-  categoryId: "fashion_designer" | "model" | "makeup_artist" | "fashion_stylist" | "influencer_creator" | "celebrity_public_figure";
+  categoryId:
+    | "fashion_designer"
+    | "model"
+    | "makeup_artist"
+    | "fashion_stylist"
+    | "influencer_creator"
+    | "celebrity_public_figure"
+    | "choreographer";
   title: string;
   subtitle: string;
   ctaLabel: string;
@@ -101,6 +108,19 @@ export const PEOPLE_MASTER_DATA: PeopleCategory[] = [
     tagline: "GLOBAL PATRONS & VIP SALONS",
     primaryImage: "/assets/master/celebrity/celebrity_01.png",
     secondaryImages: ["/assets/master/celebrity/celebrity_02.jpg"],
+    objectPosition: "object-top",
+    aspectRatioClass: "aspect-[4/5]",
+    gridSpan: "lg:col-span-4",
+  },
+  {
+    id: "choreographers",
+    categoryId: "choreographer",
+    title: "CHOREOGRAPHER",
+    subtitle: "Focus on movement, choreography, runway direction, performance and stage presentation.",
+    ctaLabel: "APPLY AS CHOREOGRAPHER",
+    tagline: "MOVEMENT & CATWALK CHOREOGRAPHY",
+    primaryImage: "/assets/master/choreographer/choreographer.png",
+    secondaryImages: ["/assets/master/choreographer/Chreographer.png"],
     objectPosition: "object-top",
     aspectRatioClass: "aspect-[4/5]",
     gridSpan: "lg:col-span-4",

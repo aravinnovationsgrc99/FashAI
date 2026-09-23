@@ -10,7 +10,8 @@ export type CategoryId =
   | "makeup_artist"
   | "fashion_stylist"
   | "influencer_creator"
-  | "celebrity_public_figure";
+  | "celebrity_public_figure"
+  | "choreographer";
 
 export interface TalentModalProps {
   isOpen: boolean;
@@ -25,6 +26,7 @@ const CATEGORIES: { id: CategoryId; title: string; formTitle: string }[] = [
   { id: "fashion_stylist", title: "Fashion Stylist", formTitle: "JOIN AS A FASHION STYLIST" },
   { id: "influencer_creator", title: "Influencer / Content Creator", formTitle: "JOIN AS AN INFLUENCER / CREATOR" },
   { id: "celebrity_public_figure", title: "Celebrity / Public Figure", formTitle: "JOIN AS A CELEBRITY / PUBLIC FIGURE" },
+  { id: "choreographer", title: "Choreographer", formTitle: "JOIN AS A CHOREOGRAPHER" },
 ];
 
 function normalizeCategoryId(catId?: string): CategoryId {
@@ -35,6 +37,7 @@ function normalizeCategoryId(catId?: string): CategoryId {
   if (catId === "stylists" || catId === "fashion_stylist") return "fashion_stylist";
   if (catId === "influencers" || catId === "influencer_creator") return "influencer_creator";
   if (catId === "celebrities" || catId === "celebrity_public_figure") return "celebrity_public_figure";
+  if (catId === "choreographers" || catId === "choreographer") return "choreographer";
   return "fashion_designer";
 }
 
@@ -305,7 +308,21 @@ export default function TalentApplicationModal({ isOpen, onClose, initialCategor
                       </div>
                     )}
 
-                    {/* Designer & Creator Stage/Brand name */}
+                    {/* Choreographer, Designer & Creator Stage/Brand name */}
+                    {activeCategory === "choreographer" && (
+                      <div className="space-y-2 sm:col-span-2">
+                        <label className="block text-xs font-syne tracking-wider text-brand-platinum/90 uppercase font-semibold">
+                          02. PROFESSIONAL / STAGE NAME
+                        </label>
+                        <input
+                          type="text"
+                          name="stageName"
+                          placeholder="e.g. Movement Director / Stage Name"
+                          className="w-full bg-[#151210] border border-white/20 text-brand-white px-4 py-3 text-sm font-sans focus:border-brand-orange focus:outline-none transition-colors"
+                        />
+                      </div>
+                    )}
+
                     {activeCategory === "fashion_designer" && (
                       <div className="space-y-2 sm:col-span-2">
                         <label className="block text-xs font-syne tracking-wider text-brand-platinum/90 uppercase font-semibold">
@@ -382,11 +399,65 @@ export default function TalentApplicationModal({ isOpen, onClose, initialCategor
                       02 — PROFESSIONAL
                     </span>
                     <span className="text-xs text-brand-platinum/50 font-light">
-                      Specialization, Physical Attributes & Experience
+                      Specialization, Skills & Experience
                     </span>
                   </div>
 
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                    {/* CHOREOGRAPHER Fields */}
+                    {activeCategory === "choreographer" && (
+                      <>
+                        <div className="space-y-2 sm:col-span-2">
+                          <label className="block text-xs font-syne tracking-wider text-brand-platinum/90 uppercase font-semibold">
+                            YEARS OF EXPERIENCE
+                          </label>
+                          <select name="experience" className="w-full bg-[#151210] border border-white/20 text-brand-white px-4 py-3 text-sm font-sans focus:border-brand-orange focus:outline-none">
+                            <option value="0–1 years">0–1 years</option>
+                            <option value="2–3 years">2–3 years</option>
+                            <option value="4–5 years">4–5 years</option>
+                            <option value="6–10 years">6–10 years</option>
+                            <option value="10+ years">10+ years</option>
+                          </select>
+                        </div>
+
+                        <div className="space-y-2 sm:col-span-2">
+                          <label className="block text-xs font-syne tracking-wider text-brand-platinum/90 uppercase font-semibold">
+                            CHOREOGRAPHY SPECIALIZATION
+                          </label>
+                          <div className="grid grid-cols-2 sm:grid-cols-3 gap-2 pt-1">
+                            {[
+                              "Fashion / Runway",
+                              "Bollywood",
+                              "Contemporary",
+                              "Hip-Hop",
+                              "Classical",
+                              "Commercial",
+                              "Music Videos",
+                              "Wedding / Events",
+                              "Other",
+                            ].map((opt) => (
+                              <label key={opt} className="flex items-center gap-2 cursor-pointer bg-[#151210] border border-white/10 p-2.5 text-xs text-brand-platinum hover:border-brand-orange">
+                                <input type="checkbox" name="specializations" value={opt} className="accent-[#F15E1C]" />
+                                <span>{opt}</span>
+                              </label>
+                            ))}
+                          </div>
+                        </div>
+
+                        <div className="space-y-2 sm:col-span-2">
+                          <label className="block text-xs font-syne tracking-wider text-brand-platinum/90 uppercase font-semibold">
+                            PROFESSIONAL SKILLS / DANCE STYLES
+                          </label>
+                          <input
+                            type="text"
+                            name="danceStyles"
+                            placeholder="e.g. Catwalk choreography, Stage blocking, Heels, Jazz, Aerial"
+                            className="w-full bg-[#151210] border border-white/20 text-brand-white px-4 py-3 text-sm font-sans focus:border-brand-orange focus:outline-none"
+                          />
+                        </div>
+                      </>
+                    )}
+
                     {/* DESIGNER Fields */}
                     {activeCategory === "fashion_designer" && (
                       <>
@@ -482,7 +553,7 @@ export default function TalentApplicationModal({ isOpen, onClose, initialCategor
                             SHOE SIZE
                           </label>
                           <select name="shoeSize" className="w-full bg-[#151210] border border-white/20 text-brand-white px-4 py-3 text-sm font-sans focus:border-brand-orange focus:outline-none">
-                            <option value="EU 36 / US 5 border">EU 36 / US 5</option>
+                            <option value="EU 36 / US 5">EU 36 / US 5</option>
                             <option value="EU 37 / US 6">EU 37 / US 6</option>
                             <option value="EU 38 / US 7">EU 38 / US 7</option>
                             <option value="EU 39 / US 8">EU 39 / US 8</option>
@@ -756,14 +827,14 @@ export default function TalentApplicationModal({ isOpen, onClose, initialCategor
                       03 — PORTFOLIO / SOCIAL
                     </span>
                     <span className="text-xs text-brand-platinum/50 font-light">
-                      Digital Handles, Websites & Work Samples
+                      Digital Handles, Websites, Showreels & Work Samples
                     </span>
                   </div>
 
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                     <div className="space-y-2">
                       <label className="block text-xs font-syne tracking-wider text-brand-platinum/90 uppercase font-semibold">
-                        INSTAGRAM PROFILE / LINK
+                        INSTAGRAM / SOCIAL MEDIA PROFILE
                       </label>
                       <input
                         type="url"
@@ -773,7 +844,21 @@ export default function TalentApplicationModal({ isOpen, onClose, initialCategor
                       />
                     </div>
 
-                    {activeCategory !== "influencer_creator" && (
+                    {activeCategory === "choreographer" && (
+                      <div className="space-y-2">
+                        <label className="block text-xs font-syne tracking-wider text-brand-platinum/90 uppercase font-semibold">
+                          PORTFOLIO / SHOWREEL LINK
+                        </label>
+                        <input
+                          type="url"
+                          name="showreelUrl"
+                          placeholder="https://vimeo.com/showreel or YouTube / Portfolio link"
+                          className="w-full bg-[#151210] border border-white/20 text-brand-white px-4 py-3 text-sm font-sans focus:border-brand-orange focus:outline-none"
+                        />
+                      </div>
+                    )}
+
+                    {activeCategory !== "influencer_creator" && activeCategory !== "choreographer" && (
                       <div className="space-y-2">
                         <label className="block text-xs font-syne tracking-wider text-brand-platinum/90 uppercase font-semibold">
                           PORTFOLIO / WEBSITE LINK
@@ -796,6 +881,20 @@ export default function TalentApplicationModal({ isOpen, onClose, initialCategor
                           type="text"
                           name="socialHandle"
                           placeholder="@yourcreatorhandle or channel URL"
+                          className="w-full bg-[#151210] border border-white/20 text-brand-white px-4 py-3 text-sm font-sans focus:border-brand-orange focus:outline-none"
+                        />
+                      </div>
+                    )}
+
+                    {activeCategory === "choreographer" && (
+                      <div className="space-y-2 sm:col-span-2">
+                        <label className="block text-xs font-syne tracking-wider text-brand-platinum/90 uppercase font-semibold">
+                          PREVIOUS SHOWS / MAJOR PROJECTS
+                        </label>
+                        <input
+                          type="text"
+                          name="previousProjects"
+                          placeholder="e.g. Paris Fashion Week 2024 Catwalk, Bollywood Award Show, Major Brand Live Event"
                           className="w-full bg-[#151210] border border-white/20 text-brand-white px-4 py-3 text-sm font-sans focus:border-brand-orange focus:outline-none"
                         />
                       </div>
@@ -885,23 +984,22 @@ export default function TalentApplicationModal({ isOpen, onClose, initialCategor
                       </div>
                     )}
 
-                    {/* Travel / Collab field */}
+                    {/* Travel / Collab fields */}
                     <div className="space-y-2">
                       <label className="block text-xs font-syne tracking-wider text-brand-platinum/90 uppercase font-semibold">
-                        {activeCategory === "fashion_designer"
-                          ? "AVAILABLE FOR COLLABORATIONS?"
-                          : activeCategory === "influencer_creator"
-                          ? "AVAILABLE FOR BRAND COLLABORATIONS?"
-                          : "AVAILABLE FOR INTERNATIONAL TRAVEL?"}
+                        AVAILABLE FOR INTERNATIONAL TRAVEL?
                       </label>
-                      <select
-                        name={
-                          activeCategory === "fashion_designer" || activeCategory === "influencer_creator"
-                            ? "availableCollab"
-                            : "availableTravel"
-                        }
-                        className="w-full bg-[#151210] border border-white/20 text-brand-white px-4 py-3 text-sm font-sans focus:border-brand-orange focus:outline-none"
-                      >
+                      <select name="availableTravel" className="w-full bg-[#151210] border border-white/20 text-brand-white px-4 py-3 text-sm font-sans focus:border-brand-orange focus:outline-none">
+                        <option value="Yes">Yes</option>
+                        <option value="No">No</option>
+                      </select>
+                    </div>
+
+                    <div className="space-y-2">
+                      <label className="block text-xs font-syne tracking-wider text-brand-platinum/90 uppercase font-semibold">
+                        AVAILABLE FOR COLLABORATIONS?
+                      </label>
+                      <select name="availableCollab" className="w-full bg-[#151210] border border-white/20 text-brand-white px-4 py-3 text-sm font-sans focus:border-brand-orange focus:outline-none">
                         <option value="Yes">Yes</option>
                         <option value="No">No</option>
                       </select>
