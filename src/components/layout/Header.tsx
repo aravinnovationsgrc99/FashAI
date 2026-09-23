@@ -50,10 +50,7 @@ export default function Header() {
           </div>
           <div className="flex flex-col justify-center">
             <span className="font-serif-display text-lg sm:text-xl font-light tracking-wider text-brand-white uppercase group-hover:text-brand-yellow-golden transition-colors leading-none">
-              FashAI <span className="font-serif italic font-normal text-transparent bg-clip-text bg-gradient-to-r from-brand-yellow-golden via-[#FFEC69] to-brand-orange capitalize">Universal</span>
-            </span>
-            <span className="text-[8px] font-syne tracking-[0.22em] text-brand-yellow-golden/70 uppercase font-bold mt-0.5">
-              DUBAI · EST. 2026
+              FashAI <span className="font-serif italic font-normal text-brand-yellow-golden capitalize">Universal</span>
             </span>
           </div>
         </Link>
