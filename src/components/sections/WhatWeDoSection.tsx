@@ -3,59 +3,26 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, Layers } from "lucide-react";
+import { ArrowRight, Layers, Sparkles } from "lucide-react";
 
 export default function WhatWeDoSection() {
-  const categories = [
-    {
-      title: "FASHION EVENTS",
-      subtitle: "Haute Couture, Runway Shows & International Fashion Weeks.",
-      description: "High-impact runway productions, designer showcases, and high-fashion presentations.",
-      image: "/assets/models/model_03.jpeg",
-      featured: true,
-    },
-    {
-      title: "LIFESTYLE EVENTS",
-      subtitle: "Curated Luxury Experiences & Brand Activations.",
-      description: "Bespoke lifestyle experiences, press receptions, and luxury product launches.",
-      image: "/assets/models/model_04.jpeg",
-      featured: false,
-    },
-    {
-      title: "PRODUCT EVENTS",
-      subtitle: "Launches & Experiential Showcases.",
-      description: "Strategic product unveilings designed for media, buyers, and high-net-worth guests.",
-      image: "/assets/models/model_05.jpeg",
-      featured: false,
-    },
-    {
-      title: "CORPORATE EVENTS",
-      subtitle: "Executive Gatherings & High-Level Receptions.",
-      description: "Sophisticated corporate experiences, gala dinners, and industry conferences.",
-      image: "/assets/models/model_06.jpeg",
-      featured: false,
-    },
-    {
-      title: "IT EVENTS",
-      subtitle: "Technology & Innovation Summits.",
-      description: "Curated technology showcases, digital summits, and computational fashion forums.",
-      image: "/assets/models/model_07.jpeg",
-      featured: false,
-    },
-  ];
-
   return (
-    <section id="what-we-do" className="relative py-24 sm:py-32 bg-[#060606] border-b border-white/10 text-brand-white overflow-hidden">
+    <section id="what-we-do" className="relative py-24 sm:py-32 bg-[#050505] border-b border-white/10 text-brand-white overflow-hidden">
+      {/* Atmosphere Glow */}
+      <div className="absolute inset-0 pointer-events-none select-none">
+        <div className="absolute top-1/3 left-1/4 w-[500px] h-[500px] bg-brand-yellow-golden/5 blur-[190px] rounded-full" />
+      </div>
+
       <div className="container-editorial relative z-10">
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16 border-b border-white/10 pb-8">
           <div>
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-yellow-golden/10 border border-brand-yellow-golden/40 text-brand-yellow-golden text-xs font-syne tracking-micro font-bold uppercase mb-3">
               <Layers className="w-3.5 h-3.5" />
-              <span>WHAT WE DO</span>
+              <span>EVENT FORMATS &amp; SERVICES</span>
             </div>
-            <h2 className="font-serif-display text-4xl sm:text-6xl font-light text-brand-white uppercase">
-              EVENT FORMATS &amp; <span className="font-serif italic text-brand-yellow-golden">Services</span>
+            <h2 className="font-serif-display text-4xl sm:text-6xl font-light text-brand-white uppercase leading-none">
+              WHAT WE <span className="font-serif italic font-normal text-brand-yellow-golden">DO</span>
             </h2>
           </div>
           <p className="font-sans text-xs sm:text-sm text-brand-platinum/80 max-w-md font-light leading-relaxed">
@@ -63,110 +30,225 @@ export default function WhatWeDoSection() {
           </p>
         </div>
 
-        {/* Asymmetric Non-Box Layout Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-8">
-          {/* Main Feature: Fashion Events (Span 7) */}
+        {/* Asymmetric Editorial Event Grid */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
+          {/* EVENT BLOCK 1: FLAGSHIP FASHION EVENTS (Span 7) */}
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="md:col-span-7 group relative bg-black/80 rounded-3xl border border-brand-yellow-golden/40 p-8 sm:p-10 flex flex-col justify-between overflow-hidden shadow-[0_0_40px_rgba(250,182,10,0.1)] hover:border-brand-yellow-golden transition-all duration-500 min-h-[440px]"
+            transition={{ duration: 0.6 }}
+            className="lg:col-span-7 group relative bg-[#090807] border border-brand-yellow-golden/40 rounded-3xl p-6 sm:p-8 flex flex-col justify-between overflow-hidden shadow-2xl hover:border-brand-yellow-golden transition-all duration-300"
           >
-            <div className="relative z-10 space-y-4 max-w-lg">
-              <span className="text-[10px] font-syne tracking-widest text-brand-yellow-golden uppercase font-bold px-3 py-1 bg-brand-yellow-golden/10 rounded-full border border-brand-yellow-golden/40">
-                FLAGSHIP FORMAT
-              </span>
-              <h3 className="font-serif-display text-3xl sm:text-5xl font-light uppercase text-brand-white group-hover:text-brand-yellow-golden transition-colors">
-                {categories[0].title}
+            <div>
+              <div className="flex items-center justify-between mb-4">
+                <span className="text-[10px] font-syne tracking-widest text-brand-yellow-golden uppercase font-bold px-3 py-1 bg-brand-yellow-golden/10 rounded-full border border-brand-yellow-golden/40">
+                  FLAGSHIP FORMAT
+                </span>
+                <Sparkles className="w-4 h-4 text-brand-yellow-golden/70" />
+              </div>
+
+              {/* Contained Dual-Layer Image Display (100% Uncropped) */}
+              <div className="relative aspect-[16/10] w-full overflow-hidden rounded-2xl mb-6 bg-[#030303] border border-white/10 p-2 flex items-center justify-center">
+                {/* Background ambient layer */}
+                <Image
+                  src="/assets/events/fashion_events.png"
+                  alt=""
+                  fill
+                  sizes="100px"
+                  className="object-cover blur-xl opacity-25 pointer-events-none"
+                />
+                {/* Foreground primary image — 100% visible, object-contain */}
+                <div className="relative w-full h-full">
+                  <Image
+                    src="/assets/events/fashion_events.png"
+                    alt="Fashion event and runway experience"
+                    fill
+                    sizes="(max-width: 1024px) 100vw, 60vw"
+                    className="object-contain rounded-xl group-hover:scale-[1.02] transition-transform duration-500"
+                    priority
+                  />
+                </div>
+              </div>
+
+              <h3 className="font-serif-display text-2xl sm:text-4xl font-light uppercase text-brand-white group-hover:text-brand-yellow-golden transition-colors mb-3">
+                FASHION EVENTS
               </h3>
-              <p className="font-sans text-sm text-brand-platinum/90 font-light leading-relaxed">
-                {categories[0].description}
+
+              <p className="font-sans text-xs sm:text-sm text-brand-platinum/85 font-light leading-relaxed mb-6">
+                High-impact runway productions, designer showcases, and high-fashion presentations.
               </p>
             </div>
 
-            <div className="relative z-10 pt-6 flex items-center justify-between border-t border-white/10">
-              <span className="text-xs font-syne text-brand-yellow-golden tracking-widest uppercase font-bold">
-                EXPLORE EVENT FORMATS
-              </span>
+            <div className="pt-4 border-t border-white/10 flex items-center justify-between">
               <Link
                 href="/projects"
-                className="w-10 h-10 rounded-full bg-brand-yellow-golden text-black flex items-center justify-center group-hover:scale-110 transition-transform"
+                className="inline-flex items-center gap-3 bg-brand-yellow-golden hover:bg-yellow-400 text-black px-6 py-3 rounded-full font-syne text-xs font-bold tracking-caps transition-colors shadow-lg"
               >
-                <ArrowRight className="w-5 h-5" />
+                <span>EXPLORE EVENT FORMATS</span>
+                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </Link>
             </div>
-
-            {/* Background Image Layer */}
-            <Image
-              src={categories[0].image}
-              alt={categories[0].title}
-              fill
-              sizes="(max-width: 768px) 100vw, 60vw"
-              className="object-cover object-top opacity-35 group-hover:opacity-50 group-hover:scale-105 transition-all duration-700 pointer-events-none"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent pointer-events-none" />
           </motion.div>
 
-          {/* Secondary Features Grid (Span 5) */}
-          <div className="md:col-span-5 grid grid-cols-1 gap-6">
-            {categories.slice(1, 3).map((item, idx) => (
-              <motion.div
-                key={idx}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: idx * 0.1 }}
-                className="group relative bg-black/80 rounded-2xl border border-white/15 p-6 flex flex-col justify-between overflow-hidden hover:border-brand-yellow-golden/60 transition-all duration-300 min-h-[200px]"
-              >
-                <div className="relative z-10 space-y-2">
-                  <h4 className="font-serif-display text-xl sm:text-2xl font-light uppercase text-brand-white group-hover:text-brand-yellow-golden transition-colors">
-                    {item.title}
-                  </h4>
-                  <p className="font-sans text-xs text-brand-platinum/80 font-light">
-                    {item.subtitle}
-                  </p>
+          {/* SUPPORTING EVENTS (Span 5 Stacked) */}
+          <div className="lg:col-span-5 grid grid-cols-1 gap-8">
+            {/* EVENT BLOCK 2: LIFESTYLE EVENTS */}
+            <motion.div
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              className="group relative bg-[#090807] border border-white/10 rounded-3xl p-6 flex flex-col justify-between overflow-hidden hover:border-brand-yellow-golden/50 transition-all duration-300"
+            >
+              <div>
+                {/* Contained Image Frame */}
+                <div className="relative aspect-[16/9] w-full overflow-hidden rounded-xl mb-4 bg-[#030303] border border-white/10 p-1.5 flex items-center justify-center">
+                  <Image
+                    src="/assets/events/lifestyle_events.png"
+                    alt=""
+                    fill
+                    sizes="100px"
+                    className="object-cover blur-xl opacity-20 pointer-events-none"
+                  />
+                  <div className="relative w-full h-full">
+                    <Image
+                      src="/assets/events/lifestyle_events.png"
+                      alt="FashAI Universal lifestyle event"
+                      fill
+                      sizes="(max-width: 1024px) 100vw, 40vw"
+                      className="object-contain rounded-lg group-hover:scale-[1.02] transition-transform duration-500"
+                    />
+                  </div>
                 </div>
-                <Image
-                  src={item.image}
-                  alt={item.title}
-                  fill
-                  sizes="40vw"
-                  className="object-cover opacity-20 group-hover:opacity-35 transition-opacity pointer-events-none"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent pointer-events-none" />
-              </motion.div>
-            ))}
+
+                <h3 className="font-serif-display text-xl sm:text-2xl font-light uppercase text-brand-white group-hover:text-brand-yellow-golden transition-colors mb-2">
+                  LIFESTYLE EVENTS
+                </h3>
+
+                <p className="font-sans text-xs text-brand-platinum/80 font-light leading-relaxed">
+                  Curated Luxury Experiences &amp; Brand Activations.
+                </p>
+              </div>
+            </motion.div>
+
+            {/* EVENT BLOCK 3: PRODUCT EVENTS */}
+            <motion.div
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="group relative bg-[#090807] border border-white/10 rounded-3xl p-6 flex flex-col justify-between overflow-hidden hover:border-brand-yellow-golden/50 transition-all duration-300"
+            >
+              <div>
+                {/* Contained Image Frame */}
+                <div className="relative aspect-[16/9] w-full overflow-hidden rounded-xl mb-4 bg-[#030303] border border-white/10 p-1.5 flex items-center justify-center">
+                  <Image
+                    src="/assets/events/product_events.png"
+                    alt=""
+                    fill
+                    sizes="100px"
+                    className="object-cover blur-xl opacity-20 pointer-events-none"
+                  />
+                  <div className="relative w-full h-full">
+                    <Image
+                      src="/assets/events/product_events.png"
+                      alt="FashAI Universal product event"
+                      fill
+                      sizes="(max-width: 1024px) 100vw, 40vw"
+                      className="object-contain rounded-lg group-hover:scale-[1.02] transition-transform duration-500"
+                    />
+                  </div>
+                </div>
+
+                <h3 className="font-serif-display text-xl sm:text-2xl font-light uppercase text-brand-white group-hover:text-brand-yellow-golden transition-colors mb-2">
+                  PRODUCT EVENTS
+                </h3>
+
+                <p className="font-sans text-xs text-brand-platinum/80 font-light leading-relaxed">
+                  Launches &amp; Experiential Showcases.
+                </p>
+              </div>
+            </motion.div>
           </div>
 
-          {/* Bottom Row: Corporate & IT Events (Span 12 split) */}
-          <div className="md:col-span-12 grid grid-cols-1 md:grid-cols-2 gap-6 pt-2">
-            {categories.slice(3).map((item, idx) => (
-              <motion.div
-                key={idx}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: idx * 0.1 }}
-                className="group relative bg-black/80 rounded-2xl border border-white/15 p-7 flex flex-col justify-between overflow-hidden hover:border-brand-yellow-golden/60 transition-all duration-300 min-h-[210px]"
-              >
-                <div className="relative z-10 space-y-2">
-                  <h4 className="font-serif-display text-2xl font-light uppercase text-brand-white group-hover:text-brand-yellow-golden transition-colors">
-                    {item.title}
-                  </h4>
-                  <p className="font-sans text-xs text-brand-platinum/80 font-light">
-                    {item.description}
-                  </p>
+          {/* BOTTOM ROW: CORPORATE & IT EVENTS (Span 12 Split) */}
+          <div className="lg:col-span-12 grid grid-cols-1 md:grid-cols-2 gap-8 pt-2">
+            {/* EVENT BLOCK 4: CORPORATE EVENTS */}
+            <motion.div
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.25 }}
+              className="group relative bg-[#090807] border border-white/10 rounded-3xl p-6 sm:p-8 flex flex-col justify-between overflow-hidden hover:border-brand-yellow-golden/50 transition-all duration-300"
+            >
+              <div>
+                <div className="relative aspect-[16/9] w-full overflow-hidden rounded-2xl mb-5 bg-[#030303] border border-white/10 p-2 flex items-center justify-center">
+                  <Image
+                    src="/assets/events/corporate_events.png"
+                    alt=""
+                    fill
+                    sizes="100px"
+                    className="object-cover blur-xl opacity-20 pointer-events-none"
+                  />
+                  <div className="relative w-full h-full">
+                    <Image
+                      src="/assets/events/corporate_events.png"
+                      alt="FashAI Universal corporate event"
+                      fill
+                      sizes="(max-width: 1024px) 100vw, 50vw"
+                      className="object-contain rounded-xl group-hover:scale-[1.02] transition-transform duration-500"
+                    />
+                  </div>
                 </div>
-                <Image
-                  src={item.image}
-                  alt={item.title}
-                  fill
-                  sizes="50vw"
-                  className="object-cover opacity-20 group-hover:opacity-35 transition-opacity pointer-events-none"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent pointer-events-none" />
-              </motion.div>
-            ))}
+
+                <h3 className="font-serif-display text-2xl font-light uppercase text-brand-white group-hover:text-brand-yellow-golden transition-colors mb-2">
+                  CORPORATE EVENTS
+                </h3>
+
+                <p className="font-sans text-xs sm:text-sm text-brand-platinum/80 font-light leading-relaxed">
+                  Sophisticated corporate experiences, gala dinners, and industry conferences.
+                </p>
+              </div>
+            </motion.div>
+
+            {/* EVENT BLOCK 5: IT EVENTS */}
+            <motion.div
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+              className="group relative bg-[#090807] border border-white/10 rounded-3xl p-6 sm:p-8 flex flex-col justify-between overflow-hidden hover:border-brand-yellow-golden/50 transition-all duration-300"
+            >
+              <div>
+                <div className="relative aspect-[16/9] w-full overflow-hidden rounded-2xl mb-5 bg-[#030303] border border-white/10 p-2 flex items-center justify-center">
+                  <Image
+                    src="/assets/events/it_events.png"
+                    alt=""
+                    fill
+                    sizes="100px"
+                    className="object-cover blur-xl opacity-20 pointer-events-none"
+                  />
+                  <div className="relative w-full h-full">
+                    <Image
+                      src="/assets/events/it_events.png"
+                      alt="FashAI Universal technology and IT event"
+                      fill
+                      sizes="(max-width: 1024px) 100vw, 50vw"
+                      className="object-contain rounded-xl group-hover:scale-[1.02] transition-transform duration-500"
+                    />
+                  </div>
+                </div>
+
+                <h3 className="font-serif-display text-2xl font-light uppercase text-brand-white group-hover:text-brand-yellow-golden transition-colors mb-2">
+                  IT EVENTS
+                </h3>
+
+                <p className="font-sans text-xs sm:text-sm text-brand-platinum/80 font-light leading-relaxed">
+                  Curated technology showcases, digital summits, and computational fashion forums.
+                </p>
+              </div>
+            </motion.div>
           </div>
         </div>
       </div>

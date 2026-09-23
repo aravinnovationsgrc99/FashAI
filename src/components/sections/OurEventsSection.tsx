@@ -44,26 +44,23 @@ export default function OurEventsSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="group relative bg-brand-charcoal/80 border border-brand-orange/30 p-8 sm:p-12 flex flex-col justify-between min-h-[500px] overflow-hidden"
+            className="group relative bg-[#090807] border border-brand-yellow-golden/30 p-8 sm:p-12 flex flex-col justify-between min-h-[500px] overflow-hidden rounded-3xl"
           >
             {/* Background Image Layer */}
             <div className="absolute inset-0 z-0 opacity-20 pointer-events-none group-hover:opacity-30 transition-opacity duration-700">
               <Image
-                src="/assets/models/model_01.jpeg"
+                src="/assets/events/lifestyle_events.png"
                 alt="LifeStyle Event"
                 fill
                 sizes="(max-width: 1024px) 100vw, 50vw"
-                className="object-cover filter grayscale contrast-125"
+                className="object-contain p-4 filter contrast-105"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-brand-void via-brand-void/80 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black via-black/80 to-transparent" />
             </div>
 
             <div className="relative z-10">
               <div className="flex justify-between items-start mb-8">
-                <span className="font-serif-display text-4xl sm:text-5xl text-brand-orange font-light">
-                  01
-                </span>
-                <span className="text-[10px] font-syne tracking-micro text-brand-green bg-brand-void/90 px-3 py-1.5 border border-brand-green/40 uppercase font-bold">
+                <span className="text-[10px] font-syne tracking-micro text-brand-yellow-golden bg-black/80 px-3 py-1.5 border border-brand-yellow-golden/40 uppercase font-bold rounded-full">
                   FLAGSHIP EXPERIENCE
                 </span>
               </div>
@@ -78,7 +75,7 @@ export default function OurEventsSection() {
 
               {/* Edition Badges */}
               <div className="flex flex-wrap gap-3 mb-8">
-                <div className="border border-brand-orange/40 bg-brand-void/90 px-4 py-2">
+                <div className="border border-brand-orange/40 bg-black/90 px-4 py-2 rounded-xl">
                   <span className="block text-[9px] font-syne tracking-micro text-brand-platinum/70 uppercase">
                     2025
                   </span>
@@ -86,8 +83,8 @@ export default function OurEventsSection() {
                     Previous Edition
                   </span>
                 </div>
-                <div className="border border-brand-yellow-golden/40 bg-brand-void/90 px-4 py-2">
-                  <span className="block text-[9px] font-syne tracking-micro text-brand-lemon uppercase font-bold">
+                <div className="border border-brand-yellow-golden/40 bg-black/90 px-4 py-2 rounded-xl">
+                  <span className="block text-[9px] font-syne tracking-micro text-brand-yellow-golden uppercase font-bold">
                     2026 · DUBAI
                   </span>
                   <span className="font-syne text-xs text-brand-yellow-golden font-bold uppercase">
@@ -100,7 +97,7 @@ export default function OurEventsSection() {
             <div className="relative z-10 pt-6 border-t border-white/10 flex justify-between items-center">
               <Link
                 href="/2026"
-                className="inline-flex items-center gap-2 bg-brand-orange px-6 py-3 text-xs font-syne tracking-caps font-bold text-white hover:bg-[#ff6f2d] transition-all group/btn shadow-lg"
+                className="inline-flex items-center gap-2 bg-brand-yellow-golden text-black px-6 py-3 text-xs font-syne tracking-caps font-bold hover:bg-yellow-400 transition-all group/btn shadow-lg rounded-full"
               >
                 <span>EXPLORE LIFESTYLE</span>
                 <ArrowUpRight className="w-4 h-4 group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5 transition-transform" />
@@ -114,26 +111,23 @@ export default function OurEventsSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.15 }}
-            className="group relative bg-brand-charcoal/80 border border-brand-orange/30 p-8 sm:p-12 flex flex-col justify-between min-h-[500px] overflow-hidden"
+            className="group relative bg-[#090807] border border-brand-yellow-golden/30 p-8 sm:p-12 flex flex-col justify-between min-h-[500px] overflow-hidden rounded-3xl"
           >
             {/* Background Image Layer */}
             <div className="absolute inset-0 z-0 opacity-20 pointer-events-none group-hover:opacity-30 transition-opacity duration-700">
               <Image
-                src="/assets/models/model_12.jpeg"
+                src="/assets/events/fashion_events.png"
                 alt="Runway Event"
                 fill
                 sizes="(max-width: 1024px) 100vw, 50vw"
-                className="object-cover filter grayscale contrast-125"
+                className="object-contain p-4 filter contrast-105"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-brand-void via-brand-void/80 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black via-black/80 to-transparent" />
             </div>
 
             <div className="relative z-10">
               <div className="flex justify-between items-start mb-8">
-                <span className="font-serif-display text-4xl sm:text-5xl text-brand-orange font-light">
-                  02
-                </span>
-                <span className="text-[10px] font-syne tracking-micro text-brand-yellow-golden bg-brand-void/90 px-3 py-1.5 border border-brand-yellow-golden/40 uppercase font-bold">
+                <span className="text-[10px] font-syne tracking-micro text-brand-yellow-golden bg-black/80 px-3 py-1.5 border border-brand-yellow-golden/40 uppercase font-bold rounded-full">
                   PRESENTATION EXPERIENCE
                 </span>
               </div>
@@ -147,7 +141,7 @@ export default function OurEventsSection() {
               </p>
 
               <div className="flex flex-wrap gap-3 mb-8">
-                <div className="border border-brand-orange/40 bg-brand-void/90 px-4 py-2">
+                <div className="border border-brand-orange/40 bg-black/90 px-4 py-2 rounded-xl">
                   <span className="block text-[9px] font-syne tracking-micro text-brand-orange uppercase font-bold">
                     PRESENTATION
                   </span>
@@ -161,7 +155,7 @@ export default function OurEventsSection() {
             <div className="relative z-10 pt-6 border-t border-white/10 flex justify-between items-center">
               <Link
                 href="/gallery"
-                className="inline-flex items-center gap-2 border border-brand-yellow-golden/40 bg-brand-void px-6 py-3 text-xs font-syne tracking-caps font-bold text-brand-white hover:bg-brand-yellow-golden/10 hover:border-brand-yellow-golden transition-all group/btn"
+                className="inline-flex items-center gap-2 border border-brand-yellow-golden/40 bg-black px-6 py-3 text-xs font-syne tracking-caps font-bold text-brand-white hover:bg-brand-yellow-golden/10 hover:border-brand-yellow-golden transition-all group/btn rounded-full"
               >
                 <span>EXPLORE RUNWAY</span>
                 <ArrowUpRight className="w-4 h-4 group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5 transition-transform" />
