@@ -130,38 +130,48 @@ export default function Footer() {
             </h4>
             <ul className="space-y-2.5 font-syne text-xs tracking-wider text-brand-platinum/90">
               <li>
-                <Link href="#nominations" className="hover:text-brand-yellow-golden transition-colors">
+                <Link href="/apply/designer" className="hover:text-brand-yellow-golden transition-colors">
                   Designer
                 </Link>
               </li>
               <li>
-                <Link href="#nominations" className="hover:text-brand-yellow-golden transition-colors">
+                <Link href="/apply/model" className="hover:text-brand-yellow-golden transition-colors">
                   Model
                 </Link>
               </li>
               <li>
-                <Link href="#nominations" className="hover:text-brand-yellow-golden transition-colors">
+                <Link href="/apply/makeup-artist" className="hover:text-brand-yellow-golden transition-colors">
                   Makeup Artist
                 </Link>
               </li>
               <li>
-                <Link href="#nominations" className="hover:text-brand-yellow-golden transition-colors">
-                  Stylist
+                <Link href="/apply/fashion-stylist" className="hover:text-brand-yellow-golden transition-colors">
+                  Fashion Stylist
                 </Link>
               </li>
               <li>
-                <Link href="#nominations" className="hover:text-brand-yellow-golden transition-colors">
+                <Link href="/apply/choreographer" className="hover:text-brand-yellow-golden transition-colors">
                   Choreographer
                 </Link>
               </li>
               <li>
-                <Link href="#nominations" className="hover:text-brand-yellow-golden transition-colors">
+                <Link href="/apply/influencer" className="hover:text-brand-yellow-golden transition-colors">
                   Influencer / Creator
                 </Link>
               </li>
               <li>
-                <Link href="#nominations" className="hover:text-brand-yellow-golden transition-colors">
+                <Link href="/apply/celebrity" className="hover:text-brand-yellow-golden transition-colors">
                   Celebrity / Public Figure
+                </Link>
+              </li>
+              <li>
+                <Link href="/apply/cstp" className="hover:text-brand-yellow-golden transition-colors">
+                  CSTP Application
+                </Link>
+              </li>
+              <li>
+                <Link href="/apply/fashion-commentary" className="hover:text-brand-yellow-golden transition-colors">
+                  Fashion Commentary
                 </Link>
               </li>
             </ul>

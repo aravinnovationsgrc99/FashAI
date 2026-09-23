@@ -22,7 +22,7 @@ function isValidEmail(email: string): boolean {
 }
 
 function isValidUrl(url: string): boolean {
-  if (!url) return true; // Optional fields can be empty
+  if (!url) return true;
   try {
     const formatted = url.startsWith("http://") || url.startsWith("https://") ? url : `https://${url}`;
     new URL(formatted);
@@ -71,20 +71,22 @@ export async function POST(request: Request) {
       celebrity_public_figure: "celebrity_public_figure",
       celebrity: "celebrity_public_figure",
       choreographer: "choreographer",
-      nomination: "choreographer", // Nomination record mapping
+      cstp: "cstp",
+      fashion_commentary: "fashion_commentary",
+      nomination: "nomination",
     };
 
-    const applicationType = validTypesMap[rawType] || "choreographer";
+    const applicationType = validTypesMap[rawType] || "fashion_designer";
 
     // Common Personal Data
     const fullName = sanitizeInput(body.fullName);
     const email = sanitizeInput(body.email);
     const whatsapp = sanitizeInput(body.whatsapp || body.phone);
-    const cityCountry = sanitizeInput(body.cityCountry || body.location);
+    const cityCountry = sanitizeInput(body.cityCountry || body.location || body.city);
 
-    if (!fullName || !email || !whatsapp || !cityCountry) {
+    if (!fullName || !email || !whatsapp) {
       return NextResponse.json(
-        { error: "Please complete all mandatory contact fields." },
+        { error: "Please complete all mandatory contact fields (Full Name, Email, Contact Number)." },
         { status: 400 }
       );
     }
@@ -108,15 +110,11 @@ export async function POST(request: Request) {
         const experience = sanitizeInput(body.experience);
         const portfolioUrl = sanitizeInput(body.portfolioUrl);
         const instagramUrl = sanitizeInput(body.instagramUrl);
-        const fileName = sanitizeInput(body.fileName);
         const availableCollab = body.availableCollab === true || body.availableCollab === "Yes";
-        const notes = sanitizeInput(body.notes);
+        const notes = sanitizeInput(body.notes || body.additionalInfo);
 
         if (portfolioUrl && !isValidUrl(portfolioUrl)) {
           return NextResponse.json({ error: "Please provide a valid Portfolio URL." }, { status: 400 });
-        }
-        if (instagramUrl && !isValidUrl(instagramUrl)) {
-          return NextResponse.json({ error: "Please provide a valid Instagram URL." }, { status: 400 });
         }
 
         categoryDetails = {
@@ -125,7 +123,6 @@ export async function POST(request: Request) {
           experience,
           portfolioUrl,
           instagramUrl,
-          fileName,
           availableCollab,
           notes,
         };
@@ -133,27 +130,17 @@ export async function POST(request: Request) {
       }
 
       case "model": {
-        const age = Number(body.age);
+        const age = body.age ? Number(body.age) : undefined;
         const gender = sanitizeInput(body.gender);
-        const heightCm = Number(body.heightCm);
-        const measurements = sanitizeInput(body.measurements); // Bust/Chest - Waist - Hips
+        const heightCm = body.heightCm ? Number(body.heightCm) : undefined;
+        const measurements = sanitizeInput(body.measurements);
         const shoeSize = sanitizeInput(body.shoeSize);
         const categories = Array.isArray(body.categories)
           ? body.categories.map(sanitizeInput)
           : [sanitizeInput(body.categories)];
-        const instagramLink = sanitizeInput(body.instagramLink);
-        const fileNames = Array.isArray(body.fileNames) ? body.fileNames.map(sanitizeInput) : [sanitizeInput(body.fileName)];
+        const instagramLink = sanitizeInput(body.instagramUrl || body.portfolioUrl);
         const availableTravel = body.availableTravel === true || body.availableTravel === "Yes";
-
-        if (isNaN(age) || age < 14 || age > 99) {
-          return NextResponse.json({ error: "Please enter a valid age." }, { status: 400 });
-        }
-        if (isNaN(heightCm) || heightCm < 120 || heightCm > 230) {
-          return NextResponse.json({ error: "Please enter a valid height in centimeters (e.g. 178)." }, { status: 400 });
-        }
-        if (instagramLink && !isValidUrl(instagramLink)) {
-          return NextResponse.json({ error: "Please enter a valid Instagram or Portfolio link." }, { status: 400 });
-        }
+        const notes = sanitizeInput(body.notes || body.additionalInfo);
 
         categoryDetails = {
           age,
@@ -163,8 +150,8 @@ export async function POST(request: Request) {
           shoeSize,
           categories,
           instagramLink,
-          fileNames,
           availableTravel,
+          notes,
         };
         break;
       }
@@ -177,17 +164,9 @@ export async function POST(request: Request) {
         const styleExpertise = sanitizeInput(body.styleExpertise);
         const instagramUrl = sanitizeInput(body.instagramUrl);
         const portfolioUrl = sanitizeInput(body.portfolioUrl);
-        const fileName = sanitizeInput(body.fileName);
         const hasKit = body.hasKit === true || body.hasKit === "Yes";
         const availableTravel = body.availableTravel === true || body.availableTravel === "Yes";
-        const notes = sanitizeInput(body.notes);
-
-        if (instagramUrl && !isValidUrl(instagramUrl)) {
-          return NextResponse.json({ error: "Please enter a valid Instagram URL." }, { status: 400 });
-        }
-        if (portfolioUrl && !isValidUrl(portfolioUrl)) {
-          return NextResponse.json({ error: "Please enter a valid Portfolio URL." }, { status: 400 });
-        }
+        const notes = sanitizeInput(body.notes || body.additionalInfo);
 
         categoryDetails = {
           experience,
@@ -195,7 +174,6 @@ export async function POST(request: Request) {
           styleExpertise,
           instagramUrl,
           portfolioUrl,
-          fileName,
           hasKit,
           availableTravel,
           notes,
@@ -211,16 +189,9 @@ export async function POST(request: Request) {
         const stylingAesthetic = sanitizeInput(body.stylingAesthetic);
         const instagramUrl = sanitizeInput(body.instagramUrl);
         const portfolioUrl = sanitizeInput(body.portfolioUrl);
-        const fileName = sanitizeInput(body.fileName);
         const availableTravel = body.availableTravel === true || body.availableTravel === "Yes";
         const availableFreelance = body.availableFreelance === true || body.availableFreelance === "Yes";
-
-        if (instagramUrl && !isValidUrl(instagramUrl)) {
-          return NextResponse.json({ error: "Please enter a valid Instagram URL." }, { status: 400 });
-        }
-        if (portfolioUrl && !isValidUrl(portfolioUrl)) {
-          return NextResponse.json({ error: "Please enter a valid Portfolio URL." }, { status: 400 });
-        }
+        const notes = sanitizeInput(body.notes || body.additionalInfo);
 
         categoryDetails = {
           experience,
@@ -228,9 +199,9 @@ export async function POST(request: Request) {
           stylingAesthetic,
           instagramUrl,
           portfolioUrl,
-          fileName,
           availableTravel,
           availableFreelance,
+          notes,
         };
         break;
       }
@@ -241,16 +212,13 @@ export async function POST(request: Request) {
           ? body.contentCategories.map(sanitizeInput)
           : [sanitizeInput(body.contentCategories)];
         const primaryPlatform = sanitizeInput(body.primaryPlatform);
-        const socialHandle = sanitizeInput(body.socialHandle);
-        const followerCount = Number(body.followerCount);
+        const socialHandle = sanitizeInput(body.socialHandle || body.instagramUrl);
+        const followerCount = body.followerCount ? Number(body.followerCount) : undefined;
         const avgViewsReach = sanitizeInput(body.avgViewsReach);
         const engagementRate = sanitizeInput(body.engagementRate);
-        const mediaKitFileName = sanitizeInput(body.fileName);
+        const portfolioUrl = sanitizeInput(body.portfolioUrl);
         const availableCollab = body.availableCollab === true || body.availableCollab === "Yes";
-
-        if (isNaN(followerCount) || followerCount < 0) {
-          return NextResponse.json({ error: "Please enter a valid follower count number." }, { status: 400 });
-        }
+        const notes = sanitizeInput(body.notes || body.additionalInfo);
 
         categoryDetails = {
           stageName,
@@ -260,37 +228,32 @@ export async function POST(request: Request) {
           followerCount,
           avgViewsReach,
           engagementRate,
-          mediaKitFileName,
+          portfolioUrl,
           availableCollab,
+          notes,
         };
         break;
       }
 
       case "celebrity_public_figure": {
         const stageName = sanitizeInput(body.stageName);
-        const realNamePrivate = sanitizeInput(body.realNamePrivate); // PRIVATE / CONFIDENTIAL
+        const realNamePrivate = sanitizeInput(body.realNamePrivate); // PRIVATE / CONFIDENTIAL FIELD
         const profession = sanitizeInput(body.profession);
         const professionalContact = sanitizeInput(body.professionalContact);
         const instagramUrl = sanitizeInput(body.instagramUrl);
-        const followerCount = Number(body.followerCount);
+        const followerCount = body.followerCount ? Number(body.followerCount) : undefined;
         const majorAchievements = sanitizeInput(body.majorAchievements);
-        const mediaKitUrl = sanitizeInput(body.mediaKitUrl);
+        const mediaKitUrl = sanitizeInput(body.mediaKitUrl || body.portfolioUrl);
         const managementContact = sanitizeInput(body.managementContact);
         const interests = Array.isArray(body.interests)
           ? body.interests.map(sanitizeInput)
           : [sanitizeInput(body.interests)];
         const availableTravel = body.availableTravel === true || body.availableTravel === "Yes";
-
-        if (instagramUrl && !isValidUrl(instagramUrl)) {
-          return NextResponse.json({ error: "Please enter a valid Social Profile URL." }, { status: 400 });
-        }
-        if (mediaKitUrl && !isValidUrl(mediaKitUrl)) {
-          return NextResponse.json({ error: "Please enter a valid Portfolio/Media Kit URL." }, { status: 400 });
-        }
+        const notes = sanitizeInput(body.notes || body.additionalInfo);
 
         categoryDetails = {
           stageName,
-          realNamePrivate, // Preserved strictly in backend payload, never publicly exposed
+          realNamePrivate, // Preserved strictly in server-side payload, never exposed in client API responses
           profession,
           professionalContact,
           instagramUrl,
@@ -300,6 +263,7 @@ export async function POST(request: Request) {
           managementContact,
           interests,
           availableTravel,
+          notes,
         };
         break;
       }
@@ -313,16 +277,9 @@ export async function POST(request: Request) {
         const danceStyles = sanitizeInput(body.danceStyles);
         const instagramUrl = sanitizeInput(body.instagramUrl);
         const showreelUrl = sanitizeInput(body.showreelUrl);
-        const previousProjects = sanitizeInput(body.previousProjects);
+        const pastEvents = sanitizeInput(body.pastEvents || body.previousProjects);
         const availableTravel = body.availableTravel === true || body.availableTravel === "Yes";
-        const availableCollab = body.availableCollab === true || body.availableCollab === "Yes";
-
-        if (instagramUrl && !isValidUrl(instagramUrl)) {
-          return NextResponse.json({ error: "Please enter a valid Instagram / Social Profile URL." }, { status: 400 });
-        }
-        if (showreelUrl && !isValidUrl(showreelUrl)) {
-          return NextResponse.json({ error: "Please enter a valid Portfolio / Showreel Link." }, { status: 400 });
-        }
+        const notes = sanitizeInput(body.notes || body.additionalInfo);
 
         categoryDetails = {
           stageName,
@@ -331,9 +288,72 @@ export async function POST(request: Request) {
           danceStyles,
           instagramUrl,
           showreelUrl,
-          previousProjects,
+          pastEvents,
           availableTravel,
-          availableCollab,
+          notes,
+        };
+        break;
+      }
+
+      case "cstp": {
+        const cstpDomain = sanitizeInput(body.cstpDomain || body.specializations);
+        const experience = sanitizeInput(body.experience);
+        const portfolioUrl = sanitizeInput(body.portfolioUrl);
+        const instagramUrl = sanitizeInput(body.instagramUrl);
+        const availableTravel = body.availableTravel === true || body.availableTravel === "Yes";
+        const notes = sanitizeInput(body.notes || body.additionalInfo);
+
+        categoryDetails = {
+          cstpDomain,
+          experience,
+          portfolioUrl,
+          instagramUrl,
+          availableTravel,
+          notes,
+        };
+        break;
+      }
+
+      case "fashion_commentary": {
+        const stageName = sanitizeInput(body.stageName);
+        const specializations = Array.isArray(body.specializations)
+          ? body.specializations.map(sanitizeInput)
+          : [sanitizeInput(body.specializations)];
+        const publicationPlatform = sanitizeInput(body.publicationPlatform);
+        const previousCoverage = sanitizeInput(body.previousCoverage);
+        const portfolioUrl = sanitizeInput(body.portfolioUrl);
+        const instagramUrl = sanitizeInput(body.instagramUrl);
+        const showreelUrl = sanitizeInput(body.showreelUrl);
+        const availableEvents = body.availableEvents === true || body.availableEvents === "Yes";
+        const availableTravel = body.availableTravel === true || body.availableTravel === "Yes";
+        const notes = sanitizeInput(body.notes || body.additionalInfo);
+
+        categoryDetails = {
+          stageName,
+          specializations,
+          publicationPlatform,
+          previousCoverage,
+          portfolioUrl,
+          instagramUrl,
+          showreelUrl,
+          availableEvents,
+          availableTravel,
+          notes,
+        };
+        break;
+      }
+
+      case "nomination": {
+        const nomineeName = sanitizeInput(body.nomineeName);
+        const nomineeRole = sanitizeInput(body.nomineeRole);
+        const nomineeContact = sanitizeInput(body.nomineeContact);
+        const notes = sanitizeInput(body.notes || body.additionalInfo);
+
+        categoryDetails = {
+          nomineeName,
+          nomineeRole,
+          nomineeContact,
+          notes,
         };
         break;
       }

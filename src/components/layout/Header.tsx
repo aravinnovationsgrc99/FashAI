@@ -90,6 +90,17 @@ export default function Header() {
             {pathname.startsWith("/gallery") && <span className="absolute bottom-0 left-0 right-0 h-[2px] bg-brand-yellow-golden" />}
           </Link>
 
+          {/* APPLY */}
+          <Link
+            href="/apply"
+            className={`relative py-1.5 transition-colors duration-200 ${
+              pathname.startsWith("/apply") ? "text-brand-yellow-golden font-bold" : "text-brand-white/80 hover:text-brand-yellow-golden"
+            }`}
+          >
+            APPLY
+            {pathname.startsWith("/apply") && <span className="absolute bottom-0 left-0 right-0 h-[2px] bg-brand-yellow-golden" />}
+          </Link>
+
           {/* CONTACT */}
           <Link
             href="/contact"
@@ -132,6 +143,7 @@ export default function Header() {
           { label: "Home", href: "/" },
           { label: "Upcoming", href: "/upcoming" },
           { label: "Gallery", href: "/gallery" },
+          { label: "Apply", href: "/apply" },
           { label: "Contact", href: "/contact" },
         ]}
         currentPath={pathname}

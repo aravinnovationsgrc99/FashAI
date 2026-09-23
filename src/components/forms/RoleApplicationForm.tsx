@@ -1,0 +1,1361 @@
+"use client";
+
+import { useState } from "react";
+import { motion } from "framer-motion";
+import { CheckCircle, ArrowRight, ArrowLeft, Send, Sparkles, AlertCircle } from "lucide-react";
+import Link from "next/link";
+
+export type RoleSlug =
+  | "model"
+  | "designer"
+  | "makeup-artist"
+  | "makeup_artist"
+  | "fashion-stylist"
+  | "stylist"
+  | "choreographer"
+  | "influencer"
+  | "celebrity"
+  | "cstp"
+  | "fashion-commentary"
+  | "fashion_commentary"
+  | "nomination";
+
+export interface RoleApplicationFormProps {
+  roleSlug: RoleSlug;
+  onSuccess?: () => void;
+  isModal?: boolean;
+}
+
+export interface FormState {
+  fullName: string;
+  stageName: string;
+  realNamePrivate: string;
+  email: string;
+  phone: string;
+  cityCountry: string;
+  
+  // Model specific
+  age: string;
+  gender: string;
+  heightCm: string;
+  measurements: string;
+  shoeSize: string;
+  modelingCategory: string;
+  
+  // Designer specific
+  brandName: string;
+  designSpecialization: string;
+  yearsExperience: string;
+  availableCollab: string;
+  
+  // Makeup artist specific
+  makeupSpecialization: string;
+  styleExpertise: string;
+  hasKit: string;
+  
+  // Stylist specific
+  stylingSpecialization: string;
+  stylingAesthetic: string;
+  availableFreelance: string;
+  
+  // Choreographer specific
+  choreographySpecialization: string;
+  danceStyles: string;
+  pastEvents: string;
+  showreelUrl: string;
+  
+  // Influencer specific
+  contentCategory: string;
+  primaryPlatform: string;
+  socialHandle: string;
+  followerCount: string;
+  avgViewsReach: string;
+  engagementRate: string;
+  previousBrandCollabs: string;
+  
+  // Celebrity specific
+  profession: string;
+  professionalContact: string;
+  majorAchievements: string;
+  managementContact: string;
+  interests: string;
+  
+  // CSTP specific
+  cstpDomain: string;
+  
+  // Fashion Commentary specific
+  publicationPlatform: string;
+  previousCoverage: string;
+  availableEvents: string;
+  
+  // Nomination specific
+  nomineeName: string;
+  nomineeRole: string;
+  nomineeContact: string;
+  
+  // Shared
+  portfolioUrl: string;
+  instagramUrl: string;
+  workSamplesUrl: string;
+  availableTravel: string;
+  additionalInfo: string;
+}
+
+const initialFormState: FormState = {
+  fullName: "",
+  stageName: "",
+  realNamePrivate: "",
+  email: "",
+  phone: "",
+  cityCountry: "",
+  age: "",
+  gender: "Female",
+  heightCm: "",
+  measurements: "",
+  shoeSize: "",
+  modelingCategory: "Runway",
+  brandName: "",
+  designSpecialization: "Couture",
+  yearsExperience: "3-5 years",
+  availableCollab: "Yes",
+  makeupSpecialization: "Fashion",
+  styleExpertise: "",
+  hasKit: "Yes",
+  stylingSpecialization: "Fashion",
+  stylingAesthetic: "",
+  availableFreelance: "Yes",
+  choreographySpecialization: "Runway",
+  danceStyles: "",
+  pastEvents: "",
+  showreelUrl: "",
+  contentCategory: "Fashion",
+  primaryPlatform: "Instagram",
+  socialHandle: "",
+  followerCount: "",
+  avgViewsReach: "",
+  engagementRate: "",
+  previousBrandCollabs: "Yes",
+  profession: "Actor",
+  professionalContact: "",
+  majorAchievements: "",
+  managementContact: "",
+  interests: "All",
+  cstpDomain: "Computational Fashion",
+  publicationPlatform: "",
+  previousCoverage: "",
+  availableEvents: "Yes",
+  nomineeName: "",
+  nomineeRole: "Designer",
+  nomineeContact: "",
+  portfolioUrl: "",
+  instagramUrl: "",
+  workSamplesUrl: "",
+  availableTravel: "Yes",
+  additionalInfo: "",
+};
+
+export default function RoleApplicationForm({ roleSlug, onSuccess, isModal = false }: RoleApplicationFormProps) {
+  const normalizedRole = (roleSlug || "designer").toLowerCase().replace(/-/g, "_");
+
+  const [step, setStep] = useState(1);
+  const [formData, setFormData] = useState<FormState>(initialFormState);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSubmitted, setIsSubmitted] = useState(false);
+  const [errorMessage, setErrorMessage] = useState("");
+
+  const getRoleMetadata = () => {
+    switch (normalizedRole) {
+      case "model":
+        return {
+          title: "MODEL APPLICATION",
+          subtitle: "Tell us about your modeling profile, measurements, and experience.",
+          badge: "RUNWAY & EDITORIAL MODELING",
+        };
+      case "designer":
+        return {
+          title: "DESIGNER APPLICATION",
+          subtitle: "Present your brand, couture vision, and atelier design experience.",
+          badge: "COUTURE ATELIER & DIRECTION",
+        };
+      case "makeup_artist":
+        return {
+          title: "MAKEUP ARTIST APPLICATION",
+          subtitle: "Share your beauty direction, backstage artistry, and look styling.",
+          badge: "BEAUTY & BACKSTAGE ARTISTRY",
+        };
+      case "stylist":
+      case "fashion_stylist":
+        return {
+          title: "FASHION STYLIST APPLICATION",
+          subtitle: "Detail your wardrobe styling, campaign lookbook, and editorial experience.",
+          badge: "WARDROBE & STYLING DIRECTION",
+        };
+      case "choreographer":
+        return {
+          title: "CHOREOGRAPHER APPLICATION",
+          subtitle: "Describe your movement direction, catwalk choreography, and stage experience.",
+          badge: "MOVEMENT & CATWALK CHOREOGRAPHY",
+        };
+      case "influencer":
+      case "influencer_creator":
+        return {
+          title: "INFLUENCER / CONTENT CREATOR APPLICATION",
+          subtitle: "Share your platform metrics, content storytelling, and brand collaborations.",
+          badge: "DIGITAL MEDIA & CREATORS",
+        };
+      case "celebrity":
+      case "celebrity_public_figure":
+        return {
+          title: "CELEBRITY / PUBLIC FIGURE APPLICATION",
+          subtitle: "Private registration for VIP appearances, campaigns, and strategic roles.",
+          badge: "CONFIDENTIAL VIP REGISTRATION",
+        };
+      case "cstp":
+        return {
+          title: "CSTP APPLICATION",
+          subtitle: "Apply for Computational Style & Talent Program opportunities.",
+          badge: "COMPUTATIONAL FASHION PROGRAM",
+        };
+      case "fashion_commentary":
+        return {
+          title: "FASHION COMMENTARY APPLICATION",
+          subtitle: "Apply for fashion journalism, runway analysis, and commentary roles.",
+          badge: "FASHION MEDIA & JOURNALISM",
+        };
+      case "nomination":
+        return {
+          title: "NOMINATE A CREATIVE TALENT",
+          subtitle: "Nominate an outstanding designer, model, artist, or stylist.",
+          badge: "CREATIVE NOMINATION FLOW",
+        };
+      default:
+        return {
+          title: "TALENT APPLICATION",
+          subtitle: "Join the FashAI Universal Talent Network.",
+          badge: "OFFICIAL TALENT NETWORK",
+        };
+    }
+  };
+
+  const meta = getRoleMetadata();
+
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
+  ) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+    setErrorMessage("");
+  };
+
+  const handleNextStep = () => {
+    if (step === 1) {
+      if (normalizedRole === "nomination") {
+        if (!formData.fullName || !formData.email || !formData.nomineeName) {
+          setErrorMessage("Please complete all mandatory fields marked with (*).");
+          return;
+        }
+      } else if (normalizedRole === "celebrity" || normalizedRole === "celebrity_public_figure") {
+        if (!formData.stageName || !formData.realNamePrivate || !formData.email || !formData.phone) {
+          setErrorMessage("Please complete all required fields (*).");
+          return;
+        }
+      } else {
+        if (!formData.fullName || !formData.email || !formData.phone || !formData.cityCountry) {
+          setErrorMessage("Please complete all required contact fields (*).");
+          return;
+        }
+      }
+    }
+    setErrorMessage("");
+    setStep((prev) => Math.min(prev + 1, 4));
+  };
+
+  const handlePrevStep = () => {
+    setErrorMessage("");
+    setStep((prev) => Math.max(prev - 1, 1));
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    setErrorMessage("");
+
+    try {
+      const payload = {
+        roleApplied: normalizedRole,
+        applicationType: normalizedRole,
+        fullName: formData.fullName || formData.stageName,
+        stageName: formData.stageName,
+        realNamePrivate: formData.realNamePrivate,
+        email: formData.email,
+        phone: formData.phone,
+        whatsapp: formData.phone,
+        cityCountry: formData.cityCountry,
+        location: formData.cityCountry,
+        
+        // Model
+        age: formData.age,
+        gender: formData.gender,
+        heightCm: formData.heightCm,
+        measurements: formData.measurements,
+        shoeSize: formData.shoeSize,
+        categories: formData.modelingCategory,
+
+        // Designer
+        brandName: formData.brandName,
+        specializations: formData.designSpecialization || formData.makeupSpecialization || formData.stylingSpecialization || formData.choreographySpecialization || formData.cstpDomain,
+        experience: formData.yearsExperience,
+        availableCollab: formData.availableCollab === "Yes",
+
+        // Makeup
+        styleExpertise: formData.styleExpertise,
+        hasKit: formData.hasKit === "Yes",
+
+        // Stylist
+        stylingAesthetic: formData.stylingAesthetic,
+        availableFreelance: formData.availableFreelance === "Yes",
+
+        // Choreographer
+        danceStyles: formData.danceStyles,
+        pastEvents: formData.pastEvents,
+        showreelUrl: formData.showreelUrl,
+
+        // Influencer
+        contentCategories: formData.contentCategory,
+        primaryPlatform: formData.primaryPlatform,
+        socialHandle: formData.socialHandle,
+        followerCount: formData.followerCount,
+        avgViewsReach: formData.avgViewsReach,
+        engagementRate: formData.engagementRate,
+
+        // Celebrity
+        profession: formData.profession,
+        professionalContact: formData.professionalContact,
+        majorAchievements: formData.majorAchievements,
+        managementContact: formData.managementContact,
+        interests: formData.interests,
+
+        // CSTP & Commentary
+        cstpDomain: formData.cstpDomain,
+        publicationPlatform: formData.publicationPlatform,
+        previousCoverage: formData.previousCoverage,
+        availableEvents: formData.availableEvents,
+
+        // Nomination
+        nomineeName: formData.nomineeName,
+        nomineeRole: formData.nomineeRole,
+        nomineeContact: formData.nomineeContact,
+
+        // Shared
+        portfolioUrl: formData.portfolioUrl || formData.workSamplesUrl,
+        instagramUrl: formData.instagramUrl || formData.socialHandle,
+        availableTravel: formData.availableTravel === "Yes",
+        notes: formData.additionalInfo,
+        additionalInfo: formData.additionalInfo,
+      };
+
+      const response = await fetch("/api/talent-application", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      });
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data.error || "Submission failed. Please check your entries.");
+      }
+
+      setIsSubmitted(true);
+      if (onSuccess) onSuccess();
+    } catch (err: unknown) {
+      setErrorMessage(err instanceof Error ? err.message : "An error occurred during submission. Please try again.");
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
+  return (
+    <div className={`w-full ${isModal ? "" : "max-w-4xl mx-auto py-8 px-4 sm:px-6"}`}>
+      {/* Header Section */}
+      <div className="mb-8 border-b border-white/10 pb-6">
+        <div className="flex items-center gap-2 text-[11px] font-syne tracking-micro text-brand-yellow-golden font-bold uppercase mb-2">
+          <Sparkles className="w-3.5 h-3.5" />
+          <span>{meta.badge}</span>
+        </div>
+        <h1 className="font-serif-display text-3xl sm:text-5xl font-light text-brand-white uppercase leading-tight mb-2">
+          {meta.title}
+        </h1>
+        <p className="font-sans text-xs sm:text-sm text-brand-platinum/80 font-light max-w-xl">
+          {meta.subtitle}
+        </p>
+
+        {/* Step Indicator */}
+        {!isSubmitted && (
+          <div className="grid grid-cols-4 gap-2 mt-6">
+            {[
+              { num: "01", label: "PERSONAL" },
+              { num: "02", label: "PROFESSIONAL" },
+              { num: "03", label: "PORTFOLIO" },
+              { num: "04", label: "AVAILABILITY" },
+            ].map((s, idx) => (
+              <div
+                key={s.num}
+                className={`py-2 px-3 rounded-lg border text-center transition-all ${
+                  step === idx + 1
+                    ? "bg-brand-yellow-golden/10 border-brand-yellow-golden text-brand-yellow-golden"
+                    : step > idx + 1
+                    ? "bg-white/5 border-white/20 text-white/90"
+                    : "bg-black/40 border-white/10 text-white/40"
+                }`}
+              >
+                <div className="text-[10px] font-syne font-bold tracking-wider">{s.num} {s.label}</div>
+              </div>
+            ))}
+          </div>
+        )}
+      </div>
+
+      {/* SUCCESS STATE */}
+      {isSubmitted ? (
+        <motion.div
+          initial={{ opacity: 0, scale: 0.96 }}
+          animate={{ opacity: 1, scale: 1 }}
+          className="bg-[#0D0C0A] border border-brand-yellow-golden/50 p-8 sm:p-12 rounded-3xl text-center space-y-6 shadow-[0_0_60px_rgba(250,182,10,0.15)]"
+        >
+          <div className="w-16 h-16 bg-brand-yellow-golden/20 border border-brand-yellow-golden rounded-full flex items-center justify-center mx-auto text-brand-yellow-golden">
+            <CheckCircle className="w-10 h-10" />
+          </div>
+          <div>
+            <h2 className="font-serif-display text-3xl sm:text-4xl font-light text-white uppercase mb-3">
+              APPLICATION RECEIVED
+            </h2>
+            <p className="font-sans text-xs sm:text-sm text-brand-platinum/90 max-w-lg mx-auto leading-relaxed">
+              Thank you for applying to the FashAI Universal Talent Network. Our team will review your application and contact you if a suitable opportunity becomes available.
+            </p>
+          </div>
+
+          <div className="pt-4 flex flex-col sm:flex-row items-center justify-center gap-4">
+            <Link
+              href="/"
+              className="inline-flex items-center gap-2 bg-brand-yellow-golden text-black px-8 py-3.5 text-xs font-syne font-bold tracking-caps rounded-full hover:bg-yellow-400 transition-colors shadow-lg"
+            >
+              BACK TO FASHAI UNIVERSAL <ArrowRight className="w-4 h-4" />
+            </Link>
+          </div>
+        </motion.div>
+      ) : (
+        /* FORM STATE */
+        <form onSubmit={handleSubmit} className="space-y-6">
+          {errorMessage && (
+            <div className="p-4 bg-red-950/90 border border-red-500/50 text-red-200 text-xs rounded-xl flex items-center gap-3">
+              <AlertCircle className="w-5 h-5 shrink-0 text-red-400" />
+              <span>{errorMessage}</span>
+            </div>
+          )}
+
+          {/* STEP 1: PERSONAL & CONTACT INFORMATION */}
+          {step === 1 && (
+            <div className="bg-[#090807] border border-white/10 p-6 sm:p-8 rounded-2xl space-y-6">
+              <h3 className="text-xs font-syne font-bold tracking-caps text-brand-yellow-golden uppercase border-b border-white/10 pb-3">
+                01 PERSONAL & CONTACT INFORMATION
+              </h3>
+
+              {normalizedRole === "celebrity" || normalizedRole === "celebrity_public_figure" ? (
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                  <div>
+                    <label className="block text-[11px] font-syne tracking-wider text-brand-white/90 uppercase font-bold mb-2">
+                      Professional / Stage Name *
+                    </label>
+                    <input
+                      type="text"
+                      name="stageName"
+                      value={formData.stageName}
+                      onChange={handleChange}
+                      placeholder="Public Stage Alias"
+                      className="w-full bg-black/90 border border-white/15 px-4 py-3 text-xs text-white rounded-xl focus:border-brand-yellow-golden outline-none"
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-[11px] font-syne tracking-wider text-brand-yellow-golden uppercase font-bold mb-2">
+                      Real Name (PRIVATE — NOT PUBLICLY DISPLAYED) *
+                    </label>
+                    <input
+                      type="text"
+                      name="realNamePrivate"
+                      value={formData.realNamePrivate}
+                      onChange={handleChange}
+                      placeholder="Legal Name (Confidential)"
+                      className="w-full bg-black/90 border border-brand-yellow-golden/50 px-4 py-3 text-xs text-white rounded-xl focus:border-brand-yellow-golden outline-none"
+                    />
+                  </div>
+                </div>
+              ) : (
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                  <div>
+                    <label className="block text-[11px] font-syne tracking-wider text-brand-white/90 uppercase font-bold mb-2">
+                      Full Name *
+                    </label>
+                    <input
+                      type="text"
+                      name="fullName"
+                      value={formData.fullName}
+                      onChange={handleChange}
+                      placeholder="Enter your full name"
+                      className="w-full bg-black/90 border border-white/15 px-4 py-3 text-xs text-white rounded-xl focus:border-brand-yellow-golden outline-none"
+                    />
+                  </div>
+                  {normalizedRole !== "nomination" && (
+                    <div>
+                      <label className="block text-[11px] font-syne tracking-wider text-brand-white/90 uppercase font-bold mb-2">
+                        {normalizedRole === "designer"
+                          ? "Brand / Professional Name"
+                          : normalizedRole === "influencer"
+                          ? "Creator / Stage Name"
+                          : "Professional Alias / Stage Name"}
+                      </label>
+                      <input
+                        type="text"
+                        name="stageName"
+                        value={formData.stageName}
+                        onChange={handleChange}
+                        placeholder="Brand or professional alias (optional)"
+                        className="w-full bg-black/90 border border-white/15 px-4 py-3 text-xs text-white rounded-xl focus:border-brand-yellow-golden outline-none"
+                      />
+                    </div>
+                  )}
+                </div>
+              )}
+
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                <div>
+                  <label className="block text-[11px] font-syne tracking-wider text-brand-white/90 uppercase font-bold mb-2">
+                    Email Address *
+                  </label>
+                  <input
+                    type="email"
+                    name="email"
+                    value={formData.email}
+                    onChange={handleChange}
+                    placeholder="name@domain.com"
+                    className="w-full bg-black/90 border border-white/15 px-4 py-3 text-xs text-white rounded-xl focus:border-brand-yellow-golden outline-none"
+                  />
+                </div>
+                <div>
+                  <label className="block text-[11px] font-syne tracking-wider text-brand-white/90 uppercase font-bold mb-2">
+                    WhatsApp / Contact Number *
+                  </label>
+                  <input
+                    type="text"
+                    name="phone"
+                    value={formData.phone}
+                    onChange={handleChange}
+                    placeholder="+971 50 123 4567 / +91 98765 43210"
+                    className="w-full bg-black/90 border border-white/15 px-4 py-3 text-xs text-white rounded-xl focus:border-brand-yellow-golden outline-none"
+                  />
+                </div>
+              </div>
+
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                <div>
+                  <label className="block text-[11px] font-syne tracking-wider text-brand-white/90 uppercase font-bold mb-2">
+                    City & Country *
+                  </label>
+                  <input
+                    type="text"
+                    name="cityCountry"
+                    value={formData.cityCountry}
+                    onChange={handleChange}
+                    placeholder="e.g. Dubai, UAE / Mumbai, India"
+                    className="w-full bg-black/90 border border-white/15 px-4 py-3 text-xs text-white rounded-xl focus:border-brand-yellow-golden outline-none"
+                  />
+                </div>
+
+                {normalizedRole === "nomination" && (
+                  <div>
+                    <label className="block text-[11px] font-syne tracking-wider text-brand-yellow-golden uppercase font-bold mb-2">
+                      Nominee Full Name *
+                    </label>
+                    <input
+                      type="text"
+                      name="nomineeName"
+                      value={formData.nomineeName}
+                      onChange={handleChange}
+                      placeholder="Name of person you are nominating"
+                      className="w-full bg-black/90 border border-brand-yellow-golden/40 px-4 py-3 text-xs text-white rounded-xl focus:border-brand-yellow-golden outline-none"
+                    />
+                  </div>
+                )}
+              </div>
+            </div>
+          )}
+
+          {/* STEP 2: ROLE-SPECIFIC PROFESSIONAL DETAILS */}
+          {step === 2 && (
+            <div className="bg-[#090807] border border-white/10 p-6 sm:p-8 rounded-2xl space-y-6">
+              <h3 className="text-xs font-syne font-bold tracking-caps text-brand-yellow-golden uppercase border-b border-white/10 pb-3">
+                02 PROFESSIONAL & ROLE SPECIFICATION
+              </h3>
+
+              {/* MODEL FORM FIELDS */}
+              {normalizedRole === "model" && (
+                <>
+                  <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+                    <div>
+                      <label className="block text-[11px] font-syne tracking-wider text-brand-white/90 uppercase font-bold mb-2">
+                        Age
+                      </label>
+                      <input
+                        type="number"
+                        name="age"
+                        value={formData.age}
+                        onChange={handleChange}
+                        placeholder="e.g. 22"
+                        className="w-full bg-black/90 border border-white/15 px-4 py-3 text-xs text-white rounded-xl focus:border-brand-yellow-golden outline-none"
+                      />
+                    </div>
+                    <div>
+                      <label className="block text-[11px] font-syne tracking-wider text-brand-white/90 uppercase font-bold mb-2">
+                        Gender
+                      </label>
+                      <select
+                        name="gender"
+                        value={formData.gender}
+                        onChange={handleChange}
+                        className="w-full bg-black/90 border border-white/15 px-4 py-3 text-xs text-white rounded-xl focus:border-brand-yellow-golden outline-none"
+                      >
+                        <option value="Female">Female</option>
+                        <option value="Male">Male</option>
+                        <option value="Non-Binary">Non-Binary</option>
+                        <option value="Other">Other</option>
+                      </select>
+                    </div>
+                    <div>
+                      <label className="block text-[11px] font-syne tracking-wider text-brand-white/90 uppercase font-bold mb-2">
+                        Height (cm)
+                      </label>
+                      <input
+                        type="number"
+                        name="heightCm"
+                        value={formData.heightCm}
+                        onChange={handleChange}
+                        placeholder="e.g. 178"
+                        className="w-full bg-black/90 border border-white/15 px-4 py-3 text-xs text-white rounded-xl focus:border-brand-yellow-golden outline-none"
+                      />
+                    </div>
+                  </div>
+
+                  <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+                    <div>
+                      <label className="block text-[11px] font-syne tracking-wider text-brand-white/90 uppercase font-bold mb-2">
+                        Measurements (Bust/Waist/Hips)
+                      </label>
+                      <input
+                        type="text"
+                        name="measurements"
+                        value={formData.measurements}
+                        onChange={handleChange}
+                        placeholder="e.g. 34-24-35"
+                        className="w-full bg-black/90 border border-white/15 px-4 py-3 text-xs text-white rounded-xl focus:border-brand-yellow-golden outline-none"
+                      />
+                    </div>
+                    <div>
+                      <label className="block text-[11px] font-syne tracking-wider text-brand-white/90 uppercase font-bold mb-2">
+                        Shoe Size
+                      </label>
+                      <input
+                        type="text"
+                        name="shoeSize"
+                        value={formData.shoeSize}
+                        onChange={handleChange}
+                        placeholder="e.g. EU 39 / US 8"
+                        className="w-full bg-black/90 border border-white/15 px-4 py-3 text-xs text-white rounded-xl focus:border-brand-yellow-golden outline-none"
+                      />
+                    </div>
+                    <div>
+                      <label className="block text-[11px] font-syne tracking-wider text-brand-white/90 uppercase font-bold mb-2">
+                        Modeling Category
+                      </label>
+                      <select
+                        name="modelingCategory"
+                        value={formData.modelingCategory}
+                        onChange={handleChange}
+                        className="w-full bg-black/90 border border-white/15 px-4 py-3 text-xs text-white rounded-xl focus:border-brand-yellow-golden outline-none"
+                      >
+                        <option value="Runway">Runway</option>
+                        <option value="Editorial">Editorial</option>
+                        <option value="Commercial">Commercial</option>
+                        <option value="E-commerce">E-commerce</option>
+                        <option value="Beauty">Beauty</option>
+                        <option value="Bridal">Bridal</option>
+                        <option value="Other">Other</option>
+                      </select>
+                    </div>
+                  </div>
+                </>
+              )}
+
+              {/* DESIGNER FORM FIELDS */}
+              {normalizedRole === "designer" && (
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                  <div>
+                    <label className="block text-[11px] font-syne tracking-wider text-brand-white/90 uppercase font-bold mb-2">
+                      Design Specialization
+                    </label>
+                    <select
+                      name="designSpecialization"
+                      value={formData.designSpecialization}
+                      onChange={handleChange}
+                      className="w-full bg-black/90 border border-white/15 px-4 py-3 text-xs text-white rounded-xl focus:border-brand-yellow-golden outline-none"
+                    >
+                      <option value="Couture">Couture / Haute Couture</option>
+                      <option value="Bridal">Bridal & Eveningwear</option>
+                      <option value="Ethnic">Ethnic & Traditional</option>
+                      <option value="Western">Western & Ready-to-Wear</option>
+                      <option value="Streetwear">Streetwear & Avant-Garde</option>
+                      <option value="Luxury">Luxury Resortwear</option>
+                      <option value="Accessories">Jewelry & Accessories</option>
+                      <option value="Other">Other</option>
+                    </select>
+                  </div>
+                  <div>
+                    <label className="block text-[11px] font-syne tracking-wider text-brand-white/90 uppercase font-bold mb-2">
+                      Years of Experience
+                    </label>
+                    <select
+                      name="yearsExperience"
+                      value={formData.yearsExperience}
+                      onChange={handleChange}
+                      className="w-full bg-black/90 border border-white/15 px-4 py-3 text-xs text-white rounded-xl focus:border-brand-yellow-golden outline-none"
+                    >
+                      <option value="Emerging (0-2 years)">Emerging (0-2 years)</option>
+                      <option value="3-5 years">3–5 years</option>
+                      <option value="5-10 years">5–10 years</option>
+                      <option value="10+ years">10+ years</option>
+                    </select>
+                  </div>
+                </div>
+              )}
+
+              {/* MAKEUP ARTIST FORM FIELDS */}
+              {normalizedRole === "makeup_artist" && (
+                <>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                    <div>
+                      <label className="block text-[11px] font-syne tracking-wider text-brand-white/90 uppercase font-bold mb-2">
+                        Specialization
+                      </label>
+                      <select
+                        name="makeupSpecialization"
+                        value={formData.makeupSpecialization}
+                        onChange={handleChange}
+                        className="w-full bg-black/90 border border-white/15 px-4 py-3 text-xs text-white rounded-xl focus:border-brand-yellow-golden outline-none"
+                      >
+                        <option value="Fashion">Fashion & Runway</option>
+                        <option value="Bridal">Bridal Artistry</option>
+                        <option value="Editorial">Editorial & Shoot</option>
+                        <option value="Celebrity">Celebrity Makeup</option>
+                        <option value="Commercial">Commercial & Campaign</option>
+                        <option value="Film / TV">Film / TV</option>
+                        <option value="SFX">Special Effects / SFX</option>
+                        <option value="Other">Other</option>
+                      </select>
+                    </div>
+                    <div>
+                      <label className="block text-[11px] font-syne tracking-wider text-brand-white/90 uppercase font-bold mb-2">
+                        Years of Experience
+                      </label>
+                      <select
+                        name="yearsExperience"
+                        value={formData.yearsExperience}
+                        onChange={handleChange}
+                        className="w-full bg-black/90 border border-white/15 px-4 py-3 text-xs text-white rounded-xl focus:border-brand-yellow-golden outline-none"
+                      >
+                        <option value="1-3 years">1–3 years</option>
+                        <option value="3-5 years">3–5 years</option>
+                        <option value="5-10 years">5–10 years</option>
+                        <option value="10+ years">10+ years</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                    <div>
+                      <label className="block text-[11px] font-syne tracking-wider text-brand-white/90 uppercase font-bold mb-2">
+                        Makeup Style / Expertise
+                      </label>
+                      <input
+                        type="text"
+                        name="styleExpertise"
+                        value={formData.styleExpertise}
+                        onChange={handleChange}
+                        placeholder="e.g. Glass skin, Avant-garde, High-fashion bridal"
+                        className="w-full bg-black/90 border border-white/15 px-4 py-3 text-xs text-white rounded-xl focus:border-brand-yellow-golden outline-none"
+                      />
+                    </div>
+                    <div>
+                      <label className="block text-[11px] font-syne tracking-wider text-brand-white/90 uppercase font-bold mb-2">
+                        Professional Kit Available?
+                      </label>
+                      <select
+                        name="hasKit"
+                        value={formData.hasKit}
+                        onChange={handleChange}
+                        className="w-full bg-black/90 border border-white/15 px-4 py-3 text-xs text-white rounded-xl focus:border-brand-yellow-golden outline-none"
+                      >
+                        <option value="Yes">Yes — Complete Professional Kit</option>
+                        <option value="No">No</option>
+                      </select>
+                    </div>
+                  </div>
+                </>
+              )}
+
+              {/* FASHION STYLIST FORM FIELDS */}
+              {(normalizedRole === "stylist" || normalizedRole === "fashion_stylist") && (
+                <>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                    <div>
+                      <label className="block text-[11px] font-syne tracking-wider text-brand-white/90 uppercase font-bold mb-2">
+                        Styling Specialization
+                      </label>
+                      <select
+                        name="stylingSpecialization"
+                        value={formData.stylingSpecialization}
+                        onChange={handleChange}
+                        className="w-full bg-black/90 border border-white/15 px-4 py-3 text-xs text-white rounded-xl focus:border-brand-yellow-golden outline-none"
+                      >
+                        <option value="Fashion">Fashion & Editorial</option>
+                        <option value="Celebrity">Celebrity & Red Carpet</option>
+                        <option value="Personal">Personal Styling</option>
+                        <option value="Bridal">Bridal Wardrobe</option>
+                        <option value="Commercial">Commercial & Brand</option>
+                        <option value="Runway">Runway Show Direction</option>
+                        <option value="Other">Other</option>
+                      </select>
+                    </div>
+                    <div>
+                      <label className="block text-[11px] font-syne tracking-wider text-brand-white/90 uppercase font-bold mb-2">
+                        Years of Experience
+                      </label>
+                      <select
+                        name="yearsExperience"
+                        value={formData.yearsExperience}
+                        onChange={handleChange}
+                        className="w-full bg-black/90 border border-white/15 px-4 py-3 text-xs text-white rounded-xl focus:border-brand-yellow-golden outline-none"
+                      >
+                        <option value="1-3 years">1–3 years</option>
+                        <option value="3-5 years">3–5 years</option>
+                        <option value="5-10 years">5–10 years</option>
+                        <option value="10+ years">10+ years</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  <div>
+                    <label className="block text-[11px] font-syne tracking-wider text-brand-white/90 uppercase font-bold mb-2">
+                      Styling Aesthetic / Approach
+                    </label>
+                    <textarea
+                      name="stylingAesthetic"
+                      value={formData.stylingAesthetic}
+                      onChange={handleChange}
+                      rows={2}
+                      placeholder="Briefly describe your signature styling aesthetic..."
+                      className="w-full bg-black/90 border border-white/15 px-4 py-3 text-xs text-white rounded-xl focus:border-brand-yellow-golden outline-none resize-none"
+                    />
+                  </div>
+                </>
+              )}
+
+              {/* CHOREOGRAPHER FORM FIELDS */}
+              {normalizedRole === "choreographer" && (
+                <>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                    <div>
+                      <label className="block text-[11px] font-syne tracking-wider text-brand-white/90 uppercase font-bold mb-2">
+                        Choreography Specialization
+                      </label>
+                      <select
+                        name="choreographySpecialization"
+                        value={formData.choreographySpecialization}
+                        onChange={handleChange}
+                        className="w-full bg-black/90 border border-white/15 px-4 py-3 text-xs text-white rounded-xl focus:border-brand-yellow-golden outline-none"
+                      >
+                        <option value="Runway">Runway & Fashion Show</option>
+                        <option value="Contemporary">Contemporary & Dance</option>
+                        <option value="Commercial">Commercial & Stage</option>
+                        <option value="Editorial">Editorial Performance</option>
+                        <option value="Other">Other</option>
+                      </select>
+                    </div>
+                    <div>
+                      <label className="block text-[11px] font-syne tracking-wider text-brand-white/90 uppercase font-bold mb-2">
+                        Years of Experience
+                      </label>
+                      <select
+                        name="yearsExperience"
+                        value={formData.yearsExperience}
+                        onChange={handleChange}
+                        className="w-full bg-black/90 border border-white/15 px-4 py-3 text-xs text-white rounded-xl focus:border-brand-yellow-golden outline-none"
+                      >
+                        <option value="1-3 years">1–3 years</option>
+                        <option value="3-5 years">3–5 years</option>
+                        <option value="5-10 years">5–10 years</option>
+                        <option value="10+ years">10+ years</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  <div>
+                    <label className="block text-[11px] font-syne tracking-wider text-brand-white/90 uppercase font-bold mb-2">
+                      Past Major Shows / Events
+                    </label>
+                    <textarea
+                      name="pastEvents"
+                      value={formData.pastEvents}
+                      onChange={handleChange}
+                      rows={2}
+                      placeholder="List key runway shows, fashion weeks, or productions choreographed..."
+                      className="w-full bg-black/90 border border-white/15 px-4 py-3 text-xs text-white rounded-xl focus:border-brand-yellow-golden outline-none resize-none"
+                    />
+                  </div>
+                </>
+              )}
+
+              {/* INFLUENCER FORM FIELDS */}
+              {(normalizedRole === "influencer" || normalizedRole === "influencer_creator") && (
+                <>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                    <div>
+                      <label className="block text-[11px] font-syne tracking-wider text-brand-white/90 uppercase font-bold mb-2">
+                        Content Category
+                      </label>
+                      <select
+                        name="contentCategory"
+                        value={formData.contentCategory}
+                        onChange={handleChange}
+                        className="w-full bg-black/90 border border-white/15 px-4 py-3 text-xs text-white rounded-xl focus:border-brand-yellow-golden outline-none"
+                      >
+                        <option value="Fashion">Fashion & Style</option>
+                        <option value="Beauty">Beauty & Makeup</option>
+                        <option value="Lifestyle">Luxury & Lifestyle</option>
+                        <option value="Travel">Travel & Culture</option>
+                        <option value="Fitness">Fitness & Wellness</option>
+                        <option value="Entertainment">Entertainment & Arts</option>
+                        <option value="Other">Other</option>
+                      </select>
+                    </div>
+                    <div>
+                      <label className="block text-[11px] font-syne tracking-wider text-brand-white/90 uppercase font-bold mb-2">
+                        Primary Platform
+                      </label>
+                      <select
+                        name="primaryPlatform"
+                        value={formData.primaryPlatform}
+                        onChange={handleChange}
+                        className="w-full bg-black/90 border border-white/15 px-4 py-3 text-xs text-white rounded-xl focus:border-brand-yellow-golden outline-none"
+                      >
+                        <option value="Instagram">Instagram</option>
+                        <option value="YouTube">YouTube</option>
+                        <option value="TikTok">TikTok</option>
+                        <option value="Other">Other</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+                    <div>
+                      <label className="block text-[11px] font-syne tracking-wider text-brand-white/90 uppercase font-bold mb-2">
+                        Follower Count
+                      </label>
+                      <input
+                        type="number"
+                        name="followerCount"
+                        value={formData.followerCount}
+                        onChange={handleChange}
+                        placeholder="e.g. 50000"
+                        className="w-full bg-black/90 border border-white/15 px-4 py-3 text-xs text-white rounded-xl focus:border-brand-yellow-golden outline-none"
+                      />
+                    </div>
+                    <div>
+                      <label className="block text-[11px] font-syne tracking-wider text-brand-white/90 uppercase font-bold mb-2">
+                        Average Views / Reach (Optional)
+                      </label>
+                      <input
+                        type="text"
+                        name="avgViewsReach"
+                        value={formData.avgViewsReach}
+                        onChange={handleChange}
+                        placeholder="e.g. 25K avg views"
+                        className="w-full bg-black/90 border border-white/15 px-4 py-3 text-xs text-white rounded-xl focus:border-brand-yellow-golden outline-none"
+                      />
+                    </div>
+                    <div>
+                      <label className="block text-[11px] font-syne tracking-wider text-brand-white/90 uppercase font-bold mb-2">
+                        Engagement Rate (Optional)
+                      </label>
+                      <input
+                        type="text"
+                        name="engagementRate"
+                        value={formData.engagementRate}
+                        onChange={handleChange}
+                        placeholder="e.g. 4.5%"
+                        className="w-full bg-black/90 border border-white/15 px-4 py-3 text-xs text-white rounded-xl focus:border-brand-yellow-golden outline-none"
+                      />
+                    </div>
+                  </div>
+                </>
+              )}
+
+              {/* CELEBRITY FORM FIELDS */}
+              {(normalizedRole === "celebrity" || normalizedRole === "celebrity_public_figure") && (
+                <>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                    <div>
+                      <label className="block text-[11px] font-syne tracking-wider text-brand-white/90 uppercase font-bold mb-2">
+                        Profession / Domain
+                      </label>
+                      <select
+                        name="profession"
+                        value={formData.profession}
+                        onChange={handleChange}
+                        className="w-full bg-black/90 border border-white/15 px-4 py-3 text-xs text-white rounded-xl focus:border-brand-yellow-golden outline-none"
+                      >
+                        <option value="Actor">Actor / Film Personality</option>
+                        <option value="Singer">Singer / Musician</option>
+                        <option value="Athlete">Athlete / Sports Personality</option>
+                        <option value="TV Personality">TV / Host Personality</option>
+                        <option value="Model">High-Fashion Model</option>
+                        <option value="Other">Other Public Figure</option>
+                      </select>
+                    </div>
+                    <div>
+                      <label className="block text-[11px] font-syne tracking-wider text-brand-white/90 uppercase font-bold mb-2">
+                        Interested In
+                      </label>
+                      <select
+                        name="interests"
+                        value={formData.interests}
+                        onChange={handleChange}
+                        className="w-full bg-black/90 border border-white/15 px-4 py-3 text-xs text-white rounded-xl focus:border-brand-yellow-golden outline-none"
+                      >
+                        <option value="All">All Showcase & Brand Opportunities</option>
+                        <option value="Fashion Campaigns">Fashion Campaigns</option>
+                        <option value="Brand Ambassador">Brand Ambassador</option>
+                        <option value="Events">VIP Event Appearances</option>
+                        <option value="Photoshoots">High Fashion Photoshoots</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  <div>
+                    <label className="block text-[11px] font-syne tracking-wider text-brand-white/90 uppercase font-bold mb-2">
+                      Major Achievements / Highlights
+                    </label>
+                    <textarea
+                      name="majorAchievements"
+                      value={formData.majorAchievements}
+                      onChange={handleChange}
+                      rows={2}
+                      placeholder="Briefly list key awards, film releases, or notable public projects..."
+                      className="w-full bg-black/90 border border-white/15 px-4 py-3 text-xs text-white rounded-xl focus:border-brand-yellow-golden outline-none resize-none"
+                    />
+                  </div>
+                </>
+              )}
+
+              {/* CSTP FORM FIELDS */}
+              {normalizedRole === "cstp" && (
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                  <div>
+                    <label className="block text-[11px] font-syne tracking-wider text-brand-white/90 uppercase font-bold mb-2">
+                      CSTP Domain / Specialty
+                    </label>
+                    <select
+                      name="cstpDomain"
+                      value={formData.cstpDomain}
+                      onChange={handleChange}
+                      className="w-full bg-black/90 border border-white/15 px-4 py-3 text-xs text-white rounded-xl focus:border-brand-yellow-golden outline-none"
+                    >
+                      <option value="Computational Fashion">Computational Fashion & AI</option>
+                      <option value="Technical Styling">Technical & Digital Styling</option>
+                      <option value="Show Production">Show Production & Tech</option>
+                      <option value="Digital Runway">Digital Runway & 3D Garments</option>
+                      <option value="Other">Other CSTP Specialization</option>
+                    </select>
+                  </div>
+                  <div>
+                    <label className="block text-[11px] font-syne tracking-wider text-brand-white/90 uppercase font-bold mb-2">
+                      Years of Experience
+                    </label>
+                    <select
+                      name="yearsExperience"
+                      value={formData.yearsExperience}
+                      onChange={handleChange}
+                      className="w-full bg-black/90 border border-white/15 px-4 py-3 text-xs text-white rounded-xl focus:border-brand-yellow-golden outline-none"
+                    >
+                      <option value="1-3 years">1–3 years</option>
+                      <option value="3-5 years">3–5 years</option>
+                      <option value="5-10 years">5–10 years</option>
+                      <option value="10+ years">10+ years</option>
+                    </select>
+                  </div>
+                </div>
+              )}
+
+              {/* FASHION COMMENTARY FORM FIELDS */}
+              {normalizedRole === "fashion_commentary" && (
+                <>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                    <div>
+                      <label className="block text-[11px] font-syne tracking-wider text-brand-white/90 uppercase font-bold mb-2">
+                        Commentary / Media Specialization
+                      </label>
+                      <select
+                        name="designSpecialization"
+                        value={formData.designSpecialization}
+                        onChange={handleChange}
+                        className="w-full bg-black/90 border border-white/15 px-4 py-3 text-xs text-white rounded-xl focus:border-brand-yellow-golden outline-none"
+                      >
+                        <option value="Fashion Commentary">Fashion Commentary</option>
+                        <option value="Fashion Journalism">Fashion Journalism</option>
+                        <option value="Fashion Analysis">Fashion & Trend Analysis</option>
+                        <option value="Runway Commentary">Runway Show Critique</option>
+                        <option value="Event Commentary">Event & Red Carpet Coverage</option>
+                        <option value="Other">Other Fashion Media</option>
+                      </select>
+                    </div>
+                    <div>
+                      <label className="block text-[11px] font-syne tracking-wider text-brand-white/90 uppercase font-bold mb-2">
+                        Publication / Platform
+                      </label>
+                      <input
+                        type="text"
+                        name="publicationPlatform"
+                        value={formData.publicationPlatform}
+                        onChange={handleChange}
+                        placeholder="e.g. Vogue, Harper's Bazaar, Substack, YouTube"
+                        className="w-full bg-black/90 border border-white/15 px-4 py-3 text-xs text-white rounded-xl focus:border-brand-yellow-golden outline-none"
+                      />
+                    </div>
+                  </div>
+
+                  <div>
+                    <label className="block text-[11px] font-syne tracking-wider text-brand-white/90 uppercase font-bold mb-2">
+                      Previous Fashion Coverage / Published Links
+                    </label>
+                    <textarea
+                      name="previousCoverage"
+                      value={formData.previousCoverage}
+                      onChange={handleChange}
+                      rows={2}
+                      placeholder="Links to published articles, videos, or commentary pieces..."
+                      className="w-full bg-black/90 border border-white/15 px-4 py-3 text-xs text-white rounded-xl focus:border-brand-yellow-golden outline-none resize-none"
+                    />
+                  </div>
+                </>
+              )}
+
+              {/* NOMINATION FORM FIELDS */}
+              {normalizedRole === "nomination" && (
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                  <div>
+                    <label className="block text-[11px] font-syne tracking-wider text-brand-white/90 uppercase font-bold mb-2">
+                      Nominee Creative Category *
+                    </label>
+                    <select
+                      name="nomineeRole"
+                      value={formData.nomineeRole}
+                      onChange={handleChange}
+                      className="w-full bg-black/90 border border-white/15 px-4 py-3 text-xs text-white rounded-xl focus:border-brand-yellow-golden outline-none"
+                    >
+                      <option value="Designer">Fashion Designer</option>
+                      <option value="Model">Model</option>
+                      <option value="Choreographer">Choreographer</option>
+                      <option value="Makeup Artist">Makeup Artist</option>
+                      <option value="Stylist">Fashion Stylist</option>
+                      <option value="Influencer">Influencer / Creator</option>
+                      <option value="CSTP">CSTP Professional</option>
+                      <option value="Fashion Commentary">Fashion Commentary</option>
+                    </select>
+                  </div>
+                  <div>
+                    <label className="block text-[11px] font-syne tracking-wider text-brand-white/90 uppercase font-bold mb-2">
+                      Nominee Social / Contact Link *
+                    </label>
+                    <input
+                      type="text"
+                      name="nomineeContact"
+                      value={formData.nomineeContact}
+                      onChange={handleChange}
+                      placeholder="@username or portfolio link"
+                      className="w-full bg-black/90 border border-white/15 px-4 py-3 text-xs text-white rounded-xl focus:border-brand-yellow-golden outline-none"
+                    />
+                  </div>
+                </div>
+              )}
+            </div>
+          )}
+
+          {/* STEP 3: PORTFOLIO & WORK LINKS */}
+          {step === 3 && (
+            <div className="bg-[#090807] border border-white/10 p-6 sm:p-8 rounded-2xl space-y-6">
+              <h3 className="text-xs font-syne font-bold tracking-caps text-brand-yellow-golden uppercase border-b border-white/10 pb-3">
+                03 PORTFOLIO & SOCIAL PRESENCE
+              </h3>
+
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                <div>
+                  <label className="block text-[11px] font-syne tracking-wider text-brand-white/90 uppercase font-bold mb-2">
+                    Portfolio / Official Website URL
+                  </label>
+                  <input
+                    type="url"
+                    name="portfolioUrl"
+                    value={formData.portfolioUrl}
+                    onChange={handleChange}
+                    placeholder="https://yourportfolio.com"
+                    className="w-full bg-black/90 border border-white/15 px-4 py-3 text-xs text-white rounded-xl focus:border-brand-yellow-golden outline-none"
+                  />
+                </div>
+                <div>
+                  <label className="block text-[11px] font-syne tracking-wider text-brand-white/90 uppercase font-bold mb-2">
+                    Instagram / Primary Social Handle
+                  </label>
+                  <input
+                    type="text"
+                    name="instagramUrl"
+                    value={formData.instagramUrl}
+                    onChange={handleChange}
+                    placeholder="@username or profile URL"
+                    className="w-full bg-black/90 border border-white/15 px-4 py-3 text-xs text-white rounded-xl focus:border-brand-yellow-golden outline-none"
+                  />
+                </div>
+              </div>
+
+              <div>
+                <label className="block text-[11px] font-syne tracking-wider text-brand-white/90 uppercase font-bold mb-2">
+                  Work Samples / Drive / Cloud Storage Link
+                </label>
+                <input
+                  type="url"
+                  name="workSamplesUrl"
+                  value={formData.workSamplesUrl}
+                  onChange={handleChange}
+                  placeholder="Link to photos, comp card, PDF portfolio, or press kit"
+                  className="w-full bg-black/90 border border-white/15 px-4 py-3 text-xs text-white rounded-xl focus:border-brand-yellow-golden outline-none"
+                />
+              </div>
+
+              {normalizedRole === "choreographer" || normalizedRole === "fashion_commentary" ? (
+                <div>
+                  <label className="block text-[11px] font-syne tracking-wider text-brand-white/90 uppercase font-bold mb-2">
+                    Video / Showreel Link URL
+                  </label>
+                  <input
+                    type="url"
+                    name="showreelUrl"
+                    value={formData.showreelUrl}
+                    onChange={handleChange}
+                    placeholder="YouTube, Vimeo, or Drive link"
+                    className="w-full bg-black/90 border border-white/15 px-4 py-3 text-xs text-white rounded-xl focus:border-brand-yellow-golden outline-none"
+                  />
+                </div>
+              ) : null}
+            </div>
+          )}
+
+          {/* STEP 4: AVAILABILITY & ADDITIONAL MESSAGE */}
+          {step === 4 && (
+            <div className="bg-[#090807] border border-white/10 p-6 sm:p-8 rounded-2xl space-y-6">
+              <h3 className="text-xs font-syne font-bold tracking-caps text-brand-yellow-golden uppercase border-b border-white/10 pb-3">
+                04 AVAILABILITY & ADDITIONAL DETAILS
+              </h3>
+
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                <div>
+                  <label className="block text-[11px] font-syne tracking-wider text-brand-white/90 uppercase font-bold mb-2">
+                    Available for Travel?
+                  </label>
+                  <select
+                    name="availableTravel"
+                    value={formData.availableTravel}
+                    onChange={handleChange}
+                    className="w-full bg-black/90 border border-white/15 px-4 py-3 text-xs text-white rounded-xl focus:border-brand-yellow-golden outline-none"
+                  >
+                    <option value="Yes">Yes — Global & International Travel</option>
+                    <option value="UAE Only">UAE & Gulf Region Only</option>
+                    <option value="India Only">India Region Only</option>
+                    <option value="No">Local Projects Only</option>
+                  </select>
+                </div>
+
+                {normalizedRole === "designer" ? (
+                  <div>
+                    <label className="block text-[11px] font-syne tracking-wider text-brand-white/90 uppercase font-bold mb-2">
+                      Available for Collaborations?
+                    </label>
+                    <select
+                      name="availableCollab"
+                      value={formData.availableCollab}
+                      onChange={handleChange}
+                      className="w-full bg-black/90 border border-white/15 px-4 py-3 text-xs text-white rounded-xl focus:border-brand-yellow-golden outline-none"
+                    >
+                      <option value="Yes">Yes — Open to Runway & Brand Collaborations</option>
+                      <option value="No">No — Exclusive Showcases Only</option>
+                    </select>
+                  </div>
+                ) : null}
+              </div>
+
+              <div>
+                <label className="block text-[11px] font-syne tracking-wider text-brand-white/90 uppercase font-bold mb-2">
+                  Additional Information / Message
+                </label>
+                <textarea
+                  name="additionalInfo"
+                  value={formData.additionalInfo}
+                  onChange={handleChange}
+                  rows={3}
+                  placeholder="Any additional details, upcoming showcase dates, or specific notes..."
+                  className="w-full bg-black/90 border border-white/15 px-4 py-3 text-xs text-white rounded-xl focus:border-brand-yellow-golden outline-none resize-none"
+                />
+              </div>
+            </div>
+          )}
+
+          {/* Form Step Buttons */}
+          <div className="flex items-center justify-between pt-4 border-t border-white/10">
+            {step > 1 ? (
+              <button
+                type="button"
+                onClick={handlePrevStep}
+                className="inline-flex items-center gap-2 px-5 py-2.5 text-xs font-syne font-bold text-white/70 hover:text-white transition-colors"
+              >
+                <ArrowLeft className="w-4 h-4" /> Previous Step
+              </button>
+            ) : <div />}
+
+            {step < 4 ? (
+              <button
+                type="button"
+                onClick={handleNextStep}
+                className="inline-flex items-center gap-2 bg-brand-yellow-golden px-7 py-3 text-xs font-syne font-bold tracking-caps text-black rounded-full hover:bg-yellow-400 transition-colors shadow-lg"
+              >
+                Next Step <ArrowRight className="w-4 h-4" />
+              </button>
+            ) : (
+              <button
+                type="submit"
+                disabled={isSubmitting}
+                className="inline-flex items-center gap-2 bg-gradient-to-r from-brand-yellow-golden to-amber-500 px-8 py-3.5 text-xs font-syne font-bold tracking-caps text-black rounded-full hover:opacity-95 transition-all shadow-xl disabled:opacity-50"
+              >
+                {isSubmitting ? "Submitting Application..." : "Submit Application"} <Send className="w-4 h-4" />
+              </button>
+            )}
+          </div>
+        </form>
+      )}
+    </div>
+  );
+}

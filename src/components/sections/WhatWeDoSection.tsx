@@ -82,7 +82,7 @@ export default function WhatWeDoSection() {
 
             <div className="pt-4 border-t border-white/10 flex items-center justify-between">
               <Link
-                href="/projects"
+                href="/apply"
                 className="inline-flex items-center gap-3 bg-brand-yellow-golden hover:bg-yellow-400 text-black px-6 py-3 rounded-full font-syne text-xs font-bold tracking-caps transition-colors shadow-lg"
               >
                 <span>EXPLORE EVENT FORMATS</span>

@@ -154,7 +154,7 @@ export default function Hero() {
               EXPLORE FASHAI →
             </Link>
             <Link
-              href="/contact"
+              href="/apply"
               className="w-full sm:w-auto min-w-[210px] border border-brand-yellow-golden/70 bg-black/50 backdrop-blur-sm px-8 py-4 text-xs sm:text-sm font-syne tracking-caps font-bold text-brand-white hover:bg-brand-yellow-golden/15 hover:border-brand-yellow-golden hover:scale-[1.03] active:scale-[0.98] transition-all duration-300 text-center min-h-[50px] flex items-center justify-center rounded-full"
               data-cursor="view"
             >
