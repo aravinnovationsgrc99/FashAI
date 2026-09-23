@@ -5,7 +5,7 @@ import Link from "next/link";
 
 export default function Chapter2026() {
   return (
-    <section id="2026" className="relative min-h-screen w-full flex flex-col justify-center py-24 px-6 sm:px-12 bg-brand-void border-b border-hairline-orange overflow-hidden">
+    <section id="2026" className="relative w-full flex flex-col justify-center py-14 sm:py-20 px-6 sm:px-12 bg-brand-void border-b border-hairline-orange overflow-hidden">
       {/* Light Yellow & Orange Radial Backdrop Glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[550px] h-[550px] bg-[#FFEC69]/5 blur-[130px] pointer-events-none rounded-full" />
 

@@ -77,7 +77,7 @@ function ContactContent() {
   };
 
   return (
-    <section id="contact" className="relative py-24 sm:py-32 bg-brand-void border-b border-hairline-orange overflow-hidden">
+    <section id="contact" className="relative py-14 sm:py-20 bg-brand-void border-b border-hairline-orange overflow-hidden">
       {/* Background Soft Glow */}
       <div className="absolute top-1/2 right-10 w-96 h-96 bg-brand-orange/10 blur-[160px] pointer-events-none rounded-full" />
       <div className="absolute bottom-1/4 left-10 w-80 h-80 bg-brand-green/8 blur-[160px] pointer-events-none rounded-full" />
@@ -85,7 +85,7 @@ function ContactContent() {
 
       <div className="container-editorial relative z-10">
         {/* Section Header */}
-        <div className="max-w-3xl mb-16">
+        <div className="max-w-3xl mb-8 sm:mb-10">
           <div className="flex items-center gap-3 text-xs font-syne tracking-micro text-brand-orange font-bold uppercase mb-3">
             <span className="h-px w-8 bg-brand-orange" />
             <span>CONTACT &amp; ENQUIRIES</span>

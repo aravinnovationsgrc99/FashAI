@@ -5,7 +5,7 @@ import { Sparkles, Globe, Eye, Award } from "lucide-react";
 
 export default function WhoWeAreSection() {
   return (
-    <section id="who-we-are" className="relative py-24 sm:py-32 bg-black border-b border-white/10 overflow-hidden text-brand-white">
+    <section id="who-we-are" className="relative py-14 sm:py-20 bg-black border-b border-white/10 overflow-hidden text-brand-white">
       {/* Ambient background glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[400px] bg-brand-yellow-golden/5 blur-[200px] rounded-full pointer-events-none" />
 
@@ -15,7 +15,7 @@ export default function WhoWeAreSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="space-y-10 text-center"
+          className="space-y-6 sm:space-y-8 text-center"
         >
           {/* Label Header */}
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-brand-yellow-golden/10 border border-brand-yellow-golden/30 text-brand-yellow-golden text-xs font-syne tracking-micro font-bold uppercase">

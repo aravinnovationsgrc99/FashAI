@@ -36,7 +36,7 @@ export default function FaqSection() {
   };
 
   return (
-    <section id="faq" className="relative py-24 sm:py-32 bg-[#050505] border-b border-white/10 overflow-hidden">
+    <section id="faq" className="relative py-12 sm:py-16 bg-[#050505] border-b border-white/10 overflow-hidden">
       {/* Glow */}
       <div className="absolute inset-0 pointer-events-none select-none">
         <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[500px] h-[500px] bg-brand-yellow-golden/5 blur-[180px] rounded-full" />
@@ -44,7 +44,7 @@ export default function FaqSection() {
 
       <div className="container-editorial relative z-10 max-w-4xl mx-auto">
         {/* Section Header */}
-        <div className="text-center mb-14">
+        <div className="text-center mb-8 sm:mb-10">
           <div className="inline-flex items-center gap-2 text-xs font-syne tracking-micro text-brand-yellow-golden font-bold uppercase mb-3 bg-brand-yellow-golden/10 border border-brand-yellow-golden/30 px-3.5 py-1.5 rounded-full">
             <Sparkles className="w-3.5 h-3.5" />
             <span>FREQUENTLY ASKED QUESTIONS</span>

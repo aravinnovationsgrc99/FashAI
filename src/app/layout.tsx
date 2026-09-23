@@ -10,6 +10,7 @@ import { ThemeProvider } from "@/context/ThemeContext";
 
 const EventInfoModal = dynamic(() => import("@/components/ui/EventInfoModal"));
 const FashAiConcierge = dynamic(() => import("@/components/concierge/FashAiConcierge"));
+const LocalDevicePreview = dynamic(() => import("@/components/ui/LocalDevicePreview"));
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://fashai-beryl.vercel.app"),
@@ -143,6 +144,9 @@ export default function RootLayout({
 
           {/* FashAI Universal AI Concierge Assistant */}
           <FashAiConcierge />
+
+          {/* Local Development Only Device Preview Switcher */}
+          <LocalDevicePreview />
         </ThemeProvider>
       </body>
     </html>

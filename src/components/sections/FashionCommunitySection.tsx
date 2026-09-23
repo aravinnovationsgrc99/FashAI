@@ -28,7 +28,7 @@ export default function FashionCommunitySection() {
   };
 
   return (
-    <section id="community" className="relative py-24 sm:py-32 bg-black border-b border-white/10 overflow-hidden">
+    <section id="community" className="relative py-14 sm:py-20 bg-black border-b border-white/10 overflow-hidden">
       {/* Atmosphere Background Glows */}
       <div className="absolute inset-0 pointer-events-none select-none overflow-hidden">
         <div className="absolute top-1/3 right-10 w-[550px] h-[550px] bg-brand-orange/10 blur-[170px] rounded-full" />
@@ -41,7 +41,7 @@ export default function FashionCommunitySection() {
 
       <div className="container-editorial relative z-10">
         {/* Section Editorial Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16 border-b border-white/10 pb-8">
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-8 sm:mb-10 border-b border-white/10 pb-6 sm:pb-8">
           <div>
             <div className="flex items-center gap-3 text-xs font-syne tracking-micro text-brand-orange font-bold uppercase mb-3">
               <Sparkles className="w-4 h-4 text-brand-yellow-golden" />

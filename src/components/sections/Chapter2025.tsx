@@ -13,7 +13,7 @@ export default function Chapter2025() {
   ];
 
   return (
-    <section id="lifestyle-2025" className="relative min-h-[85vh] w-full flex flex-col justify-center py-20 bg-brand-void border-b border-hairline-orange overflow-hidden">
+    <section id="lifestyle-2025" className="relative w-full flex flex-col justify-center py-14 sm:py-20 bg-brand-void border-b border-hairline-orange overflow-hidden">
       {/* Rich Background Atmosphere Layer */}
       <div className="absolute inset-0 pointer-events-none select-none overflow-hidden">
         <div className="absolute top-1/2 left-0 -translate-y-1/2 w-[500px] h-[500px] bg-[#FAB60A]/10 blur-[160px] rounded-full" />

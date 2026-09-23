@@ -7,7 +7,7 @@ import { ArrowUpRight } from "lucide-react";
 
 export default function OurEventsSection() {
   return (
-    <section className="relative py-24 sm:py-32 bg-brand-void border-b border-hairline-orange overflow-hidden">
+    <section className="relative py-14 sm:py-20 bg-brand-void border-b border-hairline-orange overflow-hidden">
       {/* Rich Background Atmosphere & Graphical Layer */}
       <div className="absolute inset-0 pointer-events-none select-none overflow-hidden">
         <div className="absolute top-1/4 left-10 w-[550px] h-[550px] bg-brand-orange/10 blur-[160px] rounded-full" />
@@ -21,7 +21,7 @@ export default function OurEventsSection() {
 
       <div className="container-editorial relative z-10">
         {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16 border-b border-hairline-orange pb-8">
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-8 sm:mb-10 border-b border-hairline-orange pb-6 sm:pb-8">
           <div>
             <div className="flex items-center gap-3 text-xs font-syne tracking-micro text-brand-orange font-bold uppercase mb-3">
               <span className="h-px w-8 bg-brand-orange" />

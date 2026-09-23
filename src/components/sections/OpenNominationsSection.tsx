@@ -76,7 +76,7 @@ export default function OpenNominationsSection() {
   };
 
   return (
-    <section id="nominations" className="relative py-24 sm:py-32 bg-[#060606] border-b border-white/10 overflow-hidden">
+    <section id="nominations" className="relative py-14 sm:py-20 bg-[#060606] border-b border-white/10 overflow-hidden">
       {/* Background Ambience */}
       <div className="absolute inset-0 pointer-events-none select-none">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-brand-yellow-golden/5 blur-[200px] rounded-full" />
@@ -84,7 +84,7 @@ export default function OpenNominationsSection() {
 
       <div className="container-editorial relative z-10">
         {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16 border-b border-white/10 pb-8">
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-8 sm:mb-10 border-b border-white/10 pb-6 sm:pb-8">
           <div>
             <div className="flex items-center gap-2 text-xs font-syne tracking-micro text-brand-yellow-golden font-bold uppercase mb-3">
               <Sparkles className="w-4 h-4" />

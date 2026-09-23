@@ -6,14 +6,14 @@ import { Sparkles, Globe, ShieldCheck, Compass } from "lucide-react";
 
 export default function AboutUsSection() {
   return (
-    <section id="about" className="relative py-24 sm:py-32 bg-black border-b border-white/10 overflow-hidden">
+    <section id="about" className="relative py-14 sm:py-20 bg-black border-b border-white/10 overflow-hidden">
       {/* Glow */}
       <div className="absolute inset-0 pointer-events-none select-none">
         <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-brand-orange/5 blur-[180px] rounded-full" />
       </div>
 
       <div className="container-editorial relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
           {/* Left Column — Text */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}

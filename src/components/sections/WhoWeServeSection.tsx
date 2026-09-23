@@ -76,7 +76,7 @@ export default function WhoWeServeSection() {
   const [activeDiscipline, setActiveDiscipline] = useState<DisciplineItem>(DISCIPLINES[0]);
 
   return (
-    <section id="people-creativity" className="relative py-24 sm:py-36 bg-[#050505] border-b border-white/10 text-brand-white overflow-hidden">
+    <section id="people-creativity" className="relative py-14 sm:py-20 bg-[#050505] border-b border-white/10 text-brand-white overflow-hidden">
       {/* Editorial Atmospheric Background Glow */}
       <div className="absolute inset-0 pointer-events-none select-none">
         <div className="absolute top-1/4 left-1/3 w-[600px] h-[600px] bg-brand-yellow-golden/5 blur-[220px] rounded-full" />
@@ -84,7 +84,7 @@ export default function WhoWeServeSection() {
 
       <div className="container-editorial relative z-10">
         {/* Section Editorial Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-16 border-b border-white/10 pb-8">
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-8 sm:mb-10 border-b border-white/10 pb-6 sm:pb-8">
           <div>
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-yellow-golden/10 border border-brand-yellow-golden/30 text-brand-yellow-golden text-xs font-syne tracking-micro font-bold uppercase mb-4">
               <Sparkles className="w-3.5 h-3.5" />
