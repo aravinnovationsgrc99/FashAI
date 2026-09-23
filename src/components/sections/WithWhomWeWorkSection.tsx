@@ -1,397 +1,361 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
-import { Sparkles, ArrowRight, Compass } from "lucide-react";
+import { Sparkles, ChevronDown, ChevronUp } from "lucide-react";
 
-export interface ConstellationNode {
+export interface DisciplineItem {
+  number: string;
   id: string;
   label: string;
-  category: string;
+  badge: string;
   description: string;
-  metadata: string[];
+  tags: string[];
   image: string;
-  angle: number; // orbital angle in degrees
-  radiusScale?: number; // minor offset for asymmetric organic feel
+  alt: string;
 }
 
-const CONSTELLATION_NODES: ConstellationNode[] = [
+export const DISCIPLINES: DisciplineItem[] = [
   {
+    number: "01",
     id: "design",
     label: "DESIGN",
-    category: "COUTURE & ATELIER",
+    badge: "COUTURE & ATELIER",
     description:
       "Creative direction begins with an idea — from emerging designers and couture houses to the visual language of a complete fashion experience.",
-    metadata: ["COUTURE", "DESIGN DIRECTION", "SHOWCASE", "COLLABORATION"],
-    image: "/assets/master/designer/designer_01.png",
-    angle: 0,
-    radiusScale: 1.02,
+    tags: ["COUTURE", "DESIGN DIRECTION", "SHOWCASE", "COLLABORATION"],
+    image: "/assets/models/model_01.jpeg",
+    alt: "FashAI Universal Design Direction Showcase",
   },
   {
-    id: "talent",
-    label: "TALENT",
-    category: "RUNWAY & EDITORIAL",
-    description:
-      "Runway talent, models and creative personalities become part of productions designed around presence, movement and visual identity.",
-    metadata: ["RUNWAY", "EDITORIAL", "CAMPAIGNS", "CASTING"],
-    image: "/assets/master/models/model_01.png",
-    angle: 36,
-    radiusScale: 0.95,
-  },
-  {
+    number: "02",
     id: "styling",
     label: "STYLING",
-    category: "WARDROBE DIRECTION",
+    badge: "WARDROBE DIRECTION",
     description:
-      "Styling shapes the visual identity of a production — from wardrobe direction to the final runway look.",
-    metadata: ["WARDROBE", "EDITORIAL", "RUNWAY", "CAMPAIGNS"],
-    image: "/assets/master/stylist/stylist_01.png",
-    angle: 72,
-    radiusScale: 1.05,
+      "Styling shapes the visual identity of a production — from wardrobe direction and editorial lookbooks to the final runway presentation.",
+    tags: ["WARDROBE", "EDITORIAL", "RUNWAY", "CAMPAIGNS"],
+    image: "/assets/models/model_04.jpeg",
+    alt: "FashAI Universal Styling Direction Showcase",
   },
   {
+    number: "03",
     id: "beauty",
     label: "BEAUTY",
-    category: "BACKSTAGE ARTISTRY",
+    badge: "BACKSTAGE ARTISTRY",
     description:
-      "Makeup, hair and beauty direction complete the visual language of a fashion experience.",
-    metadata: ["BEAUTY", "EDITORIAL", "BACKSTAGE", "CAMPAIGNS"],
-    image: "/assets/master/makeup/makeup_01.png",
-    angle: 108,
-    radiusScale: 0.98,
+      "Makeup, hair, and beauty direction complete the visual narrative of a fashion experience, elevating garment art on stage.",
+    tags: ["BEAUTY", "EDITORIAL", "BACKSTAGE", "CAMPAIGNS"],
+    image: "/assets/models/model_08.jpeg",
+    alt: "FashAI Universal Beauty Artistry Showcase",
   },
   {
+    number: "04",
     id: "movement",
     label: "MOVEMENT",
-    category: "CHOREOGRAPHY & STAGE",
+    badge: "STAGE CHOREOGRAPHY",
     description:
-      "Choreography transforms a runway into a performance, shaping pace, movement, formations and audience experience.",
-    metadata: ["RUNWAY", "CHOREOGRAPHY", "STAGE", "PERFORMANCE"],
-    image: "/assets/master/choreographer/choreographer.png",
-    angle: 144,
-    radiusScale: 1.03,
+      "Choreography transforms a runway into a performance, shaping pace, catwalk movement, formations, and audience engagement.",
+    tags: ["RUNWAY", "CHOREOGRAPHY", "STAGE", "PERFORMANCE"],
+    image: "/assets/models/model_07.jpeg",
+    alt: "FashAI Universal Movement & Stage Showcase",
   },
   {
+    number: "05",
+    id: "talent",
+    label: "TALENT",
+    badge: "RUNWAY & EDITORIAL",
+    description:
+      "Runway models, international talent, and creative personalities form the core of productions designed around presence and movement.",
+    tags: ["RUNWAY", "EDITORIAL", "CAMPAIGNS", "CASTING"],
+    image: "/assets/models/model_02.jpeg",
+    alt: "FashAI Universal Talent Network Showcase",
+  },
+  {
+    number: "06",
     id: "production",
     label: "PRODUCTION",
-    category: "SHOWCASE & RUNWAY",
+    badge: "EVENT SHOWCASE",
     description:
-      "From concept and staging to execution, productions bring the creative vision together as one experience.",
-    metadata: ["RUNWAY", "STAGE", "PRODUCTION", "EVENTS"],
-    image: "/assets/events/fashion_events.png",
-    angle: 180,
-    radiusScale: 0.96,
+      "From architectural staging and lighting design to live execution, production brings the entire creative vision together as one experience.",
+    tags: ["RUNWAY", "STAGE", "PRODUCTION", "EVENTS"],
+    image: "/assets/models/model_05.jpeg",
+    alt: "FashAI Universal Stage Production Showcase",
   },
   {
-    id: "brands",
-    label: "BRANDS",
-    category: "BRAND EXPERIENCES",
-    description:
-      "Brand partnerships create opportunities for fashion, lifestyle and commercial experiences to meet.",
-    metadata: ["BRAND EXPERIENCE", "ACTIVATION", "CAMPAIGN", "PARTNERSHIP"],
-    image: "/assets/events/lifestyle_events.png",
-    angle: 216,
-    radiusScale: 1.04,
-  },
-  {
+    number: "07",
     id: "media",
     label: "MEDIA",
-    category: "EDITORIAL & STORYTELLING",
+    badge: "EDITORIAL & STORYTELLING",
     description:
-      "Editorial, social and event storytelling extend the experience beyond the room.",
-    metadata: ["EDITORIAL", "CONTENT", "COVERAGE", "DIGITAL"],
-    image: "/assets/master/influencers/influencer_01.png",
-    angle: 252,
-    radiusScale: 0.97,
+      "Editorial commentary, digital storytelling, press coverage, and content amplification extend the experience beyond the room.",
+    tags: ["EDITORIAL", "CONTENT", "COVERAGE", "DIGITAL"],
+    image: "/assets/models/model_11.jpeg",
+    alt: "FashAI Universal Media & Storytelling Showcase",
   },
   {
-    id: "lifestyle",
-    label: "LIFESTYLE",
-    category: "LUXURY & CULTURE",
-    description:
-      "Luxury lifestyle experiences combine fashion, culture, hospitality and curated moments.",
-    metadata: ["LUXURY", "EXPERIENCE", "CULTURE", "EVENTS"],
-    image: "/assets/master/celebrity/celebrity_01.png",
-    angle: 288,
-    radiusScale: 1.02,
-  },
-  {
+    number: "08",
     id: "technology",
     label: "TECHNOLOGY",
-    category: "DIGITAL INNOVATION",
+    badge: "DIGITAL INNOVATION",
     description:
-      "Technology adds new dimensions to fashion and event experiences through digital, interactive and AI-led possibilities.",
-    metadata: ["AI", "DIGITAL", "INTERACTIVE", "EXPERIENCE"],
-    image: "/assets/events/it_events.png",
-    angle: 324,
-    radiusScale: 0.99,
+      "Technology adds new dimensions to fashion and event experiences through spatial design, interactive elements, and AI-led possibilities.",
+    tags: ["AI", "DIGITAL", "INTERACTIVE", "EXPERIENCE"],
+    image: "/assets/models/model_13.jpeg",
+    alt: "FashAI Universal Digital Innovation Showcase",
   },
 ];
 
 export default function WithWhomWeWorkSection() {
-  const [selectedNode, setSelectedNode] = useState<ConstellationNode>(CONSTELLATION_NODES[0]);
-  const [hasExplored, setHasExplored] = useState(false);
-  const [prefersReducedMotion, setPrefersReducedMotion] = useState(false);
+  const [activeDiscipline, setActiveDiscipline] = useState<DisciplineItem>(DISCIPLINES[0]);
+  const [expandedMobileId, setExpandedMobileId] = useState<string | null>("design");
 
-  useEffect(() => {
-    const mediaQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
-    setPrefersReducedMotion(mediaQuery.matches);
-    const handler = (e: MediaQueryListEvent) => setPrefersReducedMotion(e.matches);
-    mediaQuery.addEventListener("change", handler);
-    return () => mediaQuery.removeEventListener("change", handler);
-  }, []);
-
-  const handleSelectNode = (node: ConstellationNode) => {
-    setSelectedNode(node);
-    if (!hasExplored) setHasExplored(true);
+  const toggleMobileDiscipline = (id: string) => {
+    if (expandedMobileId === id) {
+      setExpandedMobileId(null);
+    } else {
+      setExpandedMobileId(id);
+      const disc = DISCIPLINES.find((d) => d.id === id);
+      if (disc) setActiveDiscipline(disc);
+    }
   };
 
   return (
     <section
       id="constellation"
-      className="relative py-14 sm:py-20 bg-[#040404] border-b border-white/10 text-brand-white overflow-hidden selection:bg-brand-yellow-golden selection:text-black"
+      className="relative py-14 sm:py-24 bg-[#050505] border-b border-white/10 text-brand-white overflow-hidden selection:bg-brand-yellow-golden selection:text-black"
     >
-      {/* Editorial Background Atmosphere */}
+      {/* Editorial Ambient Background Glow */}
       <div className="absolute inset-0 pointer-events-none select-none">
-        <div className="absolute top-1/2 right-1/4 -translate-y-1/2 w-[650px] h-[650px] bg-brand-yellow-golden/5 blur-[240px] rounded-full" />
+        <div className="absolute top-1/2 left-1/4 -translate-y-1/2 w-[650px] h-[650px] bg-brand-yellow-golden/5 blur-[240px] rounded-full" />
       </div>
 
       <div className="container-editorial relative z-10">
-        {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-8 sm:mb-10 border-b border-white/10 pb-6 sm:pb-8">
-          <div>
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-yellow-golden/10 border border-brand-yellow-golden/30 text-brand-yellow-golden text-xs font-syne tracking-micro font-bold uppercase mb-4">
-              <Sparkles className="w-3.5 h-3.5" />
-              <span>THE CREATIVE CONSTELLATION</span>
-            </div>
-            <h2 className="font-serif-display text-4xl sm:text-6xl lg:text-7xl font-light text-brand-white uppercase leading-[0.95]">
-              THE CREATIVE <br />
-              <span className="font-serif italic font-normal text-brand-yellow-golden capitalize">Constellation</span>
-            </h2>
+        {/* 1. NEW EDITORIAL SECTION HEADER */}
+        <div className="max-w-4xl mb-10 sm:mb-14">
+          {/* Refined Eyebrow */}
+          <div className="flex items-center gap-2 text-xs font-syne tracking-micro text-brand-yellow-golden font-bold uppercase mb-3">
+            <Sparkles className="w-3.5 h-3.5 text-brand-yellow-golden" />
+            <span>EXPLORE THE CONNECTIONS</span>
           </div>
 
-          <div className="max-w-md space-y-3">
-            <p className="font-sans text-sm sm:text-base text-brand-white/90 font-light leading-relaxed">
-              &quot;Where talent, design, production and industry come together to shape the experience.&quot;
-            </p>
-            <p className="font-sans text-xs text-brand-platinum/70 font-light leading-relaxed">
-              From the first creative direction to the final spotlight, FashAI Universal brings together the people, disciplines and industries that shape memorable fashion and event experiences.
-            </p>
+          {/* Large Editorial Headline */}
+          <h2 className="font-serif-display text-4xl sm:text-6xl lg:text-7xl font-light text-brand-white uppercase leading-[0.92] tracking-tight mb-4">
+            BUILT AROUND <br />
+            <span className="font-serif italic text-brand-yellow-golden font-normal">CREATIVITY</span>
+          </h2>
+
+          {/* Thin Gold Accent Line */}
+          <div className="flex items-center gap-3 w-full max-w-xs mb-5">
+            <span className="h-[2px] w-12 bg-brand-yellow-golden shadow-[0_0_10px_rgba(250,182,10,0.6)]" />
+            <span className="h-[1px] flex-1 bg-gradient-to-r from-brand-yellow-golden/60 via-brand-yellow-golden/20 to-transparent" />
           </div>
+
+          {/* Concise Paragraph */}
+          <p className="font-sans text-sm sm:text-base text-brand-platinum/90 font-light leading-relaxed max-w-xl">
+            From creative direction and couture to movement, beauty, talent, production, and digital experiences, FashAI Universal brings the disciplines behind modern fashion experiences together.
+          </p>
         </div>
 
-        {/* ASYMMETRIC DYNAMIC CONSTELLATION ENGINE (NO CARDS / NO Saas GRIDS) */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
-          {/* LEFT 45%: Selected Node Interactive Narrative Panel */}
-          <div className="lg:col-span-5 space-y-8">
-            {/* Interactive Status Indicator */}
-            <div className="flex items-center gap-2 text-xs font-syne tracking-wider text-brand-yellow-golden uppercase font-bold">
-              <Compass className="w-4 h-4 text-brand-yellow-golden animate-spin-slow" />
-              <span>{hasExplored ? "EXPLORE ANOTHER →" : "EXPLORE THE CONNECTIONS"}</span>
-            </div>
-
-            {/* Dynamic Selected Node Content */}
+        {/* 2. ASYMMETRIC EDITORIAL LAYOUT (DESKTOP) */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-start">
+          
+          {/* LEFT SIDE (58%–62% width): Large Dominating Fashion Image & Dynamic Details */}
+          <div className="lg:col-span-7 space-y-6">
             <AnimatePresence mode="wait">
               <motion.div
-                key={selectedNode.id}
+                key={activeDiscipline.id}
                 initial={{ opacity: 0, y: 12 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -12 }}
-                transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
+                transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
                 className="space-y-6"
               >
-                <div>
-                  <span className="text-[10px] font-syne tracking-micro text-brand-yellow-golden font-bold uppercase px-3 py-1 bg-brand-yellow-golden/10 border border-brand-yellow-golden/30 rounded-full inline-block mb-3">
-                    {selectedNode.category}
-                  </span>
-                  <h3 className="font-serif-display text-4xl sm:text-5xl font-light text-brand-white uppercase tracking-tight">
-                    {selectedNode.label}
-                  </h3>
-                </div>
-
-                <p className="font-sans text-sm sm:text-base text-brand-platinum/90 font-light leading-relaxed">
-                  {selectedNode.description}
-                </p>
-
-                {/* Metadata Tags */}
-                <div className="flex flex-wrap gap-2 pt-2">
-                  {selectedNode.metadata.map((meta) => (
-                    <span
-                      key={meta}
-                      className="text-[10px] font-syne tracking-wider text-white/80 bg-white/5 border border-white/15 px-3 py-1.5 rounded-full uppercase"
-                    >
-                      {meta}
-                    </span>
-                  ))}
-                </div>
-
-                {/* Soft Editorial Image Mask Reveal */}
-                <div className="relative aspect-[16/9] w-full rounded-2xl overflow-hidden border border-brand-yellow-golden/30 bg-[#090807] shadow-2xl mt-4">
+                {/* Large Campaign Editorial Image Container */}
+                <div className="relative aspect-[4/3] sm:aspect-[16/10] lg:h-[620px] w-full rounded-2xl overflow-hidden border border-brand-yellow-golden/30 bg-[#0A0908] shadow-2xl group">
                   <Image
-                    src={selectedNode.image}
-                    alt={selectedNode.label}
+                    src={activeDiscipline.image}
+                    alt={activeDiscipline.alt}
                     fill
-                    sizes="(max-width: 1024px) 100vw, 40vw"
-                    className="object-cover object-top filter contrast-105"
+                    priority
+                    sizes="(max-width: 1024px) 100vw, 60vw"
+                    className="object-cover object-center filter contrast-105 transition-transform duration-700 ease-out group-hover:scale-[1.02]"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-80" />
-                  <div className="absolute bottom-3 left-4 right-4 flex items-center justify-between text-[10px] font-syne text-brand-yellow-golden uppercase font-bold tracking-wider">
-                    <span>{selectedNode.label} DIRECTION</span>
-                    <span>FASHAI UNIVERSAL</span>
+                  {/* Subtle Dark Vignette & Gradient */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/25 to-transparent" />
+
+                  {/* Magazine Caption Overlay */}
+                  <div className="absolute bottom-5 left-6 right-6 flex items-center justify-between font-syne text-[11px] sm:text-xs tracking-wider text-brand-yellow-golden uppercase font-bold drop-shadow">
+                    <span>{activeDiscipline.label} DIRECTION</span>
+                    <span className="text-white/80">FASHAI UNIVERSAL</span>
+                  </div>
+                </div>
+
+                {/* Content Details Below Image */}
+                <div className="space-y-4 pt-2">
+                  <div className="flex items-center gap-3">
+                    <span className="text-[10px] font-syne tracking-micro text-brand-yellow-golden font-bold uppercase px-3 py-1 bg-brand-yellow-golden/10 border border-brand-yellow-golden/30 rounded-full">
+                      {activeDiscipline.badge}
+                    </span>
+                    <span className="text-xs font-syne tracking-wider text-white/50 uppercase font-bold">
+                      DISCIPLINE {activeDiscipline.number}
+                    </span>
+                  </div>
+
+                  <h3 className="font-serif-display text-3xl sm:text-4xl font-light text-brand-white uppercase tracking-tight">
+                    {activeDiscipline.label}
+                  </h3>
+
+                  <p className="font-sans text-sm sm:text-base text-brand-platinum/90 font-light leading-relaxed max-w-xl">
+                    {activeDiscipline.description}
+                  </p>
+
+                  {/* Metadata Tags */}
+                  <div className="flex flex-wrap gap-2 pt-1">
+                    {activeDiscipline.tags.map((tag) => (
+                      <span
+                        key={tag}
+                        className="text-[10px] font-syne tracking-wider text-white/80 bg-white/5 border border-white/15 px-3 py-1.5 rounded-full uppercase font-medium"
+                      >
+                        {tag}
+                      </span>
+                    ))}
                   </div>
                 </div>
               </motion.div>
             </AnimatePresence>
-
-            {/* Bottom Text Link CTA to Event Formats */}
-            <div className="pt-4 border-t border-white/10">
-              <Link
-                href="#what-we-do"
-                className="inline-flex items-center gap-3 text-xs font-syne tracking-caps font-bold text-brand-white hover:text-brand-yellow-golden transition-colors group"
-              >
-                <span>EXPLORE WHAT WE CREATE</span>
-                <ArrowRight className="w-4 h-4 text-brand-yellow-golden group-hover:translate-x-1.5 transition-transform" />
-              </Link>
-            </div>
           </div>
 
-          {/* RIGHT 55%: Interactive Constellation Canvas */}
-          <div className="lg:col-span-7 relative flex items-center justify-center min-h-[460px] sm:min-h-[560px]">
-            {/* Ambient Faint Orbital Rings */}
-            <div
-              className={`absolute w-[340px] h-[340px] sm:w-[480px] sm:h-[480px] border border-brand-yellow-golden/15 rounded-full pointer-events-none ${
-                prefersReducedMotion ? "" : "animate-spin-slow"
-              }`}
-            />
-            <div className="absolute w-[240px] h-[240px] sm:w-[320px] sm:h-[320px] border border-white/10 rounded-full pointer-events-none" />
-
-            {/* Central Circular Organic FashAI Core */}
-            <div className="relative z-20 w-36 h-36 sm:w-44 sm:h-44 rounded-full bg-black border-2 border-brand-yellow-golden p-4 flex flex-col items-center justify-center text-center shadow-[0_0_60px_rgba(250,182,10,0.25)] select-none">
-              <div className="w-2.5 h-2.5 bg-brand-yellow-golden rounded-full mb-1 animate-pulse" />
-              <span className="font-serif-display text-lg sm:text-2xl font-light tracking-wider text-white uppercase leading-none">
-                FashAI
-              </span>
-              <span className="font-serif italic font-normal text-xs sm:text-base text-brand-yellow-golden">
-                Universal
-              </span>
-              <span className="text-[9px] font-syne tracking-micro text-white/50 uppercase mt-1">
-                CENTRAL HUB
-              </span>
+          {/* RIGHT SIDE (38%–42% width): Sophisticated Vertical Discipline Selector */}
+          <div className="lg:col-span-5 space-y-4">
+            <div className="hidden lg:flex items-center justify-between text-xs font-syne tracking-wider text-brand-yellow-golden font-bold uppercase mb-2">
+              <span>DISCIPLINES</span>
+              <span>08 DISCIPLINES</span>
             </div>
 
-            {/* Desktop & Tablet Floating Orbital Constellation Nodes */}
-            <div className="hidden sm:block absolute inset-0 pointer-events-none">
-              {/* SVG Vector Connector Paths */}
-              <svg className="w-full h-full absolute inset-0 overflow-visible pointer-events-none">
-                {CONSTELLATION_NODES.map((node) => {
-                  const isSelected = selectedNode.id === node.id;
-                  const rad = (node.angle * Math.PI) / 180;
-                  const baseRadius = 220;
-                  const radius = baseRadius * (node.radiusScale || 1);
-                  const x = Math.cos(rad) * radius;
-                  const y = Math.sin(rad) * radius;
-
-                  return (
-                    <g key={`line-${node.id}`}>
-                      <line
-                        x1="50%"
-                        y1="50%"
-                        x2={`calc(50% + ${x}px)`}
-                        y2={`calc(50% + ${y}px)`}
-                        stroke={isSelected ? "#FAB60A" : "rgba(250, 182, 10, 0.15)"}
-                        strokeWidth={isSelected ? "2" : "1"}
-                        strokeDasharray={isSelected ? "none" : "3 3"}
-                        className="transition-all duration-500"
-                      />
-                      {isSelected && (
-                        <circle
-                          cx={`calc(50% + ${x * 0.5}px)`}
-                          cy={`calc(50% + ${y * 0.5}px)`}
-                          r="2.5"
-                          fill="#FAB60A"
-                          className="animate-ping"
-                        />
-                      )}
-                    </g>
-                  );
-                })}
-              </svg>
-
-              {/* Interactive Node Buttons */}
-              {CONSTELLATION_NODES.map((node) => {
-                const isSelected = selectedNode.id === node.id;
-                const rad = (node.angle * Math.PI) / 180;
-                const baseRadius = 220;
-                const radius = baseRadius * (node.radiusScale || 1);
-                const x = Math.cos(rad) * radius;
-                const y = Math.sin(rad) * radius;
-
+            {/* DESKTOP VERTICAL DISCIPLINE SELECTOR */}
+            <div className="hidden lg:flex flex-col divide-y divide-white/10 border-t border-b border-white/10">
+              {DISCIPLINES.map((item) => {
+                const isActive = activeDiscipline.id === item.id;
                 return (
-                  <div
-                    key={node.id}
-                    style={{
-                      transform: `translate(calc(-50% + ${x}px), calc(-50% + ${y}px))`,
-                    }}
-                    className="absolute top-1/2 left-1/2 pointer-events-auto z-30 transition-all duration-300"
+                  <button
+                    key={item.id}
+                    type="button"
+                    role="tab"
+                    aria-selected={isActive}
+                    onClick={() => setActiveDiscipline(item)}
+                    onMouseEnter={() => setActiveDiscipline(item)}
+                    className={`group flex items-center justify-between py-4 px-3 text-left transition-all duration-300 ${
+                      isActive
+                        ? "text-brand-yellow-golden font-bold bg-brand-yellow-golden/5"
+                        : "text-white/80 hover:text-white hover:bg-white/5"
+                    }`}
                   >
-                    <button
-                      type="button"
-                      role="tab"
-                      aria-selected={isSelected}
-                      aria-label={`Select ${node.label} discipline`}
-                      onClick={() => handleSelectNode(node)}
-                      onMouseEnter={() => handleSelectNode(node)}
-                      className={`group cursor-pointer px-4 py-2 rounded-full border text-[11px] font-syne tracking-wider font-bold uppercase transition-all duration-300 flex items-center gap-2.5 backdrop-blur-md shadow-xl ${
-                        isSelected
-                          ? "bg-brand-yellow-golden text-black border-brand-yellow-golden shadow-[0_0_25px_rgba(250,182,10,0.6)] scale-110"
-                          : "bg-black/85 text-white/80 border-white/20 hover:border-brand-yellow-golden/70 hover:text-white hover:scale-105"
+                    <div className="flex items-center gap-4">
+                      <span
+                        className={`font-syne text-xs font-bold transition-colors ${
+                          isActive ? "text-brand-yellow-golden" : "text-white/40"
+                        }`}
+                      >
+                        {item.number}
+                      </span>
+                      <span className="font-syne text-lg sm:text-xl font-bold tracking-wider uppercase group-hover:translate-x-1.5 transition-transform duration-300">
+                        {item.label}
+                      </span>
+                    </div>
+
+                    <span
+                      className={`text-xs font-syne text-brand-yellow-golden transition-all duration-300 ${
+                        isActive
+                          ? "opacity-100 translate-x-0"
+                          : "opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0"
                       }`}
                     >
-                      <span
-                        className={`w-2 h-2 rounded-full transition-colors ${
-                          isSelected ? "bg-black animate-pulse" : "bg-brand-yellow-golden"
-                        }`}
-                      />
-                      <span>{node.label}</span>
-                    </button>
-                  </div>
+                      →
+                    </span>
+                  </button>
                 );
               })}
             </div>
 
-            {/* Mobile Flowing Pill Selector (Accessibility & Touch Optimization) */}
-            <div className="sm:hidden w-full space-y-4 pt-4 relative z-30">
-              <div className="flex items-center justify-between text-[11px] font-syne tracking-wider text-brand-yellow-golden font-bold uppercase">
-                <span>SELECT DISCIPLINE NODE</span>
-                <span>10 DISCIPLINES</span>
+            {/* MOBILE ACCORDION / DISCIPLINE SELECTOR (< lg screens) */}
+            <div className="lg:hidden space-y-3 pt-4 border-t border-white/10">
+              <div className="text-xs font-syne tracking-wider text-brand-yellow-golden font-bold uppercase mb-2">
+                DISCIPLINES ACCORDION
               </div>
 
-              <div className="flex flex-wrap gap-2">
-                {CONSTELLATION_NODES.map((node) => {
-                  const isSelected = selectedNode.id === node.id;
-                  return (
+              {DISCIPLINES.map((item) => {
+                const isExpanded = expandedMobileId === item.id;
+                return (
+                  <div
+                    key={item.id}
+                    className="border border-white/10 rounded-xl bg-[#090807] overflow-hidden"
+                  >
                     <button
-                      key={node.id}
                       type="button"
-                      role="tab"
-                      aria-selected={isSelected}
-                      aria-label={`Select ${node.label} discipline`}
-                      onClick={() => handleSelectNode(node)}
-                      className={`px-3.5 py-2 rounded-full text-xs font-syne font-bold uppercase tracking-wider transition-all border ${
-                        isSelected
-                          ? "bg-brand-yellow-golden text-black border-brand-yellow-golden shadow-md"
-                          : "bg-black/90 text-white/80 border-white/20 hover:border-brand-yellow-golden/50"
+                      onClick={() => toggleMobileDiscipline(item.id)}
+                      className={`w-full flex items-center justify-between px-5 py-4 text-left font-syne text-sm font-bold uppercase tracking-wider transition-colors ${
+                        isExpanded ? "text-brand-yellow-golden bg-brand-yellow-golden/10" : "text-white"
                       }`}
                     >
-                      {node.label}
+                      <div className="flex items-center gap-3">
+                        <span className="text-xs text-brand-yellow-golden">{item.number}</span>
+                        <span>{item.label}</span>
+                      </div>
+                      {isExpanded ? (
+                        <ChevronUp className="w-4 h-4 text-brand-yellow-golden shrink-0" />
+                      ) : (
+                        <ChevronDown className="w-4 h-4 text-white/50 shrink-0" />
+                      )}
                     </button>
-                  );
-                })}
-              </div>
+
+                    <AnimatePresence>
+                      {isExpanded && (
+                        <motion.div
+                          initial={{ height: 0, opacity: 0 }}
+                          animate={{ height: "auto", opacity: 1 }}
+                          exit={{ height: 0, opacity: 0 }}
+                          transition={{ duration: 0.3 }}
+                          className="px-5 pb-5 pt-2 space-y-3 border-t border-white/10"
+                        >
+                          <span className="text-[10px] font-syne tracking-micro text-brand-yellow-golden font-bold uppercase px-2.5 py-0.5 bg-brand-yellow-golden/15 border border-brand-yellow-golden/30 rounded">
+                            {item.badge}
+                          </span>
+                          <p className="font-sans text-xs text-brand-platinum/90 font-light leading-relaxed">
+                            {item.description}
+                          </p>
+                          <div className="flex flex-wrap gap-1.5 pt-1">
+                            {item.tags.map((tag) => (
+                              <span
+                                key={tag}
+                                className="text-[9px] font-syne tracking-wider text-white/80 bg-white/5 border border-white/15 px-2.5 py-1 rounded-full uppercase"
+                              >
+                                {tag}
+                              </span>
+                            ))}
+                          </div>
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
+                  </div>
+                );
+              })}
             </div>
           </div>
+        </div>
+
+        {/* 3. REFINED EDITORIAL SECTION FOOTER CTA */}
+        <div className="mt-12 sm:mt-16 pt-8 border-t border-white/10 flex items-center justify-between">
+          <Link
+            href="#what-we-do"
+            className="group inline-flex items-center gap-4 text-xs sm:text-sm font-syne tracking-caps font-bold text-brand-white hover:text-brand-yellow-golden transition-colors"
+          >
+            <span>EXPLORE WHAT WE CREATE</span>
+            <span className="h-[1px] w-12 sm:w-16 bg-brand-yellow-golden/60 group-hover:w-24 transition-all duration-300" />
+            <span className="group-hover:translate-x-2 transition-transform duration-300 text-brand-yellow-golden">↗</span>
+          </Link>
         </div>
       </div>
     </section>

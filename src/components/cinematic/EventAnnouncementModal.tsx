@@ -1,70 +1,30 @@
 "use client";
 
-import { useEffect, useState, useCallback, useRef } from "react";
-import Image from "next/image";
-import { useRouter, usePathname } from "next/navigation";
+import { useState, useEffect, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import Image from "next/image";
+import { useRouter } from "next/navigation";
 import { X, Calendar, MapPin, Sparkles, ArrowRight, ExternalLink } from "lucide-react";
 
-export default function EventInfoModal() {
+export default function EventAnnouncementModal() {
   const [isOpen, setIsOpen] = useState(false);
   const router = useRouter();
-  const pathname = usePathname();
-  const modalRef = useRef<HTMLDivElement>(null);
 
-  const handleClose = useCallback(() => {
-    setIsOpen(false);
-  }, []);
-
-  // Handle CTA Navigation: Register / Enquire
-  const handleRegisterClick = () => {
-    handleClose();
-    if (pathname === "/") {
-      const contactElem = document.getElementById("contact");
-      if (contactElem) {
-        contactElem.scrollIntoView({ behavior: "smooth" });
-        return;
-      }
-    }
-    router.push("/contact?type=Registration");
-  };
-
-  // Handle CTA Navigation: Sponsorship Enquiry
-  const handleSponsorshipClick = () => {
-    handleClose();
-    if (pathname === "/") {
-      const contactElem = document.getElementById("contact");
-      if (contactElem) {
-        contactElem.scrollIntoView({ behavior: "smooth" });
-        const enquirySelect = document.getElementById("enquiryType") as HTMLSelectElement;
-        if (enquirySelect) {
-          enquirySelect.value = "Sponsorship";
-          enquirySelect.dispatchEvent(new Event("change", { bubbles: true }));
-        }
-        return;
-      }
-    }
-    router.push("/contact?type=Sponsorship");
-  };
-
-  // Scroll threshold trigger (15% - 25% scroll on homepage) + session persistence
+  // Scroll threshold trigger (15% - 25%) + session persistence
   useEffect(() => {
-    // Only trigger on homepage
-    if (pathname !== "/") return;
-
     try {
       const alreadyShown = sessionStorage.getItem("fashai_event_announcement_shown");
       if (alreadyShown === "true") return;
     } catch {
-      // ignore
+      // Ignore if sessionStorage is restricted
     }
 
     const handleScroll = () => {
       const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
       if (scrollHeight <= 0) return;
-
+      
       const scrollPercent = (window.scrollY / scrollHeight) * 100;
-
+      
       if (scrollPercent >= 15) {
         setIsOpen(true);
         try {
@@ -78,67 +38,94 @@ export default function EventInfoModal() {
 
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
-  }, [pathname]);
+  }, []);
 
-  // Manage body scroll locking when open & handle Escape key
+  const handleClose = useCallback(() => {
+    setIsOpen(false);
+  }, []);
+
+  // Lock body scroll while open
   useEffect(() => {
     if (isOpen) {
       document.body.style.overflow = "hidden";
       document.documentElement.style.overflow = "hidden";
-
-      const handleKeyDown = (e: KeyboardEvent) => {
-        if (e.key === "Escape") {
-          handleClose();
-        }
-      };
-
-      window.addEventListener("keydown", handleKeyDown);
-      return () => {
-        window.removeEventListener("keydown", handleKeyDown);
-      };
     } else {
       document.body.style.overflow = "";
       document.documentElement.style.overflow = "";
     }
+    return () => {
+      document.body.style.overflow = "";
+      document.documentElement.style.overflow = "";
+    };
+  }, [isOpen]);
+
+  // Handle Keyboard Escape key
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape" && isOpen) {
+        handleClose();
+      }
+    };
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
   }, [isOpen, handleClose]);
 
+  // CTA Action: Register / Enquire
+  const handleRegisterClick = () => {
+    handleClose();
+    const contactElem = document.getElementById("contact");
+    if (contactElem) {
+      contactElem.scrollIntoView({ behavior: "smooth" });
+    } else {
+      router.push("/contact?type=Registration");
+    }
+  };
+
+  // CTA Action: Sponsorship Enquiry
+  const handleSponsorshipClick = () => {
+    handleClose();
+    const contactElem = document.getElementById("contact");
+    if (contactElem) {
+      contactElem.scrollIntoView({ behavior: "smooth" });
+      const enquirySelect = document.getElementById("enquiryType") as HTMLSelectElement;
+      if (enquirySelect) {
+        enquirySelect.value = "Sponsorship";
+        enquirySelect.dispatchEvent(new Event("change", { bubbles: true }));
+      }
+    } else {
+      router.push("/contact?type=Sponsorship");
+    }
+  };
+
   return (
-    <AnimatePresence
-      onExitComplete={() => {
-        document.body.style.overflow = "";
-        document.documentElement.style.overflow = "";
-      }}
-    >
+    <AnimatePresence>
       {isOpen && (
-        <div
-          className="fixed inset-0 z-[300] flex items-center justify-center p-3 sm:p-6 lg:p-10 select-none overflow-y-auto"
-          role="dialog"
-          aria-modal="true"
-          aria-label="Upcoming Event Announcement: LifeStyle 2026 Dubai"
-        >
-          {/* 1. Backdrop Overlay (Dark Translucent with Blur) */}
+        <div className="fixed inset-0 z-[300] flex items-center justify-center p-3 sm:p-6 lg:p-10 select-none">
+          {/* 1. Backdrop Overlay */}
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.4 }}
             onClick={handleClose}
-            className="fixed inset-0 bg-black/90 backdrop-blur-xl z-[300]"
+            className="absolute inset-0 bg-black/90 backdrop-blur-xl"
             style={{
               WebkitBackdropFilter: "blur(16px)",
               backdropFilter: "blur(16px)",
             }}
           />
 
-          {/* 2. Main Centered Premium Event Panel (Matching Reference Design Image) */}
+          {/* 2. Main Centered Premium Event Panel */}
           <motion.div
-            ref={modalRef}
             initial={{ opacity: 0, y: 25, scale: 0.96 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 15, scale: 0.97 }}
             transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
             onClick={(e) => e.stopPropagation()}
-            className="relative z-[310] w-[92vw] sm:w-[90vw] max-w-[1450px] max-h-[90vh] sm:max-h-[88vh] overflow-y-auto no-scrollbar border border-brand-yellow-golden/60 bg-[#070605] text-brand-white rounded-2xl md:rounded-3xl shadow-[0_0_80px_rgba(250,182,10,0.2)] my-auto"
+            className="relative z-10 w-[92vw] sm:w-[90vw] max-w-[1450px] max-h-[90vh] sm:max-h-[88vh] overflow-y-auto no-scrollbar border border-brand-yellow-golden/60 bg-[#070605] text-brand-white rounded-2xl md:rounded-3xl shadow-[0_0_80px_rgba(250,182,10,0.2)]"
+            role="dialog"
+            aria-modal="true"
+            aria-label="Upcoming Event Announcement: LifeStyle 2026 Dubai"
           >
             {/* Background Fallback Image (Framed exactly as in reference design) */}
             <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
@@ -159,7 +146,7 @@ export default function EventInfoModal() {
             <button
               onClick={handleClose}
               aria-label="Close event announcement"
-              className="absolute top-4 right-4 sm:top-6 sm:right-6 z-[320] p-2.5 sm:p-3 min-w-[44px] min-h-[44px] flex items-center justify-center bg-black/80 border border-brand-yellow-golden/70 rounded-lg text-white hover:text-brand-yellow-golden hover:border-brand-yellow-golden hover:bg-black transition-all shadow-xl group"
+              className="absolute top-4 right-4 sm:top-6 sm:right-6 z-30 p-2.5 sm:p-3 min-w-[44px] min-h-[44px] flex items-center justify-center bg-black/80 border border-brand-yellow-golden/70 rounded-lg text-white hover:text-brand-yellow-golden hover:border-brand-yellow-golden hover:bg-black transition-all shadow-xl group"
             >
               <X className="w-5 h-5 group-hover:scale-110 transition-transform" />
             </button>

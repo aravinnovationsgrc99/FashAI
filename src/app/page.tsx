@@ -10,6 +10,7 @@ import FashionMagazineSection from "@/components/sections/FashionMagazineSection
 import DesignersSection from "@/components/sections/DesignersSection";
 import Chapter2026 from "@/components/sections/Chapter2026";
 import Chapter2025 from "@/components/sections/Chapter2025";
+import FashPrismStoriesSection from "@/components/sections/FashPrismStoriesSection";
 import AboutUsSection from "@/components/sections/AboutUsSection";
 import FaqSection from "@/components/sections/FaqSection";
 import ContactSection from "@/components/sections/ContactSection";
@@ -54,16 +55,19 @@ export default function Home() {
       {/* 12. PREVIOUS EVENTS — LIFESTYLE 2025 ARCHIVE */}
       <Chapter2025 />
 
-      {/* 13. ABOUT US */}
+      {/* 13. FASHPRISM STORIES (3 FEATURE CARDS + MODAL LIGHTBOX) */}
+      <FashPrismStoriesSection />
+
+      {/* 14. ABOUT US */}
       <AboutUsSection />
 
-      {/* 14. FAQ / AEO */}
+      {/* 15. FAQ / AEO */}
       <FaqSection />
 
-      {/* 15. CONTACT & ENQUIRY SELECTOR */}
+      {/* 16. CONTACT & ENQUIRY SELECTOR */}
       <ContactSection />
 
-      {/* 16. INSTAGRAM (@FASHAI_UNIVERSAL) */}
+      {/* 17. INSTAGRAM (@FASHAI_UNIVERSAL) */}
       <InstagramSection />
     </main>
   );
