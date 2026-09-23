@@ -3,6 +3,7 @@ import UpcomingLifestyleBanner from "@/components/sections/UpcomingLifestyleBann
 import OurEventsSection from "@/components/sections/OurEventsSection";
 import Chapter2025 from "@/components/sections/Chapter2025";
 import FashionCommunitySection from "@/components/sections/FashionCommunitySection";
+import ServicesCtaSection from "@/components/sections/ServicesCtaSection";
 import InstagramSection from "@/components/sections/InstagramSection";
 import ContactSection from "@/components/sections/ContactSection";
 
@@ -19,13 +20,16 @@ export default function Home() {
       <OurEventsSection />
       <Chapter2025 />
 
-      {/* 04. PEOPLE / INDUSTRY CATEGORIES (FASHION COMMUNITY) */}
+      {/* 04. PEOPLE / INDUSTRY CATEGORIES (FASHION COMMUNITY & TALENT NETWORK) */}
       <FashionCommunitySection />
 
-      {/* 05. INSTAGRAM (@FASHAI_UNIVERSAL) */}
+      {/* 05. ARAV INNOVATIONS BEYOND FASHAI SERVICES CTA */}
+      <ServicesCtaSection />
+
+      {/* 06. INSTAGRAM (@FASHAI_UNIVERSAL) */}
       <InstagramSection />
 
-      {/* 06. CONTACT & ENQUIRIES */}
+      {/* 07. CONTACT & ENQUIRIES */}
       <ContactSection />
     </main>
   );

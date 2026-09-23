@@ -5,8 +5,9 @@ import { createPortal } from "react-dom";
 import Link from "next/link";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
-import { X } from "lucide-react";
+import { X, ChevronDown, ArrowUpRight, Sparkles } from "lucide-react";
 import ThemeToggle from "../ui/ThemeToggle";
+import { SERVICES_DATA } from "@/data/services";
 
 interface NavItem {
   label: string;
@@ -18,6 +19,7 @@ interface MobileMenuProps {
   onClose: () => void;
   items: NavItem[];
   currentPath: string;
+  servicesOpenDefault?: boolean;
 }
 
 export default function MobileMenu({
@@ -25,12 +27,20 @@ export default function MobileMenu({
   onClose,
   items,
   currentPath,
+  servicesOpenDefault = false,
 }: MobileMenuProps) {
   const [mounted, setMounted] = useState(false);
+  const [isServicesAccordionOpen, setIsServicesAccordionOpen] = useState(servicesOpenDefault);
 
   useEffect(() => {
     setMounted(true);
   }, []);
+
+  useEffect(() => {
+    if (isOpen) {
+      setIsServicesAccordionOpen(servicesOpenDefault);
+    }
+  }, [isOpen, servicesOpenDefault]);
 
   // Prevent background scrolling when open (Body Scroll Locked)
   useEffect(() => {
@@ -63,8 +73,8 @@ export default function MobileMenu({
   const content = (
     <AnimatePresence>
       {isOpen && (
-        <div className="fixed inset-0 z-[100] lg:hidden flex flex-col">
-          {/* Dark Translucent Backdrop Overlay with Heavy Blur (z-[100]) */}
+        <div className="fixed inset-0 z-[250] lg:hidden flex flex-col">
+          {/* Dark Translucent Backdrop Overlay with Heavy Blur (z-[250]) */}
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -78,13 +88,13 @@ export default function MobileMenu({
             }}
           />
 
-          {/* Mobile Panel Content (z-[110]) */}
+          {/* Mobile Panel Content (z-[260]) */}
           <motion.div
             initial={{ opacity: 0, y: -15 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -15 }}
             transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
-            className="relative z-[110] flex flex-col justify-between h-full w-full bg-[#080808]/95 px-6 pt-6 pb-8 text-brand-off-white overflow-y-auto"
+            className="relative z-[260] flex flex-col justify-between h-full w-full bg-[#080808]/95 px-6 pt-6 pb-8 text-brand-off-white overflow-y-auto"
           >
             {/* Header Brand Lockup in Mobile Menu */}
             <div className="flex items-center justify-between border-b border-white/10 pb-5 pt-2 flex-shrink-0">
@@ -109,8 +119,8 @@ export default function MobileMenu({
                 </div>
               </Link>
 
-              {/* Theme Toggle & Close Button (z-[120]) */}
-              <div className="flex items-center gap-2 z-[120]">
+              {/* Theme Toggle & Close Button (z-[270]) */}
+              <div className="flex items-center gap-2 z-[270]">
                 <ThemeToggle />
                 <button
                   onClick={onClose}
@@ -122,20 +132,97 @@ export default function MobileMenu({
               </div>
             </div>
 
-            {/* Navigation Links */}
+            {/* Navigation Links + SERVICES Accordion */}
             <nav className="flex flex-col space-y-3 my-auto py-6 flex-shrink-0">
-              {items.map((item, index) => {
-                const isActive =
-                  item.href === "/"
-                    ? currentPath === "/"
-                    : currentPath.startsWith(item.href);
+              {/* Home */}
+              <motion.div initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.08 }}>
+                <Link
+                  href="/"
+                  onClick={onClose}
+                  className={`group flex items-center justify-between py-3 px-4 rounded-lg border ${
+                    currentPath === "/"
+                      ? "text-brand-orange bg-brand-orange/10 font-bold border-brand-orange/40"
+                      : "text-brand-white border-transparent hover:border-brand-orange/30 hover:bg-brand-orange/5"
+                  } transition-all duration-200 min-h-[48px]`}
+                >
+                  <span className="flex items-center gap-4">
+                    <span className="text-xs font-syne text-brand-orange/90 font-bold">01</span>
+                    <span className="font-syne text-2xl xs:text-3xl font-extrabold tracking-wide uppercase">HOME</span>
+                  </span>
+                  <span className="text-sm font-syne text-brand-orange opacity-0 group-hover:opacity-100 transition-opacity">→</span>
+                </Link>
+              </motion.div>
+
+              {/* SERVICES ACCORDION TRIGGER */}
+              <motion.div initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.13 }}>
+                <button
+                  onClick={() => setIsServicesAccordionOpen((prev) => !prev)}
+                  aria-expanded={isServicesAccordionOpen}
+                  className={`w-full group flex items-center justify-between py-3 px-4 rounded-lg border ${
+                    isServicesAccordionOpen
+                      ? "text-brand-yellow-golden bg-brand-yellow-golden/10 font-bold border-brand-yellow-golden/40"
+                      : "text-brand-white border-transparent hover:border-brand-yellow-golden/30 hover:bg-brand-yellow-golden/5"
+                  } transition-all duration-200 min-h-[48px]`}
+                >
+                  <span className="flex items-center gap-4">
+                    <span className="text-xs font-syne text-brand-yellow-golden font-bold">02</span>
+                    <span className="font-syne text-2xl xs:text-3xl font-extrabold tracking-wide uppercase flex items-center gap-2">
+                      <span>SERVICES</span>
+                      <Sparkles className="w-4 h-4 text-brand-yellow-golden inline" />
+                    </span>
+                  </span>
+                  <div className="flex items-center gap-1 text-brand-yellow-golden">
+                    <span className="text-xs font-mono">{isServicesAccordionOpen ? "HIDE" : "SHOW"}</span>
+                    <ChevronDown className={`w-5 h-5 transition-transform duration-300 ${isServicesAccordionOpen ? "rotate-180" : ""}`} />
+                  </div>
+                </button>
+
+                {/* EXPANDABLE 8 SERVICES ACCORDION LIST */}
+                <AnimatePresence>
+                  {isServicesAccordionOpen && (
+                    <motion.div
+                      initial={{ opacity: 0, height: 0 }}
+                      animate={{ opacity: 1, height: "auto" }}
+                      exit={{ opacity: 0, height: 0 }}
+                      transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
+                      className="overflow-hidden bg-[#0D0B0A] border border-brand-yellow-golden/30 mt-2 p-3 space-y-1.5"
+                    >
+                      <div className="px-3 py-1 text-[10px] font-syne tracking-micro text-brand-yellow-golden font-bold uppercase border-b border-white/10 mb-2 flex items-center justify-between">
+                        <span>ARAV INNOVATIONS SERVICES</span>
+                        <span>8 SERVICES</span>
+                      </div>
+
+                      {SERVICES_DATA.map((service) => (
+                        <a
+                          key={service.number}
+                          href={service.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          onClick={onClose}
+                          className="flex items-center justify-between py-2.5 px-3 min-h-[44px] bg-black/40 border border-white/10 hover:border-brand-yellow-golden/50 hover:bg-[#16120E] text-brand-white hover:text-brand-yellow-golden transition-all group"
+                        >
+                          <div className="flex items-center gap-3 truncate">
+                            <span className="text-xs font-mono font-bold text-brand-yellow-golden">{service.number}</span>
+                            <span className="text-xs font-syne font-bold uppercase truncate">{service.name}</span>
+                          </div>
+                          <ArrowUpRight className="w-4 h-4 text-brand-yellow-golden/70 group-hover:text-brand-orange transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5 flex-shrink-0 ml-2" />
+                        </a>
+                      ))}
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </motion.div>
+
+              {/* Other Items */}
+              {items.slice(1).map((item, index) => {
+                const isActive = currentPath.startsWith(item.href);
 
                 return (
                   <motion.div
                     key={item.href}
                     initial={{ opacity: 0, x: -20 }}
                     animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: 0.08 + index * 0.05, duration: 0.3 }}
+                    transition={{ delay: 0.18 + index * 0.05 }}
                   >
                     <Link
                       href={item.href}
@@ -144,23 +231,15 @@ export default function MobileMenu({
                         isActive
                           ? "text-brand-orange bg-brand-orange/10 font-bold border-brand-orange/40"
                           : "text-brand-white border-transparent hover:border-brand-orange/30 hover:bg-brand-orange/5"
-                      } transition-all duration-200`}
+                      } transition-all duration-200 min-h-[48px]`}
                     >
                       <span className="flex items-center gap-4">
-                        <span className="text-xs font-syne text-brand-orange/90 font-bold">
-                          0{index + 1}
-                        </span>
+                        <span className="text-xs font-syne text-brand-orange/90 font-bold">0{index + 3}</span>
                         <span className="font-syne text-2xl xs:text-3xl font-extrabold tracking-wide uppercase">
                           {item.label}
                         </span>
                       </span>
-                      <span
-                        className={`text-sm font-syne text-brand-orange ${
-                          isActive ? "opacity-100" : "opacity-0 group-hover:opacity-100"
-                        } transition-opacity`}
-                      >
-                        →
-                      </span>
+                      <span className="text-sm font-syne text-brand-orange opacity-0 group-hover:opacity-100 transition-opacity">→</span>
                     </Link>
                   </motion.div>
                 );
