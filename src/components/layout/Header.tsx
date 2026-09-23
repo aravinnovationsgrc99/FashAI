@@ -107,7 +107,7 @@ export default function Header() {
           <ThemeToggle />
           <Link
             href="/contact"
-            className="hidden sm:inline-flex items-center justify-center bg-brand-yellow-golden px-5 py-2 text-[11px] font-syne tracking-caps font-bold text-black hover:bg-[#FFEC69] hover:translate-y-[-1px] transition-all duration-200 shadow-[0_0_15px_rgba(250,182,10,0.3)]"
+            className="hidden sm:inline-flex items-center justify-center bg-brand-yellow-golden px-6 h-11 text-[11px] sm:text-xs font-syne tracking-caps font-bold text-black rounded-full hover:bg-[#FFEC69] hover:-translate-y-0.5 transition-all duration-300 shadow-[0_0_15px_rgba(250,182,10,0.3)] hover:shadow-[0_0_22px_rgba(250,182,10,0.5)]"
             data-cursor="explore"
           >
             CONTACT US →
