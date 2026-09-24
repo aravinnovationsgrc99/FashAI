@@ -46,8 +46,8 @@ export default function Header() {
       <header
         className={`fixed left-1/2 -translate-x-1/2 z-[200] transition-all duration-400 rounded-full select-none ${
           isScrolled
-            ? "top-2 sm:top-2.5 h-13 sm:h-[56px] w-[calc(100%-2rem)] max-w-[1240px] bg-[#0c0c0c]/85 dark:bg-[#070707]/88 html-light-header-scrolled border border-white/15 dark:border-white/15 shadow-[0_14px_40px_rgba(0,0,0,0.5)] backdrop-blur-2xl"
-            : "top-3 sm:top-4 md:top-5 h-15 sm:h-16 md:h-[66px] w-[calc(100%-1.5rem)] max-w-[1400px] bg-transparent border-transparent shadow-none backdrop-blur-none"
+            ? "top-1 sm:top-1.5 h-13 sm:h-[56px] w-[calc(100%-2rem)] max-w-[1240px] bg-[#0c0c0c]/85 dark:bg-[#070707]/88 html-light-header-scrolled border border-white/15 dark:border-white/15 shadow-[0_14px_40px_rgba(0,0,0,0.5)] backdrop-blur-2xl"
+            : "top-1.5 sm:top-2.5 md:top-3 h-15 sm:h-16 md:h-[66px] w-[calc(100%-1.5rem)] max-w-[1400px] bg-transparent border-transparent shadow-none backdrop-blur-none"
         }`}
       >
         <div className={`h-full flex items-center justify-between relative transition-all duration-400 ${
@@ -69,10 +69,10 @@ export default function Header() {
               />
             </div>
             <div className="flex flex-col justify-center">
-              <span className={`font-serif-display font-light tracking-wider uppercase leading-none text-white dark:text-white group-hover:text-[#FAB60A] transition-all duration-300 ${
+              <span className={`font-serif-display font-light tracking-wider uppercase leading-none transition-all duration-300 ${
                 isScrolled ? "text-sm sm:text-base lg:text-lg" : "text-base sm:text-lg lg:text-xl"
               }`}>
-                FashAI <span className="font-serif italic font-normal text-[#FAB60A] capitalize ml-1">Universal</span>
+                <span className="fashai-brand-text text-white">FashAI</span> <span className="font-serif italic font-normal text-[#FAB60A] capitalize ml-1">Universal</span>
               </span>
             </div>
           </Link>

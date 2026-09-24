@@ -281,35 +281,36 @@ html.light header:not(.html-light-header-scrolled) nav a:hover {
   color: #FAB60A !important;
 }
 
-html.light header:not(.html-light-header-scrolled) .font-serif-display,
-html.light header:not(.html-light-header-scrolled) .font-serif-display span:not(.capitalize) {
+html.light header .font-serif-display {
   color: #FFFFFF !important;
 }
 
-html.light header:not(.html-light-header-scrolled) .font-serif-display span.capitalize {
+.fashai-brand-text {
+  color: #FFFFFF !important;
+}
+
+html.light header .font-serif-display span.font-serif,
+html.light header .font-serif-display span.text-\[\#FAB60A\] {
   color: #FAB60A !important;
+}
+
+html.light header .theme-toggle-btn {
+  border-color: rgba(255, 255, 255, 0.2) !important;
+  background-color: rgba(255, 255, 255, 0.1) !important;
 }
 
 /* Scrolled Header in Light Mode */
 html.light .html-light-header-scrolled {
-  background-color: rgba(255, 255, 255, 0.96) !important;
-  border-bottom-color: rgba(17, 17, 17, 0.1) !important;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05) !important;
+  background-color: rgba(12, 12, 12, 0.88) !important;
+  border-bottom-color: rgba(255, 255, 255, 0.15) !important;
+  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.5) !important;
 }
 
 html.light .html-light-header-scrolled nav a:not(.text-brand-yellow-golden) {
-  color: #111111 !important;
+  color: #FFFFFF !important;
 }
 
 html.light .html-light-header-scrolled nav a:hover {
-  color: #F15E1C !important;
-}
-
-html.light .html-light-header-scrolled .font-serif-display {
-  color: #111111 !important;
-}
-
-html.light .html-light-header-scrolled .font-serif-display span {
   color: #FAB60A !important;
 }
 
