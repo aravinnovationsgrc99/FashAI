@@ -8,8 +8,8 @@ const DATA_DIR = path.join(process.cwd(), "data");
 const AUTH_FILE = path.join(DATA_DIR, "admin-auth.json");
 
 const COOKIE_NAME = "fashai_admin_session";
-const DEFAULT_USER = process.env.ADMIN_USER || "admin";
-const DEFAULT_PASS = process.env.ADMIN_PASS || "FashAI@Admin2026!";
+const DEFAULT_USER = process.env.ADMIN_USER || "FashAIadmin";
+const DEFAULT_PASS = process.env.ADMIN_PASS || "AdminAsFashAI@2026!";
 
 interface AuthStore {
   username: string;

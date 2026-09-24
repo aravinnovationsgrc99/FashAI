@@ -4,18 +4,20 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
-import { Menu } from "lucide-react";
+import { Menu, ArrowRight } from "lucide-react";
 import MobileMenu from "./MobileMenu";
 import ThemeToggle from "../ui/ThemeToggle";
+import { useSiteConfig } from "@/context/SiteConfigContext";
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const pathname = usePathname();
+  const { config } = useSiteConfig();
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 20) {
+      if (window.scrollY > 15) {
         setIsScrolled(true);
       } else {
         setIsScrolled(false);
@@ -27,132 +29,129 @@ export default function Header() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const isHome = pathname === "/";
-  const isHeroHeader = isHome && !isScrolled;
+  const navItems = (config.navigationSettings && config.navigationSettings.length > 0
+    ? config.navigationSettings.filter((item) => item.enabled)
+    : [
+        { id: "home", label: "HOME", href: "/", enabled: true, order: 1 },
+        { id: "upcoming", label: "UPCOMING", href: "/upcoming", enabled: true, order: 2 },
+        { id: "gallery", label: "GALLERY", href: "/gallery", enabled: true, order: 3 },
+        { id: "apply", label: "APPLY", href: "/apply", enabled: true, order: 4 },
+        { id: "contact", label: "CONTACT", href: "/contact", enabled: true, order: 5 },
+      ]
+  ).sort((a, b) => a.order - b.order);
 
   return (
-    <header
-      className={`fixed top-0 left-0 right-0 z-[200] transition-all duration-300 ${
-        isHeroHeader
-          ? "bg-transparent border-b border-transparent py-4"
-          : isScrolled
-          ? "bg-black/85 html-light-header-scrolled border-b border-brand-yellow-golden/20 shadow-lg py-2.5 backdrop-blur-md"
-          : "bg-black/80 html-light-header-scrolled border-b border-brand-yellow-golden/20 shadow-md py-3.5 backdrop-blur-md"
-      }`}
-    >
-      <div className="container-editorial flex items-center justify-between min-h-[50px] relative">
-        {/* Official Editorial Brand Lockup */}
-        <Link href="/" className="flex items-center gap-3 group py-1 min-h-[44px]">
-          <div className="relative w-10 h-10 sm:w-11 sm:h-11 flex-shrink-0 overflow-hidden group-hover:scale-105 transition-transform duration-300">
-            <Image
-              src="/assets/brand/logo_transparent.png"
-              alt="FashAI Universal Logo"
-              fill
-              priority
-              sizes="44px"
-              className="object-contain"
-            />
+    <>
+      {/* FLOATING GLASS EDITORIAL NAVBAR CONTAINER */}
+      <header
+        className={`fixed left-1/2 -translate-x-1/2 z-[200] transition-all duration-400 rounded-full select-none ${
+          isScrolled
+            ? "top-2 sm:top-2.5 h-13 sm:h-[56px] w-[calc(100%-2rem)] max-w-[1240px] bg-[#0c0c0c]/85 dark:bg-[#070707]/88 html-light-header-scrolled border border-white/15 dark:border-white/15 shadow-[0_14px_40px_rgba(0,0,0,0.5)] backdrop-blur-2xl"
+            : "top-3 sm:top-4 md:top-5 h-15 sm:h-16 md:h-[66px] w-[calc(100%-1.5rem)] max-w-[1400px] bg-transparent border-transparent shadow-none backdrop-blur-none"
+        }`}
+      >
+        <div className={`h-full flex items-center justify-between relative transition-all duration-400 ${
+          isScrolled ? "px-3.5 sm:px-5 gap-2 sm:gap-3" : "px-4 sm:px-6 gap-3 sm:gap-4"
+        }`}>
+          
+          {/* LOGO AREA (LEFT) */}
+          <Link href="/" className="flex items-center gap-2 sm:gap-2.5 group shrink-0">
+            <div className={`relative flex-shrink-0 transition-all duration-300 group-hover:scale-105 ${
+              isScrolled ? "w-7 h-7 sm:w-8 sm:h-8" : "w-8 h-8 sm:w-9 sm:h-9"
+            }`}>
+              <Image
+                src="/assets/brand/logo_transparent.png"
+                alt="FashAI Universal Logo"
+                fill
+                priority
+                sizes="36px"
+                className="object-contain"
+              />
+            </div>
+            <div className="flex flex-col justify-center">
+              <span className={`font-serif-display font-light tracking-wider uppercase leading-none text-white dark:text-white group-hover:text-[#FAB60A] transition-all duration-300 ${
+                isScrolled ? "text-sm sm:text-base lg:text-lg" : "text-base sm:text-lg lg:text-xl"
+              }`}>
+                FashAI <span className="font-serif italic font-normal text-[#FAB60A] capitalize ml-1">Universal</span>
+              </span>
+            </div>
+          </Link>
+
+          {/* DESKTOP / LAPTOP CENTER NAVIGATION LINKS */}
+          <nav className={`hidden lg:flex items-center text-xs font-syne tracking-[0.18em] font-semibold uppercase transition-all duration-300 ${
+            isScrolled ? "space-x-5 xl:space-x-7" : "space-x-7 xl:space-x-9"
+          }`}>
+            {navItems.map((item) => {
+              const isActive =
+                item.href === "/"
+                  ? pathname === "/"
+                  : pathname.startsWith(item.href);
+
+              return (
+                <Link
+                  key={item.id}
+                  href={item.href}
+                  className={`relative py-1 transition-colors duration-200 ${
+                    isActive
+                      ? "text-[#FAB60A] font-bold"
+                      : isScrolled
+                      ? "text-white/85 hover:text-[#FAB60A]"
+                      : "text-white/90 hover:text-[#FAB60A] drop-shadow-[0_1px_2px_rgba(0,0,0,0.8)]"
+                  }`}
+                >
+                  {item.label}
+                  {isActive && (
+                    <span className="absolute -bottom-1 left-0 right-0 h-[2px] bg-[#FAB60A] rounded-full shadow-[0_0_8px_rgba(250,182,10,0.6)]" />
+                  )}
+                </Link>
+              );
+            })}
+          </nav>
+
+          {/* RIGHT CIRCULAR ACTION CONTROLS */}
+          <div className={`flex items-center shrink-0 transition-all duration-300 ${
+            isScrolled ? "gap-1.5 sm:gap-2" : "gap-2 sm:gap-3"
+          }`}>
+            
+            {/* CIRCULAR GLASS THEME TOGGLE */}
+            <ThemeToggle />
+
+            {/* CONTACT US CTA BUTTON */}
+            <Link
+              href="/contact"
+              className={`hidden sm:inline-flex items-center justify-center bg-[#FAB60A] text-[#111111] hover:bg-[#FFEC69] font-syne font-bold tracking-wider uppercase rounded-full transition-all duration-300 shadow-md hover:shadow-lg hover:-translate-y-0.5 shrink-0 whitespace-nowrap ${
+                isScrolled
+                  ? "text-[10px] sm:text-[11px] px-3.5 sm:px-5 py-1.5 sm:py-2"
+                  : "text-[11px] sm:text-xs px-4 sm:px-6 py-2 sm:py-2.5"
+              }`}
+              data-cursor="explore"
+            >
+              CONTACT US →
+            </Link>
+
+            {/* CIRCULAR MOBILE HAMBURGER BUTTON */}
+            <button
+              onClick={() => setMobileMenuOpen(true)}
+              className={`lg:hidden rounded-full flex items-center justify-center shrink-0 transition-all duration-300 aspect-square ${
+                isScrolled
+                  ? "w-8 h-8 sm:w-9 sm:h-9 bg-white/10 dark:bg-white/10 border border-white/15 text-white hover:border-[#FAB60A]"
+                  : "w-9 h-9 sm:w-10 sm:h-10 bg-black/25 dark:bg-black/30 border border-white/20 text-white hover:border-[#FAB60A] backdrop-blur-sm shadow-md"
+              }`}
+              aria-label="Open Navigation Menu"
+            >
+              <Menu className="w-4.5 h-4.5" />
+            </button>
           </div>
-          <div className="flex flex-col justify-center">
-            <span className={`font-serif-display text-lg sm:text-xl font-light tracking-wider uppercase group-hover:text-brand-yellow-golden transition-colors leading-none ${isHeroHeader ? "text-white keep-white" : "text-brand-white"}`}>
-              FashAI <span className="font-serif italic font-normal text-brand-yellow-golden capitalize">Universal</span>
-            </span>
-          </div>
-        </Link>
-
-        {/* Desktop Navigation Links */}
-        <nav className="hidden lg:flex items-center space-x-8 text-[11px] font-syne tracking-caps font-medium">
-          {/* HOME */}
-          <Link
-            href="/"
-            className={`relative py-1.5 transition-colors duration-200 ${
-              pathname === "/" ? "text-brand-yellow-golden font-bold" : isHeroHeader ? "text-white keep-white hover:text-brand-yellow-golden" : "text-brand-white/90 hover:text-brand-yellow-golden"
-            }`}
-          >
-            HOME
-            {pathname === "/" && <span className="absolute bottom-0 left-0 right-0 h-[2px] bg-brand-yellow-golden" />}
-          </Link>
-
-          {/* UPCOMING */}
-          <Link
-            href="/upcoming"
-            className={`relative py-1.5 transition-colors duration-200 ${
-              pathname.startsWith("/upcoming") ? "text-brand-yellow-golden font-bold" : isHeroHeader ? "text-white keep-white hover:text-brand-yellow-golden" : "text-brand-white/90 hover:text-brand-yellow-golden"
-            }`}
-          >
-            UPCOMING
-            {pathname.startsWith("/upcoming") && <span className="absolute bottom-0 left-0 right-0 h-[2px] bg-brand-yellow-golden" />}
-          </Link>
-
-          {/* GALLERY */}
-          <Link
-            href="/gallery"
-            className={`relative py-1.5 transition-colors duration-200 ${
-              pathname.startsWith("/gallery") ? "text-brand-yellow-golden font-bold" : isHeroHeader ? "text-white keep-white hover:text-brand-yellow-golden" : "text-brand-white/90 hover:text-brand-yellow-golden"
-            }`}
-          >
-            GALLERY
-            {pathname.startsWith("/gallery") && <span className="absolute bottom-0 left-0 right-0 h-[2px] bg-brand-yellow-golden" />}
-          </Link>
-
-          {/* APPLY */}
-          <Link
-            href="/apply"
-            className={`relative py-1.5 transition-colors duration-200 ${
-              pathname.startsWith("/apply") ? "text-brand-yellow-golden font-bold" : isHeroHeader ? "text-white keep-white hover:text-brand-yellow-golden" : "text-brand-white/90 hover:text-brand-yellow-golden"
-            }`}
-          >
-            APPLY
-            {pathname.startsWith("/apply") && <span className="absolute bottom-0 left-0 right-0 h-[2px] bg-brand-yellow-golden" />}
-          </Link>
-
-          {/* CONTACT */}
-          <Link
-            href="/contact"
-            className={`relative py-1.5 transition-colors duration-200 ${
-              pathname.startsWith("/contact") ? "text-brand-yellow-golden font-bold" : isHeroHeader ? "text-white keep-white hover:text-brand-yellow-golden" : "text-brand-white/90 hover:text-brand-yellow-golden"
-            }`}
-          >
-            CONTACT
-            {pathname.startsWith("/contact") && <span className="absolute bottom-0 left-0 right-0 h-[2px] bg-brand-yellow-golden" />}
-          </Link>
-        </nav>
-
-        {/* Action Button & Theme Toggle */}
-        <div className="flex items-center gap-3">
-          <ThemeToggle isHeroHeader={isHeroHeader} />
-          <Link
-            href="/contact"
-            className="hidden sm:inline-flex items-center justify-center bg-brand-yellow-golden px-6 h-11 text-[11px] sm:text-xs font-syne tracking-caps font-bold text-black rounded-full hover:bg-[#FFEC69] hover:-translate-y-0.5 transition-all duration-300 shadow-[0_0_15px_rgba(250,182,10,0.3)] hover:shadow-[0_0_22px_rgba(250,182,10,0.5)]"
-            data-cursor="explore"
-          >
-            CONTACT US →
-          </Link>
-
-          {/* Mobile Hamburger Button */}
-          <button
-            onClick={() => setMobileMenuOpen(true)}
-            className="lg:hidden p-2.5 min-w-[44px] min-h-[44px] flex items-center justify-center text-brand-off-white hover:text-brand-yellow-golden transition-colors"
-            aria-label="Open Navigation Menu"
-          >
-            <Menu className="h-6 w-6" />
-          </button>
         </div>
-      </div>
+      </header>
 
-      {/* Fullscreen Mobile Navigation Menu */}
+      {/* FULLSCREEN EDITORIAL MOBILE NAVIGATION MENU */}
       <MobileMenu
         isOpen={mobileMenuOpen}
         onClose={() => setMobileMenuOpen(false)}
-        items={[
-          { label: "Home", href: "/" },
-          { label: "Upcoming", href: "/upcoming" },
-          { label: "Gallery", href: "/gallery" },
-          { label: "Apply", href: "/apply" },
-          { label: "Contact", href: "/contact" },
-        ]}
+        items={navItems.map((n) => ({ label: n.label, href: n.href }))}
         currentPath={pathname}
       />
-    </header>
+    </>
   );
 }

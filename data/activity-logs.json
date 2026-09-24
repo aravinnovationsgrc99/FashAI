@@ -1,5 +1,37 @@
 [
   {
+    "id": "log_1790278815908_p9q1w",
+    "category": "CONTENT",
+    "action": "Published website changes",
+    "actor": "System Admin",
+    "timestamp": "2026-09-24T19:40:15.908Z",
+    "details": "Maintenance mode turned ON"
+  },
+  {
+    "id": "log_1790278813326_b4xfs",
+    "category": "CONTENT",
+    "action": "Published website changes",
+    "actor": "System Admin",
+    "timestamp": "2026-09-24T19:40:13.326Z",
+    "details": "Maintenance mode turned ON"
+  },
+  {
+    "id": "log_1790278800861_1cu1w",
+    "category": "CONTENT",
+    "action": "Published website changes",
+    "actor": "System Admin",
+    "timestamp": "2026-09-24T19:40:00.861Z",
+    "details": "Maintenance mode turned ON"
+  },
+  {
+    "id": "log_1790278755179_zirlu",
+    "category": "AUTH",
+    "action": "Successful admin login",
+    "actor": "FashAIadmin",
+    "timestamp": "2026-09-24T19:39:15.179Z",
+    "details": "IP ::1"
+  },
+  {
     "id": "log_1790277998344_l2vu1",
     "category": "AUTH",
     "action": "Successful admin login",

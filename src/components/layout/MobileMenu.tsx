@@ -5,7 +5,7 @@ import { createPortal } from "react-dom";
 import Link from "next/link";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
-import { X } from "lucide-react";
+import { X, ArrowRight } from "lucide-react";
 import ThemeToggle from "../ui/ThemeToggle";
 
 interface NavItem {
@@ -32,7 +32,7 @@ export default function MobileMenu({
     setMounted(true);
   }, []);
 
-  // Prevent background scrolling when open (Body Scroll Locked)
+  // Body scroll lock
   useEffect(() => {
     if (isOpen) {
       document.body.style.overflow = "hidden";
@@ -47,7 +47,7 @@ export default function MobileMenu({
     };
   }, [isOpen]);
 
-  // Support Escape key
+  // Escape key support
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === "Escape" && isOpen) {
@@ -63,67 +63,72 @@ export default function MobileMenu({
   const content = (
     <AnimatePresence>
       {isOpen && (
-        <div className="fixed inset-0 z-[250] lg:hidden flex flex-col">
-          {/* Dark Translucent Backdrop Overlay with Heavy Blur (z-[250]) */}
+        <div className="fixed inset-0 z-[250] lg:hidden flex flex-col p-3 sm:p-4 select-none">
+          {/* Backdrop Overlay */}
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.3 }}
             onClick={onClose}
-            className="absolute inset-0 bg-black/95 backdrop-blur-2xl"
-            style={{
-              WebkitBackdropFilter: "blur(20px)",
-              backdropFilter: "blur(20px)",
-            }}
+            className="absolute inset-0 bg-black/80 dark:bg-black/85 backdrop-blur-2xl"
           />
 
-          {/* Mobile Panel Content (z-[260]) */}
+          {/* Floating Glass Panel Drawer */}
           <motion.div
-            initial={{ opacity: 0, y: -15 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -15 }}
+            initial={{ opacity: 0, scale: 0.96, y: -10 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            exit={{ opacity: 0, scale: 0.96, y: -10 }}
             transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
-            className="relative z-[260] flex flex-col justify-between h-full w-full bg-[#080808]/95 px-6 pt-6 pb-8 text-brand-off-white overflow-y-auto"
+            className="relative z-[260] flex flex-col justify-between h-full w-full bg-[#0c0c0c]/90 dark:bg-[#070707]/92 border border-white/15 dark:border-white/15 rounded-3xl p-5 sm:p-6 text-white overflow-y-auto shadow-2xl backdrop-blur-2xl"
           >
-            {/* Header Brand Lockup in Mobile Menu */}
-            <div className="flex items-center justify-between border-b border-white/10 pb-5 pt-2 flex-shrink-0">
-              <Link href="/" onClick={onClose} className="flex items-center gap-3 min-h-[44px]">
-                <div className="relative w-10 h-10 flex-shrink-0 overflow-hidden">
+            {/* TOP HEADER ROW */}
+            <div className="flex items-center justify-between border-b border-white/10 dark:border-white/10 pb-4 pt-1 shrink-0">
+              {/* Logo Lockup */}
+              <Link href="/" onClick={onClose} className="flex items-center gap-2.5">
+                <div className="relative w-8 h-8 flex-shrink-0">
                   <Image
                     src="/assets/brand/logo_transparent.png"
                     alt="FashAI Universal Logo"
                     fill
                     priority
-                    sizes="40px"
+                    sizes="32px"
                     className="object-contain"
                   />
                 </div>
                 <div className="flex flex-col justify-center">
-                  <span className="font-serif-display text-lg font-light tracking-wider text-brand-white uppercase leading-none">
-                    FashAI <span className="font-serif italic font-normal text-transparent bg-clip-text bg-gradient-to-r from-brand-yellow-golden via-[#FFEC69] to-brand-orange capitalize">Universal</span>
-                  </span>
-                  <span className="text-[8px] font-syne tracking-[0.22em] text-brand-yellow-golden/70 uppercase font-bold mt-0.5">
-                    DUBAI · EST. 2026
+                  <span className="font-serif-display text-base font-light tracking-wider text-white uppercase leading-none">
+                    FashAI <span className="font-serif italic font-normal text-[#FAB60A] capitalize">Universal</span>
                   </span>
                 </div>
               </Link>
 
-              {/* Theme Toggle & Close Button (z-[270]) */}
-              <div className="flex items-center gap-2 z-[270]">
+              {/* Circular Action Buttons */}
+              <div className="flex items-center gap-2">
                 <ThemeToggle />
+
+                {/* Contact Us Button */}
+                <Link
+                  href="/contact"
+                  onClick={onClose}
+                  className="hidden xs:inline-flex items-center justify-center bg-[#FAB60A] text-[#111111] hover:bg-[#FFEC69] font-syne text-[11px] font-bold tracking-wider uppercase px-3.5 py-2 rounded-full transition-all shadow-md shrink-0"
+                >
+                  CONTACT US →
+                </Link>
+
+                {/* Floating Circular X Close Button */}
                 <button
                   onClick={onClose}
-                  className="p-2.5 rounded-none bg-black border border-brand-yellow-golden/50 text-brand-white hover:text-brand-yellow-golden transition-colors min-w-[44px] min-h-[44px] flex items-center justify-center"
+                  className="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-white/10 dark:bg-white/15 border border-white/20 text-white hover:bg-[#F15E1C] hover:border-[#F15E1C] transition-all flex items-center justify-center shrink-0 shadow-md aspect-square"
                   aria-label="Close Navigation Menu"
                 >
-                  <X className="h-6 w-6" />
+                  <X className="w-5 h-5" />
                 </button>
               </div>
             </div>
 
-            {/* Navigation Links */}
-            <nav className="flex flex-col space-y-3 my-auto py-6 flex-shrink-0">
+            {/* EDITORIAL NAVIGATION LIST */}
+            <nav className="flex flex-col space-y-1 my-auto py-6 shrink-0">
               {items.map((item, index) => {
                 const isActive =
                   item.href === "/"
@@ -133,58 +138,58 @@ export default function MobileMenu({
                 return (
                   <motion.div
                     key={item.href}
-                    initial={{ opacity: 0, x: -20 }}
+                    initial={{ opacity: 0, x: -15 }}
                     animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: 0.08 + index * 0.05 }}
+                    transition={{ delay: 0.05 + index * 0.04 }}
                   >
                     <Link
                       href={item.href}
                       onClick={onClose}
-                      className={`group flex items-center justify-between py-3 px-4 rounded-none border ${
+                      className={`group flex items-center justify-between py-3.5 px-2 border-b border-white/10 dark:border-white/10 transition-all duration-200 ${
                         isActive
-                          ? "text-brand-yellow-golden bg-brand-yellow-golden/10 font-bold border-brand-yellow-golden/50"
-                          : "text-brand-white border-transparent hover:border-brand-yellow-golden/30 hover:bg-brand-yellow-golden/5"
-                      } transition-all duration-200 min-h-[48px]`}
+                          ? "text-[#FAB60A] font-bold"
+                          : "text-white/90 hover:text-[#FAB60A]"
+                      }`}
                     >
-                      <span className="flex items-center gap-4">
-                        <span className="text-xs font-syne text-brand-yellow-golden font-bold">
-                          0{index + 1}
-                        </span>
-                        <span className="font-syne text-2xl xs:text-3xl font-extrabold tracking-wide uppercase">
-                          {item.label}
-                        </span>
+                      <span className="font-syne text-lg sm:text-xl font-bold tracking-[0.15em] uppercase">
+                        {item.label}
                       </span>
-                      <span className="text-sm font-syne text-brand-yellow-golden opacity-0 group-hover:opacity-100 transition-opacity">
-                        →
-                      </span>
+                      <ArrowRight
+                        className={`w-5 h-5 transition-transform duration-300 ${
+                          isActive
+                            ? "text-[#FAB60A] translate-x-1"
+                            : "text-white/50 group-hover:text-[#FAB60A] group-hover:translate-x-1"
+                        }`}
+                      />
                     </Link>
                   </motion.div>
                 );
               })}
             </nav>
 
-            {/* Footer Details in Menu */}
+            {/* BOTTOM FOOTER LOCKUP IN MOBILE MENU */}
             <motion.div
-              initial={{ opacity: 0, y: 15 }}
+              initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.35, duration: 0.3 }}
-              className="border-t border-white/10 pt-6 flex flex-col space-y-4 flex-shrink-0"
+              transition={{ delay: 0.3, duration: 0.3 }}
+              className="border-t border-white/10 dark:border-white/10 pt-4 flex flex-col space-y-3 shrink-0"
             >
               <Link
                 href="/contact"
                 onClick={onClose}
-                className="w-full bg-brand-yellow-golden py-4 text-center text-xs font-syne tracking-caps font-bold text-black hover:bg-[#FFEC69] transition-colors min-h-[48px] flex items-center justify-center shadow-lg rounded-none"
+                className="w-full bg-[#FAB60A] hover:bg-[#FFEC69] py-3 text-center font-syne text-xs tracking-wider font-bold text-[#111111] transition-colors rounded-full shadow-md flex items-center justify-center gap-2"
               >
-                CONTACT US →
+                <span>CONTACT US →</span>
               </Link>
-              <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2 text-[10px] font-syne tracking-micro text-brand-platinum/80 pt-1">
+
+              <div className="flex items-center justify-between text-[11px] font-syne text-white/60 pt-1">
                 <span>@fashai_universal</span>
                 <Image
                   src="/assets/brand/Final_Powered_by_logo.png"
                   alt="Powered by Arav Innovation"
-                  width={180}
-                  height={47}
-                  className="h-6 w-auto object-contain"
+                  width={140}
+                  height={36}
+                  className="h-5 w-auto object-contain filter contrast-[1.05]"
                 />
               </div>
             </motion.div>

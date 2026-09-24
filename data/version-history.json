@@ -1,0 +1,1766 @@
+[
+  {
+    "versionId": "v_1790278815836",
+    "publishedAt": "2026-09-24T19:40:15.836Z",
+    "publishedBy": "Master Admin",
+    "note": "Maintenance mode turned ON",
+    "configSnapshot": {
+      "maintenanceSettings": {
+        "enabled": false,
+        "title": "WEBSITE TEMPORARILY UNAVAILABLE",
+        "message": "FashAI Universal is currently undergoing scheduled platform maintenance. Public access will resume shortly.",
+        "allowNavigation": false,
+        "allowEnquiryForms": false,
+        "allowRegistrations": false,
+        "allowApplications": false,
+        "allowGalleryInteraction": false,
+        "allowCTA": false
+      },
+      "globalSettings": {
+        "siteTitle": "FashAI Universal — International Luxury Fashion & Events Platform",
+        "metaTitle": "FashAI Universal — International Fashion & Events Platform",
+        "metaDescription": "FashAI Universal is an international fashion, lifestyle, and events platform connecting global designers, models, creative talent, and brand experiences across Dubai, UAE & India.",
+        "favicon": "/favicon.ico",
+        "ogImage": "/assets/models/model_01.jpeg",
+        "contactEmail": "contact@fashaiuniversal.com",
+        "instagramUrl": "https://www.instagram.com/fashai_universal",
+        "copyrightYear": "2026",
+        "defaultCtaText": "CONTACT US →",
+        "defaultCtaUrl": "/contact"
+      },
+      "themeSettings": {
+        "light": {
+          "background": "#FFFFFF",
+          "primaryText": "#111111",
+          "secondaryText": "#333333",
+          "primaryAccent": "#F15E1C",
+          "secondaryAccent": "#FAB60A",
+          "softSurface": "#FAF8F5",
+          "border": "rgba(0, 0, 0, 0.1)"
+        },
+        "dark": {
+          "background": "#050505",
+          "primaryText": "#FFFFFF",
+          "secondaryText": "#E0E0E0",
+          "primaryAccent": "#FAB60A",
+          "secondaryAccent": "#F15E1C",
+          "softSurface": "#0A0908",
+          "border": "rgba(255, 255, 255, 0.1)"
+        }
+      },
+      "typographySettings": {
+        "headingFont": "Syne, sans-serif",
+        "bodyFont": "Inter, sans-serif",
+        "navigationFont": "Syne, sans-serif",
+        "headingScale": 1,
+        "bodyScale": 1,
+        "letterSpacing": "normal",
+        "lineHeight": "normal"
+      },
+      "heroSettings": {
+        "title": "INTERNATIONAL FASHION & EVENTS PLATFORM",
+        "subtitle": "BRIDGING DUBAI, THE UAE & INDIA THROUGH RUNWAY, CULTURE AND CREATIVE TALENT",
+        "eyebrow": "DUBAI · UAE · INDIA",
+        "supportingText": "Connecting designers, talent, brands and audiences across international fashion hubs.",
+        "ctaText": "SEE UPCOMING",
+        "ctaUrl": "/upcoming",
+        "heroImage": "/assets/home/where_fashion_creates_possibilities.png",
+        "heroFallbackImage": "/assets/models/model_01.jpeg",
+        "heroVideo": "",
+        "posterImage": "/assets/home/where_fashion_creates_possibilities.png",
+        "overlayOpacity": 0.3,
+        "brightness": 1,
+        "imagePosition": "center",
+        "videoAutoplay": true,
+        "videoLoop": true,
+        "videoMuted": true,
+        "mobileImage": "",
+        "mobileVideo": "",
+        "mobileFallback": ""
+      },
+      "homepageSections": [
+        {
+          "id": "hero",
+          "title": "Hero Block",
+          "enabled": true,
+          "order": 1
+        },
+        {
+          "id": "who_we_are",
+          "title": "A Global Fashion Movement (Who We Are)",
+          "enabled": true,
+          "order": 2
+        },
+        {
+          "id": "our_events",
+          "title": "Our Events Banner (LifeStyle & Runway)",
+          "enabled": true,
+          "order": 3
+        },
+        {
+          "id": "intro_statement",
+          "title": "Platform Intro Statement",
+          "enabled": true,
+          "order": 4
+        },
+        {
+          "id": "upcoming_event",
+          "title": "Upcoming Event (LifeStyle 2026)",
+          "enabled": true,
+          "order": 5
+        },
+        {
+          "id": "what_we_do",
+          "title": "What We Do",
+          "enabled": true,
+          "order": 6
+        },
+        {
+          "id": "designers_showcase",
+          "title": "Designer Participation & Showcase",
+          "enabled": true,
+          "order": 7
+        },
+        {
+          "id": "disciplines",
+          "title": "Creative Disciplines",
+          "enabled": true,
+          "order": 8
+        },
+        {
+          "id": "fashprism_stories",
+          "title": "FashPrism Stories & Editorial",
+          "enabled": true,
+          "order": 9
+        },
+        {
+          "id": "open_nominations",
+          "title": "Open Nominations & Applications",
+          "enabled": true,
+          "order": 10
+        },
+        {
+          "id": "instagram",
+          "title": "Instagram / Social Section",
+          "enabled": true,
+          "order": 11
+        },
+        {
+          "id": "footer",
+          "title": "Haute Couture Footer",
+          "enabled": true,
+          "order": 12
+        }
+      ],
+      "events": [
+        {
+          "id": "lifestyle_2026",
+          "title": "LifeStyle 2026",
+          "category": "LIFESTYLE",
+          "description": "An international luxury fashion, lifestyle, and delegate summit connecting global creators, designers, and high-net-worth audiences.",
+          "location": "Dubai, United Arab Emirates",
+          "date": "TO BE ANNOUNCED",
+          "venue": "TO BE ANNOUNCED",
+          "status": "Registration Open",
+          "registrationStatus": "Open",
+          "sponsorshipStatus": "Open",
+          "dressCode": "Black Tie / Haute Couture",
+          "coverImage": "/assets/photos_more/lifestyle_banner.png",
+          "galleryImages": [
+            "/assets/models/model_01.jpeg",
+            "/assets/models/model_02.jpeg"
+          ],
+          "ctaText": "REGISTER INTEREST →",
+          "ctaUrl": "/contact",
+          "featured": true
+        },
+        {
+          "id": "runway_2026",
+          "title": "Runway 2026",
+          "category": "RUNWAY",
+          "description": "Dedicated runway presentation formats for couture and ready-to-wear lines, bringing together global designers and buyers.",
+          "location": "India / UAE",
+          "date": "TO BE ANNOUNCED",
+          "venue": "TO BE ANNOUNCED",
+          "status": "Curation Open",
+          "registrationStatus": "Open",
+          "sponsorshipStatus": "Open",
+          "dressCode": "Couture Runway",
+          "coverImage": "/assets/photos_more/runway_banner.png",
+          "galleryImages": [
+            "/assets/models/model_03.jpeg",
+            "/assets/models/model_04.jpeg"
+          ],
+          "ctaText": "APPLY AS DESIGNER →",
+          "ctaUrl": "/apply/designer",
+          "featured": true
+        }
+      ],
+      "popupSettings": {
+        "enabled": true,
+        "eventId": "lifestyle_2026",
+        "title": "LifeStyle 2026 · Dubai",
+        "subtitle": "INTERNATIONAL FASHION & LIFESTYLE SUMMIT",
+        "backgroundImage": "/assets/photos_more/lifestyle_banner.png",
+        "overlayOpacity": 0.6,
+        "date": "TO BE ANNOUNCED",
+        "venue": "TO BE ANNOUNCED",
+        "dressCode": "Black Tie / Haute Couture",
+        "registrationCtaText": "REGISTER INTEREST →",
+        "sponsorshipCtaText": "SPONSORSHIP ENQUIRY →",
+        "registrationUrl": "/contact",
+        "sponsorshipUrl": "/contact",
+        "displayDelay": 3000,
+        "scrollTriggerPercentage": 30,
+        "showOncePerSession": true,
+        "showOncePerVisitor": false
+      },
+      "navigationSettings": [
+        {
+          "id": "home",
+          "label": "HOME",
+          "href": "/",
+          "enabled": true,
+          "order": 1
+        },
+        {
+          "id": "upcoming",
+          "label": "UPCOMING",
+          "href": "/upcoming",
+          "enabled": true,
+          "order": 2
+        },
+        {
+          "id": "gallery",
+          "label": "GALLERY",
+          "href": "/gallery",
+          "enabled": true,
+          "order": 3
+        },
+        {
+          "id": "apply",
+          "label": "APPLY",
+          "href": "/apply",
+          "enabled": true,
+          "order": 4
+        },
+        {
+          "id": "contact",
+          "label": "CONTACT",
+          "href": "/contact",
+          "enabled": true,
+          "order": 5
+        }
+      ],
+      "footerSettings": {
+        "brandName": "FashAI Universal",
+        "description": "Fashion, talent and experiences across Dubai, UAE & India.",
+        "instagramHandle": "@fashai_universal",
+        "instagramUrl": "https://www.instagram.com/fashai_universal",
+        "exploreLinks": [
+          {
+            "label": "Home",
+            "href": "/",
+            "enabled": true
+          },
+          {
+            "label": "Upcoming",
+            "href": "/upcoming",
+            "enabled": true
+          },
+          {
+            "label": "Gallery",
+            "href": "/gallery",
+            "enabled": true
+          },
+          {
+            "label": "Contact",
+            "href": "/contact",
+            "enabled": true
+          }
+        ],
+        "getInvolvedLinks": [
+          {
+            "label": "Designer",
+            "href": "/apply/designer",
+            "enabled": true
+          },
+          {
+            "label": "Model",
+            "href": "/apply/model",
+            "enabled": true
+          },
+          {
+            "label": "Makeup Artist",
+            "href": "/apply/makeup-artist",
+            "enabled": true
+          },
+          {
+            "label": "Fashion Stylist",
+            "href": "/apply/fashion-stylist",
+            "enabled": true
+          },
+          {
+            "label": "Open Nominations",
+            "href": "/apply",
+            "enabled": true
+          }
+        ],
+        "legalLinks": [
+          {
+            "label": "Privacy Policy",
+            "href": "/privacy",
+            "enabled": true
+          },
+          {
+            "label": "Terms & Conditions",
+            "href": "/terms",
+            "enabled": true
+          }
+        ],
+        "poweredByLogo": "/assets/brand/Final_Powered_by_logo.png"
+      },
+      "applicationCategories": [
+        {
+          "id": "designer",
+          "title": "Designer & Couture Atelier",
+          "description": "Present your creative work and runway showcase opportunities.",
+          "enabled": true,
+          "fields": []
+        },
+        {
+          "id": "model",
+          "title": "Model & Runway Talent",
+          "description": "Participate in international runway and campaign productions.",
+          "enabled": true,
+          "fields": []
+        },
+        {
+          "id": "makeup_artist",
+          "title": "Makeup & Beauty Artistry",
+          "description": "Backstage beauty direction and precision makeup direction.",
+          "enabled": true,
+          "fields": []
+        },
+        {
+          "id": "fashion_stylist",
+          "title": "Fashion Stylist",
+          "description": "Wardrobe curation, campaign lookbooks and visual direction.",
+          "enabled": true,
+          "fields": []
+        },
+        {
+          "id": "influencer",
+          "title": "Influencer / Content Creator",
+          "description": "Editorial coverage, digital partnerships and social features.",
+          "enabled": true,
+          "fields": []
+        },
+        {
+          "id": "celebrity",
+          "title": "Celebrity & Public Figure",
+          "description": "VVIP delegate presence and brand ambassador features.",
+          "enabled": true,
+          "fields": []
+        },
+        {
+          "id": "choreographer",
+          "title": "Choreographer",
+          "description": "Catwalk choreography and spatial runway presentation.",
+          "enabled": true,
+          "fields": []
+        },
+        {
+          "id": "cstp",
+          "title": "CSTP Technical Specialist",
+          "description": "Couture, Spatial, Technology & Production specialists.",
+          "enabled": true,
+          "fields": []
+        },
+        {
+          "id": "commentary",
+          "title": "Fashion Commentary & Media",
+          "description": "Journalism, editorial commentary and press coverage.",
+          "enabled": true,
+          "fields": []
+        }
+      ],
+      "motionSettings": {
+        "globalAnimations": true,
+        "pageTransitions": true,
+        "scrollAnimations": true,
+        "hoverAnimations": true,
+        "backgroundMotion": true,
+        "customCursor": true,
+        "backgroundVideo": true,
+        "reducedMotionSafe": true
+      },
+      "pages": [
+        {
+          "id": "home",
+          "route": "/",
+          "title": "FashAI Universal — Home",
+          "metaDescription": "International luxury fashion & events platform.",
+          "published": true,
+          "visibility": "PUBLIC"
+        },
+        {
+          "id": "upcoming",
+          "route": "/upcoming",
+          "title": "Upcoming Events · FashAI Universal",
+          "metaDescription": "Explore upcoming shows and chapters.",
+          "published": true,
+          "visibility": "PUBLIC"
+        },
+        {
+          "id": "gallery",
+          "route": "/gallery",
+          "title": "Gallery & Retrospective · FashAI Universal",
+          "metaDescription": "Visual archive of haute couture and stage presentations.",
+          "published": true,
+          "visibility": "PUBLIC"
+        },
+        {
+          "id": "apply",
+          "route": "/apply",
+          "title": "Talent Applications · FashAI Universal",
+          "metaDescription": "Submit applications for designers, models, and creators.",
+          "published": true,
+          "visibility": "PUBLIC"
+        },
+        {
+          "id": "contact",
+          "route": "/contact",
+          "title": "Contact & Registrations · FashAI Universal",
+          "metaDescription": "Get in touch for delegate registrations and partnerships.",
+          "published": true,
+          "visibility": "PUBLIC"
+        },
+        {
+          "id": "privacy",
+          "route": "/privacy",
+          "title": "Privacy Policy · FashAI Universal",
+          "metaDescription": "Official privacy policy and data governance.",
+          "published": true,
+          "visibility": "PUBLIC"
+        },
+        {
+          "id": "terms",
+          "route": "/terms",
+          "title": "Terms & Conditions · FashAI Universal",
+          "metaDescription": "Official terms and conditions.",
+          "published": true,
+          "visibility": "PUBLIC"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": "gal_1",
+          "title": "Couture Silhouette",
+          "image": "/assets/models/model_01.jpeg",
+          "category": "COUTURE DETAILS",
+          "caption": "High-precision garment tailoring",
+          "altText": "Couture details",
+          "published": true,
+          "featured": true,
+          "order": 1
+        },
+        {
+          "id": "gal_2",
+          "title": "Runway Stage Dubai",
+          "image": "/assets/models/model_02.jpeg",
+          "category": "RUNWAY & STAGE",
+          "caption": "Spatial lighting and catwalk dynamics",
+          "altText": "Runway stage",
+          "published": true,
+          "featured": true,
+          "order": 2
+        },
+        {
+          "id": "gal_3",
+          "title": "VIP Delegate Gathering",
+          "image": "/assets/models/model_03.jpeg",
+          "category": "PEOPLE & MOMENTS",
+          "caption": "Delegate gathering at LifeStyle showcase",
+          "altText": "VIP delegates",
+          "published": true,
+          "featured": true,
+          "order": 3
+        },
+        {
+          "id": "gal_4",
+          "title": "Architectural Lighting",
+          "image": "/assets/models/model_04.jpeg",
+          "category": "ARCHITECTURE & LIGHTING",
+          "caption": "Spatial lighting design",
+          "altText": "Architecture lighting",
+          "published": true,
+          "featured": true,
+          "order": 4
+        }
+      ],
+      "mediaLibrary": [
+        {
+          "id": "med_1",
+          "filename": "where_fashion_creates_possibilities.png",
+          "url": "/assets/home/where_fashion_creates_possibilities.png",
+          "type": "image",
+          "size": 450000,
+          "dimensions": "1200x800",
+          "altText": "OUR VISION",
+          "caption": "FashAI Universal Vision",
+          "category": "Home",
+          "tags": [
+            "vision",
+            "hero"
+          ],
+          "uploadedAt": "2026-09-24T12:00:00Z",
+          "usedIn": [
+            "Hero",
+            "Who We Are"
+          ]
+        },
+        {
+          "id": "med_2",
+          "filename": "lifestyle_banner.png",
+          "url": "/assets/photos_more/lifestyle_banner.png",
+          "type": "image",
+          "size": 620000,
+          "dimensions": "1600x900",
+          "altText": "LifeStyle 2026 Banner",
+          "caption": "LifeStyle Event Banner",
+          "category": "Events",
+          "tags": [
+            "lifestyle",
+            "banner"
+          ],
+          "uploadedAt": "2026-09-24T12:00:00Z",
+          "usedIn": [
+            "Our Events",
+            "LifeStyle 2026"
+          ]
+        },
+        {
+          "id": "med_3",
+          "filename": "runway_banner.png",
+          "url": "/assets/photos_more/runway_banner.png",
+          "type": "image",
+          "size": 580000,
+          "dimensions": "1600x900",
+          "altText": "Runway 2026 Banner",
+          "caption": "Runway Event Banner",
+          "category": "Events",
+          "tags": [
+            "runway",
+            "banner"
+          ],
+          "uploadedAt": "2026-09-24T12:00:00Z",
+          "usedIn": [
+            "Our Events",
+            "Runway 2026"
+          ]
+        },
+        {
+          "id": "med_4",
+          "filename": "logo_transparent.png",
+          "url": "/assets/brand/logo_transparent.png",
+          "type": "image",
+          "size": 780000,
+          "dimensions": "1254x1254",
+          "altText": "FashAI Universal Transparent Logo",
+          "caption": "Official Brand Logo",
+          "category": "Brand",
+          "tags": [
+            "logo",
+            "brand"
+          ],
+          "uploadedAt": "2026-09-25T00:43:00Z",
+          "usedIn": [
+            "Header",
+            "Footer",
+            "MobileMenu"
+          ]
+        }
+      ],
+      "lastUpdated": "2026-09-24T19:40:15.755Z",
+      "lastMediaUpdate": "2026-09-24T19:25:36.800Z",
+      "isDraft": false
+    }
+  },
+  {
+    "versionId": "v_1790278813314",
+    "publishedAt": "2026-09-24T19:40:13.314Z",
+    "publishedBy": "Master Admin",
+    "note": "Maintenance mode turned ON",
+    "configSnapshot": {
+      "maintenanceSettings": {
+        "enabled": false,
+        "title": "WEBSITE TEMPORARILY UNAVAILABLE",
+        "message": "FashAI Universal is currently undergoing scheduled platform maintenance. Public access will resume shortly.",
+        "allowNavigation": false,
+        "allowEnquiryForms": false,
+        "allowRegistrations": false,
+        "allowApplications": false,
+        "allowGalleryInteraction": false,
+        "allowCTA": false
+      },
+      "globalSettings": {
+        "siteTitle": "FashAI Universal — International Luxury Fashion & Events Platform",
+        "metaTitle": "FashAI Universal — International Fashion & Events Platform",
+        "metaDescription": "FashAI Universal is an international fashion, lifestyle, and events platform connecting global designers, models, creative talent, and brand experiences across Dubai, UAE & India.",
+        "favicon": "/favicon.ico",
+        "ogImage": "/assets/models/model_01.jpeg",
+        "contactEmail": "contact@fashaiuniversal.com",
+        "instagramUrl": "https://www.instagram.com/fashai_universal",
+        "copyrightYear": "2026",
+        "defaultCtaText": "CONTACT US →",
+        "defaultCtaUrl": "/contact"
+      },
+      "themeSettings": {
+        "light": {
+          "background": "#FFFFFF",
+          "primaryText": "#111111",
+          "secondaryText": "#333333",
+          "primaryAccent": "#F15E1C",
+          "secondaryAccent": "#FAB60A",
+          "softSurface": "#FAF8F5",
+          "border": "rgba(0, 0, 0, 0.1)"
+        },
+        "dark": {
+          "background": "#050505",
+          "primaryText": "#FFFFFF",
+          "secondaryText": "#E0E0E0",
+          "primaryAccent": "#FAB60A",
+          "secondaryAccent": "#F15E1C",
+          "softSurface": "#0A0908",
+          "border": "rgba(255, 255, 255, 0.1)"
+        }
+      },
+      "typographySettings": {
+        "headingFont": "Syne, sans-serif",
+        "bodyFont": "Inter, sans-serif",
+        "navigationFont": "Syne, sans-serif",
+        "headingScale": 1,
+        "bodyScale": 1,
+        "letterSpacing": "normal",
+        "lineHeight": "normal"
+      },
+      "heroSettings": {
+        "title": "INTERNATIONAL FASHION & EVENTS PLATFORM",
+        "subtitle": "BRIDGING DUBAI, THE UAE & INDIA THROUGH RUNWAY, CULTURE AND CREATIVE TALENT",
+        "eyebrow": "DUBAI · UAE · INDIA",
+        "supportingText": "Connecting designers, talent, brands and audiences across international fashion hubs.",
+        "ctaText": "SEE UPCOMING",
+        "ctaUrl": "/upcoming",
+        "heroImage": "/assets/home/where_fashion_creates_possibilities.png",
+        "heroFallbackImage": "/assets/models/model_01.jpeg",
+        "heroVideo": "",
+        "posterImage": "/assets/home/where_fashion_creates_possibilities.png",
+        "overlayOpacity": 0.3,
+        "brightness": 1,
+        "imagePosition": "center",
+        "videoAutoplay": true,
+        "videoLoop": true,
+        "videoMuted": true,
+        "mobileImage": "",
+        "mobileVideo": "",
+        "mobileFallback": ""
+      },
+      "homepageSections": [
+        {
+          "id": "hero",
+          "title": "Hero Block",
+          "enabled": true,
+          "order": 1
+        },
+        {
+          "id": "who_we_are",
+          "title": "A Global Fashion Movement (Who We Are)",
+          "enabled": true,
+          "order": 2
+        },
+        {
+          "id": "our_events",
+          "title": "Our Events Banner (LifeStyle & Runway)",
+          "enabled": true,
+          "order": 3
+        },
+        {
+          "id": "intro_statement",
+          "title": "Platform Intro Statement",
+          "enabled": true,
+          "order": 4
+        },
+        {
+          "id": "upcoming_event",
+          "title": "Upcoming Event (LifeStyle 2026)",
+          "enabled": true,
+          "order": 5
+        },
+        {
+          "id": "what_we_do",
+          "title": "What We Do",
+          "enabled": true,
+          "order": 6
+        },
+        {
+          "id": "designers_showcase",
+          "title": "Designer Participation & Showcase",
+          "enabled": true,
+          "order": 7
+        },
+        {
+          "id": "disciplines",
+          "title": "Creative Disciplines",
+          "enabled": true,
+          "order": 8
+        },
+        {
+          "id": "fashprism_stories",
+          "title": "FashPrism Stories & Editorial",
+          "enabled": true,
+          "order": 9
+        },
+        {
+          "id": "open_nominations",
+          "title": "Open Nominations & Applications",
+          "enabled": true,
+          "order": 10
+        },
+        {
+          "id": "instagram",
+          "title": "Instagram / Social Section",
+          "enabled": true,
+          "order": 11
+        },
+        {
+          "id": "footer",
+          "title": "Haute Couture Footer",
+          "enabled": true,
+          "order": 12
+        }
+      ],
+      "events": [
+        {
+          "id": "lifestyle_2026",
+          "title": "LifeStyle 2026",
+          "category": "LIFESTYLE",
+          "description": "An international luxury fashion, lifestyle, and delegate summit connecting global creators, designers, and high-net-worth audiences.",
+          "location": "Dubai, United Arab Emirates",
+          "date": "TO BE ANNOUNCED",
+          "venue": "TO BE ANNOUNCED",
+          "status": "Registration Open",
+          "registrationStatus": "Open",
+          "sponsorshipStatus": "Open",
+          "dressCode": "Black Tie / Haute Couture",
+          "coverImage": "/assets/photos_more/lifestyle_banner.png",
+          "galleryImages": [
+            "/assets/models/model_01.jpeg",
+            "/assets/models/model_02.jpeg"
+          ],
+          "ctaText": "REGISTER INTEREST →",
+          "ctaUrl": "/contact",
+          "featured": true
+        },
+        {
+          "id": "runway_2026",
+          "title": "Runway 2026",
+          "category": "RUNWAY",
+          "description": "Dedicated runway presentation formats for couture and ready-to-wear lines, bringing together global designers and buyers.",
+          "location": "India / UAE",
+          "date": "TO BE ANNOUNCED",
+          "venue": "TO BE ANNOUNCED",
+          "status": "Curation Open",
+          "registrationStatus": "Open",
+          "sponsorshipStatus": "Open",
+          "dressCode": "Couture Runway",
+          "coverImage": "/assets/photos_more/runway_banner.png",
+          "galleryImages": [
+            "/assets/models/model_03.jpeg",
+            "/assets/models/model_04.jpeg"
+          ],
+          "ctaText": "APPLY AS DESIGNER →",
+          "ctaUrl": "/apply/designer",
+          "featured": true
+        }
+      ],
+      "popupSettings": {
+        "enabled": true,
+        "eventId": "lifestyle_2026",
+        "title": "LifeStyle 2026 · Dubai",
+        "subtitle": "INTERNATIONAL FASHION & LIFESTYLE SUMMIT",
+        "backgroundImage": "/assets/photos_more/lifestyle_banner.png",
+        "overlayOpacity": 0.6,
+        "date": "TO BE ANNOUNCED",
+        "venue": "TO BE ANNOUNCED",
+        "dressCode": "Black Tie / Haute Couture",
+        "registrationCtaText": "REGISTER INTEREST →",
+        "sponsorshipCtaText": "SPONSORSHIP ENQUIRY →",
+        "registrationUrl": "/contact",
+        "sponsorshipUrl": "/contact",
+        "displayDelay": 3000,
+        "scrollTriggerPercentage": 30,
+        "showOncePerSession": true,
+        "showOncePerVisitor": false
+      },
+      "navigationSettings": [
+        {
+          "id": "home",
+          "label": "HOME",
+          "href": "/",
+          "enabled": true,
+          "order": 1
+        },
+        {
+          "id": "upcoming",
+          "label": "UPCOMING",
+          "href": "/upcoming",
+          "enabled": true,
+          "order": 2
+        },
+        {
+          "id": "gallery",
+          "label": "GALLERY",
+          "href": "/gallery",
+          "enabled": true,
+          "order": 3
+        },
+        {
+          "id": "apply",
+          "label": "APPLY",
+          "href": "/apply",
+          "enabled": true,
+          "order": 4
+        },
+        {
+          "id": "contact",
+          "label": "CONTACT",
+          "href": "/contact",
+          "enabled": true,
+          "order": 5
+        }
+      ],
+      "footerSettings": {
+        "brandName": "FashAI Universal",
+        "description": "Fashion, talent and experiences across Dubai, UAE & India.",
+        "instagramHandle": "@fashai_universal",
+        "instagramUrl": "https://www.instagram.com/fashai_universal",
+        "exploreLinks": [
+          {
+            "label": "Home",
+            "href": "/",
+            "enabled": true
+          },
+          {
+            "label": "Upcoming",
+            "href": "/upcoming",
+            "enabled": true
+          },
+          {
+            "label": "Gallery",
+            "href": "/gallery",
+            "enabled": true
+          },
+          {
+            "label": "Contact",
+            "href": "/contact",
+            "enabled": true
+          }
+        ],
+        "getInvolvedLinks": [
+          {
+            "label": "Designer",
+            "href": "/apply/designer",
+            "enabled": true
+          },
+          {
+            "label": "Model",
+            "href": "/apply/model",
+            "enabled": true
+          },
+          {
+            "label": "Makeup Artist",
+            "href": "/apply/makeup-artist",
+            "enabled": true
+          },
+          {
+            "label": "Fashion Stylist",
+            "href": "/apply/fashion-stylist",
+            "enabled": true
+          },
+          {
+            "label": "Open Nominations",
+            "href": "/apply",
+            "enabled": true
+          }
+        ],
+        "legalLinks": [
+          {
+            "label": "Privacy Policy",
+            "href": "/privacy",
+            "enabled": true
+          },
+          {
+            "label": "Terms & Conditions",
+            "href": "/terms",
+            "enabled": true
+          }
+        ],
+        "poweredByLogo": "/assets/brand/Final_Powered_by_logo.png"
+      },
+      "applicationCategories": [
+        {
+          "id": "designer",
+          "title": "Designer & Couture Atelier",
+          "description": "Present your creative work and runway showcase opportunities.",
+          "enabled": true,
+          "fields": []
+        },
+        {
+          "id": "model",
+          "title": "Model & Runway Talent",
+          "description": "Participate in international runway and campaign productions.",
+          "enabled": true,
+          "fields": []
+        },
+        {
+          "id": "makeup_artist",
+          "title": "Makeup & Beauty Artistry",
+          "description": "Backstage beauty direction and precision makeup direction.",
+          "enabled": true,
+          "fields": []
+        },
+        {
+          "id": "fashion_stylist",
+          "title": "Fashion Stylist",
+          "description": "Wardrobe curation, campaign lookbooks and visual direction.",
+          "enabled": true,
+          "fields": []
+        },
+        {
+          "id": "influencer",
+          "title": "Influencer / Content Creator",
+          "description": "Editorial coverage, digital partnerships and social features.",
+          "enabled": true,
+          "fields": []
+        },
+        {
+          "id": "celebrity",
+          "title": "Celebrity & Public Figure",
+          "description": "VVIP delegate presence and brand ambassador features.",
+          "enabled": true,
+          "fields": []
+        },
+        {
+          "id": "choreographer",
+          "title": "Choreographer",
+          "description": "Catwalk choreography and spatial runway presentation.",
+          "enabled": true,
+          "fields": []
+        },
+        {
+          "id": "cstp",
+          "title": "CSTP Technical Specialist",
+          "description": "Couture, Spatial, Technology & Production specialists.",
+          "enabled": true,
+          "fields": []
+        },
+        {
+          "id": "commentary",
+          "title": "Fashion Commentary & Media",
+          "description": "Journalism, editorial commentary and press coverage.",
+          "enabled": true,
+          "fields": []
+        }
+      ],
+      "motionSettings": {
+        "globalAnimations": true,
+        "pageTransitions": true,
+        "scrollAnimations": true,
+        "hoverAnimations": true,
+        "backgroundMotion": true,
+        "customCursor": true,
+        "backgroundVideo": true,
+        "reducedMotionSafe": true
+      },
+      "pages": [
+        {
+          "id": "home",
+          "route": "/",
+          "title": "FashAI Universal — Home",
+          "metaDescription": "International luxury fashion & events platform.",
+          "published": true,
+          "visibility": "PUBLIC"
+        },
+        {
+          "id": "upcoming",
+          "route": "/upcoming",
+          "title": "Upcoming Events · FashAI Universal",
+          "metaDescription": "Explore upcoming shows and chapters.",
+          "published": true,
+          "visibility": "PUBLIC"
+        },
+        {
+          "id": "gallery",
+          "route": "/gallery",
+          "title": "Gallery & Retrospective · FashAI Universal",
+          "metaDescription": "Visual archive of haute couture and stage presentations.",
+          "published": true,
+          "visibility": "PUBLIC"
+        },
+        {
+          "id": "apply",
+          "route": "/apply",
+          "title": "Talent Applications · FashAI Universal",
+          "metaDescription": "Submit applications for designers, models, and creators.",
+          "published": true,
+          "visibility": "PUBLIC"
+        },
+        {
+          "id": "contact",
+          "route": "/contact",
+          "title": "Contact & Registrations · FashAI Universal",
+          "metaDescription": "Get in touch for delegate registrations and partnerships.",
+          "published": true,
+          "visibility": "PUBLIC"
+        },
+        {
+          "id": "privacy",
+          "route": "/privacy",
+          "title": "Privacy Policy · FashAI Universal",
+          "metaDescription": "Official privacy policy and data governance.",
+          "published": true,
+          "visibility": "PUBLIC"
+        },
+        {
+          "id": "terms",
+          "route": "/terms",
+          "title": "Terms & Conditions · FashAI Universal",
+          "metaDescription": "Official terms and conditions.",
+          "published": true,
+          "visibility": "PUBLIC"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": "gal_1",
+          "title": "Couture Silhouette",
+          "image": "/assets/models/model_01.jpeg",
+          "category": "COUTURE DETAILS",
+          "caption": "High-precision garment tailoring",
+          "altText": "Couture details",
+          "published": true,
+          "featured": true,
+          "order": 1
+        },
+        {
+          "id": "gal_2",
+          "title": "Runway Stage Dubai",
+          "image": "/assets/models/model_02.jpeg",
+          "category": "RUNWAY & STAGE",
+          "caption": "Spatial lighting and catwalk dynamics",
+          "altText": "Runway stage",
+          "published": true,
+          "featured": true,
+          "order": 2
+        },
+        {
+          "id": "gal_3",
+          "title": "VIP Delegate Gathering",
+          "image": "/assets/models/model_03.jpeg",
+          "category": "PEOPLE & MOMENTS",
+          "caption": "Delegate gathering at LifeStyle showcase",
+          "altText": "VIP delegates",
+          "published": true,
+          "featured": true,
+          "order": 3
+        },
+        {
+          "id": "gal_4",
+          "title": "Architectural Lighting",
+          "image": "/assets/models/model_04.jpeg",
+          "category": "ARCHITECTURE & LIGHTING",
+          "caption": "Spatial lighting design",
+          "altText": "Architecture lighting",
+          "published": true,
+          "featured": true,
+          "order": 4
+        }
+      ],
+      "mediaLibrary": [
+        {
+          "id": "med_1",
+          "filename": "where_fashion_creates_possibilities.png",
+          "url": "/assets/home/where_fashion_creates_possibilities.png",
+          "type": "image",
+          "size": 450000,
+          "dimensions": "1200x800",
+          "altText": "OUR VISION",
+          "caption": "FashAI Universal Vision",
+          "category": "Home",
+          "tags": [
+            "vision",
+            "hero"
+          ],
+          "uploadedAt": "2026-09-24T12:00:00Z",
+          "usedIn": [
+            "Hero",
+            "Who We Are"
+          ]
+        },
+        {
+          "id": "med_2",
+          "filename": "lifestyle_banner.png",
+          "url": "/assets/photos_more/lifestyle_banner.png",
+          "type": "image",
+          "size": 620000,
+          "dimensions": "1600x900",
+          "altText": "LifeStyle 2026 Banner",
+          "caption": "LifeStyle Event Banner",
+          "category": "Events",
+          "tags": [
+            "lifestyle",
+            "banner"
+          ],
+          "uploadedAt": "2026-09-24T12:00:00Z",
+          "usedIn": [
+            "Our Events",
+            "LifeStyle 2026"
+          ]
+        },
+        {
+          "id": "med_3",
+          "filename": "runway_banner.png",
+          "url": "/assets/photos_more/runway_banner.png",
+          "type": "image",
+          "size": 580000,
+          "dimensions": "1600x900",
+          "altText": "Runway 2026 Banner",
+          "caption": "Runway Event Banner",
+          "category": "Events",
+          "tags": [
+            "runway",
+            "banner"
+          ],
+          "uploadedAt": "2026-09-24T12:00:00Z",
+          "usedIn": [
+            "Our Events",
+            "Runway 2026"
+          ]
+        },
+        {
+          "id": "med_4",
+          "filename": "logo_transparent.png",
+          "url": "/assets/brand/logo_transparent.png",
+          "type": "image",
+          "size": 780000,
+          "dimensions": "1254x1254",
+          "altText": "FashAI Universal Transparent Logo",
+          "caption": "Official Brand Logo",
+          "category": "Brand",
+          "tags": [
+            "logo",
+            "brand"
+          ],
+          "uploadedAt": "2026-09-25T00:43:00Z",
+          "usedIn": [
+            "Header",
+            "Footer",
+            "MobileMenu"
+          ]
+        }
+      ],
+      "lastUpdated": "2026-09-24T19:40:13.298Z",
+      "lastMediaUpdate": "2026-09-24T19:25:36.800Z",
+      "isDraft": false
+    }
+  },
+  {
+    "versionId": "v_1790278800812",
+    "publishedAt": "2026-09-24T19:40:00.812Z",
+    "publishedBy": "Master Admin",
+    "note": "Maintenance mode turned ON",
+    "configSnapshot": {
+      "maintenanceSettings": {
+        "enabled": false,
+        "title": "WEBSITE TEMPORARILY UNAVAILABLE",
+        "message": "FashAI Universal is currently undergoing scheduled platform maintenance. Public access will resume shortly.",
+        "allowNavigation": false,
+        "allowEnquiryForms": false,
+        "allowRegistrations": false,
+        "allowApplications": false,
+        "allowGalleryInteraction": false,
+        "allowCTA": false
+      },
+      "globalSettings": {
+        "siteTitle": "FashAI Universal — International Luxury Fashion & Events Platform",
+        "metaTitle": "FashAI Universal — International Fashion & Events Platform",
+        "metaDescription": "FashAI Universal is an international fashion, lifestyle, and events platform connecting global designers, models, creative talent, and brand experiences across Dubai, UAE & India.",
+        "favicon": "/favicon.ico",
+        "ogImage": "/assets/models/model_01.jpeg",
+        "contactEmail": "contact@fashaiuniversal.com",
+        "instagramUrl": "https://www.instagram.com/fashai_universal",
+        "copyrightYear": "2026",
+        "defaultCtaText": "CONTACT US →",
+        "defaultCtaUrl": "/contact"
+      },
+      "themeSettings": {
+        "light": {
+          "background": "#FFFFFF",
+          "primaryText": "#111111",
+          "secondaryText": "#333333",
+          "primaryAccent": "#F15E1C",
+          "secondaryAccent": "#FAB60A",
+          "softSurface": "#FAF8F5",
+          "border": "rgba(0, 0, 0, 0.1)"
+        },
+        "dark": {
+          "background": "#050505",
+          "primaryText": "#FFFFFF",
+          "secondaryText": "#E0E0E0",
+          "primaryAccent": "#FAB60A",
+          "secondaryAccent": "#F15E1C",
+          "softSurface": "#0A0908",
+          "border": "rgba(255, 255, 255, 0.1)"
+        }
+      },
+      "typographySettings": {
+        "headingFont": "Syne, sans-serif",
+        "bodyFont": "Inter, sans-serif",
+        "navigationFont": "Syne, sans-serif",
+        "headingScale": 1,
+        "bodyScale": 1,
+        "letterSpacing": "normal",
+        "lineHeight": "normal"
+      },
+      "heroSettings": {
+        "title": "INTERNATIONAL FASHION & EVENTS PLATFORM",
+        "subtitle": "BRIDGING DUBAI, THE UAE & INDIA THROUGH RUNWAY, CULTURE AND CREATIVE TALENT",
+        "eyebrow": "DUBAI · UAE · INDIA",
+        "supportingText": "Connecting designers, talent, brands and audiences across international fashion hubs.",
+        "ctaText": "SEE UPCOMING",
+        "ctaUrl": "/upcoming",
+        "heroImage": "/assets/home/where_fashion_creates_possibilities.png",
+        "heroFallbackImage": "/assets/models/model_01.jpeg",
+        "heroVideo": "",
+        "posterImage": "/assets/home/where_fashion_creates_possibilities.png",
+        "overlayOpacity": 0.3,
+        "brightness": 1,
+        "imagePosition": "center",
+        "videoAutoplay": true,
+        "videoLoop": true,
+        "videoMuted": true,
+        "mobileImage": "",
+        "mobileVideo": "",
+        "mobileFallback": ""
+      },
+      "homepageSections": [
+        {
+          "id": "hero",
+          "title": "Hero Block",
+          "enabled": true,
+          "order": 1
+        },
+        {
+          "id": "who_we_are",
+          "title": "A Global Fashion Movement (Who We Are)",
+          "enabled": true,
+          "order": 2
+        },
+        {
+          "id": "our_events",
+          "title": "Our Events Banner (LifeStyle & Runway)",
+          "enabled": true,
+          "order": 3
+        },
+        {
+          "id": "intro_statement",
+          "title": "Platform Intro Statement",
+          "enabled": true,
+          "order": 4
+        },
+        {
+          "id": "upcoming_event",
+          "title": "Upcoming Event (LifeStyle 2026)",
+          "enabled": true,
+          "order": 5
+        },
+        {
+          "id": "what_we_do",
+          "title": "What We Do",
+          "enabled": true,
+          "order": 6
+        },
+        {
+          "id": "designers_showcase",
+          "title": "Designer Participation & Showcase",
+          "enabled": true,
+          "order": 7
+        },
+        {
+          "id": "disciplines",
+          "title": "Creative Disciplines",
+          "enabled": true,
+          "order": 8
+        },
+        {
+          "id": "fashprism_stories",
+          "title": "FashPrism Stories & Editorial",
+          "enabled": true,
+          "order": 9
+        },
+        {
+          "id": "open_nominations",
+          "title": "Open Nominations & Applications",
+          "enabled": true,
+          "order": 10
+        },
+        {
+          "id": "instagram",
+          "title": "Instagram / Social Section",
+          "enabled": true,
+          "order": 11
+        },
+        {
+          "id": "footer",
+          "title": "Haute Couture Footer",
+          "enabled": true,
+          "order": 12
+        }
+      ],
+      "events": [
+        {
+          "id": "lifestyle_2026",
+          "title": "LifeStyle 2026",
+          "category": "LIFESTYLE",
+          "description": "An international luxury fashion, lifestyle, and delegate summit connecting global creators, designers, and high-net-worth audiences.",
+          "location": "Dubai, United Arab Emirates",
+          "date": "TO BE ANNOUNCED",
+          "venue": "TO BE ANNOUNCED",
+          "status": "Registration Open",
+          "registrationStatus": "Open",
+          "sponsorshipStatus": "Open",
+          "dressCode": "Black Tie / Haute Couture",
+          "coverImage": "/assets/photos_more/lifestyle_banner.png",
+          "galleryImages": [
+            "/assets/models/model_01.jpeg",
+            "/assets/models/model_02.jpeg"
+          ],
+          "ctaText": "REGISTER INTEREST →",
+          "ctaUrl": "/contact",
+          "featured": true
+        },
+        {
+          "id": "runway_2026",
+          "title": "Runway 2026",
+          "category": "RUNWAY",
+          "description": "Dedicated runway presentation formats for couture and ready-to-wear lines, bringing together global designers and buyers.",
+          "location": "India / UAE",
+          "date": "TO BE ANNOUNCED",
+          "venue": "TO BE ANNOUNCED",
+          "status": "Curation Open",
+          "registrationStatus": "Open",
+          "sponsorshipStatus": "Open",
+          "dressCode": "Couture Runway",
+          "coverImage": "/assets/photos_more/runway_banner.png",
+          "galleryImages": [
+            "/assets/models/model_03.jpeg",
+            "/assets/models/model_04.jpeg"
+          ],
+          "ctaText": "APPLY AS DESIGNER →",
+          "ctaUrl": "/apply/designer",
+          "featured": true
+        }
+      ],
+      "popupSettings": {
+        "enabled": true,
+        "eventId": "lifestyle_2026",
+        "title": "LifeStyle 2026 · Dubai",
+        "subtitle": "INTERNATIONAL FASHION & LIFESTYLE SUMMIT",
+        "backgroundImage": "/assets/photos_more/lifestyle_banner.png",
+        "overlayOpacity": 0.6,
+        "date": "TO BE ANNOUNCED",
+        "venue": "TO BE ANNOUNCED",
+        "dressCode": "Black Tie / Haute Couture",
+        "registrationCtaText": "REGISTER INTEREST →",
+        "sponsorshipCtaText": "SPONSORSHIP ENQUIRY →",
+        "registrationUrl": "/contact",
+        "sponsorshipUrl": "/contact",
+        "displayDelay": 3000,
+        "scrollTriggerPercentage": 30,
+        "showOncePerSession": true,
+        "showOncePerVisitor": false
+      },
+      "navigationSettings": [
+        {
+          "id": "home",
+          "label": "HOME",
+          "href": "/",
+          "enabled": true,
+          "order": 1
+        },
+        {
+          "id": "upcoming",
+          "label": "UPCOMING",
+          "href": "/upcoming",
+          "enabled": true,
+          "order": 2
+        },
+        {
+          "id": "gallery",
+          "label": "GALLERY",
+          "href": "/gallery",
+          "enabled": true,
+          "order": 3
+        },
+        {
+          "id": "apply",
+          "label": "APPLY",
+          "href": "/apply",
+          "enabled": true,
+          "order": 4
+        },
+        {
+          "id": "contact",
+          "label": "CONTACT",
+          "href": "/contact",
+          "enabled": true,
+          "order": 5
+        }
+      ],
+      "footerSettings": {
+        "brandName": "FashAI Universal",
+        "description": "Fashion, talent and experiences across Dubai, UAE & India.",
+        "instagramHandle": "@fashai_universal",
+        "instagramUrl": "https://www.instagram.com/fashai_universal",
+        "exploreLinks": [
+          {
+            "label": "Home",
+            "href": "/",
+            "enabled": true
+          },
+          {
+            "label": "Upcoming",
+            "href": "/upcoming",
+            "enabled": true
+          },
+          {
+            "label": "Gallery",
+            "href": "/gallery",
+            "enabled": true
+          },
+          {
+            "label": "Contact",
+            "href": "/contact",
+            "enabled": true
+          }
+        ],
+        "getInvolvedLinks": [
+          {
+            "label": "Designer",
+            "href": "/apply/designer",
+            "enabled": true
+          },
+          {
+            "label": "Model",
+            "href": "/apply/model",
+            "enabled": true
+          },
+          {
+            "label": "Makeup Artist",
+            "href": "/apply/makeup-artist",
+            "enabled": true
+          },
+          {
+            "label": "Fashion Stylist",
+            "href": "/apply/fashion-stylist",
+            "enabled": true
+          },
+          {
+            "label": "Open Nominations",
+            "href": "/apply",
+            "enabled": true
+          }
+        ],
+        "legalLinks": [
+          {
+            "label": "Privacy Policy",
+            "href": "/privacy",
+            "enabled": true
+          },
+          {
+            "label": "Terms & Conditions",
+            "href": "/terms",
+            "enabled": true
+          }
+        ],
+        "poweredByLogo": "/assets/brand/Final_Powered_by_logo.png"
+      },
+      "applicationCategories": [
+        {
+          "id": "designer",
+          "title": "Designer & Couture Atelier",
+          "description": "Present your creative work and runway showcase opportunities.",
+          "enabled": true,
+          "fields": []
+        },
+        {
+          "id": "model",
+          "title": "Model & Runway Talent",
+          "description": "Participate in international runway and campaign productions.",
+          "enabled": true,
+          "fields": []
+        },
+        {
+          "id": "makeup_artist",
+          "title": "Makeup & Beauty Artistry",
+          "description": "Backstage beauty direction and precision makeup direction.",
+          "enabled": true,
+          "fields": []
+        },
+        {
+          "id": "fashion_stylist",
+          "title": "Fashion Stylist",
+          "description": "Wardrobe curation, campaign lookbooks and visual direction.",
+          "enabled": true,
+          "fields": []
+        },
+        {
+          "id": "influencer",
+          "title": "Influencer / Content Creator",
+          "description": "Editorial coverage, digital partnerships and social features.",
+          "enabled": true,
+          "fields": []
+        },
+        {
+          "id": "celebrity",
+          "title": "Celebrity & Public Figure",
+          "description": "VVIP delegate presence and brand ambassador features.",
+          "enabled": true,
+          "fields": []
+        },
+        {
+          "id": "choreographer",
+          "title": "Choreographer",
+          "description": "Catwalk choreography and spatial runway presentation.",
+          "enabled": true,
+          "fields": []
+        },
+        {
+          "id": "cstp",
+          "title": "CSTP Technical Specialist",
+          "description": "Couture, Spatial, Technology & Production specialists.",
+          "enabled": true,
+          "fields": []
+        },
+        {
+          "id": "commentary",
+          "title": "Fashion Commentary & Media",
+          "description": "Journalism, editorial commentary and press coverage.",
+          "enabled": true,
+          "fields": []
+        }
+      ],
+      "motionSettings": {
+        "globalAnimations": true,
+        "pageTransitions": true,
+        "scrollAnimations": true,
+        "hoverAnimations": true,
+        "backgroundMotion": true,
+        "customCursor": true,
+        "backgroundVideo": true,
+        "reducedMotionSafe": true
+      },
+      "pages": [
+        {
+          "id": "home",
+          "route": "/",
+          "title": "FashAI Universal — Home",
+          "metaDescription": "International luxury fashion & events platform.",
+          "published": true,
+          "visibility": "PUBLIC"
+        },
+        {
+          "id": "upcoming",
+          "route": "/upcoming",
+          "title": "Upcoming Events · FashAI Universal",
+          "metaDescription": "Explore upcoming shows and chapters.",
+          "published": true,
+          "visibility": "PUBLIC"
+        },
+        {
+          "id": "gallery",
+          "route": "/gallery",
+          "title": "Gallery & Retrospective · FashAI Universal",
+          "metaDescription": "Visual archive of haute couture and stage presentations.",
+          "published": true,
+          "visibility": "PUBLIC"
+        },
+        {
+          "id": "apply",
+          "route": "/apply",
+          "title": "Talent Applications · FashAI Universal",
+          "metaDescription": "Submit applications for designers, models, and creators.",
+          "published": true,
+          "visibility": "PUBLIC"
+        },
+        {
+          "id": "contact",
+          "route": "/contact",
+          "title": "Contact & Registrations · FashAI Universal",
+          "metaDescription": "Get in touch for delegate registrations and partnerships.",
+          "published": true,
+          "visibility": "PUBLIC"
+        },
+        {
+          "id": "privacy",
+          "route": "/privacy",
+          "title": "Privacy Policy · FashAI Universal",
+          "metaDescription": "Official privacy policy and data governance.",
+          "published": true,
+          "visibility": "PUBLIC"
+        },
+        {
+          "id": "terms",
+          "route": "/terms",
+          "title": "Terms & Conditions · FashAI Universal",
+          "metaDescription": "Official terms and conditions.",
+          "published": true,
+          "visibility": "PUBLIC"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": "gal_1",
+          "title": "Couture Silhouette",
+          "image": "/assets/models/model_01.jpeg",
+          "category": "COUTURE DETAILS",
+          "caption": "High-precision garment tailoring",
+          "altText": "Couture details",
+          "published": true,
+          "featured": true,
+          "order": 1
+        },
+        {
+          "id": "gal_2",
+          "title": "Runway Stage Dubai",
+          "image": "/assets/models/model_02.jpeg",
+          "category": "RUNWAY & STAGE",
+          "caption": "Spatial lighting and catwalk dynamics",
+          "altText": "Runway stage",
+          "published": true,
+          "featured": true,
+          "order": 2
+        },
+        {
+          "id": "gal_3",
+          "title": "VIP Delegate Gathering",
+          "image": "/assets/models/model_03.jpeg",
+          "category": "PEOPLE & MOMENTS",
+          "caption": "Delegate gathering at LifeStyle showcase",
+          "altText": "VIP delegates",
+          "published": true,
+          "featured": true,
+          "order": 3
+        },
+        {
+          "id": "gal_4",
+          "title": "Architectural Lighting",
+          "image": "/assets/models/model_04.jpeg",
+          "category": "ARCHITECTURE & LIGHTING",
+          "caption": "Spatial lighting design",
+          "altText": "Architecture lighting",
+          "published": true,
+          "featured": true,
+          "order": 4
+        }
+      ],
+      "mediaLibrary": [
+        {
+          "id": "med_1",
+          "filename": "where_fashion_creates_possibilities.png",
+          "url": "/assets/home/where_fashion_creates_possibilities.png",
+          "type": "image",
+          "size": 450000,
+          "dimensions": "1200x800",
+          "altText": "OUR VISION",
+          "caption": "FashAI Universal Vision",
+          "category": "Home",
+          "tags": [
+            "vision",
+            "hero"
+          ],
+          "uploadedAt": "2026-09-24T12:00:00Z",
+          "usedIn": [
+            "Hero",
+            "Who We Are"
+          ]
+        },
+        {
+          "id": "med_2",
+          "filename": "lifestyle_banner.png",
+          "url": "/assets/photos_more/lifestyle_banner.png",
+          "type": "image",
+          "size": 620000,
+          "dimensions": "1600x900",
+          "altText": "LifeStyle 2026 Banner",
+          "caption": "LifeStyle Event Banner",
+          "category": "Events",
+          "tags": [
+            "lifestyle",
+            "banner"
+          ],
+          "uploadedAt": "2026-09-24T12:00:00Z",
+          "usedIn": [
+            "Our Events",
+            "LifeStyle 2026"
+          ]
+        },
+        {
+          "id": "med_3",
+          "filename": "runway_banner.png",
+          "url": "/assets/photos_more/runway_banner.png",
+          "type": "image",
+          "size": 580000,
+          "dimensions": "1600x900",
+          "altText": "Runway 2026 Banner",
+          "caption": "Runway Event Banner",
+          "category": "Events",
+          "tags": [
+            "runway",
+            "banner"
+          ],
+          "uploadedAt": "2026-09-24T12:00:00Z",
+          "usedIn": [
+            "Our Events",
+            "Runway 2026"
+          ]
+        },
+        {
+          "id": "med_4",
+          "filename": "logo_transparent.png",
+          "url": "/assets/brand/logo_transparent.png",
+          "type": "image",
+          "size": 780000,
+          "dimensions": "1254x1254",
+          "altText": "FashAI Universal Transparent Logo",
+          "caption": "Official Brand Logo",
+          "category": "Brand",
+          "tags": [
+            "logo",
+            "brand"
+          ],
+          "uploadedAt": "2026-09-25T00:43:00Z",
+          "usedIn": [
+            "Header",
+            "Footer",
+            "MobileMenu"
+          ]
+        }
+      ],
+      "lastUpdated": "2026-09-24T19:40:00.777Z",
+      "lastMediaUpdate": "2026-09-24T19:25:36.800Z",
+      "isDraft": false
+    }
+  }
+]
