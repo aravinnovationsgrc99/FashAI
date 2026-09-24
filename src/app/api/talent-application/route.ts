@@ -369,15 +369,21 @@ export async function POST(request: Request) {
       submittedAt: new Date().toISOString(),
     };
 
-    // Log internally for backend talent database processing
-    console.log("FashAI Universal Talent Network Application Received:", {
-      applicationType,
-      fullName,
-      email,
-      whatsapp,
-      cityCountry,
-      submittedAt: applicationRecord.submittedAt,
-    });
+    // Save submission to Master Admin Data Repository
+    try {
+      const { saveSubmission } = await import("@/lib/admin/storage");
+      await saveSubmission({
+        type: "APPLICATION",
+        applicationType,
+        fullName,
+        email,
+        phone: whatsapp,
+        city: cityCountry,
+        categoryDetails,
+      });
+    } catch (err) {
+      console.warn("Could not persist talent application to storage:", err);
+    }
 
     return NextResponse.json({
       success: true,

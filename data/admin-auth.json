@@ -1,0 +1,13 @@
+{
+  "username": "admin",
+  "passwordHash": "dfdd17a49894ce5e0744219b851317b880c5fd38a67b012327cccb139381b949e4dd1547f9fbf077e37c230cd7df9e42dcfd0cfb3a06f37262d6dca7bda525fa",
+  "salt": "7dfbaa34f50b9d2f348aa92e00ee8e9d",
+  "activeSessions": {
+    "70e4fab9041f083e71e70d0085f6ecf3e60e5eb8bb4b49e5e39b866a1c4b9a31": {
+      "username": "admin",
+      "expiresAt": 1790364398328,
+      "createdAt": "2026-09-24T19:26:38.328Z"
+    }
+  },
+  "loginAttempts": {}
+}

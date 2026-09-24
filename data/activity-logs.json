@@ -1,0 +1,10 @@
+[
+  {
+    "id": "log_1790277998344_l2vu1",
+    "category": "AUTH",
+    "action": "Successful admin login",
+    "actor": "admin",
+    "timestamp": "2026-09-24T19:26:38.344Z",
+    "details": "IP ::1"
+  }
+]

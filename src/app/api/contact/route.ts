@@ -116,20 +116,25 @@ export async function POST(request: Request) {
       );
     }
 
-    // Log clean, sanitized data (without sensitive tokens or passwords)
-    console.log("FashAI Universal Official Sanitized Enquiry Received:", {
-      name,
-      email,
-      phone,
-      country,
-      city,
-      organization,
-      role,
-      enquiryType,
-      eventInterest,
-      messageLength: message.length,
-      timestamp: new Date().toISOString(),
-    });
+    // 6. Save Submission to Master Admin Data Repository
+    try {
+      const { saveSubmission } = await import("@/lib/admin/storage");
+      await saveSubmission({
+        type: "CONTACT",
+        fullName: name,
+        email,
+        phone,
+        country,
+        city,
+        organization,
+        role,
+        enquiryType,
+        eventInterest,
+        message,
+      });
+    } catch (err) {
+      console.warn("Could not persist contact submission to storage:", err);
+    }
 
     return NextResponse.json({
       success: true,

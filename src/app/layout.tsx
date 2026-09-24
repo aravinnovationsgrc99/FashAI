@@ -1,16 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import dynamic from "next/dynamic";
-import Header from "@/components/layout/Header";
-import Footer from "@/components/layout/Footer";
-import CursorInteraction from "@/components/cinematic/CursorInteraction";
-import Preloader from "@/components/cinematic/Preloader";
-import PageTransition from "@/components/cinematic/PageTransition";
-import { ThemeProvider } from "@/context/ThemeContext";
-
-const EventInfoModal = dynamic(() => import("@/components/ui/EventInfoModal"));
-const FashAiConcierge = dynamic(() => import("@/components/concierge/FashAiConcierge"));
-const LocalDevicePreview = dynamic(() => import("@/components/ui/LocalDevicePreview"));
+import ClientLayoutWrapper from "@/components/layout/ClientLayoutWrapper";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://fashai-beryl.vercel.app"),
@@ -121,33 +111,7 @@ export default function RootLayout({
         />
       </head>
       <body className="bg-brand-void text-brand-off-white selection:bg-brand-orange selection:text-white font-sans-body">
-        <ThemeProvider>
-          {/* Cinematic Initial Preloader */}
-          <Preloader />
-
-          {/* First-Visit Event Information Popup */}
-          <EventInfoModal />
-
-          {/* Custom Fine-Pointer Editorial Cursor */}
-          <CursorInteraction />
-
-          {/* Fixed Editorial Navigation Header */}
-          <Header />
-
-          {/* Main Content Sections */}
-          <main>
-            <PageTransition>{children}</PageTransition>
-          </main>
-
-          {/* Haute Couture Footer */}
-          <Footer />
-
-          {/* FashAI Universal AI Concierge Assistant */}
-          <FashAiConcierge />
-
-          {/* Local Development Only Device Preview Switcher */}
-          <LocalDevicePreview />
-        </ThemeProvider>
+        <ClientLayoutWrapper>{children}</ClientLayoutWrapper>
       </body>
     </html>
   );
