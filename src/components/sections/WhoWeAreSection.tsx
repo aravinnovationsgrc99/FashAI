@@ -92,22 +92,37 @@ export default function WhoWeAreSection() {
                 </div>
               </div>
 
-              {/* Bottom EXPLORE FASHAI ECOSYSTEM Strip */}
-              <div className="p-5 sm:p-6 rounded-xl bg-[#FAF8F5] dark:bg-[#0A0908] border border-black/10 dark:border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4 shadow-sm">
-                <div className="space-y-0.5 text-center sm:text-left">
-                  <p className="font-syne text-xs sm:text-sm font-bold uppercase tracking-[0.18em] text-[#F15E1C] dark:text-brand-orange">
-                    EXPLORE FASHAI ECOSYSTEM
-                  </p>
-                  <p className="font-serif italic text-lg sm:text-xl text-[#111111] dark:text-brand-white font-normal">
-                    Upcoming shows, chapters and opportunities.
+              {/* Bottom EXPLORE FASHAI ECOSYSTEM Card */}
+              <div className="relative p-6 sm:p-7 rounded-2xl bg-gradient-to-r from-[#F15E1C]/15 via-[#FAB60A]/10 to-[#FAF8F5] dark:from-[#F15E1C]/20 dark:via-[#FAB60A]/15 dark:to-[#0A0908] border border-[#F15E1C]/30 dark:border-[#FAB60A]/40 flex flex-col md:flex-row items-start md:items-center justify-between gap-6 shadow-lg backdrop-blur-sm overflow-hidden group transition-all duration-300 hover:border-[#F15E1C]/50 dark:hover:border-[#FAB60A]/60">
+                {/* Subtle Ambient Accent Glow */}
+                <div className="absolute -top-12 -right-12 w-40 h-40 bg-[#FAB60A]/15 dark:bg-[#F15E1C]/20 rounded-full blur-2xl pointer-events-none group-hover:scale-150 transition-transform duration-700" />
+                
+                <div className="relative z-10 space-y-2 text-left max-w-xl">
+                  <div className="flex items-center gap-2.5">
+                    <span className="relative flex h-2.5 w-2.5">
+                      <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#F15E1C] opacity-75 dark:bg-[#FAB60A]"></span>
+                      <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-[#F15E1C] dark:bg-[#FAB60A]"></span>
+                    </span>
+                    <span className="font-syne text-xs sm:text-sm font-bold uppercase tracking-[0.22em] text-[#F15E1C] dark:text-[#FAB60A]">
+                      EXPLORE FASHAI ECOSYSTEM
+                    </span>
+                  </div>
+
+                  <h3 className="font-serif-display text-2xl sm:text-3xl font-light text-[#111111] dark:text-brand-white uppercase leading-tight tracking-tight">
+                    UPCOMING SHOWS &amp; CHAPTERS
+                  </h3>
+
+                  <p className="font-sans text-xs sm:text-sm text-[#333333] dark:text-brand-platinum/90 font-normal leading-relaxed">
+                    Upcoming shows, chapters and opportunities across international fashion hubs.
                   </p>
                 </div>
+
                 <Link
                   href="/upcoming"
-                  className="px-6 py-3 bg-[#FAB60A] text-black font-syne text-xs sm:text-sm font-bold uppercase tracking-wider rounded-md hover:bg-[#FFEC69] transition-all flex items-center gap-2 whitespace-nowrap shadow-sm group"
+                  className="relative z-10 w-full md:w-auto inline-flex items-center justify-center gap-2.5 bg-[#F15E1C] dark:bg-[#FAB60A] text-white dark:text-black hover:bg-[#e04f10] dark:hover:bg-[#f5aa00] px-7 py-3.5 rounded-xl font-syne text-xs sm:text-sm font-bold tracking-wider uppercase transition-all duration-300 shadow-md group/btn whitespace-nowrap shrink-0 hover:shadow-lg hover:-translate-y-0.5"
                 >
                   <span>SEE UPCOMING</span>
-                  <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+                  <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover/btn:translate-x-1" />
                 </Link>
               </div>
             </div>
