@@ -221,24 +221,96 @@ html.light [class*="bg-brand-yellow-golden"] p {
   font-weight: 700 !important;
 }
 
+/* ==================================================== */
+/* PROTECTED HERO / LANDING SCREEN (DARK CINEMATIC MODE ALWAYS) */
+/* ==================================================== */
+#hero,
+html.light #hero,
+html.dark #hero {
+  background-color: #000000 !important;
+  color: #FFFFFF !important;
+}
+
+html.light #hero .text-brand-white,
+html.light #hero [class*="text-brand-white"],
+html.light #hero .text-brand-off-white,
+html.light #hero [class*="text-brand-off-white"],
+html.light #hero .text-brand-platinum,
+html.light #hero [class*="text-brand-platinum"],
+html.light #hero .text-white,
+html.light #hero [class*="text-white"],
+html.light #hero p,
+html.light #hero span:not([class*="text-brand-yellow-golden"]):not([class*="text-brand-orange"]):not([class*="text-brand-green"]):not([class*="text-black"]) {
+  color: #FFFFFF !important;
+}
+
+html.light #hero .text-brand-yellow-golden,
+html.light #hero [class*="text-brand-yellow-golden"],
+html.light #hero .text-brand-gold {
+  color: #FAB60A !important;
+}
+
+html.light #hero .bg-brand-yellow-golden,
+html.light #hero [class*="bg-brand-yellow-golden"] {
+  background-color: #FAB60A !important;
+  color: #000000 !important;
+}
+
+html.light #hero .bg-brand-yellow-golden *,
+html.light #hero [class*="bg-brand-yellow-golden"] * {
+  color: #000000 !important;
+}
+
 /* Header & Scrolled Navbar System in Light Mode */
 html.light header {
   transition: background-color 0.3s ease, border-color 0.3s ease;
 }
 
-html.light header[class*="bg-black"],
+/* Landing Screen Unscrolled Header (Cinematic Dark Mode Match) */
+html.light header:not(.html-light-header-scrolled) {
+  background-color: transparent !important;
+  border-bottom-color: transparent !important;
+  box-shadow: none !important;
+}
+
+html.light header:not(.html-light-header-scrolled) nav a:not(.text-brand-yellow-golden) {
+  color: #FFFFFF !important;
+}
+
+html.light header:not(.html-light-header-scrolled) nav a:hover {
+  color: #FAB60A !important;
+}
+
+html.light header:not(.html-light-header-scrolled) .font-serif-display,
+html.light header:not(.html-light-header-scrolled) .font-serif-display span:not(.capitalize) {
+  color: #FFFFFF !important;
+}
+
+html.light header:not(.html-light-header-scrolled) .font-serif-display span.capitalize {
+  color: #FAB60A !important;
+}
+
+/* Scrolled Header in Light Mode */
 html.light .html-light-header-scrolled {
   background-color: rgba(255, 255, 255, 0.96) !important;
   border-bottom-color: rgba(17, 17, 17, 0.1) !important;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05) !important;
 }
 
-html.light header nav a:not(.text-brand-yellow-golden) {
+html.light .html-light-header-scrolled nav a:not(.text-brand-yellow-golden) {
   color: #111111 !important;
 }
 
-html.light header nav a:hover {
+html.light .html-light-header-scrolled nav a:hover {
   color: #F15E1C !important;
+}
+
+html.light .html-light-header-scrolled .font-serif-display {
+  color: #111111 !important;
+}
+
+html.light .html-light-header-scrolled .font-serif-display span {
+  color: #FAB60A !important;
 }
 
 /* Mobile Menu Container in Light Mode */

@@ -27,12 +27,17 @@ export default function Header() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  const isHome = pathname === "/";
+  const isHeroHeader = isHome && !isScrolled;
+
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-[200] transition-all duration-300 ${
-        isScrolled
+        isHeroHeader
+          ? "bg-transparent border-b border-transparent py-4"
+          : isScrolled
           ? "bg-black/85 html-light-header-scrolled border-b border-brand-yellow-golden/20 shadow-lg py-2.5 backdrop-blur-md"
-          : "bg-transparent border-b border-transparent py-4"
+          : "bg-black/80 html-light-header-scrolled border-b border-brand-yellow-golden/20 shadow-md py-3.5 backdrop-blur-md"
       }`}
     >
       <div className="container-editorial flex items-center justify-between min-h-[50px] relative">
@@ -49,7 +54,7 @@ export default function Header() {
             />
           </div>
           <div className="flex flex-col justify-center">
-            <span className="font-serif-display text-lg sm:text-xl font-light tracking-wider text-brand-white uppercase group-hover:text-brand-yellow-golden transition-colors leading-none">
+            <span className={`font-serif-display text-lg sm:text-xl font-light tracking-wider uppercase group-hover:text-brand-yellow-golden transition-colors leading-none ${isHeroHeader ? "text-white keep-white" : "text-brand-white"}`}>
               FashAI <span className="font-serif italic font-normal text-brand-yellow-golden capitalize">Universal</span>
             </span>
           </div>
@@ -61,7 +66,7 @@ export default function Header() {
           <Link
             href="/"
             className={`relative py-1.5 transition-colors duration-200 ${
-              pathname === "/" ? "text-brand-yellow-golden font-bold" : "text-brand-white/80 hover:text-brand-yellow-golden"
+              pathname === "/" ? "text-brand-yellow-golden font-bold" : isHeroHeader ? "text-white keep-white hover:text-brand-yellow-golden" : "text-brand-white/90 hover:text-brand-yellow-golden"
             }`}
           >
             HOME
@@ -72,7 +77,7 @@ export default function Header() {
           <Link
             href="/upcoming"
             className={`relative py-1.5 transition-colors duration-200 ${
-              pathname.startsWith("/upcoming") ? "text-brand-yellow-golden font-bold" : "text-brand-white/80 hover:text-brand-yellow-golden"
+              pathname.startsWith("/upcoming") ? "text-brand-yellow-golden font-bold" : isHeroHeader ? "text-white keep-white hover:text-brand-yellow-golden" : "text-brand-white/90 hover:text-brand-yellow-golden"
             }`}
           >
             UPCOMING
@@ -83,7 +88,7 @@ export default function Header() {
           <Link
             href="/gallery"
             className={`relative py-1.5 transition-colors duration-200 ${
-              pathname.startsWith("/gallery") ? "text-brand-yellow-golden font-bold" : "text-brand-white/80 hover:text-brand-yellow-golden"
+              pathname.startsWith("/gallery") ? "text-brand-yellow-golden font-bold" : isHeroHeader ? "text-white keep-white hover:text-brand-yellow-golden" : "text-brand-white/90 hover:text-brand-yellow-golden"
             }`}
           >
             GALLERY
@@ -94,7 +99,7 @@ export default function Header() {
           <Link
             href="/apply"
             className={`relative py-1.5 transition-colors duration-200 ${
-              pathname.startsWith("/apply") ? "text-brand-yellow-golden font-bold" : "text-brand-white/80 hover:text-brand-yellow-golden"
+              pathname.startsWith("/apply") ? "text-brand-yellow-golden font-bold" : isHeroHeader ? "text-white keep-white hover:text-brand-yellow-golden" : "text-brand-white/90 hover:text-brand-yellow-golden"
             }`}
           >
             APPLY
@@ -105,7 +110,7 @@ export default function Header() {
           <Link
             href="/contact"
             className={`relative py-1.5 transition-colors duration-200 ${
-              pathname.startsWith("/contact") ? "text-brand-yellow-golden font-bold" : "text-brand-white/80 hover:text-brand-yellow-golden"
+              pathname.startsWith("/contact") ? "text-brand-yellow-golden font-bold" : isHeroHeader ? "text-white keep-white hover:text-brand-yellow-golden" : "text-brand-white/90 hover:text-brand-yellow-golden"
             }`}
           >
             CONTACT
@@ -115,7 +120,7 @@ export default function Header() {
 
         {/* Action Button & Theme Toggle */}
         <div className="flex items-center gap-3">
-          <ThemeToggle />
+          <ThemeToggle isHeroHeader={isHeroHeader} />
           <Link
             href="/contact"
             className="hidden sm:inline-flex items-center justify-center bg-brand-yellow-golden px-6 h-11 text-[11px] sm:text-xs font-syne tracking-caps font-bold text-black rounded-full hover:bg-[#FFEC69] hover:-translate-y-0.5 transition-all duration-300 shadow-[0_0_15px_rgba(250,182,10,0.3)] hover:shadow-[0_0_22px_rgba(250,182,10,0.5)]"
