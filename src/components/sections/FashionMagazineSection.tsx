@@ -132,26 +132,26 @@ export default function FashionMagazineSection() {
   const gridArticles = filteredArticles.slice(1);
 
   return (
-    <section id="magazine" className="relative pt-2 sm:pt-3 pb-3 sm:pb-4 bg-[#050505] border-b border-white/10 overflow-hidden">
+    <section id="magazine" className="relative pt-2 sm:pt-3 pb-4 sm:pb-6 bg-white dark:bg-[#050505] text-[#111111] dark:text-white border-b border-black/10 dark:border-white/10 overflow-hidden">
       {/* Background Ambience & Editorial Watermark */}
       <div className="absolute inset-0 pointer-events-none select-none">
-        <div className="editorial-watermark absolute top-6 right-4 text-[16vw] font-serif-display font-light uppercase text-white/[0.02] leading-none pointer-events-none">
+        <div className="editorial-watermark absolute top-6 right-4 text-[16vw] font-serif-display font-light uppercase text-black/[0.03] dark:text-white/[0.02] leading-none pointer-events-none">
           EDITORIAL
         </div>
       </div>
 
       <div className="container-editorial relative z-10">
         {/* Magazine Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-8 sm:mb-10 border-b border-white/10 pb-6 sm:pb-8">
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-8 sm:mb-10 border-b border-black/10 dark:border-white/10 pb-6 sm:pb-8">
           <div>
-            <div className="flex items-center gap-2 text-xs font-syne tracking-micro text-brand-yellow-golden font-bold uppercase mb-3">
+            <div className="flex items-center gap-2 text-xs sm:text-sm font-syne tracking-micro text-[#F15E1C] dark:text-brand-yellow-golden font-bold uppercase mb-3">
               <span>FASHAI UNIVERSAL EDITORIAL</span>
             </div>
-            <h2 className="font-serif-display text-4xl sm:text-6xl lg:text-7xl font-light text-brand-white uppercase leading-none">
-              FASHION <span className="font-serif italic font-normal text-brand-yellow-golden">MAGAZINE</span>
+            <h2 className="font-serif-display text-4xl sm:text-6xl lg:text-7xl font-light text-[#111111] dark:text-brand-white uppercase leading-none">
+              FASHION <span className="font-serif italic font-normal text-[#F15E1C] dark:text-brand-yellow-golden">MAGAZINE</span>
             </h2>
           </div>
-          <p className="font-sans text-xs sm:text-sm text-brand-platinum/90 max-w-md font-light leading-relaxed">
+          <p className="font-sans text-xs sm:text-sm md:text-base text-[#444444] dark:text-brand-platinum/90 max-w-md font-light leading-relaxed">
             Fashion stories, event moments, creative perspectives and visual highlights from the FashAI Universal ecosystem.
           </p>
         </div>
@@ -166,7 +166,7 @@ export default function FashionMagazineSection() {
               <span className="text-[10px] font-syne uppercase text-[#F15E1C] dark:text-brand-yellow-golden tracking-wider block font-bold">
                 CATEGORY FILTER
               </span>
-              <span className="font-syne text-sm font-bold text-[#111111] dark:text-white uppercase tracking-wider">
+              <span className="font-syne text-sm sm:text-base font-bold text-[#111111] dark:text-white uppercase tracking-wider">
                 {FILTER_CATEGORIES.find((c) => c.id === activeFilter)?.label || "ALL"}
               </span>
             </div>
@@ -186,7 +186,7 @@ export default function FashionMagazineSection() {
                     setActiveFilter(cat.id);
                     setIsMobileMenuOpen(false);
                   }}
-                  className={`w-full px-4 py-3 text-left flex items-center justify-between text-xs font-syne uppercase tracking-wider transition-colors ${
+                  className={`w-full px-4 py-3 text-left flex items-center justify-between text-xs sm:text-sm font-syne uppercase tracking-wider transition-colors ${
                     activeFilter === cat.id
                       ? "bg-[#F15E1C]/10 dark:bg-brand-yellow-golden/10 text-[#F15E1C] dark:text-brand-yellow-golden font-bold"
                       : "text-[#333333] dark:text-white/80 hover:text-[#F15E1C] dark:hover:text-brand-yellow-golden hover:bg-black/5 dark:hover:bg-white/5"
@@ -211,10 +211,10 @@ export default function FashionMagazineSection() {
                 <button
                   key={cat.id}
                   onClick={() => setActiveFilter(cat.id)}
-                  className={`px-4 py-2 font-syne text-[11px] tracking-micro font-bold uppercase rounded-full transition-all duration-300 border ${
+                  className={`px-4 py-2 font-syne text-xs tracking-micro font-bold uppercase rounded-full transition-all duration-300 border ${
                     isActive
-                      ? "bg-brand-yellow-golden text-black border-brand-yellow-golden shadow-[0_0_20px_rgba(250,182,10,0.3)]"
-                      : "bg-[#0A0A0A] text-white/80 border-white/10 hover:border-brand-yellow-golden/40 hover:text-white"
+                      ? "bg-[#F15E1C] dark:bg-brand-yellow-golden text-white dark:text-black border-[#F15E1C] dark:border-brand-yellow-golden shadow-md"
+                      : "bg-[#FAF8F5] dark:bg-[#0A0A0A] text-[#111111] dark:text-white/80 border-black/10 dark:border-white/10 hover:border-[#F15E1C] dark:hover:border-brand-yellow-golden/40"
                   }`}
                 >
                   {cat.label}
@@ -243,6 +243,7 @@ export default function FashionMagazineSection() {
                   fill
                   sizes="(max-width: 1024px) 100vw, 60vw"
                   className={`object-cover ${featuredArticle.imagePosition || "object-center"} filter contrast-105 group-hover:scale-[1.03] transition-transform duration-700 ease-out`}
+                  priority
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#0A0908] via-transparent to-transparent opacity-80 lg:opacity-40" />
               </div>
@@ -251,19 +252,19 @@ export default function FashionMagazineSection() {
               <div className="lg:col-span-5 p-6 sm:p-10 flex flex-col justify-between space-y-6">
                 <div>
                   <div className="flex items-center gap-3 mb-4">
-                    <span className="text-[10px] font-syne text-brand-yellow-golden font-bold uppercase tracking-wider">
+                    <span className="text-[10px] sm:text-xs font-syne text-brand-yellow-golden font-bold uppercase tracking-wider">
                       FEATURED ARTICLE · {featuredArticle.category}
                     </span>
-                    <span className="text-[10px] font-syne text-brand-platinum/60 uppercase">
+                    <span className="text-[10px] sm:text-xs font-syne text-white/60 uppercase">
                       {featuredArticle.readTime}
                     </span>
                   </div>
 
-                  <h3 className="font-serif-display text-2xl sm:text-4xl font-light text-white uppercase leading-tight group-hover:text-brand-yellow-golden transition-colors mb-4">
+                  <h3 className="font-serif-display text-2xl sm:text-4xl lg:text-5xl font-light text-white uppercase leading-tight group-hover:text-brand-yellow-golden transition-colors mb-4">
                     {featuredArticle.title}
                   </h3>
 
-                  <p className="font-sans text-xs sm:text-sm text-brand-platinum/80 leading-relaxed font-light mb-6">
+                  <p className="font-sans text-xs sm:text-sm md:text-base text-white/90 leading-relaxed font-light mb-6">
                     {featuredArticle.subtitle}
                   </p>
                 </div>
@@ -271,7 +272,7 @@ export default function FashionMagazineSection() {
                 <div>
                   <button
                     onClick={() => setSelectedArticle(featuredArticle)}
-                    className="inline-flex items-center gap-3 bg-gradient-to-r from-brand-yellow-golden to-amber-500 hover:opacity-95 text-black py-3.5 px-7 rounded-2xl font-syne text-xs font-bold tracking-caps shadow-xl transition-all group/btn"
+                    className="inline-flex items-center gap-3 bg-gradient-to-r from-brand-yellow-golden to-amber-500 hover:opacity-95 text-black py-3 px-6 rounded-2xl font-syne text-xs font-bold tracking-caps shadow-xl transition-all group/btn"
                   >
                     <span>READ STORY</span>
                     <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
@@ -308,23 +309,23 @@ export default function FashionMagazineSection() {
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-[#090807] via-transparent to-transparent opacity-60" />
                       <div className="absolute top-3 left-3">
-                        <span className="text-[9px] font-syne text-brand-yellow-golden font-bold uppercase tracking-wider">
+                        <span className="text-[10px] font-syne text-brand-yellow-golden font-bold uppercase tracking-wider">
                           {article.category}
                         </span>
                       </div>
                     </div>
 
-                    <h4 className="font-serif-display text-xl font-light text-white uppercase leading-snug mb-3 group-hover:text-brand-yellow-golden transition-colors">
+                    <h4 className="font-serif-display text-xl sm:text-2xl font-light text-white uppercase leading-snug mb-3 group-hover:text-brand-yellow-golden transition-colors">
                       {article.title}
                     </h4>
 
-                    <p className="font-sans text-xs text-brand-platinum/70 leading-relaxed font-light mb-6 line-clamp-3">
+                    <p className="font-sans text-xs sm:text-sm text-white/80 leading-relaxed font-light mb-6 line-clamp-3">
                       {article.subtitle}
                     </p>
                   </div>
 
                   <div className="pt-4 border-t border-white/10 flex items-center justify-between">
-                    <span className="text-[10px] font-syne text-brand-platinum/50 uppercase">
+                    <span className="text-[10px] sm:text-xs font-syne text-white/60 uppercase">
                       {article.readTime}
                     </span>
                     <button

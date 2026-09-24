@@ -13,7 +13,7 @@ export default function Chapter2025() {
   ];
 
   return (
-    <section id="lifestyle-2025" className="relative w-full flex flex-col justify-center py-10 sm:py-14 bg-brand-void border-b border-hairline-orange overflow-hidden">
+    <section id="lifestyle-2025" className="relative w-full flex flex-col justify-center pt-4 sm:pt-6 pb-2 sm:pb-3 bg-brand-void border-b border-hairline-orange overflow-hidden">
       {/* Rich Background Atmosphere Layer */}
       <div className="absolute inset-0 pointer-events-none select-none overflow-hidden">
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff03_1px,transparent_1px),linear-gradient(to_bottom,#ffffff03_1px,transparent_1px)] bg-[size:4rem_4rem]" />

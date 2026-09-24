@@ -103,7 +103,7 @@ export default function FashPrismStoriesSection() {
   return (
     <section
       id="fashprism-stories"
-      className="relative py-10 sm:py-14 bg-[#050505] border-b border-white/10 text-brand-white overflow-hidden select-none"
+      className="relative pt-2 sm:pt-3 pb-6 sm:pb-8 bg-[#050505] border-b border-white/10 text-brand-white overflow-hidden select-none"
     >
       <div className="container-editorial relative z-10">
         {/* Section Header */}
