@@ -31,8 +31,8 @@ export default function DesignersSection() {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-80" />
 
-              {/* Editorial Tag overlay */}
-              <div className="absolute bottom-8 left-8 right-8 p-6 bg-black/60 backdrop-blur-md border border-white/10 rounded-2xl">
+              {/* Editorial Tag overlay (Hidden on mobile, visible on sm and larger) */}
+              <div className="hidden sm:block absolute bottom-8 left-8 right-8 p-6 bg-black/60 backdrop-blur-md border border-white/10 rounded-2xl">
                 <span className="text-[10px] font-syne tracking-micro text-brand-yellow-golden font-bold uppercase block mb-1">
                   COUTURE & RUNWAY PRESENTATION
                 </span>

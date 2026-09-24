@@ -44,14 +44,15 @@ export default function WhoWeAreSection() {
 
           {/* Editorial 12-Column Layout */}
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-5 mt-8 items-stretch">
-            {/* Left Vision Card with Image */}
-            <div className="lg:col-span-6 rounded-xl overflow-hidden border border-black/10 dark:border-white/10 relative h-full min-h-[220px] sm:min-h-[240px] bg-[#FAF8F5] dark:bg-[#0A0908] group shadow-sm">
+            {/* Left Vision Card with Image (Smart Cropped & Responsive for Mobile) */}
+            <div className="lg:col-span-6 rounded-xl overflow-hidden border border-black/10 dark:border-white/10 relative w-full aspect-[4/3] xs:aspect-[16/10] sm:aspect-[16/9] lg:aspect-auto lg:h-full min-h-[260px] sm:min-h-[300px] lg:min-h-[340px] bg-[#FAF8F5] dark:bg-[#0A0908] group shadow-sm">
               <Image
                 src="/assets/home/where_fashion_creates_possibilities.png"
                 alt="OUR VISION — Where Fashion Creates Possibilities. DUBAI · UAE · INDIA"
                 fill
+                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 90vw, 50vw"
                 priority
-                className="object-cover object-center opacity-100 dark:opacity-80 dark:brightness-[0.85] transition-all duration-500 group-hover:scale-[1.03]"
+                className="object-cover object-center opacity-100 dark:opacity-85 dark:brightness-[0.9] transition-all duration-500 group-hover:scale-[1.02]"
               />
               <span className="sr-only">
                 OUR VISION: Where Fashion Creates Possibilities. DUBAI · UAE · INDIA

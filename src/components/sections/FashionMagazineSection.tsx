@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
-import { ArrowRight, Sparkles } from "lucide-react";
+import { ArrowRight, ChevronDown } from "lucide-react";
 import MagazineArticleModal, { MagazineArticle } from "@/components/magazine/MagazineArticleModal";
 
 const ARTICLES_DATA: MagazineArticle[] = [
@@ -122,6 +122,7 @@ const FILTER_CATEGORIES = [
 export default function FashionMagazineSection() {
   const [activeFilter, setActiveFilter] = useState<string>("ALL");
   const [selectedArticle, setSelectedArticle] = useState<MagazineArticle | null>(null);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const filteredArticles = activeFilter === "ALL"
     ? ARTICLES_DATA
@@ -155,8 +156,54 @@ export default function FashionMagazineSection() {
           </p>
         </div>
 
-        {/* Compact Filter Navigation */}
-        <div className="mb-8 overflow-x-auto no-scrollbar pb-2">
+        {/* Mobile-Only Dropdown Category Selector */}
+        <div className="sm:hidden mb-6 relative">
+          <button
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            className="w-full px-4 py-3 bg-[#FAF8F5] dark:bg-[#0A0A0A] border border-black/10 dark:border-white/15 rounded-xl flex items-center justify-between text-left shadow-sm"
+          >
+            <div>
+              <span className="text-[10px] font-syne uppercase text-[#F15E1C] dark:text-brand-yellow-golden tracking-wider block font-bold">
+                CATEGORY FILTER
+              </span>
+              <span className="font-syne text-sm font-bold text-[#111111] dark:text-white uppercase tracking-wider">
+                {FILTER_CATEGORIES.find((c) => c.id === activeFilter)?.label || "ALL"}
+              </span>
+            </div>
+            <ChevronDown
+              className={`w-5 h-5 text-black/60 dark:text-white/60 transition-transform duration-200 ${
+                isMobileMenuOpen ? "rotate-180" : ""
+              }`}
+            />
+          </button>
+
+          {isMobileMenuOpen && (
+            <div className="absolute top-full left-0 right-0 mt-1.5 bg-white dark:bg-[#0C0B0A] border border-black/10 dark:border-white/15 rounded-xl shadow-xl z-30 overflow-hidden py-1">
+              {FILTER_CATEGORIES.map((cat) => (
+                <button
+                  key={cat.id}
+                  onClick={() => {
+                    setActiveFilter(cat.id);
+                    setIsMobileMenuOpen(false);
+                  }}
+                  className={`w-full px-4 py-3 text-left flex items-center justify-between text-xs font-syne uppercase tracking-wider transition-colors ${
+                    activeFilter === cat.id
+                      ? "bg-[#F15E1C]/10 dark:bg-brand-yellow-golden/10 text-[#F15E1C] dark:text-brand-yellow-golden font-bold"
+                      : "text-[#333333] dark:text-white/80 hover:text-[#F15E1C] dark:hover:text-brand-yellow-golden hover:bg-black/5 dark:hover:bg-white/5"
+                  }`}
+                >
+                  <span>{cat.label}</span>
+                  {activeFilter === cat.id && (
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#F15E1C] dark:bg-brand-yellow-golden" />
+                  )}
+                </button>
+              ))}
+            </div>
+          )}
+        </div>
+
+        {/* Desktop-Only Category Navigation Bar */}
+        <div className="hidden sm:block mb-8 overflow-x-auto no-scrollbar pb-2">
           <div className="flex items-center gap-2 sm:gap-3 min-w-max">
             {FILTER_CATEGORIES.map((cat) => {
               const isActive = activeFilter === cat.id;
