@@ -10,7 +10,7 @@ export default function DesignersSection() {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   return (
-    <section id="designers" className="relative py-10 sm:py-14 bg-[#040404] border-b border-white/10 overflow-hidden">
+    <section id="designers" className="relative pt-3 sm:pt-4 pb-10 sm:pb-14 bg-[#040404] border-b border-white/10 overflow-hidden">
       <div className="container-editorial relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
           {/* Left Column — Editorial Showcase Image */}

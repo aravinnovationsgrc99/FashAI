@@ -13,8 +13,8 @@ const ARTICLES_DATA: MagazineArticle[] = [
     title: "THE ARCHITECTURE OF MOVEMENT: CATWALK DYNAMICS IN DUBAI",
     subtitle: "An in-depth editorial look at how couture silhouettes and spatial lighting redefine the modern runway experience.",
     readTime: "4 MIN READ",
-    primaryImage: "/assets/master/models/model_01.png",
-    primaryImageAlt: "High fashion model presenting runway couture during FashAI Universal showcase",
+    primaryImage: "/assets/homepage/Moments.png",
+    primaryImageAlt: "High fashion runway dynamics and catwalk movement showcase",
     imagePosition: "object-top",
     content: [
       "Runway presentation is an intricate balance of silhouette architecture, cadence, and ambient lighting. In our Dubai showcases, catwalk choreography is crafted to complement each designer's textural language.",
@@ -22,8 +22,8 @@ const ARTICLES_DATA: MagazineArticle[] = [
       "The FashAI Universal runway ecosystem brings together international models, lighting directors, and movement choreographers to deliver high-impact runway presentations across international fashion hubs."
     ],
     galleryImages: [
-      { src: "/assets/models/model_01.jpeg", alt: "LifeStyle 2025 Runway Presentation Photo 1" },
-      { src: "/assets/models/model_03.jpeg", alt: "LifeStyle 2025 Runway Presentation Photo 3" }
+      { src: "/assets/homepage/Moments.png", alt: "LifeStyle 2025 Runway Presentation Photo 1" },
+      { src: "/assets/homepage/Fashion.png", alt: "LifeStyle 2025 Runway Presentation Photo 2" }
     ]
   },
   {
@@ -32,7 +32,7 @@ const ARTICLES_DATA: MagazineArticle[] = [
     title: "ATELIER PERSPECTIVES & COUTURE INTEGRITY",
     subtitle: "Exploring high-end craftsmanship, material selection, and structural garment construction with participating ateliers.",
     readTime: "5 MIN READ",
-    primaryImage: "/assets/master/designer/designer_01.png",
+    primaryImage: "/assets/homepage/Design.png",
     primaryImageAlt: "Fashion designer in couture atelier inspecting garment construction",
     imagePosition: "object-top",
     content: [
@@ -41,7 +41,7 @@ const ARTICLES_DATA: MagazineArticle[] = [
       "Each atelier presentation reflects months of meticulous craftsmanship, turning raw textiles into emotive fashion statements on the global stage."
     ],
     galleryImages: [
-      { src: "/assets/master/designer/designer_02.jpg", alt: "Couture Atelier Material Selection Detail" }
+      { src: "/assets/homepage/Design.png", alt: "Couture Atelier Material Selection Detail" }
     ]
   },
   {
@@ -50,16 +50,16 @@ const ARTICLES_DATA: MagazineArticle[] = [
     title: "LIFESTYLE 2025: VISUAL RETROSPECTIVE",
     subtitle: "A visual record of the physical garment art, luxury lighting, and delegate gatherings from LifeStyle 2025.",
     readTime: "3 MIN READ",
-    primaryImage: "/assets/models/model_02.jpeg",
+    primaryImage: "/assets/homepage/Talent.png",
     primaryImageAlt: "Editorial model portrait from LifeStyle 2025 showcase",
-    imagePosition: "object-center",
+    imagePosition: "object-top",
     content: [
       "LifeStyle 2025 represented a landmark edition in our visual archive, uniting fashion designers, creative directors, and industry guests under an immersive atmosphere.",
       "The retrospective highlights runway moments, lookbook captures, and spatial design elements that defined the completed edition.",
       "As we prepare for LifeStyle 2026 in Dubai, the visual archive of 2025 serves as a foundational benchmark for event production excellence."
     ],
     galleryImages: [
-      { src: "/assets/models/model_05.jpeg", alt: "LifeStyle 2025 Event Atmosphere" }
+      { src: "/assets/homepage/Talent.png", alt: "LifeStyle 2025 Event Atmosphere" }
     ]
   },
   {
@@ -83,8 +83,8 @@ const ARTICLES_DATA: MagazineArticle[] = [
     title: "BACKSTAGE BEAUTY & EDITORIAL ARTISTRY",
     subtitle: "Precision beauty direction and makeup artistry crafted for high-definition catwalk and camera lighting.",
     readTime: "3 MIN READ",
-    primaryImage: "/assets/master/makeup/makeup_01.png",
-    primaryImageAlt: "Makeup artist applying editorial beauty direction backstage",
+    primaryImage: "/assets/homepage/Fashion.png",
+    primaryImageAlt: "Fashion editorial presentation and runway direction",
     imagePosition: "object-top",
     content: [
       "Backstage makeup artistry requires high-precision application tailored to venue lighting and runway cameras. Beauty directors craft clean, glowing skin textures and graphic accents.",
@@ -98,8 +98,8 @@ const ARTICLES_DATA: MagazineArticle[] = [
     title: "VIP SALONS & GLOBAL PATRON ENGAGEMENT",
     subtitle: "High-profile VIP gatherings, luxury galas, and celebrity appearances across our event formats.",
     readTime: "4 MIN READ",
-    primaryImage: "/assets/master/celebrity/celebrity_01.png",
-    primaryImageAlt: "Public figure and celebrity guest attending fashion gala event",
+    primaryImage: "/assets/homepage/Production.png",
+    primaryImageAlt: "Production and luxury event format showcase",
     imagePosition: "object-top",
     content: [
       "Luxury event experiences thrive on exclusive audience engagement. FashAI Universal galas host celebrities, public figures, and industry leaders.",
@@ -131,7 +131,7 @@ export default function FashionMagazineSection() {
   const gridArticles = filteredArticles.slice(1);
 
   return (
-    <section id="magazine" className="relative py-10 sm:py-14 bg-[#050505] border-b border-white/10 overflow-hidden">
+    <section id="magazine" className="relative pt-2 sm:pt-3 pb-3 sm:pb-4 bg-[#050505] border-b border-white/10 overflow-hidden">
       {/* Background Ambience & Editorial Watermark */}
       <div className="absolute inset-0 pointer-events-none select-none">
         <div className="editorial-watermark absolute top-6 right-4 text-[16vw] font-serif-display font-light uppercase text-white/[0.02] leading-none pointer-events-none">

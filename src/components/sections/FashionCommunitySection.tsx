@@ -28,7 +28,7 @@ export default function FashionCommunitySection() {
   };
 
   return (
-    <section id="community" className="relative pt-3 sm:pt-4 pb-10 sm:pb-14 bg-black border-b border-white/10 overflow-hidden">
+    <section id="community" className="relative pt-3 sm:pt-4 pb-4 sm:pb-6 bg-black border-b border-white/10 overflow-hidden">
       {/* Atmosphere Background Glows */}
       <div className="absolute inset-0 pointer-events-none select-none overflow-hidden">
         <div className="editorial-watermark absolute -bottom-10 right-0 text-[14vw] font-serif-display font-light uppercase tracking-tighter leading-none pointer-events-none select-none">
