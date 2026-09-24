@@ -144,7 +144,6 @@ export default function FashionMagazineSection() {
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-8 sm:mb-10 border-b border-white/10 pb-6 sm:pb-8">
           <div>
             <div className="flex items-center gap-2 text-xs font-syne tracking-micro text-brand-yellow-golden font-bold uppercase mb-3">
-              <Sparkles className="w-3.5 h-3.5" />
               <span>FASHAI UNIVERSAL EDITORIAL</span>
             </div>
             <h2 className="font-serif-display text-4xl sm:text-6xl lg:text-7xl font-light text-brand-white uppercase leading-none">

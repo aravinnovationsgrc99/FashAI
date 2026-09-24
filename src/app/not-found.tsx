@@ -6,7 +6,6 @@ export default function NotFound() {
     <div className="min-h-[80vh] bg-[#050505] text-brand-white flex flex-col items-center justify-center px-4 py-24 text-center select-none">
       <div className="max-w-xl space-y-6">
         <div className="inline-flex items-center gap-2 text-xs font-syne tracking-micro text-brand-yellow-golden font-bold uppercase mb-2">
-          <Sparkles className="w-4 h-4 text-brand-yellow-golden" />
           <span>404 ERROR</span>
         </div>
 

@@ -10,9 +10,6 @@ import DesignersSection from "@/components/sections/DesignersSection";
 import Chapter2026 from "@/components/sections/Chapter2026";
 import Chapter2025 from "@/components/sections/Chapter2025";
 import FashPrismStoriesSection from "@/components/sections/FashPrismStoriesSection";
-import FashPrismIndiaSection from "@/components/sections/FashPrismIndiaSection";
-import FashPrismInternationalSection from "@/components/sections/FashPrismInternationalSection";
-import VipGuestsSection from "@/components/sections/VipGuestsSection";
 import AboutUsSection from "@/components/sections/AboutUsSection";
 import FaqSection from "@/components/sections/FaqSection";
 import ContactSection from "@/components/sections/ContactSection";
@@ -56,15 +53,6 @@ export default function Home() {
 
       {/* 13. FASHPRISM STORIES (3 FEATURE CARDS + MODAL LIGHTBOX) */}
       <FashPrismStoriesSection />
-
-      {/* 14. FASHPRISM INDIA */}
-      <FashPrismIndiaSection />
-
-      {/* 15. FASHPRISM INTERNATIONAL */}
-      <FashPrismInternationalSection />
-
-      {/* 16. VIP GUESTS */}
-      <VipGuestsSection />
 
       {/* 17. ABOUT US */}
       <AboutUsSection />

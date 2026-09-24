@@ -132,7 +132,6 @@ export default function WithWhomWeWorkSection() {
         <div className="max-w-4xl mb-10 sm:mb-14">
           {/* Refined Eyebrow */}
           <div className="flex items-center gap-2 text-xs font-syne tracking-micro text-brand-yellow-golden font-bold uppercase mb-3">
-            <Sparkles className="w-3.5 h-3.5 text-brand-yellow-golden" />
             <span>EXPLORE THE CONNECTIONS</span>
           </div>
 
