@@ -1,7 +1,5 @@
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
-import Header from "@/components/layout/Header";
-import Footer from "@/components/layout/Footer";
 import RoleApplicationForm, { RoleSlug } from "@/components/forms/RoleApplicationForm";
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
@@ -62,9 +60,7 @@ export default async function DedicatedRolePage({ params }: RolePageProps) {
   }
 
   return (
-    <main className="min-h-screen bg-[#050505] text-brand-white pt-24 pb-24">
-      <Header />
-
+    <div className="min-h-screen bg-[#050505] text-brand-white pt-24 pb-24">
       <div className="container-editorial relative z-10">
         <div className="mb-6">
           <Link
@@ -78,8 +74,7 @@ export default async function DedicatedRolePage({ params }: RolePageProps) {
         {/* Single-Role Dedicated Form Engine */}
         <RoleApplicationForm roleSlug={matchedSlug} isModal={false} />
       </div>
-
-      <Footer />
-    </main>
+    </div>
   );
 }
+

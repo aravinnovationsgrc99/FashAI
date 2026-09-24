@@ -57,7 +57,7 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="#upcoming" className="hover:text-brand-yellow-golden transition-colors">
+                <Link href="/upcoming" className="hover:text-brand-yellow-golden transition-colors">
                   Upcoming
                 </Link>
               </li>
@@ -67,7 +67,7 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="#contact" className="hover:text-brand-yellow-golden transition-colors">
+                <Link href="/contact" className="hover:text-brand-yellow-golden transition-colors">
                   Contact
                 </Link>
               </li>
@@ -91,32 +91,32 @@ export default function Footer() {
             </h4>
             <ul className="space-y-2.5 font-syne text-xs tracking-wider text-brand-platinum/90">
               <li>
-                <Link href="#events" className="hover:text-brand-orange transition-colors">
+                <Link href="/events" className="hover:text-brand-orange transition-colors">
                   Fashion Events
                 </Link>
               </li>
               <li>
-                <Link href="#events" className="hover:text-brand-orange transition-colors">
+                <Link href="/event-formats" className="hover:text-brand-orange transition-colors">
                   Lifestyle Events
                 </Link>
               </li>
               <li>
-                <Link href="#events" className="hover:text-brand-orange transition-colors">
+                <Link href="/event-formats" className="hover:text-brand-orange transition-colors">
                   Product Events
                 </Link>
               </li>
               <li>
-                <Link href="#events" className="hover:text-brand-orange transition-colors">
+                <Link href="/event-formats" className="hover:text-brand-orange transition-colors">
                   Corporate Events
                 </Link>
               </li>
               <li>
-                <Link href="#events" className="hover:text-brand-orange transition-colors">
+                <Link href="/event-formats" className="hover:text-brand-orange transition-colors">
                   IT Events
                 </Link>
               </li>
               <li>
-                <Link href="#upcoming" className="hover:text-brand-yellow-golden transition-colors font-bold">
+                <Link href="/upcoming" className="hover:text-brand-yellow-golden transition-colors font-bold">
                   LifeStyle 2026 · Dubai
                 </Link>
               </li>
@@ -184,22 +184,22 @@ export default function Footer() {
             </h4>
             <ul className="space-y-2.5 font-syne text-xs tracking-wider text-brand-platinum/90 mb-6">
               <li>
-                <Link href="#magazine" className="hover:text-brand-orange transition-colors font-bold text-brand-yellow-golden">
+                <Link href="/fashion-magazine" className="hover:text-brand-orange transition-colors font-bold text-brand-yellow-golden">
                   Fashion Magazine
                 </Link>
               </li>
               <li>
-                <Link href="#about" className="hover:text-brand-orange transition-colors">
+                <Link href="/about" className="hover:text-brand-orange transition-colors">
                   About Us
                 </Link>
               </li>
               <li>
-                <Link href="#faq" className="hover:text-brand-orange transition-colors">
+                <Link href="/#faq" className="hover:text-brand-orange transition-colors">
                   FAQ
                 </Link>
               </li>
               <li>
-                <Link href="#nominations" className="hover:text-brand-orange transition-colors">
+                <Link href="/apply" className="hover:text-brand-orange transition-colors">
                   Open Nominations
                 </Link>
               </li>
@@ -236,7 +236,7 @@ export default function Footer() {
           </div>
           <div className="flex flex-wrap items-center gap-3">
             <Link
-              href="#contact"
+              href="/contact"
               className="bg-gradient-to-r from-brand-orange to-brand-yellow-golden px-6 py-2.5 text-[11px] font-syne tracking-caps font-bold text-black rounded-xl hover:opacity-90 transition-opacity"
             >
               REGISTER / ENQUIRE →

@@ -1,29 +1,30 @@
 "use client";
 
-import { motion, AnimatePresence } from "framer-motion";
+import { useEffect } from "react";
+import { motion } from "framer-motion";
 import { usePathname } from "next/navigation";
 
 export default function PageTransition({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
 
-  return (
-    <AnimatePresence mode="wait">
-      <motion.div key={pathname} className="min-h-screen w-full">
-        {/* Subtle Black + Gold Overlay Reveal on Route Transition */}
-        <motion.div
-          initial={{ opacity: 1 }}
-          animate={{ opacity: 0 }}
-          exit={{ opacity: 1 }}
-          transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
-          style={{ willChange: "opacity" }}
-          className="fixed inset-0 z-[300] pointer-events-none bg-brand-void flex flex-col justify-between p-8"
-        >
-          <div className="w-full h-px bg-gradient-to-r from-transparent via-brand-yellow-golden to-transparent opacity-60" />
-          <div className="w-full h-px bg-gradient-to-r from-transparent via-brand-yellow-golden to-transparent opacity-60" />
-        </motion.div>
+  // Reset scroll position to top on every route change
+  useEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: "instant" as ScrollBehavior });
+    
+    // Ensure body scroll is unlocked on navigation
+    document.body.style.overflow = "";
+    document.documentElement.style.overflow = "";
+  }, [pathname]);
 
-        {children}
-      </motion.div>
-    </AnimatePresence>
+  return (
+    <motion.div
+      key={pathname}
+      initial={{ opacity: 0, y: 6 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.25, ease: [0.22, 1, 0.36, 1] }}
+      className="min-h-screen w-full"
+    >
+      {children}
+    </motion.div>
   );
 }
