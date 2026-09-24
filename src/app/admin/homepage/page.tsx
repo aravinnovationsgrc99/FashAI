@@ -134,7 +134,7 @@ export default function HomepageBuilderPage() {
               <div className="min-w-0 space-y-1">
                 <div className="flex items-center gap-2">
                   <span className="font-syne text-xs font-bold uppercase text-white tracking-wider">
-                    {sec.name || sec.title}
+                    {sec.title}
                   </span>
                   <span
                     className={`text-[9px] font-mono px-2 py-0.5 rounded-full ${
@@ -206,7 +206,7 @@ export default function HomepageBuilderPage() {
                   VISUAL EDITOR
                 </span>
                 <h3 className="font-serif-display text-xl text-white uppercase">
-                  EDIT {editingSection.name || editingSection.title}
+                  EDIT {editingSection.title}
                 </h3>
               </div>
               <button

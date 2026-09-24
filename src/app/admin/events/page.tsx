@@ -11,7 +11,6 @@ import {
   ChevronDown,
   ChevronUp,
   Plus,
-  Trash2,
 } from "lucide-react";
 import { useSiteConfig } from "@/context/SiteConfigContext";
 import { EventConfig } from "@/lib/admin/config-schema";
@@ -22,32 +21,42 @@ export default function EventManagerPage() {
   const [activeTab, setActiveTab] = useState<"OVERVIEW" | "MEDIA" | "DETAILS" | "CTA" | "VISIBILITY">("OVERVIEW");
   const [advancedOpen, setAdvancedOpen] = useState(false);
 
-  const events = config.events || [
+  const events: EventConfig[] = config.events || [
     {
       id: "lifestyle-2026",
       title: "LIFESTYLE 2026 SHOWCASE",
-      category: "LifeStyle",
-      dateText: "October 2026 (TBA)",
+      category: "LIFESTYLE",
+      date: "October 2026 (TBA)",
       location: "Dubai, UAE",
       venue: "Grand Fashion Pavilion",
-      status: "upcoming" as const,
+      status: "upcoming",
+      registrationStatus: "OPEN",
+      sponsorshipStatus: "AVAILABLE",
+      dressCode: "Haute Couture",
       description: "Premier AI fashion editorial showcase, model runways, and designer competitions.",
       coverImage: "/assets/media/lifestyle_cover.jpg",
+      galleryImages: [],
       ctaText: "REGISTER AS DELEGATE",
-      ctaLink: "#register",
+      ctaUrl: "#register",
+      featured: true,
     },
     {
       id: "runway-2026",
       title: "GLOBAL RUNWAY 2026",
-      category: "Runway",
-      dateText: "December 2026 (TBA)",
+      category: "RUNWAY",
+      date: "December 2026 (TBA)",
       location: "Milan / Paris",
       venue: "Haute Couture Arena",
-      status: "active" as const,
+      status: "active",
+      registrationStatus: "OPEN",
+      sponsorshipStatus: "AVAILABLE",
+      dressCode: "Black Tie Luxury",
       description: "Live runway presentations featuring generative AI couture collection debuts.",
       coverImage: "/assets/media/runway_cover.jpg",
+      galleryImages: [],
       ctaText: "EXPLORE RUNWAY",
-      ctaLink: "#runway",
+      ctaUrl: "#runway",
+      featured: true,
     },
   ];
 
@@ -65,15 +74,20 @@ export default function EventManagerPage() {
     const newEv: EventConfig = {
       id: `event-${Date.now()}`,
       title: "NEW FASHION SHOWCASE 2026",
-      category: "General",
-      dateText: "TBA 2026",
+      category: "LIFESTYLE",
+      date: "TBA 2026",
       location: "Dubai, UAE",
       venue: "Main Stage",
       status: "upcoming",
+      registrationStatus: "OPEN",
+      sponsorshipStatus: "AVAILABLE",
+      dressCode: "Formal",
       description: "Description for upcoming fashion event showcase.",
       coverImage: "/assets/media/placeholder_event.jpg",
+      galleryImages: [],
       ctaText: "REGISTER NOW",
-      ctaLink: "#register",
+      ctaUrl: "#register",
+      featured: false,
     };
     updateLocalDraftConfig((prev) => ({
       ...prev,
@@ -108,7 +122,7 @@ export default function EventManagerPage() {
         </button>
       </div>
 
-      {/* VISUAL EVENT CARDS (Section 12) */}
+      {/* VISUAL EVENT CARDS */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {events.map((ev) => (
           <div
@@ -153,7 +167,7 @@ export default function EventManagerPage() {
                 </span>
                 <span className="flex items-center gap-1">
                   <Clock className="w-3.5 h-3.5 text-[#FAB60A]" />
-                  {ev.dateText}
+                  {ev.date}
                 </span>
               </div>
             </div>
@@ -176,7 +190,7 @@ export default function EventManagerPage() {
         ))}
       </div>
 
-      {/* EVENT EDITOR MODAL WITH TABBED LAYOUT (Section 13) */}
+      {/* EVENT EDITOR MODAL */}
       {editingEvent && (
         <div className="fixed inset-0 z-[250] bg-black/80 backdrop-blur-md flex items-center justify-center p-4">
           <div className="bg-[#121110] border border-white/20 rounded-3xl max-w-2xl w-full p-6 space-y-6 shadow-2xl max-h-[90vh] overflow-y-auto animate-in zoom-in-95 duration-150">
@@ -198,7 +212,7 @@ export default function EventManagerPage() {
               </button>
             </div>
 
-            {/* TABBED NAVIGATION (Section 13) */}
+            {/* TABBED NAVIGATION */}
             <div className="flex items-center gap-2 border-b border-white/10 pb-3 overflow-x-auto">
               {(["OVERVIEW", "MEDIA", "DETAILS", "CTA", "VISIBILITY"] as const).map((tab) => (
                 <button
@@ -234,14 +248,19 @@ export default function EventManagerPage() {
 
                   <div className="space-y-1.5">
                     <label className="text-xs font-syne text-white/70">Category</label>
-                    <input
-                      type="text"
+                    <select
                       value={editingEvent.category}
                       onChange={(e) =>
-                        setEditingEvent({ ...editingEvent, category: e.target.value })
+                        setEditingEvent({
+                          ...editingEvent,
+                          category: e.target.value as "LIFESTYLE" | "RUNWAY",
+                        })
                       }
-                      className="w-full bg-[#1A1918] border border-white/10 rounded-xl px-4 py-2 text-xs text-white focus:outline-none focus:border-[#FAB60A]"
-                    />
+                      className="w-full bg-[#1A1918] border border-white/10 rounded-xl px-4 py-2 text-xs text-white outline-none"
+                    >
+                      <option value="LIFESTYLE">LIFESTYLE</option>
+                      <option value="RUNWAY">RUNWAY</option>
+                    </select>
                   </div>
 
                   <div className="space-y-1.5">
@@ -258,20 +277,14 @@ export default function EventManagerPage() {
 
                   <div className="space-y-1.5">
                     <label className="text-xs font-syne text-white/70">Event Status</label>
-                    <select
+                    <input
+                      type="text"
                       value={editingEvent.status}
                       onChange={(e) =>
-                        setEditingEvent({
-                          ...editingEvent,
-                          status: e.target.value as "upcoming" | "active" | "past",
-                        })
+                        setEditingEvent({ ...editingEvent, status: e.target.value })
                       }
                       className="w-full bg-[#1A1918] border border-white/10 rounded-xl px-4 py-2 text-xs text-white outline-none"
-                    >
-                      <option value="upcoming">UPCOMING</option>
-                      <option value="active">ACTIVE</option>
-                      <option value="past">PAST</option>
-                    </select>
+                    />
                   </div>
                 </div>
               )}
@@ -312,9 +325,9 @@ export default function EventManagerPage() {
                       <label className="text-xs font-syne text-white/70">Date Text</label>
                       <input
                         type="text"
-                        value={editingEvent.dateText}
+                        value={editingEvent.date}
                         onChange={(e) =>
-                          setEditingEvent({ ...editingEvent, dateText: e.target.value })
+                          setEditingEvent({ ...editingEvent, date: e.target.value })
                         }
                         className="w-full bg-[#1A1918] border border-white/10 rounded-xl px-4 py-2 text-xs text-white focus:outline-none focus:border-[#FAB60A]"
                       />
@@ -366,9 +379,9 @@ export default function EventManagerPage() {
                     <label className="text-xs font-syne text-white/70">CTA Action Link / Modal Trigger</label>
                     <input
                       type="text"
-                      value={editingEvent.ctaLink || ""}
+                      value={editingEvent.ctaUrl || ""}
                       onChange={(e) =>
-                        setEditingEvent({ ...editingEvent, ctaLink: e.target.value })
+                        setEditingEvent({ ...editingEvent, ctaUrl: e.target.value })
                       }
                       className="w-full bg-[#1A1918] border border-white/10 rounded-xl px-4 py-2 text-xs text-white focus:outline-none focus:border-[#FAB60A]"
                     />
@@ -383,12 +396,23 @@ export default function EventManagerPage() {
                     <div className="font-syne text-xs font-bold text-[#FAB60A] uppercase">
                       VISIBILITY CONTROLS
                     </div>
-                    <p className="text-xs text-white/70 font-sans">
-                      Toggle whether this event appears on the published event carousel and homepage banner.
-                    </p>
+                    <div className="flex items-center gap-3">
+                      <input
+                        type="checkbox"
+                        id="ev-featured"
+                        checked={editingEvent.featured}
+                        onChange={(e) =>
+                          setEditingEvent({ ...editingEvent, featured: e.target.checked })
+                        }
+                        className="w-4 h-4 accent-[#FAB60A] rounded"
+                      />
+                      <label htmlFor="ev-featured" className="text-xs text-white/80 font-syne">
+                        Feature on main event carousel
+                      </label>
+                    </div>
                   </div>
 
-                  {/* ADVANCED SETTINGS COLLAPSED (Section 13 & Section 29) */}
+                  {/* ADVANCED SETTINGS COLLAPSED */}
                   <div className="border border-white/10 rounded-2xl overflow-hidden">
                     <button
                       onClick={() => setAdvancedOpen(!advancedOpen)}
@@ -401,10 +425,13 @@ export default function EventManagerPage() {
                     {advancedOpen && (
                       <div className="p-4 bg-[#0A0A0A] space-y-3 text-xs">
                         <div className="space-y-1">
-                          <label className="text-white/60">SEO Meta Keywords</label>
+                          <label className="text-white/60">Dress Code</label>
                           <input
                             type="text"
-                            placeholder="fashion, lifestyle, dubai 2026"
+                            value={editingEvent.dressCode || ""}
+                            onChange={(e) =>
+                              setEditingEvent({ ...editingEvent, dressCode: e.target.value })
+                            }
                             className="w-full bg-[#141312] border border-white/10 rounded-xl px-3 py-2 text-white"
                           />
                         </div>

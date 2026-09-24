@@ -380,6 +380,7 @@ export async function POST(request: Request) {
         phone: whatsapp,
         city: cityCountry,
         categoryDetails,
+        status: "NEW",
       });
     } catch (err) {
       console.warn("Could not persist talent application to storage:", err);

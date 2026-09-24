@@ -313,7 +313,7 @@ export default function AdminDashboardPage() {
                         <span className="px-1.5 py-0.5 rounded bg-white/10 text-[9px] font-mono text-[#FAB60A] uppercase">
                           {log.action}
                         </span>
-                        <span>by {log.user || "Admin"}</span>
+                        <span>by {log.actor || "Admin"}</span>
                       </div>
                     </div>
                     <span className="text-[10px] font-mono text-white/40 flex-shrink-0 flex items-center gap-1">

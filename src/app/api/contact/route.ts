@@ -131,6 +131,7 @@ export async function POST(request: Request) {
         enquiryType,
         eventInterest,
         message,
+        status: "NEW",
       });
     } catch (err) {
       console.warn("Could not persist contact submission to storage:", err);
