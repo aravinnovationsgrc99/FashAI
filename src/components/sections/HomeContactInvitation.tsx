@@ -6,10 +6,7 @@ import Image from "next/image";
 
 export default function HomeContactInvitation() {
   return (
-    <section id="contact" className="relative min-h-screen w-full flex flex-col justify-center py-24 px-6 sm:px-12 bg-gradient-to-b from-brand-void via-[#0C0A09] to-brand-atelier border-b border-hairline-orange overflow-hidden">
-      {/* Atmosphere Glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-[#F15E1C]/5 blur-3xl pointer-events-none rounded-full" />
-
+    <section id="contact" className="relative w-full flex flex-col justify-center py-10 sm:py-14 px-6 sm:px-12 bg-brand-void border-b border-hairline-orange overflow-hidden">
       <div className="mx-auto max-w-7xl text-center flex flex-col items-center w-full relative z-10">
         <span className="text-xs font-syne tracking-micro text-brand-orange font-bold block mb-4 uppercase">
           04 / CONNECTION

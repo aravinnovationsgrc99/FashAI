@@ -15,13 +15,8 @@ export default function VipGuestsSection() {
   return (
     <section
       id="vip-guests"
-      className="relative py-14 sm:py-20 bg-[#050505] border-b border-white/10 text-brand-white overflow-hidden select-none"
+      className="relative py-10 sm:py-14 bg-[#050505] border-b border-white/10 text-brand-white overflow-hidden select-none"
     >
-      {/* Soft Ambient Radial Lighting */}
-      <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute bottom-10 left-1/2 -translate-x-1/2 w-[600px] h-[400px] bg-brand-yellow-golden/5 blur-[250px] rounded-full" />
-      </div>
-
       <div className="container-editorial relative z-10">
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-8 sm:mb-12 border-b border-white/10 pb-6 sm:pb-8">

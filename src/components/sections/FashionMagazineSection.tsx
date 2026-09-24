@@ -134,7 +134,6 @@ export default function FashionMagazineSection() {
     <section id="magazine" className="relative py-10 sm:py-14 bg-[#050505] border-b border-white/10 overflow-hidden">
       {/* Background Ambience & Editorial Watermark */}
       <div className="absolute inset-0 pointer-events-none select-none">
-        <div className="absolute top-1/4 left-1/3 w-[550px] h-[550px] bg-brand-yellow-golden/5 blur-[190px] rounded-full" />
         <div className="editorial-watermark absolute top-6 right-4 text-[16vw] font-serif-display font-light uppercase text-white/[0.02] leading-none pointer-events-none">
           EDITORIAL
         </div>

@@ -31,9 +31,6 @@ export default function FashionCommunitySection() {
     <section id="community" className="relative py-10 sm:py-14 bg-black border-b border-white/10 overflow-hidden">
       {/* Atmosphere Background Glows */}
       <div className="absolute inset-0 pointer-events-none select-none overflow-hidden">
-        <div className="absolute top-1/3 right-10 w-[550px] h-[550px] bg-brand-orange/10 blur-[170px] rounded-full" />
-        <div className="absolute bottom-1/3 left-10 w-[500px] h-[500px] bg-brand-green/10 blur-[180px] rounded-full" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] bg-brand-yellow-golden/8 blur-[160px] rounded-full" />
         <div className="editorial-watermark absolute -bottom-10 right-0 text-[14vw] font-serif-display font-light uppercase tracking-tighter leading-none pointer-events-none select-none">
           TALENT
         </div>

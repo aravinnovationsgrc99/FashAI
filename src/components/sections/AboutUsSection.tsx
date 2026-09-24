@@ -7,11 +7,6 @@ import { Sparkles, Globe, ShieldCheck, Compass } from "lucide-react";
 export default function AboutUsSection() {
   return (
     <section id="about" className="relative py-10 sm:py-14 bg-black border-b border-white/10 overflow-hidden">
-      {/* Glow */}
-      <div className="absolute inset-0 pointer-events-none select-none">
-        <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-brand-orange/5 blur-[180px] rounded-full" />
-      </div>
-
       <div className="container-editorial relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
           {/* Left Column — Text */}

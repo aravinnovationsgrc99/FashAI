@@ -105,11 +105,6 @@ export default function ApplicationSelectionPage({
 
   return (
     <section className="relative py-10 sm:py-14 bg-[#050505] min-h-[85vh] text-brand-white">
-      {/* Background Soft Ambience */}
-      <div className="absolute inset-0 pointer-events-none select-none">
-        <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[600px] h-[400px] bg-brand-yellow-golden/5 blur-[220px] rounded-full" />
-      </div>
-
       <div className="container-editorial relative z-10">
         {/* Main Section Header */}
         <div className="max-w-3xl mb-8 sm:mb-10">

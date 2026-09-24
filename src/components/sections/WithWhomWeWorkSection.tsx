@@ -127,11 +127,6 @@ export default function WithWhomWeWorkSection() {
       id="constellation"
       className="relative py-10 sm:py-14 bg-[#050505] border-b border-white/10 text-brand-white overflow-hidden selection:bg-brand-yellow-golden selection:text-black"
     >
-      {/* Editorial Ambient Background Glow */}
-      <div className="absolute inset-0 pointer-events-none select-none">
-        <div className="absolute top-1/2 left-1/4 -translate-y-1/2 w-[650px] h-[650px] bg-brand-yellow-golden/5 blur-[240px] rounded-full" />
-      </div>
-
       <div className="container-editorial relative z-10">
         {/* 1. NEW EDITORIAL SECTION HEADER */}
         <div className="max-w-4xl mb-10 sm:mb-14">

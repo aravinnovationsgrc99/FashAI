@@ -122,10 +122,6 @@ export default function Preloader() {
           aria-valuemax={100}
           aria-label="FashAI Universal Loading Experience"
         >
-          {/* Subtle Ambient Radial Glow */}
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-brand-yellow-golden/10 blur-[160px] pointer-events-none rounded-full" />
-          <div className="absolute top-1/4 right-1/4 w-[400px] h-[400px] bg-brand-orange/8 blur-[150px] pointer-events-none rounded-full" />
-
           {/* Top Tag Bar */}
           <div className="relative z-10 flex w-full justify-between items-center text-[10px] sm:text-xs font-syne tracking-micro text-brand-platinum/70 border-b border-white/10 pb-4 max-w-7xl">
             <span className="text-brand-yellow-golden font-bold uppercase tracking-widest">

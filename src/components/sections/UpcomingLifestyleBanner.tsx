@@ -6,13 +6,7 @@ import { ArrowUpRight, Sparkles } from "lucide-react";
 
 export default function UpcomingLifestyleBanner() {
   return (
-    <section className="relative py-20 sm:py-28 bg-brand-void border-b border-white/10 overflow-hidden">
-      {/* Minimal Atmosphere Radial Glows */}
-      <div className="absolute top-1/2 left-1/4 -translate-y-1/2 w-[550px] h-[550px] bg-brand-orange/10 blur-[170px] pointer-events-none rounded-full" />
-      <div className="absolute top-1/3 right-1/4 w-[500px] h-[500px] bg-brand-green/8 blur-[180px] pointer-events-none rounded-full" />
-      <div className="absolute bottom-1/4 left-1/2 -translate-x-1/2 w-[400px] h-[400px] bg-brand-yellow-golden/5 blur-[160px] pointer-events-none rounded-full" />
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff03_1px,transparent_1px),linear-gradient(to_bottom,#ffffff03_1px,transparent_1px)] bg-[size:4rem_4rem] opacity-30 pointer-events-none" />
-
+    <section className="relative py-10 sm:py-14 bg-brand-void border-b border-white/10 overflow-hidden">
       <div className="container-editorial relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 30 }}

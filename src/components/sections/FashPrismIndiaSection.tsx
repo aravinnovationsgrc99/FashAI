@@ -16,13 +16,8 @@ export default function FashPrismIndiaSection() {
   return (
     <section
       id="fashprism-india"
-      className="relative py-14 sm:py-20 bg-[#050505] border-b border-white/10 text-brand-white overflow-hidden select-none"
+      className="relative py-10 sm:py-14 bg-[#050505] border-b border-white/10 text-brand-white overflow-hidden select-none"
     >
-      {/* Background Soft Gold Ambient Glow */}
-      <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-1/3 left-10 w-96 h-96 bg-brand-yellow-golden/5 blur-[200px] rounded-full" />
-      </div>
-
       <div className="container-editorial relative z-10">
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-8 sm:mb-12 border-b border-white/10 pb-6 sm:pb-8">

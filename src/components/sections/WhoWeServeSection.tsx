@@ -77,11 +77,6 @@ export default function WhoWeServeSection() {
 
   return (
     <section id="people-creativity" className="relative py-10 sm:py-14 bg-[#050505] border-b border-white/10 text-brand-white overflow-hidden">
-      {/* Editorial Atmospheric Background Glow */}
-      <div className="absolute inset-0 pointer-events-none select-none">
-        <div className="absolute top-1/4 left-1/3 w-[600px] h-[600px] bg-brand-yellow-golden/5 blur-[220px] rounded-full" />
-      </div>
-
       <div className="container-editorial relative z-10">
         {/* Section Editorial Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-8 sm:mb-10 border-b border-white/10 pb-6 sm:pb-8">

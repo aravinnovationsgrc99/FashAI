@@ -4,10 +4,7 @@ import { motion } from "framer-motion";
 
 export default function EditorialIntro() {
   return (
-    <section className="relative min-h-[85vh] w-full flex flex-col justify-center py-24 bg-gradient-to-b from-brand-void via-[#0E0C0B] to-brand-atelier border-t border-b border-hairline-orange overflow-hidden">
-      {/* Soft Peach Atmosphere Accent Surface */}
-      <div className="absolute top-0 right-0 w-96 h-96 bg-[#F7D7B0]/5 blur-3xl pointer-events-none rounded-full" />
-
+    <section className="relative w-full flex flex-col justify-center py-10 sm:py-14 bg-brand-void border-t border-b border-hairline-orange overflow-hidden">
       <div className="container-editorial relative z-10">
         {/* Eyebrow Label */}
         <div className="flex items-center gap-4 mb-12">

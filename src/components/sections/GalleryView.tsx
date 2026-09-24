@@ -43,10 +43,6 @@ export default function GalleryView() {
 
   return (
     <section className="px-4 sm:px-6 lg:px-10 py-8 sm:py-12 w-[92vw] max-w-[1600px] mx-auto relative bg-brand-void text-brand-white select-none">
-      {/* Ambient Radial Glows */}
-      <div className="absolute top-20 right-10 w-96 h-96 bg-brand-orange/5 blur-3xl pointer-events-none rounded-full" />
-      <div className="absolute bottom-40 left-10 w-96 h-96 bg-brand-yellow-golden/5 blur-3xl pointer-events-none rounded-full" />
-
       {/* 1. EDITORIAL HEADER */}
       <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-8 mb-10 border-b border-white/10 pb-8">
         <div className="max-w-3xl space-y-3">

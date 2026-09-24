@@ -24,14 +24,8 @@ export default function Transition2025to2026() {
   return (
     <section
       ref={containerRef}
-      className="relative min-h-[110vh] w-full flex flex-col items-center justify-center py-28 bg-gradient-to-b from-brand-void via-[#0C0B0A] to-brand-void overflow-hidden border-b border-hairline-orange"
+      className="relative w-full flex flex-col items-center justify-center py-14 sm:py-20 bg-brand-void overflow-hidden border-b border-hairline-orange"
     >
-      {/* Light Refraction Glow Background Shift */}
-      <motion.div
-        style={{ opacity: glowOpacity }}
-        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[650px] h-[650px] bg-gradient-to-tr from-[#F15E1C]/10 via-[#FAB60A]/15 to-[#2E936F]/10 blur-[140px] pointer-events-none rounded-full"
-      />
-
       <div className="container-editorial relative z-10 text-center max-w-5xl mx-auto flex flex-col items-center justify-center">
         {/* Transition Chapter Tag */}
         <div className="flex items-center gap-2 mb-8">

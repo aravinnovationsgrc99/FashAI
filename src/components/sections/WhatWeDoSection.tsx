@@ -8,11 +8,6 @@ import { ArrowRight, Layers, Sparkles } from "lucide-react";
 export default function WhatWeDoSection() {
   return (
     <section id="what-we-do" className="relative py-10 sm:py-14 bg-[#050505] border-b border-white/10 text-brand-white overflow-hidden">
-      {/* Atmosphere Glow */}
-      <div className="absolute inset-0 pointer-events-none select-none">
-        <div className="absolute top-1/3 left-1/4 w-[500px] h-[500px] bg-brand-yellow-golden/5 blur-[190px] rounded-full" />
-      </div>
-
       <div className="container-editorial relative z-10">
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-8 sm:mb-10 border-b border-white/10 pb-6 sm:pb-8">

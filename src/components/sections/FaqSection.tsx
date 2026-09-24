@@ -37,11 +37,6 @@ export default function FaqSection() {
 
   return (
     <section id="faq" className="relative py-8 sm:py-12 bg-[#050505] border-b border-white/10 overflow-hidden">
-      {/* Glow */}
-      <div className="absolute inset-0 pointer-events-none select-none">
-        <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[500px] h-[500px] bg-brand-yellow-golden/5 blur-[180px] rounded-full" />
-      </div>
-
       <div className="container-editorial relative z-10 max-w-4xl mx-auto">
         {/* Section Header */}
         <div className="text-center mb-8 sm:mb-10">

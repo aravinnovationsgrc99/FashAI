@@ -9,8 +9,6 @@ export default function InstagramSection() {
     <section className="relative py-8 sm:py-12 bg-brand-void border-b border-hairline-orange overflow-hidden">
       {/* Rich Background Atmosphere Layer */}
       <div className="absolute inset-0 pointer-events-none select-none overflow-hidden">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[400px] bg-brand-orange/15 blur-[160px] rounded-full" />
-        <div className="absolute bottom-0 right-1/4 w-[400px] h-[400px] bg-brand-green/10 blur-[150px] rounded-full" />
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff03_1px,transparent_1px),linear-gradient(to_bottom,#ffffff03_1px,transparent_1px)] bg-[size:4rem_4rem]" />
         <div className="editorial-watermark absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-[14vw] font-serif-display font-light uppercase tracking-tighter leading-none whitespace-nowrap pointer-events-none select-none">
           INSTAGRAM
