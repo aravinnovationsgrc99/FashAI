@@ -1,75 +1,178 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Sparkles, Globe, Eye, Award } from "lucide-react";
+import Image from "next/image";
+import Link from "next/link";
+import { Globe, Users, Eye, Award, Compass, ArrowRight } from "lucide-react";
 
 export default function WhoWeAreSection() {
   return (
-    <section id="who-we-are" className="relative py-6 sm:py-8 bg-white dark:bg-[#050505] border-b border-black/10 dark:border-white/10 overflow-hidden text-[#111111] dark:text-brand-white">
-      <div className="container-editorial relative z-10 max-w-5xl mx-auto">
+    <section id="who-we-are" className="relative py-12 sm:py-16 md:py-20 bg-white dark:bg-[#050505] border-b border-black/10 dark:border-white/10 overflow-hidden text-[#111111] dark:text-brand-white">
+      <div className="container-editorial relative z-10 max-w-6xl mx-auto px-4 sm:px-6">
         <motion.div
-          initial={{ opacity: 0, y: 16 }}
+          initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="space-y-4 sm:space-y-6 text-center"
+          transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+          className="space-y-8 sm:space-y-10"
         >
-          {/* Clean Editorial Kicker */}
-          <div className="flex items-center justify-center gap-2 text-[11px] font-syne tracking-micro text-[#F15E1C] dark:text-brand-orange font-bold uppercase">
-            <Sparkles className="w-3.5 h-3.5 text-[#F15E1C] dark:text-brand-orange" />
-            <span>WHO WE ARE</span>
+          {/* Main Title Block */}
+          <div className="text-center max-w-3xl mx-auto">
+            {/* Top Location Eyebrow */}
+            <div className="flex items-center justify-center gap-3 w-full max-w-xs sm:max-w-sm mx-auto mb-3">
+              <span className="h-[1px] flex-1 bg-gradient-to-r from-transparent via-[#FAB60A]/70 to-[#FAB60A]" />
+              <span className="text-[10px] sm:text-xs font-syne tracking-[0.25em] text-[#FAB60A] font-bold uppercase whitespace-nowrap">
+                DUBAI · UAE · INDIA
+              </span>
+              <span className="h-[1px] flex-1 bg-gradient-to-l from-transparent via-[#FAB60A]/70 to-[#FAB60A]" />
+            </div>
+
+            {/* Main Editorial Heading */}
+            <h2 className="font-serif-display text-4xl sm:text-6xl md:text-7xl font-light text-[#111111] dark:text-brand-white uppercase leading-[0.92] tracking-tight">
+              A GLOBAL FASHION <br />
+              <span className="font-serif italic font-normal text-[#F15E1C]">MOVEMENT</span>
+            </h2>
+
+            {/* Concise Subheading */}
+            <p className="font-syne text-[10px] sm:text-[11px] md:text-xs tracking-[0.16em] uppercase text-[#333333] dark:text-brand-platinum/80 font-semibold mt-3 max-w-3xl mx-auto">
+              BRIDGING DUBAI, THE UAE & INDIA THROUGH RUNWAY, CULTURE AND CREATIVE TALENT
+            </p>
+
+            {/* Divider Line */}
+            <div className="w-16 h-[2px] bg-[#F15E1C] dark:bg-brand-orange mx-auto mt-3" />
           </div>
 
-          {/* Main Title - Crisp & Legible */}
-          <h2 className="font-serif-display text-3xl sm:text-5xl md:text-6xl font-light text-[#111111] dark:text-brand-white uppercase leading-tight tracking-tight">
-            A GLOBAL FASHION <br />
-            <span className="font-serif italic font-normal text-[#F15E1C] dark:text-brand-orange">MOVEMENT</span>
-          </h2>
+          {/* Editorial 12-Column Layout */}
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-5 mt-8 items-stretch">
+            {/* Left Vision Card with Image */}
+            <div className="lg:col-span-6 rounded-xl overflow-hidden border border-black/10 dark:border-white/10 relative h-full min-h-[220px] sm:min-h-[240px] bg-[#FAF8F5] dark:bg-[#0A0908] group shadow-sm">
+              <Image
+                src="/assets/home/where_fashion_creates_possibilities.png"
+                alt="OUR VISION — Where Fashion Creates Possibilities. DUBAI · UAE · INDIA"
+                fill
+                priority
+                className="object-cover object-center opacity-100 dark:opacity-80 dark:brightness-[0.85] transition-all duration-500 group-hover:scale-[1.03]"
+              />
+              <span className="sr-only">
+                OUR VISION: Where Fashion Creates Possibilities. DUBAI · UAE · INDIA
+              </span>
+            </div>
 
-          {/* Clean Hairline Divider */}
-          <div className="w-16 h-px bg-[#F15E1C]/40 dark:bg-brand-orange/40 mx-auto" />
+            {/* Right Supporting Blocks */}
+            <div className="lg:col-span-6 flex flex-col justify-between space-y-4">
+              {/* 2 Top Info Cards */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div className="p-5 sm:p-6 rounded-xl bg-[#FAF8F5] dark:bg-[#0A0908] border border-black/10 dark:border-white/10 flex flex-col justify-between space-y-3">
+                  <div className="w-9 h-9 rounded-lg bg-[#F15E1C]/10 dark:bg-brand-orange/15 flex items-center justify-center text-[#F15E1C] dark:text-brand-orange">
+                    <Globe className="w-4.5 h-4.5" />
+                  </div>
+                  <div>
+                    <h4 className="font-syne text-xs font-bold uppercase tracking-wider text-[#111111] dark:text-brand-white">
+                      INTERNATIONAL PLATFORM
+                    </h4>
+                    <p className="font-sans text-[11px] sm:text-xs text-[#555555] dark:text-brand-platinum/80 font-light leading-relaxed mt-1">
+                      Runway, talent and creative opportunities across Dubai, UAE and India.
+                    </p>
+                  </div>
+                </div>
 
-          {/* Compact Copy */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-left max-w-4xl mx-auto">
-            <p className="font-sans text-xs sm:text-sm text-[#333333] dark:text-brand-platinum/90 font-light leading-relaxed">
-              FashAI Universal is an international fashion and events platform focused on fashion experiences, curated productions, creative talent recruitment, designers, and event participation.
-            </p>
-            <p className="font-sans text-xs sm:text-sm text-[#333333] dark:text-brand-platinum/80 font-light leading-relaxed">
-              Operating across Dubai, the United Arab Emirates, and India, the platform connects fashion professionals, creative talent, brands, and international audiences through live event formats and creative experiences.
-            </p>
+                <div className="p-5 sm:p-6 rounded-xl bg-[#FAF8F5] dark:bg-[#0A0908] border border-black/10 dark:border-white/10 flex flex-col justify-between space-y-3">
+                  <div className="w-9 h-9 rounded-lg bg-[#F15E1C]/10 dark:bg-brand-orange/15 flex items-center justify-center text-[#F15E1C] dark:text-brand-orange">
+                    <Users className="w-4.5 h-4.5" />
+                  </div>
+                  <div>
+                    <h4 className="font-syne text-xs font-bold uppercase tracking-wider text-[#111111] dark:text-brand-white">
+                      GLOBAL COMMUNITY
+                    </h4>
+                    <p className="font-sans text-[11px] sm:text-xs text-[#555555] dark:text-brand-platinum/80 font-light leading-relaxed mt-1">
+                      Connecting designers, talent, brands and audiences.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Bottom EXPLORE FASHAI ECOSYSTEM Strip */}
+              <div className="p-5 sm:p-6 rounded-xl bg-[#FAF8F5] dark:bg-[#0A0908] border border-black/10 dark:border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4 shadow-sm">
+                <div className="space-y-0.5 text-center sm:text-left">
+                  <p className="font-syne text-[11px] font-bold uppercase tracking-[0.18em] text-[#F15E1C] dark:text-brand-orange">
+                    EXPLORE FASHAI ECOSYSTEM
+                  </p>
+                  <p className="font-serif italic text-base sm:text-lg text-[#111111] dark:text-brand-white font-normal">
+                    Upcoming shows, chapters and opportunities.
+                  </p>
+                </div>
+                <Link
+                  href="/upcoming"
+                  className="px-6 py-3 bg-[#FAB60A] text-black font-syne text-xs font-bold uppercase tracking-wider rounded-md hover:bg-[#FFEC69] transition-all flex items-center gap-2 whitespace-nowrap shadow-sm group"
+                >
+                  <span>SEE UPCOMING</span>
+                  <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+                </Link>
+              </div>
+            </div>
           </div>
 
-          {/* Editorial Highlights Bar - Compact Cards */}
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-6 border-t border-black/10 dark:border-white/10 max-w-4xl mx-auto">
-            <div className="p-4 sm:p-5 rounded-xl bg-[#FAF8F5] dark:bg-[#090807] border border-black/10 dark:border-white/10 text-left hover:border-[#F15E1C]/50 transition-colors shadow-sm">
-              <Globe className="w-4 h-4 text-[#F15E1C] dark:text-brand-orange mb-2" />
-              <h3 className="font-syne text-[11px] font-bold uppercase text-[#111111] dark:text-brand-white tracking-wider mb-0.5">
-                INTERNATIONAL REACH
-              </h3>
-              <p className="text-[11px] font-sans text-[#555555] dark:text-brand-platinum/70 font-light">
-                Dubai · UAE · India
-              </p>
-            </div>
+          {/* Bottom 3 Features Grid */}
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-5">
+            <Link
+              href="/upcoming"
+              className="group p-5 rounded-xl bg-[#FAF8F5] dark:bg-[#0A0908] border border-black/10 dark:border-white/10 flex items-center justify-between hover:border-[#F15E1C]/50 dark:hover:border-brand-orange/50 transition-all shadow-sm"
+            >
+              <div className="space-y-2">
+                <div className="w-8 h-8 rounded-lg bg-[#F15E1C]/10 dark:bg-brand-orange/15 flex items-center justify-center text-[#F15E1C] dark:text-brand-orange">
+                  <Compass className="w-4 h-4" />
+                </div>
+                <div>
+                  <h4 className="font-syne text-xs font-bold uppercase tracking-wider text-[#111111] dark:text-brand-white">
+                    INTERNATIONAL REACH
+                  </h4>
+                  <p className="font-sans text-[11px] text-[#555555] dark:text-brand-platinum/70 font-light mt-0.5">
+                    Expanding fashion beyond borders.
+                  </p>
+                </div>
+              </div>
+              <ArrowRight className="w-4 h-4 text-[#F15E1C] dark:text-brand-orange transition-transform group-hover:translate-x-1 flex-shrink-0 ml-2" />
+            </Link>
 
-            <div className="p-4 sm:p-5 rounded-xl bg-[#FAF8F5] dark:bg-[#090807] border border-black/10 dark:border-white/10 text-left hover:border-[#F15E1C]/50 transition-colors shadow-sm">
-              <Eye className="w-4 h-4 text-[#F15E1C] dark:text-brand-orange mb-2" />
-              <h3 className="font-syne text-[11px] font-bold uppercase text-[#111111] dark:text-brand-white tracking-wider mb-0.5">
-                CREATIVE FOCUS
-              </h3>
-              <p className="text-[11px] font-sans text-[#555555] dark:text-brand-platinum/70 font-light">
-                Fashion · Events · Talent
-              </p>
-            </div>
+            <Link
+              href="/apply"
+              className="group p-5 rounded-xl bg-[#FAF8F5] dark:bg-[#0A0908] border border-black/10 dark:border-white/10 flex items-center justify-between hover:border-[#F15E1C]/50 dark:hover:border-brand-orange/50 transition-all shadow-sm"
+            >
+              <div className="space-y-2">
+                <div className="w-8 h-8 rounded-lg bg-[#F15E1C]/10 dark:bg-brand-orange/15 flex items-center justify-center text-[#F15E1C] dark:text-brand-orange">
+                  <Eye className="w-4 h-4" />
+                </div>
+                <div>
+                  <h4 className="font-syne text-xs font-bold uppercase tracking-wider text-[#111111] dark:text-brand-white">
+                    CREATIVE FOCUS
+                  </h4>
+                  <p className="font-sans text-[11px] text-[#555555] dark:text-brand-platinum/70 font-light mt-0.5">
+                    Designer, model and artistic showcases.
+                  </p>
+                </div>
+              </div>
+              <ArrowRight className="w-4 h-4 text-[#F15E1C] dark:text-brand-orange transition-transform group-hover:translate-x-1 flex-shrink-0 ml-2" />
+            </Link>
 
-            <div className="p-4 sm:p-5 rounded-xl bg-[#FAF8F5] dark:bg-[#090807] border border-black/10 dark:border-white/10 text-left hover:border-[#F15E1C]/50 transition-colors shadow-sm">
-              <Award className="w-4 h-4 text-[#F15E1C] dark:text-brand-orange mb-2" />
-              <h3 className="font-syne text-[11px] font-bold uppercase text-[#111111] dark:text-brand-white tracking-wider mb-0.5">
-                CURATED EXPERIENCES
-              </h3>
-              <p className="text-[11px] font-sans text-[#555555] dark:text-brand-platinum/70 font-light">
-                Runway · Salons · Formats
-              </p>
-            </div>
+            <Link
+              href="/gallery"
+              className="group p-5 rounded-xl bg-[#FAF8F5] dark:bg-[#0A0908] border border-black/10 dark:border-white/10 flex items-center justify-between hover:border-[#F15E1C]/50 dark:hover:border-brand-orange/50 transition-all shadow-sm"
+            >
+              <div className="space-y-2">
+                <div className="w-8 h-8 rounded-lg bg-[#F15E1C]/10 dark:bg-brand-orange/15 flex items-center justify-center text-[#F15E1C] dark:text-brand-orange">
+                  <Award className="w-4 h-4" />
+                </div>
+                <div>
+                  <h4 className="font-syne text-xs font-bold uppercase tracking-wider text-[#111111] dark:text-brand-white">
+                    CURATED EXPERIENCES
+                  </h4>
+                  <p className="font-sans text-[11px] text-[#555555] dark:text-brand-platinum/70 font-light mt-0.5">
+                    Runways, salons and global trade formats.
+                  </p>
+                </div>
+              </div>
+              <ArrowRight className="w-4 h-4 text-[#F15E1C] dark:text-brand-orange transition-transform group-hover:translate-x-1 flex-shrink-0 ml-2" />
+            </Link>
           </div>
         </motion.div>
       </div>
