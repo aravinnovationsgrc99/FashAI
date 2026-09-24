@@ -20,7 +20,6 @@ export default function OpenNominationsSection() {
           <div className="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-5">
             <div className="space-y-1">
               <div className="flex items-center gap-2 text-[11px] font-syne tracking-micro text-brand-yellow-golden font-bold uppercase">
-                <Sparkles className="w-3.5 h-3.5 text-brand-yellow-golden" />
                 <span>TALENT SELECTION &amp; RECRUITMENT</span>
               </div>
               <h2 className="font-serif-display text-2xl sm:text-3xl lg:text-4xl font-light text-brand-white uppercase leading-tight group-hover:text-brand-yellow-golden transition-colors">

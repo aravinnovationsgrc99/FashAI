@@ -230,7 +230,6 @@ export default function EventInfoModal() {
                   {/* Dress Code */}
                   <div className="bg-black/70 backdrop-blur-sm border border-white/15 p-3.5 sm:p-4 rounded-xl flex flex-col justify-between">
                     <div className="flex items-center gap-2 text-[10px] font-syne tracking-micro text-brand-yellow-golden font-bold uppercase mb-1">
-                      <Sparkles className="w-3.5 h-3.5" />
                       <span>DRESS CODE</span>
                     </div>
                     <span className="font-syne text-[11px] font-bold text-white uppercase tracking-wide leading-tight">

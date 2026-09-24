@@ -100,7 +100,6 @@ export default function HomeUpcomingFeature() {
 
             {/* Card 3: Dress Code */}
             <div className="bg-brand-charcoal/80 border border-brand-orange/30 p-6 flex flex-col items-center text-center">
-              <Sparkles className="w-6 h-6 text-brand-orange mb-3" />
               <h4 className="font-syne text-xs tracking-caps text-brand-platinum font-bold uppercase mb-2">
                 Dress Code
               </h4>

@@ -41,7 +41,6 @@ export default function FaqSection() {
         {/* Section Header */}
         <div className="text-center mb-8 sm:mb-10">
           <div className="flex items-center justify-center gap-2 text-xs font-syne tracking-micro text-brand-yellow-golden font-bold uppercase mb-3">
-            <Sparkles className="w-3.5 h-3.5" />
             <span>FREQUENTLY ASKED QUESTIONS</span>
           </div>
           <h2 className="font-serif-display text-4xl sm:text-6xl font-light text-brand-white uppercase mb-4">

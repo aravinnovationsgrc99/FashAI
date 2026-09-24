@@ -25,7 +25,6 @@ export default function UpcomingLifestyleBanner() {
                   UPCOMING FLAGSHIP EVENT
                 </span>
                 <span className="text-[10px] sm:text-xs font-syne tracking-micro text-brand-yellow-golden font-bold uppercase flex items-center gap-1.5">
-                  <Sparkles className="w-3.5 h-3.5 text-brand-orange" />
                   DUBAI · NOVEMBER 2026
                 </span>
               </div>

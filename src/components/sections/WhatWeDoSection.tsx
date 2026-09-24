@@ -40,7 +40,6 @@ export default function WhatWeDoSection() {
                 <span className="text-[10px] font-syne tracking-widest text-[#F15E1C] dark:text-brand-yellow-golden uppercase font-bold">
                   FLAGSHIP FORMAT
                 </span>
-                <Sparkles className="w-3.5 h-3.5 text-[#F15E1C] dark:text-brand-yellow-golden/80" />
               </div>
 
               {/* Clean Controlled Image Frame (25-35% Height Reduction) */}

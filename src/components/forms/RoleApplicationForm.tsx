@@ -379,7 +379,6 @@ export default function RoleApplicationForm({ roleSlug, onSuccess, isModal = fal
       {/* Header Section */}
       <div className="mb-8 border-b border-white/10 pb-6">
         <div className="flex items-center gap-2 text-[11px] font-syne tracking-micro text-brand-yellow-golden font-bold uppercase mb-2">
-          <Sparkles className="w-3.5 h-3.5" />
           <span>{meta.badge}</span>
         </div>
         <h1 className="font-serif-display text-3xl sm:text-5xl font-light text-brand-white uppercase leading-tight mb-2">

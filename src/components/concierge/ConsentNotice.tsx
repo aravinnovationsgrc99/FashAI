@@ -17,7 +17,6 @@ export default function ConsentNotice({ onAllow, onDecline }: ConsentNoticeProps
       className="p-3.5 mb-3 bg-brand-orange/10 border border-brand-orange/30 rounded-none text-brand-white text-xs space-y-2.5 shadow-md"
     >
       <div className="flex items-center gap-2 text-[11px] font-syne font-bold text-brand-orange uppercase tracking-micro">
-        <Sparkles className="w-3.5 h-3.5 text-brand-yellow-golden" />
         <span>PERSONALIZE YOUR FASHAI EXPERIENCE</span>
       </div>
 

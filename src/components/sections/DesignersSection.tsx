@@ -53,8 +53,7 @@ export default function DesignersSection() {
           >
             <div>
               <div className="flex items-center gap-2 text-xs font-syne tracking-micro text-brand-yellow-golden font-bold uppercase mb-3">
-                <Sparkles className="w-4 h-4" />
-                <span>DESIGNER PARTICIPATION & SHOWCASE</span>
+                <span>DESIGNER PARTICIPATION &amp; SHOWCASE</span>
               </div>
               <h2 className="font-serif-display text-4xl sm:text-6xl font-light text-brand-white uppercase leading-none mb-6">
                 DESIGNERS & <br />

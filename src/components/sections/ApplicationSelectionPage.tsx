@@ -109,7 +109,6 @@ export default function ApplicationSelectionPage({
         {/* Main Section Header */}
         <div className="max-w-3xl mb-8 sm:mb-10">
           <div className="flex items-center gap-2 text-xs font-syne tracking-micro text-brand-yellow-golden font-bold uppercase mb-3">
-            <Sparkles className="w-4 h-4 text-brand-yellow-golden" />
             <span>FASHAI UNIVERSAL TALENT NETWORK</span>
           </div>
 

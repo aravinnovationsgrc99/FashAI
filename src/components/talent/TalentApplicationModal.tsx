@@ -148,7 +148,6 @@ export default function TalentApplicationModal({ isOpen, onClose, initialCategor
           <div className="relative px-6 py-5 sm:px-8 sm:py-6 border-b border-white/10 bg-black/60 flex items-center justify-between flex-shrink-0">
             <div>
               <div className="flex items-center gap-2 text-[10px] sm:text-xs font-syne tracking-micro text-brand-orange font-bold uppercase mb-1">
-                <Sparkles className="w-3.5 h-3.5 text-brand-yellow-golden" />
                 <span>OFFICIAL TALENT RECRUITMENT PORTAL</span>
               </div>
               <h2 className="font-serif-display text-2xl sm:text-4xl font-light text-brand-white uppercase tracking-tight">

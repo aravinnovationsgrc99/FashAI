@@ -237,7 +237,6 @@ export default function ConciergePanel({ isOpen, onClose }: ConciergePanelProps)
               <div className="flex flex-col justify-center">
                 <span className="font-serif-display text-sm font-light text-brand-white uppercase leading-none tracking-wide flex items-center gap-1.5">
                   <span>FashAI Assistant</span>
-                  <Sparkles className="w-3 h-3 text-brand-yellow-golden" />
                 </span>
                 <span className="text-[9px] font-syne tracking-micro text-brand-yellow-golden/80 uppercase font-bold mt-0.5">
                   Your Fashion &amp; Event Guide

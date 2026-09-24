@@ -132,7 +132,6 @@ export default function MagazineArticleModal({ article, onClose }: MagazineArtic
               <span>BACK TO MAGAZINE</span>
             </button>
             <div className="flex items-center gap-2 text-[10px] font-syne tracking-widest text-brand-platinum/50 uppercase">
-              <Sparkles className="w-3 h-3 text-brand-orange" />
               <span>FASHAI UNIVERSAL EDITORIAL</span>
             </div>
           </div>
