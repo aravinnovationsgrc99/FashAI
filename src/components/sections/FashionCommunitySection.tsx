@@ -28,7 +28,7 @@ export default function FashionCommunitySection() {
   };
 
   return (
-    <section id="community" className="relative py-10 sm:py-14 bg-black border-b border-white/10 overflow-hidden">
+    <section id="community" className="relative pt-3 sm:pt-4 pb-10 sm:pb-14 bg-black border-b border-white/10 overflow-hidden">
       {/* Atmosphere Background Glows */}
       <div className="absolute inset-0 pointer-events-none select-none overflow-hidden">
         <div className="editorial-watermark absolute -bottom-10 right-0 text-[14vw] font-serif-display font-light uppercase tracking-tighter leading-none pointer-events-none select-none">
@@ -49,7 +49,7 @@ export default function FashionCommunitySection() {
             </h2>
           </div>
           <p className="font-sans text-xs sm:text-sm text-brand-platinum/90 max-w-md font-light leading-relaxed">
-            Join the creative network behind fashion, beauty, runway and lifestyle experiences. Explore opportunities across couture, modeling, makeup, styling, choreography, digital media, and public appearances.
+            Build your place in fashion, beauty, runway and lifestyle. Discover opportunities in couture, modeling, makeup, styling, choreography, media and public appearances.
           </p>
         </div>
 

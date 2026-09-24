@@ -50,7 +50,7 @@ export default function WhatWeDoSection() {
                   alt="Fashion event and runway experience"
                   fill
                   sizes="(max-width: 1024px) 100vw, 60vw"
-                  className="object-cover object-center group-hover:scale-[1.02] transition-transform duration-500"
+                  className="object-cover object-top group-hover:scale-[1.03] transition-transform duration-500"
                   priority
                 />
               </div>

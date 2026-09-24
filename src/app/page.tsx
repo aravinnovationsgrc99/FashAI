@@ -2,7 +2,6 @@ import Hero from "@/components/sections/Hero";
 import WhoWeAreSection from "@/components/sections/WhoWeAreSection";
 import WhatWeDoSection from "@/components/sections/WhatWeDoSection";
 import WhoWeServeSection from "@/components/sections/WhoWeServeSection";
-import WithWhomWeWorkSection from "@/components/sections/WithWhomWeWorkSection";
 import OpenNominationsSection from "@/components/sections/OpenNominationsSection";
 import FashionCommunitySection from "@/components/sections/FashionCommunitySection";
 import OurEventsSection from "@/components/sections/OurEventsSection";
@@ -33,9 +32,6 @@ export default function Home() {
 
       {/* 04. WHO WE SERVE */}
       <WhoWeServeSection />
-
-      {/* 05. WITH WHOM WE WORK */}
-      <WithWhomWeWorkSection />
 
       {/* 06. OPEN NOMINATIONS & ROLE GATEWAY */}
       <OpenNominationsSection />

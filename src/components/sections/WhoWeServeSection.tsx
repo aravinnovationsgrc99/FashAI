@@ -11,6 +11,7 @@ interface DisciplineItem {
   category: string;
   tagline: string;
   image: string;
+  objectPosition?: string;
   tags: string[];
 }
 
@@ -20,7 +21,8 @@ const DISCIPLINES: DisciplineItem[] = [
     label: "DESIGN",
     category: "COUTURE & ATELIER",
     tagline: "Couture houses, emerging designers, and luxury apparel creators shaping the future of fashion.",
-    image: "/assets/master/designer/designer_01.png",
+    image: "/assets/homepage/Design.png",
+    objectPosition: "center top",
     tags: ["COUTURE", "ATELIER", "RUNWAY", "CREATION"],
   },
   {
@@ -28,7 +30,8 @@ const DISCIPLINES: DisciplineItem[] = [
     label: "STYLING",
     category: "WARDROBE & DIRECTION",
     tagline: "Wardrobe curators shaping campaign lookbooks, visual aesthetics, and editorial identity.",
-    image: "/assets/master/stylist/stylist_01.png",
+    image: "/assets/homepage/Fashion.png",
+    objectPosition: "center top",
     tags: ["WARDROBE", "LOOKBOOKS", "EDITORIAL", "DIRECTION"],
   },
   {
@@ -36,7 +39,8 @@ const DISCIPLINES: DisciplineItem[] = [
     label: "BEAUTY",
     category: "BACKSTAGE ARTISTRY",
     tagline: "Beauty directors, makeup artists, and hair stylists crafting runway-ready looks.",
-    image: "/assets/master/makeup/makeup_01.png",
+    image: "/assets/homepage/Beauty.png",
+    objectPosition: "center top",
     tags: ["BACKSTAGE", "ARTISTRY", "MAKEUP", "EDITORIAL"],
   },
   {
@@ -44,7 +48,8 @@ const DISCIPLINES: DisciplineItem[] = [
     label: "MOVEMENT",
     category: "MOVEMENT DIRECTION",
     tagline: "Choreography transforms a runway into a performance, shaping pace, movement, formations, and audience engagement.",
-    image: "/assets/master/choreographer/choreographer.png",
+    image: "/assets/homepage/Moments.png",
+    objectPosition: "center top",
     tags: ["RUNWAY", "CHOREOGRAPHY", "STAGE", "PERFORMANCE"],
   },
   {
@@ -52,7 +57,8 @@ const DISCIPLINES: DisciplineItem[] = [
     label: "TALENT",
     category: "MODELS & CATWALK",
     tagline: "High-fashion catwalk models, editorial talent, and international brand ambassadors.",
-    image: "/assets/master/models/model_01.png",
+    image: "/assets/homepage/Talent.png",
+    objectPosition: "center top",
     tags: ["CATWALK", "MODELS", "SHOWCASE", "TALENT"],
   },
   {
@@ -60,7 +66,8 @@ const DISCIPLINES: DisciplineItem[] = [
     label: "PRODUCTION",
     category: "STAGING & EXPERIENCES",
     tagline: "High-impact runway productions, lighting design, audio-visual direction, and galas.",
-    image: "/assets/events/fashion_events.png",
+    image: "/assets/homepage/Production.png",
+    objectPosition: "center top",
     tags: ["STAGING", "GALAS", "LIGHTING", "PRODUCTIONS"],
   },
   {
@@ -68,7 +75,8 @@ const DISCIPLINES: DisciplineItem[] = [
     label: "MEDIA",
     category: "DIGITAL & PRESS",
     tagline: "Digital storytellers, fashion journalists, content creators, and global broadcast voices.",
-    image: "/assets/master/influencers/influencer_01.png",
+    image: "/assets/homepage/Media.png",
+    objectPosition: "center top",
     tags: ["PRESS", "CONTENT", "CAMPAIGNS", "MEDIA"],
   },
   {
@@ -76,32 +84,28 @@ const DISCIPLINES: DisciplineItem[] = [
     label: "TECHNOLOGY",
     category: "INNOVATION & LUXURY",
     tagline: "Global sponsors, interactive AI installations, digital trade formats, and luxury platforms.",
-    image: "/assets/events/lifestyle_events.png",
+    image: "/assets/homepage/Technology.png",
+    objectPosition: "center top",
     tags: ["AI INNOVATION", "INTERACTIVE", "SPONSORS", "LUXURY"],
   },
 ];
 
 export default function WhoWeServeSection() {
-  const [activeDiscipline, setActiveDiscipline] = useState<DisciplineItem>(DISCIPLINES[3]); // Default to Movement
+  const [activeDiscipline, setActiveDiscipline] = useState<DisciplineItem>(DISCIPLINES[0]); // Default to Design
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const activeIndex = DISCIPLINES.findIndex((d) => d.id === activeDiscipline.id);
 
   return (
-    <section id="people-creativity" className="relative py-8 sm:py-12 bg-white dark:bg-[#050505] border-b border-black/10 dark:border-white/10 text-[#111111] dark:text-brand-white overflow-hidden">
+    <section id="people-creativity" className="relative pt-1 sm:pt-2 pb-6 sm:pb-8 bg-white dark:bg-[#050505] border-b border-black/10 dark:border-white/10 text-[#111111] dark:text-brand-white overflow-hidden">
       <div className="container-editorial relative z-10 max-w-6xl mx-auto px-4 sm:px-6">
         {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 md:gap-8 pb-5 border-b border-black/10 dark:border-white/10 mb-8 sm:mb-10">
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 pb-3 border-b border-black/10 dark:border-white/10 mb-4 sm:mb-5">
           <div>
-            <h2 className="font-serif-display text-3xl sm:text-5xl lg:text-6xl font-light text-[#111111] dark:text-brand-white uppercase leading-[0.92] tracking-tight">
-              BUILT AROUND <br />
-              <span className="font-serif italic font-normal text-[#F15E1C] dark:text-[#FAB60A]">CREATIVITY</span>
+            <h2 className="font-serif-display text-3xl sm:text-5xl lg:text-6xl font-light text-[#111111] dark:text-brand-white uppercase leading-tight tracking-tight">
+              CREATIVE <span className="font-serif italic font-normal text-[#F15E1C] dark:text-[#FAB60A]">ECOSYSTEM</span>
             </h2>
           </div>
-
-          <p className="font-sans text-xs sm:text-sm text-[#555555] dark:text-brand-platinum/80 max-w-sm font-light leading-relaxed self-end">
-            FashAI Universal unites the creative disciplines, talent, and entities that power global fashion experiences.
-          </p>
         </div>
 
         {/* Mobile / Tablet Compact Expandable Selector */}
@@ -153,7 +157,7 @@ export default function WhoWeServeSection() {
           {/* LEFT / MAIN: Featured Image + Compact Content Underneath (~58% width ~ 7 cols) */}
           <div className="lg:col-span-7 flex flex-col gap-5">
             {/* Featured Image Container */}
-            <div className="relative aspect-[16/10] sm:aspect-[16/9.5] w-full rounded-xl overflow-hidden border border-black/10 dark:border-white/10 bg-[#FAF8F5] dark:bg-[#090807] shadow-sm">
+            <div className="relative aspect-[16/10] sm:aspect-[16/9.5] w-full rounded-2xl overflow-hidden border border-black/15 dark:border-white/15 bg-[#FAF8F5] dark:bg-[#090807] shadow-md group">
               <AnimatePresence mode="wait">
                 <motion.div
                   key={activeDiscipline.id}
@@ -168,9 +172,11 @@ export default function WhoWeServeSection() {
                     alt={activeDiscipline.label}
                     fill
                     sizes="(max-width: 1024px) 100vw, 58vw"
-                    className="object-cover object-top filter contrast-[1.03]"
+                    style={{ objectPosition: activeDiscipline.objectPosition || "center 12%" }}
+                    className="object-cover filter contrast-[1.04]"
                     priority
                   />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent pointer-events-none" />
                 </motion.div>
               </AnimatePresence>
             </div>

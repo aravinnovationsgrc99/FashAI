@@ -7,7 +7,7 @@ export default function OpenNominationsSection() {
   return (
     <section
       id="nominations"
-      className="relative py-6 sm:py-8 bg-[#050505] border-b border-white/10 select-none overflow-hidden"
+      className="relative pt-5 sm:pt-6 pb-2 sm:pb-3 bg-[#050505] border-b border-white/10 select-none overflow-hidden"
     >
       <div className="container-editorial relative z-10">
         <Link
