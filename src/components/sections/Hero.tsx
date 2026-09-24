@@ -41,7 +41,7 @@ export default function Hero() {
   }, []);
 
   return (
-    <section id="hero" className="relative min-h-[100vh] min-h-[100svh] w-full flex flex-col justify-between pt-24 sm:pt-28 pb-6 px-4 sm:px-8 lg:px-12 overflow-hidden bg-black text-brand-white">
+    <section id="hero" className="relative min-h-[100vh] min-h-[100svh] w-full flex flex-col justify-between pt-24 sm:pt-28 pb-3 sm:pb-4 px-4 sm:px-8 lg:px-12 overflow-hidden bg-black text-brand-white">
       
       {/* LAYER 1: Primary Video & Backup Media Container */}
       <div className="absolute inset-0 w-full h-full z-0 pointer-events-none select-none overflow-hidden bg-black">

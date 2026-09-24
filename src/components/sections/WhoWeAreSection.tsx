@@ -7,7 +7,7 @@ import { Globe, Users, Eye, Award, Compass, ArrowRight } from "lucide-react";
 
 export default function WhoWeAreSection() {
   return (
-    <section id="who-we-are" className="relative py-12 sm:py-16 md:py-20 bg-white dark:bg-[#050505] border-b border-black/10 dark:border-white/10 overflow-hidden text-[#111111] dark:text-brand-white">
+    <section id="who-we-are" className="relative pt-3 sm:pt-4 md:pt-5 pb-12 sm:pb-16 md:pb-20 bg-white dark:bg-[#050505] border-b border-black/10 dark:border-white/10 overflow-hidden text-[#111111] dark:text-brand-white">
       <div className="container-editorial relative z-10 max-w-6xl mx-auto px-4 sm:px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
