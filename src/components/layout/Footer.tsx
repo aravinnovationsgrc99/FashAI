@@ -68,12 +68,12 @@ export default function Footer() {
           >
             {/* Logo Lockup: Official Logo + FashAI Universal Brand Text */}
             <Link href="/" className="inline-flex items-center gap-3 group w-fit">
-              <div className="relative w-9 h-9 sm:w-10 sm:h-10 flex-shrink-0 overflow-hidden rounded-lg border border-black/10 dark:border-white/15 bg-black/5 dark:bg-black p-0.5 shadow-sm">
+              <div className="relative w-10 h-10 sm:w-11 sm:h-11 flex-shrink-0 overflow-hidden">
                 <Image
                   src="/assets/brand/logo_transparent.png"
                   alt="FashAI Universal Logo"
                   fill
-                  sizes="40px"
+                  sizes="44px"
                   className="object-contain group-hover:scale-105 transition-transform duration-300"
                 />
               </div>

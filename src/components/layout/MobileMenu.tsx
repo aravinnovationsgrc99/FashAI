@@ -89,14 +89,14 @@ export default function MobileMenu({
             {/* Header Brand Lockup in Mobile Menu */}
             <div className="flex items-center justify-between border-b border-white/10 pb-5 pt-2 flex-shrink-0">
               <Link href="/" onClick={onClose} className="flex items-center gap-3 min-h-[44px]">
-                <div className="relative w-8 h-8 flex-shrink-0 overflow-hidden bg-black border border-brand-yellow-golden/50 shadow-[0_0_15px_rgba(250,182,10,0.2)]">
+                <div className="relative w-10 h-10 flex-shrink-0 overflow-hidden">
                   <Image
                     src="/assets/brand/logo_transparent.png"
                     alt="FashAI Universal Logo"
                     fill
                     priority
-                    sizes="32px"
-                    className="object-contain p-0.5"
+                    sizes="40px"
+                    className="object-contain"
                   />
                 </div>
                 <div className="flex flex-col justify-center">

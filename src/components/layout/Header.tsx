@@ -43,14 +43,14 @@ export default function Header() {
       <div className="container-editorial flex items-center justify-between min-h-[50px] relative">
         {/* Official Editorial Brand Lockup */}
         <Link href="/" className="flex items-center gap-3 group py-1 min-h-[44px]">
-          <div className="relative w-8 h-8 sm:w-9 sm:h-9 flex-shrink-0 overflow-hidden bg-black border border-brand-yellow-golden/50 shadow-[0_0_15px_rgba(250,182,10,0.2)] group-hover:border-brand-yellow-golden group-hover:shadow-[0_0_22px_rgba(250,182,10,0.4)] transition-all duration-300">
+          <div className="relative w-10 h-10 sm:w-11 sm:h-11 flex-shrink-0 overflow-hidden group-hover:scale-105 transition-transform duration-300">
             <Image
               src="/assets/brand/logo_transparent.png"
               alt="FashAI Universal Logo"
               fill
               priority
-              sizes="36px"
-              className="object-contain p-0.5 group-hover:scale-105 transition-transform duration-300"
+              sizes="44px"
+              className="object-contain"
             />
           </div>
           <div className="flex flex-col justify-center">
