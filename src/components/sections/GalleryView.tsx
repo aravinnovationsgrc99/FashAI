@@ -42,7 +42,7 @@ export default function GalleryView() {
   }, []);
 
   return (
-    <section className="px-4 sm:px-6 lg:px-10 py-12 sm:py-20 w-[92vw] max-w-[1600px] mx-auto relative bg-brand-void text-brand-white select-none">
+    <section className="px-4 sm:px-6 lg:px-10 py-8 sm:py-12 w-[92vw] max-w-[1600px] mx-auto relative bg-brand-void text-brand-white select-none">
       {/* Ambient Radial Glows */}
       <div className="absolute top-20 right-10 w-96 h-96 bg-brand-orange/5 blur-3xl pointer-events-none rounded-full" />
       <div className="absolute bottom-40 left-10 w-96 h-96 bg-brand-yellow-golden/5 blur-3xl pointer-events-none rounded-full" />

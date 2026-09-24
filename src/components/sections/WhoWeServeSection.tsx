@@ -76,7 +76,7 @@ export default function WhoWeServeSection() {
   const [activeDiscipline, setActiveDiscipline] = useState<DisciplineItem>(DISCIPLINES[0]);
 
   return (
-    <section id="people-creativity" className="relative py-14 sm:py-20 bg-[#050505] border-b border-white/10 text-brand-white overflow-hidden">
+    <section id="people-creativity" className="relative py-10 sm:py-14 bg-[#050505] border-b border-white/10 text-brand-white overflow-hidden">
       {/* Editorial Atmospheric Background Glow */}
       <div className="absolute inset-0 pointer-events-none select-none">
         <div className="absolute top-1/4 left-1/3 w-[600px] h-[600px] bg-brand-yellow-golden/5 blur-[220px] rounded-full" />
@@ -97,7 +97,7 @@ export default function WhoWeServeSection() {
           </div>
 
           <div className="space-y-4 max-w-lg">
-            <p className="font-sans text-sm sm:text-base text-brand-white/90 font-light leading-relaxed">
+            <p className="font-sans text-sm sm:text-base text-brand-platinum font-light leading-relaxed">
               From the first sketch to the final spotlight, FashAI Universal brings together the creative disciplines, talent and organizations that shape an event.
             </p>
             <p className="font-sans text-xs sm:text-sm text-brand-platinum/70 font-light leading-relaxed">
@@ -136,7 +136,7 @@ export default function WhoWeServeSection() {
                         className={`font-serif-display text-2xl sm:text-4xl font-light tracking-wide uppercase transition-colors duration-300 ${
                           isActive
                             ? "text-brand-yellow-golden font-normal"
-                            : "text-white/60 group-hover:text-white"
+                            : "text-white/70 group-hover:text-white"
                         }`}
                       >
                         {item.label}

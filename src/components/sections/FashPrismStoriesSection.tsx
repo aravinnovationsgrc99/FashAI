@@ -103,7 +103,7 @@ export default function FashPrismStoriesSection() {
   return (
     <section
       id="fashprism-stories"
-      className="relative py-16 sm:py-24 bg-[#050505] border-b border-white/10 text-brand-white overflow-hidden select-none"
+      className="relative py-10 sm:py-14 bg-[#050505] border-b border-white/10 text-brand-white overflow-hidden select-none"
     >
       {/* Background Soft Gold Ambient Glow */}
       <div className="absolute inset-0 pointer-events-none">
@@ -112,7 +112,7 @@ export default function FashPrismStoriesSection() {
 
       <div className="container-editorial relative z-10">
         {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10 sm:mb-14 border-b border-white/10 pb-6 sm:pb-8">
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-8 sm:mb-10 border-b border-white/10 pb-6 sm:pb-8">
           <div>
             <div className="flex items-center gap-2 text-xs font-syne tracking-micro text-brand-yellow-golden font-bold uppercase mb-3">
               <Sparkles className="w-4 h-4 text-brand-yellow-golden" />

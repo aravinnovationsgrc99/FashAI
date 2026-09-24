@@ -104,7 +104,7 @@ export default function ApplicationSelectionPage({
   );
 
   return (
-    <section className="relative py-12 sm:py-20 bg-[#050505] min-h-[85vh] text-brand-white">
+    <section className="relative py-10 sm:py-14 bg-[#050505] min-h-[85vh] text-brand-white">
       {/* Background Soft Ambience */}
       <div className="absolute inset-0 pointer-events-none select-none">
         <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[600px] h-[400px] bg-brand-yellow-golden/5 blur-[220px] rounded-full" />
@@ -112,7 +112,7 @@ export default function ApplicationSelectionPage({
 
       <div className="container-editorial relative z-10">
         {/* Main Section Header */}
-        <div className="max-w-3xl mb-10 sm:mb-14">
+        <div className="max-w-3xl mb-8 sm:mb-10">
           <div className="flex items-center gap-2 text-xs font-syne tracking-micro text-brand-yellow-golden font-bold uppercase mb-3">
             <Sparkles className="w-4 h-4 text-brand-yellow-golden" />
             <span>FASHAI UNIVERSAL TALENT NETWORK</span>
@@ -158,7 +158,7 @@ export default function ApplicationSelectionPage({
                       )}
                     </div>
 
-                    <h3 className="font-serif-display text-xl sm:text-2xl font-light text-white uppercase group-hover:text-brand-yellow-golden transition-colors">
+                    <h3 className="font-serif-display text-xl sm:text-2xl font-light text-brand-white uppercase group-hover:text-brand-yellow-golden transition-colors">
                       {cat.label}
                     </h3>
 

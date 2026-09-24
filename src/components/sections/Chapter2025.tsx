@@ -13,7 +13,7 @@ export default function Chapter2025() {
   ];
 
   return (
-    <section id="lifestyle-2025" className="relative w-full flex flex-col justify-center py-14 sm:py-20 bg-brand-void border-b border-hairline-orange overflow-hidden">
+    <section id="lifestyle-2025" className="relative w-full flex flex-col justify-center py-10 sm:py-14 bg-brand-void border-b border-hairline-orange overflow-hidden">
       {/* Rich Background Atmosphere Layer */}
       <div className="absolute inset-0 pointer-events-none select-none overflow-hidden">
         <div className="absolute top-1/2 left-0 -translate-y-1/2 w-[500px] h-[500px] bg-[#FAB60A]/10 blur-[160px] rounded-full" />
@@ -25,17 +25,17 @@ export default function Chapter2025() {
       </div>
 
       <div className="container-editorial relative z-10">
-        <div className="flex flex-col sm:flex-row justify-between items-start sm:items-end mb-12 border-b border-hairline-orange pb-8">
+        <div className="flex flex-col sm:flex-row justify-between items-start sm:items-end mb-8 border-b border-hairline-orange pb-6">
           <div>
             <div className="flex items-center gap-3 text-xs font-syne tracking-micro text-brand-orange font-bold uppercase mb-2">
               <span className="h-px w-8 bg-brand-orange" />
               <span>PREVIOUS EDITION</span>
             </div>
-            <h2 className="font-serif-display text-4xl sm:text-6xl lg:text-7xl font-light text-brand-white uppercase">
+            <h2 className="font-serif-display text-4xl sm:text-5xl lg:text-6xl font-light text-brand-white uppercase">
               LifeStyle <span className="italic text-brand-orange font-normal">2025</span>
             </h2>
           </div>
-          <div className="mt-4 sm:mt-0 text-left sm:text-right">
+          <div className="mt-3 sm:mt-0 text-left sm:text-right">
             <span className="text-xs font-syne tracking-micro text-brand-yellow-golden font-bold block uppercase mb-1">
               VISUAL RETROSPECTIVE
             </span>
@@ -45,20 +45,20 @@ export default function Chapter2025() {
           </div>
         </div>
 
-        <p className="font-sans text-base sm:text-lg text-brand-platinum/90 max-w-2xl font-light leading-relaxed mb-10">
+        <p className="font-sans text-xs sm:text-sm text-brand-platinum/90 max-w-2xl font-light leading-relaxed mb-6">
           A visual record of the LifeStyle 2025 experience. Bringing together physical garment art with spatial light and luxury fashion identity.
         </p>
 
         {/* Real 2025 Photo Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5 mb-8">
           {images2025.map((img, index) => (
             <motion.div
               key={img.src}
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 15 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: index * 0.1, duration: 0.6 }}
-              className="relative aspect-[3/4] overflow-hidden rounded-none border border-hairline-orange/40 group bg-black"
+              transition={{ delay: index * 0.08, duration: 0.5 }}
+              className="relative aspect-[3/4] overflow-hidden rounded-xl border border-hairline-orange/40 group bg-black shadow-md"
             >
               <Image
                 src={img.src}
@@ -68,7 +68,7 @@ export default function Chapter2025() {
                 className="object-cover group-hover:scale-105 transition-transform duration-500 filter contrast-105"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-60 group-hover:opacity-40 transition-opacity" />
-              <div className="absolute bottom-4 left-4 right-4 text-[10px] font-syne tracking-micro text-brand-white uppercase font-semibold">
+              <div className="absolute bottom-3 left-3 right-3 text-[10px] font-syne tracking-micro text-brand-white keep-white uppercase font-semibold drop-shadow">
                 LIFESTYLE 2025 • ARCHIVE {index + 1}
               </div>
             </motion.div>
@@ -78,7 +78,7 @@ export default function Chapter2025() {
         <div className="flex justify-between items-center pt-4 border-t border-hairline-orange">
           <Link
             href="/gallery"
-            className="inline-flex items-center gap-3 bg-brand-charcoal border border-hairline-orange/50 px-8 py-3.5 text-xs font-syne tracking-caps text-brand-white hover:bg-brand-orange hover:text-white transition-all duration-300 font-bold"
+            className="inline-flex items-center gap-3 bg-[#080706] border border-brand-yellow-golden/50 px-6 py-3 text-xs font-syne tracking-caps text-brand-white keep-white hover:bg-brand-orange hover:border-brand-orange transition-all duration-300 font-bold rounded-full shadow-md"
           >
             <span>VIEW FULL 2025 VISUAL ARCHIVE</span>
             <span>↗</span>

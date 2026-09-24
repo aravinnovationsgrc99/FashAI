@@ -6,7 +6,7 @@ import { Sparkles, Globe, ShieldCheck, Compass } from "lucide-react";
 
 export default function AboutUsSection() {
   return (
-    <section id="about" className="relative py-14 sm:py-20 bg-black border-b border-white/10 overflow-hidden">
+    <section id="about" className="relative py-10 sm:py-14 bg-black border-b border-white/10 overflow-hidden">
       {/* Glow */}
       <div className="absolute inset-0 pointer-events-none select-none">
         <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-brand-orange/5 blur-[180px] rounded-full" />

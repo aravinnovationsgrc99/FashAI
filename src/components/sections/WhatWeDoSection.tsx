@@ -7,7 +7,7 @@ import { ArrowRight, Layers, Sparkles } from "lucide-react";
 
 export default function WhatWeDoSection() {
   return (
-    <section id="what-we-do" className="relative py-14 sm:py-20 bg-[#050505] border-b border-white/10 text-brand-white overflow-hidden">
+    <section id="what-we-do" className="relative py-10 sm:py-14 bg-[#050505] border-b border-white/10 text-brand-white overflow-hidden">
       {/* Atmosphere Glow */}
       <div className="absolute inset-0 pointer-events-none select-none">
         <div className="absolute top-1/3 left-1/4 w-[500px] h-[500px] bg-brand-yellow-golden/5 blur-[190px] rounded-full" />

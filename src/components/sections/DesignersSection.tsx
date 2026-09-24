@@ -10,7 +10,7 @@ export default function DesignersSection() {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   return (
-    <section id="designers" className="relative py-14 sm:py-20 bg-[#040404] border-b border-white/10 overflow-hidden">
+    <section id="designers" className="relative py-10 sm:py-14 bg-[#040404] border-b border-white/10 overflow-hidden">
       {/* Background Ambience */}
       <div className="absolute inset-0 pointer-events-none select-none">
         <div className="absolute top-1/3 right-10 w-[500px] h-[500px] bg-brand-yellow-golden/10 blur-[180px] rounded-full" />

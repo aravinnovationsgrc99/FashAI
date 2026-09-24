@@ -117,10 +117,10 @@ export default function Hero() {
             style={{ willChange: "transform, opacity" }}
             className="font-serif-display leading-[0.88] tracking-tight select-none flex flex-col items-center justify-center w-full my-1"
           >
-            <span className="block text-6xl sm:text-8xl md:text-9xl xl:text-[10rem] font-serif font-light text-brand-white uppercase tracking-tight drop-shadow-[0_12px_35px_rgba(0,0,0,0.9)]">
+            <span className="block text-6xl sm:text-8xl md:text-9xl xl:text-[10rem] font-serif font-light text-brand-white keep-white uppercase tracking-tight drop-shadow-[0_12px_35px_rgba(0,0,0,0.95)]">
               FASHAI
             </span>
-            <span className="block text-5xl sm:text-7xl md:text-8xl xl:text-[8rem] font-serif italic font-normal text-brand-yellow-golden -mt-2 sm:-mt-5 md:-mt-7 tracking-normal drop-shadow-[0_0_25px_rgba(250,182,10,0.4)]">
+            <span className="block text-5xl sm:text-7xl md:text-8xl xl:text-[8rem] font-serif italic font-normal text-brand-yellow-golden -mt-2 sm:-mt-5 md:-mt-7 tracking-normal drop-shadow-[0_0_25px_rgba(250,182,10,0.5)]">
               Universal
             </span>
           </motion.h1>
@@ -146,7 +146,7 @@ export default function Hero() {
             }}
             className="flex flex-col items-center justify-center gap-1.5 my-1"
           >
-            <span className="text-[11px] sm:text-xs font-syne tracking-[0.25em] text-brand-white/80 uppercase font-semibold drop-shadow-[0_2px_6px_rgba(0,0,0,0.8)]">
+            <span className="text-[11px] sm:text-xs font-syne tracking-[0.25em] text-brand-white/80 keep-white uppercase font-semibold drop-shadow-[0_2px_6px_rgba(0,0,0,0.8)]">
               Powered by
             </span>
             <Image
@@ -177,7 +177,7 @@ export default function Hero() {
             </Link>
             <Link
               href="/apply"
-              className="w-full sm:w-auto min-w-[210px] border border-brand-yellow-golden/70 bg-black/50 backdrop-blur-sm px-8 py-4 text-xs sm:text-sm font-syne tracking-caps font-bold text-brand-white hover:bg-brand-yellow-golden/15 hover:border-brand-yellow-golden hover:scale-[1.03] active:scale-[0.98] transition-all duration-300 text-center min-h-[50px] flex items-center justify-center rounded-full"
+              className="w-full sm:w-auto min-w-[210px] border border-brand-yellow-golden/70 bg-black/60 backdrop-blur-sm px-8 py-4 text-xs sm:text-sm font-syne tracking-caps font-bold text-brand-white keep-white hover:bg-brand-yellow-golden/15 hover:border-brand-yellow-golden hover:scale-[1.03] active:scale-[0.98] transition-all duration-300 text-center min-h-[50px] flex items-center justify-center rounded-full"
               data-cursor="view"
             >
               GET INVOLVED ↗
@@ -193,7 +193,7 @@ export default function Hero() {
           <span className="w-2.5 h-2.5 rounded-full border border-brand-yellow-golden bg-black/80 shadow-[0_0_8px_rgba(250,182,10,0.6)]" />
           <span className="w-[1px] h-6 bg-brand-yellow-golden/60" />
         </div>
-        <div className="flex flex-col items-start space-y-3.5 text-[11px] font-syne tracking-[0.22em] text-brand-white/80 uppercase font-semibold">
+        <div className="flex flex-col items-start space-y-3.5 text-[11px] font-syne tracking-[0.22em] text-brand-white/80 keep-white uppercase font-semibold drop-shadow-[0_2px_8px_rgba(0,0,0,0.85)]">
           <span className="hover:text-brand-yellow-golden transition-colors">PEOPLE</span>
           <span className="hover:text-brand-yellow-golden transition-colors">IDEAS</span>
           <span className="hover:text-brand-yellow-golden transition-colors">CULTURE</span>
@@ -207,7 +207,7 @@ export default function Hero() {
 
       {/* LAYER 5: RIGHT-SIDE EDITORIAL QUOTE */}
       <div className="hidden lg:flex absolute right-8 xl:right-12 top-1/2 -translate-y-1/2 flex-col items-end text-right z-10 pointer-events-none select-none max-w-[210px]">
-        <p className="font-serif italic text-lg sm:text-xl text-brand-white/90 leading-snug drop-shadow-[0_2px_10px_rgba(0,0,0,0.85)]">
+        <p className="font-serif italic text-lg sm:text-xl text-brand-white/90 keep-white leading-snug drop-shadow-[0_2px_12px_rgba(0,0,0,0.9)]">
           “More<br />
           Than Fashion.<br />
           A Refinement<br />
@@ -217,18 +217,18 @@ export default function Hero() {
       </div>
 
       {/* LAYER 6: BOTTOM DETAILS */}
-      <div className="relative z-10 container-editorial flex flex-row justify-between items-center text-[10px] sm:text-xs font-syne tracking-micro text-brand-white/80 pt-4 border-t border-white/10">
+      <div className="relative z-10 container-editorial flex flex-row justify-between items-center text-[10px] sm:text-xs font-syne tracking-micro text-brand-white/80 keep-white pt-4 border-t border-white/10">
         {/* Bottom Left: DUBAI 2026 / A NEW ERA AWAITS */}
         <div className="flex items-center gap-3">
           <span className="h-6 w-[2px] bg-brand-yellow-golden shadow-[0_0_8px_rgba(250,182,10,0.8)]" />
           <div className="flex flex-col items-start leading-tight">
-            <span className="font-bold text-brand-white tracking-widest uppercase">DUBAI 2026</span>
-            <span className="text-[9px] text-brand-white/70 tracking-widest uppercase font-medium">A NEW ERA AWAITS</span>
+            <span className="font-bold text-brand-white keep-white tracking-widest uppercase">DUBAI 2026</span>
+            <span className="text-[9px] text-brand-white/70 keep-white tracking-widest uppercase font-medium">A NEW ERA AWAITS</span>
           </div>
         </div>
 
         {/* Bottom Center: Scroll Indicator */}
-        <div className="flex flex-col items-center justify-center gap-1.5 font-syne text-[10px] tracking-widest text-brand-white/80 uppercase">
+        <div className="flex flex-col items-center justify-center gap-1.5 font-syne text-[10px] tracking-widest text-brand-white/80 keep-white uppercase">
           <div className="w-4 h-6 rounded-full border border-brand-white/80 flex justify-center pt-1">
             <motion.span
               animate={{ y: [0, 6, 0] }}

@@ -131,7 +131,7 @@ export default function FashionMagazineSection() {
   const gridArticles = filteredArticles.slice(1);
 
   return (
-    <section id="magazine" className="relative py-14 sm:py-20 bg-[#050505] border-b border-white/10 overflow-hidden">
+    <section id="magazine" className="relative py-10 sm:py-14 bg-[#050505] border-b border-white/10 overflow-hidden">
       {/* Background Ambience & Editorial Watermark */}
       <div className="absolute inset-0 pointer-events-none select-none">
         <div className="absolute top-1/4 left-1/3 w-[550px] h-[550px] bg-brand-yellow-golden/5 blur-[190px] rounded-full" />
@@ -158,7 +158,7 @@ export default function FashionMagazineSection() {
         </div>
 
         {/* Compact Filter Navigation */}
-        <div className="mb-12 overflow-x-auto no-scrollbar pb-2">
+        <div className="mb-8 overflow-x-auto no-scrollbar pb-2">
           <div className="flex items-center gap-2 sm:gap-3 min-w-max">
             {FILTER_CATEGORIES.map((cat) => {
               const isActive = activeFilter === cat.id;
@@ -169,7 +169,7 @@ export default function FashionMagazineSection() {
                   className={`px-4 py-2 font-syne text-[11px] tracking-micro font-bold uppercase rounded-full transition-all duration-300 border ${
                     isActive
                       ? "bg-brand-yellow-golden text-black border-brand-yellow-golden shadow-[0_0_20px_rgba(250,182,10,0.3)]"
-                      : "bg-[#0A0A0A] text-brand-platinum/70 border-white/10 hover:border-brand-yellow-golden/40 hover:text-white"
+                      : "bg-[#0A0A0A] text-white/80 border-white/10 hover:border-brand-yellow-golden/40 hover:text-white"
                   }`}
                 >
                   {cat.label}
@@ -187,7 +187,7 @@ export default function FashionMagazineSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="mb-12 group relative bg-[#0A0908] border border-brand-yellow-golden/40 rounded-3xl overflow-hidden shadow-2xl transition-all duration-500 hover:border-brand-yellow-golden"
+            className="mb-8 group relative bg-[#0A0908] border border-brand-yellow-golden/40 rounded-3xl overflow-hidden shadow-2xl transition-all duration-500 hover:border-brand-yellow-golden"
           >
             <div className="grid grid-cols-1 lg:grid-cols-12 items-center">
               {/* Featured Image (Large Surface) */}

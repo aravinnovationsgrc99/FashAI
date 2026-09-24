@@ -6,7 +6,7 @@ import { ExternalLink } from "lucide-react";
 
 export default function InstagramSection() {
   return (
-    <section className="relative py-12 sm:py-16 bg-brand-void border-b border-hairline-orange overflow-hidden">
+    <section className="relative py-8 sm:py-12 bg-brand-void border-b border-hairline-orange overflow-hidden">
       {/* Rich Background Atmosphere Layer */}
       <div className="absolute inset-0 pointer-events-none select-none overflow-hidden">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[400px] bg-brand-orange/15 blur-[160px] rounded-full" />

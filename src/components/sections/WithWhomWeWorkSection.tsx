@@ -125,7 +125,7 @@ export default function WithWhomWeWorkSection() {
   return (
     <section
       id="constellation"
-      className="relative py-14 sm:py-24 bg-[#050505] border-b border-white/10 text-brand-white overflow-hidden selection:bg-brand-yellow-golden selection:text-black"
+      className="relative py-10 sm:py-14 bg-[#050505] border-b border-white/10 text-brand-white overflow-hidden selection:bg-brand-yellow-golden selection:text-black"
     >
       {/* Editorial Ambient Background Glow */}
       <div className="absolute inset-0 pointer-events-none select-none">
