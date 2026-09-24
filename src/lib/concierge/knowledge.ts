@@ -1,167 +1,365 @@
-export interface QuickAction {
+export interface QuickChip {
   id: string;
   label: string;
-  actionType: "navigate" | "query" | "enquiry" | "filter_gallery";
-  target?: string;
+  actionKey: string;
+  payload?: string;
 }
 
-export interface ConciergeMessageResponse {
+export interface ConciergeKnowledgeResponse {
   message: string;
-  quickActions?: QuickAction[];
+  quickChips?: QuickChip[];
   navigationTarget?: string;
-  galleryCategory?: string;
-  enquiryPrompt?: boolean;
+  detectedRole?: string;
+  startFlow?: "CREATIVE" | "SPONSORSHIP" | "REGISTRATION" | "CONTACT";
 }
 
-export const FASHAI_KNOWLEDGE = {
-  brand: "FashAI Universal",
-  websiteUrl: "https://fashai-beryl.vercel.app",
-  officialInstagram: "https://www.instagram.com/fashai_universal",
-  upcomingEdition: "LifeStyle 2026",
-  upcomingLocation: "Dubai · 2026",
-  previousEdition: "LifeStyle 2025",
-  currentStatus: "Registrations and sponsorships are open.",
-  
-  galleryCategories: [
-    { id: "RUNWAY", label: "RUNWAY & STAGE", query: "runway" },
-    { id: "COUTURE", label: "COUTURE DETAILS", query: "couture" },
-    { id: "PEOPLE", label: "PEOPLE & MOMENTS", query: "people" },
-    { id: "ARCHITECTURE", label: "ARCHITECTURE & LIGHTING", query: "architecture" },
-    { id: "EXPERIENCE", label: "EXPERIENCE", query: "experience" },
-  ],
+export function queryKnowledgeBase(queryText: string, siteConfig?: any): ConciergeKnowledgeResponse {
+  const q = queryText.toLowerCase().trim();
 
-  guardrailResponse: "That information has not been announced yet. Details regarding exact dates, specific venues, and full guest lists will be announced officially. Registrations and sponsorships are currently open.",
+  // Dynamic values from live site config (Source of Truth)
+  const brandName = siteConfig?.footerSettings?.brandName || siteConfig?.globalSettings?.siteTitle || "FashAI Universal";
+  const upcomingEventName = siteConfig?.events?.[0]?.title || "LifeStyle 2026";
+  const upcomingLocation = siteConfig?.events?.[0]?.location || "Dubai · UAE";
 
-  initialGreeting: "Hi! How can I help you?",
-  
-  initialQuickActions: [
-    { id: "lifestyle-2026", label: "LifeStyle 2026", actionType: "query", target: "LifeStyle 2026" },
-    { id: "runway", label: "Runway", actionType: "query", target: "Runway" },
-    { id: "registration", label: "Register / Enquire", actionType: "enquiry", target: "Registration" },
-    { id: "sponsorship", label: "Sponsorship", actionType: "enquiry", target: "Sponsorship" },
-    { id: "gallery", label: "Gallery", actionType: "navigate", target: "/gallery" },
-    { id: "talent-network", label: "Talent Network", actionType: "query", target: "Talent Network" },
-    { id: "contact-fashai", label: "Contact FashAI", actionType: "navigate", target: "/contact" },
-  ] as QuickAction[],
-
-  intentOptions: [
-    { id: "attend", label: "Attend Event", intent: "attendee" },
-    { id: "sponsor", label: "Sponsorship", intent: "sponsor" },
-    { id: "designer", label: "Designer / Professional", intent: "designer" },
-    { id: "media", label: "Press & Media", intent: "media" },
-    { id: "collaboration", label: "Collaboration", intent: "collaboration" },
-    { id: "exploring", label: "Explore Experience", intent: "exploring" },
-  ]
-};
-
-// Knowledge query matcher for fallback/deterministic responses
-export function queryKnowledgeBase(query: string, intentContext?: string | null): ConciergeMessageResponse {
-  const q = query.toLowerCase();
-
-  // 1. Sponsorship Queries
-  if (q.includes("sponsor") || q.includes("sponsorship") || q.includes("partner")) {
+  // 1. GREETINGS & GENERAL BRAND INTENT
+  if (q === "hi" || q === "hello" || q === "hey" || q.startsWith("good morning") || q.startsWith("good evening")) {
     return {
-      message: "FashAI Universal offers premium partnership opportunities for global fashion, technology, and luxury brands at LifeStyle 2026 in Dubai. Registrations and sponsorship enquiries are open.",
-      quickActions: [
-        { id: "submit-sponsor", label: "Sponsorship Enquiry →", actionType: "enquiry", target: "Sponsorship" },
-        { id: "explore-projects", label: "View Previous Editions", actionType: "navigate", target: "/projects" },
+      message: `Hi, welcome to ${brandName}.\nHow can I help?`,
+      quickChips: [
+        { id: "qp-events", label: "Explore events", actionKey: "EXPLORE_EVENTS" },
+        { id: "qp-join", label: "Join the network", actionKey: "JOIN_NETWORK" },
+        { id: "qp-apply", label: "Apply / nominate", actionKey: "APPLY_NOMINATE" },
+        { id: "qp-contact", label: "Contact the team", actionKey: "CONTACT_TEAM" },
       ],
-      navigationTarget: "/contact?type=Sponsorship",
-      enquiryPrompt: true
     };
   }
 
-  // 2. Registration / Attendance / Ticket Queries
-  if (q.includes("register") || q.includes("registration") || q.includes("attend") || q.includes("ticket") || q.includes("delegate") || q.includes("enquire")) {
+  if (
+    q.includes("what is fashai") ||
+    q.includes("tell me about fashai") ||
+    q.includes("what do you do") ||
+    q.includes("what is this website") ||
+    q.includes("who are you")
+  ) {
     return {
-      message: "Registrations and sponsorship enquiries are open for international delegates, designers, media representatives, and fashion professionals for LifeStyle 2026 Dubai.",
-      quickActions: [
-        { id: "submit-reg", label: "Register / Enquire →", actionType: "enquiry", target: "Registration" },
-        { id: "explore-lifestyle", label: "Explore LifeStyle 2026", actionType: "navigate", target: "/upcoming" },
+      message: `${brandName} is a fashion and experience platform connecting fashion, talent, creativity and events across Dubai, UAE and India.`,
+      quickChips: [
+        { id: "qp-events", label: "Explore events", actionKey: "EXPLORE_EVENTS" },
+        { id: "qp-join", label: "Join the network", actionKey: "JOIN_NETWORK" },
+        { id: "qp-contact", label: "Contact team", actionKey: "CONTACT_TEAM" },
       ],
-      navigationTarget: "/contact?type=Registration",
-      enquiryPrompt: true
     };
   }
 
-  // 3. Gallery & Visual Archive Queries
-  if (q.includes("gallery") || q.includes("photo") || q.includes("picture") || q.includes("image") || q.includes("lookbook")) {
-    if (q.includes("runway") || q.includes("stage")) {
-      return {
-        message: "Navigating to the Visual Archive — filtered by Runway & Stage.",
-        quickActions: [
-          { id: "full-gallery", label: "Explore All Archives", actionType: "navigate", target: "/gallery" }
-        ],
-        navigationTarget: "/gallery",
-        galleryCategory: "RUNWAY"
-      };
-    }
-
+  if (q.includes("how can you help") || q.includes("what can i do here") || q.includes("i want to know more")) {
     return {
-      message: "The FashAI Universal Visual Archive showcases moments across Runway & Stage, Couture Details, People & Moments, Architecture & Spatial Lighting, and Experience.",
-      quickActions: [
-        { id: "nav-gallery", label: "View Gallery Archive ↗", actionType: "navigate", target: "/gallery" },
-        { id: "explore-2025", label: "LifeStyle 2025 Retrospective", actionType: "navigate", target: "/2025" }
+      message: `I can help you explore upcoming events, apply for talent & designer showcases, submit nominations, or connect with our team for sponsorships and enquiries.`,
+      quickChips: [
+        { id: "qp-events", label: "Explore events", actionKey: "EXPLORE_EVENTS" },
+        { id: "qp-join", label: "Join the network", actionKey: "JOIN_NETWORK" },
+        { id: "qp-contact", label: "Contact team", actionKey: "CONTACT_TEAM" },
       ],
-      navigationTarget: "/gallery"
     };
   }
 
-  // 4. LifeStyle 2026 / Dubai / Runway Queries
-  if (q.includes("2026") || q.includes("lifestyle 2026") || q.includes("dubai") || q.includes("upcoming") || q.includes("runway")) {
+  // 2. LOCATION & PRESENCE
+  if (q.includes("where are you based") || q.includes("location") || q.includes("where is fashai")) {
     return {
-      message: "LifeStyle 2026 is FashAI Universal's upcoming international fashion and lifestyle experience in Dubai. Registrations and sponsorship enquiries are open.",
-      quickActions: [
-        { id: "explore-2026-page", label: "Explore LifeStyle 2026 ↗", actionType: "navigate", target: "/upcoming" },
-        { id: "register-2026", label: "Register / Enquire", actionType: "enquiry", target: "Registration" },
-        { id: "sponsor-2026", label: "Sponsorship Enquiry", actionType: "enquiry", target: "Sponsorship" }
+      message: `${brandName} operates internationally across the United Arab Emirates (${upcomingLocation}) and India.`,
+      quickChips: [
+        { id: "qp-events", label: "Explore events", actionKey: "EXPLORE_EVENTS" },
+        { id: "qp-contact", label: "Contact team", actionKey: "CONTACT_TEAM" },
       ],
-      navigationTarget: "/upcoming"
     };
   }
 
-  // 5. Talent / Models / Designers / Community Queries
-  if (q.includes("talent") || q.includes("designer") || q.includes("model") || q.includes("community") || q.includes("makeup") || q.includes("stylist")) {
+  // 3. EVENT QUERIES (LifeStyle, Runway, Upcoming)
+  if (
+    q.includes("what events") ||
+    q.includes("upcoming events") ||
+    q.includes("what is upcoming") ||
+    q.includes("tell me about lifestyle") ||
+    q.includes("what is lifestyle") ||
+    q.includes("tell me about runway") ||
+    q.includes("runway event") ||
+    q.includes("lifestyle event") ||
+    q.includes("event details") ||
+    q === "show upcoming" ||
+    q === "upcoming"
+  ) {
     return {
-      message: "FashAI Universal connects international designers, runway models, makeup artists, celebrities, and stylists across our Dubai 2026 platform. Applications for designer showcases and creative participation are open.",
-      quickActions: [
-        { id: "community-reg", label: "Register / Enquire →", actionType: "enquiry", target: "Registration" },
-        { id: "view-community", label: "Explore Fashion Community", actionType: "navigate", target: "/#people" },
+      message: `${upcomingEventName} is our upcoming international fashion and lifestyle experience in ${upcomingLocation}, bringing together runway presentations, couture details, and creative talent.`,
+      quickChips: [
+        { id: "qp-nav-upcoming", label: "View upcoming page ↗", actionKey: "NAVIGATE", payload: "/upcoming" },
+        { id: "qp-reg", label: "Register / enquire", actionKey: "START_REGISTRATION" },
+        { id: "qp-sponsor", label: "Sponsorship", actionKey: "START_SPONSORSHIP" },
       ],
-      navigationTarget: "/#people"
+      navigationTarget: "/upcoming",
     };
   }
 
-  // 6. Specific Date / Venue / Schedule / Unannounced Details Guardrail
-  if (q.includes("date") || q.includes("venue") || q.includes("address") || q.includes("price") || q.includes("cost") || q.includes("schedule") || q.includes("when") || q.includes("where")) {
+  // Specific Date/Venue Guardrail
+  if (
+    q.includes("where is the event") ||
+    q.includes("when is the event") ||
+    q.includes("exact date") ||
+    q.includes("exact venue") ||
+    q.includes("ticket price") ||
+    q.includes("ticket cost")
+  ) {
     return {
-      message: "That information has not been announced yet. Event date and venue details will be released officially. Registrations and sponsorships are open.",
-      quickActions: [
-        { id: "reg-interest", label: "Register / Enquire →", actionType: "enquiry", target: "Registration" },
-        { id: "contact-page", label: "Contact FashAI", actionType: "navigate", target: "/contact" }
-      ]
-    };
-  }
-
-  // 7. Contact & Communication Queries
-  if (q.includes("contact") || q.includes("email") || q.includes("reach") || q.includes("phone")) {
-    return {
-      message: "You can reach the FashAI Universal team directly through our official enquiry portal or by submitting your details online.",
-      quickActions: [
-        { id: "contact-form-nav", label: "Contact FashAI ↗", actionType: "navigate", target: "/contact" },
-        { id: "direct-enquiry", label: "Register / Enquire", actionType: "enquiry", target: "General Enquiry" },
+      message: "That detail hasn't been announced yet. You can register your interest or contact our team for official updates.",
+      quickChips: [
+        { id: "qp-reg", label: "Register / enquire", actionKey: "START_REGISTRATION" },
+        { id: "qp-sponsor", label: "Sponsorship", actionKey: "START_SPONSORSHIP" },
+        { id: "qp-contact", label: "Contact team", actionKey: "CONTACT_TEAM" },
       ],
-      navigationTarget: "/contact"
     };
   }
 
-  // Default Editorial Fallback
+  if (
+    q.includes("how can i attend") ||
+    q.includes("how can i participate") ||
+    q.includes("registration open") ||
+    q.includes("is registration open") ||
+    q.includes("sponsorship open") ||
+    q.includes("is sponsorship open")
+  ) {
+    return {
+      message: `Registrations and sponsorship enquiries are currently open for ${upcomingEventName} in ${upcomingLocation}.`,
+      quickChips: [
+        { id: "qp-reg", label: "Register / enquire", actionKey: "START_REGISTRATION" },
+        { id: "qp-sponsor", label: "Sponsorship", actionKey: "START_SPONSORSHIP" },
+        { id: "qp-contact", label: "Contact team", actionKey: "CONTACT_TEAM" },
+      ],
+    };
+  }
+
+  // 4. MODEL ROLE & APPLICATION
+  if (
+    q.includes("model") ||
+    q.includes("become a model") ||
+    q.includes("modeling") ||
+    q.includes("i am a model")
+  ) {
+    return {
+      message: "Applications are open for runway and showcase models. Would you like to start your model application?",
+      detectedRole: "model",
+      startFlow: "CREATIVE",
+      quickChips: [
+        { id: "qp-start-model", label: "Start application", actionKey: "START_ROLE_APP", payload: "model" },
+        { id: "qp-other-roles", label: "Explore other roles", actionKey: "JOIN_NETWORK" },
+      ],
+    };
+  }
+
+  // 5. DESIGNER ROLE & APPLICATION
+  if (
+    q.includes("designer") ||
+    q.includes("fashion designer") ||
+    q.includes("showcase my designs") ||
+    q.includes("i am a designer") ||
+    q.includes("i'm a designer")
+  ) {
+    return {
+      message: "We welcome international designers for runway and collection presentations. Would you like to start your designer application?",
+      detectedRole: "fashion_designer",
+      startFlow: "CREATIVE",
+      quickChips: [
+        { id: "qp-start-designer", label: "Start application", actionKey: "START_ROLE_APP", payload: "fashion_designer" },
+        { id: "qp-sponsor", label: "Sponsorship enquiry", actionKey: "START_SPONSORSHIP" },
+      ],
+    };
+  }
+
+  // 6. MAKEUP ARTIST ROLE
+  if (
+    q.includes("makeup") ||
+    q.includes("make up") ||
+    q.includes("i do makeup") ||
+    q.includes("makeup artist")
+  ) {
+    return {
+      message: "Applications are open for editorial and runway makeup artists. Would you like to start your application?",
+      detectedRole: "makeup_artist",
+      startFlow: "CREATIVE",
+      quickChips: [
+        { id: "qp-start-makeup", label: "Start application", actionKey: "START_ROLE_APP", payload: "makeup_artist" },
+      ],
+    };
+  }
+
+  // 7. STYLIST ROLE
+  if (
+    q.includes("stylist") ||
+    q.includes("fashion stylist") ||
+    q.includes("i am a stylist") ||
+    q.includes("i'm a stylist") ||
+    q.includes("styling")
+  ) {
+    return {
+      message: "Applications are open for fashion and editorial stylists. Would you like to start your application?",
+      detectedRole: "fashion_stylist",
+      startFlow: "CREATIVE",
+      quickChips: [
+        { id: "qp-start-stylist", label: "Start application", actionKey: "START_ROLE_APP", payload: "fashion_stylist" },
+      ],
+    };
+  }
+
+  // 8. CREATOR / INFLUENCER ROLE
+  if (
+    q.includes("influencer") ||
+    q.includes("content creator") ||
+    q.includes("fashion content") ||
+    q.includes("creator") ||
+    q.includes("i create fashion content")
+  ) {
+    return {
+      message: "We collaborate with fashion influencers and content creators across Dubai and international editions. Would you like to apply?",
+      detectedRole: "influencer_creator",
+      startFlow: "CREATIVE",
+      quickChips: [
+        { id: "qp-start-creator", label: "Start application", actionKey: "START_ROLE_APP", payload: "influencer_creator" },
+      ],
+    };
+  }
+
+  // 9. CELEBRITY / PUBLIC FIGURE ROLE
+  if (
+    q.includes("celebrity") ||
+    q.includes("public figure") ||
+    q.includes("vip guest")
+  ) {
+    return {
+      message: "We host public figures, celebrities, and VIP talent across our runway galas. Would you like to submit your details?",
+      detectedRole: "celebrity_public_figure",
+      startFlow: "CREATIVE",
+      quickChips: [
+        { id: "qp-start-celeb", label: "Submit details", actionKey: "START_ROLE_APP", payload: "celebrity_public_figure" },
+        { id: "qp-contact", label: "Contact team", actionKey: "CONTACT_TEAM" },
+      ],
+    };
+  }
+
+  // 10. NOMINATIONS
+  if (
+    q.includes("nominate") ||
+    q.includes("nomination") ||
+    q.includes("open nominations") ||
+    q.includes("i want to nominate someone")
+  ) {
+    return {
+      message: "Open nominations are available for outstanding creative talent and industry visionaries. Would you like to submit a nomination?",
+      quickChips: [
+        { id: "qp-start-nomination", label: "Submit nomination", actionKey: "START_ROLE_APP", payload: "nomination" },
+        { id: "qp-contact", label: "Contact team", actionKey: "CONTACT_TEAM" },
+      ],
+    };
+  }
+
+  // 11. GENERAL APPLICATIONS / JOIN / PARTICIPATE
+  if (
+    q.includes("i want to apply") ||
+    q.includes("how do i apply") ||
+    q.includes("where can i apply") ||
+    q.includes("are applications open") ||
+    q.includes("open applications") ||
+    q.includes("i want to join") ||
+    q.includes("can i join") ||
+    q.includes("how do i get involved")
+  ) {
+    return {
+      message: "Applications and registrations are open across our creative network. What role would you like to participate as?",
+      quickChips: [
+        { id: "qp-join-designer", label: "Designer", actionKey: "START_ROLE_APP", payload: "fashion_designer" },
+        { id: "qp-join-model", label: "Model", actionKey: "START_ROLE_APP", payload: "model" },
+        { id: "qp-join-makeup", label: "Makeup Artist", actionKey: "START_ROLE_APP", payload: "makeup_artist" },
+        { id: "qp-join-all", label: "View all options", actionKey: "JOIN_NETWORK" },
+      ],
+    };
+  }
+
+  // 12. SPONSORSHIP & PARTNERSHIP
+  if (
+    q.includes("sponsor") ||
+    q.includes("sponsorship") ||
+    q.includes("how do i sponsor") ||
+    q.includes("i want to sponsor") ||
+    q.includes("brand partner")
+  ) {
+    return {
+      message: `FashAI Universal offers title, showcase, IT, and media sponsorship opportunities for ${upcomingEventName}. Would you like to start a sponsorship enquiry?`,
+      startFlow: "SPONSORSHIP",
+      quickChips: [
+        { id: "qp-start-sp", label: "Start sponsorship enquiry", actionKey: "START_SPONSORSHIP" },
+        { id: "qp-contact", label: "Contact team", actionKey: "CONTACT_TEAM" },
+      ],
+    };
+  }
+
+  // 13. COLLABORATION / WORK WITH US
+  if (
+    q.includes("collaborate") ||
+    q.includes("i want to collaborate") ||
+    q.includes("work with you") ||
+    q.includes("i want to work with you")
+  ) {
+    return {
+      message: "We welcome creative, media, and brand collaborations across Dubai and India. Would you like to connect with our team?",
+      quickChips: [
+        { id: "qp-contact", label: "Contact team", actionKey: "CONTACT_TEAM" },
+        { id: "qp-sponsor", label: "Sponsorship", actionKey: "START_SPONSORSHIP" },
+      ],
+    };
+  }
+
+  // 14. GALLERY & VISUAL ARCHIVE
+  if (
+    q.includes("gallery") ||
+    q.includes("show me the gallery") ||
+    q.includes("show me your work") ||
+    q.includes("show previous events") ||
+    q.includes("photo") ||
+    q.includes("picture") ||
+    q.includes("lookbook")
+  ) {
+    return {
+      message: "The FashAI Universal Visual Archive showcases moments across Runway & Stage, Couture Details, People & Moments, and Experience.",
+      quickChips: [
+        { id: "qp-nav-gallery", label: "View gallery archive ↗", actionKey: "NAVIGATE", payload: "/gallery" },
+        { id: "qp-events", label: "Upcoming events", actionKey: "EXPLORE_EVENTS" },
+      ],
+      navigationTarget: "/gallery",
+    };
+  }
+
+  // 15. CONTACT & REACH OUT
+  if (
+    q.includes("contact") ||
+    q.includes("how can i contact you") ||
+    q.includes("reach") ||
+    q.includes("email") ||
+    q.includes("phone")
+  ) {
+    return {
+      message: "You can reach the FashAI Universal team directly through our enquiry portal or online contact form.",
+      quickChips: [
+        { id: "qp-nav-contact", label: "View contact page ↗", actionKey: "NAVIGATE", payload: "/contact" },
+        { id: "qp-start-contact", label: "Send a message", actionKey: "START_CONTACT" },
+      ],
+      navigationTarget: "/contact",
+    };
+  }
+
+  // 16. FALLBACK FOR UNRESOLVED QUERIES (NO HALLUCINATIONS, SOFT REDIRECT)
   return {
-    message: "FashAI Universal is an international fashion and lifestyle experience in Dubai · 2026. How can I help you today?",
-    quickActions: [
-      { id: "qa-lifestyle", label: "LifeStyle 2026", actionType: "navigate", target: "/upcoming" },
-      { id: "qa-gallery", label: "Gallery", actionType: "navigate", target: "/gallery" },
-      { id: "qa-enquiry", label: "Register / Enquire", actionType: "enquiry", target: "Registration" }
-    ]
+    message: "I'm not completely sure what you're looking for. Try one of these options:",
+    quickChips: [
+      { id: "qp-events", label: "Explore events", actionKey: "EXPLORE_EVENTS" },
+      { id: "qp-join", label: "Join the network", actionKey: "JOIN_NETWORK" },
+      { id: "qp-apply", label: "Apply / nominate", actionKey: "APPLY_NOMINATE" },
+      { id: "qp-contact", label: "Contact the team", actionKey: "CONTACT_TEAM" },
+    ],
   };
 }
