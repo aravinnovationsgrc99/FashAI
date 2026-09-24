@@ -195,16 +195,13 @@ export default function Footer() {
           </div>
 
           {/* RIGHT: Powered by Arav Innovation Branding Lockup */}
-          <div className="flex items-center gap-2">
-            <span className="text-[11px] sm:text-xs font-medium text-[#444444] dark:text-white/80 uppercase tracking-wider">
-              Powered by
-            </span>
+          <div className="flex items-center">
             <Image
               src="/assets/brand/Final_Powered_by_logo.png"
-              alt="Arav Innovation"
-              width={140}
-              height={36}
-              className="h-5 sm:h-6 w-auto object-contain filter contrast-[1.05]"
+              alt="Powered by Arav Innovation"
+              width={240}
+              height={60}
+              className="h-8 sm:h-10 md:h-12 w-auto object-contain filter contrast-[1.05]"
             />
           </div>
         </motion.div>
