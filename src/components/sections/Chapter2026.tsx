@@ -2,98 +2,159 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
+import { ArrowUpRight } from "lucide-react";
 
 export default function Chapter2026() {
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.08,
+        delayChildren: 0.1,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 16 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.55,
+        ease: [0.22, 1, 0.36, 1],
+      },
+    },
+  };
+
   return (
-    <section id="2026" className="relative w-full flex flex-col justify-center py-10 sm:py-14 px-4 sm:px-8 bg-brand-void border-b border-hairline-orange overflow-hidden">
-      <div className="relative z-10 container-editorial">
+    <section
+      id="2026"
+      className="relative w-full py-12 sm:py-16 md:py-20 px-4 sm:px-6 bg-white dark:bg-[#111111] text-[#111111] dark:text-white border-b border-black/10 dark:border-white/10 overflow-hidden select-none"
+    >
+      <div className="container-editorial relative z-10 max-w-5xl mx-auto">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
           viewport={{ once: true }}
-          transition={{ duration: 0.7 }}
-          className="flex flex-col items-center text-center max-w-5xl mx-auto"
+          className="flex flex-col items-center text-center space-y-6 sm:space-y-8"
         >
-          {/* Unboxed Clean Eyebrow */}
-          <div className="flex items-center gap-3 mb-4">
-            <span className="h-1.5 w-1.5 rounded-full bg-brand-orange animate-pulse" />
-            <span className="font-syne text-xs tracking-micro text-brand-orange font-bold uppercase">
-              UPCOMING CHAPTER
+          {/* 1. HERO EYEBROW */}
+          <motion.div variants={itemVariants} className="flex items-center gap-2.5">
+            <span className="w-2 h-2 rounded-full bg-[#F15E1C] animate-pulse" />
+            <span className="font-syne text-xs sm:text-sm tracking-[0.25em] text-[#F15E1C] dark:text-[#FAB60A] font-bold uppercase">
+              UPCOMING EVENT · DUBAI 2026
             </span>
-          </div>
+          </motion.div>
 
-          <h2 className="font-serif-display text-3xl sm:text-5xl md:text-6xl font-light text-brand-white tracking-tight mb-1 uppercase">
-            FashAI Universal
-          </h2>
-
-          {/* Golden Yellow 2026 Typography */}
-          <div className="font-serif-display text-6xl sm:text-[110px] md:text-[160px] lg:text-[180px] font-light text-brand-yellow-golden tracking-tighter leading-none select-none my-1 drop-shadow-[0_10px_35px_rgba(250,182,10,0.25)]">
-            2026
-          </div>
-
-          <p className="font-syne text-xs sm:text-sm tracking-caps text-brand-orange font-bold mb-4 uppercase">
-            DUBAI, UNITED ARAB EMIRATES
-          </p>
-
-          <p className="font-sans text-xs sm:text-base text-brand-platinum/90 font-light leading-relaxed max-w-2xl mb-8">
-            The next evolution of the FashAI Universal initiative. Bringing together computational fashion, spatial design, and exclusive delegate salons set against Dubai’s monumental landscape.
-          </p>
-
-          {/* Factual Specifications Banner — Refined Theme Cards */}
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 w-full max-w-4xl mb-8">
-            <div className="border border-brand-yellow-golden/30 bg-[#090807] p-5 text-center rounded-2xl shadow-md">
-              <span className="text-[10px] font-syne tracking-micro text-brand-yellow-golden font-bold block mb-1 uppercase">
-                DESTINATION
+          {/* 2. MAIN TITLE */}
+          <motion.div variants={itemVariants} className="space-y-2">
+            <h2 className="font-serif-display text-4xl sm:text-7xl md:text-8xl lg:text-9xl font-light tracking-tight leading-[0.9] uppercase">
+              LIFESTYLE{" "}
+              <span className="font-serif italic font-normal text-[#F15E1C]">
+                2026
               </span>
-              <span className="font-serif-display text-xl sm:text-2xl text-brand-white font-light block uppercase">
-                DUBAI
-              </span>
-              <span className="text-[9px] font-syne text-brand-orange font-bold uppercase mt-1 block">
-                CONFIRMED
-              </span>
+            </h2>
+
+            {/* LOCATION LINE (#2E936F Teal Accent) */}
+            <p className="font-syne text-xs sm:text-sm tracking-[0.25em] text-[#2E936F] font-bold uppercase pt-1">
+              DUBAI &nbsp;·&nbsp; 2026
+            </p>
+
+            {/* SHORT SECONDARY STATEMENT */}
+            <p className="font-sans text-xs sm:text-sm md:text-base text-[#444444] dark:text-white/80 font-normal max-w-xl mx-auto pt-1 leading-relaxed">
+              An international fashion and lifestyle experience.
+            </p>
+          </motion.div>
+
+          {/* 3. MINIMAL EDITORIAL QUOTE / STATEMENT */}
+          <motion.div
+            variants={itemVariants}
+            className="flex flex-col sm:flex-row items-center justify-center gap-3 pt-1 pb-1"
+          >
+            <span className="hidden sm:block w-8 h-[1px] bg-[#F15E1C]" />
+            <span className="font-syne text-xs sm:text-sm tracking-widest text-[#111111] dark:text-white/90 font-bold uppercase">
+              “BIGGEST INTERNATIONAL FASHION EVENTS, DUBAI | 2026”
+            </span>
+            <span className="hidden sm:block w-8 h-[1px] bg-[#F15E1C]" />
+          </motion.div>
+
+          {/* 4. COMPACT ANNOUNCEMENT BANNER */}
+          <motion.div
+            variants={itemVariants}
+            className="w-full max-w-3xl bg-[#F7D7B0]/25 dark:bg-white/5 border border-[#F15E1C]/30 dark:border-white/10 rounded-lg p-5 sm:p-6 text-center shadow-sm"
+          >
+            <span className="font-syne text-xs sm:text-sm tracking-[0.2em] font-bold text-[#F15E1C] dark:text-[#FAB60A] uppercase block mb-1.5">
+              REGISTRATIONS &amp; SPONSORSHIPS ARE OPEN
+            </span>
+            <p className="font-sans text-xs sm:text-sm text-[#333333] dark:text-white/85 font-normal max-w-2xl mx-auto leading-relaxed">
+              Enquire for delegate registration, international designer participation, and brand sponsorship opportunities for LifeStyle 2026.
+            </p>
+          </motion.div>
+
+          {/* 5. EVENT INFORMATION (3-COLUMN CLEAN EDITORIAL GRID) */}
+          <motion.div
+            variants={itemVariants}
+            className="w-full max-w-4xl pt-2 pb-2"
+          >
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-0 divide-y md:divide-y-0 md:divide-x divide-black/10 dark:divide-white/10 border-y border-black/10 dark:border-white/10 py-6">
+              {/* COL 1: EVENT DATE */}
+              <div className="flex flex-col items-center justify-center px-4 py-3 md:py-0 text-center">
+                <span className="text-[11px] font-syne tracking-widest font-bold text-[#555555] dark:text-white/60 uppercase block mb-1">
+                  EVENT DATE
+                </span>
+                <span className="font-serif-display text-lg sm:text-xl lg:text-2xl font-light text-[#F15E1C] uppercase tracking-wide">
+                  TO BE ANNOUNCED
+                </span>
+              </div>
+
+              {/* COL 2: EVENT VENUE */}
+              <div className="flex flex-col items-center justify-center px-4 py-3 md:py-0 text-center">
+                <span className="text-[11px] font-syne tracking-widest font-bold text-[#555555] dark:text-white/60 uppercase block mb-1">
+                  EVENT VENUE
+                </span>
+                <span className="font-serif-display text-lg sm:text-xl lg:text-2xl font-light text-[#F15E1C] uppercase tracking-wide">
+                  TO BE ANNOUNCED
+                </span>
+              </div>
+
+              {/* COL 3: DRESS CODE */}
+              <div className="flex flex-col items-center justify-center px-4 py-3 md:py-0 text-center">
+                <span className="text-[11px] font-syne tracking-widest font-bold text-[#555555] dark:text-white/60 uppercase block mb-1">
+                  DRESS CODE
+                </span>
+                <span className="font-serif-display text-base sm:text-lg lg:text-xl font-light text-[#111111] dark:text-white uppercase tracking-wide">
+                  FASHIONABLE &amp; HAUTE COUTURE
+                </span>
+              </div>
             </div>
+          </motion.div>
 
-            <div className="border border-brand-yellow-golden/30 bg-[#090807] p-5 text-center rounded-2xl shadow-md">
-              <span className="text-[10px] font-syne tracking-micro text-brand-yellow-golden font-bold block mb-1 uppercase">
-                EVENT DETAILS
-              </span>
-              <span className="font-serif-display text-lg sm:text-xl text-brand-yellow-golden font-light block uppercase">
-                COMING SOON
-              </span>
-              <span className="text-[9px] font-syne text-brand-orange font-bold uppercase mt-1 block">
-                ANNOUNCEMENT PENDING
-              </span>
-            </div>
-
-            <div className="border border-brand-yellow-golden/30 bg-[#090807] p-5 text-center rounded-2xl shadow-md">
-              <span className="text-[10px] font-syne tracking-micro text-brand-yellow-golden font-bold block mb-1 uppercase">
-                LOCATION DETAILS
-              </span>
-              <span className="font-serif-display text-lg sm:text-xl text-brand-white font-light block uppercase">
-                TO BE ANNOUNCED
-              </span>
-              <span className="text-[9px] font-syne text-brand-green font-bold uppercase mt-1 block">
-                SELECTION IN PROGRESS
-              </span>
-            </div>
-          </div>
-
-          {/* Action CTAs */}
-          <div className="flex flex-col sm:flex-row items-center gap-4">
+          {/* 6. CALL TO ACTIONS */}
+          <motion.div
+            variants={itemVariants}
+            className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-2 w-full sm:w-auto"
+          >
+            {/* Primary CTA */}
             <Link
-              href="/2026"
-              className="bg-brand-orange px-8 py-3.5 text-xs font-syne tracking-caps font-bold text-white hover:bg-[#ff6f2d] hover:scale-105 transition-all duration-300 shadow-xl inline-block rounded-full"
-              data-cursor="explore"
+              href="/contact?type=Registration"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 bg-[#F15E1C] hover:bg-[#ff6f2d] text-white px-7 py-3.5 rounded-md font-syne text-xs font-bold tracking-wider uppercase transition-all duration-300 shadow-md group"
             >
-              DISCOVER 2026 DETAILS ↗
+              <span>REGISTER NOW</span>
+              <ArrowUpRight className="w-4 h-4 text-white group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-300" />
             </Link>
+
+            {/* Secondary CTA */}
             <Link
-              href="/contact"
-              className="border border-brand-yellow-golden/60 bg-[#080706] px-8 py-3.5 text-xs font-syne tracking-caps font-bold text-brand-white keep-white hover:bg-brand-yellow-golden/15 hover:border-brand-yellow-golden transition-all duration-300 inline-block rounded-full"
+              href="/contact?type=Sponsorship"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 border border-[#111111] dark:border-white/80 bg-transparent hover:bg-black/5 dark:hover:bg-white/10 text-[#111111] dark:text-white px-7 py-3.5 rounded-md font-syne text-xs font-bold tracking-wider uppercase transition-all duration-300 group"
             >
-              REGISTER FOR UPDATES ↗
+              <span>SPONSORSHIP ENQUIRY</span>
+              <ArrowUpRight className="w-4 h-4 text-[#111111] dark:text-white group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-300" />
             </Link>
-          </div>
+          </motion.div>
         </motion.div>
       </div>
     </section>

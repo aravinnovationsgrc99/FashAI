@@ -1,78 +1,97 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 import Link from "next/link";
-import { ExternalLink } from "lucide-react";
+import { ArrowUpRight, Instagram } from "lucide-react";
 
 export default function InstagramSection() {
   return (
-    <section className="relative py-8 sm:py-12 bg-brand-void border-b border-hairline-orange overflow-hidden">
-      {/* Rich Background Atmosphere Layer */}
-      <div className="absolute inset-0 pointer-events-none select-none overflow-hidden">
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff03_1px,transparent_1px),linear-gradient(to_bottom,#ffffff03_1px,transparent_1px)] bg-[size:4rem_4rem]" />
-        <div className="editorial-watermark absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-[14vw] font-serif-display font-light uppercase tracking-tighter leading-none whitespace-nowrap pointer-events-none select-none">
-          INSTAGRAM
-        </div>
+    <section className="relative min-h-[85vh] sm:min-h-screen flex items-center justify-center bg-white dark:bg-[#050505] text-[#111111] dark:text-white overflow-hidden select-none">
+      {/* Edge-to-Edge Full Bleed Background Image (Light & Dark Mode Images) */}
+      <div className="absolute inset-0 z-0">
+        {/* Light Mode Background Image */}
+        <Image
+          src="/assets/events/instagram_background_light.png"
+          alt="FashAI Universal Instagram Campaign Light"
+          fill
+          sizes="100vw"
+          className="block dark:hidden object-cover object-center filter contrast-[1.03] brightness-[1.02]"
+          priority
+        />
+        {/* Dark Mode Background Image */}
+        <Image
+          src="/assets/events/instagram_background_dark.png"
+          alt="FashAI Universal Instagram Campaign Dark"
+          fill
+          sizes="100vw"
+          className="hidden dark:block object-cover object-center filter contrast-[1.04] brightness-90"
+          priority
+        />
+        {/* Soft Ambient Overlay for Maximum Image Visibility & Text Readability */}
+        <div className="absolute inset-0 bg-gradient-to-t from-white/70 via-white/40 to-white/20 dark:from-black/90 dark:via-black/75 dark:to-black/50" />
       </div>
 
-      <div className="container-editorial relative z-10">
+      {/* Content Container (Center Aligned) */}
+      <div className="container-editorial relative z-10 py-20 sm:py-28 max-w-6xl mx-auto px-4 sm:px-6 w-full">
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-          className="max-w-4xl mx-auto text-center border border-brand-orange/40 bg-brand-void/90 backdrop-blur-md p-8 sm:p-16 shadow-2xl relative"
+          transition={{ duration: 0.7 }}
+          className="max-w-4xl mx-auto text-center space-y-7 sm:space-y-8"
         >
-          {/* Decorative Corner Accents */}
-          <div className="absolute top-0 left-0 w-3 h-3 border-t-2 border-l-2 border-brand-orange" />
-          <div className="absolute top-0 right-0 w-3 h-3 border-t-2 border-r-2 border-brand-orange" />
-          <div className="absolute bottom-0 left-0 w-3 h-3 border-b-2 border-l-2 border-brand-orange" />
-          <div className="absolute bottom-0 right-0 w-3 h-3 border-b-2 border-r-2 border-brand-orange" />
+          {/* Eyebrow with Thin Editorial Rules */}
+          <div className="flex items-center justify-center gap-3">
+            <span className="w-12 h-[1px] bg-[#F15E1C] dark:bg-[#FAB60A]" />
+            <span className="text-xs sm:text-sm font-syne tracking-[0.28em] text-[#F15E1C] dark:text-[#FAB60A] font-bold uppercase">
+              OFFICIAL SOCIAL INSTAGRAM
+            </span>
+            <span className="w-12 h-[1px] bg-[#F15E1C] dark:bg-[#FAB60A]" />
+          </div>
 
-          {/* Kicker / Tag */}
-          <span className="inline-block text-xs font-syne tracking-micro text-brand-orange uppercase font-bold mb-3">
-            OFFICIAL SOCIAL INSTAGRAM
-          </span>
-
-          {/* Heading */}
-          <h2 className="font-serif-display text-4xl sm:text-6xl lg:text-7xl font-light text-brand-white tracking-tight uppercase mb-2">
-            FOLLOW THE JOURNEY
+          {/* Main Heading (Significantly Larger & Center Aligned) */}
+          <h2 className="font-serif-display text-6xl xs:text-7xl sm:text-8xl md:text-9xl lg:text-[110px] xl:text-[128px] font-light text-[#111111] dark:text-white uppercase leading-[0.86] tracking-tight drop-shadow-sm">
+            FOLLOW THE <br />
+            <span className="font-serif italic font-normal text-[#F15E1C] dark:text-[#FAB60A]">
+              JOURNEY
+            </span>
           </h2>
 
-          {/* Handle */}
-          <div className="text-xl sm:text-3xl font-serif italic text-brand-yellow-golden mb-4">
+          {/* Instagram Handle */}
+          <div className="font-serif italic text-3xl sm:text-5xl md:text-6xl text-[#111111] dark:text-white tracking-tight">
             @fashai_universal
           </div>
 
-          <p className="font-syne text-xs sm:text-sm tracking-caps text-brand-green font-bold uppercase mb-4">
-            LIFESTYLE 2026 • DUBAI · 2026
+          {/* Event Details Line */}
+          <p className="font-syne text-xs sm:text-sm tracking-[0.2em] font-bold text-[#F15E1C] dark:text-[#FAB60A] uppercase">
+            LIFESTYLE 2026 &nbsp;·&nbsp; DUBAI &nbsp;·&nbsp; 2026
           </p>
 
-          <p className="font-sans text-xs sm:text-sm text-brand-platinum max-w-xl mx-auto font-light leading-relaxed mb-6">
-            Join our global community for exclusive backstage captures, luxury fashion experience updates, and official event announcements.
+          {/* Short Description */}
+          <p className="font-sans text-xs sm:text-sm text-[#222222] dark:text-white/85 font-normal max-w-xl mx-auto leading-relaxed">
+            Join our global community for exclusive backstage captures, fashion experiences, updates and official event announcements.
           </p>
 
-          {/* Announcement Banner */}
-          <div className="inline-block bg-brand-orange/10 border border-brand-orange/30 px-6 py-2.5 mb-8 text-xs font-syne tracking-caps text-brand-orange font-bold uppercase">
-            REGISTRATIONS &amp; SPONSORSHIPS ARE OPEN
-          </div>
-
-          {/* Official Button CTAs */}
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+          {/* CTAs (Center Aligned) */}
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-2">
             <a
               href="https://www.instagram.com/fashai_universal"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-3 bg-brand-orange px-10 py-4 text-xs font-syne tracking-caps font-bold text-white hover:bg-[#ff6f2d] hover:shadow-[0_0_30px_rgba(241,94,28,0.5)] transition-all duration-300 group"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-[#F15E1C] hover:bg-[#ff6f2d] text-white px-8 py-4 rounded-md font-syne text-xs font-bold tracking-wider uppercase transition-all duration-300 shadow-lg group"
             >
+              <Instagram className="w-4 h-4 text-white" />
               <span>FOLLOW ON INSTAGRAM</span>
-              <ExternalLink className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+              <ArrowUpRight className="w-4 h-4 text-white group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
             </a>
+
             <Link
               href="/contact?type=Registration"
-              className="inline-flex items-center gap-2 border border-brand-yellow-golden/40 bg-brand-void px-8 py-4 text-xs font-syne tracking-caps font-bold text-brand-white hover:bg-brand-yellow-golden/10 hover:border-brand-yellow-golden transition-all"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 border border-black/80 dark:border-[#FAB60A] bg-white/80 dark:bg-transparent hover:bg-black/5 dark:hover:bg-[#FAB60A]/10 text-black dark:text-white px-8 py-4 rounded-md font-syne text-xs font-bold tracking-wider uppercase transition-all duration-300 shadow-sm"
             >
-              REGISTER / ENQUIRE ↗
+              <span>REGISTER / ENQUIRE</span>
+              <ArrowUpRight className="w-4 h-4 text-black dark:text-[#FAB60A]" />
             </Link>
           </div>
         </motion.div>
