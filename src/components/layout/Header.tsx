@@ -10,6 +10,7 @@ import ThemeToggle from "../ui/ThemeToggle";
 import { useSiteConfig } from "@/context/SiteConfigContext";
 
 export default function Header() {
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [scrollY, setScrollY] = useState(0);
   const [heroHeight, setHeroHeight] = useState(700);
   const pathname = usePathname();
