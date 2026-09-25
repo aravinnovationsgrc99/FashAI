@@ -8,6 +8,7 @@ import { Menu, ArrowRight } from "lucide-react";
 import MobileMenu from "./MobileMenu";
 import ThemeToggle from "../ui/ThemeToggle";
 import GradientFlowText from "../ui/GradientFlowText";
+import HamburgerMenuIcon from "../ui/HamburgerMenuIcon";
 import { useSiteConfig } from "@/context/SiteConfigContext";
 
 export default function Header() {
@@ -172,11 +173,12 @@ export default function Header() {
 
             {/* CIRCULAR MOBILE HAMBURGER BUTTON */}
             <button
-              onClick={() => setMobileMenuOpen(true)}
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               className="lg:hidden rounded-full flex items-center justify-center shrink-0 transition-all duration-300 aspect-square w-8 h-8 sm:w-9 sm:h-9 bg-[#D4AF37]/10 dark:bg-white/10 border border-[#D4AF37]/45 dark:border-white/15 text-[#D4AF37] dark:text-white hover:border-[#D4AF37]"
-              aria-label="Open Navigation Menu"
+              aria-label={mobileMenuOpen ? "Close Navigation Menu" : "Open Navigation Menu"}
+              aria-expanded={mobileMenuOpen}
             >
-              <Menu className="w-4.5 h-4.5 text-[#D4AF37] dark:text-white" />
+              <HamburgerMenuIcon isOpen={mobileMenuOpen} className="text-[#D4AF37] dark:text-white" />
             </button>
           </div>
         </div>
