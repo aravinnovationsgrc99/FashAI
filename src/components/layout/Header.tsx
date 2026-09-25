@@ -41,14 +41,25 @@ export default function Header() {
     };
   }, [pathname]);
 
-  const navItems = (config.navigationSettings && config.navigationSettings.length > 0
+  const rawNavItems = (config.navigationSettings && config.navigationSettings.length > 0
     ? config.navigationSettings.filter((item) => item.enabled)
     : [
         { id: "home", label: "HOME", href: "/", enabled: true, order: 1 },
         { id: "upcoming", label: "UPCOMING", href: "/upcoming", enabled: true, order: 2 },
-        { id: "gallery", label: "GALLERY", href: "/gallery", enabled: true, order: 3 },
-        { id: "apply", label: "APPLY", href: "/apply", enabled: true, order: 4 },
-        { id: "contact", label: "CONTACT", href: "/contact", enabled: true, order: 5 },
+        { id: "services", label: "SERVICES", href: "/services", enabled: true, order: 3 },
+        { id: "gallery", label: "GALLERY", href: "/gallery", enabled: true, order: 4 },
+        { id: "apply", label: "APPLY", href: "/apply", enabled: true, order: 5 },
+        { id: "contact", label: "CONTACT", href: "/contact", enabled: true, order: 6 },
+      ]
+  );
+
+  const hasServices = rawNavItems.some((item) => item.id === "services" || item.href === "/services");
+  const navItems = (hasServices
+    ? rawNavItems
+    : [
+        ...rawNavItems.slice(0, 2),
+        { id: "services", label: "SERVICES", href: "/services", enabled: true, order: 3 },
+        ...rawNavItems.slice(2),
       ]
   ).sort((a, b) => a.order - b.order);
 
@@ -62,19 +73,19 @@ export default function Header() {
       <header
         className={`fixed left-1/2 -translate-x-1/2 z-[200] transition-all duration-400 rounded-full select-none ${
           isTopAtVideo
-            ? "top-1.5 sm:top-2.5 md:top-3 h-15 sm:h-16 md:h-[66px] w-[calc(100%-1.5rem)] max-w-[1400px] bg-transparent border-transparent shadow-none backdrop-blur-none"
+            ? "top-2 sm:top-3 md:top-3.5 h-16 sm:h-[66px] md:h-[70px] w-[calc(100%-1.5rem)] max-w-[1450px] bg-transparent border-transparent shadow-none backdrop-blur-none"
             : isOverVideo
-            ? "top-1 sm:top-1.5 h-13 sm:h-[56px] w-[calc(100%-2rem)] max-w-[1240px] bg-black/40 border border-white/20 shadow-[0_8px_32px_rgba(0,0,0,0.3)] backdrop-blur-2xl"
-            : "top-1 sm:top-1.5 h-13 sm:h-[56px] w-[calc(100%-2rem)] max-w-[1240px] bg-white/80 dark:bg-[#070707]/85 border border-black/10 dark:border-white/15 shadow-[0_8px_32px_rgba(0,0,0,0.08)] dark:shadow-[0_14px_40px_rgba(0,0,0,0.5)] backdrop-blur-2xl"
+            ? "top-1.5 sm:top-2 h-14 sm:h-[60px] w-[calc(100%-1.5rem)] max-w-[1340px] bg-black/40 border border-white/20 shadow-[0_8px_32px_rgba(0,0,0,0.3)] backdrop-blur-2xl"
+            : "top-1.5 sm:top-2 h-14 sm:h-[60px] w-[calc(100%-1.5rem)] max-w-[1340px] bg-white/80 dark:bg-[#070707]/85 border border-black/10 dark:border-white/15 shadow-[0_8px_32px_rgba(0,0,0,0.08)] dark:shadow-[0_14px_40px_rgba(0,0,0,0.5)] backdrop-blur-2xl"
         }`}
       >
         <div
           className={`h-full flex items-center justify-between relative transition-all duration-400 ${
-            isTopAtVideo ? "px-4 sm:px-6 gap-3 sm:gap-4" : "px-3.5 sm:px-5 gap-2 sm:gap-3"
+            isTopAtVideo ? "px-4 sm:px-7 lg:px-9 gap-4 sm:gap-6 lg:gap-8" : "px-4 sm:px-6 lg:px-8 gap-3 sm:gap-5 lg:gap-7"
           }`}
         >
           {/* LOGO AREA (LEFT) */}
-          <Link href="/" className="flex items-center gap-2 sm:gap-2.5 group shrink-0">
+          <Link href="/" className="flex items-center gap-2.5 sm:gap-3 group shrink-0">
             <div
               className={`relative flex-shrink-0 transition-all duration-300 group-hover:scale-105 ${
                 isTopAtVideo ? "w-8 h-8 sm:w-9 sm:h-9" : "w-7 h-7 sm:w-8 sm:h-8"
@@ -120,7 +131,7 @@ export default function Header() {
           {/* DESKTOP / LAPTOP CENTER NAVIGATION LINKS */}
           <nav
             className={`hidden lg:flex items-center text-xs font-syne tracking-[0.18em] font-semibold uppercase transition-all duration-300 ${
-              isTopAtVideo ? "space-x-7 xl:space-x-9" : "space-x-5 xl:space-x-7"
+              isTopAtVideo ? "space-x-7 xl:space-x-10" : "space-x-6 xl:space-x-9"
             }`}
           >
             {navItems.map((item) => {
@@ -167,13 +178,13 @@ export default function Header() {
             {/* CIRCULAR GLASS THEME TOGGLE */}
             <ThemeToggle isHeroHeader={isOverVideo} />
 
-            {/* CONTACT US CTA BUTTON */}
+            {/* CONTACT US CTA BUTTON (DESKTOP/TABLET ONLY — KEPT INSIDE 3-LINE DRAWER FOR MOBILE) */}
             <Link
               href="/contact"
               className={`hidden sm:inline-flex items-center justify-center bg-[#FAB60A] text-[#111111] hover:bg-[#FFEC69] font-syne font-bold tracking-wider uppercase rounded-full transition-all duration-300 shadow-md hover:shadow-lg hover:-translate-y-0.5 shrink-0 whitespace-nowrap ${
                 isTopAtVideo
-                  ? "text-[11px] sm:text-xs px-4 sm:px-6 py-2 sm:py-2.5"
-                  : "text-[10px] sm:text-[11px] px-3.5 sm:px-5 py-1.5 sm:py-2"
+                  ? "text-xs px-5 sm:px-6 py-2 sm:py-2.5"
+                  : "text-[11px] px-4 sm:px-5 py-1.5 sm:py-2"
               }`}
               data-cursor="explore"
             >

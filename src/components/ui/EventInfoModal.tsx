@@ -138,28 +138,42 @@ export default function EventInfoModal() {
             exit={{ opacity: 0, y: 15, scale: 0.97 }}
             transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
             onClick={(e) => e.stopPropagation()}
-            className="relative z-[310] w-[92vw] sm:w-[90vw] max-w-[1450px] max-h-[90vh] sm:max-h-[88vh] overflow-y-auto no-scrollbar border border-brand-yellow-golden/60 bg-[#070605] text-brand-white rounded-2xl md:rounded-3xl shadow-[0_0_80px_rgba(250,182,10,0.2)] my-auto"
+            className="relative z-[310] w-[92vw] sm:w-[90vw] max-w-[1450px] max-h-[90vh] sm:max-h-[88vh] overflow-y-auto no-scrollbar border border-[#F15E1C]/50 dark:border-brand-yellow-golden/60 bg-white dark:bg-[#070605] text-[#111111] dark:text-brand-white rounded-2xl md:rounded-3xl shadow-[0_12px_60px_rgba(0,0,0,0.15)] dark:shadow-[0_0_80px_rgba(250,182,10,0.2)] my-auto"
           >
-            {/* Background Fallback Image (Framed exactly as in reference design) */}
+            {/* Background Image Container (Light & Dark Mode Adaptive) */}
             <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
+              {/* Light Mode Background Image */}
               <Image
-                src="/assets/hero/fallback.png"
-                alt="LifeStyle 2026 Dubai Background"
+                src="/assets/events/instagram_background_light.png"
+                alt="LifeStyle 2026 Dubai Background Light"
                 fill
                 priority
                 sizes="(max-width: 1450px) 100vw, 1450px"
-                className="object-cover object-right md:object-right-top opacity-90 filter contrast-105"
+                className="block dark:hidden object-cover object-right md:object-right-top opacity-95 filter contrast-105"
               />
-              {/* Dark Gradient Overlay: Heavy on left for text contrast, soft on right for fashion model */}
-              <div className="absolute inset-0 bg-gradient-to-r from-black/95 via-black/85 to-black/30 md:to-transparent" />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-transparent to-black/60" />
+              {/* Dark Mode Background Image */}
+              <Image
+                src="/assets/hero/fallback.png"
+                alt="LifeStyle 2026 Dubai Background Dark"
+                fill
+                priority
+                sizes="(max-width: 1450px) 100vw, 1450px"
+                className="hidden dark:block object-cover object-right md:object-right-top opacity-90 filter contrast-105"
+              />
+              {/* Light Mode Overlays */}
+              <div className="block dark:hidden absolute inset-0 bg-gradient-to-r from-white/95 via-white/85 to-white/40 md:to-transparent" />
+              <div className="block dark:hidden absolute inset-0 bg-gradient-to-t from-white/95 via-transparent to-white/60" />
+
+              {/* Dark Mode Overlays */}
+              <div className="hidden dark:block absolute inset-0 bg-gradient-to-r from-black/95 via-black/85 to-black/30 md:to-transparent" />
+              <div className="hidden dark:block absolute inset-0 bg-gradient-to-t from-black/95 via-transparent to-black/60" />
             </div>
 
             {/* Top Right Control Close Button */}
             <button
               onClick={handleClose}
               aria-label="Close event announcement"
-              className="absolute top-4 right-4 sm:top-6 sm:right-6 z-[320] p-2.5 sm:p-3 min-w-[44px] min-h-[44px] flex items-center justify-center bg-black/80 border border-brand-yellow-golden/70 rounded-lg text-white hover:text-brand-yellow-golden hover:border-brand-yellow-golden hover:bg-black transition-all shadow-xl group"
+              className="absolute top-4 right-4 sm:top-6 sm:right-6 z-[320] p-2.5 sm:p-3 min-w-[44px] min-h-[44px] flex items-center justify-center bg-white/90 dark:bg-black/80 border border-[#F15E1C]/40 dark:border-brand-yellow-golden/70 rounded-lg text-[#111111] dark:text-white hover:text-[#F15E1C] dark:hover:text-brand-yellow-golden hover:border-[#F15E1C] dark:hover:border-brand-yellow-golden transition-all shadow-xl group"
             >
               <X className="w-5 h-5 group-hover:scale-110 transition-transform" />
             </button>
@@ -170,35 +184,35 @@ export default function EventInfoModal() {
               <div className="max-w-2xl space-y-4 sm:space-y-5">
                 {/* Small Eyebrow */}
                 <div className="flex items-center gap-2">
-                  <span className="w-2.5 h-2.5 bg-brand-yellow-golden shadow-[0_0_8px_rgba(250,182,10,0.8)] shrink-0" />
-                  <span className="font-syne text-[11px] sm:text-xs tracking-[0.25em] text-brand-yellow-golden font-bold uppercase drop-shadow">
+                  <span className="w-2.5 h-2.5 bg-[#F15E1C] dark:bg-brand-yellow-golden shadow-[0_0_8px_rgba(241,94,28,0.6)] dark:shadow-[0_0_8px_rgba(250,182,10,0.8)] shrink-0" />
+                  <span className="font-syne text-[11px] sm:text-xs tracking-[0.25em] text-[#F15E1C] dark:text-brand-yellow-golden font-bold uppercase drop-shadow-sm">
                     LIFESTYLE 2026 · DUBAI · 2026
                   </span>
                 </div>
 
                 {/* Subtitle */}
-                <p className="font-serif italic text-base sm:text-xl text-brand-platinum/90 font-light drop-shadow">
+                <p className="font-serif italic text-base sm:text-xl text-[#333333] dark:text-brand-platinum/90 font-light drop-shadow-sm">
                   An international fashion and lifestyle experience.
                 </p>
 
                 {/* Main Headline Title */}
-                <h2 className="font-serif-display text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-light uppercase tracking-tight leading-none text-white drop-shadow-[0_8px_25px_rgba(0,0,0,0.9)]">
-                  LIFESTYLE <span className="font-serif italic text-brand-yellow-golden font-normal">2026</span>
+                <h2 className="font-serif-display text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-light uppercase tracking-tight leading-none text-[#111111] dark:text-white drop-shadow-sm">
+                  LIFESTYLE <span className="font-serif italic text-[#F15E1C] dark:text-brand-yellow-golden font-normal">2026</span>
                 </h2>
 
                 {/* Location Tag */}
-                <div className="inline-block border-b border-brand-yellow-golden/50 pb-2">
-                  <span className="font-syne text-xs sm:text-sm tracking-[0.3em] font-bold text-brand-yellow-golden uppercase">
+                <div className="inline-block border-b border-[#F15E1C]/40 dark:border-brand-yellow-golden/50 pb-2">
+                  <span className="font-syne text-xs sm:text-sm tracking-[0.3em] font-bold text-[#F15E1C] dark:text-brand-yellow-golden uppercase">
                     DUBAI · 2026
                   </span>
                 </div>
 
                 {/* Announcement Container Box */}
-                <div className="bg-black/60 backdrop-blur-md border border-brand-yellow-golden/40 p-4 sm:p-5 rounded-xl sm:rounded-2xl max-w-xl shadow-lg my-3">
-                  <h3 className="font-syne text-xs sm:text-sm tracking-wider font-bold text-brand-yellow-golden uppercase mb-1">
+                <div className="bg-white/85 dark:bg-black/60 backdrop-blur-md border border-[#F15E1C]/30 dark:border-brand-yellow-golden/40 p-4 sm:p-5 rounded-xl sm:rounded-2xl max-w-xl shadow-lg my-3">
+                  <h3 className="font-syne text-xs sm:text-sm tracking-wider font-bold text-[#F15E1C] dark:text-brand-yellow-golden uppercase mb-1">
                     REGISTRATIONS &amp; SPONSORSHIPS ARE OPEN
                   </h3>
-                  <p className="font-sans text-xs sm:text-sm text-brand-platinum/90 font-light leading-relaxed">
+                  <p className="font-sans text-xs sm:text-sm text-[#333333] dark:text-brand-platinum/90 font-light leading-relaxed">
                     Open for delegates, international designers, press, and brand partners.
                   </p>
                 </div>
@@ -206,33 +220,33 @@ export default function EventInfoModal() {
                 {/* 3 Event Details Cards */}
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-2 max-w-2xl">
                   {/* Event Date */}
-                  <div className="bg-black/70 backdrop-blur-sm border border-white/15 p-3.5 sm:p-4 rounded-xl flex flex-col justify-between">
-                    <div className="flex items-center gap-2 text-[10px] font-syne tracking-micro text-brand-yellow-golden font-bold uppercase mb-1">
+                  <div className="bg-white/90 dark:bg-black/70 backdrop-blur-sm border border-black/10 dark:border-white/15 p-3.5 sm:p-4 rounded-xl flex flex-col justify-between shadow-sm">
+                    <div className="flex items-center gap-2 text-[10px] font-syne tracking-micro text-[#F15E1C] dark:text-brand-yellow-golden font-bold uppercase mb-1">
                       <Calendar className="w-3.5 h-3.5" />
                       <span>EVENT DATE</span>
                     </div>
-                    <span className="font-syne text-xs font-bold text-white uppercase tracking-wide">
+                    <span className="font-syne text-xs font-bold text-[#111111] dark:text-white uppercase tracking-wide">
                       TO BE ANNOUNCED
                     </span>
                   </div>
 
                   {/* Event Venue */}
-                  <div className="bg-black/70 backdrop-blur-sm border border-white/15 p-3.5 sm:p-4 rounded-xl flex flex-col justify-between">
-                    <div className="flex items-center gap-2 text-[10px] font-syne tracking-micro text-brand-yellow-golden font-bold uppercase mb-1">
+                  <div className="bg-white/90 dark:bg-black/70 backdrop-blur-sm border border-black/10 dark:border-white/15 p-3.5 sm:p-4 rounded-xl flex flex-col justify-between shadow-sm">
+                    <div className="flex items-center gap-2 text-[10px] font-syne tracking-micro text-[#F15E1C] dark:text-brand-yellow-golden font-bold uppercase mb-1">
                       <MapPin className="w-3.5 h-3.5" />
                       <span>EVENT VENUE</span>
                     </div>
-                    <span className="font-syne text-xs font-bold text-white uppercase tracking-wide">
+                    <span className="font-syne text-xs font-bold text-[#111111] dark:text-white uppercase tracking-wide">
                       DUBAI, UAE
                     </span>
                   </div>
 
                   {/* Dress Code */}
-                  <div className="bg-black/70 backdrop-blur-sm border border-white/15 p-3.5 sm:p-4 rounded-xl flex flex-col justify-between">
-                    <div className="flex items-center gap-2 text-[10px] font-syne tracking-micro text-brand-yellow-golden font-bold uppercase mb-1">
+                  <div className="bg-white/90 dark:bg-black/70 backdrop-blur-sm border border-black/10 dark:border-white/15 p-3.5 sm:p-4 rounded-xl flex flex-col justify-between shadow-sm">
+                    <div className="flex items-center gap-2 text-[10px] font-syne tracking-micro text-[#F15E1C] dark:text-brand-yellow-golden font-bold uppercase mb-1">
                       <span>DRESS CODE</span>
                     </div>
-                    <span className="font-syne text-[11px] font-bold text-white uppercase tracking-wide leading-tight">
+                    <span className="font-syne text-[11px] font-bold text-[#111111] dark:text-white uppercase tracking-wide leading-tight">
                       FASHIONABLE &amp; HAUTE COUTURE
                     </span>
                   </div>
@@ -242,7 +256,7 @@ export default function EventInfoModal() {
                 <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 pt-4 max-w-xl">
                   <button
                     onClick={handleRegisterClick}
-                    className="flex-1 bg-brand-yellow-golden px-6 py-4 text-xs font-syne tracking-caps font-bold text-black hover:bg-[#FFEC69] hover:shadow-[0_0_25px_rgba(250,182,10,0.5)] transition-all duration-300 min-h-[48px] flex items-center justify-center gap-2 rounded-xl shadow-xl"
+                    className="flex-1 bg-[#FAB60A] text-[#111111] hover:bg-[#FFEC69] hover:shadow-[0_0_25px_rgba(250,182,10,0.5)] transition-all duration-300 min-h-[48px] flex items-center justify-center gap-2 rounded-xl font-syne text-xs tracking-caps font-bold shadow-xl"
                   >
                     <span>REGISTER / ENQUIRE</span>
                     <ArrowRight className="w-4 h-4" />
@@ -250,16 +264,16 @@ export default function EventInfoModal() {
 
                   <button
                     onClick={handleSponsorshipClick}
-                    className="flex-1 border border-brand-yellow-golden/70 bg-black/60 backdrop-blur-sm px-6 py-4 text-xs font-syne tracking-caps font-bold text-white hover:bg-brand-yellow-golden/20 hover:border-brand-yellow-golden transition-all duration-300 min-h-[48px] flex items-center justify-center gap-2 rounded-xl"
+                    className="flex-1 border border-[#F15E1C]/60 dark:border-brand-yellow-golden/70 bg-white/90 dark:bg-black/60 backdrop-blur-sm px-6 py-4 text-xs font-syne tracking-caps font-bold text-[#111111] dark:text-white hover:bg-[#F15E1C]/10 dark:hover:bg-brand-yellow-golden/20 hover:border-[#F15E1C] dark:hover:border-brand-yellow-golden transition-all duration-300 min-h-[48px] flex items-center justify-center gap-2 rounded-xl shadow-sm"
                   >
                     <span>SPONSORSHIP ENQUIRY</span>
-                    <ExternalLink className="w-4 h-4 text-brand-yellow-golden" />
+                    <ExternalLink className="w-4 h-4 text-[#F15E1C] dark:text-brand-yellow-golden" />
                   </button>
                 </div>
               </div>
 
               {/* BOTTOM FOOTER BRANDING */}
-              <div className="mt-8 pt-6 border-t border-white/10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+              <div className="mt-8 pt-6 border-t border-black/10 dark:border-white/10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
                 <div className="flex items-center gap-3">
                   <Image
                     src="/assets/brand/Final_Powered_by_logo.png"
@@ -267,10 +281,10 @@ export default function EventInfoModal() {
                     width={220}
                     height={58}
                     priority
-                    className="h-6 sm:h-7 w-auto object-contain"
+                    className="h-6 sm:h-7 w-auto object-contain dark:brightness-100"
                   />
                 </div>
-                <div className="font-syne text-[10px] sm:text-xs tracking-[0.2em] font-bold text-brand-platinum/70 uppercase">
+                <div className="font-syne text-[10px] sm:text-xs tracking-[0.2em] font-bold text-[#555555] dark:text-brand-platinum/70 uppercase">
                   FASHAI UNIVERSAL · DUBAI 2026
                 </div>
               </div>

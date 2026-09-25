@@ -72,13 +72,24 @@ export default function OurEventsSection() {
 
               {/* Edition Badges — Desktop / Tablet Only */}
               <div className="hidden sm:flex flex-wrap gap-2.5 mb-6">
-                <div className="border border-[#F15E1C]/60 bg-black/90 backdrop-blur-md px-3.5 py-2 rounded-xl shadow-md">
-                  <span className="block text-[9px] font-syne tracking-wider text-[#F15E1C] uppercase font-bold">
-                    2025
-                  </span>
-                  <span className="font-syne text-xs text-white font-bold uppercase keep-white">
-                    Previous Edition
-                  </span>
+                <div className="border border-[#F15E1C]/60 bg-black/90 backdrop-blur-md px-3.5 py-2 rounded-xl shadow-md flex items-center gap-3">
+                  <div>
+                    <span className="block text-[9px] font-syne tracking-wider text-[#F15E1C] uppercase font-bold">
+                      2025
+                    </span>
+                    <span className="font-syne text-xs text-white font-bold uppercase keep-white">
+                      Previous Edition
+                    </span>
+                  </div>
+                  <a
+                    href="https://www.facebook.com/profile.php?id=61573489951314"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1 bg-[#FAB60A] text-[#111111] hover:bg-[#FFEC69] px-3 py-1 text-[10px] font-syne font-bold uppercase rounded-lg shadow-sm"
+                  >
+                    <span>VIEW</span>
+                    <span>↗</span>
+                  </a>
                 </div>
                 <div className="border border-[#FAB60A]/60 bg-black/90 backdrop-blur-md px-3.5 py-2 rounded-xl shadow-md">
                   <span className="block text-[9px] font-syne tracking-wider text-[#FAB60A] uppercase font-bold">

@@ -33,13 +33,19 @@ export default function Chapter2025() {
               LifeStyle <span className="italic text-brand-orange font-normal">2025</span>
             </h2>
           </div>
-          <div className="mt-3 sm:mt-0 text-left sm:text-right">
+          <div className="mt-3 sm:mt-0 text-left sm:text-right flex flex-col items-start sm:items-end gap-2">
             <span className="text-xs font-syne tracking-micro text-brand-yellow-golden font-bold block uppercase mb-1">
               VISUAL RETROSPECTIVE
             </span>
-            <span className="text-[10px] font-syne tracking-caps text-brand-platinum uppercase">
-              COMPLETED EDITION
-            </span>
+            <a
+              href="https://www.facebook.com/profile.php?id=61573489951314"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 bg-[#FAB60A] text-[#111111] hover:bg-[#FFEC69] px-4 py-2 text-xs font-syne tracking-caps font-bold transition-all duration-300 rounded-full shadow-md"
+            >
+              <span>VIEW</span>
+              <span>↗</span>
+            </a>
           </div>
         </div>
 
@@ -73,7 +79,7 @@ export default function Chapter2025() {
           ))}
         </div>
 
-        <div className="flex justify-between items-center pt-4 border-t border-hairline-orange">
+        <div className="flex flex-wrap items-center justify-between gap-4 pt-4 border-t border-hairline-orange">
           <Link
             href="/gallery"
             className="inline-flex items-center gap-3 bg-[#080706] border border-brand-yellow-golden/50 px-6 py-3 text-xs font-syne tracking-caps text-brand-white keep-white hover:bg-brand-orange hover:border-brand-orange transition-all duration-300 font-bold rounded-full shadow-md"
@@ -81,6 +87,16 @@ export default function Chapter2025() {
             <span>VIEW FULL 2025 VISUAL ARCHIVE</span>
             <span>↗</span>
           </Link>
+
+          <a
+            href="https://www.facebook.com/profile.php?id=61573489951314"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 bg-[#FAB60A] text-[#111111] hover:bg-[#FFEC69] px-6 py-3 text-xs font-syne tracking-caps font-bold transition-all duration-300 rounded-full shadow-lg"
+          >
+            <span>VIEW</span>
+            <span>↗</span>
+          </a>
         </div>
       </div>
     </section>

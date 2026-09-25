@@ -3,7 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { ArrowUpRight, ArrowRight } from "lucide-react";
+import { ArrowUpRight, ArrowRight, Facebook, Instagram } from "lucide-react";
 
 export default function Footer() {
   const columnVariants = {
@@ -55,7 +55,7 @@ export default function Footer() {
       {/* Main Editorial Content Container */}
       <div className="container-editorial relative z-10 py-10 sm:py-14 max-w-6xl mx-auto px-4 sm:px-6">
         {/* 3-Column Editorial Grid (Desktop) / Vertical Stack (Mobile) */}
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-10 pb-10 border-b border-black/10 dark:border-white/10 items-start">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-10 pb-8 border-b border-black/10 dark:border-white/10 items-start">
           
           {/* COLUMN 1: LEFT — BRAND (md:col-span-5) */}
           <motion.div
@@ -86,15 +86,28 @@ export default function Footer() {
               Fashion, talent and experiences across Dubai, UAE &amp; India.
             </p>
 
-            <div className="pt-1">
+            {/* Social Links Badges */}
+            <div className="pt-1 flex flex-wrap items-center gap-2">
               <a
                 href="https://www.instagram.com/fashai_universal"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-1.5 font-serif italic text-sm sm:text-base text-[#F15E1C] dark:text-[#FAB60A] hover:underline transition-all duration-300 group"
+                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-black/10 dark:border-white/15 bg-white/80 dark:bg-white/10 text-xs font-syne font-semibold text-[#111111] dark:text-white hover:text-[#E4405F] dark:hover:text-[#FAB60A] hover:border-[#E4405F]/40 dark:hover:border-[#FAB60A] transition-all duration-300 shadow-sm"
               >
+                <Instagram className="w-3.5 h-3.5 text-[#E4405F]" />
                 <span>@fashai_universal</span>
-                <ArrowUpRight className="w-4 h-4 text-[#F15E1C] dark:text-[#FAB60A] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+                <ArrowUpRight className="w-3 h-3 text-[#E4405F]" />
+              </a>
+
+              <a
+                href="https://www.facebook.com/profile.php?id=61573489951314"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-black/10 dark:border-white/15 bg-white/80 dark:bg-white/10 text-xs font-syne font-semibold text-[#111111] dark:text-white hover:text-[#1877F2] dark:hover:text-[#FAB60A] hover:border-[#1877F2]/40 dark:hover:border-[#FAB60A] transition-all duration-300 shadow-sm"
+              >
+                <Facebook className="w-3.5 h-3.5 text-[#1877F2]" />
+                <span>Facebook Page</span>
+                <ArrowUpRight className="w-3 h-3 text-[#1877F2]" />
               </a>
             </div>
           </motion.div>
@@ -115,6 +128,7 @@ export default function Footer() {
               {[
                 { label: "Home", href: "/" },
                 { label: "Upcoming", href: "/upcoming" },
+                { label: "Services", href: "/services" },
                 { label: "Gallery", href: "/gallery" },
                 { label: "Contact", href: "/contact" },
               ].map((link, idx) => (
@@ -169,6 +183,40 @@ export default function Footer() {
           </motion.div>
         </div>
 
+        {/* FEATURED VIEW SOCIALS CARD */}
+        <motion.div
+          custom={2.5}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={columnVariants}
+          className="my-6 p-4 sm:p-5 rounded-xl border border-black/10 dark:border-white/15 bg-white/90 dark:bg-black/50 backdrop-blur-md flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 shadow-sm"
+        >
+          <div className="flex items-center gap-3.5">
+            <div className="w-10 h-10 rounded-full bg-[#1877F2]/10 dark:bg-[#FAB60A]/15 border border-[#1877F2]/30 dark:border-[#FAB60A]/30 flex items-center justify-center shrink-0">
+              <Facebook className="w-5 h-5 text-[#1877F2] dark:text-[#FAB60A]" />
+            </div>
+            <div>
+              <h5 className="font-syne text-xs sm:text-sm font-bold text-[#111111] dark:text-white uppercase tracking-wider">
+                FashAI Universal Socials
+              </h5>
+              <p className="font-sans text-xs text-[#555555] dark:text-white/70 leading-relaxed">
+                Connect with our official Facebook page for event highlights, runway news &amp; announcements.
+              </p>
+            </div>
+          </div>
+
+          <a
+            href="https://www.facebook.com/profile.php?id=61573489951314"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center justify-center gap-2 bg-[#FAB60A] text-[#111111] hover:bg-[#FFEC69] font-syne font-bold text-xs tracking-caps px-5 py-3 rounded-xl transition-all duration-300 shadow-md shrink-0 whitespace-nowrap w-full sm:w-auto"
+          >
+            <span>VIEW SOCIALS</span>
+            <ArrowUpRight className="w-4 h-4" />
+          </a>
+        </motion.div>
+
         {/* BOTTOM LEGAL BAR */}
         <motion.div
           custom={3}
@@ -176,7 +224,7 @@ export default function Footer() {
           whileInView="visible"
           viewport={{ once: true }}
           variants={columnVariants}
-          className="pt-6 pb-2 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-syne tracking-wider text-[#333333] dark:text-white/70"
+          className="pt-4 pb-2 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-syne tracking-wider text-[#333333] dark:text-white/70"
         >
           {/* LEFT: Copyright */}
           <div>

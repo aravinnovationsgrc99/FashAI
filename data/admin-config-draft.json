@@ -225,25 +225,32 @@
       "order": 2
     },
     {
+      "id": "services",
+      "label": "SERVICES",
+      "href": "/services",
+      "enabled": true,
+      "order": 3
+    },
+    {
       "id": "gallery",
       "label": "GALLERY",
       "href": "/gallery",
       "enabled": true,
-      "order": 3
+      "order": 4
     },
     {
       "id": "apply",
       "label": "APPLY",
       "href": "/apply",
       "enabled": true,
-      "order": 4
+      "order": 5
     },
     {
       "id": "contact",
       "label": "CONTACT",
       "href": "/contact",
       "enabled": true,
-      "order": 5
+      "order": 6
     }
   ],
   "footerSettings": {

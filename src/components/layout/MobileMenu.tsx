@@ -5,7 +5,7 @@ import { createPortal } from "react-dom";
 import Link from "next/link";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
-import { X, ArrowRight } from "lucide-react";
+import { X, ArrowRight, Sparkles } from "lucide-react";
 import ThemeToggle from "../ui/ThemeToggle";
 
 interface NavItem {
@@ -172,8 +172,17 @@ export default function MobileMenu({
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3, duration: 0.3 }}
-              className="border-t border-black/10 dark:border-white/10 pt-4 flex flex-col space-y-3 shrink-0"
+              className="border-t border-black/10 dark:border-white/10 pt-4 flex flex-col space-y-2.5 shrink-0"
             >
+              <Link
+                href="/services"
+                onClick={onClose}
+                className="w-full border border-[#F15E1C]/40 dark:border-[#FAB60A]/40 bg-[#F15E1C]/10 dark:bg-[#FAB60A]/10 hover:bg-[#F15E1C]/20 text-[#111111] dark:text-white py-2.5 text-center font-syne text-xs tracking-wider font-bold transition-all rounded-full shadow-sm flex items-center justify-center gap-2"
+              >
+                <Sparkles className="w-3.5 h-3.5 text-[#F15E1C] dark:text-[#FAB60A]" />
+                <span>EXPLORE SERVICES &amp; FORMATS →</span>
+              </Link>
+
               <Link
                 href="/contact"
                 onClick={onClose}
