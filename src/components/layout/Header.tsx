@@ -71,12 +71,12 @@ export default function Header() {
     <>
       {/* FLOATING GLASS EDITORIAL NAVBAR CONTAINER */}
       <header
-        className={`fixed left-1/2 -translate-x-1/2 z-[200] transition-all duration-400 rounded-full select-none ${
+        className={`fixed left-1/2 -translate-x-1/2 [transform-style:preserve-3d] [backface-visibility:hidden] z-[200] transition-all duration-400 rounded-full select-none ${
           isTopAtVideo
             ? "top-2 sm:top-3 md:top-3.5 h-16 sm:h-[66px] md:h-[70px] w-[calc(100%-1.5rem)] max-w-[1450px] bg-transparent border-transparent shadow-none backdrop-blur-none"
             : isOverVideo
             ? "top-1.5 sm:top-2 h-14 sm:h-[60px] w-[calc(100%-1.5rem)] max-w-[1340px] bg-black/40 border border-white/20 shadow-[0_8px_32px_rgba(0,0,0,0.3)] backdrop-blur-2xl"
-            : "top-1.5 sm:top-2 h-14 sm:h-[60px] w-[calc(100%-1.5rem)] max-w-[1340px] bg-gradient-to-r from-[#D4AF37]/20 via-white/90 to-[#D4AF37]/20 dark:from-[#070707]/85 dark:to-[#070707]/85 border border-[#D4AF37]/45 dark:border-white/15 shadow-[0_8px_32px_rgba(212,175,55,0.2)] dark:shadow-[0_14px_40px_rgba(0,0,0,0.5)] backdrop-blur-2xl"
+            : "top-1.5 sm:top-2 h-14 sm:h-[60px] w-[calc(100%-1.5rem)] max-w-[1340px] bg-[#080706]/90 dark:bg-[#070707]/85 border border-[#D4AF37]/45 dark:border-white/15 shadow-[0_8px_32px_rgba(212,175,55,0.2)] dark:shadow-[0_14px_40px_rgba(0,0,0,0.5)] backdrop-blur-2xl"
         }`}
       >
         <div
@@ -106,22 +106,10 @@ export default function Header() {
                   isTopAtVideo ? "text-base sm:text-lg lg:text-xl" : "text-sm sm:text-base lg:text-lg"
                 }`}
               >
-                <span
-                  className={
-                    isOverVideo
-                      ? "text-white drop-shadow-[0_1px_2px_rgba(0,0,0,0.8)]"
-                      : "text-[#111111] dark:text-white"
-                  }
-                >
+                <span className="text-[#D4AF37] dark:text-white">
                   FashAI
                 </span>
-                <span
-                  className={
-                    isOverVideo
-                      ? "font-serif italic font-normal text-[#D4AF37] capitalize ml-0.5 drop-shadow-[0_1px_2px_rgba(0,0,0,0.8)]"
-                      : "font-serif italic font-normal text-[#D4AF37] capitalize ml-0.5"
-                  }
-                >
+                <span className="font-serif italic font-normal text-[#D4AF37] capitalize ml-0.5">
                   Universal
                 </span>
               </span>
@@ -144,21 +132,13 @@ export default function Header() {
                 <Link
                   key={item.id}
                   href={item.href}
-                  className={`relative py-1 transition-colors duration-200 ${
-                    isActive
-                      ? isOverVideo
-                        ? "text-[#D4AF37] font-bold drop-shadow-[0_1px_3px_rgba(0,0,0,0.9)]"
-                        : "text-[#D4AF37] font-bold"
-                      : isOverVideo
-                      ? "text-white hover:text-[#D4AF37] drop-shadow-[0_1px_3px_rgba(0,0,0,0.9)]"
-                      : "text-[#111111] dark:text-white/85 hover:text-[#D4AF37]"
+                  className={`relative py-1 transition-colors duration-200 text-[#D4AF37] dark:text-white/85 hover:text-[#FFEC69] dark:hover:text-[#D4AF37] subpixel-antialiased ${
+                    isActive ? "font-bold" : "font-semibold"
                   }`}
                 >
                   {item.label}
                   {isActive && (
-                    <span
-                      className={`absolute -bottom-1 left-0 right-0 h-[2px] rounded-full bg-[#D4AF37] shadow-[0_0_8px_rgba(212,175,55,0.6)]`}
-                    />
+                    <span className="absolute -bottom-1 left-0 right-0 h-[2px] rounded-full bg-[#D4AF37]" />
                   )}
                 </Link>
               );
@@ -190,14 +170,10 @@ export default function Header() {
             {/* CIRCULAR MOBILE HAMBURGER BUTTON */}
             <button
               onClick={() => setMobileMenuOpen(true)}
-              className={`lg:hidden rounded-full flex items-center justify-center shrink-0 transition-all duration-300 aspect-square ${
-                isOverVideo
-                  ? "w-9 h-9 sm:w-10 sm:h-10 bg-black/25 dark:bg-black/30 border border-white/20 text-white hover:border-[#D4AF37] backdrop-blur-sm shadow-md"
-                  : "w-8 h-8 sm:w-9 sm:h-9 bg-black/5 dark:bg-white/10 border border-black/10 dark:border-white/15 text-[#111111] dark:text-white hover:border-[#F15E1C] dark:hover:border-[#D4AF37]"
-              }`}
+              className="lg:hidden rounded-full flex items-center justify-center shrink-0 transition-all duration-300 aspect-square w-8 h-8 sm:w-9 sm:h-9 bg-[#D4AF37]/10 dark:bg-white/10 border border-[#D4AF37]/45 dark:border-white/15 text-[#D4AF37] dark:text-white hover:border-[#D4AF37]"
               aria-label="Open Navigation Menu"
             >
-              <Menu className={`w-4.5 h-4.5 ${isOverVideo ? "text-white" : "text-[#111111] dark:text-white"}`} />
+              <Menu className="w-4.5 h-4.5 text-[#D4AF37] dark:text-white" />
             </button>
           </div>
         </div>

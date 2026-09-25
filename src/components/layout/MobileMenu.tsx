@@ -145,20 +145,16 @@ export default function MobileMenu({
                     <Link
                       href={item.href}
                       onClick={onClose}
-                      className={`group flex items-center justify-between py-3.5 px-2 border-b border-black/10 dark:border-white/10 transition-all duration-200 ${
-                        isActive
-                          ? "text-[#F15E1C] dark:text-[#D4AF37] font-bold"
-                          : "text-[#111111] dark:text-white/90 hover:text-[#F15E1C] dark:hover:text-[#D4AF37]"
+                      className={`group flex items-center justify-between py-3.5 px-2 border-b border-black/10 dark:border-white/10 transition-all duration-200 text-[#D4AF37] dark:text-white/90 hover:text-[#FFEC69] dark:hover:text-[#D4AF37] ${
+                        isActive ? "font-bold" : "font-semibold"
                       }`}
                     >
                       <span className="font-syne text-lg sm:text-xl font-bold tracking-[0.15em] uppercase">
                         {item.label}
                       </span>
                       <ArrowRight
-                        className={`w-5 h-5 transition-transform duration-300 ${
-                          isActive
-                            ? "text-[#F15E1C] dark:text-[#D4AF37] translate-x-1"
-                            : "text-neutral-400 dark:text-white/50 group-hover:text-[#F15E1C] dark:group-hover:text-[#D4AF37] group-hover:translate-x-1"
+                        className={`w-5 h-5 transition-transform duration-300 text-[#D4AF37] dark:text-white/50 group-hover:text-[#FFEC69] dark:group-hover:text-[#D4AF37] ${
+                          isActive ? "translate-x-1 font-bold" : "group-hover:translate-x-1"
                         }`}
                       />
                     </Link>
