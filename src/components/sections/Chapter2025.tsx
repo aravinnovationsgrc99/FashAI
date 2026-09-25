@@ -6,10 +6,10 @@ import Link from "next/link";
 
 export default function Chapter2025() {
   const images2025 = [
-    { src: "/assets/models/model_01.jpeg", alt: "LifeStyle 2025 Photo 1" },
-    { src: "/assets/models/model_02.jpeg", alt: "LifeStyle 2025 Photo 2" },
-    { src: "/assets/models/model_03.jpeg", alt: "LifeStyle 2025 Photo 3" },
-    { src: "/assets/models/model_05.jpeg", alt: "LifeStyle 2025 Photo 4" },
+    { src: "/assets/final/WhatsApp Image 2026-09-18 at 15.02.32.jpeg", alt: "LifeStyle 2025 Photo 1" },
+    { src: "/assets/final/WhatsApp Image 2026-09-18 at 15.02.33.jpeg", alt: "LifeStyle 2025 Photo 2" },
+    { src: "/assets/final/WhatsApp Image 2026-09-18 at 15.02.34.jpeg", alt: "LifeStyle 2025 Photo 3" },
+    { src: "/assets/final/WhatsApp Image 2026-09-18 at 15.02.35.jpeg", alt: "LifeStyle 2025 Photo 4" },
   ];
 
   return (
@@ -49,34 +49,68 @@ export default function Chapter2025() {
           </div>
         </div>
 
-        <p className="font-sans text-xs sm:text-sm text-brand-platinum/90 max-w-2xl font-light leading-relaxed mb-6">
+        <p className="font-jost text-lg sm:text-xl md:text-2xl text-brand-white/90 max-w-3xl font-light leading-relaxed mb-6 sm:mb-8 tracking-wide">
           A visual record of the LifeStyle 2025 experience. Bringing together physical garment art with spatial light and luxury fashion identity.
         </p>
 
         {/* Real 2025 Photo Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5 mb-8">
-          {images2025.map((img, index) => (
-            <motion.div
-              key={img.src}
-              initial={{ opacity: 0, y: 15 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: index * 0.08, duration: 0.5 }}
-              className="relative aspect-[3/4] overflow-hidden rounded-xl border border-hairline-orange/40 group bg-black shadow-md"
-            >
-              <Image
-                src={img.src}
-                alt={img.alt}
-                fill
-                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
-                className="object-cover group-hover:scale-105 transition-transform duration-500 filter contrast-105"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-60 group-hover:opacity-40 transition-opacity" />
-              <div className="absolute bottom-3 left-3 right-3 text-[10px] font-syne tracking-micro text-brand-white keep-white uppercase font-semibold drop-shadow">
-                LIFESTYLE 2025 • ARCHIVE {index + 1}
-              </div>
-            </motion.div>
-          ))}
+          {images2025.map((img, index) => {
+            const isFourth = index === 3;
+            return (
+              <motion.div
+                key={img.src}
+                initial={{ opacity: 0, y: 15 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.08, duration: 0.5 }}
+                className={`relative aspect-[3/4] overflow-hidden rounded-xl border group bg-black shadow-md transition-all duration-300 ${
+                  isFourth ? "border-[#D4AF37]/60 hover:border-[#D4AF37] shadow-[0_0_20px_rgba(212,175,55,0.15)]" : "border-hairline-orange/40"
+                }`}
+              >
+                <Image
+                  src={img.src}
+                  alt={img.alt}
+                  fill
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                  className="object-cover object-top group-hover:scale-105 transition-transform duration-500 filter contrast-105"
+                />
+                <div
+                  className={`absolute inset-0 transition-all duration-300 ${
+                    isFourth
+                      ? "bg-gradient-to-t from-black/85 via-black/35 to-black/20 group-hover:from-black/75"
+                      : "bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-60 group-hover:opacity-40"
+                  }`}
+                />
+
+                {isFourth ? (
+                  <>
+                    <div className="absolute top-3 left-3 z-10">
+                      <span className="text-[9px] font-syne tracking-micro text-[#D4AF37] uppercase font-bold bg-black/70 backdrop-blur-sm px-2.5 py-1 rounded border border-[#D4AF37]/40">
+                        100+ ARCHIVE LOOKS
+                      </span>
+                    </div>
+                    <div className="absolute inset-0 flex flex-col items-center justify-center p-4 text-center z-10">
+                      <Link
+                        href="/gallery"
+                        className="inline-flex items-center gap-2 bg-[#D4AF37] hover:bg-[#FFEC69] text-[#111111] px-5 py-3 text-xs font-syne tracking-caps font-bold transition-all duration-300 rounded-full shadow-2xl group-hover:scale-105 active:scale-95 border border-white/20"
+                      >
+                        <span>VIEW MORE IMAGES</span>
+                        <span className="text-sm">↗</span>
+                      </Link>
+                    </div>
+                    <div className="absolute bottom-3 left-3 right-3 text-[10px] font-syne tracking-micro text-brand-white/80 keep-white uppercase font-semibold drop-shadow text-center z-10">
+                      EXPLORE COMPLETE GALLERY
+                    </div>
+                  </>
+                ) : (
+                  <div className="absolute bottom-3 left-3 right-3 text-[10px] font-syne tracking-micro text-brand-white keep-white uppercase font-semibold drop-shadow">
+                    LIFESTYLE 2025 • ARCHIVE {index + 1}
+                  </div>
+                )}
+              </motion.div>
+            );
+          })}
         </div>
 
         <div className="flex flex-wrap items-center justify-between gap-4 pt-4 border-t border-hairline-orange">

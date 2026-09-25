@@ -14,7 +14,7 @@ export const FACES_DATA: FacePerson[] = [
     category: "RUNWAY MODELS",
     event: "Runway",
     title: "Couture Principal",
-    image: "/assets/models/model_01.jpeg",
+    image: "/assets/final/WhatsApp Image 2026-09-18 at 15.02.32.jpeg",
   },
   {
     id: "face-02",
@@ -22,7 +22,7 @@ export const FACES_DATA: FacePerson[] = [
     category: "VIP GUESTS",
     event: "LifeStyle Dubai",
     title: "Patron & Guest of Honor",
-    image: "/assets/models/model_02.jpeg",
+    image: "/assets/final/WhatsApp Image 2026-09-18 at 15.02.33.jpeg",
   },
   {
     id: "face-03",
@@ -30,7 +30,7 @@ export const FACES_DATA: FacePerson[] = [
     category: "VIP GUESTS",
     event: "LifeStyle",
     title: "Creative Ambassador",
-    image: "/assets/models/model_03.jpeg",
+    image: "/assets/final/WhatsApp Image 2026-09-18 at 15.02.34.jpeg",
   },
   {
     id: "face-04",
@@ -38,7 +38,7 @@ export const FACES_DATA: FacePerson[] = [
     category: "RUNWAY MODELS",
     event: "Runway",
     title: "Runway Lead",
-    image: "/assets/models/model_04.jpeg",
+    image: "/assets/final/WhatsApp Image 2026-09-18 at 15.02.35.jpeg",
   },
   {
     id: "face-05",
@@ -46,7 +46,7 @@ export const FACES_DATA: FacePerson[] = [
     category: "RUNWAY MODELS",
     event: "Runway",
     title: "Editorial Model",
-    image: "/assets/models/model_05.jpeg",
+    image: "/assets/final/WhatsApp Image 2026-09-18 at 15.02.36.jpeg",
   },
   {
     id: "face-06",
@@ -54,7 +54,7 @@ export const FACES_DATA: FacePerson[] = [
     category: "VIP GUESTS",
     event: "LifeStyle Dubai",
     title: "Cultural Contributor",
-    image: "/assets/models/model_06.jpeg",
+    image: "/assets/final/WhatsApp Image 2026-09-18 at 15.02.37.jpeg",
   },
   {
     id: "face-07",
@@ -62,7 +62,7 @@ export const FACES_DATA: FacePerson[] = [
     category: "RUNWAY MODELS",
     event: "Runway",
     title: "Couture Model",
-    image: "/assets/models/model_07.jpeg",
+    image: "/assets/final/WhatsApp Image 2026-09-18 at 15.02.38.jpeg",
   },
   {
     id: "face-08",
@@ -70,7 +70,7 @@ export const FACES_DATA: FacePerson[] = [
     category: "VIP GUESTS",
     event: "LifeStyle",
     title: "International Delegate",
-    image: "/assets/models/model_08.jpeg",
+    image: "/assets/final/WhatsApp Image 2026-09-18 at 15.02.40.jpeg",
   },
   {
     id: "face-09",
@@ -78,7 +78,7 @@ export const FACES_DATA: FacePerson[] = [
     category: "RUNWAY MODELS",
     event: "Runway",
     title: "High Fashion Runway",
-    image: "/assets/models/model_09.jpeg",
+    image: "/assets/final/WhatsApp Image 2026-09-18 at 15.02.41.jpeg",
   },
   {
     id: "face-10",
@@ -86,7 +86,7 @@ export const FACES_DATA: FacePerson[] = [
     category: "VIP GUESTS",
     event: "LifeStyle Dubai",
     title: "Design Council Guest",
-    image: "/assets/models/model_10.jpeg",
+    image: "/assets/final/WhatsApp Image 2026-09-18 at 15.02.42.jpeg",
   },
   {
     id: "face-11",
@@ -94,7 +94,7 @@ export const FACES_DATA: FacePerson[] = [
     category: "VIP GUESTS",
     event: "LifeStyle",
     title: "Honorary Patron",
-    image: "/assets/models/model_11.jpeg",
+    image: "/assets/final/WhatsApp Image 2026-09-18 at 15.02.43.jpeg",
   },
   {
     id: "face-12",
@@ -102,7 +102,7 @@ export const FACES_DATA: FacePerson[] = [
     category: "RUNWAY MODELS",
     event: "Runway",
     title: "Runway Specialist",
-    image: "/assets/models/model_12.jpeg",
+    image: "/assets/final/WhatsApp Image 2026-09-18 at 15.02.44.jpeg",
   },
   {
     id: "face-13",
@@ -110,7 +110,7 @@ export const FACES_DATA: FacePerson[] = [
     category: "RUNWAY MODELS",
     event: "Runway",
     title: "Couture Talent",
-    image: "/assets/models/model_13.jpeg",
+    image: "/assets/final/WhatsApp Image 2026-09-18 at 15.02.45.jpeg",
   },
   {
     id: "face-14",
@@ -118,7 +118,7 @@ export const FACES_DATA: FacePerson[] = [
     category: "RUNWAY MODELS",
     event: "Runway",
     title: "Editorial Runway",
-    image: "/assets/models/model_14.jpeg",
+    image: "/assets/final/WhatsApp Image 2026-09-18 at 15.02.47.jpeg",
   },
   {
     id: "face-15",
@@ -126,6 +126,6 @@ export const FACES_DATA: FacePerson[] = [
     category: "RUNWAY MODELS",
     event: "Runway",
     title: "High Fashion Lead",
-    image: "/assets/models/model_15.jpeg",
+    image: "/assets/final/WhatsApp Image 2026-09-18 at 15.02.48.jpeg",
   },
 ];

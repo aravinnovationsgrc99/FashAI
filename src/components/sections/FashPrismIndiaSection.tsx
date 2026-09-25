@@ -52,7 +52,7 @@ export default function FashPrismIndiaSection() {
                 fill
                 priority
                 sizes="(max-width: 1024px) 100vw, 60vw"
-                className="object-cover object-center filter contrast-105 transition-transform duration-700 ease-out group-hover:scale-[1.02]"
+                className="object-cover object-top filter contrast-105 transition-transform duration-700 ease-out group-hover:scale-[1.02]"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent" />
 
@@ -90,7 +90,7 @@ export default function FashPrismIndiaSection() {
                     alt={img.alt}
                     fill
                     sizes="(max-width: 1024px) 50vw, 40vw"
-                    className="object-cover object-center filter contrast-105 transition-transform duration-700 ease-out group-hover:scale-[1.03]"
+                    className="object-cover object-top filter contrast-105 transition-transform duration-700 ease-out group-hover:scale-[1.03]"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-transparent to-transparent opacity-80 group-hover:opacity-60 transition-opacity" />
 
@@ -120,7 +120,7 @@ export default function FashPrismIndiaSection() {
                   alt={img.alt}
                   fill
                   sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
-                  className="object-cover object-center filter contrast-105 transition-transform duration-700 ease-out group-hover:scale-[1.03]"
+                  className="object-cover object-top filter contrast-105 transition-transform duration-700 ease-out group-hover:scale-[1.03]"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-75 group-hover:opacity-50 transition-opacity" />
                 <div className="absolute bottom-3 left-3 right-3 text-[10px] font-syne tracking-wider text-brand-yellow-golden font-bold uppercase truncate">

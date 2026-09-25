@@ -49,7 +49,7 @@ export default function OurEventsSection() {
                 alt="LifeStyle Event Banner"
                 fill
                 sizes="(max-width: 1024px) 100vw, 50vw"
-                className="object-cover object-center filter contrast-[1.05] brightness-[1.02]"
+                className="object-cover object-top filter contrast-[1.05] brightness-[1.02]"
                 priority
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/98 via-black/80 to-black/40" />
@@ -128,7 +128,7 @@ export default function OurEventsSection() {
                 alt="Runway Event Banner"
                 fill
                 sizes="(max-width: 1024px) 100vw, 50vw"
-                className="object-cover object-center filter contrast-[1.05] brightness-[1.02]"
+                className="object-cover object-top filter contrast-[1.05] brightness-[1.02]"
                 priority
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/98 via-black/80 to-black/40" />

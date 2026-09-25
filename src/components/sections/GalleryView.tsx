@@ -128,7 +128,7 @@ export default function GalleryView() {
                     alt={item.alt}
                     fill
                     sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
-                    className="object-cover filter contrast-105 transition-transform duration-700 ease-out group-hover:scale-[1.03]"
+                    className={`object-cover ${item.objectPosition || "object-top"} filter contrast-105 transition-transform duration-700 ease-out group-hover:scale-[1.03]`}
                     priority={index < 4}
                     loading={index < 4 ? "eager" : "lazy"}
                   />

@@ -64,7 +64,7 @@ export default function HomeFeaturedProjects() {
                         alt={project.title}
                         fill
                         sizes="(max-width: 1024px) 100vw, 60vw"
-                        className="object-cover object-center filter contrast-110 transition-transform duration-700 ease-out group-hover:scale-105"
+                        className="object-cover object-top filter contrast-110 transition-transform duration-700 ease-out group-hover:scale-105"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-brand-void/90 via-transparent to-transparent opacity-80" />
 

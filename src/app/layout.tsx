@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     siteName: "FashAI Universal",
     images: [
       {
-        url: "/assets/models/model_01.jpeg",
+        url: "/assets/final/WhatsApp Image 2026-09-18 at 15.02.32.jpeg",
         width: 1200,
         height: 630,
         alt: "FashAI Universal",
@@ -44,7 +44,7 @@ export const metadata: Metadata = {
     title: "FashAI Universal — International Fashion & Events Platform",
     description:
       "Where fashion, technology and imagination converge.",
-    images: ["/assets/models/model_01.jpeg"],
+    images: ["/assets/final/WhatsApp Image 2026-09-18 at 15.02.32.jpeg"],
   },
   robots: {
     index: true,
