@@ -1,6 +1,6 @@
 {
   "maintenanceSettings": {
-    "enabled": false,
+    "enabled": true,
     "title": "WEBSITE TEMPORARILY UNAVAILABLE",
     "message": "FashAI Universal is currently undergoing scheduled platform maintenance. Public access will resume shortly.",
     "allowNavigation": false,
@@ -583,7 +583,7 @@
       ]
     }
   ],
-  "lastUpdated": "2026-09-24T19:40:15.755Z",
+  "lastUpdated": "2026-09-25T21:34:37.017Z",
   "lastMediaUpdate": "2026-09-24T19:25:36.800Z",
   "isDraft": false
 }

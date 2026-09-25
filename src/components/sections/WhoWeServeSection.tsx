@@ -120,27 +120,32 @@ export default function WhoWeServeSection() {
             {
               title: "JEWELLERY",
               desc: "Haute joaillerie, fine craftsmanship, and luxury adornments.",
-              image: "/assets/events/lifestyle_events.png",
+              image: "/assets/industries/Jewellary.png",
+              objectPosition: "center center",
             },
             {
               title: "CLOTHING",
               desc: "Couture houses, ready-to-wear lines, and designer apparel.",
-              image: "/assets/events/fashion_events.png",
+              image: "/assets/industries/clothings.png",
+              objectPosition: "center top",
             },
             {
               title: "ACCESSORIES",
               desc: "Leather goods, footwear, luxury accents, and timepieces.",
-              image: "/assets/events/product_events.png",
+              image: "/assets/industries/accesorries.png",
+              objectPosition: "center center",
             },
             {
               title: "ELECTRONICS",
               desc: "Premium consumer tech, AI hardware, and digital devices.",
-              image: "/assets/events/it_events.png",
+              image: "/assets/industries/electronics.png",
+              objectPosition: "center center",
             },
             {
               title: "PERFUMES",
               desc: "Niche fragrances, luxury cosmetics, and haute perfumery.",
-              image: "/assets/homepage/Beauty.png",
+              image: "/assets/industries/perfumes.png",
+              objectPosition: "center center",
             },
           ].map((ind, idx) => (
             <motion.div
@@ -157,7 +162,8 @@ export default function WhoWeServeSection() {
                   alt={ind.title}
                   fill
                   sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 20vw"
-                  className="object-cover object-top group-hover:scale-[1.03] transition-transform duration-500"
+                  style={{ objectPosition: ind.objectPosition }}
+                  className="object-cover group-hover:scale-[1.03] transition-transform duration-500"
                 />
               </div>
               <div>

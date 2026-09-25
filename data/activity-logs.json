@@ -1,5 +1,29 @@
 [
   {
+    "id": "log_1790372077042_qd6wr",
+    "category": "CONTENT",
+    "action": "Published website changes",
+    "actor": "System Admin",
+    "timestamp": "2026-09-25T21:34:37.042Z",
+    "details": "Maintenance Mode set to OFF"
+  },
+  {
+    "id": "log_1790372075958_qeakt",
+    "category": "CONTENT",
+    "action": "Published website changes",
+    "actor": "System Admin",
+    "timestamp": "2026-09-25T21:34:35.959Z",
+    "details": "Maintenance Mode set to ON"
+  },
+  {
+    "id": "log_1790372055766_qjbmu",
+    "category": "AUTH",
+    "action": "Successful admin login",
+    "actor": "FashAIadmin",
+    "timestamp": "2026-09-25T21:34:15.766Z",
+    "details": "IP ::1"
+  },
+  {
     "id": "log_1790278815908_p9q1w",
     "category": "CONTENT",
     "action": "Published website changes",
