@@ -13,27 +13,27 @@ export default function UpcomingLifestyleBanner() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="relative bg-[#0B0908] border border-brand-orange/30 p-8 sm:p-12 lg:p-16 overflow-hidden shadow-[0_0_50px_rgba(241,94,28,0.12)]"
+          className="relative bg-[#0B0908] border border-brand-orange/30 p-5 sm:p-8 lg:p-10 overflow-hidden shadow-[0_0_50px_rgba(241,94,28,0.12)]"
         >
           {/* Editorial Clean Minimal Content Layout */}
-          <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+          <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-6 items-center">
             
             {/* Left Column: Event Title & Announcement */}
-            <div className="lg:col-span-8 space-y-4">
-              <div className="flex flex-wrap items-center gap-3">
-                <span className="text-[10px] sm:text-xs font-syne tracking-micro text-brand-orange font-bold uppercase bg-brand-orange/10 border border-brand-orange/30 px-3.5 py-1">
+            <div className="lg:col-span-8 space-y-3 sm:space-y-4">
+              <div className="flex flex-wrap items-center gap-2.5">
+                <span className="text-[10px] sm:text-[11px] font-syne tracking-micro text-brand-orange font-bold uppercase bg-brand-orange/10 border border-brand-orange/30 px-3 py-0.5">
                   UPCOMING FLAGSHIP EVENT
                 </span>
-                <span className="text-[10px] sm:text-xs font-syne tracking-micro text-brand-yellow-golden font-bold uppercase flex items-center gap-1.5">
+                <span className="text-[10px] sm:text-[11px] font-syne tracking-micro text-brand-yellow-golden font-bold uppercase flex items-center gap-1.5">
                   DUBAI · NOVEMBER 2026
                 </span>
               </div>
 
-              <h2 className="font-serif-display text-4xl sm:text-6xl lg:text-7xl font-light text-brand-white uppercase tracking-tight leading-[0.95]">
+              <h2 className="font-serif-display text-3xl sm:text-5xl lg:text-5xl font-light text-brand-white uppercase tracking-tight leading-[0.95]">
                 LIFESTYLE <span className="font-serif font-normal italic text-transparent bg-clip-text bg-gradient-to-r from-brand-orange via-[#ff8833] to-brand-yellow-golden">2026</span>
               </h2>
 
-              <p className="font-sans text-base sm:text-lg text-brand-platinum/90 font-light max-w-2xl leading-relaxed">
+              <p className="font-sans text-sm sm:text-base text-brand-platinum/90 font-light max-w-2xl leading-relaxed">
                 An international fashion and lifestyle experience bringing together computational design, haute couture, spatial atmosphere, and global delegate salons.
               </p>
 

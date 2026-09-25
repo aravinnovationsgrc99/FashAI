@@ -80,10 +80,10 @@ export default function MobileMenu({
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.96, y: -10 }}
             transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
-            className="relative z-[260] flex flex-col justify-between h-full w-full bg-[#0c0c0c]/90 dark:bg-[#070707]/92 border border-white/15 dark:border-white/15 rounded-3xl p-5 sm:p-6 text-white overflow-y-auto shadow-2xl backdrop-blur-2xl"
+            className="mobile-menu-panel relative z-[260] flex flex-col justify-between h-full w-full bg-white dark:bg-[#070707] border border-black/10 dark:border-white/15 rounded-3xl p-5 sm:p-6 text-[#111111] dark:text-white overflow-y-auto shadow-2xl backdrop-blur-2xl"
           >
             {/* TOP HEADER ROW */}
-            <div className="flex items-center justify-between border-b border-white/10 dark:border-white/10 pb-4 pt-1 shrink-0">
+            <div className="flex items-center justify-between border-b border-black/10 dark:border-white/10 pb-4 pt-1 shrink-0">
               {/* Logo Lockup */}
               <Link href="/" onClick={onClose} className="flex items-center gap-2.5">
                 <div className="relative w-8 h-8 flex-shrink-0">
@@ -97,8 +97,8 @@ export default function MobileMenu({
                   />
                 </div>
                 <div className="flex flex-col justify-center">
-                  <span className="font-serif-display text-base font-light tracking-wider text-white uppercase leading-none">
-                    FashAI <span className="font-serif italic font-normal text-[#FAB60A] capitalize">Universal</span>
+                  <span className="font-serif-display text-base font-light tracking-wider text-[#111111] dark:text-white uppercase leading-none">
+                    FashAI <span className="font-serif italic font-normal text-[#F15E1C] dark:text-[#FAB60A] capitalize">Universal</span>
                   </span>
                 </div>
               </Link>
@@ -119,7 +119,7 @@ export default function MobileMenu({
                 {/* Floating Circular X Close Button */}
                 <button
                   onClick={onClose}
-                  className="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-white/10 dark:bg-white/15 border border-white/20 text-white hover:bg-[#F15E1C] hover:border-[#F15E1C] transition-all flex items-center justify-center shrink-0 shadow-md aspect-square"
+                  className="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-black/5 dark:bg-white/15 border border-black/10 dark:border-white/20 text-[#111111] dark:text-white hover:bg-[#F15E1C] hover:border-[#F15E1C] hover:text-white transition-all flex items-center justify-center shrink-0 shadow-sm aspect-square"
                   aria-label="Close Navigation Menu"
                 >
                   <X className="w-5 h-5" />
@@ -128,7 +128,7 @@ export default function MobileMenu({
             </div>
 
             {/* EDITORIAL NAVIGATION LIST */}
-            <nav className="flex flex-col space-y-1 my-auto py-6 shrink-0">
+            <nav className="flex flex-col space-y-1 mt-4 mb-auto pt-2 pb-6 shrink-0">
               {items.map((item, index) => {
                 const isActive =
                   item.href === "/"
@@ -145,10 +145,10 @@ export default function MobileMenu({
                     <Link
                       href={item.href}
                       onClick={onClose}
-                      className={`group flex items-center justify-between py-3.5 px-2 border-b border-white/10 dark:border-white/10 transition-all duration-200 ${
+                      className={`group flex items-center justify-between py-3.5 px-2 border-b border-black/10 dark:border-white/10 transition-all duration-200 ${
                         isActive
-                          ? "text-[#FAB60A] font-bold"
-                          : "text-white/90 hover:text-[#FAB60A]"
+                          ? "text-[#F15E1C] dark:text-[#FAB60A] font-bold"
+                          : "text-[#111111] dark:text-white/90 hover:text-[#F15E1C] dark:hover:text-[#FAB60A]"
                       }`}
                     >
                       <span className="font-syne text-lg sm:text-xl font-bold tracking-[0.15em] uppercase">
@@ -157,8 +157,8 @@ export default function MobileMenu({
                       <ArrowRight
                         className={`w-5 h-5 transition-transform duration-300 ${
                           isActive
-                            ? "text-[#FAB60A] translate-x-1"
-                            : "text-white/50 group-hover:text-[#FAB60A] group-hover:translate-x-1"
+                            ? "text-[#F15E1C] dark:text-[#FAB60A] translate-x-1"
+                            : "text-neutral-400 dark:text-white/50 group-hover:text-[#F15E1C] dark:group-hover:text-[#FAB60A] group-hover:translate-x-1"
                         }`}
                       />
                     </Link>
@@ -172,7 +172,7 @@ export default function MobileMenu({
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3, duration: 0.3 }}
-              className="border-t border-white/10 dark:border-white/10 pt-4 flex flex-col space-y-3 shrink-0"
+              className="border-t border-black/10 dark:border-white/10 pt-4 flex flex-col space-y-3 shrink-0"
             >
               <Link
                 href="/contact"
@@ -182,7 +182,7 @@ export default function MobileMenu({
                 <span>CONTACT US →</span>
               </Link>
 
-              <div className="flex items-center justify-between text-[11px] font-syne text-white/60 pt-1">
+              <div className="flex items-center justify-between text-[11px] font-syne text-neutral-600 dark:text-white/60 pt-1">
                 <span>@fashai_universal</span>
                 <Image
                   src="/assets/brand/Final_Powered_by_logo.png"

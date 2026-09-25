@@ -170,9 +170,11 @@ html.light [class*="text-brand-platinum"]:not(.editorial-watermark):not(.keep-wh
 
 html.light [class*="text-brand-platinum/80"]:not(.keep-white),
 html.light [class*="text-brand-platinum/90"]:not(.keep-white),
+html.light [class*="text-white/90"]:not(.keep-white),
 html.light [class*="text-white/80"]:not(.keep-white),
 html.light [class*="text-white/70"]:not(.keep-white),
-html.light [class*="text-white/60"]:not(.keep-white) {
+html.light [class*="text-white/60"]:not(.keep-white),
+html.light [class*="text-white/50"]:not(.keep-white) {
   color: #333333 !important;
 }
 
@@ -266,18 +268,12 @@ html.light header {
   transition: background-color 0.3s ease, border-color 0.3s ease;
 }
 
-/* Landing Screen Unscrolled Header (Cinematic Dark Mode Match) */
-html.light header:not(.html-light-header-scrolled) {
-  background-color: transparent !important;
-  border-bottom-color: transparent !important;
-  box-shadow: none !important;
-}
-
-html.light header:not(.html-light-header-scrolled) nav a:not(.text-brand-yellow-golden) {
+/* Landing Screen Unscrolled & Scrolled Header (All Screens) */
+html.light header nav a:not([class*="text-\[\#FAB60A\]"]) {
   color: #FFFFFF !important;
 }
 
-html.light header:not(.html-light-header-scrolled) nav a:hover {
+html.light header nav a:hover {
   color: #FAB60A !important;
 }
 
@@ -285,7 +281,9 @@ html.light header .font-serif-display {
   color: #FFFFFF !important;
 }
 
-.fashai-brand-text {
+.fashai-brand-text,
+html.light .fashai-brand-text,
+html.light header .fashai-brand-text {
   color: #FFFFFF !important;
 }
 
@@ -297,6 +295,13 @@ html.light header .font-serif-display span.text-\[\#FAB60A\] {
 html.light header .theme-toggle-btn {
   border-color: rgba(255, 255, 255, 0.2) !important;
   background-color: rgba(255, 255, 255, 0.1) !important;
+  color: #FFFFFF !important;
+}
+
+html.light header button svg,
+html.light header .theme-toggle-btn svg {
+  color: #FFFFFF !important;
+  stroke: currentColor;
 }
 
 /* Scrolled Header in Light Mode */
@@ -306,19 +311,20 @@ html.light .html-light-header-scrolled {
   box-shadow: 0 14px 40px rgba(0, 0, 0, 0.5) !important;
 }
 
-html.light .html-light-header-scrolled nav a:not(.text-brand-yellow-golden) {
-  color: #FFFFFF !important;
-}
-
-html.light .html-light-header-scrolled nav a:hover {
-  color: #FAB60A !important;
-}
-
 /* Mobile Menu Container in Light Mode */
 html.light .mobile-menu-container,
+html.light .mobile-menu-panel,
 html.light [class*="bg-[#080808]"] {
   background-color: #FFFFFF !important;
   color: #111111 !important;
+}
+
+html.light .mobile-menu-panel nav a:not([class*="text-\[\#F15E1C\]"]) {
+  color: #111111 !important;
+}
+
+html.light .mobile-menu-panel nav a:hover {
+  color: #F15E1C !important;
 }
 
 /* Hairline Borders in Light Mode */

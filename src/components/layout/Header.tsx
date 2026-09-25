@@ -72,7 +72,7 @@ export default function Header() {
               <span className={`font-serif-display font-light tracking-wider uppercase leading-none transition-all duration-300 ${
                 isScrolled ? "text-sm sm:text-base lg:text-lg" : "text-base sm:text-lg lg:text-xl"
               }`}>
-                <span className="fashai-brand-text text-white">FashAI</span> <span className="font-serif italic font-normal text-[#FAB60A] capitalize ml-1">Universal</span>
+                <span className="fashai-brand-text text-white keep-white">FashAI</span> <span className="font-serif italic font-normal text-[#FAB60A] capitalize ml-1">Universal</span>
               </span>
             </div>
           </Link>
@@ -95,8 +95,8 @@ export default function Header() {
                     isActive
                       ? "text-[#FAB60A] font-bold"
                       : isScrolled
-                      ? "text-white/85 hover:text-[#FAB60A]"
-                      : "text-white/90 hover:text-[#FAB60A] drop-shadow-[0_1px_2px_rgba(0,0,0,0.8)]"
+                      ? "text-white/85 keep-white hover:text-[#FAB60A]"
+                      : "text-white/90 keep-white hover:text-[#FAB60A] drop-shadow-[0_1px_2px_rgba(0,0,0,0.8)]"
                   }`}
                 >
                   {item.label}
@@ -132,14 +132,14 @@ export default function Header() {
             {/* CIRCULAR MOBILE HAMBURGER BUTTON */}
             <button
               onClick={() => setMobileMenuOpen(true)}
-              className={`lg:hidden rounded-full flex items-center justify-center shrink-0 transition-all duration-300 aspect-square ${
+              className={`lg:hidden rounded-full flex items-center justify-center shrink-0 transition-all duration-300 aspect-square text-white keep-white ${
                 isScrolled
                   ? "w-8 h-8 sm:w-9 sm:h-9 bg-white/10 dark:bg-white/10 border border-white/15 text-white hover:border-[#FAB60A]"
                   : "w-9 h-9 sm:w-10 sm:h-10 bg-black/25 dark:bg-black/30 border border-white/20 text-white hover:border-[#FAB60A] backdrop-blur-sm shadow-md"
               }`}
               aria-label="Open Navigation Menu"
             >
-              <Menu className="w-4.5 h-4.5" />
+              <Menu className="w-4.5 h-4.5 text-white keep-white" />
             </button>
           </div>
         </div>
