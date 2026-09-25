@@ -4,6 +4,7 @@ import { useState, useMemo, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import GradientFlowText from "../ui/GradientFlowText";
+import ViewportRevealCard from "../ui/ViewportRevealCard";
 import {
   GALLERY_DATA,
   GALLERY_CATEGORIES,
@@ -121,44 +122,46 @@ export default function GalleryView() {
                 className="break-inside-avoid group cursor-pointer"
                 onClick={() => openLightbox(item)}
               >
-                <div
-                  className={`relative ${aspectClass} w-full overflow-hidden border border-white/10 bg-brand-charcoal transition-all duration-500 hover:border-brand-orange hover:shadow-[0_0_35px_rgba(241,94,28,0.35)]`}
-                >
-                  <Image
-                    src={item.thumb}
-                    alt={item.alt}
-                    fill
-                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
-                    className={`object-cover ${item.objectPosition || "object-top"} filter contrast-105 transition-all duration-700 ease-out group-hover:scale-[1.03] ${
-                      item.category.toUpperCase().includes("LIFESTYLE") || item.category.toUpperCase().includes("RUNWAY")
-                        ? "blur-[2.5px] group-hover:blur-none"
-                        : ""
-                    }`}
-                    priority={index < 4}
-                    loading={index < 4 ? "eager" : "lazy"}
-                  />
+                <ViewportRevealCard className={`relative ${aspectClass} w-full overflow-hidden border border-white/10 bg-brand-charcoal transition-all duration-500 hover:border-brand-orange hover:shadow-[0_0_35px_rgba(241,94,28,0.35)]`}>
+                  {(isRevealed) => (
+                    <>
+                      <Image
+                        src={item.thumb}
+                        alt={item.alt}
+                        fill
+                        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                        className={`object-cover ${item.objectPosition || "object-top"} filter contrast-105 transition-all duration-700 ease-out group-hover:scale-[1.03] ${
+                          item.category.toUpperCase().includes("LIFESTYLE") || item.category.toUpperCase().includes("RUNWAY")
+                            ? isRevealed ? "blur-none" : "blur-[2.5px] group-hover:blur-none"
+                            : ""
+                        }`}
+                        priority={index < 4}
+                        loading={index < 4 ? "eager" : "lazy"}
+                      />
 
-                  {/* Dark Vignette Overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-brand-void/90 via-transparent to-transparent opacity-75 group-hover:opacity-40 transition-opacity duration-300" />
+                      {/* Dark Vignette Overlay */}
+                      <div className="absolute inset-0 bg-gradient-to-t from-brand-void/90 via-transparent to-transparent opacity-75 group-hover:opacity-40 transition-opacity duration-300" />
 
-                  {/* Category Tag Overlay (Bottom-Left Corner) */}
-                  <div className="absolute bottom-4 left-4 right-12 z-10">
-                    <span className="font-syne text-[9px] sm:text-[10px] tracking-micro text-brand-white font-bold uppercase px-2.5 py-1 bg-black/80 backdrop-blur-md border border-white/15 drop-shadow-md block truncate w-max max-w-full">
-                      {item.category}
-                    </span>
-                    <h3 className="font-serif-display text-base sm:text-lg font-light text-brand-white mt-1.5 drop-shadow truncate opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                      {item.title}
-                    </h3>
-                  </div>
+                      {/* Category Tag Overlay (Bottom-Left Corner) */}
+                      <div className="absolute bottom-4 left-4 right-12 z-10">
+                        <span className="font-syne text-[9px] sm:text-[10px] tracking-micro text-brand-white font-bold uppercase px-2.5 py-1 bg-black/80 backdrop-blur-md border border-white/15 drop-shadow-md block truncate w-max max-w-full">
+                          {item.category}
+                        </span>
+                        <h3 className="font-serif-display text-base sm:text-lg font-light text-brand-white mt-1.5 drop-shadow truncate opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                          {item.title}
+                        </h3>
+                      </div>
 
-                  {/* Hover Accent Line */}
-                  <div className="absolute bottom-0 left-0 right-0 h-[2px] bg-brand-orange transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
+                      {/* Hover Accent Line */}
+                      <div className="absolute bottom-0 left-0 right-0 h-[2px] bg-brand-orange transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
 
-                  {/* Hover Arrow Indicator */}
-                  <div className="absolute top-4 right-4 z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 h-8 w-8 flex items-center justify-center bg-brand-orange text-white text-xs font-syne font-bold">
-                    ↗
-                  </div>
-                </div>
+                      {/* Hover Arrow Indicator */}
+                      <div className="absolute top-4 right-4 z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 h-8 w-8 flex items-center justify-center bg-brand-orange text-white text-xs font-syne font-bold">
+                        ↗
+                      </div>
+                    </>
+                  )}
+                </ViewportRevealCard>
               </motion.div>
             );
           })}

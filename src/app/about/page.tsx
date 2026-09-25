@@ -6,7 +6,7 @@ import InstagramSection from "@/components/sections/InstagramSection";
 export const metadata: Metadata = {
   title: "About Us — FashAI Universal",
   description:
-    "Learn about FashAI Universal: an international fashion, lifestyle, and events platform connecting Dubai, UAE, and India.",
+    "Learn about FashAI Universal: a global fashion and events platform connecting talent, brands, and experiences across the UAE, India, and international markets.",
 };
 
 export default function AboutPage() {

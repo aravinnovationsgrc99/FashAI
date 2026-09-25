@@ -91,7 +91,7 @@ function ContactContent() {
             LET&apos;S CREATE THE <span className="italic text-transparent bg-clip-text bg-gradient-to-r from-brand-orange to-brand-yellow-golden font-normal">NEXT CHAPTER.</span>
           </h2>
           <p className="font-sans text-base sm:text-lg text-brand-platinum/90 font-light leading-relaxed">
-            For registrations, sponsorships, designer participation, talent, press and brand partnerships, submit an enquiry to the FashAI Universal team.
+            For registrations, sponsorships, talent, press, brand partnerships and event participation across the FashAI Universal platform, submit an enquiry to the FashAI Universal team.
           </p>
         </div>
 

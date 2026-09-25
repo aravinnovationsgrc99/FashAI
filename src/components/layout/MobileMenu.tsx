@@ -81,7 +81,7 @@ export default function MobileMenu({
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.96, y: -10 }}
             transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
-            className="mobile-menu-panel relative z-[260] flex flex-col justify-between h-full w-full bg-white dark:bg-[#070707] border border-black/10 dark:border-white/15 rounded-3xl p-5 sm:p-6 text-[#111111] dark:text-white overflow-y-auto shadow-2xl backdrop-blur-2xl"
+            className="mobile-menu-panel relative z-[260] flex flex-col justify-between h-full w-full bg-white/95 dark:bg-[#070707]/95 border border-black/10 dark:border-white/15 rounded-2xl p-5 sm:p-6 text-[#111111] dark:text-white overflow-y-auto shadow-2xl backdrop-blur-2xl"
           >
             {/* TOP HEADER ROW */}
             <div className="flex items-center justify-between border-b border-black/10 dark:border-white/10 pb-4 pt-1 shrink-0">
@@ -146,8 +146,8 @@ export default function MobileMenu({
                     <Link
                       href={item.href}
                       onClick={onClose}
-                      className={`group flex items-center justify-between py-3.5 px-2 border-b border-black/10 dark:border-white/10 transition-all duration-200 text-[#D4AF37] dark:text-white/90 hover:text-[#FFEC69] dark:hover:text-[#D4AF37] ${
-                        isActive ? "font-bold" : "font-semibold"
+                      className={`group flex items-center justify-between py-3.5 px-3 rounded-xl border-b border-black/10 dark:border-white/10 hover:bg-black/5 dark:hover:bg-white/5 transition-all duration-200 text-[#D4AF37] dark:text-white/90 hover:text-[#FFEC69] dark:hover:text-[#D4AF37] ${
+                        isActive ? "font-bold bg-black/[0.03] dark:bg-white/[0.04]" : "font-semibold"
                       }`}
                     >
                       <span className="font-syne text-lg sm:text-xl font-bold tracking-[0.15em] uppercase">
@@ -174,7 +174,7 @@ export default function MobileMenu({
               <Link
                 href="/services"
                 onClick={onClose}
-                className="w-full border border-[#F15E1C]/40 dark:border-[#D4AF37]/40 bg-[#F15E1C]/10 dark:bg-[#D4AF37]/10 hover:bg-[#F15E1C]/20 text-[#111111] dark:text-white py-2.5 text-center font-syne text-xs tracking-wider font-bold transition-all rounded-full shadow-sm flex items-center justify-center gap-2"
+                className="w-full border border-[#F15E1C]/40 dark:border-[#D4AF37]/40 bg-[#F15E1C]/10 dark:bg-[#D4AF37]/10 hover:bg-[#F15E1C]/20 text-[#111111] dark:text-white py-2.5 text-center font-syne text-xs tracking-wider font-bold transition-all rounded-xl shadow-sm flex items-center justify-center gap-2"
               >
                 <Sparkles className="w-3.5 h-3.5 text-[#F15E1C] dark:text-[#D4AF37]" />
                 <GradientFlowText variant="gold">
@@ -185,7 +185,7 @@ export default function MobileMenu({
               <Link
                 href="/contact"
                 onClick={onClose}
-                className="w-full bg-[#D4AF37] hover:bg-[#FFEC69] py-3 text-center font-syne text-xs tracking-wider font-bold text-[#111111] transition-colors rounded-full shadow-md flex items-center justify-center gap-2"
+                className="w-full bg-[#D4AF37] hover:bg-[#FFEC69] py-3 text-center font-syne text-xs tracking-wider font-bold text-[#111111] transition-colors rounded-xl shadow-md flex items-center justify-center gap-2"
               >
                 <GradientFlowText variant="primary">
                   CONTACT US →

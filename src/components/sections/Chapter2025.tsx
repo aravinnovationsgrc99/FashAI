@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
+import ViewportRevealCard from "../ui/ViewportRevealCard";
 
 export default function Chapter2025() {
   const images2025 = [
@@ -68,46 +69,54 @@ export default function Chapter2025() {
                   isFourth ? "border-[#D4AF37]/60 hover:border-[#D4AF37] shadow-[0_0_20px_rgba(212,175,55,0.15)]" : "border-hairline-orange/40"
                 }`}
               >
-                <Image
-                  src={img.src}
-                  alt={img.alt}
-                  fill
-                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
-                  className="object-cover object-top group-hover:scale-105 transition-all duration-500 filter contrast-105 blur-[2.5px] group-hover:blur-none"
-                />
-                <div
-                  className={`absolute inset-0 transition-all duration-300 ${
-                    isFourth
-                      ? "bg-gradient-to-t from-black/85 via-black/35 to-black/20 group-hover:from-black/75"
-                      : "bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-60 group-hover:opacity-40"
-                  }`}
-                />
+                <ViewportRevealCard className="relative w-full h-full">
+                  {(isRevealed) => (
+                    <>
+                      <Image
+                        src={img.src}
+                        alt={img.alt}
+                        fill
+                        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                        className={`object-cover object-top group-hover:scale-105 transition-all duration-700 ease-out filter contrast-105 ${
+                          isRevealed ? "blur-none" : "blur-[2.5px] group-hover:blur-none"
+                        }`}
+                      />
+                      <div
+                        className={`absolute inset-0 transition-all duration-300 ${
+                          isFourth
+                            ? "bg-gradient-to-t from-black/85 via-black/35 to-black/20 group-hover:from-black/75"
+                            : "bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-60 group-hover:opacity-40"
+                        }`}
+                      />
 
-                {isFourth ? (
-                  <>
-                    <div className="absolute top-3 left-3 z-10">
-                      <span className="text-[9px] font-syne tracking-micro text-[#D4AF37] uppercase font-bold bg-black/70 backdrop-blur-sm px-2.5 py-1 rounded border border-[#D4AF37]/40">
-                        100+ ARCHIVE LOOKS
-                      </span>
-                    </div>
-                    <div className="absolute inset-0 flex flex-col items-center justify-center p-4 text-center z-10">
-                      <Link
-                        href="/gallery"
-                        className="inline-flex items-center gap-2 bg-[#D4AF37] hover:bg-[#FFEC69] text-[#111111] px-5 py-3 text-xs font-syne tracking-caps font-bold transition-all duration-300 rounded-full shadow-2xl group-hover:scale-105 active:scale-95 border border-white/20"
-                      >
-                        <span>VIEW MORE IMAGES</span>
-                        <span className="text-sm">↗</span>
-                      </Link>
-                    </div>
-                    <div className="absolute bottom-3 left-3 right-3 text-[10px] font-syne tracking-micro text-brand-white/80 keep-white uppercase font-semibold drop-shadow text-center z-10">
-                      EXPLORE COMPLETE GALLERY
-                    </div>
-                  </>
-                ) : (
-                  <div className="absolute bottom-3 left-3 right-3 text-[10px] font-syne tracking-micro text-brand-white keep-white uppercase font-semibold drop-shadow">
-                    LIFESTYLE 2025 • ARCHIVE {index + 1}
-                  </div>
-                )}
+                      {isFourth ? (
+                        <>
+                          <div className="absolute top-3 left-3 z-10">
+                            <span className="text-[9px] font-syne tracking-micro text-[#D4AF37] uppercase font-bold bg-black/70 backdrop-blur-sm px-2.5 py-1 rounded border border-[#D4AF37]/40">
+                              100+ ARCHIVE LOOKS
+                            </span>
+                          </div>
+                          <div className="absolute inset-0 flex flex-col items-center justify-center p-4 text-center z-10">
+                            <Link
+                              href="/gallery"
+                              className="inline-flex items-center gap-2 bg-[#D4AF37] hover:bg-[#FFEC69] text-[#111111] px-5 py-3 text-xs font-syne tracking-caps font-bold transition-all duration-300 rounded-full shadow-2xl group-hover:scale-105 active:scale-95 border border-white/20"
+                            >
+                              <span>VIEW MORE IMAGES</span>
+                              <span className="text-sm">↗</span>
+                            </Link>
+                          </div>
+                          <div className="absolute bottom-3 left-3 right-3 text-[10px] font-syne tracking-micro text-brand-white/80 keep-white uppercase font-semibold drop-shadow text-center z-10">
+                            EXPLORE COMPLETE GALLERY
+                          </div>
+                        </>
+                      ) : (
+                        <div className="absolute bottom-3 left-3 right-3 text-[10px] font-syne tracking-micro text-brand-white keep-white uppercase font-semibold drop-shadow">
+                          LIFESTYLE 2025 • ARCHIVE {index + 1}
+                        </div>
+                      )}
+                    </>
+                  )}
+                </ViewportRevealCard>
               </motion.div>
             );
           })}

@@ -42,10 +42,10 @@ export default function WhoWeAreSection() {
             <div className="w-16 h-[2px] bg-[#F15E1C] dark:bg-brand-orange mx-auto mt-3" />
           </div>
 
-          {/* Editorial 12-Column Layout */}
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-5 mt-8 items-stretch">
+          {/* Editorial Responsive Layout */}
+          <div className="flex flex-col lg:grid lg:grid-cols-12 gap-5 mt-8 items-stretch">
             {/* Left Vision Card with Image (Smart Cropped & Responsive for Mobile) */}
-            <div className="lg:col-span-6 rounded-xl overflow-hidden border border-black/10 dark:border-white/10 relative w-full aspect-[16/9] sm:aspect-[16/9] lg:aspect-auto lg:h-full min-h-[200px] xs:min-h-[240px] sm:min-h-[300px] lg:min-h-[340px] bg-[#FAF8F5] dark:bg-[#0A0908] group shadow-sm flex items-center justify-center p-1 sm:p-0">
+            <div className="order-1 lg:order-none lg:col-span-6 lg:row-span-2 rounded-xl overflow-hidden border border-black/10 dark:border-white/10 relative w-full aspect-[16/9] sm:aspect-[16/9] lg:aspect-auto lg:h-full min-h-[200px] xs:min-h-[240px] sm:min-h-[300px] lg:min-h-[340px] bg-[#FAF8F5] dark:bg-[#0A0908] group shadow-sm flex items-center justify-center p-1 sm:p-0">
               <Image
                 src="/assets/home/where_fashion_creates_possibilities.png"
                 alt="OUR VISION — Where Fashion Creates Possibilities. UAE · INDIA · GLOBAL"
@@ -59,136 +59,133 @@ export default function WhoWeAreSection() {
               </span>
             </div>
 
-            {/* Right Supporting Blocks */}
-            <div className="lg:col-span-6 flex flex-col justify-between space-y-4">
-              {/* 2 Top Info Cards */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <div className="p-5 sm:p-6 rounded-xl bg-[#FAF8F5] dark:bg-[#0A0908] border border-black/10 dark:border-white/10 flex flex-col justify-between space-y-3">
-                  <div className="w-9 h-9 rounded-lg bg-[#F15E1C]/10 dark:bg-brand-orange/15 flex items-center justify-center text-[#F15E1C] dark:text-brand-orange">
-                    <Globe className="w-5 h-5" />
-                  </div>
-                  <div>
-                    <h4 className="font-syne text-xs sm:text-sm font-bold uppercase tracking-wider text-[#111111] dark:text-brand-white">
-                      INTERNATIONAL PLATFORM
-                    </h4>
-                    <p className="font-sans text-xs sm:text-sm text-[#444444] dark:text-brand-platinum/90 font-normal leading-relaxed mt-1">
-                      Runway, talent and creative opportunities across the UAE, India and global destinations.
-                    </p>
-                  </div>
+            {/* 2 Top Info Cards */}
+            <div className="order-2 lg:order-none lg:col-span-6 grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div className="p-5 sm:p-6 rounded-xl bg-[#FAF8F5] dark:bg-[#0A0908] border border-black/10 dark:border-white/10 flex flex-col justify-between space-y-3">
+                <div className="w-9 h-9 rounded-lg bg-[#F15E1C]/10 dark:bg-brand-orange/15 flex items-center justify-center text-[#F15E1C] dark:text-brand-orange">
+                  <Globe className="w-5 h-5" />
                 </div>
-
-                <div className="p-5 sm:p-6 rounded-xl bg-[#FAF8F5] dark:bg-[#0A0908] border border-black/10 dark:border-white/10 flex flex-col justify-between space-y-3">
-                  <div className="w-9 h-9 rounded-lg bg-[#F15E1C]/10 dark:bg-brand-orange/15 flex items-center justify-center text-[#F15E1C] dark:text-brand-orange">
-                    <Users className="w-5 h-5" />
-                  </div>
-                  <div>
-                    <h4 className="font-syne text-xs sm:text-sm font-bold uppercase tracking-wider text-[#111111] dark:text-brand-white">
-                      GLOBAL COMMUNITY
-                    </h4>
-                    <p className="font-sans text-xs sm:text-sm text-[#444444] dark:text-brand-platinum/90 font-normal leading-relaxed mt-1">
-                      Connecting designers, talent, brands and audiences.
-                    </p>
-                  </div>
+                <div>
+                  <h4 className="font-syne text-xs sm:text-sm font-bold uppercase tracking-wider text-[#111111] dark:text-brand-white">
+                    INTERNATIONAL PLATFORM
+                  </h4>
+                  <p className="font-sans text-xs sm:text-sm text-[#444444] dark:text-brand-platinum/90 font-normal leading-relaxed mt-1">
+                    Runway, talent and creative opportunities across the UAE, India and global destinations.
+                  </p>
                 </div>
               </div>
 
-              {/* Bottom EXPLORE FASHAI ECOSYSTEM Card */}
-              <div className="relative p-6 sm:p-7 rounded-2xl bg-gradient-to-r from-[#F15E1C]/15 via-[#D4AF37]/10 to-[#FAF8F5] dark:from-[#F15E1C]/20 dark:via-[#D4AF37]/15 dark:to-[#0A0908] border border-[#F15E1C]/30 dark:border-[#D4AF37]/40 flex flex-col md:flex-row items-start md:items-center justify-between gap-6 shadow-lg backdrop-blur-sm overflow-hidden group transition-all duration-300 hover:border-[#F15E1C]/50 dark:hover:border-[#D4AF37]/60">
-                {/* Subtle Ambient Accent Glow */}
-                <div className="absolute -top-12 -right-12 w-40 h-40 bg-[#D4AF37]/15 dark:bg-[#F15E1C]/20 rounded-full blur-2xl pointer-events-none group-hover:scale-150 transition-transform duration-700" />
-                
-                <div className="relative z-10 space-y-2 text-left max-w-xl">
-                  <div className="flex items-center gap-2.5">
-                    <span className="relative flex h-2.5 w-2.5">
-                      <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#F15E1C] opacity-75 dark:bg-[#D4AF37]"></span>
-                      <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-[#F15E1C] dark:bg-[#D4AF37]"></span>
-                    </span>
-                    <span className="font-syne text-xs sm:text-sm font-bold uppercase tracking-[0.22em] text-[#F15E1C] dark:text-[#D4AF37]">
-                      EXPLORE FASHAI ECOSYSTEM
-                    </span>
-                  </div>
-
-                  <h3 className="font-serif-display text-2xl sm:text-3xl font-light text-[#111111] dark:text-brand-white uppercase leading-tight tracking-tight">
-                    UPCOMING SHOWS &amp; CHAPTERS
-                  </h3>
-
-                  <p className="font-sans text-xs sm:text-sm text-[#333333] dark:text-brand-platinum/90 font-normal leading-relaxed">
-                    Upcoming shows, chapters and opportunities across international fashion hubs.
+              <div className="p-5 sm:p-6 rounded-xl bg-[#FAF8F5] dark:bg-[#0A0908] border border-black/10 dark:border-white/10 flex flex-col justify-between space-y-3">
+                <div className="w-9 h-9 rounded-lg bg-[#F15E1C]/10 dark:bg-brand-orange/15 flex items-center justify-center text-[#F15E1C] dark:text-brand-orange">
+                  <Users className="w-5 h-5" />
+                </div>
+                <div>
+                  <h4 className="font-syne text-xs sm:text-sm font-bold uppercase tracking-wider text-[#111111] dark:text-brand-white">
+                    GLOBAL COMMUNITY
+                  </h4>
+                  <p className="font-sans text-xs sm:text-sm text-[#444444] dark:text-brand-platinum/90 font-normal leading-relaxed mt-1">
+                    Connecting designers, talent, brands and audiences.
                   </p>
                 </div>
-
-                <Link
-                  href="/upcoming"
-                  className="relative z-10 w-full md:w-auto inline-flex items-center justify-center gap-2.5 bg-[#F15E1C] dark:bg-[#D4AF37] text-white dark:text-black hover:bg-[#e04f10] dark:hover:bg-[#f5aa00] px-7 py-3.5 rounded-xl font-syne text-xs sm:text-sm font-bold tracking-wider uppercase transition-all duration-300 shadow-md group/btn whitespace-nowrap shrink-0 hover:shadow-lg hover:-translate-y-0.5"
-                >
-                  <span>SEE UPCOMING</span>
-                  <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover/btn:translate-x-1" />
-                </Link>
               </div>
             </div>
-          </div>
 
-          {/* Bottom 3 Features Grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-5">
-            <Link
-              href="/upcoming"
-              className="group p-5 rounded-xl bg-[#FAF8F5] dark:bg-[#0A0908] border border-black/10 dark:border-white/10 flex items-center justify-between hover:border-[#F15E1C]/50 dark:hover:border-brand-orange/50 transition-all shadow-sm"
-            >
-              <div className="space-y-2">
-                <div className="w-8 h-8 rounded-lg bg-[#F15E1C]/10 dark:bg-brand-orange/15 flex items-center justify-center text-[#F15E1C] dark:text-brand-orange">
-                  <Compass className="w-4 h-4 sm:w-5 sm:h-5" />
+            {/* Bottom 3 Features Grid (INTERNATIONAL REACH, CREATIVE FOCUS, CURATED EXPERIENCES) */}
+            <div className="order-3 lg:order-none lg:col-span-12 grid grid-cols-1 sm:grid-cols-3 gap-4">
+              <Link
+                href="/upcoming"
+                className="group p-5 rounded-xl bg-[#FAF8F5] dark:bg-[#0A0908] border border-black/10 dark:border-white/10 flex items-center justify-between hover:border-[#F15E1C]/50 dark:hover:border-brand-orange/50 transition-all shadow-sm"
+              >
+                <div className="space-y-2">
+                  <div className="w-8 h-8 rounded-lg bg-[#F15E1C]/10 dark:bg-brand-orange/15 flex items-center justify-center text-[#F15E1C] dark:text-brand-orange">
+                    <Compass className="w-4 h-4 sm:w-5 sm:h-5" />
+                  </div>
+                  <div>
+                    <h4 className="font-syne text-xs sm:text-sm font-bold uppercase tracking-wider text-[#111111] dark:text-brand-white">
+                      INTERNATIONAL REACH
+                    </h4>
+                    <p className="font-sans text-xs sm:text-sm text-[#444444] dark:text-brand-platinum/90 font-normal mt-0.5">
+                      Expanding fashion beyond borders.
+                    </p>
+                  </div>
                 </div>
-                <div>
-                  <h4 className="font-syne text-xs sm:text-sm font-bold uppercase tracking-wider text-[#111111] dark:text-brand-white">
-                    INTERNATIONAL REACH
-                  </h4>
-                  <p className="font-sans text-xs sm:text-sm text-[#444444] dark:text-brand-platinum/90 font-normal mt-0.5">
-                    Expanding fashion beyond borders.
-                  </p>
-                </div>
-              </div>
-              <ArrowRight className="w-4 h-4 text-[#F15E1C] dark:text-brand-orange transition-transform group-hover:translate-x-1 flex-shrink-0 ml-2" />
-            </Link>
+                <ArrowRight className="w-4 h-4 text-[#F15E1C] dark:text-brand-orange transition-transform group-hover:translate-x-1 flex-shrink-0 ml-2" />
+              </Link>
 
-            <Link
-              href="/apply"
-              className="group p-5 rounded-xl bg-[#FAF8F5] dark:bg-[#0A0908] border border-black/10 dark:border-white/10 flex items-center justify-between hover:border-[#F15E1C]/50 dark:hover:border-brand-orange/50 transition-all shadow-sm"
-            >
-              <div className="space-y-2">
-                <div className="w-8 h-8 rounded-lg bg-[#F15E1C]/10 dark:bg-brand-orange/15 flex items-center justify-center text-[#F15E1C] dark:text-brand-orange">
-                  <Eye className="w-4 h-4 sm:w-5 sm:h-5" />
+              <Link
+                href="/apply"
+                className="group p-5 rounded-xl bg-[#FAF8F5] dark:bg-[#0A0908] border border-black/10 dark:border-white/10 flex items-center justify-between hover:border-[#F15E1C]/50 dark:hover:border-brand-orange/50 transition-all shadow-sm"
+              >
+                <div className="space-y-2">
+                  <div className="w-8 h-8 rounded-lg bg-[#F15E1C]/10 dark:bg-brand-orange/15 flex items-center justify-center text-[#F15E1C] dark:text-brand-orange">
+                    <Eye className="w-4 h-4 sm:w-5 sm:h-5" />
+                  </div>
+                  <div>
+                    <h4 className="font-syne text-xs sm:text-sm font-bold uppercase tracking-wider text-[#111111] dark:text-brand-white">
+                      CREATIVE FOCUS
+                    </h4>
+                    <p className="font-sans text-xs sm:text-sm text-[#444444] dark:text-brand-platinum/90 font-normal mt-0.5">
+                      Designer, model and artistic showcases.
+                    </p>
+                  </div>
                 </div>
-                <div>
-                  <h4 className="font-syne text-xs sm:text-sm font-bold uppercase tracking-wider text-[#111111] dark:text-brand-white">
-                    CREATIVE FOCUS
-                  </h4>
-                  <p className="font-sans text-xs sm:text-sm text-[#444444] dark:text-brand-platinum/90 font-normal mt-0.5">
-                    Designer, model and artistic showcases.
-                  </p>
-                </div>
-              </div>
-              <ArrowRight className="w-4 h-4 text-[#F15E1C] dark:text-brand-orange transition-transform group-hover:translate-x-1 flex-shrink-0 ml-2" />
-            </Link>
+                <ArrowRight className="w-4 h-4 text-[#F15E1C] dark:text-brand-orange transition-transform group-hover:translate-x-1 flex-shrink-0 ml-2" />
+              </Link>
 
-            <Link
-              href="/gallery"
-              className="group p-5 rounded-xl bg-[#FAF8F5] dark:bg-[#0A0908] border border-black/10 dark:border-white/10 flex items-center justify-between hover:border-[#F15E1C]/50 dark:hover:border-brand-orange/50 transition-all shadow-sm"
-            >
-              <div className="space-y-2">
-                <div className="w-8 h-8 rounded-lg bg-[#F15E1C]/10 dark:bg-brand-orange/15 flex items-center justify-center text-[#F15E1C] dark:text-brand-orange">
-                  <Award className="w-4 h-4 sm:w-5 sm:h-5" />
+              <Link
+                href="/gallery"
+                className="group p-5 rounded-xl bg-[#FAF8F5] dark:bg-[#0A0908] border border-black/10 dark:border-white/10 flex items-center justify-between hover:border-[#F15E1C]/50 dark:hover:border-brand-orange/50 transition-all shadow-sm"
+              >
+                <div className="space-y-2">
+                  <div className="w-8 h-8 rounded-lg bg-[#F15E1C]/10 dark:bg-brand-orange/15 flex items-center justify-center text-[#F15E1C] dark:text-brand-orange">
+                    <Award className="w-4 h-4 sm:w-5 sm:h-5" />
+                  </div>
+                  <div>
+                    <h4 className="font-syne text-xs sm:text-sm font-bold uppercase tracking-wider text-[#111111] dark:text-brand-white">
+                      CURATED EXPERIENCES
+                    </h4>
+                    <p className="font-sans text-xs sm:text-sm text-[#444444] dark:text-brand-platinum/90 font-normal mt-0.5">
+                      Runways, salons and global trade formats.
+                    </p>
+                  </div>
                 </div>
-                <div>
-                  <h4 className="font-syne text-xs sm:text-sm font-bold uppercase tracking-wider text-[#111111] dark:text-brand-white">
-                    CURATED EXPERIENCES
-                  </h4>
-                  <p className="font-sans text-xs sm:text-sm text-[#444444] dark:text-brand-platinum/90 font-normal mt-0.5">
-                    Runways, salons and global trade formats.
-                  </p>
+                <ArrowRight className="w-4 h-4 text-[#F15E1C] dark:text-brand-orange transition-transform group-hover:translate-x-1 flex-shrink-0 ml-2" />
+              </Link>
+            </div>
+
+            {/* Bottom EXPLORE FASHAI ECOSYSTEM Card (UPCOMING SHOWS & CHAPTERS) */}
+            <div className="order-4 lg:order-none lg:col-span-6 relative p-6 sm:p-7 rounded-2xl bg-gradient-to-r from-[#F15E1C]/15 via-[#D4AF37]/10 to-[#FAF8F5] dark:from-[#F15E1C]/20 dark:via-[#D4AF37]/15 dark:to-[#0A0908] border border-[#F15E1C]/30 dark:border-[#D4AF37]/40 flex flex-col md:flex-row items-start md:items-center justify-between gap-6 shadow-lg backdrop-blur-sm overflow-hidden group transition-all duration-300 hover:border-[#F15E1C]/50 dark:hover:border-[#D4AF37]/60">
+              {/* Subtle Ambient Accent Glow */}
+              <div className="absolute -top-12 -right-12 w-40 h-40 bg-[#D4AF37]/15 dark:bg-[#F15E1C]/20 rounded-full blur-2xl pointer-events-none group-hover:scale-150 transition-transform duration-700" />
+              
+              <div className="relative z-10 space-y-2 text-left max-w-xl">
+                <div className="flex items-center gap-2.5">
+                  <span className="relative flex h-2.5 w-2.5">
+                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#F15E1C] opacity-75 dark:bg-[#D4AF37]"></span>
+                    <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-[#F15E1C] dark:bg-[#D4AF37]"></span>
+                  </span>
+                  <span className="font-syne text-xs sm:text-sm font-bold uppercase tracking-[0.22em] text-[#F15E1C] dark:text-[#D4AF37]">
+                    EXPLORE FASHAI ECOSYSTEM
+                  </span>
                 </div>
+
+                <h3 className="font-serif-display text-2xl sm:text-3xl font-light text-[#111111] dark:text-brand-white uppercase leading-tight tracking-tight">
+                  UPCOMING SHOWS &amp; CHAPTERS
+                </h3>
+
+                <p className="font-sans text-xs sm:text-sm text-[#333333] dark:text-brand-platinum/90 font-normal leading-relaxed">
+                  Upcoming shows, chapters and opportunities across international fashion hubs.
+                </p>
               </div>
-              <ArrowRight className="w-4 h-4 text-[#F15E1C] dark:text-brand-orange transition-transform group-hover:translate-x-1 flex-shrink-0 ml-2" />
-            </Link>
+
+              <Link
+                href="/upcoming"
+                className="relative z-10 w-full md:w-auto inline-flex items-center justify-center gap-2.5 bg-[#F15E1C] dark:bg-[#D4AF37] text-white dark:text-black hover:bg-[#e04f10] dark:hover:bg-[#f5aa00] px-7 py-3.5 rounded-xl font-syne text-xs sm:text-sm font-bold tracking-wider uppercase transition-all duration-300 shadow-md group/btn whitespace-nowrap shrink-0 hover:shadow-lg hover:-translate-y-0.5"
+              >
+                <span>SEE UPCOMING</span>
+                <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover/btn:translate-x-1" />
+              </Link>
+            </div>
           </div>
         </motion.div>
       </div>

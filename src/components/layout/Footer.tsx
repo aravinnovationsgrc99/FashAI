@@ -83,7 +83,7 @@ export default function Footer() {
             </Link>
 
             <p className="font-sans text-xs sm:text-sm text-[#333333] dark:text-white/80 font-normal leading-relaxed max-w-xs">
-              Fashion, talent and experiences across Dubai, UAE &amp; India.
+              Global fashion, talent and event platform connecting ecosystems across the UAE, India and international markets.
             </p>
 
             {/* Social Links Badges */}

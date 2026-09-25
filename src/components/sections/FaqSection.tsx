@@ -13,7 +13,7 @@ interface FaqItem {
 const FAQS: FaqItem[] = [
   {
     question: "WHAT IS FASHAI UNIVERSAL?",
-    answer: "FashAI Universal is an international fashion and events platform operating across the UAE (Dubai) and India. It bridges luxury fashion experiences, talent recruitment, lifestyle events, corporate gatherings, and IT event formats into a unified creative platform.",
+    answer: "FashAI Universal is a global fashion and events platform connecting fashion experiences, creative talent, designers, artists, brands, and event opportunities across international markets. The platform brings together luxury fashion experiences, talent recruitment, lifestyle events, corporate gatherings, and IT event formats within a unified global creative ecosystem, with the UAE and India serving as key markets.",
     category: "ABOUT PLATFORM",
   },
   {

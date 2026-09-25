@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import GradientFlowText from "../ui/GradientFlowText";
+import ViewportRevealCard from "../ui/ViewportRevealCard";
 import { GALLERY_DATA } from "@/data/gallery";
 
 export default function HomeGalleryPreview() {
@@ -62,20 +63,25 @@ export default function HomeGalleryPreview() {
                 className={`${colSpan} group relative overflow-hidden bg-brand-charcoal border border-white/10 hover:border-brand-orange transition-all duration-500 hover:shadow-[0_0_30px_rgba(241,94,28,0.3)]`}
               >
                 <Link href="/gallery">
-                  <div className={`relative ${aspectClass} w-full overflow-hidden`}>
-                    <Image
-                      src={item.thumb}
-                      alt={item.alt}
-                      fill
-                      sizes="(max-width: 768px) 100vw, 50vw"
-                      className={`object-cover filter contrast-105 transition-all duration-700 ease-out group-hover:scale-[1.03] ${
-                        item.category.toUpperCase().includes("LIFESTYLE") || item.category.toUpperCase().includes("RUNWAY")
-                          ? "blur-[2.5px] group-hover:blur-none"
-                          : ""
-                      }`}
-                      priority={index < 3}
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-brand-void/85 via-transparent to-transparent opacity-75 group-hover:opacity-40 transition-opacity duration-300" />
+                  <ViewportRevealCard className={`relative ${aspectClass} w-full overflow-hidden`}>
+                    {(isRevealed) => (
+                      <>
+                        <Image
+                          src={item.thumb}
+                          alt={item.alt}
+                          fill
+                          sizes="(max-width: 768px) 100vw, 50vw"
+                          className={`object-cover filter contrast-105 transition-all duration-700 ease-out group-hover:scale-[1.03] ${
+                            item.category.toUpperCase().includes("LIFESTYLE") || item.category.toUpperCase().includes("RUNWAY")
+                              ? isRevealed ? "blur-none" : "blur-[2.5px] group-hover:blur-none"
+                              : ""
+                          }`}
+                          priority={index < 3}
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-brand-void/85 via-transparent to-transparent opacity-75 group-hover:opacity-40 transition-opacity duration-300" />
+                      </>
+                    )}
+                  </ViewportRevealCard>
 
                     {/* Category Tag Overlay */}
                     <div className="absolute bottom-4 left-4 z-10">
@@ -91,9 +97,8 @@ export default function HomeGalleryPreview() {
                     <div className="absolute top-4 right-4 z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 h-8 w-8 flex items-center justify-center bg-brand-orange text-white text-xs font-syne font-bold">
                       ↗
                     </div>
-                  </div>
-                </Link>
-              </motion.div>
+                  </Link>
+                </motion.div>
             );
           })}
         </div>

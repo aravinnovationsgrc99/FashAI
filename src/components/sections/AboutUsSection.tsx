@@ -23,48 +23,48 @@ export default function AboutUsSection() {
               </div>
 
               <h2 className="font-serif-display text-4xl sm:text-6xl lg:text-7xl font-light text-[#111111] dark:text-brand-white uppercase leading-none mb-6">
-                INTERNATIONAL FASHION &amp; <br />
+                GLOBAL FASHION &amp; <br />
                 <span className="text-[#F15E1C] dark:text-brand-yellow-golden italic font-normal">EVENTS PLATFORM</span>
               </h2>
 
               <p className="font-sans text-base sm:text-lg md:text-xl text-[#222222] dark:text-brand-platinum font-normal leading-relaxed mb-4">
-                FashAI Universal is an international fashion and events platform focused on fashion experiences, curated events, creative talent, designers, artists, brands, and event participation.
+                FashAI Universal is a global fashion and events platform connecting fashion experiences, curated events, creative talent, designers, artists, brands, and event participation across international markets.
               </p>
 
               <p className="font-sans text-sm sm:text-base md:text-lg text-[#444444] dark:text-brand-platinum/85 font-normal leading-relaxed">
-                Operating across key international markets including the United Arab Emirates (Dubai) and India, FashAI Universal brings together couture presentation, talent recruitment, lifestyle summits, corporate event management, and IT event formats into a unified creative platform.
+                Built to connect creative communities, talent, brands, and event ecosystems across borders, FashAI Universal brings together couture presentation, talent recruitment, lifestyle experiences, corporate event management, and IT event formats within one global creative platform.
               </p>
             </div>
 
             {/* Core Pillars */}
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-4 border-t border-black/10 dark:border-white/10">
-              <div className="p-4.5 rounded-2xl bg-[#FAF8F5] dark:bg-[#0B0A09] border border-black/10 dark:border-white/10 shadow-sm">
+            <div className="grid grid-cols-1 sm:grid-cols-3 pt-6 border-t border-black/10 dark:border-white/10 divide-y sm:divide-y-0 sm:divide-x divide-black/10 dark:divide-white/10">
+              <div className="pb-5 sm:pb-0 sm:pr-5 lg:pr-6">
                 <Globe className="w-5 h-5 text-[#F15E1C] dark:text-brand-yellow-golden mb-2" />
+                <h3 className="font-syne text-xs sm:text-sm font-bold text-[#111111] dark:text-white uppercase tracking-wider mb-1">
+                  GLOBAL REACH
+                </h3>
+                <p className="font-sans text-xs sm:text-sm text-[#555555] dark:text-brand-platinum/80 font-normal leading-relaxed">
+                  Connecting fashion, talent, brands and event ecosystems across international markets.
+                </p>
+              </div>
+
+              <div className="py-5 sm:py-0 sm:px-5 lg:px-6">
+                <ShieldCheck className="w-5 h-5 text-[#F15E1C] dark:text-brand-orange mb-2" />
                 <h3 className="font-syne text-xs sm:text-sm font-bold text-[#111111] dark:text-white uppercase tracking-wider mb-1">
                   CROSS-BORDER
                 </h3>
                 <p className="font-sans text-xs sm:text-sm text-[#555555] dark:text-brand-platinum/80 font-normal leading-relaxed">
-                  Bridging fashion ecosystems in UAE and India.
+                  Bridging creative and fashion ecosystems across the UAE, India and international markets.
                 </p>
               </div>
 
-              <div className="p-4.5 rounded-2xl bg-[#FAF8F5] dark:bg-[#0B0A09] border border-black/10 dark:border-white/10 shadow-sm">
-                <ShieldCheck className="w-5 h-5 text-[#F15E1C] dark:text-brand-orange mb-2" />
-                <h3 className="font-syne text-xs sm:text-sm font-bold text-[#111111] dark:text-white uppercase tracking-wider mb-1">
-                  FACTUAL INTEGRITY
-                </h3>
-                <p className="font-sans text-xs sm:text-sm text-[#555555] dark:text-brand-platinum/80 font-normal leading-relaxed">
-                  Transparent event details, verified talent flows.
-                </p>
-              </div>
-
-              <div className="p-4.5 rounded-2xl bg-[#FAF8F5] dark:bg-[#0B0A09] border border-black/10 dark:border-white/10 shadow-sm">
+              <div className="pt-5 sm:pt-0 sm:pl-5 lg:pl-6">
                 <Compass className="w-5 h-5 text-[#F15E1C] dark:text-brand-yellow-golden mb-2" />
                 <h3 className="font-syne text-xs sm:text-sm font-bold text-[#111111] dark:text-white uppercase tracking-wider mb-1">
                   EVENT EXCELLENCE
                 </h3>
                 <p className="font-sans text-xs sm:text-sm text-[#555555] dark:text-brand-platinum/80 font-normal leading-relaxed">
-                  Fashion, product, lifestyle, and IT event formats.
+                  Fashion, product, lifestyle, corporate, and IT event formats within one global platform.
                 </p>
               </div>
             </div>
@@ -92,8 +92,11 @@ export default function AboutUsSection() {
                 <span className="font-syne text-xs font-bold text-brand-yellow-golden tracking-widest uppercase block mb-1">
                   FASHAI UNIVERSAL
                 </span>
-                <span className="font-sans text-xs text-white/90 font-light">
-                  Dubai, UAE &amp; India Platform
+                <span className="font-syne text-xs font-bold text-white uppercase tracking-wider block mb-1">
+                  Global Fashion &amp; Events Platform
+                </span>
+                <span className="font-sans text-xs text-white/90 font-light block">
+                  UAE · India · International Markets
                 </span>
               </div>
             </div>

@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
+import ViewportRevealCard from "../ui/ViewportRevealCard";
 
 export default function OurEventsSection() {
   return (
@@ -26,6 +27,9 @@ export default function OurEventsSection() {
             <h2 className="font-serif-display text-4xl sm:text-5xl lg:text-6xl font-light text-[#111111] dark:text-brand-white uppercase">
               OUR EVENTS
             </h2>
+            <h3 className="font-serif-display text-2xl sm:text-3xl lg:text-4xl font-light text-[#F15E1C] dark:text-brand-orange uppercase tracking-tight mt-1 sm:mt-2">
+              FashPrism Lifestyle Week 2025
+            </h3>
           </div>
           <p className="font-sans text-xs sm:text-sm text-[#444444] dark:text-brand-platinum/80 max-w-sm font-light leading-relaxed">
             The core event experiences within the FashAI Universal platform.
@@ -42,18 +46,24 @@ export default function OurEventsSection() {
             transition={{ duration: 0.6 }}
             className="group relative bg-[#090807] border border-[#D4AF37]/40 p-6 sm:p-8 flex flex-col justify-between min-h-[380px] sm:min-h-[420px] overflow-hidden rounded-2xl shadow-xl"
           >
-            {/* Full-Bleed Crisp Banner Image Layer */}
-            <div className="absolute inset-0 z-0 opacity-90 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none">
-              <Image
-                src="/assets/events/lifestyle_banner.png"
-                alt="LifeStyle Event Banner"
-                fill
-                sizes="(max-width: 1024px) 100vw, 50vw"
-                className="object-cover object-top filter contrast-[1.05] brightness-[1.02] blur-[2.5px] group-hover:blur-none transition-all duration-500"
-                priority
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/98 via-black/80 to-black/40" />
-            </div>
+            {/* Full-Bleed Banner Image Layer */}
+            <ViewportRevealCard className="absolute inset-0 z-0 pointer-events-none">
+              {(isRevealed) => (
+                <div className="absolute inset-0 opacity-90 group-hover:opacity-100 transition-opacity duration-500">
+                  <Image
+                    src="/assets/events/lifestyle_banner.png"
+                    alt="LifeStyle Event Banner"
+                    fill
+                    sizes="(max-width: 1024px) 100vw, 50vw"
+                    className={`object-cover object-top filter contrast-[1.05] brightness-[1.02] transition-all duration-700 ease-out ${
+                      isRevealed ? "blur-none" : "blur-[2.5px] group-hover:blur-none"
+                    }`}
+                    priority
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/98 via-black/80 to-black/40" />
+                </div>
+              )}
+            </ViewportRevealCard>
 
             <div className="relative z-10">
               <div className="flex justify-between items-start mb-3">
@@ -121,18 +131,24 @@ export default function OurEventsSection() {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="group relative bg-[#090807] border border-[#D4AF37]/40 p-6 sm:p-8 flex flex-col justify-between min-h-[380px] sm:min-h-[420px] overflow-hidden rounded-2xl shadow-xl"
           >
-            {/* Full-Bleed Crisp Banner Image Layer */}
-            <div className="absolute inset-0 z-0 opacity-90 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none">
-              <Image
-                src="/assets/events/runway_banner.png"
-                alt="Runway Event Banner"
-                fill
-                sizes="(max-width: 1024px) 100vw, 50vw"
-                className="object-cover object-top filter contrast-[1.05] brightness-[1.02] blur-[2.5px] group-hover:blur-none transition-all duration-500"
-                priority
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/98 via-black/80 to-black/40" />
-            </div>
+            {/* Full-Bleed Banner Image Layer */}
+            <ViewportRevealCard className="absolute inset-0 z-0 pointer-events-none">
+              {(isRevealed) => (
+                <div className="absolute inset-0 opacity-90 group-hover:opacity-100 transition-opacity duration-500">
+                  <Image
+                    src="/assets/events/runway_banner.png"
+                    alt="Runway Event Banner"
+                    fill
+                    sizes="(max-width: 1024px) 100vw, 50vw"
+                    className={`object-cover object-top filter contrast-[1.05] brightness-[1.02] transition-all duration-700 ease-out ${
+                      isRevealed ? "blur-none" : "blur-[2.5px] group-hover:blur-none"
+                    }`}
+                    priority
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/98 via-black/80 to-black/40" />
+                </div>
+              )}
+            </ViewportRevealCard>
 
             <div className="relative z-10">
               <div className="flex justify-between items-start mb-3">
