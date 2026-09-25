@@ -73,7 +73,7 @@ export default function TypographyControlPage() {
         {/* LEFT 7-COLS: CONTROLS */}
         <div className="lg:col-span-7 space-y-6">
           <div className="p-6 rounded-2xl bg-[#0F0E0D] border border-white/10 space-y-5">
-            <h3 className="font-syne text-xs font-bold uppercase tracking-[0.2em] text-[#FAB60A]">
+            <h3 className="font-syne text-xs font-bold uppercase tracking-[0.2em] text-[#D4AF37]">
               FONT FAMILY SELECTION
             </h3>
 
@@ -126,7 +126,7 @@ export default function TypographyControlPage() {
           </div>
 
           <div className="p-6 rounded-2xl bg-[#0F0E0D] border border-white/10 space-y-5">
-            <h3 className="font-syne text-xs font-bold uppercase tracking-[0.2em] text-[#FAB60A]">
+            <h3 className="font-syne text-xs font-bold uppercase tracking-[0.2em] text-[#D4AF37]">
               TEXT SCALING MULTIPLIERS
             </h3>
 
@@ -134,7 +134,7 @@ export default function TypographyControlPage() {
               <div>
                 <div className="flex items-center justify-between text-xs font-syne font-bold uppercase text-white/80 mb-2">
                   <span>HEADING SCALE</span>
-                  <span className="text-[#FAB60A]">{typo.headingScale}x</span>
+                  <span className="text-[#D4AF37]">{typo.headingScale}x</span>
                 </div>
                 <input
                   type="range"
@@ -150,7 +150,7 @@ export default function TypographyControlPage() {
               <div>
                 <div className="flex items-center justify-between text-xs font-syne font-bold uppercase text-white/80 mb-2">
                   <span>BODY SCALE</span>
-                  <span className="text-[#FAB60A]">{typo.bodyScale}x</span>
+                  <span className="text-[#D4AF37]">{typo.bodyScale}x</span>
                 </div>
                 <input
                   type="range"
@@ -168,12 +168,12 @@ export default function TypographyControlPage() {
 
         {/* RIGHT 5-COLS: LIVE TYPOGRAPHY PREVIEW */}
         <div className="lg:col-span-5 space-y-4">
-          <h2 className="font-syne text-xs font-bold uppercase tracking-[0.2em] text-[#FAB60A]">
+          <h2 className="font-syne text-xs font-bold uppercase tracking-[0.2em] text-[#D4AF37]">
             LIVE TYPOGRAPHY PREVIEW
           </h2>
 
           <div className="p-6 rounded-2xl bg-[#121110] border border-white/15 space-y-4 shadow-xl">
-            <div className="text-xs font-syne text-[#FAB60A] font-bold uppercase tracking-[0.2em]">
+            <div className="text-xs font-syne text-[#D4AF37] font-bold uppercase tracking-[0.2em]">
               DUBAI · EST. 2026
             </div>
 

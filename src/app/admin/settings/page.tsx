@@ -35,11 +35,11 @@ export default function GlobalSettingsPage() {
     <div className="max-w-4xl mx-auto space-y-6 select-none font-sans">
       {/* HEADER */}
       <div className="border-b border-white/10 pb-4">
-        <span className="font-syne text-[10px] font-bold uppercase tracking-[0.2em] text-[#FAB60A]">
+        <span className="font-syne text-[10px] font-bold uppercase tracking-[0.2em] text-[#D4AF37]">
           SYSTEM CONFIGURATION
         </span>
         <h1 className="font-serif-display text-2xl sm:text-3xl font-light uppercase tracking-tight text-white">
-          GLOBAL <span className="text-[#FAB60A]">SETTINGS</span>
+          GLOBAL <span className="text-[#D4AF37]">SETTINGS</span>
         </h1>
         <p className="font-sans text-xs text-white/60">
           Configure core website metadata, social channels, copyright details, and advanced technical settings.
@@ -48,7 +48,7 @@ export default function GlobalSettingsPage() {
 
       {/* GENERAL METADATA & CONTACT SETTINGS */}
       <div className="p-6 rounded-3xl bg-[#0F0E0D] border border-white/10 space-y-4 shadow-xl">
-        <h3 className="font-syne text-xs font-bold uppercase tracking-wider text-[#FAB60A]">
+        <h3 className="font-syne text-xs font-bold uppercase tracking-wider text-[#D4AF37]">
           METADATA &amp; BRAND IDENTIFIERS
         </h3>
 
@@ -59,7 +59,7 @@ export default function GlobalSettingsPage() {
               type="text"
               value={g.siteTitle}
               onChange={(e) => handleChange("siteTitle", e.target.value)}
-              className="w-full bg-[#1A1918] border border-white/10 rounded-xl px-4 py-2.5 text-white focus:outline-none focus:border-[#FAB60A]"
+              className="w-full bg-[#1A1918] border border-white/10 rounded-xl px-4 py-2.5 text-white focus:outline-none focus:border-[#D4AF37]"
             />
           </div>
 
@@ -69,7 +69,7 @@ export default function GlobalSettingsPage() {
               rows={3}
               value={g.metaDescription}
               onChange={(e) => handleChange("metaDescription", e.target.value)}
-              className="w-full bg-[#1A1918] border border-white/10 rounded-xl px-4 py-2.5 text-white focus:outline-none focus:border-[#FAB60A]"
+              className="w-full bg-[#1A1918] border border-white/10 rounded-xl px-4 py-2.5 text-white focus:outline-none focus:border-[#D4AF37]"
             />
           </div>
 
@@ -80,7 +80,7 @@ export default function GlobalSettingsPage() {
                 type="text"
                 value={g.contactEmail}
                 onChange={(e) => handleChange("contactEmail", e.target.value)}
-                className="w-full bg-[#1A1918] border border-white/10 rounded-xl px-4 py-2.5 text-white focus:outline-none focus:border-[#FAB60A]"
+                className="w-full bg-[#1A1918] border border-white/10 rounded-xl px-4 py-2.5 text-white focus:outline-none focus:border-[#D4AF37]"
               />
             </div>
 
@@ -90,7 +90,7 @@ export default function GlobalSettingsPage() {
                 type="text"
                 value={g.instagramUrl}
                 onChange={(e) => handleChange("instagramUrl", e.target.value)}
-                className="w-full bg-[#1A1918] border border-white/10 rounded-xl px-4 py-2.5 text-white focus:outline-none focus:border-[#FAB60A]"
+                className="w-full bg-[#1A1918] border border-white/10 rounded-xl px-4 py-2.5 text-white focus:outline-none focus:border-[#D4AF37]"
               />
             </div>
           </div>
@@ -101,10 +101,10 @@ export default function GlobalSettingsPage() {
       <div className="border border-white/10 rounded-3xl overflow-hidden bg-[#0F0E0D]">
         <button
           onClick={() => setAdvancedOpen(!advancedOpen)}
-          className="w-full p-5 bg-[#141312] flex items-center justify-between text-xs font-syne font-bold text-white hover:text-[#FAB60A] transition-colors"
+          className="w-full p-5 bg-[#141312] flex items-center justify-between text-xs font-syne font-bold text-white hover:text-[#D4AF37] transition-colors"
         >
           <div className="flex items-center gap-2">
-            <Cpu className="w-4 h-4 text-[#FAB60A]" />
+            <Cpu className="w-4 h-4 text-[#D4AF37]" />
             <span className="uppercase tracking-wider">ADVANCED TECHNICAL SETTINGS</span>
           </div>
           {advancedOpen ? <ChevronUp className="w-4 h-4" /> : <ChevronDown className="w-4 h-4" />}
@@ -114,7 +114,7 @@ export default function GlobalSettingsPage() {
           <div className="p-6 space-y-6 bg-[#0A0A0A] border-t border-white/10 text-xs">
             {/* PERFORMANCE & CACHING */}
             <div className="space-y-3">
-              <div className="flex items-center gap-2 text-[#FAB60A] font-syne font-bold uppercase">
+              <div className="flex items-center gap-2 text-[#D4AF37] font-syne font-bold uppercase">
                 <Zap className="w-4 h-4" />
                 Performance &amp; Cache Control
               </div>

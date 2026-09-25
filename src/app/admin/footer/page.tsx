@@ -72,7 +72,7 @@ export default function FooterControlPage() {
 
       {/* BRAND LOCKUP & SOCIAL */}
       <div className="p-6 rounded-2xl bg-[#0F0E0D] border border-white/10 space-y-5">
-        <h3 className="font-syne text-xs font-bold uppercase tracking-[0.2em] text-[#FAB60A]">
+        <h3 className="font-syne text-xs font-bold uppercase tracking-[0.2em] text-[#D4AF37]">
           BRAND COLUMN &amp; SOCIAL LINK
         </h3>
 

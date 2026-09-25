@@ -81,7 +81,7 @@ export default function VersionHistoryPage() {
             >
               <div className="space-y-1">
                 <div className="flex items-center gap-2">
-                  <span className="font-mono text-xs font-bold text-[#FAB60A] bg-[#FAB60A]/10 px-2 py-0.5 rounded border border-[#FAB60A]/20">
+                  <span className="font-mono text-xs font-bold text-[#D4AF37] bg-[#D4AF37]/10 px-2 py-0.5 rounded border border-[#D4AF37]/20">
                     {entry.versionId}
                   </span>
                   <span className="text-xs text-white/50 flex items-center gap-1">
@@ -99,7 +99,7 @@ export default function VersionHistoryPage() {
 
               <button
                 onClick={() => handleRestoreVersion(entry)}
-                className="bg-white/10 hover:bg-[#FAB60A] hover:text-black text-white px-4 py-2 rounded-xl text-xs font-syne font-bold uppercase transition-all flex items-center gap-1.5 self-start sm:self-auto shrink-0"
+                className="bg-white/10 hover:bg-[#D4AF37] hover:text-black text-white px-4 py-2 rounded-xl text-xs font-syne font-bold uppercase transition-all flex items-center gap-1.5 self-start sm:self-auto shrink-0"
               >
                 <RotateCcw className="w-3.5 h-3.5" />
                 <span>RESTORE THIS VERSION</span>

@@ -175,7 +175,7 @@ export default function Preloader() {
             <div className="w-full max-w-xs sm:max-w-sm px-2">
               <div className="relative h-[2px] w-full bg-white/10 rounded-none overflow-hidden">
                 <div
-                  className="absolute left-0 top-0 h-full w-full bg-brand-yellow-golden shadow-[0_0_15px_#FAB60A] origin-left transition-transform duration-100 ease-out"
+                  className="absolute left-0 top-0 h-full w-full bg-brand-yellow-golden shadow-[0_0_15px_#D4AF37] origin-left transition-transform duration-100 ease-out"
                   style={{ transform: `scaleX(${progress / 100})`, willChange: "transform" }}
                 />
               </div>

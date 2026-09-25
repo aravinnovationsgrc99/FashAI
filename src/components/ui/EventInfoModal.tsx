@@ -256,7 +256,7 @@ export default function EventInfoModal() {
                 <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 pt-4 max-w-xl">
                   <button
                     onClick={handleRegisterClick}
-                    className="flex-1 bg-[#FAB60A] text-[#111111] hover:bg-[#FFEC69] hover:shadow-[0_0_25px_rgba(250,182,10,0.5)] transition-all duration-300 min-h-[48px] flex items-center justify-center gap-2 rounded-xl font-syne text-xs tracking-caps font-bold shadow-xl"
+                    className="flex-1 bg-[#D4AF37] text-[#111111] hover:bg-[#FFEC69] hover:shadow-[0_0_25px_rgba(250,182,10,0.5)] transition-all duration-300 min-h-[48px] flex items-center justify-center gap-2 rounded-xl font-syne text-xs tracking-caps font-bold shadow-xl"
                   >
                     <span>REGISTER / ENQUIRE</span>
                     <ArrowRight className="w-4 h-4" />

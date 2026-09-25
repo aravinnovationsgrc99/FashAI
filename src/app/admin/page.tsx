@@ -98,11 +98,11 @@ export default function AdminDashboardPage() {
       {/* 1. DASHBOARD HEADER (Section 4) */}
       <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 pb-6 border-b border-white/10">
         <div className="space-y-1">
-          <span className="font-syne text-[10px] font-bold uppercase tracking-[0.25em] text-[#FAB60A]">
+          <span className="font-syne text-[10px] font-bold uppercase tracking-[0.25em] text-[#D4AF37]">
             WELCOME BACK
           </span>
           <h1 className="font-serif-display text-3xl sm:text-4xl font-light uppercase tracking-tight text-white">
-            FashAI Universal <span className="text-[#FAB60A]">Master Control</span>
+            FashAI Universal <span className="text-[#D4AF37]">Master Control</span>
           </h1>
           <p className="font-sans text-xs text-white/60">
             Real-time content management, site configuration, media, events, and talent intake.
@@ -159,7 +159,7 @@ export default function AdminDashboardPage() {
         <div className="p-4 rounded-2xl bg-[#0F0E0D] border border-white/10 space-y-2">
           <div className="flex items-center justify-between text-[11px] font-syne font-bold uppercase text-white/50">
             <span>MEDIA</span>
-            <ImageIcon className="w-3.5 h-3.5 text-[#FAB60A]" />
+            <ImageIcon className="w-3.5 h-3.5 text-[#D4AF37]" />
           </div>
           <div className="font-serif-display text-xl sm:text-2xl font-light text-white">
             {mediaCount} <span className="text-xs font-syne text-white/40">ITEMS</span>
@@ -195,7 +195,7 @@ export default function AdminDashboardPage() {
       {/* 3. PROMINENT QUICK ACTIONS BAR (Section 5) */}
       <div className="space-y-3">
         <div className="flex items-center justify-between">
-          <h2 className="font-syne text-xs font-bold uppercase tracking-[0.2em] text-[#FAB60A]">
+          <h2 className="font-syne text-xs font-bold uppercase tracking-[0.2em] text-[#D4AF37]">
             QUICK ACTIONS
           </h2>
           <span className="text-[10px] font-mono text-white/40">Primary Content Controls</span>
@@ -204,9 +204,9 @@ export default function AdminDashboardPage() {
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3">
           <Link
             href="/admin/media"
-            className="p-3.5 rounded-2xl bg-[#11100F] border border-white/10 hover:border-[#FAB60A]/60 transition-all flex flex-col items-center justify-center gap-2 text-center group shadow-sm"
+            className="p-3.5 rounded-2xl bg-[#11100F] border border-white/10 hover:border-[#D4AF37]/60 transition-all flex flex-col items-center justify-center gap-2 text-center group shadow-sm"
           >
-            <div className="w-8 h-8 rounded-full bg-[#FAB60A]/10 text-[#FAB60A] flex items-center justify-center group-hover:scale-110 transition-transform">
+            <div className="w-8 h-8 rounded-full bg-[#D4AF37]/10 text-[#D4AF37] flex items-center justify-center group-hover:scale-110 transition-transform">
               <Plus className="w-4 h-4" />
             </div>
             <span className="font-syne text-[11px] font-bold text-white uppercase tracking-wider">
@@ -240,9 +240,9 @@ export default function AdminDashboardPage() {
 
           <Link
             href="/admin/applications"
-            className="p-3.5 rounded-2xl bg-[#11100F] border border-white/10 hover:border-[#FAB60A]/60 transition-all flex flex-col items-center justify-center gap-2 text-center group shadow-sm"
+            className="p-3.5 rounded-2xl bg-[#11100F] border border-white/10 hover:border-[#D4AF37]/60 transition-all flex flex-col items-center justify-center gap-2 text-center group shadow-sm"
           >
-            <div className="w-8 h-8 rounded-full bg-[#FAB60A]/10 text-[#FAB60A] flex items-center justify-center group-hover:scale-110 transition-transform">
+            <div className="w-8 h-8 rounded-full bg-[#D4AF37]/10 text-[#D4AF37] flex items-center justify-center group-hover:scale-110 transition-transform">
               <FileText className="w-4 h-4" />
             </div>
             <span className="font-syne text-[11px] font-bold text-white uppercase tracking-wider">
@@ -281,7 +281,7 @@ export default function AdminDashboardPage() {
         {/* RECENT ACTIVITY TIMELINE (8 COLS) */}
         <div className="lg:col-span-8 space-y-3">
           <div className="flex items-center justify-between border-b border-white/10 pb-2">
-            <h2 className="font-syne text-xs font-bold uppercase tracking-[0.2em] text-[#FAB60A]">
+            <h2 className="font-syne text-xs font-bold uppercase tracking-[0.2em] text-[#D4AF37]">
               RECENT ACTIVITY
             </h2>
             <Link
@@ -310,7 +310,7 @@ export default function AdminDashboardPage() {
                         {log.details || log.action}
                       </div>
                       <div className="text-[11px] text-white/50 flex items-center gap-2">
-                        <span className="px-1.5 py-0.5 rounded bg-white/10 text-[9px] font-mono text-[#FAB60A] uppercase">
+                        <span className="px-1.5 py-0.5 rounded bg-white/10 text-[9px] font-mono text-[#D4AF37] uppercase">
                           {log.action}
                         </span>
                         <span>by {log.actor || "Admin"}</span>
@@ -330,7 +330,7 @@ export default function AdminDashboardPage() {
         {/* CONTENT MANAGEMENT SHORTCUTS (4 COLS) */}
         <div className="lg:col-span-4 space-y-3">
           <div className="border-b border-white/10 pb-2">
-            <h2 className="font-syne text-xs font-bold uppercase tracking-[0.2em] text-[#FAB60A]">
+            <h2 className="font-syne text-xs font-bold uppercase tracking-[0.2em] text-[#D4AF37]">
               QUICK MODULES
             </h2>
           </div>
@@ -341,7 +341,7 @@ export default function AdminDashboardPage() {
               className="p-3.5 rounded-2xl bg-[#0F0E0D] border border-white/10 hover:border-white/30 flex items-center justify-between text-xs font-syne text-white transition-all group"
             >
               <div className="flex items-center gap-3">
-                <LayoutTemplate className="w-4 h-4 text-[#FAB60A]" />
+                <LayoutTemplate className="w-4 h-4 text-[#D4AF37]" />
                 <div>
                   <div className="font-bold">Homepage Sections</div>
                   <div className="text-[10px] text-white/50 font-sans">Visual section reorder</div>

@@ -82,13 +82,13 @@ export default function ServicesPage() {
         <div className="container-editorial max-w-6xl mx-auto px-4 sm:px-6">
           <div className="max-w-3xl space-y-4">
             <div className="flex items-center gap-2.5">
-              <span className="w-8 h-[2px] bg-[#F15E1C] dark:bg-[#FAB60A]" />
-              <span className="font-syne text-xs tracking-[0.25em] text-[#F15E1C] dark:text-[#FAB60A] font-bold uppercase">
+              <span className="w-8 h-[2px] bg-[#F15E1C] dark:bg-[#D4AF37]" />
+              <span className="font-syne text-xs tracking-[0.25em] text-[#F15E1C] dark:text-[#D4AF37] font-bold uppercase">
                 03 / SERVICES &amp; EVENT ARCHITECTURE
               </span>
             </div>
             <h1 className="font-serif-display text-4xl sm:text-6xl lg:text-7xl font-light text-[#111111] dark:text-white uppercase leading-[0.95]">
-              OUR <span className="font-serif italic text-[#F15E1C] dark:text-[#FAB60A]">SERVICES</span> &amp; FORMATS
+              OUR <span className="font-serif italic text-[#F15E1C] dark:text-[#D4AF37]">SERVICES</span> &amp; FORMATS
             </h1>
             <p className="font-sans text-sm sm:text-base text-[#444444] dark:text-white/80 font-light leading-relaxed max-w-2xl">
               FashAI Universal delivers specialized fashion show production, AI-driven computational design, luxury brand activations, and global talent orchestration bridging Dubai, the UAE, and India.
@@ -101,7 +101,7 @@ export default function ServicesPage() {
       <section className="py-16 sm:py-24 border-b border-black/10 dark:border-white/10">
         <div className="container-editorial max-w-6xl mx-auto px-4 sm:px-6">
           <div className="mb-12">
-            <h2 className="font-syne text-xs tracking-[0.25em] text-[#F15E1C] dark:text-[#FAB60A] font-bold uppercase mb-2">
+            <h2 className="font-syne text-xs tracking-[0.25em] text-[#F15E1C] dark:text-[#D4AF37] font-bold uppercase mb-2">
               CORE CAPABILITIES
             </h2>
             <h3 className="font-serif-display text-3xl sm:text-5xl font-light text-[#111111] dark:text-white uppercase">
@@ -115,19 +115,19 @@ export default function ServicesPage() {
               return (
                 <div
                   key={service.id}
-                  className="p-6 sm:p-8 rounded-2xl border border-black/10 dark:border-white/15 bg-[#FAF8F5] dark:bg-[#090807] hover:border-[#F15E1C] dark:hover:border-[#FAB60A] transition-all duration-300 shadow-sm flex flex-col justify-between group"
+                  className="p-6 sm:p-8 rounded-2xl border border-black/10 dark:border-white/15 bg-[#FAF8F5] dark:bg-[#090807] hover:border-[#F15E1C] dark:hover:border-[#D4AF37] transition-all duration-300 shadow-sm flex flex-col justify-between group"
                 >
                   <div className="space-y-4">
                     <div className="flex items-center justify-between">
-                      <span className="font-serif-display text-3xl font-light text-[#F15E1C] dark:text-[#FAB60A]">
+                      <span className="font-serif-display text-3xl font-light text-[#F15E1C] dark:text-[#D4AF37]">
                         {service.number}
                       </span>
-                      <span className="text-[10px] font-syne tracking-wider text-[#F15E1C] dark:text-[#FAB60A] bg-[#F15E1C]/10 dark:bg-[#FAB60A]/10 px-3 py-1 rounded-full font-bold uppercase">
+                      <span className="text-[10px] font-syne tracking-wider text-[#F15E1C] dark:text-[#D4AF37] bg-[#F15E1C]/10 dark:bg-[#D4AF37]/10 px-3 py-1 rounded-full font-bold uppercase">
                         {service.category}
                       </span>
                     </div>
 
-                    <h4 className="font-serif-display text-2xl sm:text-3xl font-light text-[#111111] dark:text-white group-hover:text-[#F15E1C] dark:group-hover:text-[#FAB60A] transition-colors">
+                    <h4 className="font-serif-display text-2xl sm:text-3xl font-light text-[#111111] dark:text-white group-hover:text-[#F15E1C] dark:group-hover:text-[#D4AF37] transition-colors">
                       {service.title}
                     </h4>
 
@@ -138,7 +138,7 @@ export default function ServicesPage() {
                     <div className="pt-2 border-t border-black/10 dark:border-white/10 space-y-2">
                       {service.features.map((feat, idx) => (
                         <div key={idx} className="flex items-center gap-2 text-xs font-syne text-[#333333] dark:text-white/90">
-                          <span className="w-1.5 h-1.5 rounded-full bg-[#F15E1C] dark:bg-[#FAB60A]" />
+                          <span className="w-1.5 h-1.5 rounded-full bg-[#F15E1C] dark:bg-[#D4AF37]" />
                           <span>{feat}</span>
                         </div>
                       ))}
@@ -148,7 +148,7 @@ export default function ServicesPage() {
                   <div className="pt-6 mt-6 border-t border-black/10 dark:border-white/10 flex justify-end">
                     <Link
                       href="/contact?type=Services"
-                      className="inline-flex items-center gap-2 text-xs font-syne font-bold uppercase text-[#F15E1C] dark:text-[#FAB60A] hover:underline"
+                      className="inline-flex items-center gap-2 text-xs font-syne font-bold uppercase text-[#F15E1C] dark:text-[#D4AF37] hover:underline"
                     >
                       <span>ENQUIRE FOR THIS SERVICE</span>
                       <ArrowRight className="w-3.5 h-3.5" />
@@ -173,12 +173,12 @@ export default function ServicesPage() {
       {/* 06. SERVICE INQUIRY CTA */}
       <section className="py-16 sm:py-24 bg-[#FAF8F5] dark:bg-[#080706] border-t border-black/10 dark:border-white/10">
         <div className="container-editorial max-w-4xl mx-auto px-4 sm:px-6 text-center space-y-6">
-          <span className="text-xs font-syne tracking-[0.25em] text-[#F15E1C] dark:text-[#FAB60A] font-bold uppercase">
+          <span className="text-xs font-syne tracking-[0.25em] text-[#F15E1C] dark:text-[#D4AF37] font-bold uppercase">
             COMMISSION A SHOW OR BRAND EXPERIENCE
           </span>
           <h2 className="font-serif-display text-4xl sm:text-6xl font-light text-[#111111] dark:text-white uppercase leading-tight">
             READY TO ELEVATE YOUR <br />
-            <span className="font-serif italic font-normal text-[#F15E1C] dark:text-[#FAB60A]">FASHION EXPERIENCE?</span>
+            <span className="font-serif italic font-normal text-[#F15E1C] dark:text-[#D4AF37]">FASHION EXPERIENCE?</span>
           </h2>
           <p className="font-sans text-xs sm:text-sm text-[#444444] dark:text-white/80 max-w-xl mx-auto leading-relaxed">
             Contact our editorial team to discuss runway presentations, computational design collaborations, or sponsorship partnerships in Dubai, UAE &amp; India.
@@ -186,7 +186,7 @@ export default function ServicesPage() {
           <div className="pt-4 flex flex-col sm:flex-row items-center justify-center gap-4">
             <Link
               href="/contact"
-              className="bg-[#FAB60A] text-[#111111] hover:bg-[#FFEC69] font-syne font-bold text-xs tracking-caps px-8 py-4 rounded-full shadow-lg transition-all duration-300 w-full sm:w-auto"
+              className="bg-[#D4AF37] text-[#111111] hover:bg-[#FFEC69] font-syne font-bold text-xs tracking-caps px-8 py-4 rounded-full shadow-lg transition-all duration-300 w-full sm:w-auto"
             >
               INITIATE SERVICE ENQUIRY →
             </Link>

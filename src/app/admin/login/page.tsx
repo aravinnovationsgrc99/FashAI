@@ -53,9 +53,9 @@ export default function AdminLoginPage() {
     <div className="min-h-screen w-full bg-[#050505] text-white flex items-center justify-center p-4 sm:p-6 select-none relative overflow-hidden">
       {/* Ambient Radial Background Glow */}
       <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[550px] h-[550px] bg-[#F15E1C]/15 rounded-full blur-[150px] pointer-events-none" />
-      <div className="absolute bottom-1/4 left-1/3 w-[450px] h-[450px] bg-[#FAB60A]/10 rounded-full blur-[140px] pointer-events-none" />
+      <div className="absolute bottom-1/4 left-1/3 w-[450px] h-[450px] bg-[#D4AF37]/10 rounded-full blur-[140px] pointer-events-none" />
 
-      <div className="relative z-10 w-full max-w-md bg-[#0F0E0D]/95 border border-[#FAB60A]/30 rounded-2xl p-6 sm:p-8 shadow-2xl backdrop-blur-xl">
+      <div className="relative z-10 w-full max-w-md bg-[#0F0E0D]/95 border border-[#D4AF37]/30 rounded-2xl p-6 sm:p-8 shadow-2xl backdrop-blur-xl">
         {/* Brand Lockup */}
         <div className="text-center space-y-3 mb-8">
           <div className="flex justify-center">
@@ -73,7 +73,7 @@ export default function AdminLoginPage() {
             <h1 className="font-serif-display text-2xl sm:text-3xl font-light text-white uppercase tracking-tight">
               FashAI Universal
             </h1>
-            <p className="font-syne text-xs text-[#FAB60A] font-bold uppercase tracking-[0.22em] mt-1">
+            <p className="font-syne text-xs text-[#D4AF37] font-bold uppercase tracking-[0.22em] mt-1">
               MASTER CONTROL PORTAL
             </p>
           </div>
@@ -107,7 +107,7 @@ export default function AdminLoginPage() {
                 onChange={(e) => setUsername(e.target.value)}
                 placeholder="Enter admin username"
                 required
-                className="w-full bg-[#181715] border border-white/15 focus:border-[#FAB60A] text-white text-sm rounded-xl pl-10 pr-4 py-3 outline-none transition-all"
+                className="w-full bg-[#181715] border border-white/15 focus:border-[#D4AF37] text-white text-sm rounded-xl pl-10 pr-4 py-3 outline-none transition-all"
               />
             </div>
           </div>
@@ -124,7 +124,7 @@ export default function AdminLoginPage() {
                 onChange={(e) => setPassword(e.target.value)}
                 placeholder="••••••••••••"
                 required
-                className="w-full bg-[#181715] border border-white/15 focus:border-[#FAB60A] text-white text-sm rounded-xl pl-10 pr-4 py-3 outline-none transition-all"
+                className="w-full bg-[#181715] border border-white/15 focus:border-[#D4AF37] text-white text-sm rounded-xl pl-10 pr-4 py-3 outline-none transition-all"
               />
             </div>
           </div>

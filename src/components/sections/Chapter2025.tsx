@@ -41,7 +41,7 @@ export default function Chapter2025() {
               href="https://www.facebook.com/profile.php?id=61573489951314"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 bg-[#FAB60A] text-[#111111] hover:bg-[#FFEC69] px-4 py-2 text-xs font-syne tracking-caps font-bold transition-all duration-300 rounded-full shadow-md"
+              className="inline-flex items-center gap-1.5 bg-[#D4AF37] text-[#111111] hover:bg-[#FFEC69] px-4 py-2 text-xs font-syne tracking-caps font-bold transition-all duration-300 rounded-full shadow-md"
             >
               <span>VIEW</span>
               <span>↗</span>
@@ -92,7 +92,7 @@ export default function Chapter2025() {
             href="https://www.facebook.com/profile.php?id=61573489951314"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 bg-[#FAB60A] text-[#111111] hover:bg-[#FFEC69] px-6 py-3 text-xs font-syne tracking-caps font-bold transition-all duration-300 rounded-full shadow-lg"
+            className="inline-flex items-center gap-2 bg-[#D4AF37] text-[#111111] hover:bg-[#FFEC69] px-6 py-3 text-xs font-syne tracking-caps font-bold transition-all duration-300 rounded-full shadow-lg"
           >
             <span>VIEW</span>
             <span>↗</span>

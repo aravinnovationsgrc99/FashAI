@@ -144,8 +144,8 @@ export default function AdminLayout({ children }: AdminLayoutProps) {
   if (!authChecked) {
     return (
       <div className="min-h-screen bg-[#080808] text-white flex flex-col items-center justify-center p-6 text-center select-none font-sans">
-        <div className="w-9 h-9 border-2 border-[#FAB60A] border-t-transparent rounded-full animate-spin mb-4" />
-        <p className="font-syne text-[11px] uppercase tracking-widest text-[#FAB60A]">
+        <div className="w-9 h-9 border-2 border-[#D4AF37] border-t-transparent rounded-full animate-spin mb-4" />
+        <p className="font-syne text-[11px] uppercase tracking-widest text-[#D4AF37]">
           AUTHENTICATING MASTER ADMIN...
         </p>
       </div>
@@ -284,8 +284,8 @@ export default function AdminLayout({ children }: AdminLayoutProps) {
           {/* SAVE STATUS & DRAFT BUTTONS */}
           {hasUnsavedChanges ? (
             <div className="flex items-center gap-1.5">
-              <span className="text-[10px] font-syne text-[#FAB60A] font-bold uppercase tracking-wider hidden md:inline-flex items-center gap-1">
-                <span className="w-1.5 h-1.5 rounded-full bg-[#FAB60A] animate-ping" />
+              <span className="text-[10px] font-syne text-[#D4AF37] font-bold uppercase tracking-wider hidden md:inline-flex items-center gap-1">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#D4AF37] animate-ping" />
                 Unsaved changes
               </span>
 
@@ -294,14 +294,14 @@ export default function AdminLayout({ children }: AdminLayoutProps) {
                 disabled={isSaving}
                 className="flex items-center gap-1 px-2.5 py-1 rounded-full bg-white/10 hover:bg-white/20 text-white text-xs font-syne font-medium transition-colors"
               >
-                <Save className="w-3 h-3 text-[#FAB60A]" />
+                <Save className="w-3 h-3 text-[#D4AF37]" />
                 <span className="hidden sm:inline">Save Draft</span>
               </button>
 
               <button
                 onClick={handlePublishClick}
                 disabled={isSaving}
-                className="flex items-center gap-1 px-3 py-1 rounded-full bg-[#FAB60A] hover:bg-[#FFEC69] text-black text-xs font-syne font-bold transition-all shadow-md"
+                className="flex items-center gap-1 px-3 py-1 rounded-full bg-[#D4AF37] hover:bg-[#FFEC69] text-black text-xs font-syne font-bold transition-all shadow-md"
               >
                 <Send className="w-3 h-3" />
                 <span className="hidden sm:inline">Publish</span>
@@ -319,7 +319,7 @@ export default function AdminLayout({ children }: AdminLayoutProps) {
             onClick={() => setIsPreviewOpen(true)}
             className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/5 hover:bg-white/10 border border-white/15 text-xs text-white/90 hover:text-white transition-all font-syne"
           >
-            <Eye className="w-3.5 h-3.5 text-[#FAB60A]" />
+            <Eye className="w-3.5 h-3.5 text-[#D4AF37]" />
             <span className="hidden sm:inline">Preview</span>
           </button>
 
@@ -343,7 +343,7 @@ export default function AdminLayout({ children }: AdminLayoutProps) {
             <span className="font-serif-display text-sm font-semibold tracking-wider text-white uppercase">
               FashAI Universal
             </span>
-            <span className="font-syne text-[10px] uppercase tracking-widest text-[#FAB60A] font-bold">
+            <span className="font-syne text-[10px] uppercase tracking-widest text-[#D4AF37] font-bold">
               MASTER CONTROL
             </span>
           </div>
@@ -364,19 +364,19 @@ export default function AdminLayout({ children }: AdminLayoutProps) {
                       href={item.href}
                       className={`flex items-center justify-between px-3 py-2 rounded-xl text-xs font-syne transition-all ${
                         isActive
-                          ? "bg-white/10 text-white font-bold border-l-2 border-[#FAB60A]"
+                          ? "bg-white/10 text-white font-bold border-l-2 border-[#D4AF37]"
                           : "text-white/60 hover:text-white hover:bg-white/5"
                       }`}
                     >
                       <div className="flex items-center gap-2.5">
                         <Icon
                           className={`w-3.5 h-3.5 ${
-                            isActive ? "text-[#FAB60A]" : "text-white/40"
+                            isActive ? "text-[#D4AF37]" : "text-white/40"
                           }`}
                         />
                         <span>{item.label}</span>
                       </div>
-                      {isActive && <span className="w-1.5 h-1.5 rounded-full bg-[#FAB60A]" />}
+                      {isActive && <span className="w-1.5 h-1.5 rounded-full bg-[#D4AF37]" />}
                     </Link>
                   );
                 })}
@@ -388,7 +388,7 @@ export default function AdminLayout({ children }: AdminLayoutProps) {
           <div className="p-3 border-t border-white/10 bg-[#0E0D0C] space-y-2">
             <div className="flex items-center justify-between text-[11px] text-white/50 px-2">
               <span className="flex items-center gap-1.5">
-                <User className="w-3 h-3 text-[#FAB60A]" />
+                <User className="w-3 h-3 text-[#D4AF37]" />
                 FashAIadmin
               </span>
               <span className="text-[9px] font-mono bg-white/10 px-1.5 py-0.5 rounded text-white/70">
@@ -420,7 +420,7 @@ export default function AdminLayout({ children }: AdminLayoutProps) {
                   <h2 className="font-serif-display text-sm font-semibold text-white uppercase">
                     FashAI Universal
                   </h2>
-                  <p className="font-syne text-[10px] text-[#FAB60A] uppercase tracking-widest font-bold">
+                  <p className="font-syne text-[10px] text-[#D4AF37] uppercase tracking-widest font-bold">
                     Master Control
                   </p>
                 </div>
@@ -453,7 +453,7 @@ export default function AdminLayout({ children }: AdminLayoutProps) {
                           onClick={() => setMobileDrawerOpen(false)}
                           className={`flex items-center justify-between px-3 py-2.5 rounded-xl text-xs font-syne transition-all ${
                             isActive
-                              ? "bg-[#FAB60A] text-black font-bold"
+                              ? "bg-[#D4AF37] text-black font-bold"
                               : "text-white/70 hover:text-white hover:bg-white/5"
                           }`}
                         >
@@ -494,7 +494,7 @@ export default function AdminLayout({ children }: AdminLayoutProps) {
       {toast && (
         <div className="fixed bottom-6 right-6 z-[200] flex items-center gap-3 px-4 py-3 rounded-2xl bg-[#141312] border border-white/20 text-xs text-white shadow-2xl animate-in slide-in-from-bottom-3 duration-200">
           {toast.type === "success" && <CheckCircle2 className="w-4 h-4 text-[#2E936F]" />}
-          {toast.type === "warning" && <AlertCircle className="w-4 h-4 text-[#FAB60A]" />}
+          {toast.type === "warning" && <AlertCircle className="w-4 h-4 text-[#D4AF37]" />}
           {toast.type === "error" && <AlertCircle className="w-4 h-4 text-[#F15E1C]" />}
           {toast.type === "info" && <CheckCircle2 className="w-4 h-4 text-blue-400" />}
           <span className="font-syne font-medium">{toast.text}</span>

@@ -69,7 +69,7 @@ export default function PopupControlPage() {
             onClick={() => setShowPreviewModal(true)}
             className="bg-white/10 hover:bg-white/20 text-white px-4 py-2.5 rounded-xl font-syne text-xs font-bold uppercase tracking-wider transition-all flex items-center gap-2 border border-white/15"
           >
-            <Eye className="w-3.5 h-3.5 text-[#FAB60A]" />
+            <Eye className="w-3.5 h-3.5 text-[#D4AF37]" />
             <span>PREVIEW POPUP</span>
           </button>
 
@@ -94,7 +94,7 @@ export default function PopupControlPage() {
       <div className="p-6 rounded-2xl bg-[#0F0E0D] border border-white/10 space-y-6">
         <div className="flex items-center justify-between border-b border-white/10 pb-4">
           <div className="space-y-1">
-            <span className="font-syne text-xs font-bold uppercase tracking-wider text-[#FAB60A]">
+            <span className="font-syne text-xs font-bold uppercase tracking-wider text-[#D4AF37]">
               POPUP OVERLAY STATUS
             </span>
             <h3 className="font-serif-display text-xl text-white uppercase">
@@ -181,8 +181,8 @@ export default function PopupControlPage() {
       {/* POPUP PREVIEW MODAL */}
       {showPreviewModal && (
         <div className="fixed inset-0 z-[200] flex items-center justify-center p-4 bg-black/80 backdrop-blur-md">
-          <div className="relative w-full max-w-xl bg-[#0F0E0D] border border-[#FAB60A]/40 rounded-2xl overflow-hidden shadow-2xl p-6 text-center space-y-4">
-            <div className="text-xs font-syne font-bold uppercase tracking-[0.2em] text-[#FAB60A]">
+          <div className="relative w-full max-w-xl bg-[#0F0E0D] border border-[#D4AF37]/40 rounded-2xl overflow-hidden shadow-2xl p-6 text-center space-y-4">
+            <div className="text-xs font-syne font-bold uppercase tracking-[0.2em] text-[#D4AF37]">
               {pop.subtitle}
             </div>
             <h2 className="font-serif-display text-2xl font-light uppercase text-white">

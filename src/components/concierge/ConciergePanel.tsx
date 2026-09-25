@@ -598,7 +598,7 @@ export default function ConciergePanel({ isOpen, onClose }: ConciergePanelProps)
             </span>
             <button
               onClick={onClose}
-              className="p-1 rounded-full text-[#111111]/70 dark:text-white/70 hover:text-[#F15E1C] dark:hover:text-[#FAB60A] transition-colors"
+              className="p-1 rounded-full text-[#111111]/70 dark:text-white/70 hover:text-[#F15E1C] dark:hover:text-[#D4AF37] transition-colors"
               aria-label="Close Concierge"
             >
               <X className="w-5 h-5" />
@@ -627,8 +627,8 @@ export default function ConciergePanel({ isOpen, onClose }: ConciergePanelProps)
 
                   {/* Review Summary Card */}
                   {msg.reviewSummary && (
-                    <div className="mt-2 p-2.5 bg-white/80 dark:bg-black/50 border border-[#F15E1C]/40 dark:border-[#FAB60A]/40 rounded-xl space-y-1 text-[11px]">
-                      <span className="font-syne font-bold uppercase text-[#F15E1C] dark:text-[#FAB60A] block">
+                    <div className="mt-2 p-2.5 bg-white/80 dark:bg-black/50 border border-[#F15E1C]/40 dark:border-[#D4AF37]/40 rounded-xl space-y-1 text-[11px]">
+                      <span className="font-syne font-bold uppercase text-[#F15E1C] dark:text-[#D4AF37] block">
                         {msg.reviewSummary.title}
                       </span>
                       {msg.reviewSummary.details.map((d, i) => (
@@ -644,7 +644,7 @@ export default function ConciergePanel({ isOpen, onClose }: ConciergePanelProps)
                   {msg.navigationTarget && (
                     <button
                       onClick={() => router.push(msg.navigationTarget!)}
-                      className="mt-2 inline-flex items-center gap-1 text-[10px] font-syne font-bold text-[#F15E1C] dark:text-[#FAB60A] hover:underline uppercase pt-1 border-t border-black/10 dark:border-white/10 w-full"
+                      className="mt-2 inline-flex items-center gap-1 text-[10px] font-syne font-bold text-[#F15E1C] dark:text-[#D4AF37] hover:underline uppercase pt-1 border-t border-black/10 dark:border-white/10 w-full"
                     >
                       <span>GO TO {msg.navigationTarget}</span>
                       <ArrowUpRight className="w-3 h-3" />
@@ -673,7 +673,7 @@ export default function ConciergePanel({ isOpen, onClose }: ConciergePanelProps)
                             handleChipClick(chip);
                           }
                         }}
-                        className="px-3 py-1.5 rounded-full text-[11px] font-syne font-medium transition-colors border bg-white text-[#111111] border-black/15 hover:border-[#F15E1C] hover:bg-[#F7D7B0]/30 hover:text-[#F15E1C] dark:bg-[#1A1A1A] dark:text-white dark:border-white/15 dark:hover:border-[#FAB60A] dark:hover:bg-white/10 dark:hover:text-[#FAB60A] disabled:opacity-40"
+                        className="px-3 py-1.5 rounded-full text-[11px] font-syne font-medium transition-colors border bg-white text-[#111111] border-black/15 hover:border-[#F15E1C] hover:bg-[#F7D7B0]/30 hover:text-[#F15E1C] dark:bg-[#1A1A1A] dark:text-white dark:border-white/15 dark:hover:border-[#D4AF37] dark:hover:bg-white/10 dark:hover:text-[#D4AF37] disabled:opacity-40"
                       >
                         {chip.label}
                       </button>
@@ -726,12 +726,12 @@ export default function ConciergePanel({ isOpen, onClose }: ConciergePanelProps)
                 onChange={(e) => setInputValue(e.target.value)}
                 disabled={isTyping || isLoading}
                 placeholder={isTyping ? "Concierge is formulating response..." : "Type a message..."}
-                className="flex-1 px-3.5 py-2 rounded-full text-xs transition-colors focus:outline-none bg-white dark:bg-[#1A1A1A] border border-black/15 dark:border-white/20 text-[#111111] dark:text-white placeholder:text-[#111111]/45 dark:placeholder:text-white/40 focus:border-[#F15E1C] dark:focus:border-[#FAB60A] disabled:opacity-50"
+                className="flex-1 px-3.5 py-2 rounded-full text-xs transition-colors focus:outline-none bg-white dark:bg-[#1A1A1A] border border-black/15 dark:border-white/20 text-[#111111] dark:text-white placeholder:text-[#111111]/45 dark:placeholder:text-white/40 focus:border-[#F15E1C] dark:focus:border-[#D4AF37] disabled:opacity-50"
               />
               <button
                 type="submit"
                 disabled={isTyping || isLoading || !inputValue.trim()}
-                className="w-8 h-8 rounded-full flex items-center justify-center transition-colors bg-[#F15E1C] text-white hover:bg-[#FAB60A] hover:text-[#111111] dark:bg-[#FAB60A] dark:text-[#111111] dark:hover:bg-[#FFEC69] disabled:opacity-40 shrink-0"
+                className="w-8 h-8 rounded-full flex items-center justify-center transition-colors bg-[#F15E1C] text-white hover:bg-[#D4AF37] hover:text-[#111111] dark:bg-[#D4AF37] dark:text-[#111111] dark:hover:bg-[#FFEC69] disabled:opacity-40 shrink-0"
                 aria-label="Send Message"
               >
                 <Send className="w-3.5 h-3.5" />

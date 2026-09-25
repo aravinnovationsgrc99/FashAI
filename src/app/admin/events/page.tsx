@@ -102,11 +102,11 @@ export default function EventManagerPage() {
       {/* HEADER */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-white/10 pb-4">
         <div>
-          <span className="font-syne text-[10px] font-bold uppercase tracking-[0.2em] text-[#FAB60A]">
+          <span className="font-syne text-[10px] font-bold uppercase tracking-[0.2em] text-[#D4AF37]">
             SHOWCASE MANAGEMENT
           </span>
           <h1 className="font-serif-display text-2xl sm:text-3xl font-light uppercase tracking-tight text-white">
-            EVENTS &amp; <span className="text-[#FAB60A]">RUNWAYS</span>
+            EVENTS &amp; <span className="text-[#D4AF37]">RUNWAYS</span>
           </h1>
           <p className="font-sans text-xs text-white/60">
             Visual management for LifeStyle 2026, Global Runway, and bespoke fashion showcases.
@@ -115,7 +115,7 @@ export default function EventManagerPage() {
 
         <button
           onClick={handleAddEvent}
-          className="bg-[#FAB60A] hover:bg-[#FFEC69] text-black px-4 py-2 rounded-xl font-syne text-xs font-bold uppercase transition-all flex items-center gap-2 shadow-md shrink-0"
+          className="bg-[#D4AF37] hover:bg-[#FFEC69] text-black px-4 py-2 rounded-xl font-syne text-xs font-bold uppercase transition-all flex items-center gap-2 shadow-md shrink-0"
         >
           <Plus className="w-4 h-4" />
           <span>Add Event</span>
@@ -127,7 +127,7 @@ export default function EventManagerPage() {
         {events.map((ev) => (
           <div
             key={ev.id}
-            className="p-5 rounded-2xl bg-[#0F0E0D] border border-white/10 flex flex-col justify-between space-y-4 hover:border-[#FAB60A]/40 transition-all shadow-lg"
+            className="p-5 rounded-2xl bg-[#0F0E0D] border border-white/10 flex flex-col justify-between space-y-4 hover:border-[#D4AF37]/40 transition-all shadow-lg"
           >
             {/* COVER IMAGE & STATUS */}
             <div className="relative aspect-video bg-black rounded-xl overflow-hidden border border-white/10 group">
@@ -143,7 +143,7 @@ export default function EventManagerPage() {
                     ev.status === "active"
                       ? "bg-[#2E936F]/20 border-[#2E936F] text-[#2E936F]"
                       : ev.status === "upcoming"
-                      ? "bg-[#FAB60A]/20 border-[#FAB60A] text-[#FAB60A]"
+                      ? "bg-[#D4AF37]/20 border-[#D4AF37] text-[#D4AF37]"
                       : "bg-white/10 border-white/20 text-white/50"
                   }`}
                 >
@@ -154,7 +154,7 @@ export default function EventManagerPage() {
 
             {/* EVENT DETAILS */}
             <div className="space-y-1.5">
-              <span className="text-[10px] font-syne font-bold text-[#FAB60A] uppercase tracking-wider">
+              <span className="text-[10px] font-syne font-bold text-[#D4AF37] uppercase tracking-wider">
                 {ev.category} Showcase
               </span>
               <h3 className="font-serif-display text-xl text-white uppercase font-light">
@@ -166,7 +166,7 @@ export default function EventManagerPage() {
                   {ev.location}
                 </span>
                 <span className="flex items-center gap-1">
-                  <Clock className="w-3.5 h-3.5 text-[#FAB60A]" />
+                  <Clock className="w-3.5 h-3.5 text-[#D4AF37]" />
                   {ev.date}
                 </span>
               </div>
@@ -180,7 +180,7 @@ export default function EventManagerPage() {
                   setEditingEvent(ev);
                   setActiveTab("OVERVIEW");
                 }}
-                className="px-4 py-2 rounded-xl bg-[#FAB60A]/10 hover:bg-[#FAB60A]/20 border border-[#FAB60A]/30 text-[#FAB60A] text-xs font-syne font-bold transition-all flex items-center gap-1.5"
+                className="px-4 py-2 rounded-xl bg-[#D4AF37]/10 hover:bg-[#D4AF37]/20 border border-[#D4AF37]/30 text-[#D4AF37] text-xs font-syne font-bold transition-all flex items-center gap-1.5"
               >
                 <Edit3 className="w-3.5 h-3.5" />
                 EDIT EVENT
@@ -197,7 +197,7 @@ export default function EventManagerPage() {
             {/* MODAL HEADER */}
             <div className="flex items-center justify-between border-b border-white/10 pb-4">
               <div>
-                <span className="font-syne text-[10px] text-[#FAB60A] uppercase tracking-widest font-bold">
+                <span className="font-syne text-[10px] text-[#D4AF37] uppercase tracking-widest font-bold">
                   EVENT EDITOR
                 </span>
                 <h3 className="font-serif-display text-xl text-white uppercase">
@@ -220,7 +220,7 @@ export default function EventManagerPage() {
                   onClick={() => setActiveTab(tab)}
                   className={`px-3 py-1.5 rounded-xl text-xs font-syne transition-all ${
                     activeTab === tab
-                      ? "bg-[#FAB60A] text-black font-bold shadow"
+                      ? "bg-[#D4AF37] text-black font-bold shadow"
                       : "text-white/60 hover:text-white"
                   }`}
                 >
@@ -242,7 +242,7 @@ export default function EventManagerPage() {
                       onChange={(e) =>
                         setEditingEvent({ ...editingEvent, title: e.target.value })
                       }
-                      className="w-full bg-[#1A1918] border border-white/10 rounded-xl px-4 py-2 text-xs text-white focus:outline-none focus:border-[#FAB60A]"
+                      className="w-full bg-[#1A1918] border border-white/10 rounded-xl px-4 py-2 text-xs text-white focus:outline-none focus:border-[#D4AF37]"
                     />
                   </div>
 
@@ -271,7 +271,7 @@ export default function EventManagerPage() {
                       onChange={(e) =>
                         setEditingEvent({ ...editingEvent, description: e.target.value })
                       }
-                      className="w-full bg-[#1A1918] border border-white/10 rounded-xl px-4 py-2 text-xs text-white focus:outline-none focus:border-[#FAB60A]"
+                      className="w-full bg-[#1A1918] border border-white/10 rounded-xl px-4 py-2 text-xs text-white focus:outline-none focus:border-[#D4AF37]"
                     />
                   </div>
 
@@ -300,7 +300,7 @@ export default function EventManagerPage() {
                       onChange={(e) =>
                         setEditingEvent({ ...editingEvent, coverImage: e.target.value })
                       }
-                      className="w-full bg-[#1A1918] border border-white/10 rounded-xl px-4 py-2 text-xs text-white focus:outline-none focus:border-[#FAB60A]"
+                      className="w-full bg-[#1A1918] border border-white/10 rounded-xl px-4 py-2 text-xs text-white focus:outline-none focus:border-[#D4AF37]"
                     />
                   </div>
 
@@ -329,7 +329,7 @@ export default function EventManagerPage() {
                         onChange={(e) =>
                           setEditingEvent({ ...editingEvent, date: e.target.value })
                         }
-                        className="w-full bg-[#1A1918] border border-white/10 rounded-xl px-4 py-2 text-xs text-white focus:outline-none focus:border-[#FAB60A]"
+                        className="w-full bg-[#1A1918] border border-white/10 rounded-xl px-4 py-2 text-xs text-white focus:outline-none focus:border-[#D4AF37]"
                       />
                     </div>
 
@@ -341,7 +341,7 @@ export default function EventManagerPage() {
                         onChange={(e) =>
                           setEditingEvent({ ...editingEvent, location: e.target.value })
                         }
-                        className="w-full bg-[#1A1918] border border-white/10 rounded-xl px-4 py-2 text-xs text-white focus:outline-none focus:border-[#FAB60A]"
+                        className="w-full bg-[#1A1918] border border-white/10 rounded-xl px-4 py-2 text-xs text-white focus:outline-none focus:border-[#D4AF37]"
                       />
                     </div>
                   </div>
@@ -354,7 +354,7 @@ export default function EventManagerPage() {
                       onChange={(e) =>
                         setEditingEvent({ ...editingEvent, venue: e.target.value })
                       }
-                      className="w-full bg-[#1A1918] border border-white/10 rounded-xl px-4 py-2 text-xs text-white focus:outline-none focus:border-[#FAB60A]"
+                      className="w-full bg-[#1A1918] border border-white/10 rounded-xl px-4 py-2 text-xs text-white focus:outline-none focus:border-[#D4AF37]"
                     />
                   </div>
                 </div>
@@ -371,7 +371,7 @@ export default function EventManagerPage() {
                       onChange={(e) =>
                         setEditingEvent({ ...editingEvent, ctaText: e.target.value })
                       }
-                      className="w-full bg-[#1A1918] border border-white/10 rounded-xl px-4 py-2 text-xs text-white focus:outline-none focus:border-[#FAB60A]"
+                      className="w-full bg-[#1A1918] border border-white/10 rounded-xl px-4 py-2 text-xs text-white focus:outline-none focus:border-[#D4AF37]"
                     />
                   </div>
 
@@ -383,7 +383,7 @@ export default function EventManagerPage() {
                       onChange={(e) =>
                         setEditingEvent({ ...editingEvent, ctaUrl: e.target.value })
                       }
-                      className="w-full bg-[#1A1918] border border-white/10 rounded-xl px-4 py-2 text-xs text-white focus:outline-none focus:border-[#FAB60A]"
+                      className="w-full bg-[#1A1918] border border-white/10 rounded-xl px-4 py-2 text-xs text-white focus:outline-none focus:border-[#D4AF37]"
                     />
                   </div>
                 </div>
@@ -393,7 +393,7 @@ export default function EventManagerPage() {
               {activeTab === "VISIBILITY" && (
                 <div className="space-y-4">
                   <div className="bg-[#1A1918] p-4 rounded-2xl border border-white/10 space-y-3">
-                    <div className="font-syne text-xs font-bold text-[#FAB60A] uppercase">
+                    <div className="font-syne text-xs font-bold text-[#D4AF37] uppercase">
                       VISIBILITY CONTROLS
                     </div>
                     <div className="flex items-center gap-3">
@@ -404,7 +404,7 @@ export default function EventManagerPage() {
                         onChange={(e) =>
                           setEditingEvent({ ...editingEvent, featured: e.target.checked })
                         }
-                        className="w-4 h-4 accent-[#FAB60A] rounded"
+                        className="w-4 h-4 accent-[#D4AF37] rounded"
                       />
                       <label htmlFor="ev-featured" className="text-xs text-white/80 font-syne">
                         Feature on main event carousel
@@ -452,7 +452,7 @@ export default function EventManagerPage() {
               </button>
               <button
                 onClick={handleSaveModal}
-                className="px-5 py-2 rounded-xl text-xs font-syne font-bold bg-[#FAB60A] hover:bg-[#FFEC69] text-black shadow-lg"
+                className="px-5 py-2 rounded-xl text-xs font-syne font-bold bg-[#D4AF37] hover:bg-[#FFEC69] text-black shadow-lg"
               >
                 Save Event
               </button>

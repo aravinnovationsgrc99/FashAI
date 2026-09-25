@@ -243,7 +243,7 @@ export default function EventAnnouncementModal() {
                 <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2.5 sm:gap-3 pt-2 max-w-lg">
                   <button
                     onClick={handleRegisterClick}
-                    className="flex-1 bg-[#FAB60A] text-[#111111] hover:bg-[#FFEC69] hover:shadow-[0_0_20px_rgba(250,182,10,0.5)] transition-all duration-300 min-h-[38px] sm:min-h-[42px] flex items-center justify-center gap-1.5 rounded-lg font-syne text-[11px] sm:text-xs tracking-caps font-bold shadow-lg"
+                    className="flex-1 bg-[#D4AF37] text-[#111111] hover:bg-[#FFEC69] hover:shadow-[0_0_20px_rgba(250,182,10,0.5)] transition-all duration-300 min-h-[38px] sm:min-h-[42px] flex items-center justify-center gap-1.5 rounded-lg font-syne text-[11px] sm:text-xs tracking-caps font-bold shadow-lg"
                   >
                     <span>REGISTER / ENQUIRE</span>
                     <ArrowRight className="w-3.5 h-3.5" />

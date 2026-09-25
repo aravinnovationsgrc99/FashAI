@@ -38,11 +38,11 @@ export default function WebsiteControlPage() {
     <div className="max-w-4xl mx-auto space-y-6 select-none font-sans">
       {/* HEADER */}
       <div className="border-b border-white/10 pb-4">
-        <span className="font-syne text-[10px] font-bold uppercase tracking-[0.2em] text-[#FAB60A]">
+        <span className="font-syne text-[10px] font-bold uppercase tracking-[0.2em] text-[#D4AF37]">
           SYSTEM AVAILABILITY
         </span>
         <h1 className="font-serif-display text-2xl sm:text-3xl font-light uppercase tracking-tight text-white">
-          WEBSITE <span className="text-[#FAB60A]">STATUS &amp; CONTROL</span>
+          WEBSITE <span className="text-[#D4AF37]">STATUS &amp; CONTROL</span>
         </h1>
         <p className="font-sans text-xs text-white/60">
           Manage master availability and maintenance mode overlay settings safely.
@@ -107,7 +107,7 @@ export default function WebsiteControlPage() {
                   },
                 }))
               }
-              className="w-full bg-[#1A1918] border border-white/10 rounded-xl px-4 py-2.5 text-xs text-white focus:outline-none focus:border-[#FAB60A]"
+              className="w-full bg-[#1A1918] border border-white/10 rounded-xl px-4 py-2.5 text-xs text-white focus:outline-none focus:border-[#D4AF37]"
             />
           </div>
 
@@ -125,7 +125,7 @@ export default function WebsiteControlPage() {
                   },
                 }))
               }
-              className="w-full bg-[#1A1918] border border-white/10 rounded-xl px-4 py-2.5 text-xs text-white focus:outline-none focus:border-[#FAB60A]"
+              className="w-full bg-[#1A1918] border border-white/10 rounded-xl px-4 py-2.5 text-xs text-white focus:outline-none focus:border-[#D4AF37]"
             />
           </div>
         </div>

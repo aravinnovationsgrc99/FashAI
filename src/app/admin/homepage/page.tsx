@@ -94,11 +94,11 @@ export default function HomepageBuilderPage() {
       {/* HEADER */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-white/10 pb-4">
         <div>
-          <span className="font-syne text-[10px] font-bold uppercase tracking-[0.2em] text-[#FAB60A]">
+          <span className="font-syne text-[10px] font-bold uppercase tracking-[0.2em] text-[#D4AF37]">
             CONTENT BUILDER
           </span>
           <h1 className="font-serif-display text-2xl sm:text-3xl font-light uppercase tracking-tight text-white">
-            HOMEPAGE <span className="text-[#FAB60A]">SECTION STACK</span>
+            HOMEPAGE <span className="text-[#D4AF37]">SECTION STACK</span>
           </h1>
           <p className="font-sans text-xs text-white/60">
             Reorder, enable/disable, and visually preview homepage layout sections.
@@ -109,7 +109,7 @@ export default function HomepageBuilderPage() {
           onClick={() => setIsPreviewOpen(true)}
           className="bg-white/10 hover:bg-white/20 border border-white/20 text-white px-4 py-2 rounded-xl font-syne text-xs font-bold uppercase transition-all flex items-center gap-2"
         >
-          <Eye className="w-3.5 h-3.5 text-[#FAB60A]" />
+          <Eye className="w-3.5 h-3.5 text-[#D4AF37]" />
           <span>PREVIEW SITE</span>
         </button>
       </div>
@@ -121,7 +121,7 @@ export default function HomepageBuilderPage() {
             key={sec.id}
             className={`p-4 rounded-2xl border transition-all flex flex-col sm:flex-row sm:items-center justify-between gap-4 shadow-sm ${
               sec.enabled
-                ? "bg-[#0F0E0D] border-white/15 hover:border-[#FAB60A]/40"
+                ? "bg-[#0F0E0D] border-white/15 hover:border-[#D4AF37]/40"
                 : "bg-[#0A0A0A] border-white/5 opacity-50"
             }`}
           >
@@ -186,7 +186,7 @@ export default function HomepageBuilderPage() {
 
               <button
                 onClick={() => setEditingSection(sec)}
-                className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-[#FAB60A]/10 hover:bg-[#FAB60A]/20 border border-[#FAB60A]/30 text-[#FAB60A] text-xs font-syne font-bold transition-all"
+                className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-[#D4AF37]/10 hover:bg-[#D4AF37]/20 border border-[#D4AF37]/30 text-[#D4AF37] text-xs font-syne font-bold transition-all"
               >
                 <Edit3 className="w-3.5 h-3.5" />
                 Edit
@@ -202,7 +202,7 @@ export default function HomepageBuilderPage() {
           <div className="bg-[#121110] border border-white/20 rounded-3xl max-w-xl w-full p-6 space-y-6 shadow-2xl animate-in zoom-in-95 duration-150">
             <div className="flex items-center justify-between border-b border-white/10 pb-4">
               <div>
-                <span className="font-syne text-[10px] text-[#FAB60A] uppercase tracking-widest font-bold">
+                <span className="font-syne text-[10px] text-[#D4AF37] uppercase tracking-widest font-bold">
                   VISUAL EDITOR
                 </span>
                 <h3 className="font-serif-display text-xl text-white uppercase">
@@ -219,7 +219,7 @@ export default function HomepageBuilderPage() {
 
             {/* VISUAL PREVIEW BANNER */}
             <div className="bg-[#1A1918] border border-white/10 p-4 rounded-2xl space-y-2">
-              <div className="flex items-center gap-2 text-xs font-syne text-[#FAB60A] font-bold">
+              <div className="flex items-center gap-2 text-xs font-syne text-[#D4AF37] font-bold">
                 <Sparkles className="w-3.5 h-3.5" />
                 Section Preview
               </div>
@@ -238,7 +238,7 @@ export default function HomepageBuilderPage() {
                   onChange={(e) =>
                     setEditingSection({ ...editingSection, title: e.target.value })
                   }
-                  className="w-full bg-[#1A1918] border border-white/10 rounded-xl px-4 py-2.5 text-xs text-white focus:outline-none focus:border-[#FAB60A]"
+                  className="w-full bg-[#1A1918] border border-white/10 rounded-xl px-4 py-2.5 text-xs text-white focus:outline-none focus:border-[#D4AF37]"
                 />
               </div>
 
@@ -250,7 +250,7 @@ export default function HomepageBuilderPage() {
                   onChange={(e) =>
                     setEditingSection({ ...editingSection, enabled: e.target.checked })
                   }
-                  className="w-4 h-4 accent-[#FAB60A] rounded"
+                  className="w-4 h-4 accent-[#D4AF37] rounded"
                 />
                 <label htmlFor="section-enabled" className="text-xs text-white/80 font-syne">
                   Display this section on published homepage
@@ -267,7 +267,7 @@ export default function HomepageBuilderPage() {
               </button>
               <button
                 onClick={handleSaveModal}
-                className="px-5 py-2 rounded-xl text-xs font-syne font-bold bg-[#FAB60A] hover:bg-[#FFEC69] text-black shadow-lg"
+                className="px-5 py-2 rounded-xl text-xs font-syne font-bold bg-[#D4AF37] hover:bg-[#FFEC69] text-black shadow-lg"
               >
                 Save Changes
               </button>

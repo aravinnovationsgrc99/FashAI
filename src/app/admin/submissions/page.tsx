@@ -131,7 +131,7 @@ export default function FormSubmissionsPage() {
         </div>
 
         <div className="flex items-center gap-2 w-full sm:w-auto">
-          <Filter className="w-4 h-4 text-[#FAB60A]" />
+          <Filter className="w-4 h-4 text-[#D4AF37]" />
           <select
             value={statusFilter}
             onChange={(e) => setStatusFilter(e.target.value)}
@@ -188,7 +188,7 @@ export default function FormSubmissionsPage() {
                           sub.status === "NEW"
                             ? "border-[#F15E1C] text-[#F15E1C]"
                             : sub.status === "UNDER REVIEW"
-                            ? "border-[#FAB60A] text-[#FAB60A]"
+                            ? "border-[#D4AF37] text-[#D4AF37]"
                             : sub.status === "CONTACTED"
                             ? "border-[#2E936F] text-[#2E936F]"
                             : "border-white/20 text-white/40"
@@ -232,7 +232,7 @@ export default function FormSubmissionsPage() {
         <div className="fixed inset-0 z-[200] flex items-center justify-center p-4 bg-black/80 backdrop-blur-md">
           <div className="relative w-full max-w-2xl bg-[#0F0E0D] border border-white/20 rounded-2xl p-6 space-y-4 max-h-[85vh] overflow-y-auto">
             <div className="flex items-center justify-between border-b border-white/10 pb-3">
-              <span className="font-syne text-xs font-bold uppercase tracking-wider text-[#FAB60A]">
+              <span className="font-syne text-xs font-bold uppercase tracking-wider text-[#D4AF37]">
                 SUBMISSION RECORD: {selectedSubmission.id}
               </span>
               <button

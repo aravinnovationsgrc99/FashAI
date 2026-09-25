@@ -167,11 +167,11 @@ export default function ApplicationManagerPage() {
       {/* HEADER */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-white/10 pb-4">
         <div>
-          <span className="font-syne text-[10px] font-bold uppercase tracking-[0.2em] text-[#FAB60A]">
+          <span className="font-syne text-[10px] font-bold uppercase tracking-[0.2em] text-[#D4AF37]">
             TALENT INTAKE
           </span>
           <h1 className="font-serif-display text-2xl sm:text-3xl font-light uppercase tracking-tight text-white">
-            TALENT <span className="text-[#FAB60A]">APPLICATIONS</span>
+            TALENT <span className="text-[#D4AF37]">APPLICATIONS</span>
           </h1>
           <p className="font-sans text-xs text-white/60">
             Review candidates, review portfolio submissions, and manage candidate nomination pipelines.
@@ -185,7 +185,7 @@ export default function ApplicationManagerPage() {
           onClick={() => setStatusFilter("NEW")}
           className={`p-3.5 rounded-2xl border transition-all text-left flex items-center justify-between ${
             statusFilter === "NEW"
-              ? "bg-[#FAB60A]/20 border-[#FAB60A] text-[#FAB60A]"
+              ? "bg-[#D4AF37]/20 border-[#D4AF37] text-[#D4AF37]"
               : "bg-[#0F0E0D] border-white/10 text-white/70 hover:text-white"
           }`}
         >
@@ -193,7 +193,7 @@ export default function ApplicationManagerPage() {
             <div className="text-[10px] font-syne font-bold uppercase tracking-wider">NEW</div>
             <div className="font-serif-display text-xl text-white">{counts.NEW}</div>
           </div>
-          <span className="w-2 h-2 rounded-full bg-[#FAB60A]" />
+          <span className="w-2 h-2 rounded-full bg-[#D4AF37]" />
         </button>
 
         <button
@@ -251,14 +251,14 @@ export default function ApplicationManagerPage() {
             placeholder="Search candidate name, role or email..."
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
-            className="w-full bg-[#1A1918] border border-white/10 rounded-xl pl-9 pr-3 py-1.5 text-xs text-white placeholder-white/40 focus:outline-none focus:border-[#FAB60A]"
+            className="w-full bg-[#1A1918] border border-white/10 rounded-xl pl-9 pr-3 py-1.5 text-xs text-white placeholder-white/40 focus:outline-none focus:border-[#D4AF37]"
           />
         </div>
 
         {statusFilter !== "ALL" && (
           <button
             onClick={() => setStatusFilter("ALL")}
-            className="text-xs font-syne text-[#FAB60A] hover:underline"
+            className="text-xs font-syne text-[#D4AF37] hover:underline"
           >
             Clear Filter (Show All {applications.length})
           </button>
@@ -291,7 +291,7 @@ export default function ApplicationManagerPage() {
                 className="p-4 flex flex-col sm:flex-row sm:items-center justify-between gap-4 hover:bg-white/5 cursor-pointer transition-colors"
               >
                 <div className="flex items-center gap-3.5 min-w-0">
-                  <div className="w-9 h-9 rounded-full bg-white/10 text-[#FAB60A] font-bold font-syne flex items-center justify-center shrink-0">
+                  <div className="w-9 h-9 rounded-full bg-white/10 text-[#D4AF37] font-bold font-syne flex items-center justify-center shrink-0">
                     {app.name.charAt(0)}
                   </div>
                   <div className="space-y-0.5 min-w-0">
@@ -312,7 +312,7 @@ export default function ApplicationManagerPage() {
                   <span
                     className={`text-[9px] font-syne font-bold uppercase px-3 py-1 rounded-full border ${
                       app.status === "NEW"
-                        ? "bg-[#FAB60A]/20 border-[#FAB60A] text-[#FAB60A]"
+                        ? "bg-[#D4AF37]/20 border-[#D4AF37] text-[#D4AF37]"
                         : app.status === "UNDER REVIEW"
                         ? "bg-blue-500/20 border-blue-500 text-blue-400"
                         : app.status === "CONTACTED"
@@ -335,7 +335,7 @@ export default function ApplicationManagerPage() {
           <div className="space-y-6">
             <div className="flex items-center justify-between border-b border-white/10 pb-4">
               <div>
-                <span className="font-syne text-[10px] text-[#FAB60A] uppercase tracking-widest font-bold">
+                <span className="font-syne text-[10px] text-[#D4AF37] uppercase tracking-widest font-bold">
                   APPLICANT PROFILE
                 </span>
                 <h3 className="font-serif-display text-xl text-white uppercase">
@@ -353,7 +353,7 @@ export default function ApplicationManagerPage() {
             {/* PERSONAL & PROFESSIONAL INFORMATION */}
             <div className="space-y-3">
               <div className="p-4 bg-[#1A1918] border border-white/10 rounded-2xl space-y-2">
-                <div className="text-xs font-syne font-bold text-[#FAB60A] uppercase">
+                <div className="text-xs font-syne font-bold text-[#D4AF37] uppercase">
                   APPLICATION ROLE: {selectedApp.role}
                 </div>
                 <p className="text-xs text-white/80 font-sans leading-relaxed">
@@ -364,9 +364,9 @@ export default function ApplicationManagerPage() {
               <div className="space-y-2 text-xs font-sans">
                 <div className="flex items-center justify-between p-2.5 bg-black/40 rounded-xl border border-white/5">
                   <span className="text-white/50 flex items-center gap-2">
-                    <Mail className="w-3.5 h-3.5 text-[#FAB60A]" /> Email
+                    <Mail className="w-3.5 h-3.5 text-[#D4AF37]" /> Email
                   </span>
-                  <a href={`mailto:${selectedApp.email}`} className="text-white hover:text-[#FAB60A]">
+                  <a href={`mailto:${selectedApp.email}`} className="text-white hover:text-[#D4AF37]">
                     {selectedApp.email}
                   </a>
                 </div>
@@ -393,7 +393,7 @@ export default function ApplicationManagerPage() {
                     href={selectedApp.portfolio}
                     target="_blank"
                     rel="noreferrer"
-                    className="text-[#FAB60A] hover:underline flex items-center gap-1"
+                    className="text-[#D4AF37] hover:underline flex items-center gap-1"
                   >
                     View <ExternalLink className="w-3 h-3" />
                   </a>

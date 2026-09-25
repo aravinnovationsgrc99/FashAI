@@ -20,7 +20,7 @@ export function LivePreviewModal() {
       {/* PREVIEW TOOLBAR */}
       <div className="w-full max-w-5xl bg-[#111] border border-white/10 rounded-2xl px-6 py-3 flex items-center justify-between shadow-2xl">
         <div className="flex items-center gap-3">
-          <span className="font-syne text-xs uppercase tracking-widest text-[#FAB60A] font-bold flex items-center gap-2">
+          <span className="font-syne text-xs uppercase tracking-widest text-[#D4AF37] font-bold flex items-center gap-2">
             <span className="w-2 h-2 rounded-full bg-[#2E936F] animate-ping" />
             LIVE PREVIEW MODE
           </span>
@@ -32,7 +32,7 @@ export function LivePreviewModal() {
             onClick={() => setPreviewDevice("desktop")}
             className={`flex items-center gap-2 px-3 py-1.5 rounded-lg text-xs font-syne transition-all ${
               previewDevice === "desktop"
-                ? "bg-[#FAB60A] text-black font-bold shadow"
+                ? "bg-[#D4AF37] text-black font-bold shadow"
                 : "text-white/60 hover:text-white"
             }`}
           >
@@ -43,7 +43,7 @@ export function LivePreviewModal() {
             onClick={() => setPreviewDevice("tablet")}
             className={`flex items-center gap-2 px-3 py-1.5 rounded-lg text-xs font-syne transition-all ${
               previewDevice === "tablet"
-                ? "bg-[#FAB60A] text-black font-bold shadow"
+                ? "bg-[#D4AF37] text-black font-bold shadow"
                 : "text-white/60 hover:text-white"
             }`}
           >
@@ -54,7 +54,7 @@ export function LivePreviewModal() {
             onClick={() => setPreviewDevice("mobile")}
             className={`flex items-center gap-2 px-3 py-1.5 rounded-lg text-xs font-syne transition-all ${
               previewDevice === "mobile"
-                ? "bg-[#FAB60A] text-black font-bold shadow"
+                ? "bg-[#D4AF37] text-black font-bold shadow"
                 : "text-white/60 hover:text-white"
             }`}
           >

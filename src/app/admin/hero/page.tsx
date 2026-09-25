@@ -84,7 +84,7 @@ export default function HeroControlPage() {
 
       {/* VIEWPORT PREVIEW SWITCHER */}
       <div className="flex items-center justify-between p-4 rounded-2xl bg-[#0F0E0D] border border-white/10">
-        <span className="font-syne text-xs font-bold uppercase tracking-wider text-[#FAB60A]">
+        <span className="font-syne text-xs font-bold uppercase tracking-wider text-[#D4AF37]">
           VIEWPORT PREVIEW MODE:
         </span>
         <div className="flex items-center gap-2">
@@ -139,7 +139,7 @@ export default function HeroControlPage() {
             style={{ backgroundColor: `rgba(0,0,0,${hero.overlayOpacity})` }}
             className="absolute inset-0 flex flex-col justify-center items-center p-6 text-center"
           >
-            <div className="text-[10px] sm:text-xs font-syne tracking-[0.25em] text-[#FAB60A] font-bold uppercase mb-2">
+            <div className="text-[10px] sm:text-xs font-syne tracking-[0.25em] text-[#D4AF37] font-bold uppercase mb-2">
               {hero.eyebrow}
             </div>
             <h2 className="font-serif-display text-lg sm:text-2xl lg:text-3xl font-light text-white uppercase leading-tight max-w-lg">
@@ -161,7 +161,7 @@ export default function HeroControlPage() {
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         {/* TEXT EDITING */}
         <div className="p-6 rounded-2xl bg-[#0F0E0D] border border-white/10 space-y-4">
-          <h3 className="font-syne text-xs font-bold uppercase tracking-[0.2em] text-[#FAB60A]">
+          <h3 className="font-syne text-xs font-bold uppercase tracking-[0.2em] text-[#D4AF37]">
             HERO TEXT CONTENT
           </h3>
 
@@ -229,7 +229,7 @@ export default function HeroControlPage() {
 
         {/* MEDIA & FALLBACK EDITING */}
         <div className="p-6 rounded-2xl bg-[#0F0E0D] border border-white/10 space-y-4">
-          <h3 className="font-syne text-xs font-bold uppercase tracking-[0.2em] text-[#FAB60A]">
+          <h3 className="font-syne text-xs font-bold uppercase tracking-[0.2em] text-[#D4AF37]">
             MEDIA &amp; FALLBACK BACKUP
           </h3>
 
@@ -261,7 +261,7 @@ export default function HeroControlPage() {
             <div>
               <div className="flex justify-between text-xs font-syne font-bold uppercase text-white/80 mb-2">
                 <span>OVERLAY OPACITY</span>
-                <span className="text-[#FAB60A]">{hero.overlayOpacity}</span>
+                <span className="text-[#D4AF37]">{hero.overlayOpacity}</span>
               </div>
               <input
                 type="range"
@@ -277,7 +277,7 @@ export default function HeroControlPage() {
             <div>
               <div className="flex justify-between text-xs font-syne font-bold uppercase text-white/80 mb-2">
                 <span>BRIGHTNESS</span>
-                <span className="text-[#FAB60A]">{hero.brightness}</span>
+                <span className="text-[#D4AF37]">{hero.brightness}</span>
               </div>
               <input
                 type="range"

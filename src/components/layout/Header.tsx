@@ -118,8 +118,8 @@ export default function Header() {
                 <span
                   className={
                     isOverVideo
-                      ? "font-serif italic font-normal text-[#FAB60A] capitalize ml-0.5 drop-shadow-[0_1px_2px_rgba(0,0,0,0.8)]"
-                      : "font-serif italic font-normal text-[#F15E1C] dark:text-[#FAB60A] capitalize ml-0.5"
+                      ? "font-serif italic font-normal text-[#D4AF37] capitalize ml-0.5 drop-shadow-[0_1px_2px_rgba(0,0,0,0.8)]"
+                      : "font-serif italic font-normal text-[#F15E1C] dark:text-[#D4AF37] capitalize ml-0.5"
                   }
                 >
                   Universal
@@ -147,11 +147,11 @@ export default function Header() {
                   className={`relative py-1 transition-colors duration-200 ${
                     isActive
                       ? isOverVideo
-                        ? "text-[#FAB60A] font-bold drop-shadow-[0_1px_3px_rgba(0,0,0,0.9)]"
-                        : "text-[#F15E1C] dark:text-[#FAB60A] font-bold"
+                        ? "text-[#D4AF37] font-bold drop-shadow-[0_1px_3px_rgba(0,0,0,0.9)]"
+                        : "text-[#F15E1C] dark:text-[#D4AF37] font-bold"
                       : isOverVideo
-                      ? "text-white hover:text-[#FAB60A] drop-shadow-[0_1px_3px_rgba(0,0,0,0.9)]"
-                      : "text-[#111111] dark:text-white/85 hover:text-[#F15E1C] dark:hover:text-[#FAB60A]"
+                      ? "text-white hover:text-[#D4AF37] drop-shadow-[0_1px_3px_rgba(0,0,0,0.9)]"
+                      : "text-[#111111] dark:text-white/85 hover:text-[#F15E1C] dark:hover:text-[#D4AF37]"
                   }`}
                 >
                   {item.label}
@@ -159,8 +159,8 @@ export default function Header() {
                     <span
                       className={`absolute -bottom-1 left-0 right-0 h-[2px] rounded-full ${
                         isOverVideo
-                          ? "bg-[#FAB60A] shadow-[0_0_8px_rgba(250,182,10,0.6)]"
-                          : "bg-[#F15E1C] dark:bg-[#FAB60A] shadow-[0_0_8px_rgba(241,94,28,0.5)]"
+                          ? "bg-[#D4AF37] shadow-[0_0_8px_rgba(250,182,10,0.6)]"
+                          : "bg-[#F15E1C] dark:bg-[#D4AF37] shadow-[0_0_8px_rgba(241,94,28,0.5)]"
                       }`}
                     />
                   )}
@@ -181,7 +181,7 @@ export default function Header() {
             {/* CONTACT US CTA BUTTON (DESKTOP/TABLET ONLY — KEPT INSIDE 3-LINE DRAWER FOR MOBILE) */}
             <Link
               href="/contact"
-              className={`hidden sm:inline-flex items-center justify-center bg-[#FAB60A] text-[#111111] hover:bg-[#FFEC69] font-syne font-bold tracking-wider uppercase rounded-full transition-all duration-300 shadow-md hover:shadow-lg hover:-translate-y-0.5 shrink-0 whitespace-nowrap ${
+              className={`hidden sm:inline-flex items-center justify-center bg-[#D4AF37] text-[#111111] hover:bg-[#FFEC69] font-syne font-bold tracking-wider uppercase rounded-full transition-all duration-300 shadow-md hover:shadow-lg hover:-translate-y-0.5 shrink-0 whitespace-nowrap ${
                 isTopAtVideo
                   ? "text-xs px-5 sm:px-6 py-2 sm:py-2.5"
                   : "text-[11px] px-4 sm:px-5 py-1.5 sm:py-2"
@@ -196,8 +196,8 @@ export default function Header() {
               onClick={() => setMobileMenuOpen(true)}
               className={`lg:hidden rounded-full flex items-center justify-center shrink-0 transition-all duration-300 aspect-square ${
                 isOverVideo
-                  ? "w-9 h-9 sm:w-10 sm:h-10 bg-black/25 dark:bg-black/30 border border-white/20 text-white hover:border-[#FAB60A] backdrop-blur-sm shadow-md"
-                  : "w-8 h-8 sm:w-9 sm:h-9 bg-black/5 dark:bg-white/10 border border-black/10 dark:border-white/15 text-[#111111] dark:text-white hover:border-[#F15E1C] dark:hover:border-[#FAB60A]"
+                  ? "w-9 h-9 sm:w-10 sm:h-10 bg-black/25 dark:bg-black/30 border border-white/20 text-white hover:border-[#D4AF37] backdrop-blur-sm shadow-md"
+                  : "w-8 h-8 sm:w-9 sm:h-9 bg-black/5 dark:bg-white/10 border border-black/10 dark:border-white/15 text-[#111111] dark:text-white hover:border-[#F15E1C] dark:hover:border-[#D4AF37]"
               }`}
               aria-label="Open Navigation Menu"
             >

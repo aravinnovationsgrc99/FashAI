@@ -23,7 +23,7 @@ export default function HomeUpcomingFeature() {
           {/* Eyebrow */}
           <div className="flex items-center gap-2">
             <span className="h-1.5 w-1.5 rounded-full bg-[#F15E1C] animate-pulse" />
-            <span className="font-syne text-[11px] sm:text-xs tracking-[0.2em] text-[#F15E1C] dark:text-[#FAB60A] font-bold uppercase">
+            <span className="font-syne text-[11px] sm:text-xs tracking-[0.2em] text-[#F15E1C] dark:text-[#D4AF37] font-bold uppercase">
               UPCOMING EVENT • DUBAI 2026
             </span>
           </div>
@@ -54,7 +54,7 @@ export default function HomeUpcomingFeature() {
 
           {/* Open Registrations & Sponsorships Announcement Banner */}
           <div className="bg-[#F7D7B0]/30 dark:bg-white/5 border border-[#F15E1C]/35 dark:border-white/15 p-3 sm:p-4 max-w-2xl w-full rounded-lg text-center shadow-sm">
-            <h3 className="font-syne text-xs tracking-[0.16em] font-bold text-[#F15E1C] dark:text-[#FAB60A] uppercase mb-0.5">
+            <h3 className="font-syne text-xs tracking-[0.16em] font-bold text-[#F15E1C] dark:text-[#D4AF37] uppercase mb-0.5">
               REGISTRATIONS &amp; SPONSORSHIPS ARE OPEN
             </h3>
             <p className="font-sans text-xs text-[#111111] dark:text-white/90 font-normal max-w-xl mx-auto leading-normal">

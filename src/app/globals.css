@@ -12,7 +12,7 @@
   --color-green: #2E936F;
   --color-white: #FFFFFF;
   --color-lemon: #FFEC69;
-  --color-golden: #FAB60A;
+  --color-golden: #D4AF37;
   --color-peach: #F7D7B0;
   --color-dark: #111111;
 
@@ -205,13 +205,13 @@ html.light .text-brand-green {
 
 html.light .text-brand-yellow-golden,
 html.light .text-brand-gold {
-  color: #FAB60A !important;
+  color: #D4AF37 !important;
 }
 
 /* Primary Gold CTA Buttons in Light Mode: Black text for contrast */
 html.light .bg-brand-yellow-golden,
 html.light [class*="bg-brand-yellow-golden"] {
-  background-color: #FAB60A !important;
+  background-color: #D4AF37 !important;
   color: #000000 !important;
 }
 
@@ -249,12 +249,12 @@ html.light #hero span:not([class*="text-brand-yellow-golden"]):not([class*="text
 html.light #hero .text-brand-yellow-golden,
 html.light #hero [class*="text-brand-yellow-golden"],
 html.light #hero .text-brand-gold {
-  color: #FAB60A !important;
+  color: #D4AF37 !important;
 }
 
 html.light #hero .bg-brand-yellow-golden,
 html.light #hero [class*="bg-brand-yellow-golden"] {
-  background-color: #FAB60A !important;
+  background-color: #D4AF37 !important;
   color: #000000 !important;
 }
 
@@ -428,7 +428,7 @@ html.light canvas {
 }
 
 .text-gold-gradient {
-  background: linear-gradient(135deg, #FFEC69 0%, #FAB60A 50%, #D4AF37 100%);
+  background: linear-gradient(135deg, #FFEC69 0%, #D4AF37 50%, #D4AF37 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }

@@ -43,17 +43,17 @@ export default function InstagramSection() {
         >
           {/* Eyebrow with Thin Editorial Rules */}
           <div className="flex items-center justify-center gap-3">
-            <span className="w-12 h-[1px] bg-[#F15E1C] dark:bg-[#FAB60A]" />
-            <span className="text-xs sm:text-sm font-syne tracking-[0.28em] text-[#F15E1C] dark:text-[#FAB60A] font-bold uppercase">
+            <span className="w-12 h-[1px] bg-[#F15E1C] dark:bg-[#D4AF37]" />
+            <span className="text-xs sm:text-sm font-syne tracking-[0.28em] text-[#F15E1C] dark:text-[#D4AF37] font-bold uppercase">
               OFFICIAL SOCIAL INSTAGRAM
             </span>
-            <span className="w-12 h-[1px] bg-[#F15E1C] dark:bg-[#FAB60A]" />
+            <span className="w-12 h-[1px] bg-[#F15E1C] dark:bg-[#D4AF37]" />
           </div>
 
           {/* Main Heading (Significantly Larger & Center Aligned) */}
           <h2 className="font-serif-display text-6xl xs:text-7xl sm:text-8xl md:text-9xl lg:text-[110px] xl:text-[128px] font-light text-[#111111] dark:text-white uppercase leading-[0.86] tracking-tight drop-shadow-sm">
             FOLLOW THE <br />
-            <span className="font-serif italic font-normal text-[#F15E1C] dark:text-[#FAB60A]">
+            <span className="font-serif italic font-normal text-[#F15E1C] dark:text-[#D4AF37]">
               JOURNEY
             </span>
           </h2>
@@ -64,7 +64,7 @@ export default function InstagramSection() {
           </div>
 
           {/* Event Details Line */}
-          <p className="font-syne text-xs sm:text-sm tracking-[0.2em] font-bold text-[#F15E1C] dark:text-[#FAB60A] uppercase">
+          <p className="font-syne text-xs sm:text-sm tracking-[0.2em] font-bold text-[#F15E1C] dark:text-[#D4AF37] uppercase">
             LIFESTYLE 2026 &nbsp;·&nbsp; DUBAI &nbsp;·&nbsp; 2026
           </p>
 
@@ -88,10 +88,10 @@ export default function InstagramSection() {
 
             <Link
               href="/contact?type=Registration"
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 border border-black/80 dark:border-[#FAB60A] bg-white/80 dark:bg-transparent hover:bg-black/5 dark:hover:bg-[#FAB60A]/10 text-black dark:text-white px-8 py-4 rounded-md font-syne text-xs font-bold tracking-wider uppercase transition-all duration-300 shadow-sm"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 border border-black/80 dark:border-[#D4AF37] bg-white/80 dark:bg-transparent hover:bg-black/5 dark:hover:bg-[#D4AF37]/10 text-black dark:text-white px-8 py-4 rounded-md font-syne text-xs font-bold tracking-wider uppercase transition-all duration-300 shadow-sm"
             >
               <span>REGISTER / ENQUIRE</span>
-              <ArrowUpRight className="w-4 h-4 text-black dark:text-[#FAB60A]" />
+              <ArrowUpRight className="w-4 h-4 text-black dark:text-[#D4AF37]" />
             </Link>
           </div>
         </motion.div>

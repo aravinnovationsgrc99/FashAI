@@ -33,7 +33,7 @@ export default function MaintenanceScreen({
         </div>
 
         {/* Maintenance Badge */}
-        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#FAB60A]/15 border border-[#FAB60A]/30 text-[#FAB60A] text-xs font-syne font-bold uppercase tracking-[0.2em]">
+        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#D4AF37]/15 border border-[#D4AF37]/30 text-[#D4AF37] text-xs font-syne font-bold uppercase tracking-[0.2em]">
           <Wrench className="w-3.5 h-3.5 animate-bounce" />
           <span>SCHEDULED MAINTENANCE</span>
         </div>
@@ -58,7 +58,7 @@ export default function MaintenanceScreen({
         <div className="pt-6">
           <Link
             href="/admin"
-            className="inline-flex items-center gap-2 text-xs font-syne font-bold uppercase tracking-wider text-[#FAB60A] hover:underline"
+            className="inline-flex items-center gap-2 text-xs font-syne font-bold uppercase tracking-wider text-[#D4AF37] hover:underline"
           >
             <span>MASTER ADMIN PORTAL →</span>
           </Link>

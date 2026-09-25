@@ -94,7 +94,7 @@ export function GlobalAdminSearch() {
           }}
           onFocus={() => setIsOpen(true)}
           placeholder="Search anything (images, events, pages, applications)..."
-          className="w-full bg-[#181716] border border-white/10 rounded-full pl-9 pr-8 py-1.5 text-xs text-white placeholder-white/40 focus:outline-none focus:border-[#FAB60A]/60 transition-all font-sans"
+          className="w-full bg-[#181716] border border-white/10 rounded-full pl-9 pr-8 py-1.5 text-xs text-white placeholder-white/40 focus:outline-none focus:border-[#D4AF37]/60 transition-all font-sans"
         />
         {query && (
           <button
@@ -109,7 +109,7 @@ export function GlobalAdminSearch() {
       {/* SEARCH RESULTS DROPDOWN */}
       {isOpen && query.trim().length > 0 && (
         <div className="absolute top-full left-0 right-0 mt-2 bg-[#121110] border border-white/15 rounded-2xl shadow-2xl overflow-hidden z-50 animate-in fade-in slide-in-from-top-2 duration-150">
-          <div className="p-2 border-b border-white/10 text-[10px] font-syne uppercase tracking-wider text-[#FAB60A] font-bold px-3">
+          <div className="p-2 border-b border-white/10 text-[10px] font-syne uppercase tracking-wider text-[#D4AF37] font-bold px-3">
             Search Results ({results.length})
           </div>
           <div className="max-h-64 overflow-y-auto divide-y divide-white/5">
@@ -122,7 +122,7 @@ export function GlobalAdminSearch() {
                 >
                   <div className="min-w-0 pr-2">
                     <div className="flex items-center gap-2">
-                      <span className="text-xs text-white font-medium group-hover:text-[#FAB60A] transition-colors truncate">
+                      <span className="text-xs text-white font-medium group-hover:text-[#D4AF37] transition-colors truncate">
                         {res.title}
                       </span>
                       <span className="text-[9px] font-mono px-1.5 py-0.5 rounded bg-white/10 text-white/60">
@@ -131,7 +131,7 @@ export function GlobalAdminSearch() {
                     </div>
                     <p className="text-[11px] text-white/50 truncate mt-0.5">{res.subtitle}</p>
                   </div>
-                  <ArrowRight className="w-3.5 h-3.5 text-white/30 group-hover:text-[#FAB60A] transition-colors flex-shrink-0" />
+                  <ArrowRight className="w-3.5 h-3.5 text-white/30 group-hover:text-[#D4AF37] transition-colors flex-shrink-0" />
                 </button>
               ))
             ) : (

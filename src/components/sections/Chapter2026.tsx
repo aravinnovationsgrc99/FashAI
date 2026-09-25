@@ -44,7 +44,7 @@ export default function Chapter2026() {
           {/* 1. HERO EYEBROW */}
           <motion.div variants={itemVariants} className="flex items-center gap-2">
             <span className="w-1.5 h-1.5 rounded-full bg-[#F15E1C] animate-pulse" />
-            <span className="font-syne text-[11px] sm:text-xs tracking-[0.2em] text-[#F15E1C] dark:text-[#FAB60A] font-bold uppercase">
+            <span className="font-syne text-[11px] sm:text-xs tracking-[0.2em] text-[#F15E1C] dark:text-[#D4AF37] font-bold uppercase">
               UPCOMING EVENT · DUBAI 2026
             </span>
           </motion.div>
@@ -86,7 +86,7 @@ export default function Chapter2026() {
             variants={itemVariants}
             className="w-full max-w-2xl bg-[#F7D7B0]/30 dark:bg-white/5 border border-[#F15E1C]/35 dark:border-white/15 rounded-lg p-3 sm:p-4 text-center shadow-sm"
           >
-            <span className="font-syne text-xs tracking-[0.16em] font-bold text-[#F15E1C] dark:text-[#FAB60A] uppercase block mb-0.5">
+            <span className="font-syne text-xs tracking-[0.16em] font-bold text-[#F15E1C] dark:text-[#D4AF37] uppercase block mb-0.5">
               REGISTRATIONS &amp; SPONSORSHIPS ARE OPEN
             </span>
             <p className="font-sans text-xs text-[#111111] dark:text-white/90 font-normal max-w-xl mx-auto leading-normal">

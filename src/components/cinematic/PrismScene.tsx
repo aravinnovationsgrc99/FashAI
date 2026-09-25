@@ -39,7 +39,7 @@ export default function PrismScene() {
     // 1. Central Refractive Glass-Sculpture Prism (Sleek, transparent, non-obtrusive)
     const prismGeometry = new THREE.CylinderGeometry(0.85, 0.85, 1.8, isMobile ? 3 : 3, 1, false);
     const prismMaterial = new THREE.MeshPhysicalMaterial({
-      color: new THREE.Color("#FAB60A"),
+      color: new THREE.Color("#D4AF37"),
       transmission: isMobile ? 0.3 : 0.88,
       opacity: 0.45,
       transparent: true,
@@ -110,13 +110,13 @@ export default function PrismScene() {
 
     const nodePositions = isMobile
       ? [
-          { x: -1.2, y: 0.9, z: 0.3, color: "#FAB60A", edge: "#F15E1C" },
+          { x: -1.2, y: 0.9, z: 0.3, color: "#D4AF37", edge: "#F15E1C" },
           { x: 1.2, y: -0.8, z: -0.3, color: "#2E936F", edge: "#FFEC69" },
         ]
       : [
-          { x: -1.5, y: 1.1, z: 0.4, color: "#FAB60A", edge: "#F15E1C" },
+          { x: -1.5, y: 1.1, z: 0.4, color: "#D4AF37", edge: "#F15E1C" },
           { x: 1.7, y: -0.9, z: -0.4, color: "#2E936F", edge: "#FFEC69" },
-          { x: 1.3, y: 1.3, z: 0.6, color: "#F15E1C", edge: "#FAB60A" },
+          { x: 1.3, y: 1.3, z: 0.6, color: "#F15E1C", edge: "#D4AF37" },
           { x: -1.4, y: -1.1, z: 0.2, color: "#FFEC69", edge: "#2E936F" },
         ];
 
@@ -156,7 +156,7 @@ export default function PrismScene() {
     greenFillLight.position.set(-2, -1.5, 2);
     scene.add(greenFillLight);
 
-    const goldenHighlight = new THREE.PointLight(new THREE.Color("#FAB60A"), 1.2, 6);
+    const goldenHighlight = new THREE.PointLight(new THREE.Color("#D4AF37"), 1.2, 6);
     goldenHighlight.position.set(2, 1.5, 2);
     scene.add(goldenHighlight);
 

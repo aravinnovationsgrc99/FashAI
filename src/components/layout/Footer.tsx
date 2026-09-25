@@ -77,7 +77,7 @@ export default function Footer() {
                   className="object-contain group-hover:scale-105 transition-transform duration-300"
                 />
               </div>
-              <span className="font-serif-display text-2xl sm:text-3xl font-light text-[#111111] dark:text-white uppercase tracking-tight group-hover:text-[#F15E1C] dark:group-hover:text-[#FAB60A] transition-colors duration-300">
+              <span className="font-serif-display text-2xl sm:text-3xl font-light text-[#111111] dark:text-white uppercase tracking-tight group-hover:text-[#F15E1C] dark:group-hover:text-[#D4AF37] transition-colors duration-300">
                 FashAI Universal
               </span>
             </Link>
@@ -92,7 +92,7 @@ export default function Footer() {
                 href="https://www.instagram.com/fashai_universal"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-black/10 dark:border-white/15 bg-white/80 dark:bg-white/10 text-xs font-syne font-semibold text-[#111111] dark:text-white hover:text-[#E4405F] dark:hover:text-[#FAB60A] hover:border-[#E4405F]/40 dark:hover:border-[#FAB60A] transition-all duration-300 shadow-sm"
+                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-black/10 dark:border-white/15 bg-white/80 dark:bg-white/10 text-xs font-syne font-semibold text-[#111111] dark:text-white hover:text-[#E4405F] dark:hover:text-[#D4AF37] hover:border-[#E4405F]/40 dark:hover:border-[#D4AF37] transition-all duration-300 shadow-sm"
               >
                 <Instagram className="w-3.5 h-3.5 text-[#E4405F]" />
                 <span>@fashai_universal</span>
@@ -103,7 +103,7 @@ export default function Footer() {
                 href="https://www.facebook.com/profile.php?id=61573489951314"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-black/10 dark:border-white/15 bg-white/80 dark:bg-white/10 text-xs font-syne font-semibold text-[#111111] dark:text-white hover:text-[#1877F2] dark:hover:text-[#FAB60A] hover:border-[#1877F2]/40 dark:hover:border-[#FAB60A] transition-all duration-300 shadow-sm"
+                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-black/10 dark:border-white/15 bg-white/80 dark:bg-white/10 text-xs font-syne font-semibold text-[#111111] dark:text-white hover:text-[#1877F2] dark:hover:text-[#D4AF37] hover:border-[#1877F2]/40 dark:hover:border-[#D4AF37] transition-all duration-300 shadow-sm"
               >
                 <Facebook className="w-3.5 h-3.5 text-[#1877F2]" />
                 <span>Facebook Page</span>
@@ -121,7 +121,7 @@ export default function Footer() {
             variants={columnVariants}
             className="md:col-span-3"
           >
-            <h4 className="font-syne text-xs tracking-caps text-[#F15E1C] dark:text-[#FAB60A] font-bold uppercase mb-4">
+            <h4 className="font-syne text-xs tracking-caps text-[#F15E1C] dark:text-[#D4AF37] font-bold uppercase mb-4">
               EXPLORE
             </h4>
             <ul className="space-y-2.5">
@@ -135,12 +135,12 @@ export default function Footer() {
                 <li key={idx}>
                   <Link
                     href={link.href}
-                    className="group inline-flex items-center gap-1.5 font-sans text-xs sm:text-sm text-[#111111] dark:text-white/90 hover:text-[#F15E1C] dark:hover:text-[#FAB60A] transition-colors duration-300"
+                    className="group inline-flex items-center gap-1.5 font-sans text-xs sm:text-sm text-[#111111] dark:text-white/90 hover:text-[#F15E1C] dark:hover:text-[#D4AF37] transition-colors duration-300"
                   >
                     <span className="transform group-hover:translate-x-1 transition-transform duration-300">
                       {link.label}
                     </span>
-                    <ArrowRight className="w-3 h-3 opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 text-[#F15E1C] dark:text-[#FAB60A] transition-all duration-300" />
+                    <ArrowRight className="w-3 h-3 opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 text-[#F15E1C] dark:text-[#D4AF37] transition-all duration-300" />
                   </Link>
                 </li>
               ))}
@@ -156,7 +156,7 @@ export default function Footer() {
             variants={columnVariants}
             className="md:col-span-4"
           >
-            <h4 className="font-syne text-xs tracking-caps text-[#F15E1C] dark:text-[#FAB60A] font-bold uppercase mb-4">
+            <h4 className="font-syne text-xs tracking-caps text-[#F15E1C] dark:text-[#D4AF37] font-bold uppercase mb-4">
               GET INVOLVED
             </h4>
             <ul className="space-y-2.5">
@@ -170,12 +170,12 @@ export default function Footer() {
                 <li key={idx}>
                   <Link
                     href={link.href}
-                    className="group inline-flex items-center gap-1.5 font-sans text-xs sm:text-sm text-[#111111] dark:text-white/90 hover:text-[#F15E1C] dark:hover:text-[#FAB60A] transition-colors duration-300"
+                    className="group inline-flex items-center gap-1.5 font-sans text-xs sm:text-sm text-[#111111] dark:text-white/90 hover:text-[#F15E1C] dark:hover:text-[#D4AF37] transition-colors duration-300"
                   >
                     <span className="transform group-hover:translate-x-1 transition-transform duration-300">
                       {link.label}
                     </span>
-                    <ArrowRight className="w-3 h-3 opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 text-[#F15E1C] dark:text-[#FAB60A] transition-all duration-300" />
+                    <ArrowRight className="w-3 h-3 opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 text-[#F15E1C] dark:text-[#D4AF37] transition-all duration-300" />
                   </Link>
                 </li>
               ))}
@@ -193,8 +193,8 @@ export default function Footer() {
           className="my-6 p-4 sm:p-5 rounded-xl border border-black/10 dark:border-white/15 bg-white/90 dark:bg-black/50 backdrop-blur-md flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 shadow-sm"
         >
           <div className="flex items-center gap-3.5">
-            <div className="w-10 h-10 rounded-full bg-[#1877F2]/10 dark:bg-[#FAB60A]/15 border border-[#1877F2]/30 dark:border-[#FAB60A]/30 flex items-center justify-center shrink-0">
-              <Facebook className="w-5 h-5 text-[#1877F2] dark:text-[#FAB60A]" />
+            <div className="w-10 h-10 rounded-full bg-[#1877F2]/10 dark:bg-[#D4AF37]/15 border border-[#1877F2]/30 dark:border-[#D4AF37]/30 flex items-center justify-center shrink-0">
+              <Facebook className="w-5 h-5 text-[#1877F2] dark:text-[#D4AF37]" />
             </div>
             <div>
               <h5 className="font-syne text-xs sm:text-sm font-bold text-[#111111] dark:text-white uppercase tracking-wider">
@@ -210,7 +210,7 @@ export default function Footer() {
             href="https://www.facebook.com/profile.php?id=61573489951314"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center justify-center gap-2 bg-[#FAB60A] text-[#111111] hover:bg-[#FFEC69] font-syne font-bold text-xs tracking-caps px-5 py-3 rounded-xl transition-all duration-300 shadow-md shrink-0 whitespace-nowrap w-full sm:w-auto"
+            className="inline-flex items-center justify-center gap-2 bg-[#D4AF37] text-[#111111] hover:bg-[#FFEC69] font-syne font-bold text-xs tracking-caps px-5 py-3 rounded-xl transition-all duration-300 shadow-md shrink-0 whitespace-nowrap w-full sm:w-auto"
           >
             <span>VIEW SOCIALS</span>
             <ArrowUpRight className="w-4 h-4" />
@@ -233,11 +233,11 @@ export default function Footer() {
 
           {/* CENTER: Privacy & Terms */}
           <div className="flex items-center gap-4 sm:gap-6 text-xs">
-            <Link href="/privacy" className="hover:text-[#F15E1C] dark:hover:text-[#FAB60A] transition-colors">
+            <Link href="/privacy" className="hover:text-[#F15E1C] dark:hover:text-[#D4AF37] transition-colors">
               Privacy Policy
             </Link>
             <span className="text-black/30 dark:text-white/20">•</span>
-            <Link href="/terms" className="hover:text-[#F15E1C] dark:hover:text-[#FAB60A] transition-colors">
+            <Link href="/terms" className="hover:text-[#F15E1C] dark:hover:text-[#D4AF37] transition-colors">
               Terms &amp; Conditions
             </Link>
           </div>

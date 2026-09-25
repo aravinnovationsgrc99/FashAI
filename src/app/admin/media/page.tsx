@@ -172,18 +172,18 @@ export default function MediaLibraryPage() {
       {/* HEADER */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-white/10 pb-4">
         <div>
-          <span className="font-syne text-[10px] font-bold uppercase tracking-[0.2em] text-[#FAB60A]">
+          <span className="font-syne text-[10px] font-bold uppercase tracking-[0.2em] text-[#D4AF37]">
             CONTENT ASSETS
           </span>
           <h1 className="font-serif-display text-2xl sm:text-3xl font-light uppercase tracking-tight text-white">
-            MEDIA <span className="text-[#FAB60A]">LIBRARY</span>
+            MEDIA <span className="text-[#D4AF37]">LIBRARY</span>
           </h1>
           <p className="font-sans text-xs text-white/60">
             Upload images &amp; videos, inspect asset details, and verify &quot;Used In&quot; section dependencies.
           </p>
         </div>
 
-        <label className="bg-[#FAB60A] hover:bg-[#FFEC69] text-black px-4 py-2 rounded-xl font-syne text-xs font-bold uppercase transition-all flex items-center gap-2 cursor-pointer shadow-md shrink-0">
+        <label className="bg-[#D4AF37] hover:bg-[#FFEC69] text-black px-4 py-2 rounded-xl font-syne text-xs font-bold uppercase transition-all flex items-center gap-2 cursor-pointer shadow-md shrink-0">
           <Upload className="w-4 h-4" />
           <span>{uploading ? "Uploading..." : "Upload Media"}</span>
           <input
@@ -204,11 +204,11 @@ export default function MediaLibraryPage() {
         onDrop={handleDrop}
         className={`p-6 rounded-2xl border-2 border-dashed transition-all text-center flex flex-col items-center justify-center gap-2 ${
           isDragging
-            ? "border-[#FAB60A] bg-[#FAB60A]/10 scale-[1.01]"
+            ? "border-[#D4AF37] bg-[#D4AF37]/10 scale-[1.01]"
             : "border-white/15 bg-[#0F0E0D] hover:border-white/30"
         }`}
       >
-        <div className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-[#FAB60A]">
+        <div className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-[#D4AF37]">
           <Upload className="w-5 h-5" />
         </div>
         <div className="text-xs font-syne font-bold text-white uppercase tracking-wider">
@@ -229,7 +229,7 @@ export default function MediaLibraryPage() {
               onClick={() => setTabFilter(tab)}
               className={`px-3 py-1.5 rounded-lg text-xs font-syne transition-all ${
                 tabFilter === tab
-                  ? "bg-[#FAB60A] text-black font-bold shadow"
+                  ? "bg-[#D4AF37] text-black font-bold shadow"
                   : "text-white/60 hover:text-white"
               }`}
             >
@@ -246,7 +246,7 @@ export default function MediaLibraryPage() {
             placeholder="Search media..."
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
-            className="w-full bg-[#1A1918] border border-white/10 rounded-xl pl-9 pr-3 py-1.5 text-xs text-white placeholder-white/40 focus:outline-none focus:border-[#FAB60A]"
+            className="w-full bg-[#1A1918] border border-white/10 rounded-xl pl-9 pr-3 py-1.5 text-xs text-white placeholder-white/40 focus:outline-none focus:border-[#D4AF37]"
           />
         </div>
       </div>
@@ -281,14 +281,14 @@ export default function MediaLibraryPage() {
                 }}
                 className={`group relative bg-[#0F0E0D] border rounded-2xl overflow-hidden cursor-pointer transition-all ${
                   isSelected
-                    ? "border-[#FAB60A] ring-2 ring-[#FAB60A]/40"
+                    ? "border-[#D4AF37] ring-2 ring-[#D4AF37]/40"
                     : "border-white/10 hover:border-white/30"
                 }`}
               >
                 <div className="aspect-square bg-black relative flex items-center justify-center overflow-hidden">
                   {isVideo ? (
                     <div className="flex flex-col items-center justify-center gap-1.5 text-white/70">
-                      <Film className="w-7 h-7 text-[#FAB60A]" />
+                      <Film className="w-7 h-7 text-[#D4AF37]" />
                       <span className="text-[9px] font-syne font-bold uppercase">VIDEO</span>
                     </div>
                   ) : (
@@ -307,7 +307,7 @@ export default function MediaLibraryPage() {
                   </div>
                   <div className="flex items-center justify-between text-[10px] text-white/50">
                     <span>{(item.size / 1024).toFixed(0)} KB</span>
-                    <span className="text-[#FAB60A] uppercase font-mono">{item.category}</span>
+                    <span className="text-[#D4AF37] uppercase font-mono">{item.category}</span>
                   </div>
                 </div>
               </div>
@@ -321,7 +321,7 @@ export default function MediaLibraryPage() {
         <div className="fixed inset-y-0 right-0 z-[200] w-full max-w-sm bg-[#11100F] border-l border-white/20 p-6 flex flex-col justify-between shadow-2xl animate-in slide-in-from-right duration-200">
           <div className="space-y-5 overflow-y-auto">
             <div className="flex items-center justify-between border-b border-white/10 pb-3">
-              <span className="font-syne text-[10px] text-[#FAB60A] uppercase tracking-widest font-bold">
+              <span className="font-syne text-[10px] text-[#D4AF37] uppercase tracking-widest font-bold">
                 ASSET DETAILS
               </span>
               <button
@@ -336,7 +336,7 @@ export default function MediaLibraryPage() {
             <div className="aspect-video bg-black rounded-xl overflow-hidden border border-white/10 relative flex items-center justify-center">
               {selectedMedia.type === "video" || selectedMedia.filename.endsWith(".mp4") ? (
                 <div className="flex flex-col items-center justify-center gap-2 text-white/70">
-                  <Film className="w-8 h-8 text-[#FAB60A]" />
+                  <Film className="w-8 h-8 text-[#D4AF37]" />
                   <span className="text-xs font-syne font-bold">VIDEO FILE</span>
                 </div>
               ) : (
@@ -365,7 +365,7 @@ export default function MediaLibraryPage() {
               </div>
               <div className="flex justify-between border-b border-white/5 pb-1">
                 <span className="text-white/50 font-syne">Category:</span>
-                <span className="text-[#FAB60A] uppercase font-mono">
+                <span className="text-[#D4AF37] uppercase font-mono">
                   {selectedMedia.category}
                 </span>
               </div>
@@ -373,7 +373,7 @@ export default function MediaLibraryPage() {
 
             {/* USED IN FEATURE (Section 11) */}
             <div className="bg-[#1A1918] border border-white/10 p-3.5 rounded-2xl space-y-2">
-              <div className="text-xs font-syne font-bold text-[#FAB60A] uppercase tracking-wider">
+              <div className="text-xs font-syne font-bold text-[#D4AF37] uppercase tracking-wider">
                 USED IN:
               </div>
               <ul className="space-y-1 text-xs text-white/80 font-sans">
@@ -394,7 +394,7 @@ export default function MediaLibraryPage() {
                 value={altTextInput}
                 onChange={(e) => setAltTextInput(e.target.value)}
                 placeholder="Accessibility description..."
-                className="w-full bg-[#1A1918] border border-white/10 rounded-xl px-3 py-2 text-xs text-white focus:outline-none focus:border-[#FAB60A]"
+                className="w-full bg-[#1A1918] border border-white/10 rounded-xl px-3 py-2 text-xs text-white focus:outline-none focus:border-[#D4AF37]"
               />
             </div>
           </div>

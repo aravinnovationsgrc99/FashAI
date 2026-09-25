@@ -22,7 +22,7 @@ export default function ThemeControlPage() {
     "#111111",
     "#F15E1C",
     "#2E936F",
-    "#FAB60A",
+    "#D4AF37",
     "#FFEC69",
     "#F7D7B0",
   ];
@@ -33,7 +33,7 @@ export default function ThemeControlPage() {
       primaryText: "#111111",
       secondaryText: "#333333",
       primaryAccent: "#F15E1C",
-      secondaryAccent: "#FAB60A",
+      secondaryAccent: "#D4AF37",
       softSurface: "#FAF8F5",
       border: "rgba(0, 0, 0, 0.1)",
     },
@@ -41,7 +41,7 @@ export default function ThemeControlPage() {
       background: "#111111",
       primaryText: "#FFFFFF",
       secondaryText: "#E0E0E0",
-      primaryAccent: "#FAB60A",
+      primaryAccent: "#D4AF37",
       secondaryAccent: "#F15E1C",
       softSurface: "#181716",
       border: "rgba(255, 255, 255, 0.1)",
@@ -65,7 +65,7 @@ export default function ThemeControlPage() {
     { key: "background", label: "BACKGROUND", desc: "Main website background color" },
     { key: "primaryText", label: "PRIMARY TEXT", desc: "Headings, titles, and high-contrast text" },
     { key: "secondaryText", label: "SECONDARY TEXT", desc: "Body text, captions, and muted labels" },
-    { key: "primaryAccent", label: "PRIMARY ACCENT", desc: "Primary CTA buttons & active highlights (#FAB60A / #F15E1C)" },
+    { key: "primaryAccent", label: "PRIMARY ACCENT", desc: "Primary CTA buttons & active highlights (#D4AF37 / #F15E1C)" },
     { key: "secondaryAccent", label: "SECONDARY ACCENT", desc: "Secondary pills, badges, and icon accents (#2E936F)" },
   ];
 
@@ -74,11 +74,11 @@ export default function ThemeControlPage() {
       {/* HEADER */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-white/10 pb-4">
         <div>
-          <span className="font-syne text-[10px] font-bold uppercase tracking-[0.2em] text-[#FAB60A]">
+          <span className="font-syne text-[10px] font-bold uppercase tracking-[0.2em] text-[#D4AF37]">
             VISUAL BRANDING
           </span>
           <h1 className="font-serif-display text-2xl sm:text-3xl font-light uppercase tracking-tight text-white">
-            THEME &amp; <span className="text-[#FAB60A]">COLOR PALETTE</span>
+            THEME &amp; <span className="text-[#D4AF37]">COLOR PALETTE</span>
           </h1>
           <p className="font-sans text-xs text-white/60">
             Configure approved FashAI color swatches for Light &amp; Dark mode with live visual previews.
@@ -90,13 +90,13 @@ export default function ThemeControlPage() {
             onClick={resetThemeDefaults}
             className="bg-white/10 hover:bg-white/20 text-white px-3.5 py-2 rounded-xl font-syne text-xs font-bold uppercase transition-all flex items-center gap-1.5 border border-white/15"
           >
-            <RotateCcw className="w-3.5 h-3.5 text-[#FAB60A]" />
+            <RotateCcw className="w-3.5 h-3.5 text-[#D4AF37]" />
             <span>RESET TO FASHAI DEFAULTS</span>
           </button>
 
           <button
             onClick={() => setIsPreviewOpen(true)}
-            className="bg-[#FAB60A] hover:bg-[#FFEC69] text-black px-4 py-2 rounded-xl font-syne text-xs font-bold uppercase transition-all flex items-center gap-1.5 shadow-md shrink-0"
+            className="bg-[#D4AF37] hover:bg-[#FFEC69] text-black px-4 py-2 rounded-xl font-syne text-xs font-bold uppercase transition-all flex items-center gap-1.5 shadow-md shrink-0"
           >
             <Eye className="w-3.5 h-3.5" />
             <span>PREVIEW CHANGES</span>
@@ -107,7 +107,7 @@ export default function ThemeControlPage() {
       {/* APPROVED FASHAI COLOR PALETTE SWATCHES (Section 16) */}
       <div className="p-4 rounded-2xl bg-[#0F0E0D] border border-white/10 space-y-2">
         <div className="flex items-center justify-between">
-          <span className="text-xs font-syne font-bold uppercase text-[#FAB60A] tracking-wider">
+          <span className="text-xs font-syne font-bold uppercase text-[#D4AF37] tracking-wider">
             APPROVED FASHAI BRAND PALETTE
           </span>
           <span className="text-[10px] font-mono text-white/40">7 Curated Tokens</span>
@@ -134,7 +134,7 @@ export default function ThemeControlPage() {
           onClick={() => setActiveTab("dark")}
           className={`px-4 py-2 rounded-xl text-xs font-syne font-bold transition-all ${
             activeTab === "dark"
-              ? "bg-[#FAB60A] text-black shadow-lg"
+              ? "bg-[#D4AF37] text-black shadow-lg"
               : "text-white/60 hover:text-white bg-white/5"
           }`}
         >
@@ -175,7 +175,7 @@ export default function ThemeControlPage() {
                       style={{ backgroundColor: currentColor }}
                       className="w-6 h-6 rounded-full border border-white/30 shadow-md"
                     />
-                    <span className="font-mono text-xs font-bold text-[#FAB60A]">
+                    <span className="font-mono text-xs font-bold text-[#D4AF37]">
                       {currentColor}
                     </span>
                   </div>
@@ -189,7 +189,7 @@ export default function ThemeControlPage() {
                       onClick={() => handleColorChange(activeTab, token.key, swatch)}
                       style={{ backgroundColor: swatch }}
                       className={`w-7 h-7 rounded-full border-2 transition-transform hover:scale-110 ${
-                        currentColor === swatch ? "border-[#FAB60A] ring-2 ring-[#FAB60A]/50 scale-110" : "border-white/20"
+                        currentColor === swatch ? "border-[#D4AF37] ring-2 ring-[#D4AF37]/50 scale-110" : "border-white/20"
                       }`}
                       title={`Select ${swatch}`}
                     />
@@ -209,7 +209,7 @@ export default function ThemeControlPage() {
 
         {/* RIGHT 5-COLS: LIVE COMPONENT PREVIEW CARD (Section 16) */}
         <div className="lg:col-span-5 space-y-3">
-          <span className="text-xs font-syne font-bold text-[#FAB60A] uppercase tracking-wider">
+          <span className="text-xs font-syne font-bold text-[#D4AF37] uppercase tracking-wider">
             {activeTab.toUpperCase()} MODE LIVE COMPONENT PREVIEW
           </span>
 

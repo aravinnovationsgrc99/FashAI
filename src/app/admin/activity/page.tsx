@@ -65,7 +65,7 @@ export default function ActivityLogPage() {
                 {logs.map((log) => (
                   <tr key={log.id} className="hover:bg-white/5 transition-colors">
                     <td className="p-4">
-                      <span className="px-2.5 py-1 rounded-md bg-[#FAB60A]/10 text-[#FAB60A] font-syne text-[10px] font-bold uppercase border border-[#FAB60A]/20">
+                      <span className="px-2.5 py-1 rounded-md bg-[#D4AF37]/10 text-[#D4AF37] font-syne text-[10px] font-bold uppercase border border-[#D4AF37]/20">
                         {log.category}
                       </span>
                     </td>

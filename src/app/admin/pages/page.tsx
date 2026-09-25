@@ -69,7 +69,7 @@ export default function PageManagerPage() {
           >
             <div className="flex items-center justify-between border-b border-white/10 pb-3">
               <div className="flex items-center gap-3">
-                <span className="font-mono text-xs text-[#FAB60A] font-bold bg-[#FAB60A]/10 px-2.5 py-1 rounded-md border border-[#FAB60A]/20">
+                <span className="font-mono text-xs text-[#D4AF37] font-bold bg-[#D4AF37]/10 px-2.5 py-1 rounded-md border border-[#D4AF37]/20">
                   {page.route}
                 </span>
                 <span className="font-syne text-xs font-bold uppercase text-white">

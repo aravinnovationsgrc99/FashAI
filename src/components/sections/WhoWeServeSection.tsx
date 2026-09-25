@@ -103,7 +103,7 @@ export default function WhoWeServeSection() {
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 pb-3 border-b border-black/10 dark:border-white/10 mb-4 sm:mb-5">
           <div>
             <h2 className="font-serif-display text-3xl sm:text-5xl lg:text-6xl font-light text-[#111111] dark:text-brand-white uppercase leading-tight tracking-tight">
-              CREATIVE <span className="font-serif italic font-normal text-[#F15E1C] dark:text-[#FAB60A]">ECOSYSTEM</span>
+              CREATIVE <span className="font-serif italic font-normal text-[#F15E1C] dark:text-[#D4AF37]">ECOSYSTEM</span>
             </h2>
           </div>
         </div>
@@ -115,7 +115,7 @@ export default function WhoWeServeSection() {
             className="w-full px-4 py-3 bg-[#FAF8F5] dark:bg-[#0A0908] border border-black/10 dark:border-white/10 rounded-lg flex items-center justify-between text-left shadow-sm"
           >
             <div>
-              <span className="text-[10px] font-syne uppercase text-[#F15E1C] dark:text-[#FAB60A] tracking-wider block font-bold">
+              <span className="text-[10px] font-syne uppercase text-[#F15E1C] dark:text-[#D4AF37] tracking-wider block font-bold">
                 DISCIPLINES
               </span>
               <span className="font-serif-display text-lg font-normal text-black dark:text-white uppercase">
@@ -140,8 +140,8 @@ export default function WhoWeServeSection() {
                   }}
                   className={`w-full px-4 py-2.5 text-left flex items-center justify-between text-xs font-syne uppercase tracking-wider transition-colors ${
                     activeDiscipline.id === item.id
-                      ? "bg-[#F15E1C]/10 dark:bg-[#FAB60A]/10 text-[#F15E1C] dark:text-[#FAB60A] font-bold"
-                      : "text-black dark:text-white/80 hover:text-[#F15E1C] dark:hover:text-[#FAB60A] hover:bg-black/5 dark:hover:bg-white/5"
+                      ? "bg-[#F15E1C]/10 dark:bg-[#D4AF37]/10 text-[#F15E1C] dark:text-[#D4AF37] font-bold"
+                      : "text-black dark:text-white/80 hover:text-[#F15E1C] dark:hover:text-[#D4AF37] hover:bg-black/5 dark:hover:bg-white/5"
                   }`}
                 >
                   <span>{item.label}</span>
@@ -192,7 +192,7 @@ export default function WhoWeServeSection() {
                 className="space-y-3 pt-1"
               >
                 <div>
-                  <span className="text-[11px] font-syne tracking-widest text-[#F15E1C] dark:text-[#FAB60A] font-bold uppercase block mb-1">
+                  <span className="text-[11px] font-syne tracking-widest text-[#F15E1C] dark:text-[#D4AF37] font-bold uppercase block mb-1">
                     {activeDiscipline.category}
                   </span>
                   <h3 className="font-serif-display text-2xl sm:text-3xl font-light text-black dark:text-white uppercase leading-tight">
@@ -221,7 +221,7 @@ export default function WhoWeServeSection() {
 
           {/* RIGHT: Editorial Discipline Rail (~42% width ~ 5 cols) */}
           <div className="hidden lg:flex lg:col-span-5 flex-col pl-2 self-stretch">
-            <span className="text-[11px] font-syne tracking-widest text-[#F15E1C] dark:text-[#FAB60A] font-bold uppercase mb-3">
+            <span className="text-[11px] font-syne tracking-widest text-[#F15E1C] dark:text-[#D4AF37] font-bold uppercase mb-3">
               DISCIPLINES
             </span>
 
@@ -229,7 +229,7 @@ export default function WhoWeServeSection() {
               {/* Subtle Editorial Vertical Guide Line */}
               <div className="relative w-[2px] bg-black/10 dark:bg-white/10 rounded-full my-1 self-stretch">
                 <motion.div
-                  className="absolute left-0 w-full bg-[#F15E1C] dark:bg-[#FAB60A] rounded-full shadow-sm"
+                  className="absolute left-0 w-full bg-[#F15E1C] dark:bg-[#D4AF37] rounded-full shadow-sm"
                   animate={{
                     height: `${100 / DISCIPLINES.length}%`,
                     top: `${(activeIndex * 100) / DISCIPLINES.length}%`,
@@ -252,8 +252,8 @@ export default function WhoWeServeSection() {
                       <span
                         className={`font-serif-display text-xl lg:text-2xl font-light tracking-wide uppercase transition-colors duration-200 ${
                           isActive
-                            ? "text-[#F15E1C] dark:text-[#FAB60A] font-normal"
-                            : "text-black dark:text-white/80 group-hover:text-[#F15E1C] dark:group-hover:text-[#FAB60A]"
+                            ? "text-[#F15E1C] dark:text-[#D4AF37] font-normal"
+                            : "text-black dark:text-white/80 group-hover:text-[#F15E1C] dark:group-hover:text-[#D4AF37]"
                         }`}
                       >
                         {item.label}
@@ -262,8 +262,8 @@ export default function WhoWeServeSection() {
                       <ArrowUpRight
                         className={`w-4 h-4 transition-all duration-300 ${
                           isActive
-                            ? "text-[#F15E1C] dark:text-[#FAB60A] translate-x-0.5 -translate-y-0.5 opacity-100"
-                            : "text-black/30 dark:text-white/30 opacity-0 group-hover:opacity-100 group-hover:text-[#F15E1C] dark:group-hover:text-[#FAB60A]"
+                            ? "text-[#F15E1C] dark:text-[#D4AF37] translate-x-0.5 -translate-y-0.5 opacity-100"
+                            : "text-black/30 dark:text-white/30 opacity-0 group-hover:opacity-100 group-hover:text-[#F15E1C] dark:group-hover:text-[#D4AF37]"
                         }`}
                       />
                     </div>

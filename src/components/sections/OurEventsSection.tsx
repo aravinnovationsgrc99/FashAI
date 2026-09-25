@@ -40,7 +40,7 @@ export default function OurEventsSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="group relative bg-[#090807] border border-[#FAB60A]/40 p-6 sm:p-8 flex flex-col justify-between min-h-[380px] sm:min-h-[420px] overflow-hidden rounded-2xl shadow-xl"
+            className="group relative bg-[#090807] border border-[#D4AF37]/40 p-6 sm:p-8 flex flex-col justify-between min-h-[380px] sm:min-h-[420px] overflow-hidden rounded-2xl shadow-xl"
           >
             {/* Full-Bleed Crisp Banner Image Layer */}
             <div className="absolute inset-0 z-0 opacity-90 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none">
@@ -57,7 +57,7 @@ export default function OurEventsSection() {
 
             <div className="relative z-10">
               <div className="flex justify-between items-start mb-3">
-                <span className="text-[11px] sm:text-xs font-syne tracking-[0.2em] text-[#FAB60A] uppercase font-extrabold drop-shadow">
+                <span className="text-[11px] sm:text-xs font-syne tracking-[0.2em] text-[#D4AF37] uppercase font-extrabold drop-shadow">
                   FLAGSHIP EXPERIENCE
                 </span>
               </div>
@@ -85,17 +85,17 @@ export default function OurEventsSection() {
                     href="https://www.facebook.com/profile.php?id=61573489951314"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1 bg-[#FAB60A] text-[#111111] hover:bg-[#FFEC69] px-3 py-1 text-[10px] font-syne font-bold uppercase rounded-lg shadow-sm"
+                    className="inline-flex items-center gap-1 bg-[#D4AF37] text-[#111111] hover:bg-[#FFEC69] px-3 py-1 text-[10px] font-syne font-bold uppercase rounded-lg shadow-sm"
                   >
                     <span>VIEW</span>
                     <span>↗</span>
                   </a>
                 </div>
-                <div className="border border-[#FAB60A]/60 bg-black/90 backdrop-blur-md px-3.5 py-2 rounded-xl shadow-md">
-                  <span className="block text-[9px] font-syne tracking-wider text-[#FAB60A] uppercase font-bold">
+                <div className="border border-[#D4AF37]/60 bg-black/90 backdrop-blur-md px-3.5 py-2 rounded-xl shadow-md">
+                  <span className="block text-[9px] font-syne tracking-wider text-[#D4AF37] uppercase font-bold">
                     2026 · DUBAI
                   </span>
-                  <span className="font-syne text-xs text-[#FAB60A] font-extrabold uppercase">
+                  <span className="font-syne text-xs text-[#D4AF37] font-extrabold uppercase">
                     Upcoming Edition
                   </span>
                 </div>
@@ -105,7 +105,7 @@ export default function OurEventsSection() {
             <div className="relative z-10 pt-4 border-t border-white/20 flex justify-between items-center">
               <Link
                 href="/2026"
-                className="inline-flex items-center gap-2 bg-[#FAB60A] text-[#111111] px-5 py-2.5 text-xs font-syne tracking-caps font-bold hover:bg-[#FFEC69] transition-all group/btn shadow-lg rounded-full"
+                className="inline-flex items-center gap-2 bg-[#D4AF37] text-[#111111] px-5 py-2.5 text-xs font-syne tracking-caps font-bold hover:bg-[#FFEC69] transition-all group/btn shadow-lg rounded-full"
               >
                 <span className="text-[#111111] font-extrabold">EXPLORE LIFESTYLE</span>
                 <ArrowUpRight className="w-4 h-4 text-[#111111] group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5 transition-transform" />
@@ -119,7 +119,7 @@ export default function OurEventsSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="group relative bg-[#090807] border border-[#FAB60A]/40 p-6 sm:p-8 flex flex-col justify-between min-h-[380px] sm:min-h-[420px] overflow-hidden rounded-2xl shadow-xl"
+            className="group relative bg-[#090807] border border-[#D4AF37]/40 p-6 sm:p-8 flex flex-col justify-between min-h-[380px] sm:min-h-[420px] overflow-hidden rounded-2xl shadow-xl"
           >
             {/* Full-Bleed Crisp Banner Image Layer */}
             <div className="absolute inset-0 z-0 opacity-90 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none">
@@ -136,7 +136,7 @@ export default function OurEventsSection() {
 
             <div className="relative z-10">
               <div className="flex justify-between items-start mb-3">
-                <span className="text-[11px] sm:text-xs font-syne tracking-[0.2em] text-[#FAB60A] uppercase font-extrabold drop-shadow">
+                <span className="text-[11px] sm:text-xs font-syne tracking-[0.2em] text-[#D4AF37] uppercase font-extrabold drop-shadow">
                   PRESENTATION EXPERIENCE
                 </span>
               </div>
@@ -165,10 +165,10 @@ export default function OurEventsSection() {
             <div className="relative z-10 pt-4 border-t border-white/20 flex justify-between items-center">
               <Link
                 href="/gallery"
-                className="inline-flex items-center gap-2 border border-[#FAB60A] bg-black/80 backdrop-blur-sm px-5 py-2.5 text-xs font-syne tracking-caps font-bold text-white keep-white hover:bg-[#FAB60A] hover:text-[#111111] transition-all group/btn rounded-full shadow-lg"
+                className="inline-flex items-center gap-2 border border-[#D4AF37] bg-black/80 backdrop-blur-sm px-5 py-2.5 text-xs font-syne tracking-caps font-bold text-white keep-white hover:bg-[#D4AF37] hover:text-[#111111] transition-all group/btn rounded-full shadow-lg"
               >
                 <span>EXPLORE RUNWAY</span>
-                <ArrowUpRight className="w-4 h-4 text-[#FAB60A] group-hover/btn:text-[#111111] group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5 transition-transform" />
+                <ArrowUpRight className="w-4 h-4 text-[#D4AF37] group-hover/btn:text-[#111111] group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5 transition-transform" />
               </Link>
             </div>
           </motion.div>

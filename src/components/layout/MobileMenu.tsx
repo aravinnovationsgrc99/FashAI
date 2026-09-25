@@ -98,7 +98,7 @@ export default function MobileMenu({
                 </div>
                 <div className="flex flex-col justify-center">
                   <span className="font-serif-display text-base font-light tracking-wider text-[#111111] dark:text-white uppercase leading-none">
-                    FashAI <span className="font-serif italic font-normal text-[#F15E1C] dark:text-[#FAB60A] capitalize">Universal</span>
+                    FashAI <span className="font-serif italic font-normal text-[#F15E1C] dark:text-[#D4AF37] capitalize">Universal</span>
                   </span>
                 </div>
               </Link>
@@ -111,7 +111,7 @@ export default function MobileMenu({
                 <Link
                   href="/contact"
                   onClick={onClose}
-                  className="hidden xs:inline-flex items-center justify-center bg-[#FAB60A] text-[#111111] hover:bg-[#FFEC69] font-syne text-[11px] font-bold tracking-wider uppercase px-3.5 py-2 rounded-full transition-all shadow-md shrink-0"
+                  className="hidden xs:inline-flex items-center justify-center bg-[#D4AF37] text-[#111111] hover:bg-[#FFEC69] font-syne text-[11px] font-bold tracking-wider uppercase px-3.5 py-2 rounded-full transition-all shadow-md shrink-0"
                 >
                   CONTACT US →
                 </Link>
@@ -147,8 +147,8 @@ export default function MobileMenu({
                       onClick={onClose}
                       className={`group flex items-center justify-between py-3.5 px-2 border-b border-black/10 dark:border-white/10 transition-all duration-200 ${
                         isActive
-                          ? "text-[#F15E1C] dark:text-[#FAB60A] font-bold"
-                          : "text-[#111111] dark:text-white/90 hover:text-[#F15E1C] dark:hover:text-[#FAB60A]"
+                          ? "text-[#F15E1C] dark:text-[#D4AF37] font-bold"
+                          : "text-[#111111] dark:text-white/90 hover:text-[#F15E1C] dark:hover:text-[#D4AF37]"
                       }`}
                     >
                       <span className="font-syne text-lg sm:text-xl font-bold tracking-[0.15em] uppercase">
@@ -157,8 +157,8 @@ export default function MobileMenu({
                       <ArrowRight
                         className={`w-5 h-5 transition-transform duration-300 ${
                           isActive
-                            ? "text-[#F15E1C] dark:text-[#FAB60A] translate-x-1"
-                            : "text-neutral-400 dark:text-white/50 group-hover:text-[#F15E1C] dark:group-hover:text-[#FAB60A] group-hover:translate-x-1"
+                            ? "text-[#F15E1C] dark:text-[#D4AF37] translate-x-1"
+                            : "text-neutral-400 dark:text-white/50 group-hover:text-[#F15E1C] dark:group-hover:text-[#D4AF37] group-hover:translate-x-1"
                         }`}
                       />
                     </Link>
@@ -177,16 +177,16 @@ export default function MobileMenu({
               <Link
                 href="/services"
                 onClick={onClose}
-                className="w-full border border-[#F15E1C]/40 dark:border-[#FAB60A]/40 bg-[#F15E1C]/10 dark:bg-[#FAB60A]/10 hover:bg-[#F15E1C]/20 text-[#111111] dark:text-white py-2.5 text-center font-syne text-xs tracking-wider font-bold transition-all rounded-full shadow-sm flex items-center justify-center gap-2"
+                className="w-full border border-[#F15E1C]/40 dark:border-[#D4AF37]/40 bg-[#F15E1C]/10 dark:bg-[#D4AF37]/10 hover:bg-[#F15E1C]/20 text-[#111111] dark:text-white py-2.5 text-center font-syne text-xs tracking-wider font-bold transition-all rounded-full shadow-sm flex items-center justify-center gap-2"
               >
-                <Sparkles className="w-3.5 h-3.5 text-[#F15E1C] dark:text-[#FAB60A]" />
+                <Sparkles className="w-3.5 h-3.5 text-[#F15E1C] dark:text-[#D4AF37]" />
                 <span>EXPLORE SERVICES &amp; FORMATS →</span>
               </Link>
 
               <Link
                 href="/contact"
                 onClick={onClose}
-                className="w-full bg-[#FAB60A] hover:bg-[#FFEC69] py-3 text-center font-syne text-xs tracking-wider font-bold text-[#111111] transition-colors rounded-full shadow-md flex items-center justify-center gap-2"
+                className="w-full bg-[#D4AF37] hover:bg-[#FFEC69] py-3 text-center font-syne text-xs tracking-wider font-bold text-[#111111] transition-colors rounded-full shadow-md flex items-center justify-center gap-2"
               >
                 <span>CONTACT US →</span>
               </Link>
