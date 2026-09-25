@@ -7,6 +7,7 @@ import { usePathname } from "next/navigation";
 import { Menu, ArrowRight } from "lucide-react";
 import MobileMenu from "./MobileMenu";
 import ThemeToggle from "../ui/ThemeToggle";
+import GradientFlowText from "../ui/GradientFlowText";
 import { useSiteConfig } from "@/context/SiteConfigContext";
 
 export default function Header() {
@@ -164,7 +165,9 @@ export default function Header() {
               }`}
               data-cursor="explore"
             >
-              CONTACT US →
+              <GradientFlowText variant="primary">
+                CONTACT US →
+              </GradientFlowText>
             </Link>
 
             {/* CIRCULAR MOBILE HAMBURGER BUTTON */}

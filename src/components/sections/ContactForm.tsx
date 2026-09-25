@@ -3,6 +3,8 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { Loader2, CheckCircle2, AlertCircle } from "lucide-react";
+import GradientFlowText from "../ui/GradientFlowText";
+import SubmitSuccessExpand from "../ui/SubmitSuccessExpand";
 
 export default function ContactForm() {
   const [formData, setFormData] = useState({
@@ -85,12 +87,8 @@ export default function ContactForm() {
 
       {/* Right Column: Editorial Form */}
       <div className="lg:col-span-7 bg-brand-charcoal/80 p-8 sm:p-12 border border-hairline-gold relative shadow-2xl">
-        {status === "success" ? (
-          <motion.div
-            initial={{ opacity: 0, scale: 0.96 }}
-            animate={{ opacity: 1, scale: 1 }}
-            className="py-16 text-center flex flex-col items-center"
-          >
+        <SubmitSuccessExpand show={status === "success"}>
+          <div className="py-16 text-center flex flex-col items-center">
             <CheckCircle2 className="h-16 w-16 text-brand-gold mb-6" />
             <h3 className="font-serif-display text-3xl text-brand-off-white mb-3">
               ENQUIRY RECEIVED
@@ -102,10 +100,12 @@ export default function ContactForm() {
               onClick={() => setStatus("idle")}
               className="bg-brand-orange px-8 py-4 text-xs font-syne tracking-caps font-bold text-white hover:bg-[#ff6f2d] transition-colors shadow-md"
             >
-              SEND ANOTHER MESSAGE ↗
+              <GradientFlowText variant="gold">SEND ANOTHER MESSAGE ↗</GradientFlowText>
             </button>
-          </motion.div>
-        ) : (
+          </div>
+        </SubmitSuccessExpand>
+
+        {status !== "success" && (
           <form onSubmit={handleSubmit} className="space-y-8">
             {status === "error" && (
               <div className="flex items-center gap-3 border border-red-500/50 bg-red-500/10 p-4 text-xs font-syne text-red-400">
@@ -212,7 +212,7 @@ export default function ContactForm() {
                     <span>SENDING ENQUIRY...</span>
                   </>
                 ) : (
-                  <span>SEND ENQUIRY ↗</span>
+                  <GradientFlowText variant="gold">SEND ENQUIRY ↗</GradientFlowText>
                 )}
               </button>
             </div>

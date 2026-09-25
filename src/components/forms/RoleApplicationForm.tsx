@@ -4,6 +4,8 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { CheckCircle, ArrowRight, ArrowLeft, Send, Sparkles, AlertCircle } from "lucide-react";
 import Link from "next/link";
+import GradientFlowText from "../ui/GradientFlowText";
+import SubmitSuccessExpand from "../ui/SubmitSuccessExpand";
 
 export type RoleSlug =
   | "model"
@@ -415,12 +417,8 @@ export default function RoleApplicationForm({ roleSlug, onSuccess, isModal = fal
       </div>
 
       {/* SUCCESS STATE */}
-      {isSubmitted ? (
-        <motion.div
-          initial={{ opacity: 0, scale: 0.96 }}
-          animate={{ opacity: 1, scale: 1 }}
-          className="bg-[#0D0C0A] border border-brand-yellow-golden/50 p-8 sm:p-12 rounded-3xl text-center space-y-6 shadow-[0_0_60px_rgba(250,182,10,0.15)]"
-        >
+      <SubmitSuccessExpand show={isSubmitted}>
+        <div className="bg-[#0D0C0A] border border-brand-yellow-golden/50 p-8 sm:p-12 rounded-3xl text-center space-y-6 shadow-[0_0_60px_rgba(250,182,10,0.15)]">
           <div className="w-16 h-16 bg-brand-yellow-golden/20 border border-brand-yellow-golden rounded-full flex items-center justify-center mx-auto text-brand-yellow-golden">
             <CheckCircle className="w-10 h-10" />
           </div>
@@ -438,11 +436,13 @@ export default function RoleApplicationForm({ roleSlug, onSuccess, isModal = fal
               href="/"
               className="inline-flex items-center gap-2 bg-brand-yellow-golden text-black px-8 py-3.5 text-xs font-syne font-bold tracking-caps rounded-full hover:bg-yellow-400 transition-colors shadow-lg"
             >
-              BACK TO FASHAI UNIVERSAL <ArrowRight className="w-4 h-4" />
+              <GradientFlowText variant="primary">BACK TO FASHAI UNIVERSAL</GradientFlowText> <ArrowRight className="w-4 h-4" />
             </Link>
           </div>
-        </motion.div>
-      ) : (
+        </div>
+      </SubmitSuccessExpand>
+
+      {!isSubmitted && (
         /* FORM STATE */
         <form onSubmit={handleSubmit} className="space-y-6">
           {errorMessage && (
@@ -1331,7 +1331,7 @@ export default function RoleApplicationForm({ roleSlug, onSuccess, isModal = fal
                 onClick={handlePrevStep}
                 className="inline-flex items-center gap-2 px-5 py-2.5 text-xs font-syne font-bold text-white/70 hover:text-white transition-colors"
               >
-                <ArrowLeft className="w-4 h-4" /> Previous Step
+                <ArrowLeft className="w-4 h-4" /> <GradientFlowText variant="gold">Previous Step</GradientFlowText>
               </button>
             ) : <div />}
 
@@ -1341,7 +1341,7 @@ export default function RoleApplicationForm({ roleSlug, onSuccess, isModal = fal
                 onClick={handleNextStep}
                 className="inline-flex items-center gap-2 bg-brand-yellow-golden px-7 py-3 text-xs font-syne font-bold tracking-caps text-black rounded-full hover:bg-yellow-400 transition-colors shadow-lg"
               >
-                Next Step <ArrowRight className="w-4 h-4" />
+                <GradientFlowText variant="primary">Next Step</GradientFlowText> <ArrowRight className="w-4 h-4" />
               </button>
             ) : (
               <button
@@ -1349,7 +1349,9 @@ export default function RoleApplicationForm({ roleSlug, onSuccess, isModal = fal
                 disabled={isSubmitting}
                 className="inline-flex items-center gap-2 bg-gradient-to-r from-brand-yellow-golden to-amber-500 px-8 py-3.5 text-xs font-syne font-bold tracking-caps text-black rounded-full hover:opacity-95 transition-all shadow-xl disabled:opacity-50"
               >
-                {isSubmitting ? "Submitting Application..." : "Submit Application"} <Send className="w-4 h-4" />
+                <GradientFlowText variant="primary">
+                  {isSubmitting ? "Submitting Application..." : "Submit Application"}
+                </GradientFlowText> <Send className="w-4 h-4" />
               </button>
             )}
           </div>

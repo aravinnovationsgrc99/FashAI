@@ -7,6 +7,7 @@ import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { X, ArrowRight, Sparkles } from "lucide-react";
 import ThemeToggle from "../ui/ThemeToggle";
+import GradientFlowText from "../ui/GradientFlowText";
 
 interface NavItem {
   label: string;
@@ -176,7 +177,9 @@ export default function MobileMenu({
                 className="w-full border border-[#F15E1C]/40 dark:border-[#D4AF37]/40 bg-[#F15E1C]/10 dark:bg-[#D4AF37]/10 hover:bg-[#F15E1C]/20 text-[#111111] dark:text-white py-2.5 text-center font-syne text-xs tracking-wider font-bold transition-all rounded-full shadow-sm flex items-center justify-center gap-2"
               >
                 <Sparkles className="w-3.5 h-3.5 text-[#F15E1C] dark:text-[#D4AF37]" />
-                <span>EXPLORE SERVICES &amp; FORMATS →</span>
+                <GradientFlowText variant="gold">
+                  EXPLORE SERVICES &amp; FORMATS →
+                </GradientFlowText>
               </Link>
 
               <Link
@@ -184,7 +187,9 @@ export default function MobileMenu({
                 onClick={onClose}
                 className="w-full bg-[#D4AF37] hover:bg-[#FFEC69] py-3 text-center font-syne text-xs tracking-wider font-bold text-[#111111] transition-colors rounded-full shadow-md flex items-center justify-center gap-2"
               >
-                <span>CONTACT US →</span>
+                <GradientFlowText variant="primary">
+                  CONTACT US →
+                </GradientFlowText>
               </Link>
 
               <div className="flex items-center justify-between text-[11px] font-syne text-neutral-600 dark:text-white/60 pt-1">

@@ -5,6 +5,7 @@ import Image from "next/image";
 import { useRouter, usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { X, Calendar, MapPin, Sparkles, ArrowRight, ExternalLink } from "lucide-react";
+import GradientFlowText from "./GradientFlowText";
 
 export default function EventInfoModal() {
   const [isOpen, setIsOpen] = useState(false);
@@ -258,7 +259,7 @@ export default function EventInfoModal() {
                     onClick={handleRegisterClick}
                     className="flex-1 bg-[#D4AF37] text-[#111111] hover:bg-[#FFEC69] hover:shadow-[0_0_25px_rgba(250,182,10,0.5)] transition-all duration-300 min-h-[48px] flex items-center justify-center gap-2 rounded-xl font-syne text-xs tracking-caps font-bold shadow-xl"
                   >
-                    <span>REGISTER / ENQUIRE</span>
+                    <GradientFlowText variant="primary">REGISTER / ENQUIRE</GradientFlowText>
                     <ArrowRight className="w-4 h-4" />
                   </button>
 
@@ -266,7 +267,7 @@ export default function EventInfoModal() {
                     onClick={handleSponsorshipClick}
                     className="flex-1 border border-[#F15E1C]/60 dark:border-brand-yellow-golden/70 bg-white/90 dark:bg-black/60 backdrop-blur-sm px-6 py-4 text-xs font-syne tracking-caps font-bold text-[#111111] dark:text-white hover:bg-[#F15E1C]/10 dark:hover:bg-brand-yellow-golden/20 hover:border-[#F15E1C] dark:hover:border-brand-yellow-golden transition-all duration-300 min-h-[48px] flex items-center justify-center gap-2 rounded-xl shadow-sm"
                   >
-                    <span>SPONSORSHIP ENQUIRY</span>
+                    <GradientFlowText variant="gold">SPONSORSHIP ENQUIRY</GradientFlowText>
                     <ExternalLink className="w-4 h-4 text-[#F15E1C] dark:text-brand-yellow-golden" />
                   </button>
                 </div>

@@ -3,6 +3,7 @@
 import { useState, useMemo, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
+import GradientFlowText from "../ui/GradientFlowText";
 import {
   GALLERY_DATA,
   GALLERY_CATEGORIES,
@@ -89,7 +90,7 @@ export default function GalleryView() {
                     : "border-white/15 bg-brand-void text-brand-platinum/80 hover:text-brand-white hover:border-white/40"
                 }`}
               >
-                {cat.label}
+                <GradientFlowText variant="gold">{cat.label}</GradientFlowText>
               </button>
             );
           })}

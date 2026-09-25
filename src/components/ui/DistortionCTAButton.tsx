@@ -3,6 +3,7 @@
 import React, { useRef, useState, useEffect, useCallback } from "react";
 import Link from "next/link";
 import { useReducedMotion } from "framer-motion";
+import GradientFlowText from "./GradientFlowText";
 
 interface DistortionCTAButtonProps {
   href: string;
@@ -219,9 +220,11 @@ export default function DistortionCTAButton({
         />
       )}
 
-      {/* STABLE CRISP TEXT LAYER */}
-      <span className="relative z-10 pointer-events-none font-syne font-bold tracking-caps text-xs sm:text-sm uppercase flex items-center justify-center gap-1.5 drop-shadow-sm">
-        {label}
+      {/* STABLE CRISP GRADIENT FLOW TEXT LAYER */}
+      <span className="relative z-10 pointer-events-none font-syne font-bold tracking-caps text-xs sm:text-sm uppercase flex items-center justify-center gap-1.5">
+        <GradientFlowText variant={isPrimary ? "primary" : "secondary"}>
+          {label}
+        </GradientFlowText>
       </span>
     </Link>
   );

@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { ArrowUpRight, Sparkles } from "lucide-react";
+import GradientFlowText from "../ui/GradientFlowText";
 
 export default function UpcomingLifestyleBanner() {
   return (
@@ -84,14 +85,14 @@ export default function UpcomingLifestyleBanner() {
                   className="bg-brand-orange px-6 py-3.5 text-xs font-syne tracking-caps font-bold text-white hover:bg-[#ff6f2d] hover:shadow-[0_0_25px_rgba(241,94,28,0.4)] transition-all duration-300 text-center flex items-center justify-center gap-2 group"
                   data-cursor="explore"
                 >
-                  <span>REGISTRATION</span>
+                  <GradientFlowText variant="gold">REGISTRATION</GradientFlowText>
                   <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
                 </Link>
                 <Link
                   href="/contact?type=Sponsorship"
                   className="border border-brand-yellow-golden/50 bg-brand-void/80 px-6 py-3.5 text-xs font-syne tracking-caps font-bold text-brand-white hover:bg-brand-yellow-golden/10 hover:border-brand-yellow-golden transition-all duration-300 text-center flex items-center justify-center gap-2"
                 >
-                  <span>SPONSORSHIP ↗</span>
+                  <GradientFlowText variant="gold">SPONSORSHIP ↗</GradientFlowText>
                 </Link>
               </div>
             </div>

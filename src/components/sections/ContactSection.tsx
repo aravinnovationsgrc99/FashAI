@@ -4,6 +4,8 @@ import { useState, useEffect, Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 import { motion } from "framer-motion";
 import { Loader2, CheckCircle, AlertCircle } from "lucide-react";
+import GradientFlowText from "../ui/GradientFlowText";
+import SubmitSuccessExpand from "../ui/SubmitSuccessExpand";
 
 function ContactContent() {
   const searchParams = useSearchParams();
@@ -106,7 +108,7 @@ function ContactContent() {
               SUBMIT AN ENQUIRY
             </h3>
 
-            {status === "success" ? (
+            <SubmitSuccessExpand show={status === "success"}>
               <div className="bg-brand-green/10 border border-brand-green/40 p-8 text-center space-y-4">
                 <CheckCircle className="w-12 h-12 text-brand-green mx-auto" />
                 <h4 className="font-syne text-xl text-brand-white font-bold uppercase">
@@ -119,10 +121,12 @@ function ContactContent() {
                   onClick={() => setStatus("idle")}
                   className="bg-brand-orange text-white px-8 py-3 text-xs font-syne tracking-caps font-bold uppercase hover:bg-[#ff6f2d] transition-colors"
                 >
-                  SEND ANOTHER ENQUIRY
+                  <GradientFlowText variant="gold">SEND ANOTHER ENQUIRY</GradientFlowText>
                 </button>
               </div>
-            ) : (
+            </SubmitSuccessExpand>
+
+            {status !== "success" && (
               <form onSubmit={handleSubmit} className="space-y-6">
                 {status === "error" && (
                   <div className="bg-red-500/10 border border-red-500/40 p-4 text-xs font-sans text-red-200 flex items-center gap-3">

@@ -3,6 +3,8 @@
 import { useState, useEffect, ChangeEvent, FormEvent } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { X, Check, Upload, AlertCircle, Sparkles, ShieldCheck, ArrowRight } from "lucide-react";
+import GradientFlowText from "../ui/GradientFlowText";
+import SubmitSuccessExpand from "../ui/SubmitSuccessExpand";
 
 export type CategoryId =
   | "fashion_designer"
@@ -189,13 +191,8 @@ export default function TalentApplicationModal({ isOpen, onClose, initialCategor
 
           {/* Modal Main Content Area */}
           <div className="p-6 sm:p-8 lg:p-10 overflow-y-auto flex-1 custom-scrollbar">
-            {isSubmitted ? (
-              /* Success Confirmation View */
-              <motion.div
-                initial={{ opacity: 0, y: 15 }}
-                animate={{ opacity: 1, y: 0 }}
-                className="py-12 sm:py-16 text-center max-w-xl mx-auto space-y-6"
-              >
+            <SubmitSuccessExpand show={isSubmitted}>
+              <div className="py-12 sm:py-16 text-center max-w-xl mx-auto space-y-6">
                 <div className="w-20 h-20 mx-auto rounded-full bg-brand-green/20 border-2 border-brand-green flex items-center justify-center text-brand-green shadow-[0_0_40px_rgba(46,147,111,0.4)]">
                   <Check className="w-10 h-10" />
                 </div>
@@ -215,12 +212,14 @@ export default function TalentApplicationModal({ isOpen, onClose, initialCategor
                     onClick={onClose}
                     className="inline-flex items-center gap-3 bg-brand-orange hover:bg-[#ff6f2d] text-white px-8 py-3.5 text-xs font-syne tracking-caps font-bold transition-all shadow-lg hover:shadow-brand-orange/40"
                   >
-                    <span>BACK TO FASHAI UNIVERSAL</span>
+                    <GradientFlowText variant="gold">BACK TO FASHAI UNIVERSAL</GradientFlowText>
                     <ArrowRight className="w-4 h-4" />
                   </button>
                 </div>
-              </motion.div>
-            ) : (
+              </div>
+            </SubmitSuccessExpand>
+
+            {!isSubmitted && (
               /* Active Form View */
               <form onSubmit={handleSubmit} className="space-y-10">
                 {/* Form Title & Sub-header */}

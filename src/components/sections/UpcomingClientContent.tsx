@@ -3,6 +3,8 @@
 import { useState } from "react";
 import Link from "next/link";
 import { CheckCircle2 } from "lucide-react";
+import GradientFlowText from "../ui/GradientFlowText";
+import SubmitSuccessExpand from "../ui/SubmitSuccessExpand";
 
 export default function UpcomingClientContent() {
   const [subscribed, setSubscribed] = useState(false);
@@ -47,7 +49,29 @@ export default function UpcomingClientContent() {
               [ CLOSE ]
             </button>
 
-            {!subscribed ? (
+            <SubmitSuccessExpand show={subscribed}>
+              <div className="py-8 text-center flex flex-col items-center">
+                <CheckCircle2 className="h-12 w-12 text-brand-gold mb-4" />
+                <h3 className="font-serif-display text-xl text-brand-off-white mb-2">
+                  NOTIFICATION REGISTERED
+                </h3>
+                <p className="font-sans text-xs text-brand-platinum font-light mb-6">
+                  You will receive verified announcements regarding FashAI Lifestyle 2026.
+                </p>
+                <button
+                  onClick={() => {
+                    setShowModal(false);
+                    setSubscribed(false);
+                    setEmail("");
+                  }}
+                  className="bg-gradient-to-r from-[#F5DFB3] via-[#D4AF37] to-[#A37F2C] px-6 py-2.5 text-xs font-syne text-brand-void font-bold"
+                >
+                  <GradientFlowText variant="primary">DONE</GradientFlowText>
+                </button>
+              </div>
+            </SubmitSuccessExpand>
+
+            {!subscribed && (
               <form onSubmit={handleSubscribe} className="space-y-6">
                 <div>
                   <span className="text-[10px] font-syne tracking-micro text-brand-gold block mb-2">
@@ -79,29 +103,9 @@ export default function UpcomingClientContent() {
                   type="submit"
                   className="w-full bg-gradient-to-r from-[#F5DFB3] via-[#D4AF37] to-[#A37F2C] py-3 text-xs font-syne tracking-caps font-bold text-brand-void hover:opacity-90 transition-opacity"
                 >
-                  NOTIFY ME ↗
+                  <GradientFlowText variant="primary">NOTIFY ME ↗</GradientFlowText>
                 </button>
               </form>
-            ) : (
-              <div className="py-8 text-center flex flex-col items-center">
-                <CheckCircle2 className="h-12 w-12 text-brand-gold mb-4" />
-                <h3 className="font-serif-display text-xl text-brand-off-white mb-2">
-                  NOTIFICATION REGISTERED
-                </h3>
-                <p className="font-sans text-xs text-brand-platinum font-light mb-6">
-                  You will receive verified announcements regarding FashAI Lifestyle 2026.
-                </p>
-                <button
-                  onClick={() => {
-                    setShowModal(false);
-                    setSubscribed(false);
-                    setEmail("");
-                  }}
-                  className="bg-gradient-to-r from-[#F5DFB3] via-[#D4AF37] to-[#A37F2C] px-6 py-2.5 text-xs font-syne text-brand-void font-bold"
-                >
-                  DONE
-                </button>
-              </div>
             )}
           </div>
         </div>

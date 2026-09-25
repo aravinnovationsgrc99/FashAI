@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
+import GradientFlowText from "../ui/GradientFlowText";
 import { GALLERY_DATA } from "@/data/gallery";
 
 export default function HomeGalleryPreview() {
@@ -100,7 +101,7 @@ export default function HomeGalleryPreview() {
             className="inline-flex items-center gap-3 bg-brand-orange px-10 py-5 text-xs font-syne tracking-caps font-bold text-white hover:bg-[#ff6f2d] hover:shadow-[0_0_25px_rgba(241,94,28,0.4)] hover:-translate-y-0.5 transition-all duration-300 shadow-xl"
             data-cursor="explore"
           >
-            <span>EXPLORE FULL GALLERY ↗</span>
+            <GradientFlowText variant="gold">EXPLORE FULL GALLERY ↗</GradientFlowText>
           </Link>
         </div>
       </div>
