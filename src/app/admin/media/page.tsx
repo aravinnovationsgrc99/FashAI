@@ -13,6 +13,7 @@ import {
   Image as ImageIcon,
   ExternalLink,
   Edit3,
+  RefreshCw,
 } from "lucide-react";
 import { MediaItem } from "@/lib/admin/config-schema";
 import { useSiteConfig } from "@/context/SiteConfigContext";
@@ -22,6 +23,7 @@ export default function MediaLibraryPage() {
   const [mediaItems, setMediaItems] = useState<MediaItem[]>([]);
   const [loading, setLoading] = useState(true);
   const [uploading, setUploading] = useState(false);
+  const [isScanning, setIsScanning] = useState(false);
   const [isDragging, setIsDragging] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
   const [tabFilter, setTabFilter] = useState<"ALL" | "IMAGES" | "VIDEOS" | "USED" | "UNUSED">("ALL");
@@ -34,18 +36,24 @@ export default function MediaLibraryPage() {
     usedIn: string[];
   } | null>(null);
 
-  const fetchMedia = async () => {
+  const fetchMedia = async (scan = false) => {
     try {
-      setLoading(true);
-      const res = await fetch("/api/admin/media", { cache: "no-store" });
+      if (scan) setIsScanning(true);
+      else setLoading(true);
+      const url = scan ? "/api/admin/media?scan=true" : "/api/admin/media";
+      const res = await fetch(url, { cache: "no-store" });
       if (res.ok) {
         const data = await res.json();
         setMediaItems(data.media || []);
+        if (scan) {
+          showToast("✓ Media assets refreshed and scanned from disk", "success");
+        }
       }
     } catch (e) {
       console.warn("Could not fetch media library:", e);
     } finally {
       setLoading(false);
+      setIsScanning(false);
     }
   };
 
@@ -183,18 +191,29 @@ export default function MediaLibraryPage() {
           </p>
         </div>
 
-        <label className="bg-[#D4AF37] hover:bg-[#FFEC69] text-black px-4 py-2 rounded-xl font-syne text-xs font-bold uppercase transition-all flex items-center gap-2 cursor-pointer shadow-md shrink-0">
-          <Upload className="w-4 h-4" />
-          <span>{uploading ? "Uploading..." : "Upload Media"}</span>
-          <input
-            type="file"
-            multiple
-            accept="image/*,video/*"
-            onChange={(e) => e.target.files && handleFilesUpload(e.target.files)}
-            disabled={uploading}
-            className="hidden"
-          />
-        </label>
+        <div className="flex items-center gap-3 shrink-0">
+          <button
+            onClick={() => fetchMedia(true)}
+            disabled={isScanning || loading}
+            className="bg-[#141312] hover:bg-[#1A1816] border border-white/15 text-white px-4 py-2 rounded-xl font-syne text-xs font-bold uppercase transition-all flex items-center gap-2 shadow-md hover:border-[#D4AF37]/50 disabled:opacity-50"
+          >
+            <RefreshCw className={`w-3.5 h-3.5 text-[#D4AF37] ${isScanning ? "animate-spin" : ""}`} />
+            <span>{isScanning ? "SCANNING..." : "REFRESH MEDIA"}</span>
+          </button>
+
+          <label className="bg-[#D4AF37] hover:bg-[#FFEC69] text-black px-4 py-2 rounded-xl font-syne text-xs font-bold uppercase transition-all flex items-center gap-2 cursor-pointer shadow-md shrink-0">
+            <Upload className="w-4 h-4" />
+            <span>{uploading ? "Uploading..." : "Upload Media"}</span>
+            <input
+              type="file"
+              multiple
+              accept="image/*,video/*"
+              onChange={(e) => e.target.files && handleFilesUpload(e.target.files)}
+              disabled={uploading}
+              className="hidden"
+            />
+          </label>
+        </div>
       </div>
 
       {/* DRAG AND DROP UPLOAD ZONE (Section 10) */}

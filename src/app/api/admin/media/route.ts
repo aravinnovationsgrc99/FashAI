@@ -20,7 +20,64 @@ export async function GET(request: NextRequest) {
     return NextResponse.json({ error: "Unauthorized access" }, { status: 401 });
   }
 
+  const { searchParams } = new URL(request.url);
+  const shouldScan = searchParams.get("scan") === "true";
+
   const config = await getMasterConfig(true);
+
+  if (shouldScan) {
+    try {
+      const publicDir = path.join(process.cwd(), "public");
+      const existingUrls = new Set((config.mediaLibrary || []).map((m) => m.url));
+
+      const scanDirectory = async (dirPath: string) => {
+        const entries = await fs.readdir(dirPath, { withFileTypes: true });
+        for (const entry of entries) {
+          const fullPath = path.join(dirPath, entry.name);
+          if (entry.isDirectory()) {
+            await scanDirectory(fullPath);
+          } else if (entry.isFile()) {
+            const ext = path.extname(entry.name).toLowerCase();
+            const allowed = [".jpg", ".jpeg", ".png", ".webp", ".svg", ".mp4", ".webm", ".mov"];
+            if (allowed.includes(ext)) {
+              const relativeUrl = "/" + path.relative(publicDir, fullPath).replace(/\\/g, "/");
+              if (!existingUrls.has(relativeUrl)) {
+                const stat = await fs.stat(fullPath);
+                const isVideo = [".mp4", ".webm", ".mov"].includes(ext);
+                const newMedia: MediaItem = {
+                  id: `med_scanned_${Date.now()}_${Math.random().toString(36).substr(2, 5)}`,
+                  filename: entry.name,
+                  url: relativeUrl,
+                  type: isVideo ? "video" : "image",
+                  size: stat.size,
+                  altText: entry.name.replace(ext, "").replace(/_/g, " "),
+                  caption: "",
+                  category: relativeUrl.includes("/events") ? "Events" : relativeUrl.includes("/models") ? "Talent" : "General",
+                  tags: ["scanned"],
+                  uploadedAt: new Date(stat.mtime).toISOString(),
+                  usedIn: [],
+                };
+                config.mediaLibrary.unshift(newMedia);
+                existingUrls.add(relativeUrl);
+              }
+            }
+          }
+        }
+      };
+
+      const assetsDir = path.join(publicDir, "assets");
+      const uploadsDir = path.join(publicDir, "uploads");
+
+      try { await scanDirectory(assetsDir); } catch {}
+      try { await scanDirectory(uploadsDir); } catch {}
+
+      config.lastMediaUpdate = new Date().toISOString();
+      await saveDraftConfig(config);
+    } catch (e) {
+      console.warn("Media asset scanning error:", e);
+    }
+  }
+
   return NextResponse.json({
     success: true,
     media: config.mediaLibrary || [],

@@ -2,6 +2,9 @@ import { NextRequest, NextResponse } from "next/server";
 import { isRequestAuthenticated } from "@/lib/admin/auth-utils";
 import { getMasterConfig, saveDraftConfig, publishConfig, getVersionHistory } from "@/lib/admin/storage";
 
+export const dynamic = "force-dynamic";
+export const revalidate = 0;
+
 export async function GET(request: NextRequest) {
   if (!(await isRequestAuthenticated(request))) {
     return NextResponse.json({ error: "Unauthorized access" }, { status: 401 });
@@ -11,12 +14,19 @@ export async function GET(request: NextRequest) {
   const publishedConfig = await getMasterConfig(false);
   const history = await getVersionHistory();
 
-  return NextResponse.json({
-    success: true,
-    draftConfig,
-    publishedConfig,
-    history,
-  });
+  return NextResponse.json(
+    {
+      success: true,
+      draftConfig,
+      publishedConfig,
+      history,
+    },
+    {
+      headers: {
+        "Cache-Control": "no-store, no-cache, must-revalidate, proxy-revalidate, max-age=0",
+      },
+    }
+  );
 }
 
 export async function POST(request: NextRequest) {

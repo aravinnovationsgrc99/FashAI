@@ -53,9 +53,11 @@ export default function AdminLayout({ children }: AdminLayoutProps) {
     updateLocalDraftConfig,
     saveDraft,
     publish,
+    refreshConfig,
     hasUnsavedChanges,
     saveStatus,
     toast,
+    showToast,
     setIsPreviewOpen,
     discardUnsavedChanges,
   } = useSiteConfig();
@@ -125,8 +127,14 @@ export default function AdminLayout({ children }: AdminLayoutProps) {
         enabled: newState,
       },
     }));
-    await saveDraft();
-    await publish(`Maintenance Mode set to ${newState ? "ON" : "OFF"}`);
+    const saved = await saveDraft();
+    if (saved) {
+      const published = await publish(`Maintenance Mode set to ${newState ? "ACTIVE" : "OFF"}`);
+      if (published) {
+        await refreshConfig();
+        toast;
+      }
+    }
   };
 
   const handleSaveDraftClick = async () => {
@@ -168,6 +176,7 @@ export default function AdminLayout({ children }: AdminLayoutProps) {
     if (path === "/admin/homepage") return "Homepage Editor";
     if (path === "/admin/pages") return "Page Manager";
     if (path === "/admin/events") return "Events Manager";
+    if (path === "/admin/services") return "Services & Availability";
     if (path === "/admin/media") return "Media Library";
     if (path === "/admin/gallery") return "Gallery Manager";
     if (path === "/admin/applications") return "Talent Applications";
@@ -199,6 +208,12 @@ export default function AdminLayout({ children }: AdminLayoutProps) {
         { label: "Navigation", href: "/admin/navigation", icon: NavIcon },
         { label: "Footer", href: "/admin/footer", icon: MousePointer },
         { label: "Global Layout", href: "/admin/website", icon: Globe },
+      ],
+    },
+    {
+      groupTitle: "SERVICES",
+      items: [
+        { label: "Services & Availability", href: "/admin/services", icon: Layers },
       ],
     },
     {

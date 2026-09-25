@@ -728,3 +728,24 @@ html.light .admin-shell .text-\[\#2E936F\] {
   color: #166534 !important;
 }
 
+/* Continuous Clockwise Chatbot Logo Rotation */
+@keyframes chatbot-spin-clockwise {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-chatbot-spin {
+  animation: chatbot-spin-clockwise 12s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-chatbot-spin {
+    animation: none !important;
+  }
+}
+
+

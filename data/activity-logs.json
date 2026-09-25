@@ -1,5 +1,53 @@
 [
   {
+    "id": "log_1790373449411_ktwzc",
+    "category": "CONTENT",
+    "action": "Published website changes",
+    "actor": "System Admin",
+    "timestamp": "2026-09-25T21:57:29.411Z",
+    "details": "Global Maintenance mode set to ACTIVE"
+  },
+  {
+    "id": "log_1790373441429_79rir",
+    "category": "CONTENT",
+    "action": "Published website changes",
+    "actor": "System Admin",
+    "timestamp": "2026-09-25T21:57:21.429Z",
+    "details": "Global Maintenance mode set to ACTIVE"
+  },
+  {
+    "id": "log_1790373183326_tu4ee",
+    "category": "CONTENT",
+    "action": "Published website changes",
+    "actor": "System Admin",
+    "timestamp": "2026-09-25T21:53:03.326Z",
+    "details": "Global Maintenance mode set to OFF"
+  },
+  {
+    "id": "log_1790373079927_1i8uu",
+    "category": "CONTENT",
+    "action": "Published website changes",
+    "actor": "System Admin",
+    "timestamp": "2026-09-25T21:51:19.927Z",
+    "details": "Global Maintenance mode set to ACTIVE"
+  },
+  {
+    "id": "log_1790373065582_2oubu",
+    "category": "CONTENT",
+    "action": "Published website changes",
+    "actor": "System Admin",
+    "timestamp": "2026-09-25T21:51:05.582Z",
+    "details": "Global Maintenance mode set to OFF"
+  },
+  {
+    "id": "log_1790373054117_xjb5p",
+    "category": "CONTENT",
+    "action": "Published website changes",
+    "actor": "System Admin",
+    "timestamp": "2026-09-25T21:50:54.117Z",
+    "details": "Global Maintenance mode set to ACTIVE"
+  },
+  {
     "id": "log_1790372339190_vetf6",
     "category": "CONTENT",
     "action": "Published website changes",

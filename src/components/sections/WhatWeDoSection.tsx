@@ -5,7 +5,20 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, Layers, Sparkles } from "lucide-react";
 
+import { useSiteConfig } from "@/context/SiteConfigContext";
+import { AlertCircle } from "lucide-react";
+
 export default function WhatWeDoSection() {
+  const { config } = useSiteConfig();
+  const services = config?.servicesSettings || [];
+
+  const getServiceStatus = (id: string) => {
+    const found = services.find((s) => s.id === id);
+    return {
+      isAvailable: found ? found.status === "ACTIVE" : true,
+      message: found?.disabledMessage || "Currently unavailable",
+    };
+  };
   return (
     <section id="what-we-do" className="relative pt-4 sm:pt-6 pb-10 sm:pb-12 bg-white dark:bg-[#050505] border-b border-black/10 dark:border-white/10 text-[#111111] dark:text-brand-white overflow-hidden">
       <div className="container-editorial relative z-10 max-w-6xl mx-auto px-4 sm:px-6">
@@ -40,6 +53,11 @@ export default function WhatWeDoSection() {
                 <span className="text-[10px] font-syne tracking-widest text-[#F15E1C] dark:text-brand-yellow-golden uppercase font-bold">
                   FLAGSHIP FORMAT
                 </span>
+                {!getServiceStatus("fashion_events").isAvailable && (
+                  <span className="px-2.5 py-0.5 rounded-full text-[10px] font-syne font-bold uppercase tracking-wider bg-[#F15E1C]/15 border border-[#F15E1C]/40 text-[#F15E1C] dark:text-[#FFEC69]">
+                    ● {getServiceStatus("fashion_events").message}
+                  </span>
+                )}
               </div>
 
               {/* Clean Controlled Image Frame (25-35% Height Reduction) */}
@@ -90,13 +108,19 @@ export default function WhatWeDoSection() {
               </div>
 
               <div className="pt-2 border-t border-black/10 dark:border-white/10 flex items-center justify-between">
-                <Link
-                  href="/apply"
-                  className="inline-flex items-center gap-2 bg-brand-yellow-golden hover:bg-[#FFEC69] text-black px-5 py-2 rounded-full font-syne text-[11px] font-bold tracking-wider transition-all shadow-sm"
-                >
-                  <span>EXPLORE EVENT FORMATS</span>
-                  <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
-                </Link>
+                {getServiceStatus("fashion_events").isAvailable ? (
+                  <Link
+                    href="/apply"
+                    className="inline-flex items-center gap-2 bg-brand-yellow-golden hover:bg-[#FFEC69] text-black px-5 py-2 rounded-full font-syne text-[11px] font-bold tracking-wider transition-all shadow-sm"
+                  >
+                    <span>EXPLORE EVENT FORMATS</span>
+                    <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
+                  </Link>
+                ) : (
+                  <span className="inline-flex items-center gap-2 bg-black/10 dark:bg-white/10 text-[#555555] dark:text-white/60 px-5 py-2 rounded-full font-syne text-[11px] font-bold tracking-wider border border-black/10 dark:border-white/10">
+                    <span>{getServiceStatus("fashion_events").message.toUpperCase()}</span>
+                  </span>
+                )}
               </div>
             </div>
           </motion.div>

@@ -126,6 +126,68 @@ export const DEFAULT_MASTER_CONFIG: MasterSiteConfig = {
       featured: true,
     },
   ],
+  servicesSettings: [
+    {
+      id: "fashion_events",
+      name: "Fashion Events & Runway Management",
+      category: "EVENTS",
+      description: "High-impact runway productions, designer showcases, and couture salons.",
+      status: "ACTIVE",
+      disabledMessage: "Currently unavailable",
+      ctaText: "EXPLORE EVENT FORMATS",
+      ctaUrl: "/apply"
+    },
+    {
+      id: "brand_shoots",
+      name: "Brand Shoots & Commercial Visual Production",
+      category: "CREATIVE PRODUCTION",
+      description: "Commercial fashion shoots, campaign lookbooks, and high-fashion video production.",
+      status: "ACTIVE",
+      disabledMessage: "Temporarily paused",
+      ctaText: "BOOK BRAND SHOOT",
+      ctaUrl: "/contact"
+    },
+    {
+      id: "digital_pr",
+      name: "Digital PR & Global Promotions",
+      category: "PROMOTION",
+      description: "Multi-market digital exposure, media coverage, and high-fashion editorial features.",
+      status: "ACTIVE",
+      disabledMessage: "Currently unavailable",
+      ctaText: "REQUEST DIGITAL PR",
+      ctaUrl: "/contact"
+    },
+    {
+      id: "event_management",
+      name: "Event Management & Spatial Execution",
+      category: "MANAGEMENT",
+      description: "End-to-end event conceptualization, venue sourcing, spatial lighting, and delegate logistics.",
+      status: "ACTIVE",
+      disabledMessage: "Temporarily paused",
+      ctaText: "ENQUIRE EVENT SERVICES",
+      ctaUrl: "/contact"
+    },
+    {
+      id: "talent_applications",
+      name: "Talent Applications & Casting",
+      category: "TALENT",
+      description: "Global talent discovery, casting direction, and model/designer/stylist nominations.",
+      status: "ACTIVE",
+      disabledMessage: "Applications temporarily closed",
+      ctaText: "APPLY AS TALENT",
+      ctaUrl: "/apply"
+    },
+    {
+      id: "corporate_it_events",
+      name: "Corporate & IT Event Formats",
+      category: "CORPORATE",
+      description: "Executive summits, IT innovation launches, and corporate delegate experiences.",
+      status: "ACTIVE",
+      disabledMessage: "Currently unavailable",
+      ctaText: "PLAN CORPORATE EVENT",
+      ctaUrl: "/contact"
+    }
+  ],
   popupSettings: {
     enabled: true,
     eventId: "lifestyle_2026",

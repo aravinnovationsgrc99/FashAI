@@ -205,6 +205,17 @@ export interface VersionHistoryEntry {
   configSnapshot: MasterSiteConfig;
 }
 
+export interface ServiceStatusConfig {
+  id: string;
+  name: string;
+  category: string;
+  description: string;
+  status: "ACTIVE" | "DISABLED";
+  disabledMessage: string;
+  ctaText?: string;
+  ctaUrl?: string;
+}
+
 export interface MasterSiteConfig {
   maintenanceSettings: MaintenanceSettings;
   globalSettings: GlobalSettings;
@@ -213,6 +224,7 @@ export interface MasterSiteConfig {
   heroSettings: HeroSettings;
   homepageSections: HomepageSectionConfig[];
   events: EventConfig[];
+  servicesSettings: ServiceStatusConfig[];
   popupSettings: PopupSettings;
   navigationSettings: NavItemConfig[];
   footerSettings: FooterSettings;
