@@ -66,7 +66,7 @@ export default function OurEventsSection() {
                 LIFESTYLE
               </h3>
 
-              <p className="font-sans text-xs sm:text-sm text-neutral-200 font-normal leading-relaxed mb-5 max-w-md keep-white drop-shadow">
+              <p className="font-sans text-sm sm:text-base text-neutral-200 font-normal leading-relaxed mb-5 max-w-md keep-white drop-shadow">
                 Fashion, culture and lifestyle experiences bringing together computational design, haute couture, and spatial atmosphere.
               </p>
 
@@ -145,7 +145,7 @@ export default function OurEventsSection() {
                 RUNWAY
               </h3>
 
-              <p className="font-sans text-xs sm:text-sm text-neutral-200 font-normal leading-relaxed mb-4 sm:mb-6 max-w-md keep-white drop-shadow">
+              <p className="font-sans text-sm sm:text-base text-neutral-200 font-normal leading-relaxed mb-4 sm:mb-6 max-w-md keep-white drop-shadow">
                 Fashion presentation and runway experiences within the FashAI Universal ecosystem. Highlighting spatial choreography, lighting art, and designer silhouettes.
               </p>
 

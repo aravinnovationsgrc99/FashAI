@@ -32,9 +32,11 @@ const config: Config = {
         },
       },
       fontFamily: {
-        serif: ["var(--font-bodoni-moda)", "Bodoni Moda", "Didot", "serif"],
-        sans: ["var(--font-plus-jakarta)", "Plus Jakarta Sans", "sans-serif"],
-        syne: ["var(--font-syne)", "Syne", "sans-serif"],
+        serif: ["var(--font-dm-serif)", "DM Serif Display", "Didot", "serif"],
+        "serif-display": ["var(--font-dm-serif)", "DM Serif Display", "Didot", "serif"],
+        sans: ["var(--font-jost)", "Jost", "sans-serif"],
+        syne: ["var(--font-jost)", "Jost", "sans-serif"],
+        jost: ["var(--font-jost)", "Jost", "sans-serif"],
       },
       borderRadius: {
         none: "0px",

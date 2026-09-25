@@ -190,7 +190,7 @@ export default function Footer() {
           whileInView="visible"
           viewport={{ once: true }}
           variants={columnVariants}
-          className="my-6 p-4 sm:p-5 rounded-xl border border-black/10 dark:border-white/15 bg-white/90 dark:bg-black/50 backdrop-blur-md flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 shadow-sm"
+          className="my-6 p-4 sm:p-5 rounded-xl border border-black/15 dark:border-white/15 bg-transparent flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 shadow-none"
         >
           <div className="flex items-center gap-3.5">
             <div className="w-10 h-10 rounded-full bg-[#1877F2]/10 dark:bg-[#D4AF37]/15 border border-[#1877F2]/30 dark:border-[#D4AF37]/30 flex items-center justify-center shrink-0">

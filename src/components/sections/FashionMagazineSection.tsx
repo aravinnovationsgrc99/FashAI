@@ -264,7 +264,7 @@ export default function FashionMagazineSection() {
                     {featuredArticle.title}
                   </h3>
 
-                  <p className="font-sans text-xs sm:text-sm md:text-base text-white/90 leading-relaxed font-light mb-6">
+                  <p className="font-sans text-sm sm:text-base text-white/90 leading-relaxed font-normal mb-6">
                     {featuredArticle.subtitle}
                   </p>
                 </div>
@@ -319,7 +319,7 @@ export default function FashionMagazineSection() {
                       {article.title}
                     </h4>
 
-                    <p className="font-sans text-xs sm:text-sm text-white/80 leading-relaxed font-light mb-6 line-clamp-3">
+                    <p className="font-sans text-sm sm:text-base text-white/80 leading-relaxed font-normal mb-6 line-clamp-3">
                       {article.subtitle}
                     </p>
                   </div>

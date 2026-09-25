@@ -200,7 +200,7 @@ export default function WhoWeServeSection() {
                   </h3>
                 </div>
 
-                <p className="font-sans text-xs sm:text-sm text-[#444444] dark:text-brand-platinum/85 font-light leading-relaxed max-w-xl">
+                <p className="font-sans text-sm sm:text-base text-[#444444] dark:text-brand-platinum/85 font-normal leading-relaxed max-w-xl">
                   {activeDiscipline.tagline}
                 </p>
 

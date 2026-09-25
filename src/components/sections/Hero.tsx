@@ -93,7 +93,7 @@ export default function Hero() {
           }}
           className="flex flex-col items-center justify-center text-center max-w-4xl mx-auto space-y-4 sm:space-y-5"
         >
-          {/* 1. TOP EVENT TAG: ────── LIFESTYLE 2026 · DUBAI ────── */}
+          {/* 1. TOP EVENT TAG: ────── Fashion Without Boundaries ────── */}
           <motion.div
             variants={{
               hidden: { opacity: 0, y: 16 },
@@ -103,24 +103,24 @@ export default function Hero() {
           >
             <span className="h-[1px] flex-1 bg-gradient-to-r from-transparent via-brand-yellow-golden/70 to-brand-yellow-golden" />
             <span className="text-[11px] sm:text-xs font-syne tracking-[0.25em] text-brand-yellow-golden font-bold uppercase whitespace-nowrap drop-shadow-[0_0_10px_rgba(250,182,10,0.4)]">
-              LIFESTYLE 2026 · DUBAI
+              Fashion Without Boundaries
             </span>
             <span className="h-[1px] flex-1 bg-gradient-to-l from-transparent via-brand-yellow-golden/70 to-brand-yellow-golden" />
           </motion.div>
 
-          {/* 2. MAIN HEADLINE TYPOGRAPHY: FASHAI Universal */}
+          {/* 2. MAIN HEADLINE TYPOGRAPHY: FASHAI Universal (ENLARGED RESPONSIVELY) */}
           <motion.h1
             variants={{
               hidden: { opacity: 0, y: 24 },
               visible: { opacity: 1, y: 0, transition: { duration: 0.85, ease: [0.22, 1, 0.36, 1] } }
             }}
             style={{ willChange: "transform, opacity" }}
-            className="font-serif-display leading-[0.88] tracking-tight select-none flex flex-col items-center justify-center w-full my-1"
+            className="font-serif-display leading-[0.85] tracking-tight select-none flex flex-col items-center justify-center w-full my-1"
           >
-            <span className="block text-6xl sm:text-8xl md:text-9xl xl:text-[10rem] font-serif font-light text-brand-white keep-white uppercase tracking-tight drop-shadow-[0_12px_35px_rgba(0,0,0,0.95)]">
+            <span className="block text-7xl sm:text-9xl md:text-[10rem] xl:text-[12rem] font-serif font-light text-brand-white keep-white uppercase tracking-tight drop-shadow-[0_12px_35px_rgba(0,0,0,0.95)]">
               FASHAI
             </span>
-            <span className="block text-5xl sm:text-7xl md:text-8xl xl:text-[8rem] font-serif italic font-normal text-brand-yellow-golden -mt-2 sm:-mt-5 md:-mt-7 tracking-normal drop-shadow-[0_0_25px_rgba(250,182,10,0.5)]">
+            <span className="block text-6xl sm:text-8xl md:text-[8.5rem] xl:text-[10rem] font-serif italic font-normal text-brand-yellow-golden -mt-3 sm:-mt-6 md:-mt-9 tracking-normal drop-shadow-[0_0_25px_rgba(250,182,10,0.5)]">
               Universal
             </span>
           </motion.h1>
@@ -138,24 +138,21 @@ export default function Hero() {
             <span className="h-[1px] flex-1 bg-gradient-to-l from-transparent via-brand-yellow-golden/80 to-brand-yellow-golden" />
           </motion.div>
 
-          {/* 4. POWERED BY ARAV INNOVATION BRANDING */}
+          {/* 4. ARAV INNOVATION BRANDING (TEXT REMOVED, LOGO ENLARGED) */}
           <motion.div
             variants={{
               hidden: { opacity: 0, y: 16 },
               visible: { opacity: 1, y: 0, transition: { duration: 0.75, ease: [0.22, 1, 0.36, 1] } }
             }}
-            className="flex flex-col items-center justify-center gap-1.5 my-1"
+            className="flex flex-col items-center justify-center my-2"
           >
-            <span className="text-[11px] sm:text-xs font-syne tracking-[0.25em] text-brand-white/80 keep-white uppercase font-semibold drop-shadow-[0_2px_6px_rgba(0,0,0,0.8)]">
-              Powered by
-            </span>
             <Image
               src="/assets/brand/Final_Powered_by_logo.png"
               alt="Arav Innovation Logo"
-              width={320}
-              height={85}
+              width={380}
+              height={100}
               priority
-              className="h-9 sm:h-12 md:h-14 lg:h-15 w-auto object-contain brightness-110 drop-shadow-[0_0_20px_rgba(250,182,10,0.3)]"
+              className="h-12 sm:h-16 md:h-20 lg:h-24 w-auto object-contain brightness-110 drop-shadow-[0_0_25px_rgba(212,175,55,0.4)]"
             />
           </motion.div>
 
@@ -222,7 +219,7 @@ export default function Hero() {
         <div className="flex items-center gap-3">
           <span className="h-6 w-[2px] bg-brand-yellow-golden shadow-[0_0_8px_rgba(250,182,10,0.8)]" />
           <div className="flex flex-col items-start leading-tight">
-            <span className="font-bold text-brand-white keep-white tracking-widest uppercase">DUBAI 2026</span>
+            <span className="font-bold text-brand-white keep-white tracking-widest uppercase">UAE · INDIA · GLOBAL</span>
             <span className="text-[9px] text-brand-white/70 keep-white tracking-widest uppercase font-medium">A NEW ERA AWAITS</span>
           </div>
         </div>

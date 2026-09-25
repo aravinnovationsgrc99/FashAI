@@ -15,7 +15,7 @@ export const DEFAULT_MASTER_CONFIG: MasterSiteConfig = {
   globalSettings: {
     siteTitle: "FashAI Universal — International Luxury Fashion & Events Platform",
     metaTitle: "FashAI Universal — International Fashion & Events Platform",
-    metaDescription: "FashAI Universal is an international fashion, lifestyle, and events platform connecting global designers, models, creative talent, and brand experiences across Dubai, UAE & India.",
+    metaDescription: "FashAI Universal is an international fashion, lifestyle, and events platform connecting global designers, models, creative talent, and brand experiences across the UAE, India & Global destinations.",
     favicon: "/favicon.ico",
     ogImage: "/assets/models/model_01.jpeg",
     contactEmail: "contact@fashaiuniversal.com",
@@ -45,9 +45,9 @@ export const DEFAULT_MASTER_CONFIG: MasterSiteConfig = {
     },
   },
   typographySettings: {
-    headingFont: "Syne, sans-serif",
-    bodyFont: "Inter, sans-serif",
-    navigationFont: "Syne, sans-serif",
+    headingFont: "DM Serif Display, Didot, serif",
+    bodyFont: "Jost, sans-serif",
+    navigationFont: "Jost, sans-serif",
     headingScale: 1.0,
     bodyScale: 1.0,
     letterSpacing: "normal",
@@ -55,8 +55,8 @@ export const DEFAULT_MASTER_CONFIG: MasterSiteConfig = {
   },
   heroSettings: {
     title: "INTERNATIONAL FASHION & EVENTS PLATFORM",
-    subtitle: "BRIDGING DUBAI, THE UAE & INDIA THROUGH RUNWAY, CULTURE AND CREATIVE TALENT",
-    eyebrow: "DUBAI · UAE · INDIA",
+    subtitle: "BRIDGING THE UAE, INDIA & GLOBAL THROUGH RUNWAY, CULTURE AND CREATIVE TALENT",
+    eyebrow: "UAE · INDIA · GLOBAL",
     supportingText: "Connecting designers, talent, brands and audiences across international fashion hubs.",
     ctaText: "SEE UPCOMING",
     ctaUrl: "/upcoming",

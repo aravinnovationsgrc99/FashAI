@@ -6,7 +6,6 @@ import OpenNominationsSection from "@/components/sections/OpenNominationsSection
 import FashionCommunitySection from "@/components/sections/FashionCommunitySection";
 import OurEventsSection from "@/components/sections/OurEventsSection";
 import FashionMagazineSection from "@/components/sections/FashionMagazineSection";
-import DesignersSection from "@/components/sections/DesignersSection";
 import Chapter2026 from "@/components/sections/Chapter2026";
 import Chapter2025 from "@/components/sections/Chapter2025";
 import FashPrismStoriesSection from "@/components/sections/FashPrismStoriesSection";
@@ -41,9 +40,6 @@ export default function Home() {
 
       {/* 09. FASHION MAGAZINE */}
       <FashionMagazineSection />
-
-      {/* 10. DESIGNERS SHOWCASE & APPLICATION */}
-      <DesignersSection />
 
       {/* 11. UPCOMING EVENTS — LIFESTYLE 2026 DUBAI */}
       <Chapter2026 />

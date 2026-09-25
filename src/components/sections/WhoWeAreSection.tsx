@@ -22,7 +22,7 @@ export default function WhoWeAreSection() {
             <div className="flex items-center justify-center gap-3 w-full max-w-xs sm:max-w-sm mx-auto mb-3">
               <span className="h-[1px] flex-1 bg-gradient-to-r from-transparent via-[#D4AF37]/70 to-[#D4AF37]" />
               <span className="text-xs sm:text-sm font-syne tracking-[0.25em] text-[#D4AF37] font-bold uppercase whitespace-nowrap">
-                DUBAI · UAE · INDIA
+                UAE · INDIA · GLOBAL
               </span>
               <span className="h-[1px] flex-1 bg-gradient-to-l from-transparent via-[#D4AF37]/70 to-[#D4AF37]" />
             </div>
@@ -35,7 +35,7 @@ export default function WhoWeAreSection() {
 
             {/* Concise Subheading */}
             <p className="font-syne text-xs sm:text-sm tracking-[0.18em] uppercase text-[#333333] dark:text-brand-platinum/90 font-bold mt-3 max-w-3xl mx-auto leading-relaxed">
-              BRIDGING DUBAI, THE UAE &amp; INDIA THROUGH RUNWAY, CULTURE AND CREATIVE TALENT
+              BRIDGING THE UAE, INDIA &amp; GLOBAL THROUGH RUNWAY, CULTURE AND CREATIVE TALENT
             </p>
 
             {/* Divider Line */}
@@ -48,14 +48,14 @@ export default function WhoWeAreSection() {
             <div className="lg:col-span-6 rounded-xl overflow-hidden border border-black/10 dark:border-white/10 relative w-full aspect-[16/9] sm:aspect-[16/9] lg:aspect-auto lg:h-full min-h-[200px] xs:min-h-[240px] sm:min-h-[300px] lg:min-h-[340px] bg-[#FAF8F5] dark:bg-[#0A0908] group shadow-sm flex items-center justify-center p-1 sm:p-0">
               <Image
                 src="/assets/home/where_fashion_creates_possibilities.png"
-                alt="OUR VISION — Where Fashion Creates Possibilities. DUBAI · UAE · INDIA"
+                alt="OUR VISION — Where Fashion Creates Possibilities. UAE · INDIA · GLOBAL"
                 fill
                 sizes="(max-width: 640px) 100vw, (max-width: 1024px) 90vw, 50vw"
                 priority
                 className="object-contain sm:object-cover object-center opacity-100 dark:opacity-90 dark:brightness-[0.95] transition-all duration-500 group-hover:scale-[1.02]"
               />
               <span className="sr-only">
-                OUR VISION: Where Fashion Creates Possibilities. DUBAI · UAE · INDIA
+                OUR VISION: Where Fashion Creates Possibilities. UAE · INDIA · GLOBAL
               </span>
             </div>
 
@@ -72,7 +72,7 @@ export default function WhoWeAreSection() {
                       INTERNATIONAL PLATFORM
                     </h4>
                     <p className="font-sans text-xs sm:text-sm text-[#444444] dark:text-brand-platinum/90 font-normal leading-relaxed mt-1">
-                      Runway, talent and creative opportunities across Dubai, UAE and India.
+                      Runway, talent and creative opportunities across the UAE, India and global destinations.
                     </p>
                   </div>
                 </div>

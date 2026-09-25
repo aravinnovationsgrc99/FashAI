@@ -76,7 +76,7 @@ export default function Header() {
             ? "top-2 sm:top-3 md:top-3.5 h-16 sm:h-[66px] md:h-[70px] w-[calc(100%-1.5rem)] max-w-[1450px] bg-transparent border-transparent shadow-none backdrop-blur-none"
             : isOverVideo
             ? "top-1.5 sm:top-2 h-14 sm:h-[60px] w-[calc(100%-1.5rem)] max-w-[1340px] bg-black/40 border border-white/20 shadow-[0_8px_32px_rgba(0,0,0,0.3)] backdrop-blur-2xl"
-            : "top-1.5 sm:top-2 h-14 sm:h-[60px] w-[calc(100%-1.5rem)] max-w-[1340px] bg-white/80 dark:bg-[#070707]/85 border border-black/10 dark:border-white/15 shadow-[0_8px_32px_rgba(0,0,0,0.08)] dark:shadow-[0_14px_40px_rgba(0,0,0,0.5)] backdrop-blur-2xl"
+            : "top-1.5 sm:top-2 h-14 sm:h-[60px] w-[calc(100%-1.5rem)] max-w-[1340px] bg-gradient-to-r from-[#D4AF37]/20 via-white/90 to-[#D4AF37]/20 dark:from-[#070707]/85 dark:to-[#070707]/85 border border-[#D4AF37]/45 dark:border-white/15 shadow-[0_8px_32px_rgba(212,175,55,0.2)] dark:shadow-[0_14px_40px_rgba(0,0,0,0.5)] backdrop-blur-2xl"
         }`}
       >
         <div
@@ -119,7 +119,7 @@ export default function Header() {
                   className={
                     isOverVideo
                       ? "font-serif italic font-normal text-[#D4AF37] capitalize ml-0.5 drop-shadow-[0_1px_2px_rgba(0,0,0,0.8)]"
-                      : "font-serif italic font-normal text-[#F15E1C] dark:text-[#D4AF37] capitalize ml-0.5"
+                      : "font-serif italic font-normal text-[#D4AF37] capitalize ml-0.5"
                   }
                 >
                   Universal
@@ -148,20 +148,16 @@ export default function Header() {
                     isActive
                       ? isOverVideo
                         ? "text-[#D4AF37] font-bold drop-shadow-[0_1px_3px_rgba(0,0,0,0.9)]"
-                        : "text-[#F15E1C] dark:text-[#D4AF37] font-bold"
+                        : "text-[#D4AF37] font-bold"
                       : isOverVideo
                       ? "text-white hover:text-[#D4AF37] drop-shadow-[0_1px_3px_rgba(0,0,0,0.9)]"
-                      : "text-[#111111] dark:text-white/85 hover:text-[#F15E1C] dark:hover:text-[#D4AF37]"
+                      : "text-[#111111] dark:text-white/85 hover:text-[#D4AF37]"
                   }`}
                 >
                   {item.label}
                   {isActive && (
                     <span
-                      className={`absolute -bottom-1 left-0 right-0 h-[2px] rounded-full ${
-                        isOverVideo
-                          ? "bg-[#D4AF37] shadow-[0_0_8px_rgba(250,182,10,0.6)]"
-                          : "bg-[#F15E1C] dark:bg-[#D4AF37] shadow-[0_0_8px_rgba(241,94,28,0.5)]"
-                      }`}
+                      className={`absolute -bottom-1 left-0 right-0 h-[2px] rounded-full bg-[#D4AF37] shadow-[0_0_8px_rgba(212,175,55,0.6)]`}
                     />
                   )}
                 </Link>
