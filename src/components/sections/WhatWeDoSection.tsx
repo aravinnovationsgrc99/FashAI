@@ -162,9 +162,38 @@ export default function WhatWeDoSection() {
             </motion.div>
           </div>
 
-          {/* BOTTOM ROW: CORPORATE & IT EVENTS (Span 12 Split) */}
-          <div className="lg:col-span-12 grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-5">
-            {/* EVENT BLOCK 4: CORPORATE EVENTS */}
+          {/* BOTTOM ROW: BRAND SHOOTS, CORPORATE & IT EVENTS (Span 12 Split 3-Cols) */}
+          <div className="lg:col-span-12 grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-5">
+            {/* EVENT SERVICE BLOCK 1: BRAND SHOOTS */}
+            <motion.div
+              initial={{ opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.18 }}
+              className="group relative bg-[#FAF8F5] dark:bg-[#080706] border border-black/10 dark:border-white/10 rounded-2xl p-4 sm:p-4.5 flex flex-col justify-between overflow-hidden hover:border-[#F15E1C]/60 dark:hover:border-brand-yellow-golden/60 transition-all duration-300 shadow-sm"
+            >
+              <div>
+                <div className="relative aspect-[16/7.5] w-full overflow-hidden rounded-xl mb-2.5 bg-black/5 dark:bg-[#030303] border border-black/10 dark:border-white/10">
+                  <Image
+                    src="/assets/events/designer/Designer.png"
+                    alt="FashAI Universal Brand Shoots Service"
+                    fill
+                    sizes="(max-width: 1024px) 100vw, 33vw"
+                    className="object-cover object-top group-hover:scale-[1.02] transition-transform duration-500"
+                  />
+                </div>
+
+                <h3 className="font-serif-display text-xl sm:text-2xl font-light uppercase text-[#111111] dark:text-brand-white group-hover:text-[#F15E1C] dark:group-hover:text-brand-yellow-golden transition-colors mb-0.5">
+                  BRAND SHOOTS
+                </h3>
+
+                <p className="font-sans text-xs sm:text-sm text-[#555555] dark:text-brand-platinum/80 font-light leading-relaxed">
+                  Digital PR, promotional campaigns, advertising shoots and commercial brand content.
+                </p>
+              </div>
+            </motion.div>
+
+            {/* EVENT SERVICE BLOCK 2: CORPORATE EVENTS */}
             <motion.div
               initial={{ opacity: 0, y: 16 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -178,7 +207,7 @@ export default function WhatWeDoSection() {
                     src="/assets/events/corporate_events.png"
                     alt="FashAI Universal corporate event"
                     fill
-                    sizes="(max-width: 1024px) 100vw, 50vw"
+                    sizes="(max-width: 1024px) 100vw, 33vw"
                     className="object-cover object-center group-hover:scale-[1.02] transition-transform duration-500"
                   />
                 </div>
@@ -193,7 +222,7 @@ export default function WhatWeDoSection() {
               </div>
             </motion.div>
 
-            {/* EVENT BLOCK 5: IT EVENTS */}
+            {/* EVENT SERVICE BLOCK 3: IT EVENTS */}
             <motion.div
               initial={{ opacity: 0, y: 16 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -207,7 +236,7 @@ export default function WhatWeDoSection() {
                     src="/assets/events/it_events.png"
                     alt="FashAI Universal technology and IT event"
                     fill
-                    sizes="(max-width: 1024px) 100vw, 50vw"
+                    sizes="(max-width: 1024px) 100vw, 33vw"
                     className="object-cover object-center group-hover:scale-[1.02] transition-transform duration-500"
                   />
                 </div>

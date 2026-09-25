@@ -28,10 +28,10 @@ export default function Chapter2025() {
           <div>
             <div className="flex items-center gap-3 text-xs font-syne tracking-micro text-brand-orange font-bold uppercase mb-2">
               <span className="h-px w-8 bg-brand-orange" />
-              <span>PREVIOUS EDITION</span>
+              <span>PAST &amp; DELIVERED WORK</span>
             </div>
             <h2 className="font-serif-display text-4xl sm:text-5xl lg:text-6xl font-light text-brand-white uppercase">
-              LifeStyle <span className="italic text-brand-orange font-normal">2025</span>
+              WHAT WE&apos;VE <span className="italic text-brand-orange font-normal">DONE</span>
             </h2>
           </div>
           <div className="mt-3 sm:mt-0 text-left sm:text-right flex flex-col items-start sm:items-end gap-2">
@@ -50,8 +50,8 @@ export default function Chapter2025() {
           </div>
         </div>
 
-        <p className="font-jost text-lg sm:text-xl md:text-2xl text-brand-white/90 max-w-3xl font-light leading-relaxed mb-6 sm:mb-8 tracking-wide">
-          A visual record of the LifeStyle 2025 experience. Bringing together physical garment art with spatial light and luxury fashion identity.
+        <p className="font-sans text-base sm:text-lg md:text-xl text-brand-white/90 max-w-3xl font-light leading-relaxed mb-6 sm:mb-8">
+          Selected fashion experiences, events, campaigns and creative work delivered through the FashAI ecosystem.
         </p>
 
         {/* Real 2025 Photo Grid */}

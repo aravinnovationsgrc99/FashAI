@@ -100,12 +100,76 @@ export default function WhoWeServeSection() {
     <section id="people-creativity" className="relative pt-1 sm:pt-2 pb-6 sm:pb-8 bg-white dark:bg-[#050505] border-b border-black/10 dark:border-white/10 text-[#111111] dark:text-brand-white overflow-hidden">
       <div className="container-editorial relative z-10 max-w-6xl mx-auto px-4 sm:px-6">
         {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 pb-3 border-b border-black/10 dark:border-white/10 mb-4 sm:mb-5">
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 pb-4 border-b border-black/10 dark:border-white/10 mb-6 sm:mb-8">
           <div>
+            <div className="flex items-center gap-2 text-[11px] font-syne tracking-widest text-[#F15E1C] dark:text-[#D4AF37] font-bold uppercase mb-2">
+              <span>WHO WE WORK WITH</span>
+            </div>
             <h2 className="font-serif-display text-3xl sm:text-5xl lg:text-6xl font-light text-[#111111] dark:text-brand-white uppercase leading-tight tracking-tight">
-              CREATIVE <span className="font-serif italic font-normal text-[#F15E1C] dark:text-[#D4AF37]">ECOSYSTEM</span>
+              INDUSTRIES WE <span className="font-serif italic font-normal text-[#F15E1C] dark:text-[#D4AF37]">SUPPORT</span>
             </h2>
           </div>
+          <p className="font-sans text-xs sm:text-sm text-[#555555] dark:text-brand-platinum/80 max-w-md font-light leading-relaxed">
+            Working with brands and businesses across fashion, lifestyle, technology and consumer categories.
+          </p>
+        </div>
+
+        {/* 5-Category Industry Visual Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 mb-10">
+          {[
+            {
+              title: "JEWELLERY",
+              desc: "Haute joaillerie, fine craftsmanship, and luxury adornments.",
+              image: "/assets/events/lifestyle_events.png",
+            },
+            {
+              title: "CLOTHING",
+              desc: "Couture houses, ready-to-wear lines, and designer apparel.",
+              image: "/assets/events/fashion_events.png",
+            },
+            {
+              title: "ACCESSORIES",
+              desc: "Leather goods, footwear, luxury accents, and timepieces.",
+              image: "/assets/events/product_events.png",
+            },
+            {
+              title: "ELECTRONICS",
+              desc: "Premium consumer tech, AI hardware, and digital devices.",
+              image: "/assets/events/it_events.png",
+            },
+            {
+              title: "PERFUMES",
+              desc: "Niche fragrances, luxury cosmetics, and haute perfumery.",
+              image: "/assets/homepage/Beauty.png",
+            },
+          ].map((ind, idx) => (
+            <motion.div
+              key={ind.title}
+              initial={{ opacity: 0, y: 14 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.4, delay: idx * 0.06 }}
+              className="group relative bg-[#FAF8F5] dark:bg-[#080706] border border-black/10 dark:border-white/10 rounded-2xl p-4 flex flex-col justify-between overflow-hidden hover:border-[#F15E1C]/60 dark:hover:border-[#D4AF37]/60 transition-all duration-300 shadow-sm"
+            >
+              <div className="relative aspect-[4/3] w-full overflow-hidden rounded-xl mb-3 bg-black/5 dark:bg-[#030303] border border-black/10 dark:border-white/10">
+                <Image
+                  src={ind.image}
+                  alt={ind.title}
+                  fill
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 20vw"
+                  className="object-cover object-top group-hover:scale-[1.03] transition-transform duration-500"
+                />
+              </div>
+              <div>
+                <h3 className="font-syne text-xs sm:text-sm font-bold uppercase tracking-wider text-[#111111] dark:text-brand-white group-hover:text-[#F15E1C] dark:group-hover:text-[#D4AF37] transition-colors mb-1">
+                  {ind.title}
+                </h3>
+                <p className="font-sans text-xs text-[#555555] dark:text-brand-platinum/80 font-normal leading-relaxed">
+                  {ind.desc}
+                </p>
+              </div>
+            </motion.div>
+          ))}
         </div>
 
         {/* Mobile / Tablet Compact Expandable Selector */}

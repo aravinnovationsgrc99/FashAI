@@ -181,42 +181,59 @@ export default function AdminLayout({ children }: AdminLayoutProps) {
 
   const pageTitle = getPageTitle(pathname);
 
-  // Content-First Navigation Groups as specified in section 7
+  // Complete CMS Navigation Groups as specified in Section 3
   const navigationGroups = [
     {
-      groupTitle: "CONTENT",
-      items: [
-        { label: "Dashboard", href: "/admin", icon: LayoutDashboard },
-        { label: "Homepage", href: "/admin/homepage", icon: LayoutTemplate },
-        { label: "Pages", href: "/admin/pages", icon: Zap },
-        { label: "Events", href: "/admin/events", icon: Calendar },
-        { label: "Media", href: "/admin/media", icon: ImageIcon },
-        { label: "Gallery", href: "/admin/gallery", icon: Grid },
-      ],
+      groupTitle: "DASHBOARD",
+      items: [{ label: "Dashboard Overview", href: "/admin", icon: LayoutDashboard }],
     },
     {
-      groupTitle: "PEOPLE",
+      groupTitle: "WEBSITE",
       items: [
-        { label: "Applications", href: "/admin/applications", icon: FileText },
-        { label: "Submissions", href: "/admin/submissions", icon: Inbox },
+        { label: "Pages", href: "/admin/pages", icon: Zap },
+        { label: "Sections", href: "/admin/homepage", icon: LayoutTemplate },
+        { label: "Navigation", href: "/admin/navigation", icon: NavIcon },
+        { label: "Footer", href: "/admin/footer", icon: MousePointer },
+        { label: "Global Layout", href: "/admin/website", icon: Globe },
       ],
     },
     {
       groupTitle: "DESIGN",
       items: [
-        { label: "Theme", href: "/admin/theme", icon: Palette },
-        { label: "Navigation", href: "/admin/navigation", icon: NavIcon },
-        { label: "Popup", href: "/admin/popup", icon: Layers },
-        { label: "Footer", href: "/admin/footer", icon: MousePointer },
+        { label: "Colors & Theme", href: "/admin/theme", icon: Palette },
+        { label: "Typography", href: "/admin/typography", icon: FileText },
+        { label: "Buttons & CTAs", href: "/admin/hero", icon: Sliders },
+        { label: "Animations", href: "/admin/motion", icon: Layers },
       ],
     },
     {
-      groupTitle: "SYSTEM",
+      groupTitle: "MEDIA",
       items: [
-        { label: "Website Status", href: "/admin/website", icon: Globe },
-        { label: "Settings", href: "/admin/settings", icon: Sliders },
-        { label: "Backups", href: "/admin/backups", icon: Archive },
-        { label: "Activity", href: "/admin/activity", icon: Activity },
+        { label: "Media Library", href: "/admin/media", icon: ImageIcon },
+        { label: "Galleries", href: "/admin/gallery", icon: Grid },
+        { label: "Videos", href: "/admin/video", icon: Layers },
+      ],
+    },
+    {
+      groupTitle: "FASHION & EVENTS",
+      items: [
+        { label: "Collections & Shows", href: "/admin/events", icon: Calendar },
+        { label: "Designers & Talent", href: "/admin/applications", icon: User },
+      ],
+    },
+    {
+      groupTitle: "FORMS & LEADS",
+      items: [
+        { label: "Submissions & Inquiries", href: "/admin/submissions", icon: Inbox },
+        { label: "Talent Applications", href: "/admin/applications", icon: FileText },
+      ],
+    },
+    {
+      groupTitle: "SETTINGS & USERS",
+      items: [
+        { label: "General & SEO", href: "/admin/settings", icon: Sliders },
+        { label: "Backups & Snapshots", href: "/admin/backups", icon: Archive },
+        { label: "Activity Logs", href: "/admin/activity", icon: Activity },
       ],
     },
   ];
