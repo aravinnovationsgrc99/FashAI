@@ -47,7 +47,7 @@ export default function FashionCommunitySection() {
               FASHION COMMUNITY &amp; TALENT
             </h2>
           </div>
-          <p className="font-sans text-xs sm:text-sm text-brand-platinum/90 max-w-md font-light leading-relaxed">
+          <p className="font-sans text-sm sm:text-base text-brand-platinum/90 max-w-md font-light leading-relaxed">
             Build your place in fashion, beauty, runway and lifestyle. Discover opportunities in couture, modeling, makeup, styling, choreography, media and public appearances.
           </p>
         </div>
@@ -66,16 +66,16 @@ export default function FashionCommunitySection() {
               {/* Card Top Information */}
               <div className="space-y-3 mb-6">
                 <div className="flex items-center justify-between">
-                  <span className="text-[10px] font-syne tracking-micro text-brand-orange font-bold uppercase">
+                  <span className="text-xs font-syne tracking-micro text-brand-orange font-bold uppercase">
                     {category.tagline}
                   </span>
                 </div>
 
-                <h3 className="font-serif-display text-2xl sm:text-3xl font-light text-brand-white uppercase tracking-tight group-hover:text-brand-yellow-golden transition-colors pt-1">
+                <h3 className="font-serif-display text-2xl sm:text-3xl lg:text-4xl font-light text-brand-white uppercase tracking-tight group-hover:text-brand-yellow-golden transition-colors pt-1">
                   {category.title}
                 </h3>
 
-                <p className="font-sans text-xs sm:text-sm text-brand-platinum/80 font-light min-h-[40px] leading-relaxed">
+                <p className="font-sans text-sm sm:text-base text-brand-platinum/80 font-light min-h-[40px] leading-relaxed">
                   {category.subtitle}
                 </p>
               </div>
@@ -96,7 +96,7 @@ export default function FashionCommunitySection() {
               <div className="pt-4 border-t border-white/10 space-y-3">
                 <button
                   onClick={() => handleOpenApplication(category.categoryId)}
-                  className="w-full bg-gradient-to-r from-brand-orange to-brand-yellow-golden hover:opacity-95 text-black py-3 px-5 text-xs font-syne tracking-caps font-bold transition-all flex items-center justify-between rounded-xl shadow-lg group-hover:scale-[1.01]"
+                  className="w-full bg-gradient-to-r from-brand-orange to-brand-yellow-golden hover:opacity-95 text-black py-3.5 px-5 text-sm font-syne tracking-caps font-bold transition-all flex items-center justify-between rounded-xl shadow-lg group-hover:scale-[1.01]"
                 >
                   <span>{category.ctaLabel}</span>
                   <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />

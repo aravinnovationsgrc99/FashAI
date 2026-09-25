@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import WhatWeDoSection from "@/components/sections/WhatWeDoSection";
 import WhoWeServeSection from "@/components/sections/WhoWeServeSection";
-import WithWhomWeWorkSection from "@/components/sections/WithWhomWeWorkSection";
 import Link from "next/link";
 import { ArrowRight, Sparkles, Layers, ShieldCheck, Cpu, Globe } from "lucide-react";
 
@@ -78,9 +77,9 @@ export default function ServicesPage() {
   return (
     <div className="bg-white dark:bg-[#050505] text-[#111111] dark:text-white pt-24 min-h-screen">
       {/* 01. SERVICES HERO BANNER */}
-      <section className="relative py-16 sm:py-24 border-b border-black/10 dark:border-white/10 bg-[#FAF8F5] dark:bg-[#080706]">
+      <section className="relative pt-8 pb-8 sm:pt-12 sm:pb-10 border-b border-black/10 dark:border-white/10 bg-[#FAF8F5] dark:bg-[#080706]">
         <div className="container-editorial max-w-6xl mx-auto px-4 sm:px-6">
-          <div className="max-w-3xl space-y-4">
+          <div className="max-w-3xl space-y-3">
             <div className="flex items-center gap-2.5">
               <span className="w-8 h-[2px] bg-[#F15E1C] dark:bg-[#D4AF37]" />
               <span className="font-syne text-xs tracking-[0.25em] text-[#F15E1C] dark:text-[#D4AF37] font-bold uppercase">
@@ -90,7 +89,7 @@ export default function ServicesPage() {
             <h1 className="font-serif-display text-4xl sm:text-6xl lg:text-7xl font-light text-[#111111] dark:text-white uppercase leading-[0.95]">
               OUR <span className="font-serif italic text-[#F15E1C] dark:text-[#D4AF37]">SERVICES</span> &amp; FORMATS
             </h1>
-            <p className="font-sans text-sm sm:text-base text-[#444444] dark:text-white/80 font-light leading-relaxed max-w-2xl">
+            <p className="font-sans text-base sm:text-lg text-[#444444] dark:text-white/80 font-light leading-relaxed max-w-2xl">
               FashAI Universal delivers specialized fashion show production, AI-driven computational design, luxury brand activations, and global talent orchestration bridging Dubai, the UAE, and India.
             </p>
           </div>
@@ -98,10 +97,10 @@ export default function ServicesPage() {
       </section>
 
       {/* 02. CORE SERVICES ARCHITECTURE GRID */}
-      <section className="py-16 sm:py-24 border-b border-black/10 dark:border-white/10">
+      <section className="pt-8 pb-16 sm:pt-10 sm:pb-24 border-b border-black/10 dark:border-white/10">
         <div className="container-editorial max-w-6xl mx-auto px-4 sm:px-6">
-          <div className="mb-12">
-            <h2 className="font-syne text-xs tracking-[0.25em] text-[#F15E1C] dark:text-[#D4AF37] font-bold uppercase mb-2">
+          <div className="mb-8">
+            <h2 className="font-syne text-xs sm:text-sm tracking-[0.25em] text-[#F15E1C] dark:text-[#D4AF37] font-bold uppercase mb-1.5">
               CORE CAPABILITIES
             </h2>
             <h3 className="font-serif-display text-3xl sm:text-5xl font-light text-[#111111] dark:text-white uppercase">
@@ -119,26 +118,26 @@ export default function ServicesPage() {
                 >
                   <div className="space-y-4">
                     <div className="flex items-center justify-between">
-                      <span className="font-serif-display text-3xl font-light text-[#F15E1C] dark:text-[#D4AF37]">
+                      <span className="font-serif-display text-4xl font-light text-[#F15E1C] dark:text-[#D4AF37]">
                         {service.number}
                       </span>
-                      <span className="text-[10px] font-syne tracking-wider text-[#F15E1C] dark:text-[#D4AF37] bg-[#F15E1C]/10 dark:bg-[#D4AF37]/10 px-3 py-1 rounded-full font-bold uppercase">
+                      <span className="text-xs font-syne tracking-wider text-[#F15E1C] dark:text-[#D4AF37] bg-[#F15E1C]/10 dark:bg-[#D4AF37]/10 px-3.5 py-1.5 rounded-full font-bold uppercase">
                         {service.category}
                       </span>
                     </div>
 
-                    <h4 className="font-serif-display text-2xl sm:text-3xl font-light text-[#111111] dark:text-white group-hover:text-[#F15E1C] dark:group-hover:text-[#D4AF37] transition-colors">
+                    <h4 className="font-serif-display text-2xl sm:text-3xl lg:text-4xl font-light text-[#111111] dark:text-white group-hover:text-[#F15E1C] dark:group-hover:text-[#D4AF37] transition-colors">
                       {service.title}
                     </h4>
 
-                    <p className="font-sans text-xs sm:text-sm text-[#444444] dark:text-white/80 leading-relaxed">
+                    <p className="font-sans text-sm sm:text-base text-[#444444] dark:text-white/80 leading-relaxed font-light">
                       {service.description}
                     </p>
 
-                    <div className="pt-2 border-t border-black/10 dark:border-white/10 space-y-2">
+                    <div className="pt-3 border-t border-black/10 dark:border-white/10 space-y-2.5">
                       {service.features.map((feat, idx) => (
-                        <div key={idx} className="flex items-center gap-2 text-xs font-syne text-[#333333] dark:text-white/90">
-                          <span className="w-1.5 h-1.5 rounded-full bg-[#F15E1C] dark:bg-[#D4AF37]" />
+                        <div key={idx} className="flex items-center gap-2.5 text-sm sm:text-[15px] font-syne text-[#333333] dark:text-white/90">
+                          <span className="w-2 h-2 rounded-full bg-[#F15E1C] dark:bg-[#D4AF37] flex-shrink-0" />
                           <span>{feat}</span>
                         </div>
                       ))}
@@ -148,10 +147,10 @@ export default function ServicesPage() {
                   <div className="pt-6 mt-6 border-t border-black/10 dark:border-white/10 flex justify-end">
                     <Link
                       href="/contact?type=Services"
-                      className="inline-flex items-center gap-2 text-xs font-syne font-bold uppercase text-[#F15E1C] dark:text-[#D4AF37] hover:underline"
+                      className="inline-flex items-center gap-2 text-sm font-syne font-bold uppercase text-[#F15E1C] dark:text-[#D4AF37] hover:underline"
                     >
                       <span>ENQUIRE FOR THIS SERVICE</span>
-                      <ArrowRight className="w-3.5 h-3.5" />
+                      <ArrowRight className="w-4 h-4" />
                     </Link>
                   </div>
                 </div>
@@ -167,32 +166,29 @@ export default function ServicesPage() {
       {/* 04. WHO WE SERVE SECTION */}
       <WhoWeServeSection />
 
-      {/* 05. WITH WHOM WE WORK SECTION */}
-      <WithWhomWeWorkSection />
-
       {/* 06. SERVICE INQUIRY CTA */}
       <section className="py-16 sm:py-24 bg-[#FAF8F5] dark:bg-[#080706] border-t border-black/10 dark:border-white/10">
         <div className="container-editorial max-w-4xl mx-auto px-4 sm:px-6 text-center space-y-6">
-          <span className="text-xs font-syne tracking-[0.25em] text-[#F15E1C] dark:text-[#D4AF37] font-bold uppercase">
+          <span className="text-xs sm:text-sm font-syne tracking-[0.25em] text-[#F15E1C] dark:text-[#D4AF37] font-bold uppercase">
             COMMISSION A SHOW OR BRAND EXPERIENCE
           </span>
           <h2 className="font-serif-display text-4xl sm:text-6xl font-light text-[#111111] dark:text-white uppercase leading-tight">
             READY TO ELEVATE YOUR <br />
             <span className="font-serif italic font-normal text-[#F15E1C] dark:text-[#D4AF37]">FASHION EXPERIENCE?</span>
           </h2>
-          <p className="font-sans text-xs sm:text-sm text-[#444444] dark:text-white/80 max-w-xl mx-auto leading-relaxed">
+          <p className="font-sans text-sm sm:text-base text-[#444444] dark:text-white/80 max-w-xl mx-auto leading-relaxed font-light">
             Contact our editorial team to discuss runway presentations, computational design collaborations, or sponsorship partnerships in Dubai, UAE &amp; India.
           </p>
           <div className="pt-4 flex flex-col sm:flex-row items-center justify-center gap-4">
             <Link
               href="/contact"
-              className="bg-[#D4AF37] text-[#111111] hover:bg-[#FFEC69] font-syne font-bold text-xs tracking-caps px-8 py-4 rounded-full shadow-lg transition-all duration-300 w-full sm:w-auto"
+              className="bg-[#D4AF37] text-[#111111] hover:bg-[#FFEC69] font-syne font-bold text-sm tracking-caps px-8 py-4 rounded-full shadow-lg transition-all duration-300 w-full sm:w-auto"
             >
               INITIATE SERVICE ENQUIRY →
             </Link>
             <Link
               href="/apply"
-              className="border border-[#F15E1C] dark:border-white/30 text-[#111111] dark:text-white hover:bg-[#F15E1C]/10 dark:hover:bg-white/10 font-syne font-bold text-xs tracking-caps px-8 py-4 rounded-full transition-all duration-300 w-full sm:w-auto"
+              className="border border-[#F15E1C] dark:border-white/30 text-[#111111] dark:text-white hover:bg-[#F15E1C]/10 dark:hover:bg-white/10 font-syne font-bold text-sm tracking-caps px-8 py-4 rounded-full transition-all duration-300 w-full sm:w-auto"
             >
               APPLY FOR NOMINATION →
             </Link>

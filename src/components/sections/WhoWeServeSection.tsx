@@ -102,14 +102,14 @@ export default function WhoWeServeSection() {
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 pb-4 border-b border-black/10 dark:border-white/10 mb-6 sm:mb-8">
           <div>
-            <div className="flex items-center gap-2 text-[11px] font-syne tracking-widest text-[#F15E1C] dark:text-[#D4AF37] font-bold uppercase mb-2">
+            <div className="flex items-center gap-2 text-xs sm:text-sm font-syne tracking-widest text-[#F15E1C] dark:text-[#D4AF37] font-bold uppercase mb-2">
               <span>WHO WE WORK WITH</span>
             </div>
             <h2 className="font-serif-display text-3xl sm:text-5xl lg:text-6xl font-light text-[#111111] dark:text-brand-white uppercase leading-tight tracking-tight">
               INDUSTRIES WE <span className="font-serif italic font-normal text-[#F15E1C] dark:text-[#D4AF37]">SUPPORT</span>
             </h2>
           </div>
-          <p className="font-sans text-xs sm:text-sm text-[#555555] dark:text-brand-platinum/80 max-w-md font-light leading-relaxed">
+          <p className="font-sans text-sm sm:text-base text-[#555555] dark:text-brand-platinum/80 max-w-md font-light leading-relaxed">
             Working with brands and businesses across fashion, lifestyle, technology and consumer categories.
           </p>
         </div>
@@ -167,10 +167,10 @@ export default function WhoWeServeSection() {
                 />
               </div>
               <div>
-                <h3 className="font-syne text-xs sm:text-sm font-bold uppercase tracking-wider text-[#111111] dark:text-brand-white group-hover:text-[#F15E1C] dark:group-hover:text-[#D4AF37] transition-colors mb-1">
+                <h3 className="font-syne text-sm sm:text-base font-bold uppercase tracking-wider text-[#111111] dark:text-brand-white group-hover:text-[#F15E1C] dark:group-hover:text-[#D4AF37] transition-colors mb-1">
                   {ind.title}
                 </h3>
-                <p className="font-sans text-xs text-[#555555] dark:text-brand-platinum/80 font-normal leading-relaxed">
+                <p className="font-sans text-sm text-[#555555] dark:text-brand-platinum/80 font-light leading-relaxed">
                   {ind.desc}
                 </p>
               </div>
@@ -185,10 +185,10 @@ export default function WhoWeServeSection() {
             className="w-full px-4 py-3 bg-[#FAF8F5] dark:bg-[#0A0908] border border-black/10 dark:border-white/10 rounded-lg flex items-center justify-between text-left shadow-sm"
           >
             <div>
-              <span className="text-[10px] font-syne uppercase text-[#F15E1C] dark:text-[#D4AF37] tracking-wider block font-bold">
+              <span className="text-xs font-syne uppercase text-[#F15E1C] dark:text-[#D4AF37] tracking-wider block font-bold">
                 DISCIPLINES
               </span>
-              <span className="font-serif-display text-lg font-normal text-black dark:text-white uppercase">
+              <span className="font-serif-display text-xl font-normal text-black dark:text-white uppercase">
                 {activeDiscipline.label}
               </span>
             </div>
@@ -208,14 +208,14 @@ export default function WhoWeServeSection() {
                     setActiveDiscipline(item);
                     setIsMobileMenuOpen(false);
                   }}
-                  className={`w-full px-4 py-2.5 text-left flex items-center justify-between text-xs font-syne uppercase tracking-wider transition-colors ${
+                  className={`w-full px-4 py-2.5 text-left flex items-center justify-between text-sm font-syne uppercase tracking-wider transition-colors ${
                     activeDiscipline.id === item.id
                       ? "bg-[#F15E1C]/10 dark:bg-[#D4AF37]/10 text-[#F15E1C] dark:text-[#D4AF37] font-bold"
                       : "text-black dark:text-white/80 hover:text-[#F15E1C] dark:hover:text-[#D4AF37] hover:bg-black/5 dark:hover:bg-white/5"
                   }`}
                 >
                   <span>{item.label}</span>
-                  <span className="text-[10px] opacity-60">{item.category}</span>
+                  <span className="text-xs opacity-60">{item.category}</span>
                 </button>
               ))}
             </div>
@@ -262,15 +262,15 @@ export default function WhoWeServeSection() {
                 className="space-y-3 pt-1"
               >
                 <div>
-                  <span className="text-[11px] font-syne tracking-widest text-[#F15E1C] dark:text-[#D4AF37] font-bold uppercase block mb-1">
+                  <span className="text-xs sm:text-sm font-syne tracking-widest text-[#F15E1C] dark:text-[#D4AF37] font-bold uppercase block mb-1">
                     {activeDiscipline.category}
                   </span>
-                  <h3 className="font-serif-display text-2xl sm:text-3xl font-light text-black dark:text-white uppercase leading-tight">
+                  <h3 className="font-serif-display text-3xl sm:text-4xl font-light text-black dark:text-white uppercase leading-tight">
                     {activeDiscipline.label}
                   </h3>
                 </div>
 
-                <p className="font-sans text-sm sm:text-base text-[#444444] dark:text-brand-platinum/85 font-normal leading-relaxed max-w-xl">
+                <p className="font-sans text-base sm:text-lg text-[#444444] dark:text-brand-platinum/85 font-normal leading-relaxed max-w-xl">
                   {activeDiscipline.tagline}
                 </p>
 
@@ -279,7 +279,7 @@ export default function WhoWeServeSection() {
                   {activeDiscipline.tags.map((tag, idx) => (
                     <span
                       key={idx}
-                      className="px-2.5 py-1 text-[10px] font-syne tracking-wider uppercase font-semibold text-[#555555] dark:text-white/70 bg-black/5 dark:bg-white/5 border border-black/10 dark:border-white/10 rounded-md"
+                      className="px-3 py-1 text-xs font-syne tracking-wider uppercase font-semibold text-[#555555] dark:text-white/80 bg-black/5 dark:bg-white/5 border border-black/10 dark:border-white/10 rounded-md"
                     >
                       {tag}
                     </span>
@@ -291,7 +291,7 @@ export default function WhoWeServeSection() {
 
           {/* RIGHT: Editorial Discipline Rail (~42% width ~ 5 cols) */}
           <div className="hidden lg:flex lg:col-span-5 flex-col pl-2 self-stretch">
-            <span className="text-[11px] font-syne tracking-widest text-[#F15E1C] dark:text-[#D4AF37] font-bold uppercase mb-3">
+            <span className="text-xs sm:text-sm font-syne tracking-widest text-[#F15E1C] dark:text-[#D4AF37] font-bold uppercase mb-3">
               DISCIPLINES
             </span>
 
@@ -320,7 +320,7 @@ export default function WhoWeServeSection() {
                       className="group cursor-pointer py-2.5 px-1 border-b border-black/10 dark:border-white/10 transition-colors duration-200 flex items-center justify-between"
                     >
                       <span
-                        className={`font-serif-display text-xl lg:text-2xl font-light tracking-wide uppercase transition-colors duration-200 ${
+                        className={`font-serif-display text-2xl lg:text-3xl font-light tracking-wide uppercase transition-colors duration-200 ${
                           isActive
                             ? "text-[#F15E1C] dark:text-[#D4AF37] font-normal"
                             : "text-black dark:text-white/80 group-hover:text-[#F15E1C] dark:group-hover:text-[#D4AF37]"
@@ -330,7 +330,7 @@ export default function WhoWeServeSection() {
                       </span>
 
                       <ArrowUpRight
-                        className={`w-4 h-4 transition-all duration-300 ${
+                        className={`w-5 h-5 transition-all duration-300 ${
                           isActive
                             ? "text-[#F15E1C] dark:text-[#D4AF37] translate-x-0.5 -translate-y-0.5 opacity-100"
                             : "text-black/30 dark:text-white/30 opacity-0 group-hover:opacity-100 group-hover:text-[#F15E1C] dark:group-hover:text-[#D4AF37]"
