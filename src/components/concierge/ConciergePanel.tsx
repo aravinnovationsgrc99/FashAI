@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useRef } from "react";
 import { useRouter } from "next/navigation";
+import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { X, Send, ArrowUpRight } from "lucide-react";
 import { useSiteConfig } from "@/context/SiteConfigContext";
@@ -251,6 +252,7 @@ export default function ConciergePanel({ isOpen, onClose }: ConciergePanelProps)
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({
+            source: "CHATBOT",
             applicationType: role,
             fullName: data.fullName,
             email: data.email,
@@ -295,6 +297,7 @@ export default function ConciergePanel({ isOpen, onClose }: ConciergePanelProps)
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({
+            source: "CHATBOT",
             name: data.fullName,
             email: data.email,
             phone: data.whatsapp,
@@ -580,128 +583,178 @@ export default function ConciergePanel({ isOpen, onClose }: ConciergePanelProps)
           className="fixed inset-0 bg-black/60 backdrop-blur-sm sm:hidden pointer-events-auto z-[241]"
         />
 
-        {/* Minimal Chatbot Panel Header [ FashAI Concierge × ] */}
+        {/* Highly Rounded Floating Chatbot Panel */}
         <motion.div
-          initial={{ opacity: 0, y: 16, scale: 0.96 }}
+          initial={{ opacity: 0, y: 20, scale: 0.95 }}
           animate={{ opacity: 1, y: 0, scale: 1 }}
-          exit={{ opacity: 0, y: 16, scale: 0.96 }}
-          transition={{ duration: 0.2, ease: "easeOut" }}
+          exit={{ opacity: 0, y: 20, scale: 0.95 }}
+          transition={{ duration: 0.25, ease: [0.22, 1, 0.36, 1] }}
           style={{ willChange: "transform, opacity" }}
-          className="relative z-[242] pointer-events-auto w-[calc(100vw-1.5rem)] sm:w-[380px] h-[80vh] sm:h-[520px] max-h-[560px] max-w-[400px] bg-white dark:bg-[#111111] border border-black/10 dark:border-white/15 shadow-[0_12px_40px_rgba(0,0,0,0.15)] dark:shadow-[0_12px_40px_rgba(0,0,0,0.8)] flex flex-col justify-between overflow-hidden rounded-2xl text-[#111111] dark:text-white"
+          className="relative z-[242] pointer-events-auto w-[calc(100vw-1.25rem)] sm:w-[390px] h-[82vh] sm:h-[540px] max-h-[600px] max-w-[420px] bg-[#FAF8F5]/95 dark:bg-[#0C0B0A]/95 border border-black/10 dark:border-[#D4AF37]/30 shadow-[0_20px_60px_rgba(0,0,0,0.25)] dark:shadow-[0_20px_60px_rgba(0,0,0,0.95)] backdrop-blur-2xl flex flex-col justify-between overflow-hidden rounded-[28px] sm:rounded-[32px] text-[#111111] dark:text-white mb-2 mr-2.5 sm:mb-0 sm:mr-0"
           role="dialog"
           aria-label="FashAI Concierge"
         >
-          {/* Header Bar */}
-          <div className="flex items-center justify-between px-4 py-3 border-b border-black/10 dark:border-white/10 bg-white dark:bg-[#111111] flex-shrink-0">
-            <span className="font-serif-display text-sm font-semibold text-[#111111] dark:text-white uppercase tracking-wider">
-              FashAI Concierge
-            </span>
+          {/* Header Bar with Logo Identity */}
+          <div className="flex items-center justify-between px-5 py-4 border-b border-black/10 dark:border-white/10 bg-[#FAF8F5]/80 dark:bg-[#0C0B0A]/80 backdrop-blur-md flex-shrink-0">
+            <div className="flex items-center gap-3">
+              {/* Chatbot Header Logo */}
+              <div className="relative w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-[#111111] dark:bg-[#161514] border border-[#D4AF37]/40 flex items-center justify-center p-1 shadow-sm shrink-0 overflow-hidden">
+                <Image
+                  src="/assets/brand/chatbot_logo.png"
+                  alt="FashAI Logo"
+                  width={28}
+                  height={28}
+                  className="object-contain"
+                />
+              </div>
+              <div className="flex flex-col">
+                <div className="flex items-center gap-2">
+                  <span className="font-syne text-xs sm:text-sm font-bold uppercase tracking-wider text-[#111111] dark:text-white">
+                    FashAI
+                  </span>
+                  <span className="flex h-2 w-2 relative">
+                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#2E936F] opacity-75" />
+                    <span className="relative inline-flex rounded-full h-2 w-2 bg-[#2E936F]" />
+                  </span>
+                </div>
+                <span className="font-sans text-[11px] text-[#F15E1C] dark:text-[#D4AF37] font-medium tracking-tight">
+                  Your fashion assistant
+                </span>
+              </div>
+            </div>
+
             <button
               onClick={onClose}
-              className="p-1 rounded-full text-[#111111]/70 dark:text-white/70 hover:text-[#F15E1C] dark:hover:text-[#D4AF37] transition-colors"
-              aria-label="Close Concierge"
+              className="w-8 h-8 rounded-full bg-black/5 dark:bg-white/10 hover:bg-black/10 dark:hover:bg-white/20 text-[#111111]/70 dark:text-white/70 hover:text-[#F15E1C] dark:hover:text-[#D4AF37] flex items-center justify-center transition-all"
+              aria-label="Close FashAI assistant"
             >
-              <X className="w-5 h-5" />
+              <X className="w-4 h-4" />
             </button>
           </div>
 
           {/* Messages Scroll Area */}
-          <div className="flex-1 overflow-y-auto p-3.5 sm:p-4 space-y-3 bg-white dark:bg-[#111111]">
+          <div className="flex-1 overflow-y-auto p-4 sm:p-5 space-y-4 bg-transparent">
             {messages.map((msg) => (
               <motion.div
                 key={msg.id}
-                initial={{ opacity: 0, y: 4 }}
+                initial={{ opacity: 0, y: 6 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.15 }}
+                transition={{ duration: 0.18 }}
                 className={`flex flex-col ${msg.sender === "user" ? "items-end" : "items-start"}`}
               >
-                {/* Message Bubble */}
-                <div
-                  className={`max-w-[88%] px-3.5 py-2.5 text-xs leading-relaxed font-sans ${
-                    msg.sender === "user"
-                      ? "bg-[#F15E1C] text-white rounded-2xl rounded-tr-xs font-medium"
-                      : "bg-[#F7D7B0]/25 dark:bg-white/5 border border-black/10 dark:border-white/10 text-[#111111] dark:text-white rounded-2xl rounded-tl-xs"
-                  }`}
-                >
-                  <p className="whitespace-pre-line">{msg.text}</p>
-
-                  {/* Review Summary Card */}
-                  {msg.reviewSummary && (
-                    <div className="mt-2 p-2.5 bg-white/80 dark:bg-black/50 border border-[#F15E1C]/40 dark:border-[#D4AF37]/40 rounded-xl space-y-1 text-[11px]">
-                      <span className="font-syne font-bold uppercase text-[#F15E1C] dark:text-[#D4AF37] block">
-                        {msg.reviewSummary.title}
-                      </span>
-                      {msg.reviewSummary.details.map((d, i) => (
-                        <div key={i} className="flex justify-between gap-2 border-b border-black/5 dark:border-white/5 pb-0.5">
-                          <span className="text-[#111111]/70 dark:text-white/70">{d.label}:</span>
-                          <span className="font-medium text-[#111111] dark:text-white truncate max-w-[150px]">{d.value}</span>
-                        </div>
-                      ))}
+                {msg.sender === "bot" ? (
+                  /* Bot Message with Logo Avatar */
+                  <div className="flex items-start gap-2.5 max-w-[92%]">
+                    <div className="w-6 h-6 rounded-full overflow-hidden shrink-0 border border-[#D4AF37]/40 relative bg-[#111111] dark:bg-[#161514] flex items-center justify-center p-0.5 mt-0.5 shadow-xs">
+                      <Image
+                        src="/assets/brand/chatbot_logo.png"
+                        alt="FashAI"
+                        width={18}
+                        height={18}
+                        className="object-contain"
+                      />
                     </div>
-                  )}
+                    <div className="flex flex-col items-start min-w-0">
+                      <div className="px-4 py-3 text-xs leading-relaxed font-sans bg-white dark:bg-[#161514] border border-black/10 dark:border-white/10 text-[#111111] dark:text-white/95 rounded-[22px] rounded-tl-xs shadow-sm">
+                        <p className="whitespace-pre-line">{msg.text}</p>
 
-                  {/* Navigation Target Button */}
-                  {msg.navigationTarget && (
-                    <button
-                      onClick={() => router.push(msg.navigationTarget!)}
-                      className="mt-2 inline-flex items-center gap-1 text-[10px] font-syne font-bold text-[#F15E1C] dark:text-[#D4AF37] hover:underline uppercase pt-1 border-t border-black/10 dark:border-white/10 w-full"
-                    >
-                      <span>GO TO {msg.navigationTarget}</span>
-                      <ArrowUpRight className="w-3 h-3" />
-                    </button>
-                  )}
-                </div>
+                        {/* Review Summary Card */}
+                        {msg.reviewSummary && (
+                          <div className="mt-2.5 p-3 bg-[#FAF8F5] dark:bg-black/50 border border-[#F15E1C]/30 dark:border-[#D4AF37]/30 rounded-2xl space-y-1.5 text-[11px]">
+                            <span className="font-syne font-bold uppercase text-[#F15E1C] dark:text-[#D4AF37] block">
+                              {msg.reviewSummary.title}
+                            </span>
+                            {msg.reviewSummary.details.map((d, i) => (
+                              <div key={i} className="flex justify-between gap-2 border-b border-black/5 dark:border-white/5 pb-1">
+                                <span className="text-[#111111]/70 dark:text-white/70">{d.label}:</span>
+                                <span className="font-medium text-[#111111] dark:text-white truncate max-w-[150px]">{d.value}</span>
+                              </div>
+                            ))}
+                          </div>
+                        )}
 
-                {/* Timestamp */}
-                <span className={`text-[8px] font-syne mt-1 px-1 ${
-                  msg.sender === "user" ? "text-white/70 text-right" : "text-[#111111]/50 dark:text-white/40"
-                }`}>
-                  {msg.timestamp}
-                </span>
+                        {/* Navigation Target Button */}
+                        {msg.navigationTarget && (
+                          <button
+                            onClick={() => router.push(msg.navigationTarget!)}
+                            className="mt-2.5 inline-flex items-center gap-1.5 text-[10px] font-syne font-bold text-[#F15E1C] dark:text-[#D4AF37] hover:underline uppercase pt-1.5 border-t border-black/10 dark:border-white/10 w-full"
+                          >
+                            <span>GO TO {msg.navigationTarget}</span>
+                            <ArrowUpRight className="w-3.5 h-3.5" />
+                          </button>
+                        )}
+                      </div>
 
-                {/* Dynamic Quick Phrases Chips */}
-                {msg.quickChips && msg.quickChips.length > 0 && (
-                  <div className="flex flex-wrap gap-1.5 mt-2 max-w-[95%]">
-                    {msg.quickChips.slice(0, 4).map((chip) => (
-                      <button
-                        key={chip.id}
-                        disabled={isTyping || isLoading}
-                        onClick={() => {
-                          if (chip.actionKey.startsWith("CUSTOM_")) {
-                            dispatchCustomChipAction(chip.actionKey);
-                          } else {
-                            handleChipClick(chip);
-                          }
-                        }}
-                        className="px-3 py-1.5 rounded-full text-[11px] font-syne font-medium transition-colors border bg-white text-[#111111] border-black/15 hover:border-[#F15E1C] hover:bg-[#F7D7B0]/30 hover:text-[#F15E1C] dark:bg-[#1A1A1A] dark:text-white dark:border-white/15 dark:hover:border-[#D4AF37] dark:hover:bg-white/10 dark:hover:text-[#D4AF37] disabled:opacity-40"
-                      >
-                        {chip.label}
-                      </button>
-                    ))}
+                      {/* Timestamp */}
+                      <span className="text-[9px] font-syne text-[#111111]/40 dark:text-white/40 mt-1 px-1">
+                        {msg.timestamp}
+                      </span>
+
+                      {/* Quick Action Chips */}
+                      {msg.quickChips && msg.quickChips.length > 0 && (
+                        <div className="flex flex-wrap gap-1.5 mt-2 max-w-full">
+                          {msg.quickChips.slice(0, 5).map((chip) => (
+                            <button
+                              key={chip.id}
+                              disabled={isTyping || isLoading}
+                              onClick={() => {
+                                if (chip.actionKey.startsWith("CUSTOM_")) {
+                                  dispatchCustomChipAction(chip.actionKey);
+                                } else {
+                                  handleChipClick(chip);
+                                }
+                              }}
+                              className="px-3.5 py-1.5 rounded-full text-[11px] font-syne font-medium transition-all border bg-white dark:bg-[#1A1918] text-[#111111] dark:text-white border-black/15 dark:border-white/15 hover:border-[#F15E1C] dark:hover:border-[#D4AF37] hover:text-[#F15E1C] dark:hover:text-[#D4AF37] hover:shadow-sm disabled:opacity-40"
+                            >
+                              {chip.label}
+                            </button>
+                          ))}
+                        </div>
+                      )}
+                    </div>
+                  </div>
+                ) : (
+                  /* User Message */
+                  <div className="flex flex-col items-end max-w-[85%] self-end">
+                    <div className="px-4 py-3 text-xs leading-relaxed font-sans bg-gradient-to-r from-[#F15E1C] to-[#e04f10] text-white rounded-[22px] rounded-tr-xs shadow-sm font-medium">
+                      <p className="whitespace-pre-line">{msg.text}</p>
+                    </div>
+                    <span className="text-[9px] font-syne text-[#111111]/40 dark:text-white/40 mt-1 px-1 text-right">
+                      {msg.timestamp}
+                    </span>
                   </div>
                 )}
               </motion.div>
             ))}
 
-            {/* MANDATORY 3-DOT TYPING ANIMATION BUBBLE */}
+            {/* STAGGERED 3-DOT TYPING ANIMATION WITH LOGO AVATAR */}
             {isTyping && (
               <motion.div
                 initial={{ opacity: 0, y: 4 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0 }}
                 transition={{ duration: 0.15 }}
-                className="flex flex-col items-start"
+                className="flex items-start gap-2.5 max-w-[90%]"
                 role="status"
                 aria-live="polite"
-                aria-label="FashAI Concierge is typing"
+                aria-label="FashAI is typing"
               >
-                <div className="bg-[#F7D7B0]/25 dark:bg-white/5 border border-black/10 dark:border-white/10 text-[#111111] dark:text-white px-3.5 py-2.5 rounded-2xl rounded-tl-xs flex items-center gap-1.5 shadow-sm">
-                  <span className="sr-only">FashAI Concierge is typing...</span>
-                  <span className="hidden motion-reduce:inline text-xs font-syne opacity-70">typing...</span>
-                  <div className="flex items-center gap-1 motion-reduce:hidden">
-                    <span className="w-1.5 h-1.5 rounded-full bg-[#111111] dark:bg-white animate-bounce [animation-delay:-0.3s]" />
-                    <span className="w-1.5 h-1.5 rounded-full bg-[#111111] dark:bg-white animate-bounce [animation-delay:-0.15s]" />
-                    <span className="w-1.5 h-1.5 rounded-full bg-[#111111] dark:bg-white animate-bounce" />
+                <div className="w-6 h-6 rounded-full overflow-hidden shrink-0 border border-[#D4AF37]/40 relative bg-[#111111] dark:bg-[#161514] flex items-center justify-center p-0.5 mt-0.5 shadow-xs">
+                  <Image
+                    src="/assets/brand/chatbot_logo.png"
+                    alt="FashAI"
+                    width={18}
+                    height={18}
+                    className="object-contain"
+                  />
+                </div>
+                <div className="bg-white dark:bg-[#161514] border border-black/10 dark:border-[#D4AF37]/30 px-4 py-3 rounded-[22px] rounded-tl-xs shadow-sm flex items-center gap-2">
+                  <span className="sr-only">FashAI is typing...</span>
+                  <span className="hidden motion-reduce:inline text-xs font-syne text-[#D4AF37]">typing...</span>
+                  <div className="flex items-center gap-1.5 motion-reduce:hidden py-0.5">
+                    <span className="w-2 h-2 rounded-full bg-[#F15E1C] dark:bg-[#D4AF37] animate-typing-dot-1" />
+                    <span className="w-2 h-2 rounded-full bg-[#F15E1C] dark:bg-[#D4AF37] animate-typing-dot-2" />
+                    <span className="w-2 h-2 rounded-full bg-[#F15E1C] dark:bg-[#D4AF37] animate-typing-dot-3" />
                   </div>
                 </div>
               </motion.div>
@@ -710,14 +763,14 @@ export default function ConciergePanel({ isOpen, onClose }: ConciergePanelProps)
             <div ref={messagesEndRef} />
           </div>
 
-          {/* Minimal Input Footer */}
-          <div className="p-3 bg-white dark:bg-[#111111] border-t border-black/10 dark:border-white/10 flex-shrink-0">
+          {/* Integrated Rounded Input Footer */}
+          <div className="p-3.5 bg-[#FAF8F5]/90 dark:bg-[#0C0B0A]/90 border-t border-black/10 dark:border-white/10 flex-shrink-0">
             <form
               onSubmit={(e) => {
                 e.preventDefault();
                 handleSendInput();
               }}
-              className="flex items-center gap-2"
+              className="relative flex items-center gap-2 bg-white dark:bg-[#161514] border border-black/15 dark:border-white/15 focus-within:border-[#F15E1C] dark:focus-within:border-[#D4AF37] rounded-full p-1.5 pl-4 transition-all shadow-sm"
             >
               <input
                 ref={inputRef}
@@ -725,14 +778,14 @@ export default function ConciergePanel({ isOpen, onClose }: ConciergePanelProps)
                 value={inputValue}
                 onChange={(e) => setInputValue(e.target.value)}
                 disabled={isTyping || isLoading}
-                placeholder={isTyping ? "Concierge is formulating response..." : "Type a message..."}
-                className="flex-1 px-3.5 py-2 rounded-full text-xs transition-colors focus:outline-none bg-white dark:bg-[#1A1A1A] border border-black/15 dark:border-white/20 text-[#111111] dark:text-white placeholder:text-[#111111]/45 dark:placeholder:text-white/40 focus:border-[#F15E1C] dark:focus:border-[#D4AF37] disabled:opacity-50"
+                placeholder={isTyping ? "FashAI is formulating response..." : "Type your message..."}
+                className="flex-1 bg-transparent text-xs text-[#111111] dark:text-white placeholder:text-[#111111]/45 dark:placeholder:text-white/40 focus:outline-none disabled:opacity-50"
               />
               <button
                 type="submit"
                 disabled={isTyping || isLoading || !inputValue.trim()}
-                className="w-8 h-8 rounded-full flex items-center justify-center transition-colors bg-[#F15E1C] text-white hover:bg-[#D4AF37] hover:text-[#111111] dark:bg-[#D4AF37] dark:text-[#111111] dark:hover:bg-[#FFEC69] disabled:opacity-40 shrink-0"
-                aria-label="Send Message"
+                className="w-8.5 h-8.5 rounded-full bg-[#F15E1C] text-white hover:bg-[#e04f10] dark:bg-[#D4AF37] dark:text-black dark:hover:bg-[#f5aa00] flex items-center justify-center transition-all disabled:opacity-40 shrink-0 shadow-sm"
+                aria-label="Send message"
               >
                 <Send className="w-3.5 h-3.5" />
               </button>

@@ -155,23 +155,15 @@ export default function Header() {
             })}
           </nav>
 
-          {/* RIGHT CIRCULAR ACTION CONTROLS */}
-          <div
-            className={`flex items-center shrink-0 transition-all duration-300 ${
-              isTopAtVideo ? "gap-3 sm:gap-4" : "gap-2.5 sm:gap-3.5"
-            }`}
-          >
-            {/* CIRCULAR GLASS THEME TOGGLE */}
+          {/* RIGHT CIRCULAR & PILL UNIFIED ACTION CONTROLS */}
+          <div className="flex items-center shrink-0 gap-2.5 sm:gap-3">
+            {/* CIRCULAR GLASS THEME TOGGLE (w-9 h-9 sm:w-10 sm:h-10) */}
             <ThemeToggle isHeroHeader={isOverVideo} />
 
-            {/* CONTACT US CTA BUTTON (DESKTOP/TABLET ONLY — KEPT INSIDE 3-LINE DRAWER FOR MOBILE) */}
+            {/* FULLY ROUNDED PILL CONTACT US CTA BUTTON (h-9 sm:h-10 px-5 sm:px-6) */}
             <Link
               href="/contact"
-              className={`hidden sm:inline-flex items-center justify-center bg-[#D4AF37] text-[#111111] hover:bg-[#FFEC69] font-syne font-bold tracking-wider uppercase rounded-full transition-all duration-300 shadow-md hover:shadow-lg hover:-translate-y-0.5 shrink-0 whitespace-nowrap ${
-                isTopAtVideo
-                  ? "text-xs px-5 sm:px-6 py-2 sm:py-2.5"
-                  : "text-[11px] px-4 sm:px-5 py-1.5 sm:py-2"
-              }`}
+              className="hidden sm:inline-flex items-center justify-center bg-[#D4AF37] text-[#111111] hover:bg-[#FFEC69] font-syne font-bold text-xs tracking-wider uppercase rounded-full h-9 sm:h-10 px-5 sm:px-6 transition-all duration-300 shadow-md hover:shadow-lg hover:-translate-y-0.5 shrink-0 whitespace-nowrap"
               data-cursor="explore"
             >
               <GradientFlowText variant="primary">
@@ -182,10 +174,10 @@ export default function Header() {
             {/* CIRCULAR MOBILE HAMBURGER BUTTON */}
             <button
               onClick={() => setMobileMenuOpen(true)}
-              className="lg:hidden rounded-full flex items-center justify-center shrink-0 transition-all duration-300 aspect-square w-[34px] h-[34px] sm:w-[38px] sm:h-[38px] bg-[#D4AF37]/15 dark:bg-white/15 border border-[#D4AF37]/45 dark:border-white/20 backdrop-blur-md text-[#D4AF37] dark:text-white hover:bg-[#D4AF37]/25 dark:hover:bg-white/25 hover:border-[#D4AF37] shadow-sm"
+              className="lg:hidden rounded-full flex items-center justify-center shrink-0 transition-all duration-300 w-9 h-9 sm:w-10 sm:h-10 bg-[#D4AF37]/15 dark:bg-white/15 border border-[#D4AF37]/50 dark:border-white/20 backdrop-blur-md text-[#D4AF37] dark:text-white hover:bg-[#D4AF37]/25 dark:hover:bg-white/25 hover:border-[#D4AF37] shadow-sm"
               aria-label="Open Navigation Menu"
             >
-              <Menu className="w-[18px] h-[18px] sm:w-5 sm:h-5 text-[#D4AF37] dark:text-white stroke-[2.2]" />
+              <Menu className="w-4 h-4 sm:w-5 sm:h-5 text-[#D4AF37] dark:text-white stroke-[2.2]" />
             </button>
           </div>
         </div>

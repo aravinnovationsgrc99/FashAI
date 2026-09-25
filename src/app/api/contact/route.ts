@@ -121,6 +121,8 @@ export async function POST(request: Request) {
       const { saveSubmission } = await import("@/lib/admin/storage");
       await saveSubmission({
         type: "CONTACT",
+        source: (body.source as any) || "CONTACT_FORM",
+        domain: enquiryType || "General Inquiry",
         fullName: name,
         email,
         phone,

@@ -240,8 +240,10 @@ export interface MasterSiteConfig {
 
 export interface SubmissionRecord {
   id: string;
-  type: "CONTACT" | "APPLICATION";
+  type: "CONTACT" | "APPLICATION" | "CHATBOT_LEAD" | "CHATBOT_INQUIRY" | "CHATBOT_CONVERSATION";
+  source?: "CHATBOT" | "CONTACT_FORM" | "APPLICATION_FORM" | "WEBSITE_POPUP" | "OTHER";
   applicationType?: string;
+  domain?: string;
   fullName: string;
   email: string;
   phone?: string;
@@ -253,8 +255,10 @@ export interface SubmissionRecord {
   eventInterest?: string;
   message?: string;
   categoryDetails?: Record<string, unknown>;
-  status: "NEW" | "UNDER REVIEW" | "CONTACTED" | "ARCHIVED";
+  status: "NEW" | "UNDER REVIEW" | "CONTACTED" | "IN_PROGRESS" | "RESOLVED" | "ARCHIVED";
   submittedAt: string;
+  conversationId?: string;
+  conversationHistory?: Array<{ sender: string; text: string; timestamp: string }>;
 }
 
 export interface ActivityLogEntry {

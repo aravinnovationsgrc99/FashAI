@@ -34,6 +34,11 @@ import {
   RotateCcw,
   Sun,
   Moon,
+  MessageSquare,
+  MessageCircle,
+  Users,
+  HelpCircle,
+  UserCheck,
 } from "lucide-react";
 import { useSiteConfig } from "@/context/SiteConfigContext";
 import { useTheme } from "@/context/ThemeContext";
@@ -173,6 +178,7 @@ export default function AdminLayout({ children }: AdminLayoutProps) {
   // Derive Current Page Title
   const getPageTitle = (path: string) => {
     if (path === "/admin") return "Dashboard";
+    if (path === "/admin/chatbot") return "Chatbot Intelligence";
     if (path === "/admin/homepage") return "Homepage Editor";
     if (path === "/admin/pages") return "Page Manager";
     if (path === "/admin/events") return "Events Manager";
@@ -180,7 +186,7 @@ export default function AdminLayout({ children }: AdminLayoutProps) {
     if (path === "/admin/media") return "Media Library";
     if (path === "/admin/gallery") return "Gallery Manager";
     if (path === "/admin/applications") return "Talent Applications";
-    if (path === "/admin/submissions") return "Form Submissions";
+    if (path === "/admin/submissions") return "Submitted Forms";
     if (path === "/admin/theme") return "Theme Editor";
     if (path === "/admin/navigation") return "Navigation Control";
     if (path === "/admin/popup") return "Event Popup";
@@ -194,61 +200,63 @@ export default function AdminLayout({ children }: AdminLayoutProps) {
 
   const pageTitle = getPageTitle(pathname);
 
-  // Complete CMS Navigation Groups as specified in Section 3
+  // Complete CMS Navigation Groups as specified in User Requirement #18
   const navigationGroups = [
     {
       groupTitle: "DASHBOARD",
-      items: [{ label: "Dashboard Overview", href: "/admin", icon: LayoutDashboard }],
+      items: [{ label: "Master Overview", href: "/admin", icon: LayoutDashboard }],
     },
     {
-      groupTitle: "WEBSITE",
+      groupTitle: "CHATBOT",
+      items: [
+        { label: "Overview & Analytics", href: "/admin/chatbot", icon: MessageSquare },
+        { label: "Conversations", href: "/admin/chatbot?tab=conversations", icon: MessageCircle },
+        { label: "Leads Captured", href: "/admin/chatbot?tab=leads", icon: Users },
+        { label: "Chatbot Inquiries", href: "/admin/chatbot?tab=inquiries", icon: HelpCircle },
+      ],
+    },
+    {
+      groupTitle: "APPLICATIONS",
+      items: [
+        { label: "All Applications", href: "/admin/applications", icon: UserCheck },
+        { label: "By Domain", href: "/admin/applications?view=domain", icon: Layers },
+      ],
+    },
+    {
+      groupTitle: "SUBMITTED FORMS",
+      items: [
+        { label: "Submissions & Inquiries", href: "/admin/submissions", icon: Inbox },
+      ],
+    },
+    {
+      groupTitle: "WEBSITE & SECTIONS",
       items: [
         { label: "Pages", href: "/admin/pages", icon: Zap },
-        { label: "Sections", href: "/admin/homepage", icon: LayoutTemplate },
+        { label: "Homepage Sections", href: "/admin/homepage", icon: LayoutTemplate },
         { label: "Navigation", href: "/admin/navigation", icon: NavIcon },
         { label: "Footer", href: "/admin/footer", icon: MousePointer },
         { label: "Global Layout", href: "/admin/website", icon: Globe },
       ],
     },
     {
-      groupTitle: "SERVICES",
+      groupTitle: "SERVICES & EVENTS",
       items: [
         { label: "Services & Availability", href: "/admin/services", icon: Layers },
+        { label: "Collections & Shows", href: "/admin/events", icon: Calendar },
       ],
     },
     {
-      groupTitle: "DESIGN",
+      groupTitle: "DESIGN & MEDIA",
       items: [
         { label: "Colors & Theme", href: "/admin/theme", icon: Palette },
         { label: "Typography", href: "/admin/typography", icon: FileText },
         { label: "Buttons & CTAs", href: "/admin/hero", icon: Sliders },
-        { label: "Animations", href: "/admin/motion", icon: Layers },
-      ],
-    },
-    {
-      groupTitle: "MEDIA",
-      items: [
         { label: "Media Library", href: "/admin/media", icon: ImageIcon },
         { label: "Galleries", href: "/admin/gallery", icon: Grid },
-        { label: "Videos", href: "/admin/video", icon: Layers },
       ],
     },
     {
-      groupTitle: "FASHION & EVENTS",
-      items: [
-        { label: "Collections & Shows", href: "/admin/events", icon: Calendar },
-        { label: "Designers & Talent", href: "/admin/applications", icon: User },
-      ],
-    },
-    {
-      groupTitle: "FORMS & LEADS",
-      items: [
-        { label: "Submissions & Inquiries", href: "/admin/submissions", icon: Inbox },
-        { label: "Talent Applications", href: "/admin/applications", icon: FileText },
-      ],
-    },
-    {
-      groupTitle: "SETTINGS & USERS",
+      groupTitle: "SETTINGS & LOGS",
       items: [
         { label: "General & SEO", href: "/admin/settings", icon: Sliders },
         { label: "Backups & Snapshots", href: "/admin/backups", icon: Archive },

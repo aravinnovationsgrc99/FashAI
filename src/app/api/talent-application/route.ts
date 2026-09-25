@@ -372,9 +372,24 @@ export async function POST(request: Request) {
     // Save submission to Master Admin Data Repository
     try {
       const { saveSubmission } = await import("@/lib/admin/storage");
+      const domainLabelsMap: Record<string, string> = {
+        fashion_designer: "Fashion Designer",
+        model: "Model",
+        makeup_artist: "Makeup Artist",
+        fashion_stylist: "Fashion Stylist",
+        influencer_creator: "Influencer / Creator",
+        celebrity_public_figure: "Celebrity / Public Figure",
+        choreographer: "Choreographer",
+        cstp: "Creative & Technical Professional",
+        fashion_commentary: "Fashion Commentary / Media",
+        nomination: "Industry Nomination",
+      };
+
       await saveSubmission({
         type: "APPLICATION",
+        source: (body.source as any) || "APPLICATION_FORM",
         applicationType,
+        domain: domainLabelsMap[applicationType] || applicationType,
         fullName,
         email,
         phone: whatsapp,
