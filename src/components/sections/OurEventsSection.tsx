@@ -40,7 +40,7 @@ export default function OurEventsSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="group relative bg-[#090807] border border-brand-yellow-golden/40 p-6 sm:p-8 flex flex-col justify-between min-h-[380px] sm:min-h-[420px] overflow-hidden rounded-2xl shadow-xl"
+            className="group relative bg-[#090807] border border-[#FAB60A]/40 p-6 sm:p-8 flex flex-col justify-between min-h-[380px] sm:min-h-[420px] overflow-hidden rounded-2xl shadow-xl"
           >
             {/* Full-Bleed Crisp Banner Image Layer */}
             <div className="absolute inset-0 z-0 opacity-90 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none">
@@ -52,52 +52,52 @@ export default function OurEventsSection() {
                 className="object-cover object-center filter contrast-[1.05] brightness-[1.02]"
                 priority
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/98 via-black/80 to-black/40" />
             </div>
 
             <div className="relative z-10">
-              <div className="flex justify-between items-start mb-4">
-                <span className="text-[10px] font-syne tracking-micro text-brand-yellow-golden uppercase font-bold">
+              <div className="flex justify-between items-start mb-3">
+                <span className="text-[11px] sm:text-xs font-syne tracking-[0.2em] text-[#FAB60A] uppercase font-extrabold drop-shadow">
                   FLAGSHIP EXPERIENCE
                 </span>
               </div>
 
-              <h3 className="font-serif-display text-3xl sm:text-5xl text-white font-light uppercase tracking-tight mb-3 drop-shadow-sm">
+              <h3 className="font-serif-display text-3xl sm:text-5xl text-white font-normal uppercase tracking-tight mb-3 drop-shadow-md keep-white">
                 LIFESTYLE
               </h3>
 
-              <p className="font-sans text-xs sm:text-sm text-white/90 font-light leading-relaxed mb-5 max-w-md">
+              <p className="font-sans text-xs sm:text-sm text-neutral-200 font-normal leading-relaxed mb-5 max-w-md keep-white drop-shadow">
                 Fashion, culture and lifestyle experiences bringing together computational design, haute couture, and spatial atmosphere.
               </p>
 
-              {/* Edition Badges */}
-              <div className="flex flex-wrap gap-2 mb-6">
-                <div className="border border-brand-orange/40 bg-black/90 backdrop-blur-sm px-3 py-1.5 rounded-lg">
-                  <span className="block text-[8px] font-syne tracking-micro text-white/70 uppercase">
+              {/* Edition Badges — Desktop / Tablet Only */}
+              <div className="hidden sm:flex flex-wrap gap-2.5 mb-6">
+                <div className="border border-[#F15E1C]/60 bg-black/90 backdrop-blur-md px-3.5 py-2 rounded-xl shadow-md">
+                  <span className="block text-[9px] font-syne tracking-wider text-[#F15E1C] uppercase font-bold">
                     2025
                   </span>
-                  <span className="font-syne text-[11px] text-white font-bold uppercase">
+                  <span className="font-syne text-xs text-white font-bold uppercase keep-white">
                     Previous Edition
                   </span>
                 </div>
-                <div className="border border-brand-yellow-golden/40 bg-black/90 backdrop-blur-sm px-3 py-1.5 rounded-lg">
-                  <span className="block text-[8px] font-syne tracking-micro text-brand-yellow-golden uppercase font-bold">
+                <div className="border border-[#FAB60A]/60 bg-black/90 backdrop-blur-md px-3.5 py-2 rounded-xl shadow-md">
+                  <span className="block text-[9px] font-syne tracking-wider text-[#FAB60A] uppercase font-bold">
                     2026 · DUBAI
                   </span>
-                  <span className="font-syne text-[11px] text-brand-yellow-golden font-bold uppercase">
+                  <span className="font-syne text-xs text-[#FAB60A] font-extrabold uppercase">
                     Upcoming Edition
                   </span>
                 </div>
               </div>
             </div>
 
-            <div className="relative z-10 pt-4 border-t border-white/15 flex justify-between items-center">
+            <div className="relative z-10 pt-4 border-t border-white/20 flex justify-between items-center">
               <Link
                 href="/2026"
-                className="inline-flex items-center gap-2 bg-brand-yellow-golden text-black px-5 py-2.5 text-xs font-syne tracking-caps font-bold hover:bg-[#FFEC69] transition-all group/btn shadow-lg rounded-full"
+                className="inline-flex items-center gap-2 bg-[#FAB60A] text-[#111111] px-5 py-2.5 text-xs font-syne tracking-caps font-bold hover:bg-[#FFEC69] transition-all group/btn shadow-lg rounded-full"
               >
-                <span className="text-black font-extrabold">EXPLORE LIFESTYLE</span>
-                <ArrowUpRight className="w-4 h-4 text-black group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5 transition-transform" />
+                <span className="text-[#111111] font-extrabold">EXPLORE LIFESTYLE</span>
+                <ArrowUpRight className="w-4 h-4 text-[#111111] group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5 transition-transform" />
               </Link>
             </div>
           </motion.div>
@@ -108,7 +108,7 @@ export default function OurEventsSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="group relative bg-[#090807] border border-brand-yellow-golden/40 p-6 sm:p-8 flex flex-col justify-between min-h-[380px] sm:min-h-[420px] overflow-hidden rounded-2xl shadow-xl"
+            className="group relative bg-[#090807] border border-[#FAB60A]/40 p-6 sm:p-8 flex flex-col justify-between min-h-[380px] sm:min-h-[420px] overflow-hidden rounded-2xl shadow-xl"
           >
             {/* Full-Bleed Crisp Banner Image Layer */}
             <div className="absolute inset-0 z-0 opacity-90 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none">
@@ -120,43 +120,44 @@ export default function OurEventsSection() {
                 className="object-cover object-center filter contrast-[1.05] brightness-[1.02]"
                 priority
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/98 via-black/80 to-black/40" />
             </div>
 
             <div className="relative z-10">
-              <div className="flex justify-between items-start mb-4">
-                <span className="text-[10px] font-syne tracking-micro text-brand-yellow-golden uppercase font-bold">
+              <div className="flex justify-between items-start mb-3">
+                <span className="text-[11px] sm:text-xs font-syne tracking-[0.2em] text-[#FAB60A] uppercase font-extrabold drop-shadow">
                   PRESENTATION EXPERIENCE
                 </span>
               </div>
 
-              <h3 className="font-serif-display text-3xl sm:text-5xl text-white font-light uppercase tracking-tight mb-3 drop-shadow-sm">
+              <h3 className="font-serif-display text-3xl sm:text-5xl text-white font-normal uppercase tracking-tight mb-3 drop-shadow-md keep-white">
                 RUNWAY
               </h3>
 
-              <p className="font-sans text-xs sm:text-sm text-white/90 font-light leading-relaxed mb-5 max-w-md">
+              <p className="font-sans text-xs sm:text-sm text-neutral-200 font-normal leading-relaxed mb-4 sm:mb-6 max-w-md keep-white drop-shadow">
                 Fashion presentation and runway experiences within the FashAI Universal ecosystem. Highlighting spatial choreography, lighting art, and designer silhouettes.
               </p>
 
-              <div className="flex flex-wrap gap-2 mb-6">
-                <div className="border border-brand-orange/40 bg-black/90 backdrop-blur-sm px-3 py-1.5 rounded-lg">
-                  <span className="block text-[8px] font-syne tracking-micro text-brand-orange uppercase font-bold">
+              {/* Edition Badges — Desktop / Tablet Only */}
+              <div className="hidden sm:flex flex-wrap gap-2.5 mb-6">
+                <div className="border border-[#F15E1C]/60 bg-black/90 backdrop-blur-md px-3.5 py-2 rounded-xl shadow-md">
+                  <span className="block text-[9px] font-syne tracking-wider text-[#F15E1C] uppercase font-bold">
                     PRESENTATION
                   </span>
-                  <span className="font-syne text-[11px] text-white font-bold uppercase">
+                  <span className="font-syne text-xs text-white font-bold uppercase keep-white">
                     Haute Runway Catwalk
                   </span>
                 </div>
               </div>
             </div>
 
-            <div className="relative z-10 pt-4 border-t border-white/15 flex justify-between items-center">
+            <div className="relative z-10 pt-4 border-t border-white/20 flex justify-between items-center">
               <Link
                 href="/gallery"
-                className="inline-flex items-center gap-2 border border-brand-yellow-golden/50 bg-black/60 backdrop-blur-sm px-5 py-2.5 text-xs font-syne tracking-caps font-bold text-white hover:bg-brand-yellow-golden/15 hover:border-brand-yellow-golden transition-all group/btn rounded-full"
+                className="inline-flex items-center gap-2 border border-[#FAB60A] bg-black/80 backdrop-blur-sm px-5 py-2.5 text-xs font-syne tracking-caps font-bold text-white keep-white hover:bg-[#FAB60A] hover:text-[#111111] transition-all group/btn rounded-full shadow-lg"
               >
                 <span>EXPLORE RUNWAY</span>
-                <ArrowUpRight className="w-4 h-4 text-brand-yellow-golden group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5 transition-transform" />
+                <ArrowUpRight className="w-4 h-4 text-[#FAB60A] group-hover/btn:text-[#111111] group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5 transition-transform" />
               </Link>
             </div>
           </motion.div>

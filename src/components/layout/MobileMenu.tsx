@@ -105,7 +105,7 @@ export default function MobileMenu({
 
               {/* Circular Action Buttons */}
               <div className="flex items-center gap-2">
-                <ThemeToggle />
+                <ThemeToggle inMobileMenu={true} />
 
                 {/* Contact Us Button */}
                 <Link

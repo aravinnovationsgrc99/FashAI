@@ -6,22 +6,61 @@ import { Sun, Moon } from "lucide-react";
 interface ThemeToggleProps {
   className?: string;
   isHeroHeader?: boolean;
+  inMobileMenu?: boolean;
 }
 
-export default function ThemeToggle({ className = "" }: ThemeToggleProps) {
+export default function ThemeToggle({
+  className = "",
+  isHeroHeader = false,
+  inMobileMenu = false,
+}: ThemeToggleProps) {
   const { theme, toggleTheme } = useTheme();
+
+  if (inMobileMenu) {
+    return (
+      <button
+        onClick={toggleTheme}
+        className={`mobile-menu-toggle w-9 h-9 sm:w-10 sm:h-10 rounded-full border border-black/10 dark:border-white/20 bg-black/5 dark:bg-white/15 text-[#111111] dark:text-white hover:border-[#F15E1C] dark:hover:border-[#FAB60A] transition-all duration-300 flex items-center justify-center p-0 group shrink-0 shadow-sm ${className}`}
+        aria-label={`Switch to ${theme === "dark" ? "Light" : "Dark"} Mode`}
+        title={`Switch to ${theme === "dark" ? "Light" : "Dark"} Mode`}
+      >
+        {theme === "dark" ? (
+          <Sun className="w-4 h-4 transition-transform duration-300 group-hover:rotate-45 text-[#FAB60A]" />
+        ) : (
+          <Moon className="w-4 h-4 transition-transform duration-300 group-hover:-rotate-12 text-[#111111] dark:text-white" />
+        )}
+      </button>
+    );
+  }
+
+  if (isHeroHeader) {
+    return (
+      <button
+        onClick={toggleTheme}
+        className={`w-9 h-9 sm:w-10 sm:h-10 rounded-full border border-white/20 bg-white/10 text-white hover:border-[#FAB60A] hover:bg-white/20 transition-all duration-300 flex items-center justify-center p-0 group shrink-0 shadow-sm ${className}`}
+        aria-label={`Switch to ${theme === "dark" ? "Light" : "Dark"} Mode`}
+        title={`Switch to ${theme === "dark" ? "Light" : "Dark"} Mode`}
+      >
+        {theme === "dark" ? (
+          <Sun className="w-4 h-4 transition-transform duration-300 group-hover:rotate-45 text-[#FAB60A]" />
+        ) : (
+          <Moon className="w-4 h-4 transition-transform duration-300 group-hover:-rotate-12 text-white" />
+        )}
+      </button>
+    );
+  }
 
   return (
     <button
       onClick={toggleTheme}
-      className={`theme-toggle-btn w-9 h-9 sm:w-10 sm:h-10 rounded-full border border-white/20 bg-white/10 text-white keep-white hover:border-[#FAB60A] hover:bg-white/20 transition-all duration-300 flex items-center justify-center p-0 group shrink-0 shadow-sm ${className}`}
+      className={`w-9 h-9 sm:w-10 sm:h-10 rounded-full border border-black/12 dark:border-white/20 bg-black/5 dark:bg-white/10 text-[#111111] dark:text-white hover:border-[#F15E1C] dark:hover:border-[#FAB60A] hover:bg-black/10 dark:hover:bg-white/20 transition-all duration-300 flex items-center justify-center p-0 group shrink-0 shadow-sm ${className}`}
       aria-label={`Switch to ${theme === "dark" ? "Light" : "Dark"} Mode`}
       title={`Switch to ${theme === "dark" ? "Light" : "Dark"} Mode`}
     >
       {theme === "dark" ? (
         <Sun className="w-4 h-4 transition-transform duration-300 group-hover:rotate-45 text-[#FAB60A]" />
       ) : (
-        <Moon className="w-4 h-4 transition-transform duration-300 group-hover:-rotate-12 text-white keep-white" />
+        <Moon className="w-4 h-4 transition-transform duration-300 group-hover:-rotate-12 text-[#111111] dark:text-white" />
       )}
     </button>
   );

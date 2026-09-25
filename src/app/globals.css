@@ -263,52 +263,9 @@ html.light #hero [class*="bg-brand-yellow-golden"] * {
   color: #000000 !important;
 }
 
-/* Header & Scrolled Navbar System in Light Mode */
+/* Header System in Light Mode */
 html.light header {
   transition: background-color 0.3s ease, border-color 0.3s ease;
-}
-
-/* Landing Screen Unscrolled & Scrolled Header (All Screens) */
-html.light header nav a:not([class*="text-\[\#FAB60A\]"]) {
-  color: #FFFFFF !important;
-}
-
-html.light header nav a:hover {
-  color: #FAB60A !important;
-}
-
-html.light header .font-serif-display {
-  color: #FFFFFF !important;
-}
-
-.fashai-brand-text,
-html.light .fashai-brand-text,
-html.light header .fashai-brand-text {
-  color: #FFFFFF !important;
-}
-
-html.light header .font-serif-display span.font-serif,
-html.light header .font-serif-display span.text-\[\#FAB60A\] {
-  color: #FAB60A !important;
-}
-
-html.light header .theme-toggle-btn {
-  border-color: rgba(255, 255, 255, 0.2) !important;
-  background-color: rgba(255, 255, 255, 0.1) !important;
-  color: #FFFFFF !important;
-}
-
-html.light header button svg,
-html.light header .theme-toggle-btn svg {
-  color: #FFFFFF !important;
-  stroke: currentColor;
-}
-
-/* Scrolled Header in Light Mode */
-html.light .html-light-header-scrolled {
-  background-color: rgba(12, 12, 12, 0.88) !important;
-  border-bottom-color: rgba(255, 255, 255, 0.15) !important;
-  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.5) !important;
 }
 
 /* Mobile Menu Container in Light Mode */
@@ -325,6 +282,17 @@ html.light .mobile-menu-panel nav a:not([class*="text-\[\#F15E1C\]"]) {
 
 html.light .mobile-menu-panel nav a:hover {
   color: #F15E1C !important;
+}
+
+html.light .mobile-menu-panel .mobile-menu-toggle {
+  border-color: rgba(17, 17, 17, 0.15) !important;
+  background-color: rgba(17, 17, 17, 0.05) !important;
+  color: #111111 !important;
+}
+
+html.light .mobile-menu-panel .mobile-menu-toggle svg {
+  color: #111111 !important;
+  stroke: currentColor;
 }
 
 /* Hairline Borders in Light Mode */
