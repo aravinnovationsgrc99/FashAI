@@ -82,9 +82,9 @@ export function GlobalAdminSearch() {
   };
 
   return (
-    <div ref={containerRef} className="relative w-full max-w-sm">
+    <div ref={containerRef} className="relative w-full max-w-md">
       <div className="relative flex items-center">
-        <Search className="w-3.5 h-3.5 text-white/40 absolute left-3 pointer-events-none" />
+        <Search className="w-4 h-4 text-white/40 absolute left-3.5 pointer-events-none" />
         <input
           type="text"
           value={query}
@@ -93,13 +93,13 @@ export function GlobalAdminSearch() {
             setIsOpen(true);
           }}
           onFocus={() => setIsOpen(true)}
-          placeholder="Search anything (images, events, pages, applications)..."
-          className="w-full bg-[#181716] border border-white/10 rounded-full pl-9 pr-8 py-1.5 text-xs text-white placeholder-white/40 focus:outline-none focus:border-[#D4AF37]/60 transition-all font-sans"
+          placeholder="Search anything (media, events, pages, applications)..."
+          className="w-full bg-[#181716] border border-white/12 rounded-2xl pl-10 pr-9 py-2 text-xs text-white placeholder-white/40 focus:outline-none focus:border-[#D4AF37] focus:ring-2 focus:ring-[#D4AF37]/20 transition-all font-sans shadow-inner"
         />
         {query && (
           <button
             onClick={() => setQuery("")}
-            className="absolute right-3 text-white/40 hover:text-white"
+            className="absolute right-3 text-white/40 hover:text-white transition-colors p-0.5 rounded-full hover:bg-white/10"
           >
             <X className="w-3.5 h-3.5" />
           </button>
@@ -108,34 +108,35 @@ export function GlobalAdminSearch() {
 
       {/* SEARCH RESULTS DROPDOWN */}
       {isOpen && query.trim().length > 0 && (
-        <div className="absolute top-full left-0 right-0 mt-2 bg-[#121110] border border-white/15 rounded-2xl shadow-2xl overflow-hidden z-50 animate-in fade-in slide-in-from-top-2 duration-150">
-          <div className="p-2 border-b border-white/10 text-[10px] font-syne uppercase tracking-wider text-[#D4AF37] font-bold px-3">
-            Search Results ({results.length})
+        <div className="absolute top-full left-0 right-0 mt-3 bg-[#121110] border border-white/20 rounded-3xl shadow-2xl p-2 z-50 animate-in fade-in slide-in-from-top-2 duration-150">
+          <div className="p-2 border-b border-white/10 text-[10px] font-syne uppercase tracking-[0.2em] text-[#D4AF37] font-bold px-3 flex items-center justify-between">
+            <span>Search Results</span>
+            <span className="font-mono text-white/50 text-[9px] bg-white/10 px-2 py-0.5 rounded-full">{results.length} found</span>
           </div>
-          <div className="max-h-64 overflow-y-auto divide-y divide-white/5">
+          <div className="max-h-72 overflow-y-auto divide-y divide-white/5 custom-scrollbar p-1">
             {results.length > 0 ? (
               results.map((res) => (
                 <button
                   key={res.id}
                   onClick={() => handleSelect(res.href)}
-                  className="w-full px-3 py-2.5 flex items-center justify-between text-left hover:bg-white/5 transition-colors group"
+                  className="w-full px-3.5 py-3 rounded-2xl flex items-center justify-between text-left hover:bg-white/8 transition-all group my-0.5"
                 >
-                  <div className="min-w-0 pr-2">
+                  <div className="min-w-0 pr-3 space-y-0.5">
                     <div className="flex items-center gap-2">
                       <span className="text-xs text-white font-medium group-hover:text-[#D4AF37] transition-colors truncate">
                         {res.title}
                       </span>
-                      <span className="text-[9px] font-mono px-1.5 py-0.5 rounded bg-white/10 text-white/60">
+                      <span className="text-[9px] font-mono px-2 py-0.5 rounded-full bg-white/10 text-white/60 uppercase border border-white/10">
                         {res.category}
                       </span>
                     </div>
-                    <p className="text-[11px] text-white/50 truncate mt-0.5">{res.subtitle}</p>
+                    <p className="text-[11px] text-white/50 truncate font-sans">{res.subtitle}</p>
                   </div>
-                  <ArrowRight className="w-3.5 h-3.5 text-white/30 group-hover:text-[#D4AF37] transition-colors flex-shrink-0" />
+                  <ArrowRight className="w-4 h-4 text-white/30 group-hover:text-[#D4AF37] group-hover:translate-x-0.5 transition-all flex-shrink-0" />
                 </button>
               ))
             ) : (
-              <div className="p-4 text-center text-xs text-white/40">
+              <div className="p-6 text-center text-xs text-white/40 font-sans">
                 No matching admin pages or content found.
               </div>
             )}

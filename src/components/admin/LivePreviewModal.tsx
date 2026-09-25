@@ -16,24 +16,24 @@ export function LivePreviewModal() {
   };
 
   return (
-    <div className="fixed inset-0 z-[999] bg-black/80 backdrop-blur-md flex flex-col items-center justify-between p-4 animate-in fade-in duration-200">
+    <div className="fixed inset-0 z-[999] bg-black/85 backdrop-blur-lg flex flex-col items-center justify-between p-4 sm:p-6 animate-in fade-in duration-200">
       {/* PREVIEW TOOLBAR */}
-      <div className="w-full max-w-5xl bg-[#111] border border-white/10 rounded-2xl px-6 py-3 flex items-center justify-between shadow-2xl">
+      <div className="w-full max-w-5xl bg-[#11100F] border border-white/15 rounded-3xl px-6 py-3 flex items-center justify-between shadow-2xl">
         <div className="flex items-center gap-3">
-          <span className="font-syne text-xs uppercase tracking-widest text-[#D4AF37] font-bold flex items-center gap-2">
-            <span className="w-2 h-2 rounded-full bg-[#2E936F] animate-ping" />
+          <span className="font-syne text-xs uppercase tracking-[0.2em] text-[#D4AF37] font-bold flex items-center gap-2">
+            <span className="w-2.5 h-2.5 rounded-full bg-[#2E936F] animate-ping" />
             LIVE PREVIEW MODE
           </span>
         </div>
 
         {/* DEVICE SELECTOR */}
-        <div className="flex items-center bg-black/50 p-1 rounded-xl border border-white/10 gap-1">
+        <div className="flex items-center bg-black/60 p-1.5 rounded-2xl border border-white/12 gap-1.5 shadow-inner">
           <button
             onClick={() => setPreviewDevice("desktop")}
-            className={`flex items-center gap-2 px-3 py-1.5 rounded-lg text-xs font-syne transition-all ${
+            className={`flex items-center gap-2 px-3.5 py-1.5 rounded-xl text-xs font-syne transition-all ${
               previewDevice === "desktop"
-                ? "bg-[#D4AF37] text-black font-bold shadow"
-                : "text-white/60 hover:text-white"
+                ? "bg-[#D4AF37] text-black font-bold shadow-lg"
+                : "text-white/60 hover:text-white hover:bg-white/5"
             }`}
           >
             <Monitor className="w-3.5 h-3.5" />
@@ -41,10 +41,10 @@ export function LivePreviewModal() {
           </button>
           <button
             onClick={() => setPreviewDevice("tablet")}
-            className={`flex items-center gap-2 px-3 py-1.5 rounded-lg text-xs font-syne transition-all ${
+            className={`flex items-center gap-2 px-3.5 py-1.5 rounded-xl text-xs font-syne transition-all ${
               previewDevice === "tablet"
-                ? "bg-[#D4AF37] text-black font-bold shadow"
-                : "text-white/60 hover:text-white"
+                ? "bg-[#D4AF37] text-black font-bold shadow-lg"
+                : "text-white/60 hover:text-white hover:bg-white/5"
             }`}
           >
             <Tablet className="w-3.5 h-3.5" />
@@ -52,10 +52,10 @@ export function LivePreviewModal() {
           </button>
           <button
             onClick={() => setPreviewDevice("mobile")}
-            className={`flex items-center gap-2 px-3 py-1.5 rounded-lg text-xs font-syne transition-all ${
+            className={`flex items-center gap-2 px-3.5 py-1.5 rounded-xl text-xs font-syne transition-all ${
               previewDevice === "mobile"
-                ? "bg-[#D4AF37] text-black font-bold shadow"
-                : "text-white/60 hover:text-white"
+                ? "bg-[#D4AF37] text-black font-bold shadow-lg"
+                : "text-white/60 hover:text-white hover:bg-white/5"
             }`}
           >
             <Smartphone className="w-3.5 h-3.5" />
@@ -69,14 +69,14 @@ export function LivePreviewModal() {
             href="/"
             target="_blank"
             rel="noreferrer"
-            className="flex items-center gap-1.5 text-xs text-white/70 hover:text-white transition-colors"
+            className="flex items-center gap-1.5 text-xs text-white/70 hover:text-white transition-colors font-syne px-3 py-1.5 rounded-xl bg-white/5 border border-white/10"
           >
             <ExternalLink className="w-3.5 h-3.5" />
             Open in New Tab
           </a>
           <button
             onClick={() => setIsPreviewOpen(false)}
-            className="p-2 rounded-full bg-white/10 hover:bg-white/20 text-white transition-colors"
+            className="p-2 rounded-full bg-white/10 hover:bg-white/20 text-white transition-colors border border-white/15"
             aria-label="Close Preview"
           >
             <X className="w-4 h-4" />
@@ -87,9 +87,9 @@ export function LivePreviewModal() {
       {/* DEVICE FRAME CONTAINER */}
       <div className="w-full flex-1 flex items-center justify-center my-4 overflow-hidden">
         <div
-          className={`bg-[#0A0A0A] border border-white/20 rounded-2xl shadow-2xl overflow-hidden transition-all duration-300 flex flex-col ${deviceWidths[previewDevice]}`}
+          className={`bg-[#0A0A0A] border border-white/20 rounded-3xl shadow-2xl overflow-hidden transition-all duration-300 flex flex-col ${deviceWidths[previewDevice]}`}
         >
-          <div className="h-7 bg-[#1A1A1A] border-b border-white/10 flex items-center px-4 gap-2 text-white/40 text-xs select-none">
+          <div className="h-8 bg-[#1A1918] border-b border-white/10 flex items-center px-4 gap-2 text-white/40 text-xs select-none">
             <div className="flex gap-1.5">
               <span className="w-2.5 h-2.5 rounded-full bg-red-500/80" />
               <span className="w-2.5 h-2.5 rounded-full bg-yellow-500/80" />

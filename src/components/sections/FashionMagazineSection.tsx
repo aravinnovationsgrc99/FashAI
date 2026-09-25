@@ -8,6 +8,42 @@ import MagazineArticleModal, { MagazineArticle } from "@/components/magazine/Mag
 
 const ARTICLES_DATA: MagazineArticle[] = [
   {
+    id: "lifestyle-retrospective",
+    category: "LIFESTYLE",
+    title: "LIFESTYLE 2025: VISUAL RETROSPECTIVE",
+    subtitle: "A visual record of the physical garment art, luxury lighting, and delegate gatherings from LifeStyle 2025.",
+    readTime: "3 MIN READ",
+    primaryImage: "/assets/homepage/Talent.png",
+    primaryImageAlt: "Editorial model portrait from LifeStyle 2025 showcase",
+    imagePosition: "object-top",
+    introduction: "LifeStyle 2025 represented a landmark edition in our global visual archive, bringing together fashion designers, creative directors, model talent, and international delegates under an immersive atmosphere.",
+    experience: [
+      "The edition transformed the venue into a multi-sensory showcase, where bespoke runway staging met curated lifestyle lounges. Guests experienced high-end couture presentations paired with direct networking salons connecting creative communities across international markets.",
+      "Throughout the showcase, every garment presentation emphasized structural tailored lines, delicate fabric movement, and architectural lighting, setting an elevated tone for corporate and lifestyle event formats."
+    ],
+    visualHighlights: [
+      "Our editorial photo team captured pivotal moments across the runway and backstage ateliers. Key highlights include dramatic movement photography of floor-length silhouettes, intricate hand-stitched details, and candid backstage artist preparations under high-definition spotlights."
+    ],
+    fashionCulture: [
+      "Fashion at FashAI Universal is designed as a cross-border medium linking creative markets in Dubai, the UAE, India, and global fashion hubs. LifeStyle 2025 demonstrated how runway presentations intersect with commercial visual production, corporate galas, and digital editorial formats."
+    ],
+    keyMoments: [
+      "Grand Opening Runway: High-concept couture debut under spatial arena lighting.",
+      "Atelier Craftsmanship Display: Direct lookbook previews featuring bespoke fabric construction.",
+      "VIP Networking Salons: International delegate gatherings bridging fashion, business, and enterprise."
+    ],
+    closing: "As we prepare for LifeStyle 2026, the visual record of 2025 stands as an enduring benchmark of production excellence and creative community building.",
+    content: [
+      "LifeStyle 2025 represented a landmark edition in our visual archive, uniting fashion designers, creative directors, and industry guests under an immersive atmosphere.",
+      "The retrospective highlights runway moments, lookbook captures, and spatial design elements that defined the completed edition.",
+      "As we prepare for LifeStyle 2026 in Dubai, the visual archive of 2025 serves as a foundational benchmark for event production excellence."
+    ],
+    galleryImages: [
+      { src: "/assets/homepage/Talent.png", alt: "LifeStyle 2025 Event Atmosphere" },
+      { src: "/assets/homepage/Moments.png", alt: "LifeStyle 2025 Runway Highlight" }
+    ]
+  },
+  {
     id: "runway-dynamics",
     category: "RUNWAY",
     title: "THE ARCHITECTURE OF MOVEMENT: CATWALK DYNAMICS IN DUBAI",
@@ -16,6 +52,23 @@ const ARTICLES_DATA: MagazineArticle[] = [
     primaryImage: "/assets/homepage/Moments.png",
     primaryImageAlt: "High fashion runway dynamics and catwalk movement showcase",
     imagePosition: "object-top",
+    introduction: "Catwalk presentation is an intricate discipline balancing garment architecture, model cadence, and spatial lighting design. In our Dubai runway showcases, catwalk choreography is meticulously tailored to amplify each designer's textural language.",
+    experience: [
+      "On the runway, floor-length trains, structured coats, and fluid silk drapes behave differently under intense arena spotlights. Choreographers work side-by-side with lighting directors to ensure that pacing allows audience members and press photographers to absorb fabric weight, movement, and silhouette contours.",
+      "The result is a fluid performance where fashion transcends simple garment displays and becomes an immersive visual event."
+    ],
+    visualHighlights: [
+      "High-speed photography captures the dynamic motion of trailing silks and structural shoulder lines. Spotlights accentuate metallic threading and sheer textures, producing striking high-contrast imagery for international publication."
+    ],
+    fashionCulture: [
+      "Dubai continues to solidify its role as a global fashion crossroads. Bringing international talent, couture houses, and global delegates into one arena fosters cross-market creative exchange across the UAE, Middle East, and Asia."
+    ],
+    keyMoments: [
+      "Precision Cadence: Synchronized model movement matching atmospheric soundscapes.",
+      "Lighting Architecture: Dynamic spotlight angles designed for 4K video recording.",
+      "Final Ensemble Walk: Full designer collection showcase under multi-beam lighting."
+    ],
+    closing: "The continuous refinement of catwalk dynamics ensures FashAI Universal runway showcases remain premier destinations for global fashion expression.",
     content: [
       "Runway presentation is an intricate balance of silhouette architecture, cadence, and ambient lighting. In our Dubai showcases, catwalk choreography is crafted to complement each designer's textural language.",
       "From dramatic floor-length trains to structural tailoring, movement on the runway bridges the boundary between physical garment artistry and spatial performance.",
@@ -35,6 +88,23 @@ const ARTICLES_DATA: MagazineArticle[] = [
     primaryImage: "/assets/homepage/Design.png",
     primaryImageAlt: "Fashion designer in couture atelier inspecting garment construction",
     imagePosition: "object-top",
+    introduction: "Crafting couture demands an uncompromising commitment to garment structure, hand-embroidery, and textile selection. Designers within our network combine time-honored atelier techniques with forward-looking aesthetic visions.",
+    experience: [
+      "Inside the atelier, raw fabrics undergo months of cutting, fitting, and embellishment before taking center stage. From delicate lace overlays to heavy velvet tailoring, each piece represents a labor of precision craftsmanship.",
+      "FashAI Universal provides ateliers with direct presentation platforms, connecting couture creators directly with luxury buyers, press editors, and VIP patrons."
+    ],
+    visualHighlights: [
+      "Close-up editorial photography reveals the intricacy of needlework, beaded embellishments, and internal boning structures that give haute couture its sculptural form."
+    ],
+    fashionCulture: [
+      "Supporting independent designers and established fashion houses maintains the cultural integrity of couture craftsmanship. By spotlighting talent across the UAE, India, and global markets, FashAI Universal strengthens creative economic ecosystems."
+    ],
+    keyMoments: [
+      "Material Selection: Curating rare silks, organzas, and sustainable textiles.",
+      "Pattern Fitting: Perfecting drape ergonomics and structural balance.",
+      "Collection Debut: Presenting completed couture series to international attendees."
+    ],
+    closing: "Celebrating atelier perspectives ensures that true fashion craftsmanship remains at the center of the global creative narrative.",
     content: [
       "Crafting couture requires an uncompromising focus on fabric weight, hand-stitching, and geometric proportions. Designers within our network combine traditional atelier techniques with avant-garde aesthetic visions.",
       "By offering dedicated presentation platforms, FashAI Universal enables designers to showcase their creative direction directly to press, buyers, and high-net-worth patrons across the UAE and India.",
@@ -42,24 +112,6 @@ const ARTICLES_DATA: MagazineArticle[] = [
     ],
     galleryImages: [
       { src: "/assets/homepage/Design.png", alt: "Couture Atelier Material Selection Detail" }
-    ]
-  },
-  {
-    id: "lifestyle-retrospective",
-    category: "LIFESTYLE",
-    title: "LIFESTYLE 2025: VISUAL RETROSPECTIVE",
-    subtitle: "A visual record of the physical garment art, luxury lighting, and delegate gatherings from LifeStyle 2025.",
-    readTime: "3 MIN READ",
-    primaryImage: "/assets/homepage/Talent.png",
-    primaryImageAlt: "Editorial model portrait from LifeStyle 2025 showcase",
-    imagePosition: "object-top",
-    content: [
-      "LifeStyle 2025 represented a landmark edition in our visual archive, uniting fashion designers, creative directors, and industry guests under an immersive atmosphere.",
-      "The retrospective highlights runway moments, lookbook captures, and spatial design elements that defined the completed edition.",
-      "As we prepare for LifeStyle 2026 in Dubai, the visual archive of 2025 serves as a foundational benchmark for event production excellence."
-    ],
-    galleryImages: [
-      { src: "/assets/homepage/Talent.png", alt: "LifeStyle 2025 Event Atmosphere" }
     ]
   },
   {
@@ -71,6 +123,23 @@ const ARTICLES_DATA: MagazineArticle[] = [
     primaryImage: "/assets/master/stylist/stylist_01.png",
     primaryImageAlt: "Fashion stylist curating wardrobe looks for campaign production",
     imagePosition: "object-top",
+    introduction: "Styling is the essential creative thread unifying garment design, model presence, and visual campaign storytelling. Fashion stylists curate outfit pairings, accessory accents, and footwear balance to articulate a cohesive aesthetic narrative.",
+    experience: [
+      "Whether preparing a commercial brand campaign or a live runway presentation, wardrobe directors curate every layer with intent. Color harmony, texture contrast, and silhouette proportions are evaluated under continuous studio and event lighting.",
+      "This meticulous approach ensures that visual campaigns communicate brand identity effortlessly across print, digital, and video media."
+    ],
+    visualHighlights: [
+      "Behind-the-scenes imagery documents the fast-paced environment of wardrobe racks, garment steamers, and final accessory checks before camera roll."
+    ],
+    fashionCulture: [
+      "Visual styling translates abstract artistic concepts into accessible commercial narratives. FashAI Universal styling teams support designers, corporate brands, and visual productions across UAE and India operations."
+    ],
+    keyMoments: [
+      "Lookbook Curation: Pairing statement garments with complementary accessories.",
+      "On-Set Adjustments: Real-time garment pinning and drape refinement during shoots.",
+      "Campaign Launch: Delivering polished visual assets for global brand promotion."
+    ],
+    closing: "Expert wardrobe direction transforms individual garments into iconic visual stories.",
     content: [
       "Styling is the connective thread that unifies garment design, model presence, and campaign storytelling. Stylists curate look pairings, accessory accents, and footwear balance.",
       "In FashAI Universal productions, styling direction ensures that every outfit communicates a clear aesthetic narrative aligned with the event format.",
@@ -86,6 +155,23 @@ const ARTICLES_DATA: MagazineArticle[] = [
     primaryImage: "/assets/homepage/Fashion.png",
     primaryImageAlt: "Fashion editorial presentation and runway direction",
     imagePosition: "object-top",
+    introduction: "Backstage makeup artistry demands technical precision engineered to withstand intense stage lights, high-definition cameras, and fast-paced runway changes.",
+    experience: [
+      "Beauty directors collaborate closely with fashion designers to craft makeup looks that enhance collection themes. Glowing skin finishes, graphic eye accents, and tailored lip tones are sculpted to harmonize with collection color palettes.",
+      "Backstage beauty teams work under tight schedules, executing seamless transitions between designer collection reveals."
+    ],
+    visualHighlights: [
+      "Macro editorial photos highlight luminous skin textures, bold editorial eye artistry, and precise hair sculpting against backstage studio lighting."
+    ],
+    fashionCulture: [
+      "Beauty artistry is an integral extension of fashion presentation. By establishing elevated beauty standards, FashAI Universal productions deliver runway and editorial imagery worthy of global magazine covers."
+    ],
+    keyMoments: [
+      "Skin Preparation: Creating luminous, camera-ready base textures.",
+      "Theme Harmonization: Matching beauty accents to collection textiles.",
+      "Catwalk Final Touch: Quick backstage touch-ups seconds before stage entry."
+    ],
+    closing: "Backstage artistry elevates fashion presentations into complete, polished visual masterpieces.",
     content: [
       "Backstage makeup artistry requires high-precision application tailored to venue lighting and runway cameras. Beauty directors craft clean, glowing skin textures and graphic accents.",
       "Harmonizing beauty direction with garment palettes ensures a cohesive aesthetic vision across the entire designer collection.",
@@ -101,6 +187,23 @@ const ARTICLES_DATA: MagazineArticle[] = [
     primaryImage: "/assets/homepage/Production.png",
     primaryImageAlt: "Production and luxury event format showcase",
     imagePosition: "object-top",
+    introduction: "Luxury event formats achieve true distinction through exclusive audience engagement and executive hospitality. FashAI Universal galas host industry leaders, public figures, and creative talent.",
+    experience: [
+      "Set in premiere venues across Dubai and international fashion capitals, our VIP galas blend haute couture presentations with red carpet reception and corporate networking.",
+      "Guests experience an atmosphere of sophisticated elegance, complete with curated dining, live entertainment, and exclusive sponsor activations."
+    ],
+    visualHighlights: [
+      "Red carpet photography captures high-fashion guest attire, celebrity arrivals, and candid moments inside executive lounge environments."
+    ],
+    fashionCulture: [
+      "Creating networking salons at the intersection of fashion, business, and technology fosters strategic partnerships across international markets."
+    ],
+    keyMoments: [
+      "Red Carpet Arrivals: Welcoming VIP guests, media press, and industry patrons.",
+      "Executive Salon Gatherings: High-level networking and brand collaboration.",
+      "Couture Gala Presentation: Evening showcase celebrating creative excellence."
+    ],
+    closing: "Our VIP event formats redefine corporate and lifestyle gatherings through luxury fashion orchestration.",
     content: [
       "Luxury event experiences thrive on exclusive audience engagement. FashAI Universal galas host celebrities, public figures, and industry leaders.",
       "The intersection of fashion, enterprise, and lifestyle creates networking salons for collaboration and cultural exchange in Dubai and India.",

@@ -32,8 +32,11 @@ import {
   Eye,
   User,
   RotateCcw,
+  Sun,
+  Moon,
 } from "lucide-react";
 import { useSiteConfig } from "@/context/SiteConfigContext";
+import { useTheme } from "@/context/ThemeContext";
 import { LivePreviewModal } from "@/components/admin/LivePreviewModal";
 import { GlobalAdminSearch } from "@/components/admin/GlobalAdminSearch";
 
@@ -44,6 +47,7 @@ interface AdminLayoutProps {
 export default function AdminLayout({ children }: AdminLayoutProps) {
   const router = useRouter();
   const pathname = usePathname();
+  const { theme, toggleTheme } = useTheme();
   const {
     config,
     updateLocalDraftConfig,
@@ -239,21 +243,21 @@ export default function AdminLayout({ children }: AdminLayoutProps) {
   ];
 
   return (
-    <div className="min-h-screen bg-[#080808] text-white flex flex-col font-sans select-none antialiased">
-      {/* TOP HEADER BAR (Section 3) */}
-      <header className="h-16 bg-[#0E0D0C] border-b border-white/10 px-4 sm:px-6 flex items-center justify-between sticky top-0 z-[100] shadow-xl backdrop-blur-md">
+    <div id="admin-root" className="admin-shell min-h-screen bg-[#080808] text-white flex flex-col font-sans select-none antialiased transition-colors duration-200">
+      {/* TOP HEADER BAR (Section 3 & 6) */}
+      <header className="h-16 sm:h-20 bg-[#0E0D0C] border-b border-white/10 px-4 sm:px-8 flex items-center justify-between sticky top-0 z-[100] shadow-2xl backdrop-blur-md">
         {/* LEFT: Mobile Trigger & Page Title */}
-        <div className="flex items-center gap-3.5">
+        <div className="flex items-center gap-4">
           <button
             onClick={() => setMobileDrawerOpen(!mobileDrawerOpen)}
-            className="lg:hidden p-2 rounded-xl bg-white/5 hover:bg-white/10 text-white transition-colors"
+            className="lg:hidden p-2.5 rounded-2xl bg-white/5 hover:bg-white/10 text-white transition-all border border-white/10"
             aria-label="Toggle Navigation Drawer"
           >
             {mobileDrawerOpen ? <X className="w-5 h-5" /> : <MenuIcon className="w-5 h-5" />}
           </button>
 
           <div className="flex items-center gap-3">
-            <Link href="/admin" className="relative w-7 h-7 flex-shrink-0 hidden xs:block">
+            <Link href="/admin" className="relative w-8 h-8 flex-shrink-0 hidden xs:block">
               <Image
                 src="/assets/brand/logo_transparent.png"
                 alt="FashAI Logo"
@@ -262,26 +266,26 @@ export default function AdminLayout({ children }: AdminLayoutProps) {
               />
             </Link>
             <div className="flex items-center gap-2">
-              <span className="text-xs text-white/40 hidden sm:inline">/admin /</span>
-              <h1 className="font-syne text-sm sm:text-base font-bold text-white uppercase tracking-wider">
+              <span className="text-xs text-white/40 font-mono hidden sm:inline">/ admin /</span>
+              <h1 className="font-serif-display text-sm sm:text-lg font-light text-white uppercase tracking-wider">
                 {pageTitle}
               </h1>
             </div>
           </div>
         </div>
 
-        {/* MIDDLE: GLOBAL SEARCH (Section 22) */}
-        <div className="hidden md:flex items-center flex-1 max-w-sm mx-6">
+        {/* MIDDLE: GLOBAL SEARCH (Section 7 & 22) */}
+        <div className="hidden md:flex items-center flex-1 max-w-md mx-8">
           <GlobalAdminSearch />
         </div>
 
         {/* RIGHT ACTIONS & WEBSITE STATUS */}
-        <div className="flex items-center gap-2.5 sm:gap-4">
+        <div className="flex items-center gap-2.5 sm:gap-3.5">
           {/* WEBSITE ONLINE / MAINTENANCE STATUS BADGE */}
           <button
             onClick={handleToggleMaintenance}
             title="Click to toggle Website Maintenance Mode"
-            className={`flex items-center gap-2 px-3 py-1 rounded-full border text-[11px] font-syne font-bold uppercase tracking-wider transition-all ${
+            className={`flex items-center gap-2 px-3.5 py-1.5 rounded-full border text-[11px] font-syne font-bold uppercase tracking-wider transition-all shadow-sm ${
               isMaintenanceOn
                 ? "bg-[#F15E1C]/20 border-[#F15E1C] text-[#F15E1C] hover:bg-[#F15E1C]/30 animate-pulse"
                 : "bg-[#2E936F]/20 border-[#2E936F] text-[#2E936F] hover:bg-[#2E936F]/30"
@@ -300,41 +304,60 @@ export default function AdminLayout({ children }: AdminLayoutProps) {
 
           {/* SAVE STATUS & DRAFT BUTTONS */}
           {hasUnsavedChanges ? (
-            <div className="flex items-center gap-1.5">
-              <span className="text-[10px] font-syne text-[#D4AF37] font-bold uppercase tracking-wider hidden md:inline-flex items-center gap-1">
+            <div className="flex items-center gap-2">
+              <span className="text-[10px] font-syne text-[#D4AF37] font-bold uppercase tracking-wider hidden lg:inline-flex items-center gap-1.5 px-2 py-1 rounded-full bg-[#D4AF37]/10 border border-[#D4AF37]/30">
                 <span className="w-1.5 h-1.5 rounded-full bg-[#D4AF37] animate-ping" />
-                Unsaved changes
+                Unsaved
               </span>
 
               <button
                 onClick={handleSaveDraftClick}
                 disabled={isSaving}
-                className="flex items-center gap-1 px-2.5 py-1 rounded-full bg-white/10 hover:bg-white/20 text-white text-xs font-syne font-medium transition-colors"
+                className="flex items-center gap-1.5 px-3 py-1.5 rounded-2xl bg-white/10 hover:bg-white/20 text-white text-xs font-syne font-medium transition-all border border-white/15"
               >
-                <Save className="w-3 h-3 text-[#D4AF37]" />
+                <Save className="w-3.5 h-3.5 text-[#D4AF37]" />
                 <span className="hidden sm:inline">Save Draft</span>
               </button>
 
               <button
                 onClick={handlePublishClick}
                 disabled={isSaving}
-                className="flex items-center gap-1 px-3 py-1 rounded-full bg-[#D4AF37] hover:bg-[#FFEC69] text-black text-xs font-syne font-bold transition-all shadow-md"
+                className="flex items-center gap-1.5 px-4 py-1.5 rounded-2xl bg-[#D4AF37] hover:bg-[#FFEC69] text-black text-xs font-syne font-bold transition-all shadow-lg hover:shadow-xl"
               >
-                <Send className="w-3 h-3" />
+                <Send className="w-3.5 h-3.5" />
                 <span className="hidden sm:inline">Publish</span>
               </button>
             </div>
           ) : (
-            <span className="text-[10px] font-mono text-white/50 hidden md:inline-flex items-center gap-1">
-              <CheckCircle2 className="w-3 h-3 text-[#2E936F]" />
+            <span className="text-[10px] font-mono text-white/50 hidden lg:inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/5 border border-white/10">
+              <CheckCircle2 className="w-3.5 h-3.5 text-[#2E936F]" />
               {saveStatus === "published" ? "Published" : "Saved"}
             </span>
           )}
 
+          {/* THEME TOGGLE BUTTON */}
+          <button
+            onClick={toggleTheme}
+            title={`Switch to ${theme === "dark" ? "Light" : "Dark"} Mode`}
+            className="flex items-center gap-1.5 px-3 py-1.5 rounded-2xl bg-white/5 hover:bg-white/10 border border-white/15 text-xs text-white/90 hover:text-white transition-all font-syne"
+          >
+            {theme === "dark" ? (
+              <>
+                <Sun className="w-3.5 h-3.5 text-[#FFEC69]" />
+                <span className="hidden lg:inline">Light Mode</span>
+              </>
+            ) : (
+              <>
+                <Moon className="w-3.5 h-3.5 text-[#D4AF37]" />
+                <span className="hidden lg:inline">Dark Mode</span>
+              </>
+            )}
+          </button>
+
           {/* PREVIEW WEBSITE BUTTON */}
           <button
             onClick={() => setIsPreviewOpen(true)}
-            className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/5 hover:bg-white/10 border border-white/15 text-xs text-white/90 hover:text-white transition-all font-syne"
+            className="flex items-center gap-1.5 px-3.5 py-1.5 rounded-2xl bg-white/5 hover:bg-white/10 border border-white/15 text-xs text-white/90 hover:text-white transition-all font-syne"
           >
             <Eye className="w-3.5 h-3.5 text-[#D4AF37]" />
             <span className="hidden sm:inline">Preview</span>
@@ -343,7 +366,7 @@ export default function AdminLayout({ children }: AdminLayoutProps) {
           {/* ADMIN PROFILE / LOGOUT */}
           <button
             onClick={handleLogout}
-            className="p-1.5 rounded-full bg-white/5 hover:bg-white/15 text-white/70 hover:text-white transition-colors"
+            className="p-2 rounded-2xl bg-white/5 hover:bg-white/15 text-white/70 hover:text-white transition-colors border border-white/10"
             title="Logout Admin Session"
           >
             <LogOut className="w-4 h-4" />
@@ -353,23 +376,33 @@ export default function AdminLayout({ children }: AdminLayoutProps) {
 
       {/* MAIN TWO-PART LAYOUT CONTAINER */}
       <div className="flex-1 flex overflow-hidden relative">
-        {/* LEFT SIDEBAR (220px - 240px) */}
-        <aside className="hidden lg:flex flex-col w-56 bg-[#0B0A0A] border-r border-white/10 flex-shrink-0 select-none">
+        {/* LEFT SIDEBAR — SIGNIFICANTLY LARGER (290px - 320px) (Section 1) */}
+        <aside className="hidden lg:flex flex-col w-[290px] xl:w-[310px] bg-[#0B0A0A] border-r border-white/10 flex-shrink-0 select-none">
           {/* SIDEBAR HEADER */}
-          <div className="p-4 border-b border-white/10 flex flex-col gap-0.5">
-            <span className="font-serif-display text-sm font-semibold tracking-wider text-white uppercase">
-              FashAI Universal
-            </span>
-            <span className="font-syne text-[10px] uppercase tracking-widest text-[#D4AF37] font-bold">
-              MASTER CONTROL
-            </span>
+          <div className="p-5 border-b border-white/10 flex items-center gap-3.5">
+            <div className="relative w-9 h-9 rounded-2xl bg-[#D4AF37]/10 border border-[#D4AF37]/30 flex items-center justify-center shrink-0">
+              <Image
+                src="/assets/brand/logo_transparent.png"
+                alt="FashAI Logo"
+                fill
+                className="object-contain p-1.5"
+              />
+            </div>
+            <div className="flex flex-col min-w-0">
+              <span className="font-serif-display text-sm font-semibold tracking-wider text-white uppercase truncate">
+                FashAI Universal
+              </span>
+              <span className="font-syne text-[9px] uppercase tracking-[0.25em] text-[#D4AF37] font-bold">
+                EDITORIAL CONTROL ROOM
+              </span>
+            </div>
           </div>
 
-          {/* SIDEBAR NAVIGATION GROUPS */}
-          <nav className="flex-1 overflow-y-auto p-3 space-y-5 custom-scrollbar">
+          {/* SIDEBAR NAVIGATION GROUPS (Section 1 & 5) */}
+          <nav className="flex-1 overflow-y-auto p-4 space-y-6 custom-scrollbar">
             {navigationGroups.map((group) => (
-              <div key={group.groupTitle} className="space-y-1">
-                <div className="px-2 py-1 text-[10px] font-syne font-bold uppercase tracking-widest text-white/40">
+              <div key={group.groupTitle} className="space-y-1.5">
+                <div className="px-3 py-1 text-[10px] font-syne font-bold uppercase tracking-[0.22em] text-white/40">
                   {group.groupTitle}
                 </div>
                 {group.items.map((item) => {
@@ -379,21 +412,23 @@ export default function AdminLayout({ children }: AdminLayoutProps) {
                     <Link
                       key={item.href}
                       href={item.href}
-                      className={`flex items-center justify-between px-3 py-2 rounded-xl text-xs font-syne transition-all ${
+                      className={`group relative flex items-center justify-between px-4 py-2.5 rounded-2xl text-xs font-syne transition-all ${
                         isActive
-                          ? "bg-white/10 text-white font-bold border-l-2 border-[#D4AF37]"
+                          ? "bg-gradient-to-r from-[#D4AF37]/15 via-white/5 to-transparent text-white font-bold border-l-2 border-[#D4AF37] shadow-sm"
                           : "text-white/60 hover:text-white hover:bg-white/5"
                       }`}
                     >
-                      <div className="flex items-center gap-2.5">
+                      <div className="flex items-center gap-3 min-w-0">
                         <Icon
-                          className={`w-3.5 h-3.5 ${
-                            isActive ? "text-[#D4AF37]" : "text-white/40"
+                          className={`w-4 h-4 shrink-0 transition-colors ${
+                            isActive ? "text-[#D4AF37]" : "text-white/40 group-hover:text-white/80"
                           }`}
                         />
-                        <span>{item.label}</span>
+                        <span className="truncate tracking-wide">{item.label}</span>
                       </div>
-                      {isActive && <span className="w-1.5 h-1.5 rounded-full bg-[#D4AF37]" />}
+                      {isActive && (
+                        <span className="w-2 h-2 rounded-full bg-[#D4AF37] shadow-[0_0_8px_#D4AF37] shrink-0" />
+                      )}
                     </Link>
                   );
                 })}
@@ -402,62 +437,62 @@ export default function AdminLayout({ children }: AdminLayoutProps) {
           </nav>
 
           {/* SIDEBAR FOOTER & SYSTEM INFO */}
-          <div className="p-3 border-t border-white/10 bg-[#0E0D0C] space-y-2">
-            <div className="flex items-center justify-between text-[11px] text-white/50 px-2">
-              <span className="flex items-center gap-1.5">
-                <User className="w-3 h-3 text-[#D4AF37]" />
-                FashAIadmin
+          <div className="p-4 border-t border-white/10 bg-[#0E0D0C] space-y-3">
+            <div className="flex items-center justify-between text-[11px] text-white/60 px-2">
+              <span className="flex items-center gap-2 font-syne font-medium">
+                <User className="w-3.5 h-3.5 text-[#D4AF37]" />
+                Master Admin
               </span>
-              <span className="text-[9px] font-mono bg-white/10 px-1.5 py-0.5 rounded text-white/70">
-                v2.6
+              <span className="text-[9px] font-mono bg-white/10 px-2 py-0.5 rounded-full text-white/80 border border-white/10">
+                v2.6 Live
               </span>
             </div>
             <button
               onClick={handleLogout}
-              className="w-full flex items-center justify-center gap-2 px-3 py-1.5 rounded-xl bg-white/5 hover:bg-white/10 text-xs text-white/70 hover:text-white transition-colors font-syne"
+              className="w-full flex items-center justify-center gap-2 px-4 py-2 rounded-2xl bg-white/5 hover:bg-white/10 border border-white/10 text-xs text-white/70 hover:text-white transition-all font-syne"
             >
               <LogOut className="w-3.5 h-3.5 text-red-400" />
-              Sign Out
+              Sign Out Session
             </button>
           </div>
         </aside>
 
-        {/* MOBILE SLIDE-OUT DRAWER (Section 28) */}
+        {/* MOBILE SLIDE-OUT DRAWER (Section 15 & 16) */}
         {mobileDrawerOpen && (
           <div className="lg:hidden fixed inset-0 z-[150] flex">
             {/* Backdrop */}
             <div
-              className="fixed inset-0 bg-black/80 backdrop-blur-sm"
+              className="fixed inset-0 bg-black/80 backdrop-blur-md transition-opacity"
               onClick={() => setMobileDrawerOpen(false)}
             />
             {/* Drawer content */}
-            <div className="relative w-64 max-w-[80vw] bg-[#0E0D0C] border-r border-white/15 flex flex-col h-full z-10 shadow-2xl animate-in slide-in-from-left duration-200">
-              <div className="p-4 border-b border-white/10 flex items-center justify-between">
+            <div className="relative w-80 max-w-[85vw] bg-[#0E0D0C] border-r border-white/15 rounded-r-3xl flex flex-col h-full z-10 shadow-2xl animate-in slide-in-from-left duration-200">
+              <div className="p-5 border-b border-white/10 flex items-center justify-between">
                 <div>
-                  <h2 className="font-serif-display text-sm font-semibold text-white uppercase">
+                  <h2 className="font-serif-display text-base font-semibold text-white uppercase tracking-wider">
                     FashAI Universal
                   </h2>
-                  <p className="font-syne text-[10px] text-[#D4AF37] uppercase tracking-widest font-bold">
-                    Master Control
+                  <p className="font-syne text-[10px] text-[#D4AF37] uppercase tracking-[0.2em] font-bold">
+                    Editorial Control Room
                   </p>
                 </div>
                 <button
                   onClick={() => setMobileDrawerOpen(false)}
-                  className="p-1.5 rounded-full bg-white/10 text-white"
+                  className="p-2 rounded-full bg-white/10 text-white hover:bg-white/20 transition-colors"
                 >
                   <X className="w-4 h-4" />
                 </button>
               </div>
 
               {/* Mobile Search */}
-              <div className="p-3 border-b border-white/10">
+              <div className="p-4 border-b border-white/10">
                 <GlobalAdminSearch />
               </div>
 
-              <nav className="flex-1 overflow-y-auto p-3 space-y-4">
+              <nav className="flex-1 overflow-y-auto p-4 space-y-5">
                 {navigationGroups.map((group) => (
-                  <div key={group.groupTitle} className="space-y-1">
-                    <div className="px-2 py-1 text-[10px] font-syne font-bold uppercase tracking-widest text-white/40">
+                  <div key={group.groupTitle} className="space-y-1.5">
+                    <div className="px-3 py-1 text-[10px] font-syne font-bold uppercase tracking-[0.22em] text-white/40">
                       {group.groupTitle}
                     </div>
                     {group.items.map((item) => {
@@ -468,9 +503,9 @@ export default function AdminLayout({ children }: AdminLayoutProps) {
                           key={item.href}
                           href={item.href}
                           onClick={() => setMobileDrawerOpen(false)}
-                          className={`flex items-center justify-between px-3 py-2.5 rounded-xl text-xs font-syne transition-all ${
+                          className={`flex items-center justify-between px-4 py-3 rounded-2xl text-xs font-syne transition-all ${
                             isActive
-                              ? "bg-[#D4AF37] text-black font-bold"
+                              ? "bg-[#D4AF37] text-black font-bold shadow-lg"
                               : "text-white/70 hover:text-white hover:bg-white/5"
                           }`}
                         >
@@ -488,10 +523,10 @@ export default function AdminLayout({ children }: AdminLayoutProps) {
               <div className="p-4 border-t border-white/10 bg-black/40">
                 <button
                   onClick={handleLogout}
-                  className="w-full py-2 rounded-xl bg-red-500/20 text-red-400 font-syne text-xs font-bold flex items-center justify-center gap-2"
+                  className="w-full py-2.5 rounded-2xl bg-red-500/20 text-red-300 font-syne text-xs font-bold flex items-center justify-center gap-2 border border-red-500/30"
                 >
                   <LogOut className="w-4 h-4" />
-                  Logout
+                  Logout Admin Session
                 </button>
               </div>
             </div>
@@ -499,7 +534,7 @@ export default function AdminLayout({ children }: AdminLayoutProps) {
         )}
 
         {/* RIGHT MAIN WORKSPACE */}
-        <main className="flex-1 overflow-y-auto p-4 sm:p-6 lg:p-8 bg-[#080808] relative">
+        <main className="flex-1 overflow-y-auto p-6 sm:p-8 lg:p-10 bg-[#080808] relative">
           {children}
         </main>
       </div>

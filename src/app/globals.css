@@ -514,3 +514,217 @@ html.light canvas {
 .bg-cinematic-overlay {
   background: linear-gradient(180deg, rgba(5,5,5,0.75) 0%, rgba(5,5,5,0.2) 50%, rgba(5,5,5,0.98) 100%);
 }
+
+/* ==================================================== */
+/* COMPLETE ADMIN SHELL THEME SYSTEM (LIGHT & DARK) */
+/* ==================================================== */
+
+/* DARK MODE ADMIN DEFAULT */
+.admin-shell,
+html.dark .admin-shell {
+  background-color: #080808;
+  color: #FFFFFF;
+}
+
+/* LIGHT MODE ADMIN ADAPTER */
+html.light .admin-shell {
+  background-color: #F8F9FA !important;
+  color: #111827 !important;
+}
+
+/* Header in Light Mode */
+html.light .admin-shell header {
+  background-color: #FFFFFF !important;
+  border-color: #E5E7EB !important;
+  color: #111827 !important;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05) !important;
+}
+
+html.light .admin-shell header h1,
+html.light .admin-shell header span:not([class*="bg-"]):not([class*="text-[#"]):not([class*="text-red"]):not([class*="text-green"]),
+html.light .admin-shell header p {
+  color: #111827 !important;
+}
+
+html.light .admin-shell header .text-white\/40,
+html.light .admin-shell header .text-white\/50,
+html.light .admin-shell header .text-white\/60,
+html.light .admin-shell header .text-white\/70 {
+  color: #6B7280 !important;
+}
+
+/* Sidebar in Light Mode */
+html.light .admin-shell aside {
+  background-color: #FFFFFF !important;
+  border-color: #E5E7EB !important;
+  color: #111827 !important;
+}
+
+html.light .admin-shell aside div[class*="border-b"],
+html.light .admin-shell aside div[class*="border-t"] {
+  border-color: #E5E7EB !important;
+}
+
+html.light .admin-shell aside .font-serif-display {
+  color: #111827 !important;
+}
+
+html.light .admin-shell aside nav a {
+  color: #4B5563 !important;
+}
+
+html.light .admin-shell aside nav a:hover {
+  background-color: #F3F4F6 !important;
+  color: #111827 !important;
+}
+
+html.light .admin-shell aside nav a[class*="bg-white/10"],
+html.light .admin-shell aside nav a.bg-white\/10 {
+  background-color: #FEF3C7 !important;
+  color: #92400E !important;
+  border-left-color: #D4AF37 !important;
+}
+
+html.light .admin-shell aside .text-white\/40,
+html.light .admin-shell aside .text-white\/50,
+html.light .admin-shell aside .text-white\/60 {
+  color: #6B7280 !important;
+}
+
+/* Main Content Surface in Light Mode */
+html.light .admin-shell main {
+  background-color: #F8F9FA !important;
+  color: #111827 !important;
+}
+
+/* Card & Box Containers in Light Mode */
+html.light .admin-shell [class*="bg-[#0F0E0D]"],
+html.light .admin-shell [class*="bg-[#11100F]"],
+html.light .admin-shell [class*="bg-[#121110]"],
+html.light .admin-shell [class*="bg-[#141312]"],
+html.light .admin-shell [class*="bg-[#1A1918]"],
+html.light .admin-shell [class*="bg-[#181716]"],
+html.light .admin-shell [class*="bg-[#0B0A0A]"],
+html.light .admin-shell [class*="bg-[#0E0D0C]"],
+html.light .admin-shell [class*="bg-[#0A0A0A]"],
+html.light .admin-shell [class*="bg-[#080808]"],
+html.light .admin-shell [class*="bg-[#050505]"],
+html.light .admin-shell [class*="bg-[#000000]"] {
+  background-color: #FFFFFF !important;
+  color: #111827 !important;
+  border-color: #E5E7EB !important;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+}
+
+/* High Contrast Card Titles & Headers in Light Mode */
+html.light .admin-shell h1,
+html.light .admin-shell h2,
+html.light .admin-shell h3,
+html.light .admin-shell h4,
+html.light .admin-shell h5,
+html.light .admin-shell h6 {
+  color: #111827 !important;
+}
+
+html.light .admin-shell p,
+html.light .admin-shell label {
+  color: #374151 !important;
+}
+
+/* Subtle & Muted Text in Light Mode */
+html.light .admin-shell .text-white\/90,
+html.light .admin-shell .text-white\/80,
+html.light .admin-shell .text-white\/70 {
+  color: #374151 !important;
+}
+
+html.light .admin-shell .text-white\/60,
+html.light .admin-shell .text-white\/50,
+html.light .admin-shell .text-white\/40,
+html.light .admin-shell .text-white\/30 {
+  color: #6B7280 !important;
+}
+
+/* Translucent Action Buttons in Light Mode */
+html.light .admin-shell .bg-white\/5,
+html.light .admin-shell .bg-white\/10 {
+  background-color: #F3F4F6 !important;
+  color: #111827 !important;
+  border-color: #E5E7EB !important;
+}
+
+html.light .admin-shell .bg-white\/5:hover,
+html.light .admin-shell .bg-white\/10:hover {
+  background-color: #E5E7EB !important;
+  color: #111827 !important;
+}
+
+/* Form Inputs, Selects & Textareas in Light Mode */
+html.light .admin-shell input[type="text"],
+html.light .admin-shell input[type="email"],
+html.light .admin-shell input[type="password"],
+html.light .admin-shell input[type="number"],
+html.light .admin-shell select,
+html.light .admin-shell textarea {
+  background-color: #FFFFFF !important;
+  color: #111827 !important;
+  border-color: #D1D5DB !important;
+}
+
+html.light .admin-shell input::placeholder,
+html.light .admin-shell textarea::placeholder {
+  color: #9CA3AF !important;
+}
+
+html.light .admin-shell input:focus,
+html.light .admin-shell select:focus,
+html.light .admin-shell textarea:focus {
+  border-color: #D4AF37 !important;
+  box-shadow: 0 0 0 2px rgba(212, 175, 55, 0.2) !important;
+  outline: none !important;
+}
+
+/* Modals & Dialog Backdrop in Light Mode */
+html.light .admin-shell [class*="bg-black/80"],
+html.light .admin-shell [class*="bg-black/50"] {
+  background-color: rgba(17, 24, 39, 0.5) !important;
+  backdrop-filter: blur(4px);
+}
+
+/* Table Headers & Rows in Light Mode */
+html.light .admin-shell table th {
+  background-color: #F9FAFB !important;
+  color: #374151 !important;
+  border-color: #E5E7EB !important;
+}
+
+html.light .admin-shell table td {
+  border-color: #E5E7EB !important;
+  color: #111827 !important;
+}
+
+html.light .admin-shell table tr:hover {
+  background-color: #F3F4F6 !important;
+}
+
+/* Divider Lines in Light Mode */
+html.light .admin-shell [class*="border-white/5"],
+html.light .admin-shell [class*="border-white/10"],
+html.light .admin-shell [class*="border-white/15"],
+html.light .admin-shell [class*="border-white/20"] {
+  border-color: #E5E7EB !important;
+}
+
+/* Brand Accent Text Highlights in Light Mode */
+html.light .admin-shell .text-\[\#D4AF37\] {
+  color: #B8860B !important;
+}
+
+html.light .admin-shell .text-\[\#F15E1C\] {
+  color: #D9460F !important;
+}
+
+html.light .admin-shell .text-\[\#2E936F\] {
+  color: #166534 !important;
+}
+
