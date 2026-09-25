@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 
 export default function ApplyIndexPage() {
   return (
-    <div className="min-h-screen bg-[#050505] text-brand-white pt-20">
+    <div className="min-h-screen bg-[#050505] text-brand-white pt-14 sm:pt-20 md:pt-24">
       <ApplicationSelectionPage basePath="/apply" />
     </div>
   );

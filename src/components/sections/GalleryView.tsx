@@ -42,7 +42,7 @@ export default function GalleryView() {
   }, []);
 
   return (
-    <section className="px-4 sm:px-6 lg:px-10 py-8 sm:py-12 w-[92vw] max-w-[1600px] mx-auto relative bg-brand-void text-brand-white select-none">
+    <section className="px-4 sm:px-6 lg:px-10 py-4 sm:py-8 md:py-12 w-[92vw] max-w-[1600px] mx-auto relative bg-brand-void text-brand-white select-none">
       {/* 1. EDITORIAL HEADER */}
       <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-8 mb-10 border-b border-white/10 pb-8">
         <div className="max-w-3xl space-y-3">

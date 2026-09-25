@@ -15,7 +15,7 @@ export default function InstagramSection() {
           src="/assets/events/instagram_background_light.png"
           alt="FashAI Universal Instagram Campaign Light"
           fill
-          sizes="100vw"
+          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 100vw, 100vw"
           className="block dark:hidden object-cover object-center filter contrast-[1.03] brightness-[1.02]"
           priority
         />
@@ -24,7 +24,7 @@ export default function InstagramSection() {
           src="/assets/events/instagram_background_dark.png"
           alt="FashAI Universal Instagram Campaign Dark"
           fill
-          sizes="100vw"
+          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 100vw, 100vw"
           className="hidden dark:block object-cover object-center filter contrast-[1.04] brightness-90"
           priority
         />

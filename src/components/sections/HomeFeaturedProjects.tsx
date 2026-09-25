@@ -114,7 +114,7 @@ export default function HomeFeaturedProjects() {
                     </div>
                   </div>
 
-                  <div>
+                  <div className="flex flex-wrap items-center gap-3">
                     <Link
                       href="/projects"
                       className="inline-flex items-center gap-3 bg-brand-orange px-8 py-4 text-xs font-syne tracking-caps text-white hover:bg-[#ff6f2d] hover:translate-y-[-2px] transition-all duration-300 shadow-md font-bold group"
@@ -123,6 +123,19 @@ export default function HomeFeaturedProjects() {
                       <span>DISCOVER PROJECT</span>
                       <span className="group-hover:translate-x-1 transition-transform">↗</span>
                     </Link>
+
+                    {project.socialUrl && (
+                      <a
+                        href={project.socialUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-3 border border-brand-orange/60 bg-brand-void/50 px-8 py-4 text-xs font-syne tracking-caps text-white hover:bg-brand-orange hover:border-brand-orange hover:translate-y-[-2px] transition-all duration-300 shadow-md font-bold group"
+                        data-cursor="explore"
+                      >
+                        <span>VIEW SOCIALS</span>
+                        <span className="group-hover:translate-x-1 transition-transform">↗</span>
+                      </a>
+                    )}
                   </div>
                 </div>
               </div>

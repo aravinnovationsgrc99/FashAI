@@ -8,6 +8,7 @@ export interface ProjectItem {
   location: string;
   description: string;
   heroImage: string;
+  socialUrl?: string;
   sequence: {
     type: "image" | "text" | "full-width" | "detail";
     image?: string;
@@ -30,6 +31,7 @@ export const PROJECTS_DATA: ProjectItem[] = [
     description:
       "A high-couture catwalk presentation within the FashAI Universal ecosystem. Highlighting spatial choreography, lighting art, and designer silhouettes.",
     heroImage: "/assets/models/model_12.jpeg",
+    socialUrl: "https://www.facebook.com/profile.php?id=61573489951314",
     sequence: [
       {
         type: "image",

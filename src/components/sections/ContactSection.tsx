@@ -77,7 +77,7 @@ function ContactContent() {
   };
 
   return (
-    <section id="contact" className="relative py-10 sm:py-14 bg-brand-void border-b border-hairline-orange overflow-hidden">
+    <section id="contact" className="relative py-4 sm:py-10 md:py-14 bg-brand-void border-b border-hairline-orange overflow-hidden">
       <div className="container-editorial relative z-10">
         {/* Section Header */}
         <div className="max-w-3xl mb-8 sm:mb-10">

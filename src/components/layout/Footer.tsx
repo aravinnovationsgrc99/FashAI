@@ -34,7 +34,7 @@ export default function Footer() {
             src="/assets/footer/footer_light.png"
             alt="FashAI Universal Footer Light Background"
             fill
-            sizes="100vw"
+            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 100vw, 100vw"
             className="block dark:hidden object-cover object-center filter contrast-[1.02] opacity-90"
             priority
           />
@@ -43,7 +43,7 @@ export default function Footer() {
             src="/assets/footer/footer_dark.png"
             alt="FashAI Universal Footer Dark Background"
             fill
-            sizes="100vw"
+            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 100vw, 100vw"
             className="hidden dark:block object-cover object-center filter contrast-[1.02] opacity-90"
             priority
           />
