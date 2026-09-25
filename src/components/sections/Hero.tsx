@@ -4,6 +4,7 @@ import { useState, useRef, useEffect } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
+import DistortionCTAButton from "@/components/ui/DistortionCTAButton";
 
 export default function Hero() {
   const [videoError, setVideoError] = useState(false);
@@ -165,20 +166,20 @@ export default function Hero() {
             style={{ willChange: "transform, opacity" }}
             className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 w-full sm:w-auto pt-2"
           >
-            <Link
+            <DistortionCTAButton
               href="/projects"
-              className="w-full sm:w-auto min-w-[210px] bg-brand-yellow-golden px-8 py-4 text-xs sm:text-sm font-syne tracking-caps font-bold text-black hover:bg-[#FFEC69] hover:scale-[1.03] active:scale-[0.98] transition-all duration-300 text-center min-h-[50px] flex items-center justify-center rounded-full shadow-[0_0_25px_rgba(250,182,10,0.35)]"
-              data-cursor="explore"
-            >
-              EXPLORE FASHAI →
-            </Link>
-            <Link
+              label="EXPLORE FASHAI →"
+              variant="primary"
+              className="w-full sm:w-auto min-w-[210px]"
+              dataCursor="explore"
+            />
+            <DistortionCTAButton
               href="/apply"
-              className="w-full sm:w-auto min-w-[210px] border border-brand-yellow-golden/70 bg-black/60 backdrop-blur-sm px-8 py-4 text-xs sm:text-sm font-syne tracking-caps font-bold text-brand-white keep-white hover:bg-brand-yellow-golden/15 hover:border-brand-yellow-golden hover:scale-[1.03] active:scale-[0.98] transition-all duration-300 text-center min-h-[50px] flex items-center justify-center rounded-full"
-              data-cursor="view"
-            >
-              GET INVOLVED ↗
-            </Link>
+              label="GET INVOLVED ↗"
+              variant="secondary"
+              className="w-full sm:w-auto min-w-[210px]"
+              dataCursor="view"
+            />
           </motion.div>
         </motion.div>
       </div>
@@ -213,33 +214,6 @@ export default function Hero() {
         <span className="w-12 h-[1px] bg-brand-yellow-golden/80 mt-3" />
       </div>
 
-      {/* LAYER 6: BOTTOM DETAILS */}
-      <div className="relative z-10 container-editorial flex flex-row justify-between items-center text-[10px] sm:text-xs font-syne tracking-micro text-brand-white/80 keep-white pt-4 border-t border-white/10">
-        {/* Bottom Left: DUBAI 2026 / A NEW ERA AWAITS */}
-        <div className="flex items-center gap-3">
-          <span className="h-6 w-[2px] bg-brand-yellow-golden shadow-[0_0_8px_rgba(250,182,10,0.8)]" />
-          <div className="flex flex-col items-start leading-tight">
-            <span className="font-bold text-brand-white keep-white tracking-widest uppercase">UAE · INDIA · GLOBAL</span>
-            <span className="text-[9px] text-brand-white/70 keep-white tracking-widest uppercase font-medium">A NEW ERA AWAITS</span>
-          </div>
-        </div>
-
-        {/* Bottom Center: Scroll Indicator */}
-        <div className="flex flex-col items-center justify-center gap-1.5 font-syne text-[10px] tracking-widest text-brand-white/80 keep-white uppercase">
-          <div className="w-4 h-6 rounded-full border border-brand-white/80 flex justify-center pt-1">
-            <motion.span
-              animate={{ y: [0, 6, 0] }}
-              transition={{ repeat: Infinity, duration: 1.8, ease: "easeInOut" }}
-              className="w-1 h-1.5 rounded-full bg-brand-yellow-golden"
-            />
-          </div>
-          <span className="hover:text-brand-yellow-golden transition-colors">SCROLL TO EXPLORE</span>
-          <span className="w-6 h-[1px] bg-brand-yellow-golden/60" />
-        </div>
-
-        {/* Spacer on bottom-right */}
-        <div className="w-12 hidden sm:block" />
-      </div>
     </section>
   );
 }
