@@ -73,7 +73,7 @@ export default function Chapter2025() {
                   alt={img.alt}
                   fill
                   sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
-                  className="object-cover object-top group-hover:scale-105 transition-transform duration-500 filter contrast-105"
+                  className="object-cover object-top group-hover:scale-105 transition-all duration-500 filter contrast-105 blur-[2.5px] group-hover:blur-none"
                 />
                 <div
                   className={`absolute inset-0 transition-all duration-300 ${

@@ -68,7 +68,11 @@ export default function HomeGalleryPreview() {
                       alt={item.alt}
                       fill
                       sizes="(max-width: 768px) 100vw, 50vw"
-                      className="object-cover filter contrast-105 transition-transform duration-700 ease-out group-hover:scale-[1.03]"
+                      className={`object-cover filter contrast-105 transition-all duration-700 ease-out group-hover:scale-[1.03] ${
+                        item.category.toUpperCase().includes("LIFESTYLE") || item.category.toUpperCase().includes("RUNWAY")
+                          ? "blur-[2.5px] group-hover:blur-none"
+                          : ""
+                      }`}
                       priority={index < 3}
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-brand-void/85 via-transparent to-transparent opacity-75 group-hover:opacity-40 transition-opacity duration-300" />
