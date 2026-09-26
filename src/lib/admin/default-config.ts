@@ -211,9 +211,8 @@ export const DEFAULT_MASTER_CONFIG: MasterSiteConfig = {
     { id: "home", label: "HOME", href: "/", enabled: true, order: 1 },
     { id: "upcoming", label: "UPCOMING", href: "/upcoming", enabled: true, order: 2 },
     { id: "services", label: "SERVICES", href: "/services", enabled: true, order: 3 },
-    { id: "gallery", label: "GALLERY", href: "/gallery", enabled: true, order: 4 },
-    { id: "apply", label: "APPLY", href: "/apply", enabled: true, order: 5 },
-    { id: "contact", label: "CONTACT", href: "/contact", enabled: true, order: 6 },
+    { id: "projects", label: "PROJECTS", href: "/projects", enabled: true, order: 4 },
+    { id: "blog", label: "BLOG", href: "/fashion-magazine", enabled: true, order: 5 },
   ],
   footerSettings: {
     brandName: "FashAI Universal",

@@ -104,33 +104,33 @@ export default function ApplicationSelectionPage({
   );
 
   return (
-    <section className="relative py-10 sm:py-14 bg-[#050505] min-h-[85vh] text-brand-white">
-      <div className="container-editorial relative z-10">
+    <section className="relative pt-6 sm:pt-10 pb-12 sm:pb-16 bg-[#050505] min-h-[85vh] text-brand-white">
+      <div className="container-editorial relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Main Section Header */}
-        <div className="max-w-3xl mb-8 sm:mb-10">
-          <div className="flex items-center gap-2 text-xs font-syne tracking-micro text-brand-yellow-golden font-bold uppercase mb-3">
+        <div className="max-w-3xl mb-6 sm:mb-8 space-y-2.5">
+          <div className="flex items-center gap-2.5 text-base sm:text-lg md:text-xl font-syne tracking-widest text-brand-yellow-golden font-bold uppercase">
             <span>FASHAI UNIVERSAL TALENT NETWORK</span>
           </div>
 
-          <h1 className="font-serif-display text-4xl sm:text-6xl font-light text-brand-white uppercase leading-tight mb-4">
+          <h1 className="font-serif-display text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-light text-brand-white uppercase leading-tight tracking-tight">
             OPEN NOMINATIONS &amp; APPLICATIONS
           </h1>
 
-          <div className="h-[2px] w-20 bg-brand-yellow-golden mb-4 shadow-[0_0_10px_rgba(250,182,10,0.6)]" />
+          <div className="h-[2px] w-20 bg-brand-yellow-golden shadow-[0_0_10px_rgba(250,182,10,0.6)]" />
 
-          <p className="font-sans text-sm sm:text-base text-brand-platinum/90 font-light leading-relaxed">
+          <p className="font-sans text-base sm:text-lg md:text-xl text-brand-platinum/90 font-light leading-relaxed max-w-2xl sm:max-w-3xl pt-1">
             Explore the opportunities currently available across the FashAI Universal ecosystem. Select your domain below to complete your application.
           </p>
         </div>
 
         {/* If NO role is selected: Show Category Selection Grid */}
         {!selectedRole ? (
-          <div className="space-y-6">
-            <div className="flex items-center justify-between border-b border-white/10 pb-4">
-              <h2 className="font-serif-display text-xl sm:text-2xl font-light uppercase text-brand-yellow-golden tracking-wider">
+          <div className="space-y-5">
+            <div className="flex items-center justify-between border-b border-white/10 pb-3.5">
+              <h2 className="font-serif-display text-2xl sm:text-3xl lg:text-4xl font-light uppercase text-brand-yellow-golden tracking-wider">
                 CHOOSE AN OPPORTUNITY
               </h2>
-              <span className="text-xs font-syne text-brand-platinum/60 font-bold uppercase">
+              <span className="text-xs sm:text-sm font-syne text-brand-platinum/70 font-bold uppercase">
                 {CATEGORIES.length} CATEGORIES AVAILABLE
               </span>
             </div>
@@ -140,30 +140,30 @@ export default function ApplicationSelectionPage({
                 <div
                   key={cat.id}
                   onClick={() => setSelectedRole(cat.id)}
-                  className="group relative flex flex-col justify-between p-6 bg-[#080706] border border-white/10 rounded-2xl hover:border-brand-yellow-golden/70 transition-all duration-300 cursor-pointer shadow-lg hover:shadow-[0_0_25px_rgba(250,182,10,0.15)]"
+                  className="group relative flex flex-col justify-between p-5 sm:p-7 bg-[#080706] border border-white/10 rounded-2xl hover:border-brand-yellow-golden/70 transition-all duration-300 cursor-pointer shadow-lg hover:shadow-[0_0_25px_rgba(250,182,10,0.15)]"
                 >
                   <div className="space-y-3">
                     <div className="flex items-center justify-between">
-                      <span className="text-[10px] font-syne font-bold uppercase tracking-wider text-brand-yellow-golden">
+                      <span className="text-xs sm:text-sm font-syne font-bold uppercase tracking-wider text-brand-yellow-golden">
                         {cat.badge}
                       </span>
                       {cat.isNomination && (
-                        <span className="w-2 h-2 rounded-full bg-brand-yellow-golden animate-pulse" />
+                        <span className="w-2.5 h-2.5 rounded-full bg-brand-yellow-golden animate-pulse" />
                       )}
                     </div>
 
-                    <h3 className="font-serif-display text-xl sm:text-2xl font-light text-brand-white uppercase group-hover:text-brand-yellow-golden transition-colors">
+                    <h3 className="font-serif-display text-xl sm:text-2xl md:text-3xl font-light text-brand-white uppercase group-hover:text-brand-yellow-golden transition-colors leading-snug">
                       {cat.label}
                     </h3>
 
-                    <p className="font-sans text-xs text-brand-platinum/75 font-light leading-relaxed">
+                    <p className="font-sans text-sm sm:text-base text-brand-platinum/80 font-light leading-relaxed">
                       {cat.description}
                     </p>
                   </div>
 
-                  <div className="mt-6 pt-4 border-t border-white/5 flex items-center justify-between text-xs font-syne font-bold uppercase tracking-wider text-brand-yellow-golden group-hover:text-white transition-colors">
+                  <div className="mt-6 pt-4 border-t border-white/10 flex items-center justify-between text-sm sm:text-base font-syne font-bold uppercase tracking-wider text-brand-yellow-golden group-hover:text-white transition-colors">
                     <span>APPLY NOW</span>
-                    <ArrowRight className="w-4 h-4 text-brand-yellow-golden group-hover:translate-x-1.5 transition-transform duration-300" />
+                    <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 text-brand-yellow-golden group-hover:translate-x-1.5 transition-transform duration-300" />
                   </div>
                 </div>
               ))}
@@ -171,23 +171,23 @@ export default function ApplicationSelectionPage({
           </div>
         ) : (
           /* If a role IS selected: Show ONLY that single category's form */
-          <div className="space-y-6">
-            <div className="flex items-center justify-between border-b border-white/10 pb-4">
+          <div className="space-y-5">
+            <div className="flex items-center justify-between border-b border-white/10 pb-3.5">
               <button
                 onClick={() => setSelectedRole(null)}
-                className="inline-flex items-center gap-2 text-xs font-syne tracking-wider font-bold text-brand-yellow-golden hover:text-white transition-colors uppercase"
+                className="inline-flex items-center gap-2 text-xs sm:text-sm font-syne tracking-wider font-bold text-brand-yellow-golden hover:text-white transition-colors uppercase"
               >
-                <ArrowLeft className="w-4 h-4" /> ALL CATEGORIES
+                <ArrowLeft className="w-4 h-4 sm:w-5 sm:h-5" /> ALL CATEGORIES
               </button>
               {activeCategory && (
-                <span className="text-xs font-syne text-brand-yellow-golden font-bold uppercase">
+                <span className="text-xs sm:text-sm font-syne text-brand-yellow-golden font-bold uppercase">
                   {activeCategory.label}
                 </span>
               )}
             </div>
 
             {/* Render ONLY the single active role application form */}
-            <div className="bg-[#080706] border border-brand-yellow-golden/30 rounded-3xl p-4 sm:p-8 shadow-2xl">
+            <div className="bg-[#080706] border border-brand-yellow-golden/30 rounded-3xl p-5 sm:p-8 md:p-10 shadow-2xl">
               <RoleApplicationForm key={selectedRole} roleSlug={selectedRole} isModal={false} />
             </div>
           </div>

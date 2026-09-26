@@ -42,27 +42,37 @@ export default function Header() {
     };
   }, [pathname]);
 
-  const rawNavItems = (config.navigationSettings && config.navigationSettings.length > 0
-    ? config.navigationSettings.filter((item) => item.enabled)
-    : [
-        { id: "home", label: "HOME", href: "/", enabled: true, order: 1 },
-        { id: "upcoming", label: "UPCOMING", href: "/upcoming", enabled: true, order: 2 },
-        { id: "services", label: "SERVICES", href: "/services", enabled: true, order: 3 },
-        { id: "gallery", label: "GALLERY", href: "/gallery", enabled: true, order: 4 },
-        { id: "apply", label: "APPLY", href: "/apply", enabled: true, order: 5 },
-        { id: "contact", label: "CONTACT", href: "/contact", enabled: true, order: 6 },
-      ]
+  const DEFAULT_NAV_ITEMS = [
+    { id: "home", label: "HOME", href: "/", enabled: true, order: 1 },
+    { id: "upcoming", label: "UPCOMING", href: "/upcoming", enabled: true, order: 2 },
+    { id: "services", label: "SERVICES", href: "/services", enabled: true, order: 3 },
+    { id: "projects", label: "PROJECTS", href: "/projects", enabled: true, order: 4 },
+    { id: "blog", label: "BLOG", href: "/fashion-magazine", enabled: true, order: 5 },
+  ];
+
+  const rawConfigNav = (config.navigationSettings && config.navigationSettings.length > 0
+    ? config.navigationSettings.filter(
+        (item) => item.enabled && item.id !== "apply" && item.id !== "contact" && item.id !== "gallery"
+      )
+    : DEFAULT_NAV_ITEMS
   );
 
-  const hasServices = rawNavItems.some((item) => item.id === "services" || item.href === "/services");
-  const navItems = (hasServices
-    ? rawNavItems
-    : [
-        ...rawNavItems.slice(0, 2),
-        { id: "services", label: "SERVICES", href: "/services", enabled: true, order: 3 },
-        ...rawNavItems.slice(2),
-      ]
-  ).sort((a, b) => a.order - b.order);
+  const hasProjects = rawConfigNav.some((item) => item.id === "projects" || item.href === "/projects");
+  const hasBlog = rawConfigNav.some((item) => item.id === "blog" || item.href === "/fashion-magazine");
+
+  let mergedNavItems = [...rawConfigNav];
+  if (mergedNavItems.length === 0) {
+    mergedNavItems = [...DEFAULT_NAV_ITEMS];
+  } else {
+    if (!hasProjects) {
+      mergedNavItems.push({ id: "projects", label: "PROJECTS", href: "/projects", enabled: true, order: 4 });
+    }
+    if (!hasBlog) {
+      mergedNavItems.push({ id: "blog", label: "BLOG", href: "/fashion-magazine", enabled: true, order: 5 });
+    }
+  }
+
+  const navItems = mergedNavItems.sort((a, b) => a.order - b.order);
 
   // Over cinematic hero video on homepage (until "A GLOBAL FASHION MOVEMENT..." / #who-we-are section)
   const isOverVideo = pathname === "/" && scrollY < heroHeight;
@@ -124,7 +134,7 @@ export default function Header() {
           {/* DESKTOP / LAPTOP CENTER NAVIGATION LINKS */}
           <nav
             className={`hidden lg:flex items-center text-xs font-syne tracking-[0.18em] font-semibold uppercase transition-all duration-300 ${
-              isTopAtVideo ? "space-x-9 xl:space-x-14" : "space-x-8 xl:space-x-12"
+              isTopAtVideo ? "space-x-7 xl:space-x-12" : "space-x-6 xl:space-x-10"
             }`}
           >
             {navItems.map((item) => {
@@ -137,8 +147,10 @@ export default function Header() {
                 <Link
                   key={item.id}
                   href={item.href}
-                  className={`group relative py-1.5 transition-colors duration-200 text-[#D4AF37] dark:text-white/85 hover:text-[#FFEC69] dark:hover:text-[#D4AF37] subpixel-antialiased ${
-                    isActive ? "font-bold" : "font-semibold"
+                  className={`group relative py-1.5 transition-colors duration-200 subpixel-antialiased ${
+                    isActive
+                      ? "font-bold text-[#FFEC69] dark:text-[#D4AF37]"
+                      : "font-semibold text-[#D4AF37] dark:text-white/85 hover:text-[#FFEC69] dark:hover:text-[#D4AF37]"
                   }`}
                 >
                   {item.label}
