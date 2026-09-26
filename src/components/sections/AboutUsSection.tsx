@@ -27,11 +27,11 @@ export default function AboutUsSection() {
                 <span className="text-[#F15E1C] dark:text-brand-yellow-golden italic font-normal">EVENTS PLATFORM</span>
               </h2>
 
-              <p className="font-sans text-base sm:text-lg md:text-xl text-[#222222] dark:text-brand-platinum font-normal leading-relaxed mb-4">
+              <p className="font-sans text-lg sm:text-xl md:text-2xl text-[#222222] dark:text-brand-platinum font-normal leading-relaxed mb-4">
                 FashAI Universal is a global fashion and events platform connecting fashion experiences, curated events, creative talent, designers, artists, brands, and event participation across international markets.
               </p>
 
-              <p className="font-sans text-sm sm:text-base md:text-lg text-[#444444] dark:text-brand-platinum/85 font-normal leading-relaxed">
+              <p className="font-sans text-base sm:text-lg md:text-xl text-[#444444] dark:text-brand-platinum/85 font-normal leading-relaxed">
                 Built to connect creative communities, talent, brands, and event ecosystems across borders, FashAI Universal brings together couture presentation, talent recruitment, lifestyle experiences, corporate event management, and IT event formats within one global creative platform.
               </p>
             </div>
@@ -40,30 +40,30 @@ export default function AboutUsSection() {
             <div className="grid grid-cols-1 sm:grid-cols-3 pt-6 border-t border-black/10 dark:border-white/10 divide-y sm:divide-y-0 sm:divide-x divide-black/10 dark:divide-white/10">
               <div className="pb-5 sm:pb-0 sm:pr-5 lg:pr-6">
                 <Globe className="w-5 h-5 text-[#F15E1C] dark:text-brand-yellow-golden mb-2" />
-                <h3 className="font-syne text-xs sm:text-sm font-bold text-[#111111] dark:text-white uppercase tracking-wider mb-1">
+                <h3 className="font-syne text-sm sm:text-base font-bold text-[#111111] dark:text-white uppercase tracking-wider mb-1">
                   GLOBAL REACH
                 </h3>
-                <p className="font-sans text-xs sm:text-sm text-[#555555] dark:text-brand-platinum/80 font-normal leading-relaxed">
+                <p className="font-sans text-sm sm:text-base text-[#555555] dark:text-brand-platinum/80 font-normal leading-relaxed">
                   Connecting fashion, talent, brands and event ecosystems across international markets.
                 </p>
               </div>
 
               <div className="py-5 sm:py-0 sm:px-5 lg:px-6">
                 <ShieldCheck className="w-5 h-5 text-[#F15E1C] dark:text-brand-orange mb-2" />
-                <h3 className="font-syne text-xs sm:text-sm font-bold text-[#111111] dark:text-white uppercase tracking-wider mb-1">
+                <h3 className="font-syne text-sm sm:text-base font-bold text-[#111111] dark:text-white uppercase tracking-wider mb-1">
                   CROSS-BORDER
                 </h3>
-                <p className="font-sans text-xs sm:text-sm text-[#555555] dark:text-brand-platinum/80 font-normal leading-relaxed">
+                <p className="font-sans text-sm sm:text-base text-[#555555] dark:text-brand-platinum/80 font-normal leading-relaxed">
                   Bridging creative and fashion ecosystems across the UAE, India and international markets.
                 </p>
               </div>
 
               <div className="pt-5 sm:pt-0 sm:pl-5 lg:pl-6">
                 <Compass className="w-5 h-5 text-[#F15E1C] dark:text-brand-yellow-golden mb-2" />
-                <h3 className="font-syne text-xs sm:text-sm font-bold text-[#111111] dark:text-white uppercase tracking-wider mb-1">
+                <h3 className="font-syne text-sm sm:text-base font-bold text-[#111111] dark:text-white uppercase tracking-wider mb-1">
                   EVENT EXCELLENCE
                 </h3>
-                <p className="font-sans text-xs sm:text-sm text-[#555555] dark:text-brand-platinum/80 font-normal leading-relaxed">
+                <p className="font-sans text-sm sm:text-base text-[#555555] dark:text-brand-platinum/80 font-normal leading-relaxed">
                   Fashion, product, lifestyle, corporate, and IT event formats within one global platform.
                 </p>
               </div>

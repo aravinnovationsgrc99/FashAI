@@ -103,7 +103,7 @@ export default function Hero() {
             className="flex items-center justify-center gap-3 w-full max-w-sm sm:max-w-md"
           >
             <span className="h-[1px] flex-1 bg-gradient-to-r from-transparent via-brand-yellow-golden/70 to-brand-yellow-golden" />
-            <span className="text-[11px] sm:text-xs font-syne tracking-[0.25em] text-brand-yellow-golden font-bold uppercase whitespace-nowrap drop-shadow-[0_0_10px_rgba(250,182,10,0.4)]">
+            <span className="text-xs sm:text-sm font-syne tracking-[0.25em] text-brand-yellow-golden font-bold uppercase whitespace-nowrap drop-shadow-[0_0_10px_rgba(250,182,10,0.4)]">
               Fashion Without Boundaries
             </span>
             <span className="h-[1px] flex-1 bg-gradient-to-l from-transparent via-brand-yellow-golden/70 to-brand-yellow-golden" />
@@ -135,7 +135,7 @@ export default function Hero() {
             className="flex items-center justify-center gap-3 w-full max-w-xs sm:max-w-sm"
           >
             <span className="h-[1px] flex-1 bg-gradient-to-r from-transparent via-brand-yellow-golden/80 to-brand-yellow-golden" />
-            <span className="text-brand-yellow-golden text-xs sm:text-sm drop-shadow-[0_0_8px_rgba(250,182,10,0.8)]">✦</span>
+            <span className="text-brand-yellow-golden text-sm sm:text-base drop-shadow-[0_0_8px_rgba(250,182,10,0.8)]">✦</span>
             <span className="h-[1px] flex-1 bg-gradient-to-l from-transparent via-brand-yellow-golden/80 to-brand-yellow-golden" />
           </motion.div>
 
@@ -191,7 +191,7 @@ export default function Hero() {
           <span className="w-2.5 h-2.5 rounded-full border border-brand-yellow-golden bg-black/80 shadow-[0_0_8px_rgba(250,182,10,0.6)]" />
           <span className="w-[1px] h-6 bg-brand-yellow-golden/60" />
         </div>
-        <div className="flex flex-col items-start space-y-3.5 text-[11px] font-syne tracking-[0.22em] text-brand-white/80 keep-white uppercase font-semibold drop-shadow-[0_2px_8px_rgba(0,0,0,0.85)]">
+        <div className="flex flex-col items-start space-y-3.5 text-xs sm:text-xs font-syne tracking-[0.22em] text-brand-white/80 keep-white uppercase font-semibold drop-shadow-[0_2px_8px_rgba(0,0,0,0.85)]">
           <span className="hover:text-brand-yellow-golden transition-colors">PEOPLE</span>
           <span className="hover:text-brand-yellow-golden transition-colors">IDEAS</span>
           <span className="hover:text-brand-yellow-golden transition-colors">CULTURE</span>
@@ -205,7 +205,7 @@ export default function Hero() {
 
       {/* LAYER 5: RIGHT-SIDE EDITORIAL QUOTE */}
       <div className="hidden lg:flex absolute right-8 xl:right-12 top-1/2 -translate-y-1/2 flex-col items-end text-right z-10 pointer-events-none select-none max-w-[210px]">
-        <p className="font-serif italic text-lg sm:text-xl text-brand-white/90 keep-white leading-snug drop-shadow-[0_2px_12px_rgba(0,0,0,0.9)]">
+        <p className="font-serif italic text-xl sm:text-2xl text-brand-white/90 keep-white leading-snug drop-shadow-[0_2px_12px_rgba(0,0,0,0.9)]">
           “More<br />
           Than Fashion.<br />
           A Refinement<br />

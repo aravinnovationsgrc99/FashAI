@@ -64,12 +64,12 @@ export default function InstagramSection() {
           </div>
 
           {/* Event Details Line */}
-          <p className="font-syne text-xs sm:text-sm tracking-[0.2em] font-bold text-[#F15E1C] dark:text-[#D4AF37] uppercase">
+          <p className="font-syne text-sm sm:text-base tracking-[0.2em] font-bold text-[#F15E1C] dark:text-[#D4AF37] uppercase">
             LIFESTYLE 2026 &nbsp;·&nbsp; DUBAI &nbsp;·&nbsp; 2026
           </p>
 
           {/* Short Description */}
-          <p className="font-sans text-xs sm:text-sm text-[#222222] dark:text-white/85 font-normal max-w-xl mx-auto leading-relaxed">
+          <p className="font-sans text-sm sm:text-base text-[#222222] dark:text-white/85 font-normal max-w-xl mx-auto leading-relaxed">
             Join our global community for exclusive backstage captures, fashion experiences, updates and official event announcements.
           </p>
 
@@ -79,7 +79,7 @@ export default function InstagramSection() {
               href="https://www.instagram.com/fashai_universal"
               target="_blank"
               rel="noopener noreferrer"
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-[#F15E1C] hover:bg-[#ff6f2d] text-white px-8 py-4 rounded-md font-syne text-xs font-bold tracking-wider uppercase transition-all duration-300 shadow-lg group"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-[#F15E1C] hover:bg-[#ff6f2d] text-white px-8 py-4 rounded-md font-syne text-xs sm:text-sm font-bold tracking-wider uppercase transition-all duration-300 shadow-lg group"
             >
               <Instagram className="w-4 h-4 text-white" />
               <span>FOLLOW ON INSTAGRAM</span>
@@ -88,7 +88,7 @@ export default function InstagramSection() {
 
             <Link
               href="/contact?type=Registration"
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 border border-black/80 dark:border-[#D4AF37] bg-white/80 dark:bg-transparent hover:bg-black/5 dark:hover:bg-[#D4AF37]/10 text-black dark:text-white px-8 py-4 rounded-md font-syne text-xs font-bold tracking-wider uppercase transition-all duration-300 shadow-sm"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 border border-black/80 dark:border-[#D4AF37] bg-white/80 dark:bg-transparent hover:bg-black/5 dark:hover:bg-[#D4AF37]/10 text-black dark:text-white px-8 py-4 rounded-md font-syne text-xs sm:text-sm font-bold tracking-wider uppercase transition-all duration-300 shadow-sm"
             >
               <span>REGISTER / ENQUIRE</span>
               <ArrowUpRight className="w-4 h-4 text-black dark:text-[#D4AF37]" />

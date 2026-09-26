@@ -102,14 +102,14 @@ export default function WhoWeServeSection() {
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 pb-4 border-b border-black/10 dark:border-white/10 mb-6 sm:mb-8">
           <div>
-            <div className="flex items-center gap-2 text-xs sm:text-sm font-syne tracking-widest text-[#F15E1C] dark:text-[#D4AF37] font-bold uppercase mb-2">
+            <div className="flex items-center gap-2 text-sm sm:text-base font-syne tracking-widest text-[#F15E1C] dark:text-[#D4AF37] font-bold uppercase mb-2">
               <span>WHO WE WORK WITH</span>
             </div>
             <h2 className="font-serif-display text-3xl sm:text-5xl lg:text-6xl font-light text-[#111111] dark:text-brand-white uppercase leading-tight tracking-tight">
               INDUSTRIES WE <span className="font-serif italic font-normal text-[#F15E1C] dark:text-[#D4AF37]">SUPPORT</span>
             </h2>
           </div>
-          <p className="font-sans text-sm sm:text-base text-[#555555] dark:text-brand-platinum/80 max-w-md font-light leading-relaxed">
+          <p className="font-sans text-base sm:text-lg text-[#555555] dark:text-brand-platinum/80 max-w-md font-light leading-relaxed">
             Working with brands and businesses across fashion, lifestyle, technology and consumer categories.
           </p>
         </div>

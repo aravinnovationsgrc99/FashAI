@@ -116,7 +116,7 @@ export default function FashPrismStoriesSection() {
               FASHPRISM <span className="font-serif italic font-normal text-brand-yellow-golden capitalize">Stories</span>
             </h2>
           </div>
-          <p className="font-sans text-xs sm:text-sm text-brand-platinum/90 max-w-md font-light leading-relaxed">
+          <p className="font-sans text-sm sm:text-base text-brand-platinum/90 max-w-md font-light leading-relaxed">
             Explore selected moments, people, and experiences from the FashPrism journey.
           </p>
         </div>
@@ -156,7 +156,7 @@ export default function FashPrismStoriesSection() {
                   <h3 className="font-serif-display text-2xl sm:text-3xl font-light text-brand-white uppercase group-hover:translate-x-1 transition-transform duration-300">
                     {card.title}
                   </h3>
-                  <p className="font-sans text-xs text-brand-platinum/80 font-light leading-relaxed">
+                  <p className="font-sans text-xs sm:text-sm text-brand-platinum/80 font-light leading-relaxed">
                     {card.subtitle}
                   </p>
                 </div>

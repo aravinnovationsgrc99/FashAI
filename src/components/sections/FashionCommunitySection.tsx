@@ -40,14 +40,14 @@ export default function FashionCommunitySection() {
         {/* Section Editorial Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-8 sm:mb-10 border-b border-white/10 pb-6 sm:pb-8">
           <div>
-            <div className="flex items-center gap-3 text-xs font-syne tracking-micro text-brand-orange font-bold uppercase mb-3">
+            <div className="flex items-center gap-3 text-xs sm:text-sm font-syne tracking-micro text-brand-orange font-bold uppercase mb-3">
               <span>OFFICIAL TALENT NETWORK &amp; RECRUITMENT</span>
             </div>
             <h2 className="font-serif-display text-4xl sm:text-6xl lg:text-7xl font-light text-brand-white uppercase">
               FASHION COMMUNITY &amp; TALENT
             </h2>
           </div>
-          <p className="font-sans text-sm sm:text-base text-brand-platinum/90 max-w-md font-light leading-relaxed">
+          <p className="font-sans text-base sm:text-lg text-brand-platinum/90 max-w-md font-light leading-relaxed">
             Build your place in fashion, beauty, runway and lifestyle. Discover opportunities in couture, modeling, makeup, styling, choreography, media and public appearances.
           </p>
         </div>
@@ -66,7 +66,7 @@ export default function FashionCommunitySection() {
               {/* Card Top Information */}
               <div className="space-y-3 mb-6">
                 <div className="flex items-center justify-between">
-                  <span className="text-xs font-syne tracking-micro text-brand-orange font-bold uppercase">
+                  <span className="text-xs sm:text-sm font-syne tracking-micro text-brand-orange font-bold uppercase">
                     {category.tagline}
                   </span>
                 </div>
@@ -75,7 +75,7 @@ export default function FashionCommunitySection() {
                   {category.title}
                 </h3>
 
-                <p className="font-sans text-sm sm:text-base text-brand-platinum/80 font-light min-h-[40px] leading-relaxed">
+                <p className="font-sans text-base sm:text-lg text-brand-platinum/80 font-light min-h-[40px] leading-relaxed">
                   {category.subtitle}
                 </p>
               </div>
@@ -96,7 +96,7 @@ export default function FashionCommunitySection() {
               <div className="pt-4 border-t border-white/10 space-y-3">
                 <button
                   onClick={() => handleOpenApplication(category.categoryId)}
-                  className="w-full bg-gradient-to-r from-brand-orange to-brand-yellow-golden hover:opacity-95 text-black py-3.5 px-5 text-sm font-syne tracking-caps font-bold transition-all flex items-center justify-between rounded-xl shadow-lg group-hover:scale-[1.01]"
+                  className="w-full bg-gradient-to-r from-brand-orange to-brand-yellow-golden hover:opacity-95 text-black py-3.5 px-5 text-sm sm:text-base font-syne tracking-caps font-bold transition-all flex items-center justify-between rounded-xl shadow-lg group-hover:scale-[1.01]"
                 >
                   <span>{category.ctaLabel}</span>
                   <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />

@@ -31,7 +31,7 @@ export default function OurEventsSection() {
               FashPrism Lifestyle Week 2025
             </h3>
           </div>
-          <p className="font-sans text-xs sm:text-sm text-[#444444] dark:text-brand-platinum/80 max-w-sm font-light leading-relaxed">
+          <p className="font-sans text-sm sm:text-base text-[#444444] dark:text-brand-platinum/80 max-w-sm font-light leading-relaxed">
             The core event experiences within the FashAI Universal platform.
           </p>
         </div>
@@ -67,7 +67,7 @@ export default function OurEventsSection() {
 
             <div className="relative z-10">
               <div className="flex justify-between items-start mb-3">
-                <span className="text-[11px] sm:text-xs font-syne tracking-[0.2em] text-[#D4AF37] uppercase font-extrabold drop-shadow">
+                <span className="text-xs sm:text-sm font-syne tracking-[0.2em] text-[#D4AF37] uppercase font-extrabold drop-shadow">
                   FLAGSHIP EXPERIENCE
                 </span>
               </div>
@@ -76,7 +76,7 @@ export default function OurEventsSection() {
                 LIFESTYLE
               </h3>
 
-              <p className="font-sans text-sm sm:text-base text-neutral-200 font-normal leading-relaxed mb-5 max-w-md keep-white drop-shadow">
+              <p className="font-sans text-base sm:text-lg text-neutral-200 font-normal leading-relaxed mb-5 max-w-md keep-white drop-shadow">
                 Fashion, culture and lifestyle experiences bringing together computational design, haute couture, and spatial atmosphere.
               </p>
 

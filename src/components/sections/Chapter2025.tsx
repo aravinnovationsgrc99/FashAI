@@ -41,13 +41,13 @@ export default function Chapter2025() {
         </div>
 
         <div className="pt-6 sm:pt-8 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
-          <p className="font-sans text-base sm:text-lg md:text-xl text-brand-white/90 max-w-2xl font-light leading-relaxed">
+          <p className="font-sans text-lg sm:text-xl md:text-2xl text-brand-white/90 max-w-2xl font-light leading-relaxed">
             Selected fashion experiences, events, campaigns and creative work delivered through the FashAI ecosystem.
           </p>
 
           <Link
             href="/projects"
-            className="inline-flex items-center gap-3 bg-[#D4AF37] hover:bg-[#FFEC69] text-[#111111] px-7 py-3.5 text-xs sm:text-sm font-syne tracking-caps font-bold transition-all duration-300 rounded-full shadow-lg hover:scale-105 shrink-0"
+            className="inline-flex items-center gap-3 bg-[#D4AF37] hover:bg-[#FFEC69] text-[#111111] px-7 py-3.5 text-sm sm:text-base font-syne tracking-caps font-bold transition-all duration-300 rounded-full shadow-lg hover:scale-105 shrink-0"
           >
             <span>VIEW OUR PROJECTS</span>
             <ArrowRight className="w-4 h-4" />

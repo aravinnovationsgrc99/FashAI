@@ -82,7 +82,7 @@ export default function Footer() {
               </span>
             </Link>
 
-            <p className="font-sans text-xs sm:text-sm text-[#333333] dark:text-white/80 font-normal leading-relaxed max-w-xs">
+            <p className="font-sans text-base sm:text-lg md:text-xl text-[#333333] dark:text-white/90 font-normal leading-relaxed max-w-sm">
               Global fashion, talent and event platform connecting ecosystems across the UAE, India and international markets.
             </p>
 
@@ -110,10 +110,10 @@ export default function Footer() {
             variants={columnVariants}
             className="md:col-span-3"
           >
-            <h4 className="font-syne text-xs tracking-caps text-[#F15E1C] dark:text-[#D4AF37] font-bold uppercase mb-4">
+            <h4 className="font-syne text-sm sm:text-base md:text-lg tracking-caps text-[#F15E1C] dark:text-[#D4AF37] font-bold uppercase mb-4">
               EXPLORE
             </h4>
-            <ul className="space-y-2.5">
+            <ul className="space-y-3">
               {[
                 { label: "Home", href: "/" },
                 { label: "Upcoming", href: "/upcoming" },
@@ -124,12 +124,12 @@ export default function Footer() {
                 <li key={idx}>
                   <Link
                     href={link.href}
-                    className="group inline-flex items-center gap-1.5 font-sans text-xs sm:text-sm text-[#111111] dark:text-white/90 hover:text-[#F15E1C] dark:hover:text-[#D4AF37] transition-colors duration-300"
+                    className="group inline-flex items-center gap-2 font-sans text-base sm:text-lg md:text-xl text-[#111111] dark:text-white/90 hover:text-[#F15E1C] dark:hover:text-[#D4AF37] transition-colors duration-300"
                   >
                     <span className="transform group-hover:translate-x-1 transition-transform duration-300">
                       {link.label}
                     </span>
-                    <ArrowRight className="w-3 h-3 opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 text-[#F15E1C] dark:text-[#D4AF37] transition-all duration-300" />
+                    <ArrowRight className="w-4 h-4 opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 text-[#F15E1C] dark:text-[#D4AF37] transition-all duration-300" />
                   </Link>
                 </li>
               ))}
@@ -145,10 +145,10 @@ export default function Footer() {
             variants={columnVariants}
             className="md:col-span-4"
           >
-            <h4 className="font-syne text-xs tracking-caps text-[#F15E1C] dark:text-[#D4AF37] font-bold uppercase mb-4">
+            <h4 className="font-syne text-sm sm:text-base md:text-lg tracking-caps text-[#F15E1C] dark:text-[#D4AF37] font-bold uppercase mb-4">
               GET INVOLVED
             </h4>
-            <ul className="space-y-2.5">
+            <ul className="space-y-3">
               {[
                 { label: "Designer", href: "/apply/designer" },
                 { label: "Model", href: "/apply/model" },
@@ -159,12 +159,12 @@ export default function Footer() {
                 <li key={idx}>
                   <Link
                     href={link.href}
-                    className="group inline-flex items-center gap-1.5 font-sans text-xs sm:text-sm text-[#111111] dark:text-white/90 hover:text-[#F15E1C] dark:hover:text-[#D4AF37] transition-colors duration-300"
+                    className="group inline-flex items-center gap-2 font-sans text-base sm:text-lg md:text-xl text-[#111111] dark:text-white/90 hover:text-[#F15E1C] dark:hover:text-[#D4AF37] transition-colors duration-300"
                   >
                     <span className="transform group-hover:translate-x-1 transition-transform duration-300">
                       {link.label}
                     </span>
-                    <ArrowRight className="w-3 h-3 opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 text-[#F15E1C] dark:text-[#D4AF37] transition-all duration-300" />
+                    <ArrowRight className="w-4 h-4 opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 text-[#F15E1C] dark:text-[#D4AF37] transition-all duration-300" />
                   </Link>
                 </li>
               ))}

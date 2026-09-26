@@ -20,19 +20,19 @@ export default function OpenNominationsSection() {
 
           <div className="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-5">
             <div className="space-y-1">
-              <div className="flex items-center gap-2 text-[11px] font-syne tracking-micro text-brand-yellow-golden font-bold uppercase">
+              <div className="flex items-center gap-2 text-xs sm:text-sm font-syne tracking-micro text-brand-yellow-golden font-bold uppercase">
                 <span>TALENT SELECTION &amp; RECRUITMENT</span>
               </div>
               <h2 className="font-serif-display text-2xl sm:text-3xl lg:text-4xl font-light text-brand-white uppercase leading-tight group-hover:text-brand-yellow-golden transition-colors">
                 OPEN NOMINATIONS &amp; APPLICATIONS
               </h2>
-              <p className="font-sans text-xs sm:text-sm text-brand-platinum/80 font-light max-w-xl">
+              <p className="font-sans text-sm sm:text-base text-brand-platinum/80 font-light max-w-xl">
                 Explore current opportunities and apply to the category that fits your profile.
               </p>
             </div>
 
             {/* Right Action CTA Button — High-Contrast Gold Button with Bold Black Text */}
-            <div className="inline-flex items-center gap-3 px-6 py-3.5 bg-brand-yellow-golden hover:bg-[#FFEC69] border border-brand-yellow-golden rounded-full text-black transition-all duration-300 text-xs font-syne font-bold uppercase tracking-wider shrink-0 self-start md:self-auto shadow-md">
+            <div className="inline-flex items-center gap-3 px-6 py-3.5 bg-brand-yellow-golden hover:bg-[#FFEC69] border border-brand-yellow-golden rounded-full text-black transition-all duration-300 text-xs sm:text-sm font-syne font-bold uppercase tracking-wider shrink-0 self-start md:self-auto shadow-md">
               <GradientFlowText variant="primary" className="text-black font-extrabold tracking-wider">
                 EXPLORE &amp; APPLY
               </GradientFlowText>

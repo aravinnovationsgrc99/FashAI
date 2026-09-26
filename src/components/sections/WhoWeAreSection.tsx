@@ -34,7 +34,7 @@ export default function WhoWeAreSection() {
             </h2>
 
             {/* Concise Subheading */}
-            <p className="font-syne text-xs sm:text-sm tracking-[0.18em] uppercase text-[#333333] dark:text-brand-platinum/90 font-bold mt-3 max-w-3xl mx-auto leading-relaxed">
+            <p className="font-syne text-sm sm:text-base tracking-[0.18em] uppercase text-[#333333] dark:text-brand-platinum/90 font-bold mt-3 max-w-3xl mx-auto leading-relaxed">
               BRIDGING THE UAE, INDIA &amp; GLOBAL THROUGH RUNWAY, CULTURE AND CREATIVE TALENT
             </p>
 
@@ -68,10 +68,10 @@ export default function WhoWeAreSection() {
                     <Globe className="w-5 h-5" />
                   </div>
                   <div>
-                    <h4 className="font-syne text-xs sm:text-sm font-bold uppercase tracking-wider text-[#111111] dark:text-brand-white">
+                    <h4 className="font-syne text-sm sm:text-base font-bold uppercase tracking-wider text-[#111111] dark:text-brand-white">
                       INTERNATIONAL PLATFORM
                     </h4>
-                    <p className="font-sans text-xs sm:text-sm text-[#444444] dark:text-brand-platinum/90 font-normal leading-relaxed mt-1">
+                    <p className="font-sans text-sm sm:text-base text-[#444444] dark:text-brand-platinum/90 font-normal leading-relaxed mt-1">
                       Runway, talent and creative opportunities across the UAE, India and global destinations.
                     </p>
                   </div>
@@ -82,10 +82,10 @@ export default function WhoWeAreSection() {
                     <Users className="w-5 h-5" />
                   </div>
                   <div>
-                    <h4 className="font-syne text-xs sm:text-sm font-bold uppercase tracking-wider text-[#111111] dark:text-brand-white">
+                    <h4 className="font-syne text-sm sm:text-base font-bold uppercase tracking-wider text-[#111111] dark:text-brand-white">
                       GLOBAL COMMUNITY
                     </h4>
-                    <p className="font-sans text-xs sm:text-sm text-[#444444] dark:text-brand-platinum/90 font-normal leading-relaxed mt-1">
+                    <p className="font-sans text-sm sm:text-base text-[#444444] dark:text-brand-platinum/90 font-normal leading-relaxed mt-1">
                       Connecting designers, talent, brands and audiences.
                     </p>
                   </div>
@@ -103,23 +103,23 @@ export default function WhoWeAreSection() {
                       <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#F15E1C] opacity-75 dark:bg-[#D4AF37]"></span>
                       <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-[#F15E1C] dark:bg-[#D4AF37]"></span>
                     </span>
-                    <span className="font-syne text-xs sm:text-sm font-bold uppercase tracking-[0.22em] text-[#F15E1C] dark:text-[#D4AF37]">
+                    <span className="font-syne text-sm sm:text-base font-bold uppercase tracking-[0.22em] text-[#F15E1C] dark:text-[#D4AF37]">
                       EXPLORE FASHAI ECOSYSTEM
                     </span>
                   </div>
 
-                  <h3 className="font-serif-display text-2xl sm:text-3xl font-light text-[#111111] dark:text-brand-white uppercase leading-tight tracking-tight">
+                  <h3 className="font-serif-display text-[26px] sm:text-4xl font-light text-[#111111] dark:text-brand-white uppercase leading-tight tracking-tight">
                     UPCOMING SHOWS &amp; CHAPTERS
                   </h3>
 
-                  <p className="font-sans text-xs sm:text-sm text-[#333333] dark:text-brand-platinum/90 font-normal leading-relaxed">
+                  <p className="font-sans text-sm sm:text-base text-[#333333] dark:text-brand-platinum/90 font-normal leading-relaxed">
                     Upcoming shows, chapters and opportunities across international fashion hubs.
                   </p>
                 </div>
 
                 <Link
                   href="/upcoming"
-                  className="relative z-10 w-full sm:w-auto inline-flex items-center justify-center gap-2.5 bg-[#F15E1C] dark:bg-[#D4AF37] text-white dark:text-black hover:bg-[#e04f10] dark:hover:bg-[#f5aa00] px-7 py-3.5 rounded-xl font-syne text-xs sm:text-sm font-bold tracking-wider uppercase transition-all duration-300 shadow-md group/btn whitespace-nowrap shrink-0 hover:shadow-lg hover:-translate-y-0.5"
+                  className="relative z-10 w-full sm:w-auto inline-flex items-center justify-center gap-2.5 bg-[#F15E1C] dark:bg-[#D4AF37] text-white dark:text-black hover:bg-[#e04f10] dark:hover:bg-[#f5aa00] px-7 py-3.5 rounded-xl font-syne text-sm sm:text-base font-bold tracking-wider uppercase transition-all duration-300 shadow-md group/btn whitespace-nowrap shrink-0 hover:shadow-lg hover:-translate-y-0.5"
                 >
                   <span>SEE UPCOMING</span>
                   <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover/btn:translate-x-1" />
@@ -138,10 +138,10 @@ export default function WhoWeAreSection() {
                     <Compass className="w-4 h-4 sm:w-5 sm:h-5" />
                   </div>
                   <div>
-                    <h4 className="font-syne text-xs sm:text-sm font-bold uppercase tracking-wider text-[#111111] dark:text-brand-white">
+                    <h4 className="font-syne text-sm sm:text-base font-bold uppercase tracking-wider text-[#111111] dark:text-brand-white">
                       INTERNATIONAL REACH
                     </h4>
-                    <p className="font-sans text-xs sm:text-sm text-[#444444] dark:text-brand-platinum/90 font-normal mt-0.5">
+                    <p className="font-sans text-sm sm:text-base text-[#444444] dark:text-brand-platinum/90 font-normal mt-0.5">
                       Expanding fashion beyond borders.
                     </p>
                   </div>
@@ -158,10 +158,10 @@ export default function WhoWeAreSection() {
                     <Eye className="w-4 h-4 sm:w-5 sm:h-5" />
                   </div>
                   <div>
-                    <h4 className="font-syne text-xs sm:text-sm font-bold uppercase tracking-wider text-[#111111] dark:text-brand-white">
+                    <h4 className="font-syne text-sm sm:text-base font-bold uppercase tracking-wider text-[#111111] dark:text-brand-white">
                       CREATIVE FOCUS
                     </h4>
-                    <p className="font-sans text-xs sm:text-sm text-[#444444] dark:text-brand-platinum/90 font-normal mt-0.5">
+                    <p className="font-sans text-sm sm:text-base text-[#444444] dark:text-brand-platinum/90 font-normal mt-0.5">
                       Designer, model and artistic showcases.
                     </p>
                   </div>
@@ -178,10 +178,10 @@ export default function WhoWeAreSection() {
                     <Award className="w-4 h-4 sm:w-5 sm:h-5" />
                   </div>
                   <div>
-                    <h4 className="font-syne text-xs sm:text-sm font-bold uppercase tracking-wider text-[#111111] dark:text-brand-white">
+                    <h4 className="font-syne text-sm sm:text-base font-bold uppercase tracking-wider text-[#111111] dark:text-brand-white">
                       CURATED EXPERIENCES
                     </h4>
-                    <p className="font-sans text-xs sm:text-sm text-[#444444] dark:text-brand-platinum/90 font-normal mt-0.5">
+                    <p className="font-sans text-sm sm:text-base text-[#444444] dark:text-brand-platinum/90 font-normal mt-0.5">
                       Runways, salons and global trade formats.
                     </p>
                   </div>

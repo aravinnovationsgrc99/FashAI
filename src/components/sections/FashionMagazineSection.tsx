@@ -254,7 +254,7 @@ export default function FashionMagazineSection() {
               FASHION <span className="font-serif italic font-normal text-[#F15E1C] dark:text-brand-yellow-golden">MAGAZINE</span>
             </h2>
           </div>
-          <p className="font-sans text-xs sm:text-sm md:text-base text-[#444444] dark:text-brand-platinum/90 max-w-md font-light leading-relaxed">
+          <p className="font-sans text-sm sm:text-base md:text-lg text-[#444444] dark:text-brand-platinum/90 max-w-md font-light leading-relaxed">
             Fashion stories, event moments, creative perspectives and visual highlights from the FashAI Universal ecosystem.
           </p>
         </div>

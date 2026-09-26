@@ -83,14 +83,14 @@ function ContactContent() {
       <div className="container-editorial relative z-10">
         {/* Section Header */}
         <div className="max-w-3xl mb-8 sm:mb-10">
-          <div className="flex items-center gap-3 text-xs font-syne tracking-micro text-brand-orange font-bold uppercase mb-3">
+          <div className="flex items-center gap-3 text-xs sm:text-sm font-syne tracking-micro text-brand-orange font-bold uppercase mb-3">
             <span className="h-px w-8 bg-brand-orange" />
             <span>CONTACT &amp; ENQUIRIES</span>
           </div>
           <h2 className="font-serif-display text-4xl sm:text-6xl lg:text-7xl font-light text-brand-white uppercase mb-4">
             LET&apos;S CREATE THE <span className="italic text-transparent bg-clip-text bg-gradient-to-r from-brand-orange to-brand-yellow-golden font-normal">NEXT CHAPTER.</span>
           </h2>
-          <p className="font-sans text-base sm:text-lg text-brand-platinum/90 font-light leading-relaxed">
+          <p className="font-sans text-lg sm:text-xl text-brand-platinum/90 font-light leading-relaxed">
             For registrations, sponsorships, talent, press, brand partnerships and event participation across the FashAI Universal platform, submit an enquiry to the FashAI Universal team.
           </p>
         </div>
