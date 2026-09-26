@@ -31,7 +31,7 @@ export const PROJECTS_DATA: ProjectItem[] = [
     description:
       "A high-couture catwalk presentation within the FashAI Universal ecosystem. Highlighting spatial choreography, lighting art, and designer silhouettes.",
     heroImage: "/assets/final/WhatsApp Image 2026-09-18 at 15.02.45.jpeg",
-    socialUrl: "https://www.instagram.com/fashai_universal",
+    socialUrl: "https://www.facebook.com/profile.php?id=61573489951314",
     sequence: [
       {
         type: "image",
