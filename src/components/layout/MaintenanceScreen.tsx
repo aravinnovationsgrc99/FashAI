@@ -23,7 +23,7 @@ export default function MaintenanceScreen({
         <div className="flex justify-center mb-4">
           <div className="relative w-16 h-16 sm:w-20 sm:h-20">
             <Image
-              src="/assets/brand/logo_transparent.png"
+              src="/assets/brand/fashai_logo_final.png"
               alt="FashAI Universal Logo"
               fill
               className="object-contain"

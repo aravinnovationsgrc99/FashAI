@@ -282,7 +282,7 @@ export default function AdminLayout({ children }: AdminLayoutProps) {
           <div className="flex items-center gap-3">
             <Link href="/admin" className="relative w-8 h-8 flex-shrink-0 hidden xs:block">
               <Image
-                src="/assets/brand/logo_transparent.png"
+                src="/assets/brand/fashai_logo_final.png"
                 alt="FashAI Logo"
                 fill
                 className="object-contain"
@@ -405,7 +405,7 @@ export default function AdminLayout({ children }: AdminLayoutProps) {
           <div className="p-5 border-b border-white/10 flex items-center gap-3.5">
             <div className="relative w-9 h-9 rounded-2xl bg-[#D4AF37]/10 border border-[#D4AF37]/30 flex items-center justify-center shrink-0">
               <Image
-                src="/assets/brand/logo_transparent.png"
+                src="/assets/brand/fashai_logo_final.png"
                 alt="FashAI Logo"
                 fill
                 className="object-contain p-1.5"

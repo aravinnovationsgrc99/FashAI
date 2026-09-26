@@ -15,7 +15,7 @@ export default function HomeContactInvitation() {
         <div className="flex items-center gap-2 mb-6">
           <div className="relative w-4 h-4 flex-shrink-0 overflow-hidden rounded-[2px] bg-black border border-brand-orange/40">
             <Image
-              src="/assets/brand/logo_transparent.png"
+              src="/assets/brand/fashai_logo_final.png"
               alt="Powered by Arav Innovation Logo"
               fill
               sizes="16px"

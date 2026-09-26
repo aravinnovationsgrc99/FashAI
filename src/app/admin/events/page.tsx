@@ -133,7 +133,7 @@ export default function EventManagerPage() {
             <div className="relative aspect-video bg-black rounded-xl overflow-hidden border border-white/10 group">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
-                src={ev.coverImage || "/assets/brand/logo_transparent.png"}
+                src={ev.coverImage || "/assets/brand/fashai_logo_final.png"}
                 alt={ev.title}
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
               />

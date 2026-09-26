@@ -70,36 +70,36 @@ export default function Header() {
 
   return (
     <>
-      {/* FLOATING GLASS EDITORIAL NAVBAR CONTAINER */}
+      {/* FLOATING / FIXED GLASS EDITORIAL NAVBAR CONTAINER */}
       <header
-        className={`fixed left-1/2 -translate-x-1/2 [transform-style:preserve-3d] [backface-visibility:hidden] z-[200] transition-all duration-400 rounded-full select-none ${
+        className={`fixed z-[200] [transform-style:preserve-3d] [backface-visibility:hidden] transition-all duration-300 select-none ${
           isTopAtVideo
-            ? "top-2 sm:top-3 md:top-3.5 h-16 sm:h-[66px] md:h-[70px] w-[calc(100%-1.5rem)] max-w-[1520px] bg-transparent border-transparent shadow-none backdrop-blur-none"
+            ? "top-0 inset-x-0 w-full lg:top-3 lg:left-1/2 lg:-translate-x-1/2 lg:w-[calc(100%-1.5rem)] lg:max-w-[1520px] h-16 sm:h-20 lg:h-[70px] bg-transparent border-transparent shadow-none backdrop-blur-none lg:rounded-full"
             : isOverVideo
-            ? "top-1.5 sm:top-2 h-14 sm:h-[60px] w-[calc(100%-1.5rem)] max-w-[1420px] bg-black/40 border border-white/20 shadow-[0_8px_32px_rgba(0,0,0,0.3)] backdrop-blur-2xl"
-            : "top-1.5 sm:top-2 h-14 sm:h-[60px] w-[calc(100%-1.5rem)] max-w-[1420px] bg-[#080706]/90 dark:bg-[#070707]/85 border border-[#D4AF37]/45 dark:border-white/15 shadow-[0_8px_32px_rgba(212,175,55,0.2)] dark:shadow-[0_14px_40px_rgba(0,0,0,0.5)] backdrop-blur-2xl"
+            ? "top-0 inset-x-0 w-full lg:top-2 lg:left-1/2 lg:-translate-x-1/2 lg:w-[calc(100%-1.5rem)] lg:max-w-[1420px] h-16 sm:h-18 lg:h-[60px] bg-black/60 lg:bg-black/40 border-b lg:border border-white/20 shadow-[0_8px_32px_rgba(0,0,0,0.4)] backdrop-blur-2xl lg:rounded-full"
+            : "top-0 inset-x-0 w-full lg:top-2 lg:left-1/2 lg:-translate-x-1/2 lg:w-[calc(100%-1.5rem)] lg:max-w-[1420px] h-16 sm:h-18 lg:h-[60px] bg-[#080706]/95 dark:bg-[#070707]/90 border-b lg:border border-[#D4AF37]/45 dark:border-white/15 shadow-[0_8px_32px_rgba(0,0,0,0.5)] backdrop-blur-2xl lg:rounded-full"
         }`}
       >
         <div
-          className={`h-full flex items-center justify-between relative transition-all duration-400 ${
-            isTopAtVideo ? "px-6 sm:px-9 lg:px-12 gap-5 sm:gap-8 lg:gap-10" : "px-5 sm:px-8 lg:px-11 gap-4 sm:gap-6 lg:gap-8"
+          className={`h-full flex items-center justify-between relative transition-all duration-300 ${
+            isTopAtVideo ? "px-4 sm:px-8 lg:px-12 gap-3.5 sm:gap-8 lg:gap-10" : "px-4 sm:px-8 lg:px-11 gap-3 sm:gap-6 lg:gap-8"
           }`}
         >
           {/* LOGO AREA (LEFT) */}
-          <Link href="/" className="flex items-center gap-2.5 sm:gap-3.5 group shrink-0">
+          <Link href="/" className="flex items-center gap-2 sm:gap-2.5 group shrink-0" aria-label="FashAI Universal Home">
             <div
               className={`relative flex-shrink-0 transition-all duration-300 group-hover:scale-105 ${
                 isTopAtVideo
-                  ? "w-9 h-9 sm:w-11 sm:h-11 md:w-12 md:h-12 xl:w-[50px] xl:h-[50px]"
-                  : "w-8.5 h-8.5 sm:w-10 sm:h-10 md:w-11 md:h-11 xl:w-[46px] xl:h-[46px]"
+                  ? "w-10 h-10 sm:w-12 sm:h-12 md:w-9.5 md:h-9.5 xl:w-[42px] xl:h-[42px]"
+                  : "w-9.5 h-9.5 sm:w-11 sm:h-11 md:w-8.5 md:h-8.5 xl:w-[38px] xl:h-[38px]"
               }`}
             >
               <Image
-                src="/assets/brand/logo_transparent.png"
+                src="/assets/brand/fashai_logo_final.png"
                 alt="FashAI Universal Logo"
                 fill
                 priority
-                sizes="(max-width: 640px) 40px, (max-width: 1024px) 48px, 56px"
+                sizes="(max-width: 640px) 48px, (max-width: 1024px) 40px, 44px"
                 className="object-contain filter drop-shadow-[0_1px_2px_rgba(0,0,0,0.3)] dark:drop-shadow-[0_1px_3px_rgba(212,175,55,0.25)]"
               />
             </div>
@@ -107,8 +107,8 @@ export default function Header() {
               <span
                 className={`font-serif-display font-light tracking-wider uppercase leading-none transition-all duration-300 ${
                   isTopAtVideo
-                    ? "text-base sm:text-xl lg:text-2xl xl:text-[26px]"
-                    : "text-sm sm:text-lg lg:text-xl xl:text-2xl"
+                    ? "text-lg sm:text-2xl md:text-lg lg:text-xl xl:text-2xl"
+                    : "text-base sm:text-xl md:text-base lg:text-lg xl:text-xl"
                 }`}
               >
                 <span className="text-[#D4AF37] dark:text-white drop-shadow-[0_1px_2px_rgba(0,0,0,0.25)] dark:drop-shadow-none">
@@ -174,10 +174,10 @@ export default function Header() {
             {/* CIRCULAR MOBILE HAMBURGER BUTTON */}
             <button
               onClick={() => setMobileMenuOpen(true)}
-              className="lg:hidden rounded-full flex items-center justify-center shrink-0 transition-all duration-300 w-9 h-9 sm:w-10 sm:h-10 bg-[#D4AF37]/15 dark:bg-white/15 border border-[#D4AF37]/50 dark:border-white/20 backdrop-blur-md text-[#D4AF37] dark:text-white hover:bg-[#D4AF37]/25 dark:hover:bg-white/25 hover:border-[#D4AF37] shadow-sm"
+              className="lg:hidden rounded-full flex items-center justify-center shrink-0 transition-all duration-300 w-11 h-11 sm:w-12 sm:h-12 bg-[#D4AF37]/15 dark:bg-white/15 border border-[#D4AF37]/50 dark:border-white/20 backdrop-blur-md text-[#D4AF37] dark:text-white hover:bg-[#D4AF37]/25 dark:hover:bg-white/25 hover:border-[#D4AF37] shadow-sm"
               aria-label="Open Navigation Menu"
             >
-              <Menu className="w-4 h-4 sm:w-5 sm:h-5 text-[#D4AF37] dark:text-white stroke-[2.2]" />
+              <Menu className="w-5 h-5 sm:w-6 sm:h-6 text-[#D4AF37] dark:text-white stroke-[2.2]" />
             </button>
           </div>
         </div>

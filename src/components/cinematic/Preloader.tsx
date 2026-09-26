@@ -139,13 +139,13 @@ export default function Preloader() {
               className="flex flex-col items-center mb-8"
             >
               {/* Official FashAI Logo Mark Container */}
-              <div className="relative w-20 h-20 sm:w-24 sm:h-24 mb-5 overflow-hidden rounded-none border border-brand-yellow-golden/50 bg-black shadow-[0_0_35px_rgba(250,182,10,0.3)] p-2">
+              <div className="relative w-24 h-24 sm:w-28 sm:h-28 mb-5 overflow-hidden rounded-none border border-brand-yellow-golden/50 bg-black shadow-[0_0_35px_rgba(250,182,10,0.3)] p-2">
                 <Image
-                  src="/assets/brand/logo_transparent.png"
+                  src="/assets/brand/fashai_logo_final.png"
                   alt="FashAI Universal Official Logo"
                   fill
                   priority
-                  sizes="96px"
+                  sizes="112px"
                   className="object-contain"
                 />
               </div>

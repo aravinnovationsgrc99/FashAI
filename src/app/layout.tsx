@@ -50,6 +50,16 @@ export const metadata: Metadata = {
     index: true,
     follow: true,
   },
+  icons: {
+    icon: [
+      { url: "/assets/brand/fashai_logo_final.png", type: "image/png" },
+      { url: "/icon.png", type: "image/png" },
+    ],
+    shortcut: ["/assets/brand/fashai_logo_final.png"],
+    apple: [
+      { url: "/assets/brand/fashai_logo_final.png", sizes: "180x180", type: "image/png" },
+    ],
+  },
 };
 
 export default function RootLayout({
@@ -65,7 +75,7 @@ export default function RootLayout({
         "@id": "https://fashai-beryl.vercel.app/#organization",
         name: "FashAI Universal",
         url: "https://fashai-beryl.vercel.app",
-        logo: "https://fashai-beryl.vercel.app/assets/brand/logo_transparent.png",
+        logo: "https://fashai-beryl.vercel.app/assets/brand/fashai_logo_final.png",
         sameAs: ["https://www.instagram.com/fashai_universal"],
         description:
           "FashAI Universal is an international fashion and events platform focused on fashion experiences, events, creative talent, designers, artists, and brand participation.",
@@ -102,7 +112,9 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark scroll-smooth">
       <head>
-        <link rel="icon" href="/favicon.ico" sizes="any" />
+        <link rel="icon" href="/assets/brand/fashai_logo_final.png" type="image/png" sizes="any" />
+        <link rel="shortcut icon" href="/assets/brand/fashai_logo_final.png" type="image/png" />
+        <link rel="apple-touch-icon" href="/assets/brand/fashai_logo_final.png" sizes="180x180" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <script

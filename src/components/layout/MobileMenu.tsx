@@ -86,10 +86,10 @@ export default function MobileMenu({
             {/* TOP HEADER ROW */}
             <div className="flex items-center justify-between border-b border-black/10 dark:border-white/10 pb-4 pt-1 shrink-0">
               {/* Logo Lockup */}
-              <Link href="/" onClick={onClose} className="flex items-center gap-2.5">
+              <Link href="/" onClick={onClose} className="flex items-center gap-1.5">
                 <div className="relative w-8 h-8 flex-shrink-0">
                   <Image
-                    src="/assets/brand/logo_transparent.png"
+                    src="/assets/brand/fashai_logo_final.png"
                     alt="FashAI Universal Logo"
                     fill
                     priority

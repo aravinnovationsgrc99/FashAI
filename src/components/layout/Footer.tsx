@@ -67,13 +67,13 @@ export default function Footer() {
             className="md:col-span-5 flex flex-col space-y-3.5 pb-6 md:pb-0 border-b md:border-b-0 border-black/10 dark:border-white/10"
           >
             {/* Logo Lockup: Official Logo + FashAI Universal Brand Text */}
-            <Link href="/" className="inline-flex items-center gap-3 group w-fit">
-              <div className="relative w-10 h-10 sm:w-11 sm:h-11 flex-shrink-0 overflow-hidden">
+            <Link href="/" className="inline-flex items-center gap-2 group w-fit">
+              <div className="relative w-11 h-11 sm:w-12 sm:h-12 flex-shrink-0 overflow-hidden">
                 <Image
-                  src="/assets/brand/logo_transparent.png"
+                  src="/assets/brand/fashai_logo_final.png"
                   alt="FashAI Universal Logo"
                   fill
-                  sizes="44px"
+                  sizes="48px"
                   className="object-contain group-hover:scale-105 transition-transform duration-300"
                 />
               </div>

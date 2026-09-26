@@ -73,7 +73,7 @@ export default function AdminLoginPage() {
           <div className="flex justify-center">
             <div className="relative w-16 h-16 flex-shrink-0">
               <Image
-                src="/assets/brand/logo_transparent.png"
+                src="/assets/brand/fashai_logo_final.png"
                 alt="FashAI Universal Logo"
                 fill
                 className="object-contain"
