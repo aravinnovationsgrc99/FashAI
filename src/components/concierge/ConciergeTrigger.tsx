@@ -79,7 +79,7 @@ export default function ConciergeTrigger({ isOpen, onToggle }: ConciergeTriggerP
         )}
       </AnimatePresence>
 
-      {/* FLOATING LAUNCHER BUTTON WITH CONTINUOUS ROTATING LOGO (NO BLACK BOX) */}
+      {/* FLOATING CIRCULAR LAUNCHER BUTTON WITH CONTINUOUS ROTATING LOGO */}
       <motion.button
         onClick={handleOpenChat}
         initial={{ scale: 0.9, opacity: 0 }}
@@ -89,30 +89,30 @@ export default function ConciergeTrigger({ isOpen, onToggle }: ConciergeTriggerP
         transition={{ duration: 0.2, ease: "easeOut" }}
         aria-label={isOpen ? "Close FashAI assistant" : "Open FashAI assistant"}
         aria-expanded={isOpen}
-        className={`pointer-events-auto flex items-center justify-center rounded-full transition-all duration-300 select-none group shrink-0 ${
+        className={`pointer-events-auto flex items-center justify-center chatbot-launcher-circle transition-all duration-300 select-none group shrink-0 relative ${
           isOpen
-            ? "w-12 h-12 sm:w-13 sm:h-13 bg-[#111111] border border-[#D4AF37] text-[#D4AF37] shadow-[0_0_25px_rgba(250,182,10,0.4)]"
-            : "w-13 h-13 sm:w-16 sm:h-16 bg-transparent border-none shadow-none p-0 drop-shadow-[0_6px_16px_rgba(0,0,0,0.4)]"
+            ? "w-10 h-10 sm:w-12 sm:h-12 bg-[#111111] border border-[#D4AF37] text-[#D4AF37] shadow-[0_0_20px_rgba(250,182,10,0.4)]"
+            : "w-12 h-12 sm:w-14 sm:h-14 lg:w-[58px] lg:h-[58px] bg-[#0B0A09]/90 border border-[#D4AF37]/50 shadow-[0_8px_28px_rgba(0,0,0,0.6)] backdrop-blur-md hover:border-[#D4AF37] hover:shadow-[0_0_20px_rgba(212,175,55,0.4)]"
         }`}
       >
         {!isOpen ? (
-          <div className="relative z-10 w-full h-full flex items-center justify-center">
+          <div className="relative z-10 w-full h-full p-1 flex items-center justify-center overflow-visible">
             {/* CONTINUOUS CLOCKWISE ROTATION LOGO */}
-            <div className="relative w-full h-full animate-chatbot-spin">
+            <div className="relative w-full h-full animate-chatbot-spin flex items-center justify-center">
               <Image
                 src="/assets/brand/chatbot_logo.png"
                 alt="FashAI Concierge Assistant"
                 fill
                 priority
-                sizes="(max-width: 640px) 52px, 64px"
-                className="object-contain"
+                sizes="(max-width: 640px) 48px, 58px"
+                className="object-contain p-0.5"
               />
             </div>
 
             {/* GREEN ONLINE STATUS INDICATOR DOT */}
-            <span className="absolute top-1 right-1 flex h-3 w-3 z-20">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#2E936F] opacity-75" />
-              <span className="relative inline-flex rounded-full h-3 w-3 bg-[#2E936F] border-2 border-black" />
+            <span className="absolute top-0 right-0 flex h-3 w-3 z-20 pointer-events-none">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-circle-force bg-[#2E936F] opacity-75" />
+              <span className="relative inline-flex rounded-circle-force h-3 w-3 bg-[#2E936F] border-2 border-black" />
             </span>
           </div>
         ) : (
@@ -122,3 +122,4 @@ export default function ConciergeTrigger({ isOpen, onToggle }: ConciergeTriggerP
     </div>
   );
 }
+

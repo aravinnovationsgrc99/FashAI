@@ -775,5 +775,16 @@ html.light .admin-shell .text-\[\#2E936F\] {
   }
 }
 
+/* Circular Launcher Override for Chatbot */
+.chatbot-launcher-circle {
+  border-radius: 50% !important;
+  overflow: hidden !important;
+}
+
+.rounded-circle-force {
+  border-radius: 9999px !important;
+}
+
+
 
 

@@ -598,7 +598,7 @@ export default function ConciergePanel({ isOpen, onClose }: ConciergePanelProps)
           <div className="flex items-center justify-between px-5 py-4 border-b border-black/10 dark:border-white/10 bg-[#FAF8F5]/80 dark:bg-[#0C0B0A]/80 backdrop-blur-md flex-shrink-0">
             <div className="flex items-center gap-3">
               {/* Chatbot Header Logo */}
-              <div className="relative w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-[#111111] dark:bg-[#161514] border border-[#D4AF37]/40 flex items-center justify-center p-1 shadow-sm shrink-0 overflow-hidden">
+              <div className="relative w-8 h-8 sm:w-9 sm:h-9 rounded-circle-force bg-[#111111] dark:bg-[#161514] border border-[#D4AF37]/40 flex items-center justify-center p-1 shadow-sm shrink-0 overflow-hidden">
                 <Image
                   src="/assets/brand/chatbot_logo.png"
                   alt="FashAI Logo"
@@ -645,7 +645,7 @@ export default function ConciergePanel({ isOpen, onClose }: ConciergePanelProps)
                 {msg.sender === "bot" ? (
                   /* Bot Message with Logo Avatar */
                   <div className="flex items-start gap-2.5 max-w-[92%]">
-                    <div className="w-6 h-6 rounded-full overflow-hidden shrink-0 border border-[#D4AF37]/40 relative bg-[#111111] dark:bg-[#161514] flex items-center justify-center p-0.5 mt-0.5 shadow-xs">
+                    <div className="w-6 h-6 rounded-circle-force overflow-hidden shrink-0 border border-[#D4AF37]/40 relative bg-[#111111] dark:bg-[#161514] flex items-center justify-center p-0.5 mt-0.5 shadow-xs">
                       <Image
                         src="/assets/brand/chatbot_logo.png"
                         alt="FashAI"
@@ -739,7 +739,7 @@ export default function ConciergePanel({ isOpen, onClose }: ConciergePanelProps)
                 aria-live="polite"
                 aria-label="FashAI is typing"
               >
-                <div className="w-6 h-6 rounded-full overflow-hidden shrink-0 border border-[#D4AF37]/40 relative bg-[#111111] dark:bg-[#161514] flex items-center justify-center p-0.5 mt-0.5 shadow-xs">
+                <div className="w-6 h-6 rounded-circle-force overflow-hidden shrink-0 border border-[#D4AF37]/40 relative bg-[#111111] dark:bg-[#161514] flex items-center justify-center p-0.5 mt-0.5 shadow-xs">
                   <Image
                     src="/assets/brand/chatbot_logo.png"
                     alt="FashAI"
