@@ -140,7 +140,7 @@ export default function FashPrismStoriesSection() {
                   alt={card.representative.alt}
                   fill
                   sizes="(max-width: 768px) 100vw, 33vw"
-                  className="object-cover object-top filter contrast-105 transition-transform duration-700 ease-out group-hover:scale-[1.03]"
+                  className="object-cover object-[center_18%] sm:object-top filter contrast-105 transition-transform duration-700 ease-out group-hover:scale-[1.03]"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#080706] via-transparent to-black/40 opacity-90 group-hover:opacity-75 transition-opacity" />
 

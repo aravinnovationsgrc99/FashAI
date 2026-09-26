@@ -14,7 +14,7 @@ export const FASHPRISM_INDIA_DATA: FashPrismItem[] = [
     title: "ATELIER SILHOUETTE STUDY",
     caption: "High-couture textile draping and couture identity from the India chapter.",
     category: "INDIA",
-    src: "/assets/final/WhatsApp Image 2026-09-18 at 15.02.32.jpeg",
+    src: "/assets/final/WhatsApp Image 2026-09-18 at 15.03.32.jpeg",
     alt: "FashPrism India Haute Couture Presentation 1",
     tag: "FASHPRISM INDIA · ARCHIVE I",
   },

@@ -3,7 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { ArrowUpRight, ArrowRight, Facebook, Instagram } from "lucide-react";
+import { ArrowUpRight, ArrowRight, Instagram } from "lucide-react";
 
 export default function Footer() {
   const columnVariants = {
@@ -92,22 +92,11 @@ export default function Footer() {
                 href="https://www.instagram.com/fashai_universal"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-black/10 dark:border-white/15 bg-white/80 dark:bg-white/10 text-xs font-syne font-semibold text-[#111111] dark:text-white hover:text-[#E4405F] dark:hover:text-[#D4AF37] hover:border-[#E4405F]/40 dark:hover:border-[#D4AF37] transition-all duration-300 shadow-sm"
+                className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-lg border border-black/10 dark:border-white/15 bg-white/80 dark:bg-white/10 text-xs font-syne font-semibold text-[#111111] dark:text-white hover:text-[#E4405F] dark:hover:text-[#D4AF37] hover:border-[#E4405F]/40 dark:hover:border-[#D4AF37] transition-all duration-300 shadow-sm"
               >
-                <Instagram className="w-3.5 h-3.5 text-[#E4405F]" />
+                <Instagram className="w-4 h-4 text-[#E4405F]" />
                 <span>@fashai_universal</span>
-                <ArrowUpRight className="w-3 h-3 text-[#E4405F]" />
-              </a>
-
-              <a
-                href="https://www.facebook.com/profile.php?id=61573489951314"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-black/10 dark:border-white/15 bg-white/80 dark:bg-white/10 text-xs font-syne font-semibold text-[#111111] dark:text-white hover:text-[#1877F2] dark:hover:text-[#D4AF37] hover:border-[#1877F2]/40 dark:hover:border-[#D4AF37] transition-all duration-300 shadow-sm"
-              >
-                <Facebook className="w-3.5 h-3.5 text-[#1877F2]" />
-                <span>Facebook Page</span>
-                <ArrowUpRight className="w-3 h-3 text-[#1877F2]" />
+                <ArrowUpRight className="w-3.5 h-3.5 text-[#E4405F]" />
               </a>
             </div>
           </motion.div>
@@ -193,21 +182,21 @@ export default function Footer() {
           className="my-6 p-4 sm:p-5 rounded-xl border border-black/15 dark:border-white/15 bg-transparent flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 shadow-none"
         >
           <div className="flex items-center gap-3.5">
-            <div className="w-10 h-10 rounded-full bg-[#1877F2]/10 dark:bg-[#D4AF37]/15 border border-[#1877F2]/30 dark:border-[#D4AF37]/30 flex items-center justify-center shrink-0">
-              <Facebook className="w-5 h-5 text-[#1877F2] dark:text-[#D4AF37]" />
+            <div className="w-10 h-10 rounded-full bg-[#E4405F]/10 dark:bg-[#D4AF37]/15 border border-[#E4405F]/30 dark:border-[#D4AF37]/30 flex items-center justify-center shrink-0">
+              <Instagram className="w-5 h-5 text-[#E4405F] dark:text-[#D4AF37]" />
             </div>
             <div>
               <h5 className="font-syne text-xs sm:text-sm font-bold text-[#111111] dark:text-white uppercase tracking-wider">
                 FashAI Universal Socials
               </h5>
               <p className="font-sans text-xs text-[#555555] dark:text-white/70 leading-relaxed">
-                Connect with our official Facebook page for event highlights, runway news &amp; announcements.
+                Connect with our official Instagram page (@fashai_universal) for event highlights, runway news &amp; announcements.
               </p>
             </div>
           </div>
 
           <a
-            href="https://www.facebook.com/profile.php?id=61573489951314"
+            href="https://www.instagram.com/fashai_universal"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center justify-center gap-2 bg-[#D4AF37] text-[#111111] hover:bg-[#FFEC69] font-syne font-bold text-xs tracking-caps px-5 py-3 rounded-xl transition-all duration-300 shadow-md shrink-0 whitespace-nowrap w-full sm:w-auto"

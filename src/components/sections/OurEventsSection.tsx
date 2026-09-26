@@ -92,7 +92,7 @@ export default function OurEventsSection() {
                     </span>
                   </div>
                   <a
-                    href="https://www.facebook.com/profile.php?id=61573489951314"
+                    href="https://www.instagram.com/fashai_universal"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-1 bg-[#D4AF37] text-[#111111] hover:bg-[#FFEC69] px-3 py-1 text-[10px] font-syne font-bold uppercase rounded-lg shadow-sm"

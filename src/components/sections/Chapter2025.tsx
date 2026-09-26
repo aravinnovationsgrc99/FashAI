@@ -7,10 +7,30 @@ import ViewportRevealCard from "../ui/ViewportRevealCard";
 
 export default function Chapter2025() {
   const images2025 = [
-    { src: "/assets/final/WhatsApp Image 2026-09-18 at 15.02.32.jpeg", alt: "LifeStyle 2025 Photo 1" },
-    { src: "/assets/final/WhatsApp Image 2026-09-18 at 15.02.33.jpeg", alt: "LifeStyle 2025 Photo 2" },
-    { src: "/assets/final/WhatsApp Image 2026-09-18 at 15.02.34.jpeg", alt: "LifeStyle 2025 Photo 3" },
-    { src: "/assets/final/WhatsApp Image 2026-09-18 at 15.02.35.jpeg", alt: "LifeStyle 2025 Photo 4" },
+    {
+      src: "/assets/final/WhatsApp Image 2026-09-18 at 15.03.44.jpeg",
+      alt: "What We Have Done - Runway Presentation 1",
+      position: "object-top",
+      label: "LIFESTYLE 2025 • ARCHIVE 01",
+    },
+    {
+      src: "/assets/final/WhatsApp Image 2026-09-18 at 15.02.52.jpeg",
+      alt: "What We Have Done - Runway Presentation 2",
+      position: "object-top",
+      label: "LIFESTYLE 2025 • ARCHIVE 02",
+    },
+    {
+      src: "/assets/final/WhatsApp Image 2026-09-18 at 15.03.14.jpeg",
+      alt: "What We Have Done - Runway Presentation 3",
+      position: "object-[center_18%] sm:object-[center_15%]", // Intelligent responsive crop preserving main subject
+      label: "LIFESTYLE 2025 • ARCHIVE 03",
+    },
+    {
+      src: "/assets/final/WhatsApp Image 2026-09-18 at 15.03.51.jpeg",
+      alt: "What We Have Done - Delivered Archive Showcase",
+      position: "object-top",
+      label: "LIFESTYLE 2025 • ARCHIVE 04",
+    },
   ];
 
   return (
@@ -39,7 +59,7 @@ export default function Chapter2025() {
               VISUAL RETROSPECTIVE
             </span>
             <a
-              href="https://www.facebook.com/profile.php?id=61573489951314"
+              href="https://www.instagram.com/fashai_universal"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-1.5 bg-[#D4AF37] text-[#111111] hover:bg-[#FFEC69] px-4 py-2 text-xs font-syne tracking-caps font-bold transition-all duration-300 rounded-full shadow-md"
@@ -66,57 +86,65 @@ export default function Chapter2025() {
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.08, duration: 0.5 }}
                 className={`relative aspect-[3/4] overflow-hidden rounded-xl border group bg-black shadow-md transition-all duration-300 ${
-                  isFourth ? "border-[#D4AF37]/60 hover:border-[#D4AF37] shadow-[0_0_20px_rgba(212,175,55,0.15)]" : "border-hairline-orange/40"
+                  isFourth
+                    ? "border-[#D4AF37]/60 hover:border-[#D4AF37] shadow-[0_0_20px_rgba(212,175,55,0.15)]"
+                    : "border-hairline-orange/40 hover:border-brand-orange/60"
                 }`}
               >
-                <ViewportRevealCard className="relative w-full h-full">
-                  {(isRevealed) => (
-                    <>
-                      <Image
-                        src={img.src}
-                        alt={img.alt}
-                        fill
-                        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
-                        className={`object-cover object-top group-hover:scale-105 transition-all duration-700 ease-out filter contrast-105 ${
-                          isRevealed ? "blur-none" : "blur-[2.5px] group-hover:blur-none"
-                        }`}
-                      />
-                      <div
-                        className={`absolute inset-0 transition-all duration-300 ${
-                          isFourth
-                            ? "bg-gradient-to-t from-black/85 via-black/35 to-black/20 group-hover:from-black/75"
-                            : "bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-60 group-hover:opacity-40"
-                        }`}
-                      />
+                <Link href="/gallery" className="block relative w-full h-full">
+                  <ViewportRevealCard className="relative w-full h-full">
+                    {(isRevealed) => (
+                      <>
+                        <Image
+                          src={img.src}
+                          alt={img.alt}
+                          fill
+                          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                          className={`object-cover ${img.position} group-hover:scale-105 transition-all duration-700 ease-out filter contrast-105 ${
+                            isRevealed ? "blur-none" : "blur-[2px] group-hover:blur-none"
+                          }`}
+                        />
+                        <div
+                          className={`absolute inset-0 transition-all duration-300 ${
+                            isFourth
+                              ? "bg-gradient-to-t from-black/85 via-black/40 to-black/20 group-hover:from-black/75"
+                              : "bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-80 group-hover:opacity-60"
+                          }`}
+                        />
 
-                      {isFourth ? (
-                        <>
-                          <div className="absolute top-3 left-3 z-10">
-                            <span className="text-[9px] font-syne tracking-micro text-[#D4AF37] uppercase font-bold bg-black/70 backdrop-blur-sm px-2.5 py-1 rounded border border-[#D4AF37]/40">
-                              100+ ARCHIVE LOOKS
-                            </span>
-                          </div>
-                          <div className="absolute inset-0 flex flex-col items-center justify-center p-4 text-center z-10">
-                            <Link
-                              href="/gallery"
-                              className="inline-flex items-center gap-2 bg-[#D4AF37] hover:bg-[#FFEC69] text-[#111111] px-5 py-3 text-xs font-syne tracking-caps font-bold transition-all duration-300 rounded-full shadow-2xl group-hover:scale-105 active:scale-95 border border-white/20"
-                            >
-                              <span>VIEW MORE IMAGES</span>
-                              <span className="text-sm">↗</span>
-                            </Link>
-                          </div>
-                          <div className="absolute bottom-3 left-3 right-3 text-[10px] font-syne tracking-micro text-brand-white/80 keep-white uppercase font-semibold drop-shadow text-center z-10">
-                            EXPLORE COMPLETE GALLERY
-                          </div>
-                        </>
-                      ) : (
-                        <div className="absolute bottom-3 left-3 right-3 text-[10px] font-syne tracking-micro text-brand-white keep-white uppercase font-semibold drop-shadow">
-                          LIFESTYLE 2025 • ARCHIVE {index + 1}
-                        </div>
-                      )}
-                    </>
-                  )}
-                </ViewportRevealCard>
+                        {isFourth ? (
+                          <>
+                            <div className="absolute top-3 left-3 z-10">
+                              <span className="text-[9px] font-syne tracking-micro text-[#D4AF37] uppercase font-bold bg-black/80 backdrop-blur-sm px-2.5 py-1 rounded border border-[#D4AF37]/40">
+                                100+ ARCHIVE LOOKS
+                              </span>
+                            </div>
+                            <div className="absolute inset-0 flex flex-col items-center justify-center p-4 text-center z-10">
+                              <span className="inline-flex items-center gap-2 bg-[#D4AF37] group-hover:bg-[#FFEC69] text-[#111111] px-5 py-3 text-xs font-syne tracking-caps font-bold transition-all duration-300 rounded-full shadow-2xl group-hover:scale-105 active:scale-95 border border-white/20">
+                                <span>VIEW MORE IMAGES</span>
+                                <span className="text-sm">↗</span>
+                              </span>
+                            </div>
+                            <div className="absolute bottom-3 left-3 right-3 text-[10px] font-syne tracking-micro text-brand-white/90 keep-white uppercase font-semibold drop-shadow text-center z-10">
+                              EXPLORE COMPLETE GALLERY
+                            </div>
+                          </>
+                        ) : (
+                          <>
+                            <div className="absolute top-3 right-3 z-10 opacity-90 sm:opacity-0 group-hover:opacity-100 transition-opacity">
+                              <span className="inline-flex items-center gap-1 bg-black/70 backdrop-blur-sm border border-white/20 text-[#D4AF37] text-[10px] font-syne font-bold px-2.5 py-1 rounded-full">
+                                VIEW ↗
+                              </span>
+                            </div>
+                            <div className="absolute bottom-3 left-3 right-3 text-[10px] font-syne tracking-micro text-brand-white keep-white uppercase font-semibold drop-shadow z-10">
+                              {img.label}
+                            </div>
+                          </>
+                        )}
+                      </>
+                    )}
+                  </ViewportRevealCard>
+                </Link>
               </motion.div>
             );
           })}
@@ -132,7 +160,7 @@ export default function Chapter2025() {
           </Link>
 
           <a
-            href="https://www.facebook.com/profile.php?id=61573489951314"
+            href="https://www.instagram.com/fashai_universal"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 bg-[#D4AF37] text-[#111111] hover:bg-[#FFEC69] px-6 py-3 text-xs font-syne tracking-caps font-bold transition-all duration-300 rounded-full shadow-lg"
