@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import { X, Sparkles } from "lucide-react";
@@ -12,19 +12,75 @@ interface ConciergeTriggerProps {
 
 export default function ConciergeTrigger({ isOpen, onToggle }: ConciergeTriggerProps) {
   const [showPrompt, setShowPrompt] = useState(false);
+  const [isInFooter, setIsInFooter] = useState(false);
+  const hasTriggeredRef = useRef(false);
 
+  // 1. Observe footer visibility to immediately hide/prevent popup when in footer
   useEffect(() => {
-    // Check session storage so message is not forced repeatedly if already dismissed/opened
-    if (typeof window !== "undefined") {
-      const isDismissed = sessionStorage.getItem("fashai_chat_prompt_dismissed") === "true";
-      if (isDismissed || isOpen) return;
+    if (typeof window === "undefined") return;
+
+    const checkFooter = () => {
+      const footer = document.querySelector("footer");
+      if (!footer) return;
+
+      const rect = footer.getBoundingClientRect();
+      const inView = rect.top <= window.innerHeight;
+      
+      setIsInFooter(inView);
+      if (inView) {
+        setShowPrompt(false);
+      }
+    };
+
+    window.addEventListener("scroll", checkFooter, { passive: true });
+    checkFooter();
+
+    return () => {
+      window.removeEventListener("scroll", checkFooter);
+    };
+  }, []);
+
+  // 2. 4-second delay -> 5-second popup duration lifecycle
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+
+    const isDismissed = sessionStorage.getItem("fashai_chat_prompt_dismissed") === "true";
+    if (isDismissed || isOpen || isInFooter || hasTriggeredRef.current) {
+      if (isInFooter || isOpen) {
+        setShowPrompt(false);
+      }
+      return;
     }
 
-    const timer = setTimeout(() => {
-      setShowPrompt(true);
-    }, 3000);
+    let hideTimer: NodeJS.Timeout;
 
-    return () => clearTimeout(timer);
+    // 4 seconds delay after load before showing popup
+    const showTimer = setTimeout(() => {
+      const footer = document.querySelector("footer");
+      const inFooterNow = footer ? footer.getBoundingClientRect().top <= window.innerHeight : false;
+
+      if (!inFooterNow && !isOpen) {
+        setShowPrompt(true);
+        hasTriggeredRef.current = true;
+
+        // Automatically hide popup after 5 seconds
+        hideTimer = setTimeout(() => {
+          setShowPrompt(false);
+        }, 5000);
+      }
+    }, 4000);
+
+    return () => {
+      clearTimeout(showTimer);
+      if (hideTimer) clearTimeout(hideTimer);
+    };
+  }, [isOpen, isInFooter]);
+
+  // Hide prompt when chat panel is opened
+  useEffect(() => {
+    if (isOpen) {
+      setShowPrompt(false);
+    }
   }, [isOpen]);
 
   const handleOpenChat = () => {

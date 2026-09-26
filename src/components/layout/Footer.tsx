@@ -54,17 +54,17 @@ export default function Footer() {
 
       {/* Main Editorial Content Container */}
       <div className="container-editorial relative z-10 py-10 sm:py-14 max-w-6xl mx-auto px-4 sm:px-6">
-        {/* 3-Column Editorial Grid (Desktop) / Vertical Stack (Mobile) */}
+        {/* 3-Column Editorial Grid (Desktop) / Separated Vertical Sections (Mobile) */}
         <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-10 pb-8 border-b border-black/10 dark:border-white/10 items-start">
           
-          {/* COLUMN 1: LEFT — BRAND (md:col-span-5) */}
+          {/* COLUMN 1: LEFT — BRAND & CONTACT SUMMARY (md:col-span-5) */}
           <motion.div
             custom={0}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
             variants={columnVariants}
-            className="md:col-span-5 flex flex-col space-y-3.5"
+            className="md:col-span-5 flex flex-col space-y-3.5 pb-6 md:pb-0 border-b md:border-b-0 border-black/10 dark:border-white/10"
           >
             {/* Logo Lockup: Official Logo + FashAI Universal Brand Text */}
             <Link href="/" className="inline-flex items-center gap-3 group w-fit">
@@ -101,75 +101,78 @@ export default function Footer() {
             </div>
           </motion.div>
 
-          {/* COLUMN 2: CENTER — EXPLORE (md:col-span-3) */}
-          <motion.div
-            custom={1}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            variants={columnVariants}
-            className="md:col-span-3"
-          >
-            <h4 className="font-syne text-sm sm:text-base md:text-lg tracking-caps text-[#F15E1C] dark:text-[#D4AF37] font-bold uppercase mb-4">
-              EXPLORE
-            </h4>
-            <ul className="space-y-3">
-              {[
-                { label: "Home", href: "/" },
-                { label: "Upcoming", href: "/upcoming" },
-                { label: "Services", href: "/services" },
-                { label: "Gallery", href: "/gallery" },
-                { label: "Contact", href: "/contact" },
-              ].map((link, idx) => (
-                <li key={idx}>
-                  <Link
-                    href={link.href}
-                    className="group inline-flex items-center gap-2 font-sans text-base sm:text-lg md:text-xl text-[#111111] dark:text-white/90 hover:text-[#F15E1C] dark:hover:text-[#D4AF37] transition-colors duration-300"
-                  >
-                    <span className="transform group-hover:translate-x-1 transition-transform duration-300">
-                      {link.label}
-                    </span>
-                    <ArrowRight className="w-4 h-4 opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 text-[#F15E1C] dark:text-[#D4AF37] transition-all duration-300" />
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </motion.div>
+          {/* COLUMN 2 & 3 CONTAINER: EDITORIAL 2-COLUMN GRID (MOBILE) / 7-COL SPAN (DESKTOP) */}
+          <div className="md:col-span-7 grid grid-cols-2 md:grid-cols-7 gap-6 sm:gap-8 md:gap-10 items-start pb-8 border-b border-black/10 dark:border-white/10 md:border-b-0 md:pb-0">
+            {/* COLUMN 2: EXPLORE (md:col-span-3) */}
+            <motion.div
+              custom={1}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              variants={columnVariants}
+              className="md:col-span-3"
+            >
+              <h4 className="font-syne text-sm sm:text-base md:text-lg tracking-caps text-[#F15E1C] dark:text-[#D4AF37] font-bold uppercase mb-3 sm:mb-4 pb-2.5 border-b border-black/10 dark:border-white/10 w-full">
+                EXPLORE
+              </h4>
+              <ul className="space-y-2.5 sm:space-y-3 pt-1.5">
+                {[
+                  { label: "Home", href: "/" },
+                  { label: "Upcoming", href: "/upcoming" },
+                  { label: "Services", href: "/services" },
+                  { label: "Gallery", href: "/gallery" },
+                  { label: "Contact", href: "/contact" },
+                ].map((link, idx) => (
+                  <li key={idx}>
+                    <Link
+                      href={link.href}
+                      className="group inline-flex items-center gap-1.5 sm:gap-2 font-sans text-base sm:text-lg md:text-xl text-[#111111] dark:text-white/90 hover:text-[#F15E1C] dark:hover:text-[#D4AF37] transition-colors duration-300 leading-snug"
+                    >
+                      <span className="transform group-hover:translate-x-1 transition-transform duration-300">
+                        {link.label}
+                      </span>
+                      <ArrowRight className="w-3.5 h-3.5 sm:w-4 sm:h-4 opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 text-[#F15E1C] dark:text-[#D4AF37] transition-all duration-300 shrink-0" />
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </motion.div>
 
-          {/* COLUMN 3: RIGHT — GET INVOLVED (md:col-span-4) */}
-          <motion.div
-            custom={2}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            variants={columnVariants}
-            className="md:col-span-4"
-          >
-            <h4 className="font-syne text-sm sm:text-base md:text-lg tracking-caps text-[#F15E1C] dark:text-[#D4AF37] font-bold uppercase mb-4">
-              GET INVOLVED
-            </h4>
-            <ul className="space-y-3">
-              {[
-                { label: "Designer", href: "/apply/designer" },
-                { label: "Model", href: "/apply/model" },
-                { label: "Makeup Artist", href: "/apply/makeup-artist" },
-                { label: "Fashion Stylist", href: "/apply/fashion-stylist" },
-                { label: "Open Nominations", href: "/apply" },
-              ].map((link, idx) => (
-                <li key={idx}>
-                  <Link
-                    href={link.href}
-                    className="group inline-flex items-center gap-2 font-sans text-base sm:text-lg md:text-xl text-[#111111] dark:text-white/90 hover:text-[#F15E1C] dark:hover:text-[#D4AF37] transition-colors duration-300"
-                  >
-                    <span className="transform group-hover:translate-x-1 transition-transform duration-300">
-                      {link.label}
-                    </span>
-                    <ArrowRight className="w-4 h-4 opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 text-[#F15E1C] dark:text-[#D4AF37] transition-all duration-300" />
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </motion.div>
+            {/* COLUMN 3: GET INVOLVED (md:col-span-4) */}
+            <motion.div
+              custom={2}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              variants={columnVariants}
+              className="md:col-span-4"
+            >
+              <h4 className="font-syne text-sm sm:text-base md:text-lg tracking-caps text-[#F15E1C] dark:text-[#D4AF37] font-bold uppercase mb-3 sm:mb-4 pb-2.5 border-b border-black/10 dark:border-white/10 w-full">
+                GET INVOLVED
+              </h4>
+              <ul className="space-y-2.5 sm:space-y-3 pt-1.5">
+                {[
+                  { label: "Designer", href: "/apply/designer" },
+                  { label: "Model", href: "/apply/model" },
+                  { label: "Makeup Artist", href: "/apply/makeup-artist" },
+                  { label: "Fashion Stylist", href: "/apply/fashion-stylist" },
+                  { label: "Open Nominations", href: "/apply" },
+                ].map((link, idx) => (
+                  <li key={idx}>
+                    <Link
+                      href={link.href}
+                      className="group inline-flex items-center gap-1.5 sm:gap-2 font-sans text-base sm:text-lg md:text-xl text-[#111111] dark:text-white/90 hover:text-[#F15E1C] dark:hover:text-[#D4AF37] transition-colors duration-300 leading-snug"
+                    >
+                      <span className="transform group-hover:translate-x-1 transition-transform duration-300 whitespace-nowrap min-[380px]:whitespace-normal">
+                        {link.label}
+                      </span>
+                      <ArrowRight className="w-3.5 h-3.5 sm:w-4 sm:h-4 opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 text-[#F15E1C] dark:text-[#D4AF37] transition-all duration-300 shrink-0" />
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </motion.div>
+          </div>
         </div>
 
         {/* FEATURED VIEW SOCIALS CARD */}
@@ -213,40 +216,46 @@ export default function Footer() {
           whileInView="visible"
           viewport={{ once: true }}
           variants={columnVariants}
-          className="pt-4 pb-2 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-syne tracking-wider text-[#333333] dark:text-white/70"
+          className="pt-4 pb-2 flex flex-col md:flex-row items-center justify-between gap-4 text-xs font-syne tracking-wider text-[#333333] dark:text-white/70 border-t md:border-t-0 border-black/10 dark:border-white/10"
         >
-          {/* LEFT: Copyright */}
-          <div>
-            © 2026 FashAI Universal
+          {/* POWERED BY BRANDING SECTION (Mobile isolated block with divider) */}
+          <div className="w-full md:w-auto flex flex-col sm:flex-row items-center justify-between md:justify-start gap-3 pb-4 md:pb-0 border-b md:border-b-0 border-black/10 dark:border-white/10">
+            <span className="text-[10px] uppercase tracking-widest text-[#F15E1C] dark:text-[#D4AF37] font-bold md:hidden">
+              POWERED BY
+            </span>
+            <div className="flex items-center gap-3 sm:gap-4 shrink-0 flex-wrap justify-center sm:justify-end">
+              <Image
+                src="/assets/brand/arav_green_logo.png"
+                alt="Arav Innovation Logo Mark"
+                width={120}
+                height={120}
+                className="h-7 sm:h-9 md:h-11 w-auto object-contain filter contrast-[1.05]"
+              />
+              <Image
+                src="/assets/brand/Final_Powered_by_logo.png"
+                alt="Powered by Arav Innovation"
+                width={240}
+                height={60}
+                className="h-7 sm:h-9 md:h-11 w-auto object-contain filter contrast-[1.05]"
+              />
+            </div>
           </div>
 
-          {/* CENTER: Privacy & Terms */}
-          <div className="flex items-center gap-4 sm:gap-6 text-xs">
-            <Link href="/privacy" className="hover:text-[#F15E1C] dark:hover:text-[#D4AF37] transition-colors">
-              Privacy Policy
-            </Link>
-            <span className="text-black/30 dark:text-white/20">•</span>
-            <Link href="/terms" className="hover:text-[#F15E1C] dark:hover:text-[#D4AF37] transition-colors">
-              Terms &amp; Conditions
-            </Link>
-          </div>
+          {/* COPYRIGHT & LEGAL LINKS */}
+          <div className="w-full md:w-auto flex flex-col sm:flex-row items-center justify-between md:justify-end gap-3 sm:gap-6 pt-2 md:pt-0">
+            <div>
+              © 2026 FashAI Universal
+            </div>
 
-          {/* RIGHT: Powered by Arav Innovation & Arav Green Logo Mark Lockup */}
-          <div className="flex items-center gap-3 sm:gap-4 shrink-0 flex-wrap justify-center sm:justify-end">
-            <Image
-              src="/assets/brand/arav_green_logo.png"
-              alt="Arav Innovation Logo Mark"
-              width={120}
-              height={120}
-              className="h-7 sm:h-9 md:h-11 w-auto object-contain filter contrast-[1.05]"
-            />
-            <Image
-              src="/assets/brand/Final_Powered_by_logo.png"
-              alt="Powered by Arav Innovation"
-              width={240}
-              height={60}
-              className="h-7 sm:h-9 md:h-11 w-auto object-contain filter contrast-[1.05]"
-            />
+            <div className="flex items-center gap-4 sm:gap-6 text-xs">
+              <Link href="/privacy" className="hover:text-[#F15E1C] dark:hover:text-[#D4AF37] transition-colors">
+                Privacy Policy
+              </Link>
+              <span className="text-black/30 dark:text-white/20">•</span>
+              <Link href="/terms" className="hover:text-[#F15E1C] dark:hover:text-[#D4AF37] transition-colors">
+                Terms &amp; Conditions
+              </Link>
+            </div>
           </div>
         </motion.div>
       </div>
