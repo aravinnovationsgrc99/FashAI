@@ -44,7 +44,7 @@ export default function InstagramSection() {
           {/* Eyebrow with Thin Editorial Rules */}
           <div className="flex items-center justify-center gap-3">
             <span className="w-12 h-[1px] bg-[#F15E1C] dark:bg-[#D4AF37]" />
-            <span className="text-xs sm:text-sm font-syne tracking-[0.28em] text-[#F15E1C] dark:text-[#D4AF37] font-bold uppercase">
+            <span className="text-sm sm:text-base md:text-lg font-syne tracking-[0.28em] text-[#F15E1C] dark:text-[#D4AF37] font-bold uppercase">
               OFFICIAL SOCIAL INSTAGRAM
             </span>
             <span className="w-12 h-[1px] bg-[#F15E1C] dark:bg-[#D4AF37]" />
@@ -59,39 +59,39 @@ export default function InstagramSection() {
           </h2>
 
           {/* Instagram Handle */}
-          <div className="font-serif italic text-3xl sm:text-5xl md:text-6xl text-[#111111] dark:text-white tracking-tight">
+          <div className="font-serif italic text-4xl sm:text-6xl md:text-7xl text-[#111111] dark:text-white tracking-tight">
             @fashai_universal
           </div>
 
           {/* Event Details Line */}
-          <p className="font-syne text-sm sm:text-base tracking-[0.2em] font-bold text-[#F15E1C] dark:text-[#D4AF37] uppercase">
+          <p className="font-syne text-base sm:text-lg md:text-xl tracking-[0.2em] font-bold text-[#F15E1C] dark:text-[#D4AF37] uppercase">
             LIFESTYLE 2026 &nbsp;·&nbsp; DUBAI &nbsp;·&nbsp; 2026
           </p>
 
           {/* Short Description */}
-          <p className="font-sans text-sm sm:text-base text-[#222222] dark:text-white/85 font-normal max-w-xl mx-auto leading-relaxed">
+          <p className="font-sans text-base sm:text-lg md:text-xl lg:text-2xl text-[#222222] dark:text-white/85 font-normal max-w-2xl mx-auto leading-relaxed">
             Join our global community for exclusive backstage captures, fashion experiences, updates and official event announcements.
           </p>
 
           {/* CTAs (Center Aligned) */}
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-2">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-3">
             <a
               href="https://www.instagram.com/fashai_universal"
               target="_blank"
               rel="noopener noreferrer"
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-[#F15E1C] hover:bg-[#ff6f2d] text-white px-8 py-4 rounded-md font-syne text-xs sm:text-sm font-bold tracking-wider uppercase transition-all duration-300 shadow-lg group"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-[#F15E1C] hover:bg-[#ff6f2d] text-white px-9 py-4 sm:py-4.5 rounded-md font-syne text-sm sm:text-base md:text-lg font-bold tracking-wider uppercase transition-all duration-300 shadow-lg group"
             >
-              <Instagram className="w-4 h-4 text-white" />
+              <Instagram className="w-5 h-5 text-white" />
               <span>FOLLOW ON INSTAGRAM</span>
-              <ArrowUpRight className="w-4 h-4 text-white group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+              <ArrowUpRight className="w-5 h-5 text-white group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
             </a>
 
             <Link
               href="/contact?type=Registration"
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 border border-black/80 dark:border-[#D4AF37] bg-white/80 dark:bg-transparent hover:bg-black/5 dark:hover:bg-[#D4AF37]/10 text-black dark:text-white px-8 py-4 rounded-md font-syne text-xs sm:text-sm font-bold tracking-wider uppercase transition-all duration-300 shadow-sm"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 border border-black/80 dark:border-[#D4AF37] bg-white/80 dark:bg-transparent hover:bg-black/5 dark:hover:bg-[#D4AF37]/10 text-black dark:text-white px-9 py-4 sm:py-4.5 rounded-md font-syne text-sm sm:text-base md:text-lg font-bold tracking-wider uppercase transition-all duration-300 shadow-sm"
             >
               <span>REGISTER / ENQUIRE</span>
-              <ArrowUpRight className="w-4 h-4 text-black dark:text-[#D4AF37]" />
+              <ArrowUpRight className="w-5 h-5 text-black dark:text-[#D4AF37]" />
             </Link>
           </div>
         </motion.div>

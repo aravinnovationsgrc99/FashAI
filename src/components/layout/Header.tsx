@@ -77,7 +77,7 @@ export default function Header() {
             ? "top-0 inset-x-0 w-full lg:top-3 lg:left-1/2 lg:-translate-x-1/2 lg:w-[calc(100%-1.5rem)] lg:max-w-[1520px] h-16 sm:h-20 lg:h-[70px] bg-transparent border-transparent shadow-none backdrop-blur-none lg:rounded-full"
             : isOverVideo
             ? "top-0 inset-x-0 w-full lg:top-2 lg:left-1/2 lg:-translate-x-1/2 lg:w-[calc(100%-1.5rem)] lg:max-w-[1420px] h-16 sm:h-18 lg:h-[60px] bg-black/60 lg:bg-black/40 border-b lg:border border-white/20 shadow-[0_8px_32px_rgba(0,0,0,0.4)] backdrop-blur-2xl lg:rounded-full"
-            : "top-0 inset-x-0 w-full lg:top-2 lg:left-1/2 lg:-translate-x-1/2 lg:w-[calc(100%-1.5rem)] lg:max-w-[1420px] h-16 sm:h-18 lg:h-[60px] bg-[#080706]/95 dark:bg-[#070707]/90 border-b lg:border border-[#D4AF37]/45 dark:border-white/15 shadow-[0_8px_32px_rgba(0,0,0,0.5)] backdrop-blur-2xl lg:rounded-full"
+            : "top-0 inset-x-0 w-full lg:top-2 lg:left-1/2 lg:-translate-x-1/2 lg:w-[calc(100%-1.5rem)] lg:max-w-[1420px] h-16 sm:h-18 lg:h-[60px] bg-black/55 dark:bg-black/60 lg:bg-[#080706]/90 lg:dark:bg-[#070707]/85 border-b lg:border border-[#D4AF37]/35 dark:border-white/15 shadow-lg backdrop-blur-xl lg:backdrop-blur-2xl lg:rounded-full"
         }`}
       >
         <div
@@ -90,8 +90,8 @@ export default function Header() {
             <div
               className={`relative flex-shrink-0 transition-all duration-300 group-hover:scale-105 ${
                 isTopAtVideo
-                  ? "w-10 h-10 sm:w-12 sm:h-12 md:w-9.5 md:h-9.5 xl:w-[42px] xl:h-[42px]"
-                  : "w-9.5 h-9.5 sm:w-11 sm:h-11 md:w-8.5 md:h-8.5 xl:w-[38px] xl:h-[38px]"
+                  ? "w-10 h-10 sm:w-12 sm:h-12 md:w-10 md:h-10 xl:w-[42px] xl:h-[42px]"
+                  : "w-9 h-9 sm:w-11 sm:h-11 md:w-9 md:h-9 xl:w-[38px] xl:h-[38px]"
               }`}
             >
               <Image

@@ -97,25 +97,25 @@ export default function WhoWeServeSection() {
   const activeIndex = DISCIPLINES.findIndex((d) => d.id === activeDiscipline.id);
 
   return (
-    <section id="people-creativity" className="relative pt-1 sm:pt-2 pb-6 sm:pb-8 bg-white dark:bg-[#050505] border-b border-black/10 dark:border-white/10 text-[#111111] dark:text-brand-white overflow-hidden">
-      <div className="container-editorial relative z-10 max-w-6xl mx-auto px-4 sm:px-6">
+    <section id="people-creativity" className="relative pt-8 pb-14 sm:pt-16 sm:pb-24 bg-white dark:bg-[#050505] border-b border-black/10 dark:border-white/10 text-[#111111] dark:text-brand-white overflow-hidden">
+      <div className="container-editorial relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 pb-4 border-b border-black/10 dark:border-white/10 mb-6 sm:mb-8">
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-6 border-b border-black/10 dark:border-white/10 mb-8 sm:mb-12">
           <div>
-            <div className="flex items-center gap-2 text-sm sm:text-base font-syne tracking-widest text-[#F15E1C] dark:text-[#D4AF37] font-bold uppercase mb-2">
+            <div className="flex items-center gap-2.5 text-xs sm:text-sm md:text-base font-syne tracking-widest text-[#F15E1C] dark:text-[#D4AF37] font-bold uppercase mb-2.5">
               <span>WHO WE WORK WITH</span>
             </div>
-            <h2 className="font-serif-display text-3xl sm:text-5xl lg:text-6xl font-light text-[#111111] dark:text-brand-white uppercase leading-tight tracking-tight">
+            <h2 className="font-serif-display text-4xl sm:text-6xl lg:text-7xl font-light text-[#111111] dark:text-brand-white uppercase leading-tight tracking-tight">
               INDUSTRIES WE <span className="font-serif italic font-normal text-[#F15E1C] dark:text-[#D4AF37]">SUPPORT</span>
             </h2>
           </div>
-          <p className="font-sans text-base sm:text-lg text-[#555555] dark:text-brand-platinum/80 max-w-md font-light leading-relaxed">
+          <p className="font-sans text-lg sm:text-xl md:text-2xl text-[#555555] dark:text-brand-platinum/85 max-w-lg font-light leading-relaxed">
             Working with brands and businesses across fashion, lifestyle, technology and consumer categories.
           </p>
         </div>
 
         {/* 5-Category Industry Visual Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 mb-10">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-5 mb-14">
           {[
             {
               title: "JEWELLERY",
@@ -154,9 +154,9 @@ export default function WhoWeServeSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: idx * 0.06 }}
-              className="group relative bg-[#FAF8F5] dark:bg-[#080706] border border-black/10 dark:border-white/10 rounded-2xl p-4 flex flex-col justify-between overflow-hidden hover:border-[#F15E1C]/60 dark:hover:border-[#D4AF37]/60 transition-all duration-300 shadow-sm"
+              className="group relative bg-[#FAF8F5] dark:bg-[#080706] border border-black/10 dark:border-white/10 rounded-2xl p-5 flex flex-col justify-between overflow-hidden hover:border-[#F15E1C]/60 dark:hover:border-[#D4AF37]/60 transition-all duration-300 shadow-sm"
             >
-              <div className="relative aspect-[4/3] w-full overflow-hidden rounded-xl mb-3 bg-black/5 dark:bg-[#030303] border border-black/10 dark:border-white/10">
+              <div className="relative aspect-[4/3] w-full overflow-hidden rounded-xl mb-4 bg-black/5 dark:bg-[#030303] border border-black/10 dark:border-white/10">
                 <Image
                   src={ind.image}
                   alt={ind.title}
@@ -167,10 +167,10 @@ export default function WhoWeServeSection() {
                 />
               </div>
               <div>
-                <h3 className="font-syne text-sm sm:text-base font-bold uppercase tracking-wider text-[#111111] dark:text-brand-white group-hover:text-[#F15E1C] dark:group-hover:text-[#D4AF37] transition-colors mb-1">
+                <h3 className="font-syne text-base sm:text-lg md:text-xl font-bold uppercase tracking-wider text-[#111111] dark:text-brand-white group-hover:text-[#F15E1C] dark:group-hover:text-[#D4AF37] transition-colors mb-1.5">
                   {ind.title}
                 </h3>
-                <p className="font-sans text-sm text-[#555555] dark:text-brand-platinum/80 font-light leading-relaxed">
+                <p className="font-sans text-sm sm:text-base text-[#555555] dark:text-brand-platinum/85 font-light leading-relaxed">
                   {ind.desc}
                 </p>
               </div>
@@ -179,28 +179,28 @@ export default function WhoWeServeSection() {
         </div>
 
         {/* Mobile / Tablet Compact Expandable Selector */}
-        <div className="lg:hidden mb-6 relative">
+        <div className="lg:hidden mb-8 relative">
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="w-full px-4 py-3 bg-[#FAF8F5] dark:bg-[#0A0908] border border-black/10 dark:border-white/10 rounded-lg flex items-center justify-between text-left shadow-sm"
+            className="w-full px-5 py-4 bg-[#FAF8F5] dark:bg-[#0A0908] border border-black/10 dark:border-white/10 rounded-xl flex items-center justify-between text-left shadow-sm"
           >
             <div>
-              <span className="text-xs font-syne uppercase text-[#F15E1C] dark:text-[#D4AF37] tracking-wider block font-bold">
+              <span className="text-xs sm:text-sm font-syne uppercase text-[#F15E1C] dark:text-[#D4AF37] tracking-wider block font-bold mb-0.5">
                 DISCIPLINES
               </span>
-              <span className="font-serif-display text-xl font-normal text-black dark:text-white uppercase">
+              <span className="font-serif-display text-2xl font-normal text-black dark:text-white uppercase">
                 {activeDiscipline.label}
               </span>
             </div>
             <ChevronDown
-              className={`w-5 h-5 text-black/50 dark:text-white/50 transition-transform duration-200 ${
+              className={`w-6 h-6 text-black/60 dark:text-white/60 transition-transform duration-200 ${
                 isMobileMenuOpen ? "rotate-180" : ""
               }`}
             />
           </button>
 
           {isMobileMenuOpen && (
-            <div className="absolute top-full left-0 right-0 mt-1 bg-white dark:bg-[#0C0B0A] border border-black/10 dark:border-white/10 rounded-lg shadow-xl z-30 overflow-hidden py-1">
+            <div className="absolute top-full left-0 right-0 mt-2 bg-white dark:bg-[#0C0B0A] border border-black/10 dark:border-white/10 rounded-xl shadow-2xl z-30 overflow-hidden py-2">
               {DISCIPLINES.map((item) => (
                 <button
                   key={item.id}
@@ -208,14 +208,14 @@ export default function WhoWeServeSection() {
                     setActiveDiscipline(item);
                     setIsMobileMenuOpen(false);
                   }}
-                  className={`w-full px-4 py-2.5 text-left flex items-center justify-between text-sm font-syne uppercase tracking-wider transition-colors ${
+                  className={`w-full px-5 py-3 text-left flex items-center justify-between text-base font-syne uppercase tracking-wider transition-colors ${
                     activeDiscipline.id === item.id
                       ? "bg-[#F15E1C]/10 dark:bg-[#D4AF37]/10 text-[#F15E1C] dark:text-[#D4AF37] font-bold"
                       : "text-black dark:text-white/80 hover:text-[#F15E1C] dark:hover:text-[#D4AF37] hover:bg-black/5 dark:hover:bg-white/5"
                   }`}
                 >
                   <span>{item.label}</span>
-                  <span className="text-xs opacity-60">{item.category}</span>
+                  <span className="text-xs sm:text-sm opacity-60 font-normal">{item.category}</span>
                 </button>
               ))}
             </div>
@@ -224,8 +224,8 @@ export default function WhoWeServeSection() {
 
         {/* Desktop Editorial Layout: Left (Image + Content Underneath) | Right (Discipline Rail) */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
-          {/* LEFT / MAIN: Featured Image + Compact Content Underneath (~58% width ~ 7 cols) */}
-          <div className="lg:col-span-7 flex flex-col gap-5">
+          {/* LEFT / MAIN: Featured Image + Content Underneath */}
+          <div className="lg:col-span-7 flex flex-col gap-6">
             {/* Featured Image Container */}
             <div className="relative aspect-[16/10] sm:aspect-[16/9.5] w-full rounded-2xl overflow-hidden border border-black/15 dark:border-white/15 bg-[#FAF8F5] dark:bg-[#090807] shadow-md group">
               <AnimatePresence mode="wait">
@@ -259,27 +259,27 @@ export default function WhoWeServeSection() {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -6 }}
                 transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
-                className="space-y-3 pt-1"
+                className="space-y-4 pt-2"
               >
                 <div>
-                  <span className="text-xs sm:text-sm font-syne tracking-widest text-[#F15E1C] dark:text-[#D4AF37] font-bold uppercase block mb-1">
+                  <span className="text-xs sm:text-sm md:text-base font-syne tracking-widest text-[#F15E1C] dark:text-[#D4AF37] font-bold uppercase block mb-1.5">
                     {activeDiscipline.category}
                   </span>
-                  <h3 className="font-serif-display text-3xl sm:text-4xl font-light text-black dark:text-white uppercase leading-tight">
+                  <h3 className="font-serif-display text-3xl sm:text-4xl lg:text-5xl font-light text-black dark:text-white uppercase leading-tight">
                     {activeDiscipline.label}
                   </h3>
                 </div>
 
-                <p className="font-sans text-base sm:text-lg text-[#444444] dark:text-brand-platinum/85 font-normal leading-relaxed max-w-xl">
+                <p className="font-sans text-lg sm:text-xl md:text-2xl text-[#444444] dark:text-brand-platinum/90 font-normal leading-relaxed max-w-2xl">
                   {activeDiscipline.tagline}
                 </p>
 
                 {/* Tags / Badges */}
-                <div className="flex flex-wrap gap-2 pt-1">
+                <div className="flex flex-wrap gap-2.5 pt-2">
                   {activeDiscipline.tags.map((tag, idx) => (
                     <span
                       key={idx}
-                      className="px-3 py-1 text-xs font-syne tracking-wider uppercase font-semibold text-[#555555] dark:text-white/80 bg-black/5 dark:bg-white/5 border border-black/10 dark:border-white/10 rounded-md"
+                      className="px-3.5 py-1.5 text-xs sm:text-sm font-syne tracking-wider uppercase font-semibold text-[#555555] dark:text-white/80 bg-black/5 dark:bg-white/5 border border-black/10 dark:border-white/10 rounded-md"
                     >
                       {tag}
                     </span>
@@ -289,15 +289,15 @@ export default function WhoWeServeSection() {
             </AnimatePresence>
           </div>
 
-          {/* RIGHT: Editorial Discipline Rail (~42% width ~ 5 cols) */}
-          <div className="hidden lg:flex lg:col-span-5 flex-col pl-2 self-stretch">
-            <span className="text-xs sm:text-sm font-syne tracking-widest text-[#F15E1C] dark:text-[#D4AF37] font-bold uppercase mb-3">
+          {/* RIGHT: Editorial Discipline Rail */}
+          <div className="hidden lg:flex lg:col-span-5 flex-col pl-4 self-stretch">
+            <span className="text-xs sm:text-sm md:text-base font-syne tracking-widest text-[#F15E1C] dark:text-[#D4AF37] font-bold uppercase mb-4">
               DISCIPLINES
             </span>
 
-            <div className="relative flex-1 flex gap-4 items-stretch">
-              {/* Subtle Editorial Vertical Guide Line */}
-              <div className="relative w-[2px] bg-black/10 dark:bg-white/10 rounded-full my-1 self-stretch">
+            <div className="relative flex-1 flex gap-5 items-stretch">
+              {/* Editorial Vertical Guide Line */}
+              <div className="relative w-[3px] bg-black/10 dark:bg-white/10 rounded-full my-1 self-stretch">
                 <motion.div
                   className="absolute left-0 w-full bg-[#F15E1C] dark:bg-[#D4AF37] rounded-full shadow-sm"
                   animate={{
@@ -317,10 +317,10 @@ export default function WhoWeServeSection() {
                       key={item.id}
                       onMouseEnter={() => setActiveDiscipline(item)}
                       onClick={() => setActiveDiscipline(item)}
-                      className="group cursor-pointer py-2.5 px-1 border-b border-black/10 dark:border-white/10 transition-colors duration-200 flex items-center justify-between"
+                      className="group cursor-pointer py-3 px-2 border-b border-black/10 dark:border-white/10 transition-colors duration-200 flex items-center justify-between"
                     >
                       <span
-                        className={`font-serif-display text-2xl lg:text-3xl font-light tracking-wide uppercase transition-colors duration-200 ${
+                        className={`font-serif-display text-2xl lg:text-3xl xl:text-4xl font-light tracking-wide uppercase transition-colors duration-200 ${
                           isActive
                             ? "text-[#F15E1C] dark:text-[#D4AF37] font-normal"
                             : "text-black dark:text-white/80 group-hover:text-[#F15E1C] dark:group-hover:text-[#D4AF37]"
@@ -330,7 +330,7 @@ export default function WhoWeServeSection() {
                       </span>
 
                       <ArrowUpRight
-                        className={`w-5 h-5 transition-all duration-300 ${
+                        className={`w-6 h-6 transition-all duration-300 ${
                           isActive
                             ? "text-[#F15E1C] dark:text-[#D4AF37] translate-x-0.5 -translate-y-0.5 opacity-100"
                             : "text-black/30 dark:text-white/30 opacity-0 group-hover:opacity-100 group-hover:text-[#F15E1C] dark:group-hover:text-[#D4AF37]"
