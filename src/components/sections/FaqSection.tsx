@@ -12,19 +12,29 @@ interface FaqItem {
 
 const FAQS: FaqItem[] = [
   {
-    question: "WHAT IS FASHAI UNIVERSAL?",
-    answer: "FashAI Universal is a global fashion and events platform connecting fashion experiences, creative talent, designers, artists, brands, and event opportunities across international markets. The platform brings together luxury fashion experiences, talent recruitment, lifestyle events, corporate gatherings, and IT event formats within a unified global creative ecosystem, with the UAE and India serving as key markets.",
-    category: "ABOUT PLATFORM",
+    question: "WHAT EVENT MANAGEMENT SERVICES DOES FASHAI UNIVERSAL PROVIDE?",
+    answer: "FashAI Universal conceives, plans, produces, and executes luxury fashion shows, haute couture runways, brand activations, corporate galas, and bespoke event experiences across the UAE, India, and international destinations.",
+    category: "EVENT MANAGEMENT",
   },
   {
-    question: "WHO CAN APPLY OR BE NOMINATED?",
-    answer: "Applications and nominations are open for Designers, Models, Makeup Artists, Fashion Stylists, Choreographers, Influencers/Creators, and Celebrities or Public Figures seeking participation in curated showcases and campaigns.",
-    category: "COMMUNITY & TALENT",
+    question: "WHAT CORE SERVICES AND EVENT FORMATS ARE OFFERED?",
+    answer: "Our core capabilities include haute couture catwalk presentations, AI and computational fashion design integration, spatial media staging, luxury brand activations, and international talent direction.",
+    category: "SERVICES",
   },
   {
-    question: "HOW CAN I ENQUIRE ABOUT AN EVENT, SPONSORSHIP OR PARTICIPATION?",
-    answer: "You can submit an enquiry directly through the Contact section on our website by selecting your specific enquiry type (Registration, Sponsorship, Designer Participation, Talent, or Media). Our team will review your submission promptly.",
-    category: "ENQUIRIES & SPONSORSHIP",
+    question: "DOES FASHAI UNIVERSAL PRODUCE BRAND SHOOTS AND LOOKBOOKS?",
+    answer: "Yes. We produce high-concept brand shoots, runway lookbooks, editorial campaigns, and digital media assets with dedicated creative direction and production teams.",
+    category: "BRAND SHOOTS",
+  },
+  {
+    question: "WHO CAN APPLY FOR TALENT AND RECRUITMENT OPPORTUNITIES?",
+    answer: "Opportunities and open nominations are available for Designers, Models, Makeup Artists, Fashion Stylists, Choreographers, Creators, and Public Figures across our global network.",
+    category: "TALENT & OPPORTUNITIES",
+  },
+  {
+    question: "HOW CAN BRANDS, SPONSORS, AND CLIENTS SUBMIT AN INQUIRY?",
+    answer: "Brands, sponsors, and clients can submit requirements directly via our Create Your Own Event or Contact section on the website. Our event production team reviews every submission promptly.",
+    category: "PARTNERSHIPS & INQUIRIES",
   },
 ];
 

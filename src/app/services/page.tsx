@@ -1,13 +1,17 @@
 import type { Metadata } from "next";
 import WhatWeDoSection from "@/components/sections/WhatWeDoSection";
 import WhoWeServeSection from "@/components/sections/WhoWeServeSection";
+import CreateEventSection from "@/components/sections/CreateEventSection";
 import Link from "next/link";
 import { ArrowRight, Sparkles, Layers, ShieldCheck, Cpu, Globe } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Services & Event Formats — FashAI Universal",
+  title: "Services & Event Architecture — FashAI Universal",
   description:
     "Discover FashAI Universal's core services: Haute Couture Catwalk Presentations, AI & Computational Fashion Design, Luxury Brand Activations, International Talent Curation, and Spatial Media across Dubai, UAE & India.",
+  alternates: {
+    canonical: "https://fashai-beryl.vercel.app/services",
+  },
 };
 
 const SERVICES_DETAILED = [
@@ -165,6 +169,9 @@ export default function ServicesPage() {
 
       {/* 04. WHO WE SERVE SECTION */}
       <WhoWeServeSection />
+
+      {/* 05. CREATE YOUR OWN EVENT INQUIRY SECTION */}
+      <CreateEventSection />
 
       {/* 06. SERVICE INQUIRY CTA */}
       <section className="py-14 sm:py-24 bg-[#FAF8F5] dark:bg-[#080706] border-t border-black/10 dark:border-white/10">

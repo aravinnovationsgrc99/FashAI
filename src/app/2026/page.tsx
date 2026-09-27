@@ -3,9 +3,18 @@ import HomeUpcomingFeature from "@/components/sections/HomeUpcomingFeature";
 import InstagramSection from "@/components/sections/InstagramSection";
 
 export const metadata: Metadata = {
-  title: "2026 Dubai — FashAI Universal",
+  title: "2026 Dubai Chapter — FashAI Universal",
   description:
-    "The upcoming 2026 Dubai chapter of FashAI Universal. Powered by Arav Innovation.",
+    "Explore the upcoming 2026 Dubai edition of FashAI Universal. High fashion production and global talent integration.",
+  alternates: {
+    canonical: "https://fashai-beryl.vercel.app/2026",
+  },
+  openGraph: {
+    title: "2026 Dubai Chapter — FashAI Universal",
+    description:
+      "Explore the upcoming 2026 Dubai edition of FashAI Universal. High fashion production and global talent integration.",
+    url: "https://fashai-beryl.vercel.app/2026",
+  },
 };
 
 export default function Page2026() {

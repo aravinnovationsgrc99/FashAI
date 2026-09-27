@@ -23,48 +23,48 @@ export default function AboutUsSection() {
               </div>
 
               <h2 className="font-serif-display text-4xl sm:text-6xl lg:text-7xl font-light text-[#111111] dark:text-brand-white uppercase leading-none mb-6">
-                GLOBAL FASHION &amp; <br />
-                <span className="text-[#F15E1C] dark:text-brand-yellow-golden italic font-normal">EVENTS PLATFORM</span>
+                GLOBAL EVENT MANAGEMENT &amp; <br />
+                <span className="text-[#F15E1C] dark:text-brand-yellow-golden italic font-normal">FASHION PLATFORM</span>
               </h2>
 
               <p className="font-sans text-lg sm:text-xl md:text-2xl text-[#222222] dark:text-brand-platinum font-normal leading-relaxed mb-4">
-                FashAI Universal is a global fashion and events platform connecting fashion experiences, curated events, creative talent, designers, artists, brands, and event participation across international markets.
+                FashAI Universal is a global event management and production platform that conceives, plans, produces, and executes bespoke fashion shows, haute couture runways, lifestyle activations, product launches, corporate galas, and technology forums across international markets.
               </p>
 
               <p className="font-sans text-base sm:text-lg md:text-xl text-[#444444] dark:text-brand-platinum/85 font-normal leading-relaxed">
-                Built to connect creative communities, talent, brands, and event ecosystems across borders, FashAI Universal brings together couture presentation, talent recruitment, lifestyle experiences, corporate event management, and IT event formats within one global creative platform.
+                As a broader supporting ecosystem, FashAI Universal connects creative communities, luxury brands, designers, models, stylists, choreographers, and delegates across the UAE, India, and global destinations through curated event formats and talent participation.
               </p>
             </div>
 
             {/* Core Pillars */}
             <div className="grid grid-cols-1 sm:grid-cols-3 pt-6 border-t border-black/10 dark:border-white/10 divide-y sm:divide-y-0 sm:divide-x divide-black/10 dark:divide-white/10">
               <div className="pb-5 sm:pb-0 sm:pr-5 lg:pr-6">
-                <Globe className="w-5 h-5 text-[#F15E1C] dark:text-brand-yellow-golden mb-2" />
+                <Compass className="w-5 h-5 text-[#F15E1C] dark:text-brand-yellow-golden mb-2" />
                 <h3 className="font-syne text-sm sm:text-base font-bold text-[#111111] dark:text-white uppercase tracking-wider mb-1">
-                  GLOBAL REACH
+                  EVENT MANAGEMENT
                 </h3>
                 <p className="font-sans text-sm sm:text-base text-[#555555] dark:text-brand-platinum/80 font-normal leading-relaxed">
-                  Connecting fashion, talent, brands and event ecosystems across international markets.
+                  Full-service event production, runway staging, brand activations, and corporate galas.
                 </p>
               </div>
 
               <div className="py-5 sm:py-0 sm:px-5 lg:px-6">
-                <ShieldCheck className="w-5 h-5 text-[#F15E1C] dark:text-brand-orange mb-2" />
+                <Globe className="w-5 h-5 text-[#F15E1C] dark:text-brand-orange mb-2" />
                 <h3 className="font-syne text-sm sm:text-base font-bold text-[#111111] dark:text-white uppercase tracking-wider mb-1">
-                  CROSS-BORDER
+                  GLOBAL REACH
                 </h3>
                 <p className="font-sans text-sm sm:text-base text-[#555555] dark:text-brand-platinum/80 font-normal leading-relaxed">
-                  Bridging creative and fashion ecosystems across the UAE, India and international markets.
+                  Bridging event production and creative ecosystems across the UAE, India, and global markets.
                 </p>
               </div>
 
               <div className="pt-5 sm:pt-0 sm:pl-5 lg:pl-6">
-                <Compass className="w-5 h-5 text-[#F15E1C] dark:text-brand-yellow-golden mb-2" />
+                <ShieldCheck className="w-5 h-5 text-[#F15E1C] dark:text-brand-yellow-golden mb-2" />
                 <h3 className="font-syne text-sm sm:text-base font-bold text-[#111111] dark:text-white uppercase tracking-wider mb-1">
-                  EVENT EXCELLENCE
+                  TALENT ECOSYSTEM
                 </h3>
                 <p className="font-sans text-sm sm:text-base text-[#555555] dark:text-brand-platinum/80 font-normal leading-relaxed">
-                  Fashion, product, lifestyle, corporate, and IT event formats within one global platform.
+                  Connecting designers, models, artists, and brand partners through bespoke event platforms.
                 </p>
               </div>
             </div>

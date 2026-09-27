@@ -4,9 +4,12 @@ import WhoWeAreSection from "@/components/sections/WhoWeAreSection";
 import InstagramSection from "@/components/sections/InstagramSection";
 
 export const metadata: Metadata = {
-  title: "About Us — FashAI Universal",
+  title: "About FashAI Universal — Event Management & Talent Ecosystem",
   description:
-    "Learn about FashAI Universal: a global fashion and events platform connecting talent, brands, and experiences across the UAE, India, and international markets.",
+    "Learn about FashAI Universal: a global event management and production platform connecting luxury fashion experiences, brand activations, and creative talent across the UAE, India, and international destinations.",
+  alternates: {
+    canonical: "https://fashai-beryl.vercel.app/about",
+  },
 };
 
 export default function AboutPage() {

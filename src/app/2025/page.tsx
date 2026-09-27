@@ -2,9 +2,18 @@ import type { Metadata } from "next";
 import HomeFeaturedProjects from "@/components/sections/HomeFeaturedProjects";
 
 export const metadata: Metadata = {
-  title: "2025 Chapter — FashAI Universal",
+  title: "2025 Retrospective Chapter — FashAI Universal",
   description:
-    "The 2025 chapter and foundation of FashAI Universal. Powered by Arav Innovation.",
+    "Review the 2025 inaugural milestone productions, runway moments, and creative showcases of FashAI Universal.",
+  alternates: {
+    canonical: "https://fashai-beryl.vercel.app/2025",
+  },
+  openGraph: {
+    title: "2025 Retrospective Chapter — FashAI Universal",
+    description:
+      "Review the 2025 inaugural milestone productions, runway moments, and creative showcases of FashAI Universal.",
+    url: "https://fashai-beryl.vercel.app/2025",
+  },
 };
 
 export default function Page2025() {

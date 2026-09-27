@@ -5,7 +5,16 @@ import { ArrowLeft, Shield } from "lucide-react";
 export const metadata: Metadata = {
   title: "Privacy Policy — FashAI Universal",
   description:
-    "Official Privacy Policy of FashAI Universal.",
+    "Official Privacy Policy of FashAI Universal governing data privacy, user rights, and security standards.",
+  alternates: {
+    canonical: "https://fashai-beryl.vercel.app/privacy",
+  },
+  openGraph: {
+    title: "Privacy Policy — FashAI Universal",
+    description:
+      "Official Privacy Policy of FashAI Universal governing data privacy, user rights, and security standards.",
+    url: "https://fashai-beryl.vercel.app/privacy",
+  },
 };
 
 export default function PrivacyPage() {

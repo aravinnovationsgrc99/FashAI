@@ -46,8 +46,9 @@ export default function Header() {
     { id: "home", label: "HOME", href: "/", enabled: true, order: 1 },
     { id: "upcoming", label: "UPCOMING", href: "/upcoming", enabled: true, order: 2 },
     { id: "services", label: "SERVICES", href: "/services", enabled: true, order: 3 },
-    { id: "projects", label: "PROJECTS", href: "/projects", enabled: true, order: 4 },
-    { id: "blog", label: "BLOG", href: "/fashion-magazine", enabled: true, order: 5 },
+    { id: "events", label: "EVENTS", href: "/events", enabled: true, order: 4 },
+    { id: "projects", label: "PROJECTS", href: "/projects", enabled: true, order: 5 },
+    { id: "blog", label: "BLOG", href: "/fashion-magazine", enabled: true, order: 6 },
   ];
 
   const rawConfigNav = (config.navigationSettings && config.navigationSettings.length > 0
@@ -57,6 +58,7 @@ export default function Header() {
     : DEFAULT_NAV_ITEMS
   );
 
+  const hasEvents = rawConfigNav.some((item) => item.id === "events" || item.href === "/events");
   const hasProjects = rawConfigNav.some((item) => item.id === "projects" || item.href === "/projects");
   const hasBlog = rawConfigNav.some((item) => item.id === "blog" || item.href === "/fashion-magazine");
 
@@ -64,11 +66,14 @@ export default function Header() {
   if (mergedNavItems.length === 0) {
     mergedNavItems = [...DEFAULT_NAV_ITEMS];
   } else {
+    if (!hasEvents) {
+      mergedNavItems.push({ id: "events", label: "EVENTS", href: "/events", enabled: true, order: 4 });
+    }
     if (!hasProjects) {
-      mergedNavItems.push({ id: "projects", label: "PROJECTS", href: "/projects", enabled: true, order: 4 });
+      mergedNavItems.push({ id: "projects", label: "PROJECTS", href: "/projects", enabled: true, order: 5 });
     }
     if (!hasBlog) {
-      mergedNavItems.push({ id: "blog", label: "BLOG", href: "/fashion-magazine", enabled: true, order: 5 });
+      mergedNavItems.push({ id: "blog", label: "BLOG", href: "/fashion-magazine", enabled: true, order: 6 });
     }
   }
 

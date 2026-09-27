@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
+import Link from "next/link";
 import { ArrowUpRight, ChevronDown } from "lucide-react";
 
 interface DisciplineItem {
@@ -342,6 +343,25 @@ export default function WhoWeServeSection() {
               </div>
             </div>
           </div>
+        </div>
+
+        {/* CTA Below Industries Section */}
+        <div className="mt-10 sm:mt-14 pt-8 border-t border-black/10 dark:border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
+          <div>
+            <h4 className="font-serif-display text-2xl sm:text-3xl font-light uppercase text-[#111111] dark:text-white">
+              NEED BESPOKE EVENT PRODUCTION FOR YOUR BRAND?
+            </h4>
+            <p className="font-sans text-sm sm:text-base text-[#555555] dark:text-brand-platinum/85 font-light">
+              Enquire now for custom event management, runway direction, and brand launches.
+            </p>
+          </div>
+          <Link
+            href="/contact?type=IndustryInquiry"
+            className="inline-flex items-center justify-center gap-2.5 bg-[#F15E1C] dark:bg-[#D4AF37] text-white dark:text-black hover:bg-[#e04f10] dark:hover:bg-[#FFEC69] px-7 py-3.5 rounded-full font-syne text-xs sm:text-sm font-bold tracking-wider uppercase transition-all duration-300 shadow-lg group shrink-0 whitespace-nowrap"
+          >
+            <span>BOOK YOUR EVENT EXPERIENCE</span>
+            <ArrowUpRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+          </Link>
         </div>
       </div>
     </section>

@@ -3,9 +3,12 @@ import ContactSection from "@/components/sections/ContactSection";
 import InstagramSection from "@/components/sections/InstagramSection";
 
 export const metadata: Metadata = {
-  title: "Contact Us — FashAI Universal",
+  title: "Contact Us & Inquiries — FashAI Universal",
   description:
-    "Let's create the next experience. Contact FashAI Universal. Powered by Arav Innovation.",
+    "Contact the FashAI Universal team for event production, delegate registrations, brand sponsorships, designer participation, and media inquiries in Dubai, UAE & India.",
+  alternates: {
+    canonical: "https://fashai-beryl.vercel.app/contact",
+  },
 };
 
 export default function ContactPage() {

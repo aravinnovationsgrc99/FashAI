@@ -1,16 +1,19 @@
 import type { Metadata } from "next";
-import HomeFeaturedProjects from "@/components/sections/HomeFeaturedProjects";
+import ProjectsPageContent from "@/components/sections/ProjectsPageContent";
 
 export const metadata: Metadata = {
-  title: "LifeStyle Editions — FashAI Universal",
+  title: "Delivered Projects & Portfolio — FashAI Universal",
   description:
-    "Explore previous and upcoming editions of LifeStyle by FashAI Universal. Powered by Arav Innovation.",
+    "Explore delivered fashion showcases, FashPrism India & International editions, VIP guest salons, catwalk choreography direction, and video editing production by FashAI Universal.",
+  alternates: {
+    canonical: "https://fashai-beryl.vercel.app/projects",
+  },
 };
 
 export default function ProjectsPage() {
   return (
-    <div className="bg-brand-void text-brand-white pt-24 min-h-screen">
-      <HomeFeaturedProjects />
+    <div className="bg-brand-void text-brand-white pt-14 sm:pt-20 min-h-screen">
+      <ProjectsPageContent />
     </div>
   );
 }

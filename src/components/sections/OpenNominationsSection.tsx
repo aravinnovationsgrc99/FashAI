@@ -34,7 +34,7 @@ export default function OpenNominationsSection() {
             {/* Right Action CTA Button — High-Contrast Gold Button with Bold Black Text */}
             <div className="inline-flex items-center gap-3 px-6 py-3.5 bg-brand-yellow-golden hover:bg-[#FFEC69] border border-brand-yellow-golden rounded-full text-black transition-all duration-300 text-xs sm:text-sm font-syne font-bold uppercase tracking-wider shrink-0 self-start md:self-auto shadow-md">
               <GradientFlowText variant="primary" className="text-black font-extrabold tracking-wider">
-                EXPLORE &amp; APPLY
+                EXPLORE OPPORTUNITIES
               </GradientFlowText>
               <ArrowRight className="w-4 h-4 text-black group-hover:translate-x-1.5 transition-transform duration-300" />
             </div>

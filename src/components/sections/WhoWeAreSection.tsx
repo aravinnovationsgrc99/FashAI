@@ -28,18 +28,33 @@ export default function WhoWeAreSection() {
             </div>
 
             {/* Main Editorial Heading */}
-            <h2 className="font-serif-display text-4xl sm:text-6xl lg:text-7xl font-light text-[#111111] dark:text-brand-white uppercase leading-[0.92] tracking-tight">
-              A GLOBAL FASHION <br />
-              <span className="font-serif italic font-normal text-[#F15E1C]">MOVEMENT</span>
+            <h2 className="font-serif-display text-3xl xs:text-4xl sm:text-6xl lg:text-7xl font-light text-[#111111] dark:text-brand-white uppercase leading-[0.92] tracking-tight">
+              EVENT MANAGEMENT &amp; <br />
+              <span className="font-serif italic font-normal text-[#F15E1C]">PRODUCTION</span>
             </h2>
 
             {/* Concise Subheading */}
-            <p className="font-syne text-sm sm:text-base tracking-[0.18em] uppercase text-[#333333] dark:text-brand-platinum/90 font-bold mt-3 max-w-3xl mx-auto leading-relaxed">
-              BRIDGING THE UAE, INDIA &amp; GLOBAL THROUGH RUNWAY, CULTURE AND CREATIVE TALENT
+            <p className="font-syne text-xs sm:text-base tracking-[0.15em] sm:tracking-[0.18em] uppercase text-[#333333] dark:text-brand-platinum/90 font-bold mt-3 max-w-3xl mx-auto leading-relaxed">
+              PLANNING, PRODUCING &amp; EXECUTING BESPOKE FASHION, LIFESTYLE &amp; BRAND EXPERIENCES ACROSS THE UAE, INDIA &amp; GLOBAL DESTINATIONS
             </p>
 
+            <p className="font-sans text-sm sm:text-lg md:text-xl text-[#444444] dark:text-brand-platinum/85 font-light mt-4 max-w-2xl mx-auto leading-relaxed">
+              FashAI Universal helps clients plan, produce, manage and execute high-impact fashion events, runway presentations, product launches, corporate galas and luxury brand experiences.
+            </p>
+
+            {/* Primary Event Management CTA */}
+            <div className="mt-6 sm:mt-8 flex items-center justify-center">
+              <Link
+                href="/contact"
+                className="inline-flex items-center justify-center gap-2 sm:gap-2.5 bg-[#F15E1C] dark:bg-[#D4AF37] text-white dark:text-black hover:bg-[#e04f10] dark:hover:bg-[#f5aa00] px-6 sm:px-8 py-3.5 sm:py-4 rounded-full font-syne text-xs sm:text-base font-bold tracking-wider uppercase transition-all duration-300 shadow-lg group"
+              >
+                <span>BOOK YOUR EVENTS NOW</span>
+                <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 transition-transform duration-300 group-hover:translate-x-1" />
+              </Link>
+            </div>
+
             {/* Divider Line */}
-            <div className="w-16 h-[2px] bg-[#F15E1C] dark:bg-brand-orange mx-auto mt-3" />
+            <div className="w-16 h-[2px] bg-[#F15E1C] dark:bg-brand-orange mx-auto mt-6 sm:mt-8" />
           </div>
 
           {/* Editorial Responsive Layout */}

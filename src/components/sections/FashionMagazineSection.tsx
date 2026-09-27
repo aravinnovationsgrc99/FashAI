@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
+import Link from "next/link";
 import { ArrowRight, ChevronDown } from "lucide-react";
 import MagazineArticleModal, { MagazineArticle } from "@/components/magazine/MagazineArticleModal";
 
@@ -254,9 +255,18 @@ export default function FashionMagazineSection() {
               FASHION <span className="font-serif italic font-normal text-[#F15E1C] dark:text-brand-yellow-golden">MAGAZINE</span>
             </h2>
           </div>
-          <p className="font-sans text-sm sm:text-base md:text-lg text-[#444444] dark:text-brand-platinum/90 max-w-md font-light leading-relaxed">
-            Fashion stories, event moments, creative perspectives and visual highlights from the FashAI Universal ecosystem.
-          </p>
+          <div className="flex flex-col items-start md:items-end gap-3">
+            <p className="font-sans text-sm sm:text-base md:text-lg text-[#444444] dark:text-brand-platinum/90 max-w-md font-light leading-relaxed">
+              Fashion stories, event moments, creative perspectives and visual highlights from the FashAI Universal ecosystem.
+            </p>
+            <Link
+              href="/fashion-magazine"
+              className="inline-flex items-center gap-2 bg-[#F15E1C] dark:bg-[#D4AF37] text-white dark:text-black px-6 py-2.5 rounded-full font-syne text-xs sm:text-sm font-bold tracking-wider uppercase hover:bg-[#e04f10] dark:hover:bg-[#FFEC69] transition-all shadow-md group"
+            >
+              <span>EXPLORE MORE</span>
+              <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+            </Link>
+          </div>
         </div>
 
         {/* Mobile-Only Dropdown Category Selector */}
@@ -444,6 +454,17 @@ export default function FashionMagazineSection() {
             </AnimatePresence>
           </div>
         )}
+
+        {/* Section Footer EXPLORE MORE CTA */}
+        <div className="mt-8 text-center pt-6 border-t border-black/10 dark:border-white/10">
+          <Link
+            href="/fashion-magazine"
+            className="inline-flex items-center justify-center gap-2.5 bg-[#F15E1C] dark:bg-[#D4AF37] text-white dark:text-black hover:bg-[#e04f10] dark:hover:bg-[#FFEC69] px-8 py-3.5 rounded-full font-syne text-xs sm:text-sm font-bold tracking-wider uppercase transition-all duration-300 shadow-lg group"
+          >
+            <span>EXPLORE MORE</span>
+            <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
+          </Link>
+        </div>
       </div>
 
       {/* Editorial Article Reader Modal */}

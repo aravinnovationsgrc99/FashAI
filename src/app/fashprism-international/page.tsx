@@ -3,9 +3,12 @@ import FashPrismInternationalSection from "@/components/sections/FashPrismIntern
 import InstagramSection from "@/components/sections/InstagramSection";
 
 export const metadata: Metadata = {
-  title: "FashPrism International — FashAI Universal",
+  title: "FashPrism International Showcase — FashAI Universal",
   description:
-    "Explore the FashPrism International experience connecting global fashion creators, Dubai runway showcases, and international couture.",
+    "Explore the FashPrism International presentation series featuring cinematic catwalk staging, Miss International showcase editions, and architectural monolith illumination.",
+  alternates: {
+    canonical: "https://fashai-beryl.vercel.app/fashprism-international",
+  },
 };
 
 export default function FashPrismInternationalPage() {

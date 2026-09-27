@@ -3,9 +3,12 @@ import HomeUpcomingFeature from "@/components/sections/HomeUpcomingFeature";
 import InstagramSection from "@/components/sections/InstagramSection";
 
 export const metadata: Metadata = {
-  title: "Upcoming 2026 Dubai — FashAI Universal",
+  title: "Upcoming Shows & Dubai 2026 Chapter — FashAI Universal",
   description:
-    "The upcoming 2026 Dubai chapter of FashAI Universal. Powered by Arav Innovation.",
+    "Explore upcoming fashion shows, flagship chapters, and open delegate registrations for LifeStyle 2026 in Dubai, UAE.",
+  alternates: {
+    canonical: "https://fashai-beryl.vercel.app/upcoming",
+  },
 };
 
 export default function UpcomingPage() {

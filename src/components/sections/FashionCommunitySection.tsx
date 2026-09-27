@@ -7,7 +7,13 @@ import { ArrowRight, Sparkles } from "lucide-react";
 import { PEOPLE_MASTER_DATA, PeopleCategory } from "@/data/people";
 import RoleApplicationModal, { RoleType } from "@/components/forms/RoleApplicationModal";
 
-export default function FashionCommunitySection() {
+import Link from "next/link";
+
+interface FashionCommunitySectionProps {
+  isHomepage?: boolean;
+}
+
+export default function FashionCommunitySection({ isHomepage = false }: FashionCommunitySectionProps) {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedRole, setSelectedRole] = useState<RoleType>("designer");
 
@@ -27,28 +33,69 @@ export default function FashionCommunitySection() {
     setIsModalOpen(true);
   };
 
+  if (isHomepage) {
+    return (
+      <section id="community" className="relative py-10 sm:py-16 bg-black border-b border-white/10 overflow-hidden select-none">
+        <div className="absolute inset-0 pointer-events-none select-none overflow-hidden">
+          <div className="editorial-watermark absolute -bottom-10 right-0 text-[14vw] font-serif-display font-light uppercase tracking-tighter leading-none pointer-events-none select-none opacity-30">
+            TALENT
+          </div>
+        </div>
+
+        <div className="container-editorial relative z-10 max-w-5xl mx-auto px-4 sm:px-6">
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-6 border-b border-white/10">
+            <div>
+              <div className="flex items-center gap-3 text-xs sm:text-sm font-syne tracking-micro text-[#F15E1C] dark:text-[#D4AF37] font-bold uppercase mb-2">
+                <span className="h-px w-8 bg-[#F15E1C] dark:bg-[#D4AF37]" />
+                <span>GLOBAL TALENT ECOSYSTEM</span>
+              </div>
+              <h2 className="font-serif-display text-4xl sm:text-6xl font-light text-brand-white uppercase">
+                FASHION COMMUNITY &amp; <span className="font-serif italic font-normal text-[#F15E1C] dark:text-[#D4AF37]">TALENT NETWORK</span>
+              </h2>
+            </div>
+          </div>
+
+          <div className="pt-6 sm:pt-8 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+            <p className="font-sans text-lg sm:text-xl md:text-2xl text-brand-white/90 max-w-2xl font-light leading-relaxed">
+              FashAI Universal maintains an international creative network connecting Designers, Models, Makeup Artists, Stylists, Choreographers, Creators, and Public Figures across global fashion hubs.
+            </p>
+
+            <Link
+              href="/community"
+              className="inline-flex items-center justify-center gap-2.5 bg-[#F15E1C] dark:bg-[#D4AF37] text-white dark:text-black hover:bg-[#e04f10] dark:hover:bg-[#FFEC69] px-8 py-4 rounded-full font-syne text-sm sm:text-base font-bold tracking-wider uppercase transition-all duration-300 shadow-lg shrink-0 group"
+            >
+              <span>DISCOVER TALENT NETWORK</span>
+              <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 transition-transform duration-300 group-hover:translate-x-1" />
+            </Link>
+          </div>
+        </div>
+      </section>
+    );
+  }
+
   return (
-    <section id="community" className="relative pt-3 sm:pt-4 pb-4 sm:pb-6 bg-black border-b border-white/10 overflow-hidden">
-      {/* Atmosphere Background Glows */}
+    <section id="community" className="relative py-14 sm:py-20 bg-black border-b border-white/10 select-none overflow-hidden text-brand-white">
+      {/* Background Editorial Watermark */}
       <div className="absolute inset-0 pointer-events-none select-none overflow-hidden">
-        <div className="editorial-watermark absolute -bottom-10 right-0 text-[14vw] font-serif-display font-light uppercase tracking-tighter leading-none pointer-events-none select-none">
+        <div className="editorial-watermark absolute -bottom-10 right-0 text-[14vw] font-serif-display font-light uppercase tracking-tighter leading-none pointer-events-none select-none opacity-30">
           TALENT
         </div>
       </div>
 
-      <div className="container-editorial relative z-10">
-        {/* Section Editorial Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-8 sm:mb-10 border-b border-white/10 pb-6 sm:pb-8">
-          <div>
-            <div className="flex items-center gap-3 text-xs sm:text-sm font-syne tracking-micro text-brand-orange font-bold uppercase mb-3">
-              <span>OFFICIAL TALENT NETWORK &amp; RECRUITMENT</span>
-            </div>
-            <h2 className="font-serif-display text-4xl sm:text-6xl lg:text-7xl font-light text-brand-white uppercase">
-              FASHION COMMUNITY &amp; TALENT
-            </h2>
+      <div className="container-editorial relative z-10 max-w-6xl mx-auto px-4 sm:px-6">
+        {/* Section Header */}
+        <div className="mb-10 sm:mb-14 border-b border-white/10 pb-6">
+          <div className="flex items-center gap-3 text-xs sm:text-sm font-syne tracking-micro text-brand-orange font-bold uppercase mb-2">
+            <span className="h-px w-8 bg-brand-orange" />
+            <span>GLOBAL TALENT ECOSYSTEM</span>
           </div>
-          <p className="font-sans text-base sm:text-lg text-brand-platinum/90 max-w-md font-light leading-relaxed">
-            Build your place in fashion, beauty, runway and lifestyle. Discover opportunities in couture, modeling, makeup, styling, choreography, media and public appearances.
+
+          <h1 className="font-serif-display text-4xl sm:text-6xl lg:text-7xl font-light text-brand-white uppercase leading-tight">
+            FASHION COMMUNITY &amp; <span className="font-serif italic font-normal text-brand-yellow-golden">TALENT NETWORK</span>
+          </h1>
+
+          <p className="font-sans text-base sm:text-lg md:text-xl text-brand-platinum/90 font-light mt-3 max-w-3xl leading-relaxed">
+            FashAI Universal maintains an international creative network connecting Designers, Models, Makeup Artists, Stylists, Choreographers, Creators, and Public Figures across global fashion hubs.
           </p>
         </div>
 
@@ -71,9 +118,9 @@ export default function FashionCommunitySection() {
                   </span>
                 </div>
 
-                <h3 className="font-serif-display text-2xl sm:text-3xl lg:text-4xl font-light text-brand-white uppercase tracking-tight group-hover:text-brand-yellow-golden transition-colors pt-1">
+                <h2 className="font-serif-display text-2xl sm:text-3xl lg:text-4xl font-light text-brand-white uppercase tracking-tight group-hover:text-brand-yellow-golden transition-colors pt-1">
                   {category.title}
-                </h3>
+                </h2>
 
                 <p className="font-sans text-base sm:text-lg text-brand-platinum/80 font-light min-h-[40px] leading-relaxed">
                   {category.subtitle}

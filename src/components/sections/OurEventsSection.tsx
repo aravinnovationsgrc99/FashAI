@@ -4,190 +4,159 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
-import ViewportRevealCard from "../ui/ViewportRevealCard";
+
+interface HomepageEvent {
+  id: string;
+  badge: string;
+  title: string;
+  subtitle: string;
+  description: string;
+  timing?: string;
+  image: string;
+  ctaText: string;
+  ctaHref: string;
+}
+
+const HOMEPAGE_EVENTS: HomepageEvent[] = [
+  {
+    id: "lifestyle",
+    badge: "FLAGSHIP EXPERIENCE",
+    title: "LIFESTYLE",
+    subtitle: "FashPrism Lifestyle Week",
+    description:
+      "Fashion, culture and lifestyle experiences bringing together computational design, haute couture, and spatial atmosphere.",
+    timing: "NOVEMBER 2026",
+    image: "/assets/events/lifestyle_banner.png",
+    ctaText: "EXPLORE EVENT",
+    ctaHref: "/events",
+  },
+  {
+    id: "runway",
+    badge: "PRESENTATION EXPERIENCE",
+    title: "RUNWAY",
+    subtitle: "Haute Catwalk Showcase",
+    description:
+      "Fashion presentation and runway experiences within the FashAI Universal ecosystem. Highlighting spatial choreography, lighting art, and designer silhouettes.",
+    image: "/assets/events/runway_banner.png",
+    ctaText: "EXPLORE EVENT",
+    ctaHref: "/events",
+  },
+];
 
 export default function OurEventsSection() {
   return (
-    <section id="our-events" className="relative pt-3 sm:pt-4 pb-2 sm:pb-3 bg-white dark:bg-[#050505] text-[#111111] dark:text-white border-b border-black/10 dark:border-white/10 overflow-hidden">
-      {/* Rich Background Atmosphere & Graphical Layer */}
+    <section
+      id="our-events"
+      className="relative py-12 sm:py-16 md:py-20 bg-white dark:bg-[#050505] text-[#111111] dark:text-white border-b border-black/10 dark:border-white/10 overflow-hidden"
+    >
+      {/* Background Atmosphere */}
       <div className="absolute inset-0 pointer-events-none select-none overflow-hidden">
-        <div className="editorial-watermark absolute bottom-0 right-10 text-[14vw] font-serif-display font-light uppercase tracking-tighter leading-none pointer-events-none select-none text-black/[0.03] dark:text-white/[0.02]">
+        <div className="editorial-watermark absolute bottom-0 right-6 text-[14vw] font-serif-display font-light uppercase tracking-tighter leading-none pointer-events-none select-none text-black/[0.03] dark:text-white/[0.02]">
           EVENTS
         </div>
       </div>
 
-      <div className="container-editorial relative z-10">
+      <div className="container-editorial relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-6 sm:mb-8 border-b border-black/10 dark:border-white/10 pb-5 sm:pb-6">
-          <div>
-            <div className="flex items-center gap-3 text-xs font-syne tracking-micro text-[#F15E1C] dark:text-brand-orange font-bold uppercase mb-2">
-              <span className="h-px w-8 bg-[#F15E1C] dark:bg-brand-orange" />
-              <span>EVENT ECOSYSTEM</span>
-            </div>
-            <h2 className="font-serif-display text-4xl sm:text-5xl lg:text-6xl font-light text-[#111111] dark:text-brand-white uppercase">
-              OUR EVENTS
-            </h2>
-            <h3 className="font-serif-display text-2xl sm:text-3xl lg:text-4xl font-light text-[#F15E1C] dark:text-brand-orange uppercase tracking-tight mt-1 sm:mt-2">
-              FashPrism Lifestyle Week 2025
-            </h3>
+        <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-14">
+          <div className="flex items-center justify-center gap-3 text-xs sm:text-sm font-syne tracking-widest text-[#F15E1C] dark:text-brand-orange font-bold uppercase mb-3">
+            <span className="h-px w-8 bg-[#F15E1C] dark:bg-brand-orange" />
+            <span>EVENT ECOSYSTEM</span>
+            <span className="h-px w-8 bg-[#F15E1C] dark:bg-brand-orange" />
           </div>
-          <p className="font-sans text-sm sm:text-base text-[#444444] dark:text-brand-platinum/80 max-w-sm font-light leading-relaxed">
-            The core event experiences within the FashAI Universal platform.
+
+          <h2 className="font-serif-display text-4xl sm:text-5xl lg:text-6xl font-light text-[#111111] dark:text-brand-white uppercase leading-tight">
+            OUR EVENTS
+          </h2>
+
+          <p className="font-sans text-base sm:text-lg text-[#555555] dark:text-brand-platinum/85 font-light mt-3 max-w-xl mx-auto leading-relaxed">
+            FashPrism &amp; premier global event formats produced across haute couture runways and luxury lifestyle showcases.
           </p>
+
+          <div className="w-16 h-[2px] bg-[#F15E1C] dark:bg-[#D4AF37] mx-auto mt-5" />
         </div>
 
-        {/* Editorial Event Grid — Full Banner Image Treatments */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8">
-          {/* EVENT 01: LIFESTYLE */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="group relative bg-[#090807] border border-[#D4AF37]/40 p-6 sm:p-8 flex flex-col justify-between min-h-[380px] sm:min-h-[420px] overflow-hidden rounded-2xl shadow-xl"
-          >
-            {/* Full-Bleed Banner Image Layer */}
-            <ViewportRevealCard className="absolute inset-0 z-0 pointer-events-none">
-              {(isRevealed) => (
-                <div className="absolute inset-0 opacity-90 group-hover:opacity-100 transition-opacity duration-500">
+        {/* Homepage Event Grid — Exactly 2 Primary Cards: LIFESTYLE & RUNWAY */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-10 max-w-5xl mx-auto">
+          {HOMEPAGE_EVENTS.map((item, idx) => (
+            <motion.div
+              key={item.id}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: idx * 0.1 }}
+              className="group bg-neutral-50 dark:bg-[#090807] border border-black/10 dark:border-[#D4AF37]/30 rounded-2xl overflow-hidden flex flex-col justify-between shadow-xl hover:border-[#F15E1C] dark:hover:border-[#D4AF37] transition-all duration-300"
+            >
+              <div>
+                {/* Clean Editorial Event Image Container — NO text overlays */}
+                <div className="relative aspect-[16/10] w-full overflow-hidden bg-black/10 dark:bg-black">
                   <Image
-                    src="/assets/events/lifestyle_banner.png"
-                    alt="LifeStyle Event Banner"
+                    src={item.image}
+                    alt={item.title}
                     fill
-                    sizes="(max-width: 1024px) 100vw, 50vw"
-                    className={`object-cover object-top filter contrast-[1.05] brightness-[1.02] transition-all duration-700 ease-out ${
-                      isRevealed ? "blur-none" : "blur-[2.5px] group-hover:blur-none"
-                    }`}
-                    priority
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                    className="object-cover object-top transition-transform duration-700 ease-out group-hover:scale-105"
+                    priority={idx === 0}
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/98 via-black/80 to-black/40" />
                 </div>
-              )}
-            </ViewportRevealCard>
 
-            <div className="relative z-10">
-              <div className="flex justify-between items-start mb-3">
-                <span className="text-xs sm:text-sm font-syne tracking-[0.2em] text-[#D4AF37] uppercase font-extrabold drop-shadow">
-                  FLAGSHIP EXPERIENCE
-                </span>
-              </div>
-
-              <h3 className="font-serif-display text-3xl sm:text-5xl text-white font-normal uppercase tracking-tight mb-3 drop-shadow-md keep-white">
-                LIFESTYLE
-              </h3>
-
-              <p className="font-sans text-base sm:text-lg text-neutral-200 font-normal leading-relaxed mb-5 max-w-md keep-white drop-shadow">
-                Fashion, culture and lifestyle experiences bringing together computational design, haute couture, and spatial atmosphere.
-              </p>
-
-              {/* Edition Badges — Desktop / Tablet Only */}
-              <div className="hidden sm:flex flex-wrap gap-2.5 mb-6">
-                <div className="border border-[#F15E1C]/60 bg-black/90 backdrop-blur-md px-3.5 py-2 rounded-xl shadow-md flex items-center gap-3">
-                  <div>
-                    <span className="block text-[9px] font-syne tracking-wider text-[#F15E1C] uppercase font-bold">
-                      2025
+                {/* Event Card Content Below Image */}
+                <div className="p-6 sm:p-8 space-y-3">
+                  <div className="flex flex-wrap items-center gap-2">
+                    <span className="text-[10px] sm:text-xs font-syne tracking-[0.2em] text-[#F15E1C] dark:text-[#D4AF37] uppercase font-extrabold">
+                      {item.badge}
                     </span>
-                    <span className="font-syne text-xs text-white font-bold uppercase keep-white">
-                      Previous Edition
-                    </span>
+                    {item.timing && (
+                      <>
+                        <span className="text-black/30 dark:text-white/30">•</span>
+                        <span className="text-[10px] sm:text-xs font-syne text-[#F15E1C] dark:text-[#D4AF37] uppercase font-extrabold">
+                          {item.timing}
+                        </span>
+                      </>
+                    )}
                   </div>
-                  <a
-                    href="https://www.instagram.com/fashai_universal"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1 bg-[#D4AF37] text-[#111111] hover:bg-[#FFEC69] px-3 py-1 text-[10px] font-syne font-bold uppercase rounded-lg shadow-sm"
-                  >
-                    <span>VIEW</span>
-                    <span>↗</span>
-                  </a>
-                </div>
-                <div className="border border-[#D4AF37]/60 bg-black/90 backdrop-blur-md px-3.5 py-2 rounded-xl shadow-md">
-                  <span className="block text-[9px] font-syne tracking-wider text-[#D4AF37] uppercase font-bold">
-                    2026 · DUBAI
-                  </span>
-                  <span className="font-syne text-xs text-[#D4AF37] font-extrabold uppercase">
-                    Upcoming Edition
-                  </span>
+
+                  <h3 className="font-serif-display text-3xl sm:text-3xl lg:text-[26px] font-normal text-[#111111] dark:text-white uppercase tracking-tight">
+                    {item.title}
+                  </h3>
+
+                  <p className="font-sans text-sm sm:text-[15px] lg:text-[16px] text-[#444444] dark:text-brand-platinum/85 font-light leading-relaxed">
+                    {item.description}
+                  </p>
                 </div>
               </div>
-            </div>
 
-            <div className="relative z-10 pt-4 border-t border-white/20 flex justify-between items-center">
-              <Link
-                href="/2026"
-                className="inline-flex items-center gap-2 bg-[#D4AF37] text-[#111111] px-5 py-2.5 text-xs font-syne tracking-caps font-bold hover:bg-[#FFEC69] transition-all group/btn shadow-lg rounded-full"
-              >
-                <span className="text-[#111111] font-extrabold">EXPLORE LIFESTYLE</span>
-                <ArrowUpRight className="w-4 h-4 text-[#111111] group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5 transition-transform" />
-              </Link>
-            </div>
-          </motion.div>
+              {/* Card Action Area */}
+              <div className="p-6 sm:p-8 pt-0 flex items-center justify-between gap-4 mt-2">
+                <Link
+                  href={item.ctaHref}
+                  className="inline-flex items-center gap-2 bg-[#F15E1C] dark:bg-[#D4AF37] text-white dark:text-black px-6 py-3 rounded-full text-xs sm:text-[14px] font-syne tracking-caps font-bold hover:bg-[#e04f10] dark:hover:bg-[#FFEC69] transition-all shadow-md group/btn"
+                >
+                  <span>{item.ctaText}</span>
+                  <ArrowUpRight className="w-4 h-4 transition-transform group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5" />
+                </Link>
 
-          {/* EVENT 02: RUNWAY */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.1 }}
-            className="group relative bg-[#090807] border border-[#D4AF37]/40 p-6 sm:p-8 flex flex-col justify-between min-h-[380px] sm:min-h-[420px] overflow-hidden rounded-2xl shadow-xl"
+                <Link
+                  href="/contact?type=EventManagement"
+                  className="inline-flex items-center gap-1.5 text-xs sm:text-[13px] font-syne font-bold uppercase text-[#111111] dark:text-white/80 hover:text-[#F15E1C] dark:hover:text-[#D4AF37] transition-colors"
+                >
+                  <span>BOOK NOW</span>
+                  <ArrowUpRight className="w-3.5 h-3.5" />
+                </Link>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+
+        {/* Section Bottom CTA — EXPLORE ALL EVENTS → */}
+        <div className="mt-12 sm:mt-16 text-center">
+          <Link
+            href="/events"
+            className="inline-flex items-center gap-3 bg-[#F15E1C] dark:bg-[#D4AF37] text-white dark:text-black px-8 py-4 rounded-full font-syne text-xs sm:text-sm lg:text-[15px] font-bold tracking-widest uppercase hover:bg-[#e04f10] dark:hover:bg-[#FFEC69] transition-all shadow-xl group hover:scale-[1.02]"
           >
-            {/* Full-Bleed Banner Image Layer */}
-            <ViewportRevealCard className="absolute inset-0 z-0 pointer-events-none">
-              {(isRevealed) => (
-                <div className="absolute inset-0 opacity-90 group-hover:opacity-100 transition-opacity duration-500">
-                  <Image
-                    src="/assets/events/runway_banner.png"
-                    alt="Runway Event Banner"
-                    fill
-                    sizes="(max-width: 1024px) 100vw, 50vw"
-                    className={`object-cover object-top filter contrast-[1.05] brightness-[1.02] transition-all duration-700 ease-out ${
-                      isRevealed ? "blur-none" : "blur-[2.5px] group-hover:blur-none"
-                    }`}
-                    priority
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/98 via-black/80 to-black/40" />
-                </div>
-              )}
-            </ViewportRevealCard>
-
-            <div className="relative z-10">
-              <div className="flex justify-between items-start mb-3">
-                <span className="text-[11px] sm:text-xs font-syne tracking-[0.2em] text-[#D4AF37] uppercase font-extrabold drop-shadow">
-                  PRESENTATION EXPERIENCE
-                </span>
-              </div>
-
-              <h3 className="font-serif-display text-3xl sm:text-5xl text-white font-normal uppercase tracking-tight mb-3 drop-shadow-md keep-white">
-                RUNWAY
-              </h3>
-
-              <p className="font-sans text-sm sm:text-base text-neutral-200 font-normal leading-relaxed mb-4 sm:mb-6 max-w-md keep-white drop-shadow">
-                Fashion presentation and runway experiences within the FashAI Universal ecosystem. Highlighting spatial choreography, lighting art, and designer silhouettes.
-              </p>
-
-              {/* Edition Badges — Desktop / Tablet Only */}
-              <div className="hidden sm:flex flex-wrap gap-2.5 mb-6">
-                <div className="border border-[#F15E1C]/60 bg-black/90 backdrop-blur-md px-3.5 py-2 rounded-xl shadow-md">
-                  <span className="block text-[9px] font-syne tracking-wider text-[#F15E1C] uppercase font-bold">
-                    PRESENTATION
-                  </span>
-                  <span className="font-syne text-xs text-white font-bold uppercase keep-white">
-                    Haute Runway Catwalk
-                  </span>
-                </div>
-              </div>
-            </div>
-
-            <div className="relative z-10 pt-4 border-t border-white/20 flex justify-between items-center">
-              <Link
-                href="/gallery"
-                className="inline-flex items-center gap-2 border border-[#D4AF37] bg-black/80 backdrop-blur-sm px-5 py-2.5 text-xs font-syne tracking-caps font-bold text-white keep-white hover:bg-[#D4AF37] hover:text-[#111111] transition-all group/btn rounded-full shadow-lg"
-              >
-                <span>EXPLORE RUNWAY</span>
-                <ArrowUpRight className="w-4 h-4 text-[#D4AF37] group-hover/btn:text-[#111111] group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5 transition-transform" />
-              </Link>
-            </div>
-          </motion.div>
+            <span>EXPLORE ALL EVENTS</span>
+            <ArrowUpRight className="w-5 h-5 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
+          </Link>
         </div>
       </div>
     </section>

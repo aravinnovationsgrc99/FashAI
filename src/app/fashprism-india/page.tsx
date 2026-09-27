@@ -3,9 +3,12 @@ import FashPrismIndiaSection from "@/components/sections/FashPrismIndiaSection";
 import InstagramSection from "@/components/sections/InstagramSection";
 
 export const metadata: Metadata = {
-  title: "FashPrism India — FashAI Universal",
+  title: "FashPrism India Showcase — FashAI Universal",
   description:
-    "Explore the FashPrism India visual archive, featuring couture garment art, runway highlights, and luxury fashion identities.",
+    "Explore the FashPrism India visual archive featuring haute couture textile draping, Miss India pageant presentation chapters, and creative talent showcases.",
+  alternates: {
+    canonical: "https://fashai-beryl.vercel.app/fashprism-india",
+  },
 };
 
 export default function FashPrismIndiaPage() {

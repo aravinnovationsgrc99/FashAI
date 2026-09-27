@@ -7,6 +7,9 @@ export const metadata: Metadata = {
   title: "FashAI Universal — International Luxury Fashion & Events Platform",
   description:
     "FashAI Universal is an international fashion, lifestyle, and events platform connecting global designers, models, creative talent, and brand experiences across Dubai, UAE & India.",
+  alternates: {
+    canonical: "https://fashai-beryl.vercel.app",
+  },
   keywords: [
     "FashAI Universal",
     "Fashion AI",

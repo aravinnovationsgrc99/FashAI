@@ -5,7 +5,16 @@ import { ArrowLeft, FileText } from "lucide-react";
 export const metadata: Metadata = {
   title: "Terms & Conditions — FashAI Universal",
   description:
-    "Official Terms & Conditions of FashAI Universal.",
+    "Official Terms & Conditions of FashAI Universal outlining platform usage, event participation, and service terms.",
+  alternates: {
+    canonical: "https://fashai-beryl.vercel.app/terms",
+  },
+  openGraph: {
+    title: "Terms & Conditions — FashAI Universal",
+    description:
+      "Official Terms & Conditions of FashAI Universal outlining platform usage, event participation, and service terms.",
+    url: "https://fashai-beryl.vercel.app/terms",
+  },
 };
 
 export default function TermsPage() {

@@ -118,10 +118,10 @@ export default function Hero() {
             style={{ willChange: "transform, opacity" }}
             className="font-serif-display leading-[0.85] tracking-tight select-none flex flex-col items-center justify-center w-full my-1"
           >
-            <span className="block text-7xl sm:text-9xl md:text-[10rem] xl:text-[12rem] font-serif font-light text-brand-white keep-white uppercase tracking-tight drop-shadow-[0_12px_35px_rgba(0,0,0,0.95)]">
+            <span className="block text-5xl xs:text-7xl sm:text-9xl md:text-[10rem] xl:text-[12rem] font-serif font-light text-brand-white keep-white uppercase tracking-tight drop-shadow-[0_12px_35px_rgba(0,0,0,0.95)]">
               FASHAI
             </span>
-            <span className="block text-6xl sm:text-8xl md:text-[8.5rem] xl:text-[10rem] font-serif italic font-normal text-brand-yellow-golden -mt-3 sm:-mt-6 md:-mt-9 tracking-normal drop-shadow-[0_0_25px_rgba(250,182,10,0.5)]">
+            <span className="block text-4xl xs:text-6xl sm:text-8xl md:text-[8.5rem] xl:text-[10rem] font-serif italic font-normal text-brand-yellow-golden -mt-2 sm:-mt-6 md:-mt-9 tracking-normal drop-shadow-[0_0_25px_rgba(250,182,10,0.5)]">
               Universal
             </span>
           </motion.h1>

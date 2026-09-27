@@ -2,9 +2,18 @@ import { Metadata } from "next";
 import ApplicationSelectionPage from "@/components/sections/ApplicationSelectionPage";
 
 export const metadata: Metadata = {
-  title: "OPEN NOMINATIONS & APPLICATIONS | FashAI Universal Talent Network",
+  title: "Open Nominations & Applications — FashAI Universal Talent Network",
   description:
-    "Official application interface for Model, Designer, Makeup Artist, Fashion Stylist, Choreographer, Influencer, Celebrity, CSTP, and Fashion Commentary opportunities.",
+    "Official application interface for Model, Designer, Makeup Artist, Fashion Stylist, Choreographer, Influencer, CSTP, and Fashion Commentary opportunities.",
+  alternates: {
+    canonical: "https://fashai-beryl.vercel.app/apply",
+  },
+  openGraph: {
+    title: "Open Nominations & Applications — FashAI Universal Talent Network",
+    description:
+      "Official application interface for Model, Designer, Makeup Artist, Fashion Stylist, Choreographer, Influencer, CSTP, and Fashion Commentary opportunities.",
+    url: "https://fashai-beryl.vercel.app/apply",
+  },
 };
 
 export default function ApplyIndexPage() {

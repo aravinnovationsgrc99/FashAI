@@ -3,9 +3,12 @@ import FashionCommunitySection from "@/components/sections/FashionCommunitySecti
 import OpenNominationsSection from "@/components/sections/OpenNominationsSection";
 
 export const metadata: Metadata = {
-  title: "Talent Community & Network — FashAI Universal",
+  title: "Global Talent Network & Fashion Community — FashAI Universal",
   description:
-    "Join the international creative network connecting Designers, Models, Makeup Artists, Stylists, Choreographers, and Influencers.",
+    "Discover FashAI Universal's international creative network connecting Fashion Designers, Models, Makeup Artists, Stylists, Choreographers, Content Creators, and Public Figures.",
+  alternates: {
+    canonical: "https://fashai-beryl.vercel.app/community",
+  },
 };
 
 export default function CommunityPage() {

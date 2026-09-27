@@ -120,8 +120,9 @@ export default function Footer() {
                   { label: "Home", href: "/" },
                   { label: "Upcoming", href: "/upcoming" },
                   { label: "Services", href: "/services" },
-                  { label: "Gallery", href: "/gallery" },
-                  { label: "Contact", href: "/contact" },
+                  { label: "Events", href: "/events" },
+                  { label: "Projects", href: "/projects" },
+                  { label: "Blog", href: "/fashion-magazine" },
                 ].map((link, idx) => (
                   <li key={idx}>
                     <Link
@@ -152,11 +153,8 @@ export default function Footer() {
               </h4>
               <ul className="space-y-2.5 sm:space-y-3 pt-1.5">
                 {[
-                  { label: "Designer", href: "/apply/designer" },
-                  { label: "Model", href: "/apply/model" },
-                  { label: "Makeup Artist", href: "/apply/makeup-artist" },
-                  { label: "Fashion Stylist", href: "/apply/fashion-stylist" },
-                  { label: "Open Nominations", href: "/apply" },
+                  { label: "Opportunities", href: "/apply" },
+                  { label: "Contact Us", href: "/contact" },
                 ].map((link, idx) => (
                   <li key={idx}>
                     <Link

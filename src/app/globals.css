@@ -785,6 +785,61 @@ html.light .admin-shell .text-\[\#2E936F\] {
   border-radius: 9999px !important;
 }
 
+/* ==================================================== */
+/* GLOBAL EDITORIAL TYPESETTING & TEXT ALIGNMENT STANDARDS */
+/* ==================================================== */
+
+/* Multi-line prose justification and typesetting standards */
+.text-justified,
+p.editorial-prose,
+.prose-editorial p,
+.prose-justified {
+  text-align: justify !important;
+  text-justify: inter-word !important;
+  hyphens: auto !important;
+  -webkit-hyphens: auto !important;
+  word-break: break-word !important;
+}
+
+/* Natural Text Flow & Line Height Rhythm */
+.prose-editorial {
+  max-width: 65ch;
+  line-height: 1.68;
+}
+
+/* Prevent unwanted justification on headings, CTAs, buttons, tags, badges, and labels */
+h1, h2, h3, h4, h5, h6,
+button,
+a,
+label,
+input,
+select,
+textarea,
+.font-serif-display,
+.btn,
+.badge,
+.tag,
+.no-justify {
+  hyphens: none !important;
+  -webkit-hyphens: none !important;
+}
+
+/* List Formatting Standards: Wrapped text aligns with text, not bullet */
+ul.editorial-list,
+ol.editorial-list {
+  padding-left: 1.25rem;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+ul.editorial-list li,
+ol.editorial-list li {
+  text-align: left;
+  line-height: 1.65;
+  margin-bottom: 0.4rem;
+}
+
+
 
 
 

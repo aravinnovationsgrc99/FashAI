@@ -3,9 +3,12 @@ import FashionMagazineSection from "@/components/sections/FashionMagazineSection
 import InstagramSection from "@/components/sections/InstagramSection";
 
 export const metadata: Metadata = {
-  title: "Fashion Magazine — FashAI Universal",
+  title: "Fashion Magazine & Editorial Archive — FashAI Universal",
   description:
-    "Official editorial fashion publication, runway insights, couture coverage, and talent spotlights by FashAI Universal.",
+    "Official editorial fashion publication featuring catwalk dynamics, atelier perspectives, backstage beauty direction, and visual retrospectives across the FashAI Universal ecosystem.",
+  alternates: {
+    canonical: "https://fashai-beryl.vercel.app/fashion-magazine",
+  },
 };
 
 export default function FashionMagazinePage() {
