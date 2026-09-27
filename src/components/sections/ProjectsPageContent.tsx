@@ -20,18 +20,18 @@ export default function ProjectsPageContent() {
         {/* Page Header */}
         <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-14">
           <div className="flex items-center justify-center gap-3 mb-3">
-            <span className="h-[1px] w-12 bg-gradient-to-r from-transparent to-[#F15E1C] dark:to-[#D4AF37]" />
-            <span className="text-xs sm:text-sm font-syne tracking-[0.25em] text-[#F15E1C] dark:text-[#D4AF37] font-bold uppercase">
+            <span className="h-[1px] w-12 bg-gradient-to-r from-transparent to-[#D4AF37]" />
+            <span className="text-xs sm:text-sm font-syne tracking-[0.25em] text-[#D4AF37] font-bold uppercase">
               FASHAI DELIVERED PORTFOLIO
             </span>
-            <span className="h-[1px] w-12 bg-gradient-to-l from-transparent to-[#F15E1C] dark:to-[#D4AF37]" />
+            <span className="h-[1px] w-12 bg-gradient-to-l from-transparent to-[#D4AF37]" />
           </div>
 
           <h1 className="font-serif-display text-4xl sm:text-6xl lg:text-7xl font-light text-[#111111] dark:text-white uppercase leading-tight">
-            OUR <span className="font-serif italic text-[#F15E1C] dark:text-[#D4AF37]">PROJECTS</span>
+            OUR <span className="font-serif italic text-[#D4AF37]">PROJECTS</span>
           </h1>
 
-          <p className="font-sans text-base sm:text-lg md:text-xl text-[#555555] dark:text-brand-platinum/85 font-light mt-4 leading-relaxed">
+          <p className="font-sans text-base sm:text-lg md:text-xl text-gray-700 dark:text-brand-platinum/85 font-light mt-4 leading-relaxed">
             Delivered fashion showcases, FashPrism editions, VIP guest salons, choreography direction, and video editing production.
           </p>
 
@@ -41,7 +41,7 @@ export default function ProjectsPageContent() {
               href={FACEBOOK_PROJECT_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-5 py-2 rounded-full font-syne text-xs font-bold uppercase tracking-wider transition-all shadow-md"
+              className="inline-flex items-center gap-2 bg-[#D4AF37] hover:bg-[#b89528] text-black px-5 py-2 rounded-full font-syne text-xs font-bold uppercase tracking-wider transition-all shadow-md"
             >
               <ExternalLink className="w-3.5 h-3.5" />
               <span>PROJECT FACEBOOK PAGE</span>
@@ -50,14 +50,14 @@ export default function ProjectsPageContent() {
               href={INSTAGRAM_FASHPRISM_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 bg-gradient-to-r from-purple-600 to-pink-600 text-white px-5 py-2 rounded-full font-syne text-xs font-bold uppercase tracking-wider hover:opacity-90 transition-all shadow-md"
+              className="inline-flex items-center gap-2 bg-[#D4AF37] hover:bg-[#b89528] text-black px-5 py-2 rounded-full font-syne text-xs font-bold uppercase tracking-wider transition-all shadow-md"
             >
               <Instagram className="w-3.5 h-3.5" />
               <span>FASHPRISM INSTAGRAM</span>
             </a>
           </div>
 
-          <div className="w-20 h-[2px] bg-[#F15E1C] dark:bg-[#D4AF37] mx-auto mt-6" />
+          <div className="w-20 h-[2px] bg-[#D4AF37] mx-auto mt-6" />
         </div>
 
         {/* Filter Navigation Tabs */}
@@ -75,8 +75,8 @@ export default function ProjectsPageContent() {
               onClick={() => setActiveTab(tab.id as any)}
               className={`px-4 sm:px-5 py-2 sm:py-2.5 rounded-full text-xs sm:text-sm font-syne font-bold uppercase tracking-wider transition-all duration-300 ${
                 activeTab === tab.id
-                  ? "bg-[#F15E1C] dark:bg-[#D4AF37] text-white dark:text-black shadow-md scale-[1.02]"
-                  : "bg-black/5 dark:bg-white/5 text-[#333333] dark:text-white/80 border border-black/10 dark:border-white/10 hover:border-[#F15E1C] dark:hover:border-[#D4AF37]"
+                  ? "bg-[#D4AF37] text-black shadow-md scale-[1.02]"
+                  : "bg-black/5 dark:bg-white/5 text-[#333333] dark:text-white/80 border border-black/10 dark:border-white/10 hover:border-[#D4AF37]"
               }`}
             >
               {tab.label}
@@ -89,7 +89,7 @@ export default function ProjectsPageContent() {
           <div className="mb-14 sm:mb-20 space-y-8 border-b border-black/10 dark:border-white/10 pb-12">
             <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 border-b border-black/10 dark:border-white/10 pb-4">
               <div>
-                <span className="text-xs font-syne font-bold tracking-widest text-[#F15E1C] dark:text-[#D4AF37] uppercase block mb-1">
+                <span className="text-xs font-syne font-bold tracking-widest text-[#D4AF37] uppercase block mb-1">
                   PROJECT EDITION 01
                 </span>
                 <h2 className="font-serif-display text-3xl sm:text-5xl font-light uppercase">
@@ -101,18 +101,18 @@ export default function ProjectsPageContent() {
                   href={INSTAGRAM_FASHPRISM_URL}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1.5 bg-black/5 dark:bg-white/10 border border-black/10 dark:border-white/20 px-4 py-2 text-xs font-syne font-bold uppercase rounded-full hover:border-[#F15E1C] dark:hover:border-[#D4AF37] transition-colors"
+                  className="inline-flex items-center gap-1.5 bg-black/5 dark:bg-white/10 border border-black/10 dark:border-white/20 px-4 py-2 text-xs font-syne font-bold uppercase rounded-full hover:border-[#D4AF37] transition-colors text-gray-900 dark:text-white"
                 >
-                  <Instagram className="w-3.5 h-3.5 text-pink-500" />
+                  <Instagram className="w-3.5 h-3.5 text-[#D4AF37]" />
                   <span>INSTAGRAM</span>
                 </a>
                 <a
                   href={FACEBOOK_PROJECT_URL}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1.5 bg-black/5 dark:bg-white/10 border border-black/10 dark:border-white/20 px-4 py-2 text-xs font-syne font-bold uppercase rounded-full hover:border-[#F15E1C] dark:hover:border-[#D4AF37] transition-colors"
+                  className="inline-flex items-center gap-1.5 bg-black/5 dark:bg-white/10 border border-black/10 dark:border-white/20 px-4 py-2 text-xs font-syne font-bold uppercase rounded-full hover:border-[#D4AF37] transition-colors text-gray-900 dark:text-white"
                 >
-                  <ExternalLink className="w-3.5 h-3.5 text-blue-500" />
+                  <ExternalLink className="w-3.5 h-3.5 text-[#D4AF37]" />
                   <span>VIEW SOCIAL</span>
                 </a>
               </div>
@@ -121,10 +121,10 @@ export default function ProjectsPageContent() {
             {/* FashPrism India Delivery Overview */}
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center bg-[#FAF8F5] dark:bg-[#080706] p-6 sm:p-8 rounded-2xl border border-black/10 dark:border-white/10">
               <div className="lg:col-span-7 space-y-4">
-                <h3 className="font-serif-display text-2xl sm:text-3xl font-light uppercase text-[#F15E1C] dark:text-[#D4AF37]">
+                <h3 className="font-serif-display text-2xl sm:text-3xl font-light uppercase text-[#D4AF37]">
                   WHAT FASHAI CREATED &amp; DELIVERED
                 </h3>
-                <p className="font-sans text-base sm:text-lg text-[#444444] dark:text-brand-platinum/90 leading-relaxed font-light">
+                <p className="font-sans text-base sm:text-lg text-gray-900 dark:text-brand-platinum/90 leading-relaxed font-normal">
                   For FashPrism India and the Miss India presentation chapter, FashAI Universal designed and executed full-scale runway catwalk choreography, haute couture textile draping, backstage artistry, and photographic visual archive production.
                 </p>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
@@ -135,19 +135,19 @@ export default function ProjectsPageContent() {
                     "Backstage Styling & High-Definition Media Archive",
                   ].map((feat, i) => (
                     <div key={i} className="flex items-center gap-2 text-xs sm:text-sm font-syne font-bold uppercase text-[#333333] dark:text-white/90">
-                      <span className="w-2 h-2 rounded-full bg-[#F15E1C] dark:bg-[#D4AF37]" />
+                      <span className="w-2 h-2 rounded-full bg-[#D4AF37]" />
                       <span>{feat}</span>
                     </div>
                   ))}
                 </div>
               </div>
 
-              <div className="lg:col-span-5 relative aspect-[4/3] rounded-xl overflow-hidden border border-black/10 dark:border-white/15 bg-black">
+              <div className="lg:col-span-5 relative aspect-[4/3] rounded-xl overflow-hidden border border-black/10 dark:border-white/15 bg-black p-2 flex items-center justify-center">
                 <Image
                   src="/assets/final/WhatsApp Image 2026-09-18 at 15.03.32.jpeg"
                   alt="FashPrism India Feature"
                   fill
-                  className="object-cover object-top"
+                  className="object-contain object-center"
                 />
               </div>
             </div>
@@ -160,22 +160,22 @@ export default function ProjectsPageContent() {
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
                 {FASHPRISM_INDIA_DATA.slice(0, 4).map((item) => (
                   <div key={item.id} className="group bg-[#FAF8F5] dark:bg-[#0A0908] border border-black/10 dark:border-white/10 rounded-xl overflow-hidden p-4 space-y-3">
-                    <div className="relative aspect-[4/3] w-full rounded-lg overflow-hidden bg-black">
+                    <div className="relative aspect-[4/3] w-full rounded-lg overflow-hidden bg-black p-1 flex items-center justify-center">
                       <Image
                         src={item.src}
                         alt={item.alt}
                         fill
-                        className="object-cover object-top group-hover:scale-105 transition-transform duration-500"
+                        className="object-contain object-center group-hover:scale-105 transition-transform duration-500"
                       />
                     </div>
                     <div>
-                      <span className="text-[10px] font-syne font-bold uppercase text-[#F15E1C] dark:text-[#D4AF37] block">
+                      <span className="text-[10px] font-syne font-bold uppercase text-[#D4AF37] block">
                         {item.tag}
                       </span>
                       <h5 className="font-serif-display text-lg font-light uppercase text-[#111111] dark:text-white">
                         {item.title}
                       </h5>
-                      <p className="font-sans text-xs text-[#555555] dark:text-brand-platinum/80 line-clamp-2">
+                      <p className="font-sans text-xs text-gray-800 dark:text-brand-platinum/80 line-clamp-2">
                         {item.caption}
                       </p>
                     </div>
@@ -191,7 +191,7 @@ export default function ProjectsPageContent() {
           <div className="mb-14 sm:mb-20 space-y-8 border-b border-black/10 dark:border-white/10 pb-12">
             <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 border-b border-black/10 dark:border-white/10 pb-4">
               <div>
-                <span className="text-xs font-syne font-bold tracking-widest text-[#F15E1C] dark:text-[#D4AF37] uppercase block mb-1">
+                <span className="text-xs font-syne font-bold tracking-widest text-[#D4AF37] uppercase block mb-1">
                   PROJECT EDITION 02
                 </span>
                 <h2 className="font-serif-display text-3xl sm:text-5xl font-light uppercase">
@@ -203,18 +203,18 @@ export default function ProjectsPageContent() {
                   href={INSTAGRAM_FASHPRISM_URL}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1.5 bg-black/5 dark:bg-white/10 border border-black/10 dark:border-white/20 px-4 py-2 text-xs font-syne font-bold uppercase rounded-full hover:border-[#F15E1C] dark:hover:border-[#D4AF37] transition-colors"
+                  className="inline-flex items-center gap-1.5 bg-black/5 dark:bg-white/10 border border-black/10 dark:border-white/20 px-4 py-2 text-xs font-syne font-bold uppercase rounded-full hover:border-[#D4AF37] transition-colors text-gray-900 dark:text-white"
                 >
-                  <Instagram className="w-3.5 h-3.5 text-pink-500" />
+                  <Instagram className="w-3.5 h-3.5 text-[#D4AF37]" />
                   <span>INSTAGRAM</span>
                 </a>
                 <a
                   href={FACEBOOK_PROJECT_URL}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1.5 bg-black/5 dark:bg-white/10 border border-black/10 dark:border-white/20 px-4 py-2 text-xs font-syne font-bold uppercase rounded-full hover:border-[#F15E1C] dark:hover:border-[#D4AF37] transition-colors"
+                  className="inline-flex items-center gap-1.5 bg-black/5 dark:bg-white/10 border border-black/10 dark:border-white/20 px-4 py-2 text-xs font-syne font-bold uppercase rounded-full hover:border-[#D4AF37] transition-colors text-gray-900 dark:text-white"
                 >
-                  <ExternalLink className="w-3.5 h-3.5 text-blue-500" />
+                  <ExternalLink className="w-3.5 h-3.5 text-[#D4AF37]" />
                   <span>VIEW SOCIAL</span>
                 </a>
               </div>
@@ -223,10 +223,10 @@ export default function ProjectsPageContent() {
             {/* Delivery Overview */}
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center bg-[#FAF8F5] dark:bg-[#080706] p-6 sm:p-8 rounded-2xl border border-black/10 dark:border-white/10">
               <div className="lg:col-span-7 space-y-4">
-                <h3 className="font-serif-display text-2xl sm:text-3xl font-light uppercase text-[#F15E1C] dark:text-[#D4AF37]">
+                <h3 className="font-serif-display text-2xl sm:text-3xl font-light uppercase text-[#D4AF37]">
                   WHAT FASHAI CREATED &amp; DELIVERED
                 </h3>
-                <p className="font-sans text-base sm:text-lg text-[#444444] dark:text-brand-platinum/90 leading-relaxed font-light">
+                <p className="font-sans text-base sm:text-lg text-gray-900 dark:text-brand-platinum/90 leading-relaxed font-normal">
                   For FashPrism International and the Miss International showcase series, FashAI Universal delivered architectural lighting design, global catwalk staging, multi-angle broadcast video, and international delegate hospitality.
                 </p>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
@@ -237,19 +237,19 @@ export default function ProjectsPageContent() {
                     "Cross-Border Delegate Networking Salons",
                   ].map((feat, i) => (
                     <div key={i} className="flex items-center gap-2 text-xs sm:text-sm font-syne font-bold uppercase text-[#333333] dark:text-white/90">
-                      <span className="w-2 h-2 rounded-full bg-[#F15E1C] dark:bg-[#D4AF37]" />
+                      <span className="w-2 h-2 rounded-full bg-[#D4AF37]" />
                       <span>{feat}</span>
                     </div>
                   ))}
                 </div>
               </div>
 
-              <div className="lg:col-span-5 relative aspect-[4/3] rounded-xl overflow-hidden border border-black/10 dark:border-white/15 bg-black">
+              <div className="lg:col-span-5 relative aspect-[4/3] rounded-xl overflow-hidden border border-black/10 dark:border-white/15 bg-black p-2 flex items-center justify-center">
                 <Image
                   src="/assets/final/WhatsApp Image 2026-09-18 at 15.02.37.jpeg"
                   alt="FashPrism International Feature"
                   fill
-                  className="object-cover object-top"
+                  className="object-contain object-center"
                 />
               </div>
             </div>
@@ -262,22 +262,22 @@ export default function ProjectsPageContent() {
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
                 {FASHPRISM_INTERNATIONAL_DATA.map((item) => (
                   <div key={item.id} className="group bg-[#FAF8F5] dark:bg-[#0A0908] border border-black/10 dark:border-white/10 rounded-xl overflow-hidden p-4 space-y-3">
-                    <div className="relative aspect-[4/3] w-full rounded-lg overflow-hidden bg-black">
+                    <div className="relative aspect-[4/3] w-full rounded-lg overflow-hidden bg-black p-1 flex items-center justify-center">
                       <Image
                         src={item.src}
                         alt={item.alt}
                         fill
-                        className="object-cover object-top group-hover:scale-105 transition-transform duration-500"
+                        className="object-contain object-center group-hover:scale-105 transition-transform duration-500"
                       />
                     </div>
                     <div>
-                      <span className="text-[10px] font-syne font-bold uppercase text-[#F15E1C] dark:text-[#D4AF37] block">
+                      <span className="text-[10px] font-syne font-bold uppercase text-[#D4AF37] block">
                         {item.tag}
                       </span>
                       <h5 className="font-serif-display text-lg font-light uppercase text-[#111111] dark:text-white">
                         {item.title}
                       </h5>
-                      <p className="font-sans text-xs text-[#555555] dark:text-brand-platinum/80 line-clamp-2">
+                      <p className="font-sans text-xs text-gray-800 dark:text-brand-platinum/80 line-clamp-2">
                         {item.caption}
                       </p>
                     </div>
@@ -293,7 +293,7 @@ export default function ProjectsPageContent() {
           <div className="mb-14 sm:mb-20 space-y-8 border-b border-black/10 dark:border-white/10 pb-12">
             <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 border-b border-black/10 dark:border-white/10 pb-4">
               <div>
-                <span className="text-xs font-syne font-bold tracking-widest text-[#F15E1C] dark:text-[#D4AF37] uppercase block mb-1">
+                <span className="text-xs font-syne font-bold tracking-widest text-[#D4AF37] uppercase block mb-1">
                   PROJECT EDITION 03
                 </span>
                 <h2 className="font-serif-display text-3xl sm:text-5xl font-light uppercase">
@@ -304,9 +304,9 @@ export default function ProjectsPageContent() {
                 href={FACEBOOK_PROJECT_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-1.5 bg-black/5 dark:bg-white/10 border border-black/10 dark:border-white/20 px-4 py-2 text-xs font-syne font-bold uppercase rounded-full hover:border-[#F15E1C] dark:hover:border-[#D4AF37] transition-colors"
+                className="inline-flex items-center gap-1.5 bg-black/5 dark:bg-white/10 border border-black/10 dark:border-white/20 px-4 py-2 text-xs font-syne font-bold uppercase rounded-full hover:border-[#D4AF37] transition-colors text-gray-900 dark:text-white"
               >
-                <ExternalLink className="w-3.5 h-3.5 text-blue-500" />
+                <ExternalLink className="w-3.5 h-3.5 text-[#D4AF37]" />
                 <span>VIEW SOCIAL</span>
               </a>
             </div>
@@ -314,22 +314,22 @@ export default function ProjectsPageContent() {
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
               {FASHPRISM_VIP_DATA.map((item) => (
                 <div key={item.id} className="group bg-[#FAF8F5] dark:bg-[#0A0908] border border-black/10 dark:border-white/10 rounded-xl overflow-hidden p-4 space-y-3">
-                  <div className="relative aspect-[4/3] w-full rounded-lg overflow-hidden bg-black">
+                  <div className="relative aspect-[4/3] w-full rounded-lg overflow-hidden bg-black p-1 flex items-center justify-center">
                     <Image
                       src={item.src}
                       alt={item.alt}
                       fill
-                      className="object-cover object-top group-hover:scale-105 transition-transform duration-500"
+                      className="object-contain object-center group-hover:scale-105 transition-transform duration-500"
                     />
                   </div>
                   <div>
-                    <span className="text-[10px] font-syne font-bold uppercase text-[#F15E1C] dark:text-[#D4AF37] block">
+                    <span className="text-[10px] font-syne font-bold uppercase text-[#D4AF37] block">
                       {item.tag}
                     </span>
                     <h5 className="font-serif-display text-lg font-light uppercase text-[#111111] dark:text-white">
                       {item.title}
                     </h5>
-                    <p className="font-sans text-xs text-[#555555] dark:text-brand-platinum/80 line-clamp-2">
+                    <p className="font-sans text-xs text-gray-800 dark:text-brand-platinum/80 line-clamp-2">
                       {item.caption}
                     </p>
                   </div>
@@ -344,7 +344,7 @@ export default function ProjectsPageContent() {
           <div className="mb-14 sm:mb-20 space-y-8 border-b border-black/10 dark:border-white/10 pb-12">
             <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 border-b border-black/10 dark:border-white/10 pb-4">
               <div>
-                <span className="text-xs font-syne font-bold tracking-widest text-[#F15E1C] dark:text-[#D4AF37] uppercase block mb-1">
+                <span className="text-xs font-syne font-bold tracking-widest text-[#D4AF37] uppercase block mb-1">
                   PROJECT SPECIALIZATION 04
                 </span>
                 <h2 className="font-serif-display text-3xl sm:text-5xl font-light uppercase">
@@ -353,7 +353,7 @@ export default function ProjectsPageContent() {
               </div>
               <Link
                 href="/contact?type=Choreography"
-                className="inline-flex items-center gap-1.5 bg-[#F15E1C] dark:bg-[#D4AF37] text-white dark:text-black px-5 py-2 text-xs font-syne font-bold uppercase rounded-full hover:bg-[#e04f10] dark:hover:bg-[#FFEC69] transition-all shadow-md"
+                className="inline-flex items-center gap-1.5 bg-[#D4AF37] hover:bg-[#b89528] text-black px-5 py-2 text-xs font-syne font-bold uppercase rounded-full transition-all shadow-md"
               >
                 <span>ENQUIRE CHOREOGRAPHY</span>
                 <ArrowUpRight className="w-3.5 h-3.5" />
@@ -362,7 +362,7 @@ export default function ProjectsPageContent() {
 
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center bg-[#FAF8F5] dark:bg-[#080706] p-6 sm:p-8 rounded-2xl border border-black/10 dark:border-white/10">
               <div className="lg:col-span-7 space-y-4">
-                <p className="font-sans text-base sm:text-lg text-[#444444] dark:text-brand-platinum/90 leading-relaxed font-light">
+                <p className="font-sans text-base sm:text-lg text-gray-900 dark:text-brand-platinum/90 leading-relaxed font-normal">
                   Choreography transforms a runway into a live performance art piece. FashAI Universal provides runway movement direction, model cadence synchronization, stage entry choreography, and catwalk pace optimization for couture shows.
                 </p>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
@@ -373,19 +373,19 @@ export default function ProjectsPageContent() {
                     "High-Fashion Performance Movement",
                   ].map((c, i) => (
                     <div key={i} className="flex items-center gap-2 text-xs sm:text-sm font-syne font-bold uppercase text-[#333333] dark:text-white/90">
-                      <span className="w-2 h-2 rounded-full bg-[#F15E1C] dark:bg-[#D4AF37]" />
+                      <span className="w-2 h-2 rounded-full bg-[#D4AF37]" />
                       <span>{c}</span>
                     </div>
                   ))}
                 </div>
               </div>
 
-              <div className="lg:col-span-5 relative aspect-[16/10] rounded-xl overflow-hidden border border-black/10 dark:border-white/15 bg-black">
+              <div className="lg:col-span-5 relative aspect-[16/10] rounded-xl overflow-hidden border border-black/10 dark:border-white/15 bg-black p-2 flex items-center justify-center">
                 <Image
                   src="/assets/homepage/Moments.png"
                   alt="Catwalk Choreography Direction"
                   fill
-                  className="object-cover object-top"
+                  className="object-contain object-center"
                 />
               </div>
             </div>
@@ -397,7 +397,7 @@ export default function ProjectsPageContent() {
           <div className="mb-14 sm:mb-20 space-y-8">
             <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 border-b border-black/10 dark:border-white/10 pb-4">
               <div>
-                <span className="text-xs font-syne font-bold tracking-widest text-[#F15E1C] dark:text-[#D4AF37] uppercase block mb-1">
+                <span className="text-xs font-syne font-bold tracking-widest text-[#D4AF37] uppercase block mb-1">
                   PROJECT SPECIALIZATION 05
                 </span>
                 <h2 className="font-serif-display text-3xl sm:text-5xl font-light uppercase">
@@ -406,7 +406,7 @@ export default function ProjectsPageContent() {
               </div>
               <Link
                 href="/contact?type=VideoProduction"
-                className="inline-flex items-center gap-1.5 bg-[#F15E1C] dark:bg-[#D4AF37] text-white dark:text-black px-5 py-2 text-xs font-syne font-bold uppercase rounded-full hover:bg-[#e04f10] dark:hover:bg-[#FFEC69] transition-all shadow-md"
+                className="inline-flex items-center gap-1.5 bg-[#D4AF37] hover:bg-[#b89528] text-black px-5 py-2 text-xs font-syne font-bold uppercase rounded-full transition-all shadow-md"
               >
                 <span>ENQUIRE VIDEO PRODUCTION</span>
                 <ArrowUpRight className="w-3.5 h-3.5" />
@@ -415,7 +415,7 @@ export default function ProjectsPageContent() {
 
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center bg-[#FAF8F5] dark:bg-[#080706] p-6 sm:p-8 rounded-2xl border border-black/10 dark:border-white/10">
               <div className="lg:col-span-7 space-y-4">
-                <p className="font-sans text-base sm:text-lg text-[#444444] dark:text-brand-platinum/90 leading-relaxed font-light">
+                <p className="font-sans text-base sm:text-lg text-gray-900 dark:text-brand-platinum/90 leading-relaxed font-normal">
                   High-definition video editing, highlight showreels, digital campaign clips, and broadcast media production. We edit multi-camera runway video, brand campaign reels, and social media shorts.
                 </p>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
@@ -426,19 +426,19 @@ export default function ProjectsPageContent() {
                     "Broadcast-Ready 4K Post-Production",
                   ].map((v, i) => (
                     <div key={i} className="flex items-center gap-2 text-xs sm:text-sm font-syne font-bold uppercase text-[#333333] dark:text-white/90">
-                      <span className="w-2 h-2 rounded-full bg-[#F15E1C] dark:bg-[#D4AF37]" />
+                      <span className="w-2 h-2 rounded-full bg-[#D4AF37]" />
                       <span>{v}</span>
                     </div>
                   ))}
                 </div>
               </div>
 
-              <div className="lg:col-span-5 relative aspect-[16/10] rounded-xl overflow-hidden border border-black/10 dark:border-white/15 bg-black">
+              <div className="lg:col-span-5 relative aspect-[16/10] rounded-xl overflow-hidden border border-black/10 dark:border-white/15 bg-black p-2 flex items-center justify-center">
                 <Image
                   src="/assets/events/lifestyle_banner.png"
                   alt="Video Editing Showreel Frame"
                   fill
-                  className="object-cover object-top"
+                  className="object-contain object-center"
                 />
               </div>
             </div>
@@ -449,3 +449,4 @@ export default function ProjectsPageContent() {
     </section>
   );
 }
+

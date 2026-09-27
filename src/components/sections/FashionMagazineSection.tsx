@@ -9,6 +9,70 @@ import MagazineArticleModal, { MagazineArticle } from "@/components/magazine/Mag
 
 const ARTICLES_DATA: MagazineArticle[] = [
   {
+    id: "beauty-artistry",
+    category: "FASHION",
+    title: "BACKSTAGE BEAUTY & EDITORIAL ARTISTRY",
+    subtitle: "Precision beauty direction and makeup artistry crafted for high-definition catwalk and camera lighting.",
+    readTime: "3 MIN READ",
+    primaryImage: "/assets/homepage/Fashion.png",
+    primaryImageAlt: "Fashion editorial presentation and runway direction",
+    imagePosition: "object-top",
+    introduction: "Backstage makeup artistry demands technical precision engineered to withstand intense stage lights, high-definition cameras, and fast-paced runway changes.",
+    experience: [
+      "Beauty directors collaborate closely with fashion designers to craft makeup looks that enhance collection themes. Glowing skin finishes, graphic eye accents, and tailored lip tones are sculpted to harmonize with collection color palettes.",
+      "Backstage beauty teams work under tight schedules, executing seamless transitions between designer collection reveals."
+    ],
+    visualHighlights: [
+      "Macro editorial photos highlight luminous skin textures, bold editorial eye artistry, and precise hair sculpting against backstage studio lighting."
+    ],
+    fashionCulture: [
+      "Beauty artistry is an integral extension of fashion presentation. By establishing elevated beauty standards, FashAI Universal productions deliver runway and editorial imagery worthy of global magazine covers."
+    ],
+    keyMoments: [
+      "Skin Preparation: Creating luminous, camera-ready base textures.",
+      "Theme Harmonization: Matching beauty accents to collection textiles.",
+      "Catwalk Final Touch: Quick backstage touch-ups seconds before stage entry."
+    ],
+    closing: "Backstage artistry elevates fashion presentations into complete, polished visual masterpieces.",
+    content: [
+      "Backstage makeup artistry requires high-precision application tailored to venue lighting and runway cameras. Beauty directors craft clean, glowing skin textures and graphic accents.",
+      "Harmonizing beauty direction with garment palettes ensures a cohesive aesthetic vision across the entire designer collection.",
+      "Our backstage beauty teams bring technical expertise to both live runway productions and editorial campaign shoots."
+    ]
+  },
+  {
+    id: "gala-appearances",
+    category: "EVENTS",
+    title: "VIP SALONS & GLOBAL PATRON ENGAGEMENT",
+    subtitle: "High-profile VIP gatherings, luxury galas, and celebrity appearances across our event formats.",
+    readTime: "4 MIN READ",
+    primaryImage: "/assets/homepage/Production.png",
+    primaryImageAlt: "Production and luxury event format showcase",
+    imagePosition: "object-top",
+    introduction: "Luxury event formats achieve true distinction through exclusive audience engagement and executive hospitality. FashAI Universal galas host industry leaders, public figures, and creative talent.",
+    experience: [
+      "Set in premiere venues across Dubai and international fashion capitals, our VIP galas blend haute couture presentations with red carpet reception and corporate networking.",
+      "Guests experience an atmosphere of sophisticated elegance, complete with curated dining, live entertainment, and exclusive sponsor activations."
+    ],
+    visualHighlights: [
+      "Red carpet photography captures high-fashion guest attire, celebrity arrivals, and candid moments inside executive lounge environments."
+    ],
+    fashionCulture: [
+      "Creating networking salons at the intersection of fashion, business, and technology fosters strategic partnerships across international markets."
+    ],
+    keyMoments: [
+      "Red Carpet Arrivals: Welcoming VIP guests, media press, and industry patrons.",
+      "Executive Salon Gatherings: High-level networking and brand collaboration.",
+      "Couture Gala Presentation: Evening showcase celebrating creative excellence."
+    ],
+    closing: "Our VIP event formats redefine corporate and lifestyle gatherings through luxury fashion orchestration.",
+    content: [
+      "Luxury event experiences thrive on exclusive audience engagement. FashAI Universal galas host celebrities, public figures, and industry leaders.",
+      "The intersection of fashion, enterprise, and lifestyle creates networking salons for collaboration and cultural exchange in Dubai and India.",
+      "Every event format is curated with executive hospitality, red carpet press opportunities, and spatial elegance."
+    ]
+  },
+  {
     id: "lifestyle-retrospective",
     category: "LIFESTYLE",
     title: "LIFESTYLE 2025: VISUAL RETROSPECTIVE",
@@ -146,70 +210,6 @@ const ARTICLES_DATA: MagazineArticle[] = [
       "In FashAI Universal productions, styling direction ensures that every outfit communicates a clear aesthetic narrative aligned with the event format.",
       "Collaborating with top-tier fashion stylists creates memorable editorial imagery for digital media, press features, and brand campaigns."
     ]
-  },
-  {
-    id: "beauty-artistry",
-    category: "FASHION",
-    title: "BACKSTAGE BEAUTY & EDITORIAL ARTISTRY",
-    subtitle: "Precision beauty direction and makeup artistry crafted for high-definition catwalk and camera lighting.",
-    readTime: "3 MIN READ",
-    primaryImage: "/assets/homepage/Fashion.png",
-    primaryImageAlt: "Fashion editorial presentation and runway direction",
-    imagePosition: "object-top",
-    introduction: "Backstage makeup artistry demands technical precision engineered to withstand intense stage lights, high-definition cameras, and fast-paced runway changes.",
-    experience: [
-      "Beauty directors collaborate closely with fashion designers to craft makeup looks that enhance collection themes. Glowing skin finishes, graphic eye accents, and tailored lip tones are sculpted to harmonize with collection color palettes.",
-      "Backstage beauty teams work under tight schedules, executing seamless transitions between designer collection reveals."
-    ],
-    visualHighlights: [
-      "Macro editorial photos highlight luminous skin textures, bold editorial eye artistry, and precise hair sculpting against backstage studio lighting."
-    ],
-    fashionCulture: [
-      "Beauty artistry is an integral extension of fashion presentation. By establishing elevated beauty standards, FashAI Universal productions deliver runway and editorial imagery worthy of global magazine covers."
-    ],
-    keyMoments: [
-      "Skin Preparation: Creating luminous, camera-ready base textures.",
-      "Theme Harmonization: Matching beauty accents to collection textiles.",
-      "Catwalk Final Touch: Quick backstage touch-ups seconds before stage entry."
-    ],
-    closing: "Backstage artistry elevates fashion presentations into complete, polished visual masterpieces.",
-    content: [
-      "Backstage makeup artistry requires high-precision application tailored to venue lighting and runway cameras. Beauty directors craft clean, glowing skin textures and graphic accents.",
-      "Harmonizing beauty direction with garment palettes ensures a cohesive aesthetic vision across the entire designer collection.",
-      "Our backstage beauty teams bring technical expertise to both live runway productions and editorial campaign shoots."
-    ]
-  },
-  {
-    id: "gala-appearances",
-    category: "EVENTS",
-    title: "VIP SALONS & GLOBAL PATRON ENGAGEMENT",
-    subtitle: "High-profile VIP gatherings, luxury galas, and celebrity appearances across our event formats.",
-    readTime: "4 MIN READ",
-    primaryImage: "/assets/homepage/Production.png",
-    primaryImageAlt: "Production and luxury event format showcase",
-    imagePosition: "object-top",
-    introduction: "Luxury event formats achieve true distinction through exclusive audience engagement and executive hospitality. FashAI Universal galas host industry leaders, public figures, and creative talent.",
-    experience: [
-      "Set in premiere venues across Dubai and international fashion capitals, our VIP galas blend haute couture presentations with red carpet reception and corporate networking.",
-      "Guests experience an atmosphere of sophisticated elegance, complete with curated dining, live entertainment, and exclusive sponsor activations."
-    ],
-    visualHighlights: [
-      "Red carpet photography captures high-fashion guest attire, celebrity arrivals, and candid moments inside executive lounge environments."
-    ],
-    fashionCulture: [
-      "Creating networking salons at the intersection of fashion, business, and technology fosters strategic partnerships across international markets."
-    ],
-    keyMoments: [
-      "Red Carpet Arrivals: Welcoming VIP guests, media press, and industry patrons.",
-      "Executive Salon Gatherings: High-level networking and brand collaboration.",
-      "Couture Gala Presentation: Evening showcase celebrating creative excellence."
-    ],
-    closing: "Our VIP event formats redefine corporate and lifestyle gatherings through luxury fashion orchestration.",
-    content: [
-      "Luxury event experiences thrive on exclusive audience engagement. FashAI Universal galas host celebrities, public figures, and industry leaders.",
-      "The intersection of fashion, enterprise, and lifestyle creates networking salons for collaboration and cultural exchange in Dubai and India.",
-      "Every event format is curated with executive hospitality, red carpet press opportunities, and spatial elegance."
-    ]
   }
 ];
 
@@ -223,20 +223,31 @@ const FILTER_CATEGORIES = [
   { id: "CREATIVE", label: "CREATIVE" },
 ];
 
-export default function FashionMagazineSection() {
+interface FashionMagazineSectionProps {
+  isFullPage?: boolean;
+}
+
+export default function FashionMagazineSection({ isFullPage = false }: FashionMagazineSectionProps) {
   const [activeFilter, setActiveFilter] = useState<string>("ALL");
   const [selectedArticle, setSelectedArticle] = useState<MagazineArticle | null>(null);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
+  // Featured Story for Homepage (1 BIG CARD)
+  const featuredStory = ARTICLES_DATA[0]; // BACKSTAGE BEAUTY & EDITORIAL ARTISTRY
+
+  // 3 Small Stories for Homepage
+  const smallStories = ARTICLES_DATA.slice(1, 4); // VIP SALONS, LIFESTYLE 2025, CATWALK DYNAMICS
+
+  // Full Page Archive Articles Filtering
   const filteredArticles = activeFilter === "ALL"
     ? ARTICLES_DATA
     : ARTICLES_DATA.filter((art) => art.category === activeFilter);
 
-  const featuredArticle = filteredArticles[0] || ARTICLES_DATA[0];
-  const gridArticles = filteredArticles.slice(1);
+  const archiveFeatured = filteredArticles[0] || ARTICLES_DATA[0];
+  const archiveGrid = filteredArticles.slice(1);
 
   return (
-    <section id="magazine" className="relative pt-2 sm:pt-3 pb-4 sm:pb-6 bg-white dark:bg-[#050505] text-[#111111] dark:text-white border-b border-black/10 dark:border-white/10 overflow-hidden">
+    <section id="magazine" className="relative pt-6 sm:pt-10 pb-10 sm:pb-16 bg-white dark:bg-[#050505] text-[#111111] dark:text-white border-b border-black/10 dark:border-white/10 overflow-hidden select-none">
       {/* Background Ambience & Editorial Watermark */}
       <div className="absolute inset-0 pointer-events-none select-none">
         <div className="editorial-watermark absolute top-6 right-4 text-[16vw] font-serif-display font-light uppercase text-black/[0.03] dark:text-white/[0.02] leading-none pointer-events-none">
@@ -244,9 +255,9 @@ export default function FashionMagazineSection() {
         </div>
       </div>
 
-      <div className="container-editorial relative z-10">
+      <div className="container-editorial relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Magazine Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-8 sm:mb-10 border-b border-black/10 dark:border-white/10 pb-6 sm:pb-8">
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-8 sm:mb-12 border-b border-black/10 dark:border-white/10 pb-6 sm:pb-8">
           <div>
             <div className="flex items-center gap-2 text-xs sm:text-sm font-syne tracking-micro text-[#F15E1C] dark:text-brand-yellow-golden font-bold uppercase mb-3">
               <span>FASHAI UNIVERSAL EDITORIAL</span>
@@ -256,215 +267,336 @@ export default function FashionMagazineSection() {
             </h2>
           </div>
           <div className="flex flex-col items-start md:items-end gap-3">
-            <p className="font-sans text-sm sm:text-base md:text-lg text-[#444444] dark:text-brand-platinum/90 max-w-md font-light leading-relaxed">
+            <p className="font-sans text-sm sm:text-base md:text-lg text-[#444444] dark:text-brand-platinum/90 max-w-md font-light leading-relaxed text-left md:text-right">
               Fashion stories, event moments, creative perspectives and visual highlights from the FashAI Universal ecosystem.
             </p>
-            <Link
-              href="/fashion-magazine"
-              className="inline-flex items-center gap-2 bg-[#F15E1C] dark:bg-[#D4AF37] text-white dark:text-black px-6 py-2.5 rounded-full font-syne text-xs sm:text-sm font-bold tracking-wider uppercase hover:bg-[#e04f10] dark:hover:bg-[#FFEC69] transition-all shadow-md group"
-            >
-              <span>EXPLORE MORE</span>
-              <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-            </Link>
+            {!isFullPage && (
+              <Link
+                href="/fashion-magazine"
+                className="inline-flex items-center gap-2 bg-[#F15E1C] dark:bg-[#D4AF37] text-white dark:text-black px-6 py-2.5 rounded-full font-syne text-xs sm:text-sm font-bold tracking-wider uppercase hover:bg-[#e04f10] dark:hover:bg-[#FFEC69] transition-all shadow-md group"
+              >
+                <span>EXPLORE MORE</span>
+                <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+              </Link>
+            )}
           </div>
         </div>
 
-        {/* Mobile-Only Dropdown Category Selector */}
-        <div className="sm:hidden mb-6 relative">
-          <button
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="w-full px-4 py-3 bg-[#FAF8F5] dark:bg-[#0A0A0A] border border-black/10 dark:border-white/15 rounded-xl flex items-center justify-between text-left shadow-sm"
-          >
-            <div>
-              <span className="text-[10px] font-syne uppercase text-[#F15E1C] dark:text-brand-yellow-golden tracking-wider block font-bold">
-                CATEGORY FILTER
-              </span>
-              <span className="font-syne text-sm sm:text-base font-bold text-[#111111] dark:text-white uppercase tracking-wider">
-                {FILTER_CATEGORIES.find((c) => c.id === activeFilter)?.label || "ALL"}
-              </span>
-            </div>
-            <ChevronDown
-              className={`w-5 h-5 text-black/60 dark:text-white/60 transition-transform duration-200 ${
-                isMobileMenuOpen ? "rotate-180" : ""
-              }`}
-            />
-          </button>
-
-          {isMobileMenuOpen && (
-            <div className="absolute top-full left-0 right-0 mt-1.5 bg-white dark:bg-[#0C0B0A] border border-black/10 dark:border-white/15 rounded-xl shadow-xl z-30 overflow-hidden py-1">
-              {FILTER_CATEGORIES.map((cat) => (
-                <button
-                  key={cat.id}
-                  onClick={() => {
-                    setActiveFilter(cat.id);
-                    setIsMobileMenuOpen(false);
-                  }}
-                  className={`w-full px-4 py-3 text-left flex items-center justify-between text-xs sm:text-sm font-syne uppercase tracking-wider transition-colors ${
-                    activeFilter === cat.id
-                      ? "bg-[#F15E1C]/10 dark:bg-brand-yellow-golden/10 text-[#F15E1C] dark:text-brand-yellow-golden font-bold"
-                      : "text-[#333333] dark:text-white/80 hover:text-[#F15E1C] dark:hover:text-brand-yellow-golden hover:bg-black/5 dark:hover:bg-white/5"
-                  }`}
-                >
-                  <span>{cat.label}</span>
-                  {activeFilter === cat.id && (
-                    <span className="w-1.5 h-1.5 rounded-full bg-[#F15E1C] dark:bg-brand-yellow-golden" />
-                  )}
-                </button>
-              ))}
-            </div>
-          )}
-        </div>
-
-        {/* Desktop-Only Category Navigation Bar */}
-        <div className="hidden sm:block mb-8 overflow-x-auto no-scrollbar pb-2">
-          <div className="flex items-center gap-2 sm:gap-3 min-w-max">
-            {FILTER_CATEGORIES.map((cat) => {
-              const isActive = activeFilter === cat.id;
-              return (
-                <button
-                  key={cat.id}
-                  onClick={() => setActiveFilter(cat.id)}
-                  className={`px-4 py-2 font-syne text-xs tracking-micro font-bold uppercase rounded-full transition-all duration-300 border ${
-                    isActive
-                      ? "bg-[#F15E1C] dark:bg-brand-yellow-golden text-white dark:text-black border-[#F15E1C] dark:border-brand-yellow-golden shadow-md"
-                      : "bg-[#FAF8F5] dark:bg-[#0A0A0A] text-[#111111] dark:text-white/80 border-black/10 dark:border-white/10 hover:border-[#F15E1C] dark:hover:border-brand-yellow-golden/40"
-                  }`}
-                >
-                  {cat.label}
-                </button>
-              );
-            })}
-          </div>
-        </div>
-
-        {/* Dominant Editorial Featured Story */}
-        {featuredArticle && (
-          <motion.div
-            layout
-            initial={{ opacity: 0, y: 24 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="mb-8 group relative bg-[#0A0908] border border-brand-yellow-golden/40 rounded-3xl overflow-hidden shadow-2xl transition-all duration-500 hover:border-brand-yellow-golden"
-          >
-            <div className="grid grid-cols-1 lg:grid-cols-12 items-center">
-              {/* Featured Image (Large Surface) */}
-              <div className="lg:col-span-7 relative aspect-[16/10] lg:aspect-[4/3] w-full overflow-hidden bg-black">
-                <Image
-                  src={featuredArticle.primaryImage}
-                  alt={featuredArticle.primaryImageAlt}
-                  fill
-                  sizes="(max-width: 1024px) 100vw, 60vw"
-                  className={`object-cover ${featuredArticle.imagePosition || "object-center"} filter contrast-105 group-hover:scale-[1.03] transition-transform duration-700 ease-out`}
-                  priority
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#0A0908] via-transparent to-transparent opacity-80 lg:opacity-40" />
-              </div>
-
-              {/* Featured Content Area */}
-              <div className="lg:col-span-5 p-6 sm:p-10 flex flex-col justify-between space-y-6">
-                <div>
-                  <div className="flex items-center gap-3 mb-4">
-                    <span className="text-[10px] sm:text-xs font-syne text-brand-yellow-golden font-bold uppercase tracking-wider">
-                      FEATURED ARTICLE · {featuredArticle.category}
-                    </span>
-                    <span className="text-[10px] sm:text-xs font-syne text-white/60 uppercase">
-                      {featuredArticle.readTime}
-                    </span>
-                  </div>
-
-                  <h3 className="font-serif-display text-2xl sm:text-4xl lg:text-5xl font-light text-white uppercase leading-tight group-hover:text-brand-yellow-golden transition-colors mb-4">
-                    {featuredArticle.title}
-                  </h3>
-
-                  <p className="font-sans text-sm sm:text-base text-white/90 leading-relaxed font-normal mb-6">
-                    {featuredArticle.subtitle}
-                  </p>
-                </div>
-
-                <div>
-                  <button
-                    onClick={() => setSelectedArticle(featuredArticle)}
-                    className="inline-flex items-center gap-3 bg-gradient-to-r from-brand-yellow-golden to-amber-500 hover:opacity-95 text-black py-3 px-6 rounded-2xl font-syne text-xs font-bold tracking-caps shadow-xl transition-all group/btn"
-                  >
-                    <span>READ STORY</span>
-                    <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
-                  </button>
-                </div>
-              </div>
-            </div>
-          </motion.div>
-        )}
-
-        {/* Asymmetric Editorial Grid for Supporting Stories */}
-        {gridArticles.length > 0 && (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
-            <AnimatePresence>
-              {gridArticles.map((article, idx) => (
+        {/* ==================================================== */}
+        {/* HOMEPAGE VIEW: EXACTLY 1 BIG FEATURED CARD + 3 SMALL CARDS */}
+        {/* ==================================================== */}
+        {!isFullPage ? (
+          <div className="space-y-8">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-stretch">
+              {/* 1 BIG FEATURED CARD (lg:col-span-7) */}
+              <div className="lg:col-span-7 flex">
                 <motion.div
-                  key={article.id}
-                  layout
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: idx * 0.08 }}
-                  className="group relative bg-[#090807] border border-white/10 rounded-2xl overflow-hidden p-6 hover:border-brand-yellow-golden/60 transition-all duration-500 flex flex-col justify-between"
+                  transition={{ duration: 0.5 }}
+                  className="group relative w-full bg-[#FAF8F5] dark:bg-[#090807] border border-black/10 dark:border-[#D4AF37]/40 rounded-3xl overflow-hidden shadow-xl flex flex-col justify-between hover:border-[#F15E1C] dark:hover:border-[#D4AF37] transition-all duration-300"
                 >
                   <div>
-                    {/* Story Image Crop */}
-                    <div className="relative aspect-[16/10] w-full overflow-hidden rounded-xl mb-5 bg-black border border-white/10">
+                    {/* Clean Featured Image Frame */}
+                    <div className="relative aspect-[16/10] sm:aspect-[16/9.5] w-full overflow-hidden bg-black">
                       <Image
-                        src={article.primaryImage}
-                        alt={article.primaryImageAlt}
+                        src={featuredStory.primaryImage}
+                        alt={featuredStory.primaryImageAlt}
                         fill
-                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                        className={`object-cover ${article.imagePosition || "object-center"} filter contrast-105 group-hover:scale-[1.04] transition-transform duration-700 ease-out`}
+                        sizes="(max-width: 1024px) 100vw, 60vw"
+                        className="object-cover object-top filter contrast-[1.03] group-hover:scale-105 transition-transform duration-700 ease-out"
+                        priority
                       />
-                      <div className="absolute inset-0 bg-gradient-to-t from-[#090807] via-transparent to-transparent opacity-60" />
-                      <div className="absolute top-3 left-3">
-                        <span className="text-[10px] font-syne text-brand-yellow-golden font-bold uppercase tracking-wider">
-                          {article.category}
+                      <div className="absolute top-4 left-4 z-10">
+                        <span className="px-3.5 py-1.5 rounded-full text-[10px] sm:text-xs font-syne font-bold uppercase tracking-wider bg-black/80 text-[#D4AF37] border border-[#D4AF37]/40 backdrop-blur-md">
+                          FEATURED STORY · {featuredStory.category}
                         </span>
                       </div>
                     </div>
 
-                    <h4 className="font-serif-display text-xl sm:text-2xl font-light text-white uppercase leading-snug mb-3 group-hover:text-brand-yellow-golden transition-colors">
-                      {article.title}
-                    </h4>
+                    {/* Featured Story Content Below Image */}
+                    <div className="p-6 sm:p-8 space-y-3">
+                      <div className="flex items-center gap-3">
+                        <span className="text-xs font-syne text-[#F15E1C] dark:text-[#D4AF37] font-bold uppercase tracking-wider">
+                          {featuredStory.readTime}
+                        </span>
+                      </div>
 
-                    <p className="font-sans text-sm sm:text-base text-white/80 leading-relaxed font-normal mb-6 line-clamp-3">
-                      {article.subtitle}
-                    </p>
+                      <h3 className="font-serif-display text-2xl sm:text-4xl lg:text-4xl font-light text-[#111111] dark:text-white uppercase leading-tight group-hover:text-[#F15E1C] dark:group-hover:text-[#D4AF37] transition-colors">
+                        {featuredStory.title}
+                      </h3>
+
+                      <p className="font-sans text-sm sm:text-base text-[#444444] dark:text-neutral-300 font-light leading-relaxed text-justified">
+                        {featuredStory.subtitle}
+                      </p>
+                    </div>
                   </div>
 
-                  <div className="pt-4 border-t border-white/10 flex items-center justify-between">
-                    <span className="text-[10px] sm:text-xs font-syne text-white/60 uppercase">
-                      {article.readTime}
-                    </span>
+                  <div className="p-6 sm:p-8 pt-0">
                     <button
-                      onClick={() => setSelectedArticle(article)}
-                      className="inline-flex items-center gap-1.5 text-xs font-syne text-brand-yellow-golden font-bold uppercase hover:text-white transition-colors group/link"
+                      onClick={() => setSelectedArticle(featuredStory)}
+                      className="inline-flex items-center gap-2.5 bg-[#F15E1C] dark:bg-[#D4AF37] text-white dark:text-black px-6 py-3 rounded-full text-xs font-syne font-bold tracking-widest uppercase hover:bg-[#e04f10] dark:hover:bg-[#FFEC69] transition-all shadow-md group/btn"
                     >
                       <span>READ STORY</span>
-                      <ArrowRight className="w-3.5 h-3.5 group-hover/link:translate-x-1 transition-transform" />
+                      <ArrowRight className="w-4 h-4 transition-transform group-hover/btn:translate-x-1" />
                     </button>
                   </div>
                 </motion.div>
-              ))}
-            </AnimatePresence>
+              </div>
+
+              {/* 3 SMALL CARDS STACKED (lg:col-span-5) */}
+              <div className="lg:col-span-5 flex flex-col justify-between gap-4">
+                {smallStories.map((story, idx) => (
+                  <motion.div
+                    key={story.id}
+                    initial={{ opacity: 0, y: 16 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.4, delay: idx * 0.08 }}
+                    className="group relative bg-[#FAF8F5] dark:bg-[#090807] border border-black/10 dark:border-white/10 rounded-2xl p-4 sm:p-5 hover:border-[#F15E1C]/60 dark:hover:border-[#D4AF37]/60 transition-all duration-300 flex flex-col sm:flex-row gap-4 items-start sm:items-center justify-between shadow-sm"
+                  >
+                    <div className="relative w-full sm:w-36 aspect-[16/10] sm:aspect-square shrink-0 rounded-xl overflow-hidden bg-black border border-black/10 dark:border-white/10">
+                      <Image
+                        src={story.primaryImage}
+                        alt={story.primaryImageAlt}
+                        fill
+                        sizes="(max-width: 640px) 100vw, 150px"
+                        className="object-cover object-top group-hover:scale-105 transition-transform duration-500"
+                      />
+                    </div>
+
+                    <div className="flex flex-col justify-between flex-grow space-y-2 w-full">
+                      <div className="flex items-center justify-between gap-2">
+                        <span className="text-[10px] font-syne font-bold uppercase tracking-wider text-[#F15E1C] dark:text-[#D4AF37]">
+                          {story.category}
+                        </span>
+                        <span className="text-[10px] font-syne text-[#555555] dark:text-neutral-400 uppercase font-semibold">
+                          {story.readTime}
+                        </span>
+                      </div>
+
+                      <h4 className="font-serif-display text-lg sm:text-xl font-light text-[#111111] dark:text-white uppercase leading-snug group-hover:text-[#F15E1C] dark:group-hover:text-[#D4AF37] transition-colors line-clamp-2">
+                        {story.title}
+                      </h4>
+
+                      <p className="font-sans text-xs sm:text-sm text-[#444444] dark:text-neutral-300 font-light leading-relaxed line-clamp-2">
+                        {story.subtitle}
+                      </p>
+
+                      <div className="pt-1">
+                        <button
+                          onClick={() => setSelectedArticle(story)}
+                          className="inline-flex items-center gap-1.5 text-xs font-syne font-bold uppercase text-[#F15E1C] dark:text-[#D4AF37] hover:text-[#111111] dark:hover:text-white transition-colors"
+                        >
+                          <span>READ STORY</span>
+                          <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" />
+                        </button>
+                      </div>
+                    </div>
+                  </motion.div>
+                ))}
+              </div>
+            </div>
+
+            {/* Bottom Section Explore More CTA */}
+            <div className="mt-8 text-center pt-6 border-t border-black/10 dark:border-white/10">
+              <Link
+                href="/fashion-magazine"
+                className="inline-flex items-center justify-center gap-2.5 bg-[#F15E1C] dark:bg-[#D4AF37] text-white dark:text-black hover:bg-[#e04f10] dark:hover:bg-[#FFEC69] px-8 py-3.5 rounded-full font-syne text-xs sm:text-sm font-bold tracking-wider uppercase transition-all duration-300 shadow-lg group"
+              >
+                <span>EXPLORE MORE</span>
+                <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
+              </Link>
+            </div>
+          </div>
+        ) : (
+          /* ==================================================== */
+          /* DEDICATED MAGAZINE ARCHIVE PAGE VIEW (isFullPage = true) */
+          /* ==================================================== */
+          <div className="space-y-8">
+            {/* Mobile Dropdown Category Selector */}
+            <div className="sm:hidden mb-6 relative">
+              <button
+                onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+                className="w-full px-4 py-3 bg-[#FAF8F5] dark:bg-[#0A0A0A] border border-black/10 dark:border-white/15 rounded-xl flex items-center justify-between text-left shadow-sm"
+              >
+                <div>
+                  <span className="text-[10px] font-syne uppercase text-[#F15E1C] dark:text-brand-yellow-golden tracking-wider block font-bold">
+                    CATEGORY FILTER
+                  </span>
+                  <span className="font-syne text-sm sm:text-base font-bold text-[#111111] dark:text-white uppercase tracking-wider">
+                    {FILTER_CATEGORIES.find((c) => c.id === activeFilter)?.label || "ALL"}
+                  </span>
+                </div>
+                <ChevronDown
+                  className={`w-5 h-5 text-black/60 dark:text-white/60 transition-transform duration-200 ${
+                    isMobileMenuOpen ? "rotate-180" : ""
+                  }`}
+                />
+              </button>
+
+              {isMobileMenuOpen && (
+                <div className="absolute top-full left-0 right-0 mt-1.5 bg-white dark:bg-[#0C0B0A] border border-black/10 dark:border-white/15 rounded-xl shadow-xl z-30 overflow-hidden py-1">
+                  {FILTER_CATEGORIES.map((cat) => (
+                    <button
+                      key={cat.id}
+                      onClick={() => {
+                        setActiveFilter(cat.id);
+                        setIsMobileMenuOpen(false);
+                      }}
+                      className={`w-full px-4 py-3 text-left flex items-center justify-between text-xs sm:text-sm font-syne uppercase tracking-wider transition-colors ${
+                        activeFilter === cat.id
+                          ? "bg-[#F15E1C]/10 dark:bg-brand-yellow-golden/10 text-[#F15E1C] dark:text-brand-yellow-golden font-bold"
+                          : "text-[#333333] dark:text-white/80 hover:text-[#F15E1C] dark:hover:text-brand-yellow-golden hover:bg-black/5 dark:hover:bg-white/5"
+                      }`}
+                    >
+                      <span>{cat.label}</span>
+                      {activeFilter === cat.id && (
+                        <span className="w-1.5 h-1.5 rounded-full bg-[#F15E1C] dark:bg-brand-yellow-golden" />
+                      )}
+                    </button>
+                  ))}
+                </div>
+              )}
+            </div>
+
+            {/* Desktop Category Filter Bar */}
+            <div className="hidden sm:block mb-8 overflow-x-auto no-scrollbar pb-2">
+              <div className="flex items-center gap-2 sm:gap-3 min-w-max">
+                {FILTER_CATEGORIES.map((cat) => {
+                  const isActive = activeFilter === cat.id;
+                  return (
+                    <button
+                      key={cat.id}
+                      onClick={() => setActiveFilter(cat.id)}
+                      className={`px-4 py-2 font-syne text-xs tracking-micro font-bold uppercase rounded-full transition-all duration-300 border ${
+                        isActive
+                          ? "bg-[#F15E1C] dark:bg-brand-yellow-golden text-white dark:text-black border-[#F15E1C] dark:border-brand-yellow-golden shadow-md"
+                          : "bg-[#FAF8F5] dark:bg-[#0A0A0A] text-[#111111] dark:text-white/80 border-black/10 dark:border-white/10 hover:border-[#F15E1C] dark:hover:border-brand-yellow-golden/40"
+                      }`}
+                    >
+                      {cat.label}
+                    </button>
+                  );
+                })}
+              </div>
+            </div>
+
+            {/* Featured Article Banner */}
+            {archiveFeatured && (
+              <motion.div
+                layout
+                initial={{ opacity: 0, y: 24 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6 }}
+                className="mb-8 group relative bg-[#0A0908] border border-brand-yellow-golden/40 rounded-3xl overflow-hidden shadow-2xl transition-all duration-500 hover:border-brand-yellow-golden"
+              >
+                <div className="grid grid-cols-1 lg:grid-cols-12 items-center">
+                  <div className="lg:col-span-7 relative aspect-[16/10] lg:aspect-[4/3] w-full overflow-hidden bg-black">
+                    <Image
+                      src={archiveFeatured.primaryImage}
+                      alt={archiveFeatured.primaryImageAlt}
+                      fill
+                      sizes="(max-width: 1024px) 100vw, 60vw"
+                      className={`object-cover ${archiveFeatured.imagePosition || "object-center"} filter contrast-105 group-hover:scale-[1.03] transition-transform duration-700 ease-out`}
+                      priority
+                    />
+                  </div>
+
+                  <div className="lg:col-span-5 p-6 sm:p-10 flex flex-col justify-between space-y-6">
+                    <div>
+                      <div className="flex items-center gap-3 mb-4">
+                        <span className="text-[10px] sm:text-xs font-syne text-brand-yellow-golden font-bold uppercase tracking-wider">
+                          FEATURED ARTICLE · {archiveFeatured.category}
+                        </span>
+                        <span className="text-[10px] sm:text-xs font-syne text-white/60 uppercase">
+                          {archiveFeatured.readTime}
+                        </span>
+                      </div>
+
+                      <h3 className="font-serif-display text-2xl sm:text-4xl lg:text-5xl font-light text-white uppercase leading-tight group-hover:text-brand-yellow-golden transition-colors mb-4">
+                        {archiveFeatured.title}
+                      </h3>
+
+                      <p className="font-sans text-sm sm:text-base text-white/90 leading-relaxed font-normal mb-6 text-justified">
+                        {archiveFeatured.subtitle}
+                      </p>
+                    </div>
+
+                    <div>
+                      <button
+                        onClick={() => setSelectedArticle(archiveFeatured)}
+                        className="inline-flex items-center gap-3 bg-gradient-to-r from-brand-yellow-golden to-amber-500 hover:opacity-95 text-black py-3 px-6 rounded-2xl font-syne text-xs font-bold tracking-caps shadow-xl transition-all group/btn"
+                      >
+                        <span>READ STORY</span>
+                        <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </motion.div>
+            )}
+
+            {/* Archive Grid */}
+            {archiveGrid.length > 0 && (
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+                <AnimatePresence>
+                  {archiveGrid.map((article, idx) => (
+                    <motion.div
+                      key={article.id}
+                      layout
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 0.5, delay: idx * 0.08 }}
+                      className="group relative bg-[#090807] border border-white/10 rounded-2xl overflow-hidden p-6 hover:border-brand-yellow-golden/60 transition-all duration-500 flex flex-col justify-between"
+                    >
+                      <div>
+                        <div className="relative aspect-[16/10] w-full overflow-hidden rounded-xl mb-5 bg-black border border-white/10">
+                          <Image
+                            src={article.primaryImage}
+                            alt={article.primaryImageAlt}
+                            fill
+                            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                            className={`object-cover ${article.imagePosition || "object-center"} filter contrast-105 group-hover:scale-[1.04] transition-transform duration-700 ease-out`}
+                          />
+                          <div className="absolute top-3 left-3">
+                            <span className="text-[10px] font-syne text-brand-yellow-golden font-bold uppercase tracking-wider">
+                              {article.category}
+                            </span>
+                          </div>
+                        </div>
+
+                        <h4 className="font-serif-display text-xl sm:text-2xl font-light text-white uppercase leading-snug mb-3 group-hover:text-brand-yellow-golden transition-colors">
+                          {article.title}
+                        </h4>
+
+                        <p className="font-sans text-sm sm:text-base text-white/80 leading-relaxed font-normal mb-6 line-clamp-3 text-justified">
+                          {article.subtitle}
+                        </p>
+                      </div>
+
+                      <div className="pt-4 border-t border-white/10 flex items-center justify-between">
+                        <span className="text-[10px] sm:text-xs font-syne text-white/60 uppercase">
+                          {article.readTime}
+                        </span>
+                        <button
+                          onClick={() => setSelectedArticle(article)}
+                          className="inline-flex items-center gap-1.5 text-xs font-syne text-brand-yellow-golden font-bold uppercase hover:text-white transition-colors group/link"
+                        >
+                          <span>READ STORY</span>
+                          <ArrowRight className="w-3.5 h-3.5 group-hover/link:translate-x-1 transition-transform" />
+                        </button>
+                      </div>
+                    </motion.div>
+                  ))}
+                </AnimatePresence>
+              </div>
+            )}
           </div>
         )}
-
-        {/* Section Footer EXPLORE MORE CTA */}
-        <div className="mt-8 text-center pt-6 border-t border-black/10 dark:border-white/10">
-          <Link
-            href="/fashion-magazine"
-            className="inline-flex items-center justify-center gap-2.5 bg-[#F15E1C] dark:bg-[#D4AF37] text-white dark:text-black hover:bg-[#e04f10] dark:hover:bg-[#FFEC69] px-8 py-3.5 rounded-full font-syne text-xs sm:text-sm font-bold tracking-wider uppercase transition-all duration-300 shadow-lg group"
-          >
-            <span>EXPLORE MORE</span>
-            <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
-          </Link>
-        </div>
       </div>
 
       {/* Editorial Article Reader Modal */}

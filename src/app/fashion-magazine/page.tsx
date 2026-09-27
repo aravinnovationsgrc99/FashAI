@@ -14,7 +14,7 @@ export const metadata: Metadata = {
 export default function FashionMagazinePage() {
   return (
     <div className="bg-brand-void text-brand-white pt-20 min-h-screen">
-      <FashionMagazineSection />
+      <FashionMagazineSection isFullPage={true} />
       <InstagramSection />
     </div>
   );
