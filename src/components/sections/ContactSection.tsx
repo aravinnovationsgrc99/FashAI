@@ -6,6 +6,7 @@ import { motion } from "framer-motion";
 import { Loader2, CheckCircle, AlertCircle } from "lucide-react";
 import GradientFlowText from "../ui/GradientFlowText";
 import SubmitSuccessExpand from "../ui/SubmitSuccessExpand";
+import OfficeLocations from "./OfficeLocations";
 
 function ContactContent() {
   const searchParams = useSearchParams();
@@ -93,6 +94,11 @@ function ContactContent() {
           <p className="font-sans text-lg sm:text-xl text-brand-platinum/90 font-light leading-relaxed">
             For registrations, sponsorships, talent, press, brand partnerships and event participation across the FashAI Universal platform, submit an enquiry to the FashAI Universal team.
           </p>
+        </div>
+
+        {/* Office Locations Section */}
+        <div className="mb-12 sm:mb-16">
+          <OfficeLocations showHeading={true} />
         </div>
 
         {/* Single Centered Professional Enquiry Form Container */}

@@ -82,6 +82,30 @@ export default function RootLayout({
         sameAs: ["https://www.instagram.com/fashai_universal"],
         description:
           "FashAI Universal is an international fashion and events platform focused on fashion experiences, events, creative talent, designers, artists, and brand participation.",
+        location: [
+          {
+            "@type": "Place",
+            name: "India Headquarters (HQ)",
+            address: {
+              "@type": "PostalAddress",
+              streetAddress: "Platinum Floor, 14/23, Ardee City, Sector 52",
+              addressLocality: "Gurgaon",
+              addressRegion: "Haryana",
+              postalCode: "122002",
+              addressCountry: "IN",
+            },
+          },
+          {
+            "@type": "Place",
+            name: "UAE Regional Office",
+            address: {
+              "@type": "PostalAddress",
+              streetAddress: "55764-001 IFZA Business Park FZCO, Building A1, Dubai Silicon Oasis",
+              addressLocality: "Dubai",
+              addressCountry: "AE",
+            },
+          },
+        ],
       },
       {
         "@type": "WebSite",

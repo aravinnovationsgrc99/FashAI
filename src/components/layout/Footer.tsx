@@ -3,7 +3,8 @@
 import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { ArrowUpRight, ArrowRight, Instagram } from "lucide-react";
+import { ArrowUpRight, ArrowRight, Instagram, MapPin } from "lucide-react";
+import { OFFICE_LOCATIONS } from "@/data/locations";
 
 export default function Footer() {
   const columnVariants = {
@@ -172,6 +173,61 @@ export default function Footer() {
             </motion.div>
           </div>
         </div>
+
+        {/* OFFICIAL OFFICE LOCATIONS FOOTER BLOCK */}
+        <motion.div
+          custom={2.2}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={columnVariants}
+          className="my-8 pt-8 border-t border-black/10 dark:border-white/10"
+        >
+          <div className="flex items-center gap-2 mb-4">
+            <MapPin className="w-4 h-4 text-[#F15E1C] dark:text-[#D4AF37]" />
+            <h4 className="font-syne text-xs sm:text-sm tracking-caps text-[#F15E1C] dark:text-[#D4AF37] font-bold uppercase">
+              OFFICIAL OFFICE LOCATIONS
+            </h4>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
+            {OFFICE_LOCATIONS.map((office) => (
+              <div
+                key={office.id}
+                className="p-5 sm:p-6 rounded-xl border border-black/10 dark:border-white/15 bg-white/60 dark:bg-white/5 flex flex-col justify-between gap-4"
+              >
+                <div>
+                  <div className="flex items-center gap-2 mb-2">
+                    <span className="text-xl" role="img" aria-label={office.countryCode}>
+                      {office.flag}
+                    </span>
+                    <span className="font-syne text-[10px] tracking-widest text-[#F15E1C] dark:text-[#D4AF37] font-bold uppercase">
+                      {office.cityRegion}
+                    </span>
+                  </div>
+                  <h5 className="font-serif-display text-lg sm:text-xl font-light text-[#111111] dark:text-white uppercase mb-2">
+                    {office.title}
+                  </h5>
+                  <p className="font-sans text-xs sm:text-sm text-[#333333] dark:text-white/80 font-normal leading-relaxed">
+                    {office.fullAddress}
+                  </p>
+                </div>
+
+                <div>
+                  <a
+                    href={office.mapUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1.5 text-xs font-syne font-bold text-[#D4AF37] hover:text-[#FFEC69] tracking-wider uppercase transition-colors group"
+                  >
+                    <span>VIEW LOCATION ON GOOGLE MAPS</span>
+                    <ArrowUpRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5 shrink-0" />
+                  </a>
+                </div>
+              </div>
+            ))}
+          </div>
+        </motion.div>
 
         {/* FEATURED VIEW SOCIALS CARD */}
         <motion.div
