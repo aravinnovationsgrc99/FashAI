@@ -32,7 +32,7 @@ export default function Chapter2025() {
   ];
 
   return (
-    <section id="our-projects-2025" className="relative w-full py-10 sm:py-16 md:py-20 bg-white dark:bg-[#050505] text-[#111111] dark:text-brand-white border-b border-black/10 dark:border-white/10 overflow-hidden select-none">
+    <section id="our-projects-2025" className="relative w-full py-8 sm:py-12 md:py-14 bg-white dark:bg-[#050505] text-[#111111] dark:text-brand-white border-b border-black/10 dark:border-white/10 overflow-hidden select-none">
       {/* Background Atmosphere */}
       <div className="absolute inset-0 pointer-events-none select-none overflow-hidden">
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#00000005_1px,transparent_1px),linear-gradient(to_bottom,#00000005_1px,transparent_1px)] dark:bg-[linear-gradient(to_right,#ffffff03_1px,transparent_1px),linear-gradient(to_bottom,#ffffff03_1px,transparent_1px)] bg-[size:4rem_4rem]" />
@@ -43,7 +43,7 @@ export default function Chapter2025() {
 
       <div className="container-editorial relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-6 border-b border-black/10 dark:border-white/10 mb-8 sm:mb-12">
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-6 border-b border-black/10 dark:border-white/10 mb-6 sm:mb-8">
           <div>
             <div className="flex items-center gap-3 text-xs sm:text-sm font-syne tracking-widest text-[#D4AF37] font-bold uppercase mb-2">
               <span className="h-px w-8 bg-[#D4AF37]" />
@@ -60,7 +60,7 @@ export default function Chapter2025() {
             </p>
             <Link
               href="/projects"
-              className="inline-flex items-center gap-2 bg-[#D4AF37] hover:bg-[#b89528] text-black px-6 py-2.5 rounded-full font-syne text-xs sm:text-sm font-bold tracking-wider uppercase transition-all shadow-md group"
+              className="inline-flex items-center gap-2 bg-[#D4AF37] hover:bg-[#FFEC69] text-[#111111] border border-[#D4AF37] px-6 py-2.5 rounded-full font-syne text-xs sm:text-sm font-bold tracking-wider uppercase transition-all shadow-md group"
             >
               <span>EXPLORE MORE</span>
               <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
@@ -69,7 +69,7 @@ export default function Chapter2025() {
         </div>
 
         {/* Homepage Prioritized Project Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 mb-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 mb-6 sm:mb-8">
           {homepageProjects.map((proj, idx) => (
             <motion.div
               key={proj.id}
@@ -116,7 +116,7 @@ export default function Chapter2025() {
               <div className="pt-4 border-t border-black/10 dark:border-white/15 flex flex-wrap items-center justify-between gap-3 relative z-10">
                 <Link
                   href="/projects"
-                  className="inline-flex items-center gap-2 bg-[#D4AF37] hover:bg-[#b89528] text-black px-5 py-2.5 text-xs font-syne tracking-wider font-bold transition-all rounded-full shadow-md group/btn"
+                  className="inline-flex items-center gap-2 bg-[#D4AF37] hover:bg-[#FFEC69] text-[#111111] border border-[#D4AF37] px-5 py-2.5 text-xs font-syne tracking-wider font-bold transition-all rounded-full shadow-md group/btn"
                 >
                   <span>EXPLORE MORE</span>
                   <ArrowRight className="w-4 h-4 transition-transform group-hover/btn:translate-x-1" />
@@ -150,10 +150,10 @@ export default function Chapter2025() {
         </div>
 
         {/* Bottom CTA */}
-        <div className="pt-6 text-center border-t border-black/10 dark:border-white/10">
+        <div className="pt-4 text-center border-t border-black/10 dark:border-white/10">
           <Link
             href="/projects"
-            className="inline-flex items-center gap-3 bg-[#D4AF37] hover:bg-[#b89528] text-black px-8 py-4 text-sm font-syne tracking-wider font-bold transition-all rounded-full shadow-lg hover:scale-105"
+            className="inline-flex items-center gap-3 bg-[#D4AF37] hover:bg-[#FFEC69] text-[#111111] border border-[#D4AF37] px-8 py-3.5 text-sm font-syne tracking-wider font-bold transition-all rounded-full shadow-lg"
           >
             <span>EXPLORE MORE PROJECTS</span>
             <ArrowRight className="w-4 h-4" />

@@ -80,16 +80,16 @@ function ContactContent() {
   };
 
   return (
-    <section id="contact" className="relative py-4 sm:py-10 md:py-14 bg-brand-void border-b border-hairline-orange overflow-hidden">
+    <section id="contact" className="relative py-8 sm:py-12 md:py-14 bg-brand-void border-b border-hairline-orange overflow-hidden">
       <div className="container-editorial relative z-10">
         {/* Section Header */}
-        <div className="max-w-3xl mb-8 sm:mb-10">
-          <div className="flex items-center gap-3 text-xs sm:text-sm font-syne tracking-micro text-brand-orange font-bold uppercase mb-3">
-            <span className="h-px w-8 bg-brand-orange" />
+        <div className="max-w-3xl mb-6 sm:mb-8">
+          <div className="flex items-center gap-3 text-xs sm:text-sm font-syne tracking-micro text-[#D4AF37] font-bold uppercase mb-3">
+            <span className="h-px w-8 bg-[#D4AF37]" />
             <span>CONTACT &amp; ENQUIRIES</span>
           </div>
           <h2 className="font-serif-display text-4xl sm:text-6xl lg:text-7xl font-light text-brand-white uppercase mb-4">
-            LET&apos;S CREATE THE <span className="italic text-transparent bg-clip-text bg-gradient-to-r from-brand-orange to-brand-yellow-golden font-normal">NEXT CHAPTER.</span>
+            LET&apos;S CREATE THE <span className="italic text-transparent bg-clip-text bg-gradient-to-r from-[#D4AF37] to-[#FFEC69] font-normal">NEXT CHAPTER.</span>
           </h2>
           <p className="font-sans text-lg sm:text-xl text-brand-platinum/90 font-light leading-relaxed">
             For registrations, sponsorships, talent, press, brand partnerships and event participation across the FashAI Universal platform, submit an enquiry to the FashAI Universal team.
@@ -97,7 +97,7 @@ function ContactContent() {
         </div>
 
         {/* Office Locations Section */}
-        <div className="mb-12 sm:mb-16">
+        <div className="mb-8 sm:mb-10">
           <OfficeLocations showHeading={true} />
         </div>
 
@@ -108,7 +108,7 @@ function ContactContent() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="bg-[#0B0908]/90 border border-brand-orange/30 p-8 sm:p-12 shadow-2xl rounded-3xl"
+            className="bg-[#0B0908]/90 border border-[#D4AF37]/30 p-8 sm:p-12 shadow-2xl rounded-3xl"
           >
             <h3 className="font-serif-display text-2xl sm:text-4xl text-brand-white uppercase font-light mb-8 border-b border-white/10 pb-4">
               SUBMIT AN ENQUIRY
@@ -125,7 +125,7 @@ function ContactContent() {
                 </p>
                 <button
                   onClick={() => setStatus("idle")}
-                  className="bg-brand-orange text-white px-8 py-3 text-xs font-syne tracking-caps font-bold uppercase hover:bg-[#ff6f2d] transition-colors"
+                  className="bg-[#D4AF37] hover:bg-[#FFEC69] text-[#111111] font-bold border border-[#D4AF37] px-8 py-3 rounded-full text-xs font-syne tracking-wider uppercase transition-colors"
                 >
                   <GradientFlowText variant="gold">SEND ANOTHER ENQUIRY</GradientFlowText>
                 </button>
@@ -156,7 +156,7 @@ function ContactContent() {
                       value={formData.name}
                       onChange={handleChange}
                       placeholder="Your Full Name"
-                      className="w-full bg-brand-void border border-white/20 px-4 py-3 text-sm text-brand-white placeholder-brand-platinum/40 focus:border-brand-orange focus:ring-1 focus:ring-brand-orange focus:outline-none transition-colors"
+                      className="w-full bg-brand-void border border-white/20 px-4 py-3 text-sm text-brand-white placeholder-brand-platinum/40 focus:border-[#D4AF37] focus:ring-1 focus:ring-[#D4AF37] focus:outline-none transition-colors"
                     />
                   </div>
 
@@ -173,7 +173,7 @@ function ContactContent() {
                       value={formData.email}
                       onChange={handleChange}
                       placeholder="name@company.com"
-                      className="w-full bg-brand-void border border-white/20 px-4 py-3 text-sm text-brand-white placeholder-brand-platinum/40 focus:border-brand-orange focus:ring-1 focus:ring-brand-orange focus:outline-none transition-colors"
+                      className="w-full bg-brand-void border border-white/20 px-4 py-3 text-sm text-brand-white placeholder-brand-platinum/40 focus:border-[#D4AF37] focus:ring-1 focus:ring-[#D4AF37] focus:outline-none transition-colors"
                     />
                   </div>
 
@@ -189,7 +189,7 @@ function ContactContent() {
                       value={formData.phone}
                       onChange={handleChange}
                       placeholder="+91 00000 00000"
-                      className="w-full bg-brand-void border border-white/20 px-4 py-3 text-sm text-brand-white placeholder-brand-platinum/40 focus:border-brand-orange focus:ring-1 focus:ring-brand-orange focus:outline-none transition-colors"
+                      className="w-full bg-brand-void border border-white/20 px-4 py-3 text-sm text-brand-white placeholder-brand-platinum/40 focus:border-[#D4AF37] focus:ring-1 focus:ring-[#D4AF37] focus:outline-none transition-colors"
                     />
                   </div>
 
@@ -205,7 +205,7 @@ function ContactContent() {
                       value={formData.country}
                       onChange={handleChange}
                       placeholder="e.g. United Arab Emirates, India"
-                      className="w-full bg-brand-void border border-white/20 px-4 py-3 text-sm text-brand-white placeholder-brand-platinum/40 focus:border-brand-orange focus:ring-1 focus:ring-brand-orange focus:outline-none transition-colors"
+                      className="w-full bg-brand-void border border-white/20 px-4 py-3 text-sm text-brand-white placeholder-brand-platinum/40 focus:border-[#D4AF37] focus:ring-1 focus:ring-[#D4AF37] focus:outline-none transition-colors"
                     />
                   </div>
 
@@ -221,7 +221,7 @@ function ContactContent() {
                       value={formData.city}
                       onChange={handleChange}
                       placeholder="e.g. Dubai, Mumbai, London"
-                      className="w-full bg-brand-void border border-white/20 px-4 py-3 text-sm text-brand-white placeholder-brand-platinum/40 focus:border-brand-orange focus:ring-1 focus:ring-brand-orange focus:outline-none transition-colors"
+                      className="w-full bg-brand-void border border-white/20 px-4 py-3 text-sm text-brand-white placeholder-brand-platinum/40 focus:border-[#D4AF37] focus:ring-1 focus:ring-[#D4AF37] focus:outline-none transition-colors"
                     />
                   </div>
 
@@ -237,7 +237,7 @@ function ContactContent() {
                       value={formData.organization}
                       onChange={handleChange}
                       placeholder="Company or Brand Name"
-                      className="w-full bg-brand-void border border-white/20 px-4 py-3 text-sm text-brand-white placeholder-brand-platinum/40 focus:border-brand-orange focus:ring-1 focus:ring-brand-orange focus:outline-none transition-colors"
+                      className="w-full bg-brand-void border border-white/20 px-4 py-3 text-sm text-brand-white placeholder-brand-platinum/40 focus:border-[#D4AF37] focus:ring-1 focus:ring-[#D4AF37] focus:outline-none transition-colors"
                     />
                   </div>
 
@@ -253,7 +253,7 @@ function ContactContent() {
                       value={formData.role}
                       onChange={handleChange}
                       placeholder="e.g. Designer, Founder, Delegate"
-                      className="w-full bg-brand-void border border-white/20 px-4 py-3 text-sm text-brand-white placeholder-brand-platinum/40 focus:border-brand-orange focus:ring-1 focus:ring-brand-orange focus:outline-none transition-colors"
+                      className="w-full bg-brand-void border border-white/20 px-4 py-3 text-sm text-brand-white placeholder-brand-platinum/40 focus:border-[#D4AF37] focus:ring-1 focus:ring-[#D4AF37] focus:outline-none transition-colors"
                     />
                   </div>
 
@@ -268,7 +268,7 @@ function ContactContent() {
                       required
                       value={formData.enquiryType}
                       onChange={handleChange}
-                      className="w-full bg-brand-void border border-white/20 px-4 py-3 text-sm text-brand-white focus:border-brand-orange focus:ring-1 focus:ring-brand-orange focus:outline-none transition-colors"
+                      className="w-full bg-brand-void border border-white/20 px-4 py-3 text-sm text-brand-white focus:border-[#D4AF37] focus:ring-1 focus:ring-[#D4AF37] focus:outline-none transition-colors"
                     >
                       <option value="Registration">Registration</option>
                       <option value="Sponsorship">Sponsorship</option>
@@ -291,7 +291,7 @@ function ContactContent() {
                       required
                       value={formData.eventInterest}
                       onChange={handleChange}
-                      className="w-full bg-brand-void border border-white/20 px-4 py-3 text-sm text-brand-white focus:border-brand-orange focus:ring-1 focus:ring-brand-orange focus:outline-none transition-colors"
+                      className="w-full bg-brand-void border border-white/20 px-4 py-3 text-sm text-brand-white focus:border-[#D4AF37] focus:ring-1 focus:ring-[#D4AF37] focus:outline-none transition-colors"
                     >
                       <option value="LifeStyle 2026">LifeStyle 2026 (Dubai · November 2026)</option>
                       <option value="Runway">Runway Presentation</option>
@@ -314,7 +314,7 @@ function ContactContent() {
                     value={formData.message}
                     onChange={handleChange}
                     placeholder="Tell us about your interest or enquiry..."
-                    className="w-full bg-brand-void border border-white/20 px-4 py-3 text-sm text-brand-white placeholder-brand-platinum/40 focus:border-brand-orange focus:ring-1 focus:ring-brand-orange focus:outline-none transition-colors resize-none"
+                    className="w-full bg-brand-void border border-white/20 px-4 py-3 text-sm text-brand-white placeholder-brand-platinum/40 focus:border-[#D4AF37] focus:ring-1 focus:ring-[#D4AF37] focus:outline-none transition-colors resize-none"
                   />
                 </div>
 
@@ -322,7 +322,7 @@ function ContactContent() {
                 <button
                   type="submit"
                   disabled={status === "loading"}
-                  className="w-full bg-brand-orange py-4 text-xs font-syne tracking-caps font-bold text-white hover:bg-[#ff6f2d] transition-all duration-300 flex items-center justify-center gap-2 shadow-xl disabled:opacity-50"
+                  className="w-full bg-[#D4AF37] hover:bg-[#FFEC69] text-[#111111] font-bold border border-[#D4AF37] py-4 rounded-full font-syne text-xs tracking-wider uppercase transition-all duration-300 flex items-center justify-center gap-2 shadow-xl disabled:opacity-50"
                 >
                   {status === "loading" ? (
                     <>

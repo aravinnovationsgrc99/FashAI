@@ -247,7 +247,7 @@ export default function FashionMagazineSection({ isFullPage = false }: FashionMa
   const archiveGrid = filteredArticles.slice(1);
 
   return (
-    <section id="magazine" className="relative pt-6 sm:pt-10 pb-10 sm:pb-16 bg-white dark:bg-[#050505] text-[#111111] dark:text-white border-b border-black/10 dark:border-white/10 overflow-hidden select-none">
+    <section id="magazine" className="relative py-8 sm:py-12 md:py-14 bg-white dark:bg-[#050505] text-[#111111] dark:text-white border-b border-black/10 dark:border-white/10 overflow-hidden select-none">
       {/* Background Ambience & Editorial Watermark */}
       <div className="absolute inset-0 pointer-events-none select-none">
         <div className="editorial-watermark absolute top-6 right-4 text-[16vw] font-serif-display font-light uppercase text-black/[0.03] dark:text-white/[0.02] leading-none pointer-events-none">
@@ -257,13 +257,13 @@ export default function FashionMagazineSection({ isFullPage = false }: FashionMa
 
       <div className="container-editorial relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Magazine Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-8 sm:mb-12 border-b border-black/10 dark:border-white/10 pb-6 sm:pb-8">
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-6 sm:mb-8 border-b border-black/10 dark:border-white/10 pb-6 sm:pb-8">
           <div>
-            <div className="flex items-center gap-2 text-xs sm:text-sm font-syne tracking-micro text-[#F15E1C] dark:text-brand-yellow-golden font-bold uppercase mb-3">
+            <div className="flex items-center gap-2 text-xs sm:text-sm font-syne tracking-micro text-[#D4AF37] font-bold uppercase mb-3">
               <span>FASHAI UNIVERSAL EDITORIAL</span>
             </div>
             <h2 className="font-serif-display text-4xl sm:text-6xl lg:text-7xl font-light text-[#111111] dark:text-brand-white uppercase leading-none">
-              FASHION <span className="font-serif italic font-normal text-[#F15E1C] dark:text-brand-yellow-golden">MAGAZINE</span>
+              FASHION <span className="font-serif italic font-normal text-[#D4AF37]">MAGAZINE</span>
             </h2>
           </div>
           <div className="flex flex-col items-start md:items-end gap-3">
@@ -273,7 +273,7 @@ export default function FashionMagazineSection({ isFullPage = false }: FashionMa
             {!isFullPage && (
               <Link
                 href="/fashion-magazine"
-                className="inline-flex items-center gap-2 bg-[#F15E1C] dark:bg-[#D4AF37] text-white dark:text-black px-6 py-2.5 rounded-full font-syne text-xs sm:text-sm font-bold tracking-wider uppercase hover:bg-[#e04f10] dark:hover:bg-[#FFEC69] transition-all shadow-md group"
+                className="inline-flex items-center gap-2 bg-[#D4AF37] hover:bg-[#FFEC69] text-[#111111] border border-[#D4AF37] px-6 py-2.5 rounded-full font-syne text-xs sm:text-sm font-bold tracking-wider uppercase transition-all shadow-md group"
               >
                 <span>EXPLORE MORE</span>
                 <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
@@ -295,7 +295,7 @@ export default function FashionMagazineSection({ isFullPage = false }: FashionMa
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5 }}
-                  className="group relative w-full bg-[#FAF8F5] dark:bg-[#090807] border border-black/10 dark:border-[#D4AF37]/40 rounded-3xl overflow-hidden shadow-xl flex flex-col justify-between hover:border-[#F15E1C] dark:hover:border-[#D4AF37] transition-all duration-300"
+                  className="group relative w-full bg-[#FAF8F5] dark:bg-[#090807] border border-black/10 dark:border-[#D4AF37]/40 rounded-3xl overflow-hidden shadow-xl flex flex-col justify-between hover:border-[#D4AF37] transition-all duration-300"
                 >
                   <div>
                     {/* Clean Featured Image Frame */}
@@ -318,12 +318,12 @@ export default function FashionMagazineSection({ isFullPage = false }: FashionMa
                     {/* Featured Story Content Below Image */}
                     <div className="p-6 sm:p-8 space-y-3">
                       <div className="flex items-center gap-3">
-                        <span className="text-xs font-syne text-[#F15E1C] dark:text-[#D4AF37] font-bold uppercase tracking-wider">
+                        <span className="text-xs font-syne text-[#D4AF37] font-bold uppercase tracking-wider">
                           {featuredStory.readTime}
                         </span>
                       </div>
 
-                      <h3 className="font-serif-display text-2xl sm:text-4xl lg:text-4xl font-light text-[#111111] dark:text-white uppercase leading-tight group-hover:text-[#F15E1C] dark:group-hover:text-[#D4AF37] transition-colors">
+                      <h3 className="font-serif-display text-2xl sm:text-4xl lg:text-4xl font-light text-[#111111] dark:text-white uppercase leading-tight group-hover:text-[#D4AF37] transition-colors">
                         {featuredStory.title}
                       </h3>
 
@@ -336,7 +336,7 @@ export default function FashionMagazineSection({ isFullPage = false }: FashionMa
                   <div className="p-6 sm:p-8 pt-0">
                     <button
                       onClick={() => setSelectedArticle(featuredStory)}
-                      className="inline-flex items-center gap-2.5 bg-[#F15E1C] dark:bg-[#D4AF37] text-white dark:text-black px-6 py-3 rounded-full text-xs font-syne font-bold tracking-widest uppercase hover:bg-[#e04f10] dark:hover:bg-[#FFEC69] transition-all shadow-md group/btn"
+                      className="inline-flex items-center gap-2.5 bg-[#D4AF37] hover:bg-[#FFEC69] text-[#111111] border border-[#D4AF37] px-6 py-3 rounded-full text-xs font-syne font-bold tracking-widest uppercase transition-all shadow-md group/btn"
                     >
                       <span>READ STORY</span>
                       <ArrowRight className="w-4 h-4 transition-transform group-hover/btn:translate-x-1" />
@@ -354,7 +354,7 @@ export default function FashionMagazineSection({ isFullPage = false }: FashionMa
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.4, delay: idx * 0.08 }}
-                    className="group relative bg-[#FAF8F5] dark:bg-[#090807] border border-black/10 dark:border-white/10 rounded-2xl p-4 sm:p-5 hover:border-[#F15E1C]/60 dark:hover:border-[#D4AF37]/60 transition-all duration-300 flex flex-col sm:flex-row gap-4 items-start sm:items-center justify-between shadow-sm"
+                    className="group relative bg-[#FAF8F5] dark:bg-[#090807] border border-black/10 dark:border-white/10 rounded-2xl p-4 sm:p-5 hover:border-[#D4AF37]/60 transition-all duration-300 flex flex-col sm:flex-row gap-4 items-start sm:items-center justify-between shadow-sm"
                   >
                     <div className="relative w-full sm:w-36 aspect-[16/10] sm:aspect-square shrink-0 rounded-xl overflow-hidden bg-black border border-black/10 dark:border-white/10">
                       <Image
@@ -368,7 +368,7 @@ export default function FashionMagazineSection({ isFullPage = false }: FashionMa
 
                     <div className="flex flex-col justify-between flex-grow space-y-2 w-full">
                       <div className="flex items-center justify-between gap-2">
-                        <span className="text-[10px] font-syne font-bold uppercase tracking-wider text-[#F15E1C] dark:text-[#D4AF37]">
+                        <span className="text-[10px] font-syne font-bold uppercase tracking-wider text-[#D4AF37]">
                           {story.category}
                         </span>
                         <span className="text-[10px] font-syne text-[#555555] dark:text-neutral-400 uppercase font-semibold">
@@ -376,7 +376,7 @@ export default function FashionMagazineSection({ isFullPage = false }: FashionMa
                         </span>
                       </div>
 
-                      <h4 className="font-serif-display text-lg sm:text-xl font-light text-[#111111] dark:text-white uppercase leading-snug group-hover:text-[#F15E1C] dark:group-hover:text-[#D4AF37] transition-colors line-clamp-2">
+                      <h4 className="font-serif-display text-lg sm:text-xl font-light text-[#111111] dark:text-white uppercase leading-snug group-hover:text-[#D4AF37] transition-colors line-clamp-2">
                         {story.title}
                       </h4>
 
@@ -387,7 +387,7 @@ export default function FashionMagazineSection({ isFullPage = false }: FashionMa
                       <div className="pt-1">
                         <button
                           onClick={() => setSelectedArticle(story)}
-                          className="inline-flex items-center gap-1.5 text-xs font-syne font-bold uppercase text-[#F15E1C] dark:text-[#D4AF37] hover:text-[#111111] dark:hover:text-white transition-colors"
+                          className="inline-flex items-center gap-1.5 text-xs font-syne font-bold uppercase text-[#D4AF37] hover:text-[#111111] dark:hover:text-white transition-colors"
                         >
                           <span>READ STORY</span>
                           <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" />
@@ -400,10 +400,10 @@ export default function FashionMagazineSection({ isFullPage = false }: FashionMa
             </div>
 
             {/* Bottom Section Explore More CTA */}
-            <div className="mt-8 text-center pt-6 border-t border-black/10 dark:border-white/10">
+            <div className="mt-6 text-center pt-4 border-t border-black/10 dark:border-white/10">
               <Link
                 href="/fashion-magazine"
-                className="inline-flex items-center justify-center gap-2.5 bg-[#F15E1C] dark:bg-[#D4AF37] text-white dark:text-black hover:bg-[#e04f10] dark:hover:bg-[#FFEC69] px-8 py-3.5 rounded-full font-syne text-xs sm:text-sm font-bold tracking-wider uppercase transition-all duration-300 shadow-lg group"
+                className="inline-flex items-center justify-center gap-2.5 bg-[#D4AF37] hover:bg-[#FFEC69] text-[#111111] border border-[#D4AF37] px-8 py-3.5 rounded-full font-syne text-xs sm:text-sm font-bold tracking-wider uppercase transition-all duration-300 shadow-lg group"
               >
                 <span>EXPLORE MORE</span>
                 <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />

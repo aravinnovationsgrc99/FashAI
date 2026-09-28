@@ -31,7 +31,7 @@ export default function Chapter2026() {
   return (
     <section
       id="2026"
-      className="relative w-full py-12 sm:py-16 md:py-20 px-4 sm:px-6 md:px-8 bg-white dark:bg-[#080706] text-[#111111] dark:text-white border-b border-black/10 dark:border-white/10 overflow-hidden select-none"
+      className="relative w-full py-8 sm:py-12 md:py-14 px-4 sm:px-6 md:px-8 bg-white dark:bg-[#080706] text-[#111111] dark:text-white border-b border-black/10 dark:border-white/10 overflow-hidden select-none"
     >
       {/* Background Watermark */}
       <div className="editorial-watermark absolute top-6 right-0 text-[15vw] font-serif-display font-light uppercase tracking-tighter leading-none pointer-events-none select-none text-black/[0.03] dark:text-white/[0.03]">
@@ -48,8 +48,8 @@ export default function Chapter2026() {
         >
           {/* 1. EVENT LABEL */}
           <motion.div variants={itemVariants} className="flex items-center gap-2.5">
-            <span className="w-2 h-2 rounded-full bg-[#F15E1C] animate-pulse" />
-            <span className="font-syne text-sm sm:text-base tracking-[0.25em] text-[#F15E1C] dark:text-[#D4AF37] font-bold uppercase">
+            <span className="w-2 h-2 rounded-full bg-[#D4AF37] animate-pulse" />
+            <span className="font-syne text-sm sm:text-base tracking-[0.25em] text-[#D4AF37] font-bold uppercase">
               UPCOMING EVENT · DUBAI 2026
             </span>
           </motion.div>
@@ -58,7 +58,7 @@ export default function Chapter2026() {
           <motion.div variants={itemVariants} className="space-y-2 text-center max-w-3xl">
             <h2 className="font-serif-display text-4xl xs:text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-light tracking-tight leading-[0.9] uppercase">
               LIFESTYLE{" "}
-              <span className="font-serif italic font-normal text-[#F15E1C] dark:text-[#D4AF37]">
+              <span className="font-serif italic font-normal text-[#D4AF37]">
                 2026
               </span>
             </h2>
@@ -79,19 +79,19 @@ export default function Chapter2026() {
             variants={itemVariants}
             className="flex items-center justify-center gap-3 w-full max-w-xl py-1"
           >
-            <span className="hidden sm:block flex-1 h-[1px] bg-gradient-to-r from-transparent via-[#F15E1C]/60 to-[#F15E1C]" />
+            <span className="hidden sm:block flex-1 h-[1px] bg-gradient-to-r from-transparent via-[#D4AF37]/60 to-[#D4AF37]" />
             <span className="font-syne text-sm sm:text-base tracking-wider text-[#111111] dark:text-white/95 font-bold uppercase px-2 text-center">
               “BIGGEST INTERNATIONAL FASHION EVENTS, DUBAI | 2026”
             </span>
-            <span className="hidden sm:block flex-1 h-[1px] bg-gradient-to-l from-transparent via-[#F15E1C]/60 to-[#F15E1C]" />
+            <span className="hidden sm:block flex-1 h-[1px] bg-gradient-to-l from-transparent via-[#D4AF37]/60 to-[#D4AF37]" />
           </motion.div>
 
           {/* 4. REGISTRATION & SPONSORSHIP ANNOUNCEMENT CARD */}
           <motion.div
             variants={itemVariants}
-            className="w-full max-w-2xl bg-[#FAF8F5] dark:bg-white/5 border border-[#F15E1C]/40 dark:border-white/15 rounded-2xl p-5 sm:p-6 text-center shadow-md space-y-2"
+            className="w-full max-w-2xl bg-[#FAF8F5] dark:bg-white/5 border border-[#D4AF37]/40 rounded-2xl p-5 sm:p-6 text-center shadow-md space-y-2"
           >
-            <span className="font-syne text-sm sm:text-base tracking-[0.2em] font-bold text-[#F15E1C] dark:text-[#D4AF37] uppercase block">
+            <span className="font-syne text-sm sm:text-base tracking-[0.2em] font-bold text-[#D4AF37] uppercase block">
               REGISTRATIONS &amp; SPONSORSHIPS ARE OPEN
             </span>
             <p className="font-sans text-base sm:text-lg text-[#444444] dark:text-white/90 font-light max-w-xl mx-auto leading-relaxed">
@@ -107,7 +107,7 @@ export default function Chapter2026() {
                 <span className="text-xs sm:text-sm font-syne tracking-widest font-bold text-[#666666] dark:text-white/70 uppercase">
                   EVENT DATE
                 </span>
-                <span className="font-serif-display text-lg sm:text-xl lg:text-2xl font-light text-[#F15E1C] dark:text-[#D4AF37] uppercase tracking-wide">
+                <span className="font-serif-display text-lg sm:text-xl lg:text-2xl font-light text-[#D4AF37] uppercase tracking-wide">
                   TO BE ANNOUNCED
                 </span>
                 <span className="font-sans text-xs sm:text-sm text-[#555555] dark:text-white/60 uppercase">
@@ -120,7 +120,7 @@ export default function Chapter2026() {
                 <span className="text-xs sm:text-sm font-syne tracking-widest font-bold text-[#666666] dark:text-white/70 uppercase">
                   EVENT VENUE
                 </span>
-                <span className="font-serif-display text-lg sm:text-xl lg:text-2xl font-light text-[#F15E1C] dark:text-[#D4AF37] uppercase tracking-wide">
+                <span className="font-serif-display text-lg sm:text-xl lg:text-2xl font-light text-[#D4AF37] uppercase tracking-wide">
                   TO BE ANNOUNCED
                 </span>
                 <span className="font-sans text-xs sm:text-sm text-[#555555] dark:text-white/60 uppercase">
@@ -150,7 +150,7 @@ export default function Chapter2026() {
           >
             <Link
               href="/contact?type=Registration"
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 bg-[#F15E1C] hover:bg-[#ff6f2d] dark:bg-[#D4AF37] dark:hover:bg-[#FFEC69] text-white dark:text-black px-8 py-4 rounded-full font-syne text-sm sm:text-base font-bold tracking-wider uppercase transition-all duration-300 shadow-md group"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 bg-[#D4AF37] hover:bg-[#FFEC69] text-[#111111] border border-[#D4AF37] px-8 py-3.5 rounded-full font-syne text-sm sm:text-base font-bold tracking-wider uppercase transition-all duration-300 shadow-md group"
             >
               <span>REGISTER NOW</span>
               <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-300" />
@@ -158,7 +158,7 @@ export default function Chapter2026() {
 
             <Link
               href="/contact?type=Sponsorship"
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 border border-black/20 dark:border-white/30 bg-transparent hover:bg-black/5 dark:hover:bg-white/10 text-[#111111] dark:text-white px-8 py-4 rounded-full font-syne text-sm sm:text-base font-bold tracking-wider uppercase transition-all duration-300 group"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 border border-[#D4AF37]/60 text-[#111111] dark:text-[#D4AF37] hover:bg-[#D4AF37]/10 px-8 py-3.5 rounded-full font-syne text-sm sm:text-base font-bold tracking-wider uppercase transition-all duration-300 group"
             >
               <span>SPONSORSHIP ENQUIRY</span>
               <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-300" />

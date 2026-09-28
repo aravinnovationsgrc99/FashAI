@@ -6,7 +6,7 @@ import { ArrowUpRight } from "lucide-react";
 
 export default function HomeUpcomingFeature() {
   return (
-    <section className="relative w-full flex flex-col justify-center py-12 sm:py-16 md:py-20 px-4 sm:px-6 md:px-8 bg-white dark:bg-[#080706] border-b border-black/10 dark:border-white/10 text-[#111111] dark:text-white overflow-hidden select-none">
+    <section className="relative w-full flex flex-col justify-center py-8 sm:py-12 md:py-14 px-4 sm:px-6 md:px-8 bg-white dark:bg-[#080706] border-b border-black/10 dark:border-white/10 text-[#111111] dark:text-white overflow-hidden select-none">
       {/* Background Watermark */}
       <div className="editorial-watermark absolute top-6 right-0 text-[15vw] font-serif-display font-light uppercase tracking-tighter leading-none pointer-events-none select-none text-black/[0.03] dark:text-white/[0.03]">
         DUBAI 2026
@@ -22,8 +22,8 @@ export default function HomeUpcomingFeature() {
         >
           {/* Eyebrow */}
           <div className="flex items-center gap-2.5">
-            <span className="h-2.5 w-2.5 rounded-full bg-[#F15E1C] animate-pulse" />
-            <span className="font-syne text-sm sm:text-base md:text-lg tracking-[0.25em] text-[#F15E1C] dark:text-[#D4AF37] font-bold uppercase">
+            <span className="h-2.5 w-2.5 rounded-full bg-[#D4AF37] animate-pulse" />
+            <span className="font-syne text-sm sm:text-base md:text-lg tracking-[0.25em] text-[#D4AF37] font-bold uppercase">
               UPCOMING EVENT · DUBAI 2026
             </span>
           </div>
@@ -31,7 +31,7 @@ export default function HomeUpcomingFeature() {
           {/* Main Title */}
           <div className="space-y-3 text-center max-w-4xl">
             <h2 className="font-serif-display text-5xl xs:text-6xl sm:text-7xl md:text-8xl lg:text-9xl xl:text-[10rem] font-light tracking-tight leading-[0.9] uppercase">
-              LifeStyle <span className="text-[#F15E1C] dark:text-[#D4AF37] italic font-normal">2026</span>
+              LifeStyle <span className="text-[#D4AF37] italic font-normal">2026</span>
             </h2>
 
             <p className="font-syne text-sm sm:text-base md:text-lg tracking-[0.25em] text-[#2E936F] font-bold uppercase pt-1">
@@ -45,16 +45,16 @@ export default function HomeUpcomingFeature() {
 
           {/* Minimal Position Statement */}
           <div className="flex items-center justify-center gap-3 w-full max-w-2xl py-1">
-            <span className="hidden sm:block flex-1 h-[1px] bg-gradient-to-r from-transparent via-[#F15E1C]/60 to-[#F15E1C]" />
+            <span className="hidden sm:block flex-1 h-[1px] bg-gradient-to-r from-transparent via-[#D4AF37]/60 to-[#D4AF37]" />
             <span className="font-syne text-sm sm:text-base md:text-lg lg:text-xl tracking-wider text-[#111111] dark:text-white/95 font-bold uppercase px-2 text-center leading-normal">
               “BIGGEST INTERNATIONAL FASHION EVENTS, DUBAI | 2026”
             </span>
-            <span className="hidden sm:block flex-1 h-[1px] bg-gradient-to-l from-transparent via-[#F15E1C]/60 to-[#F15E1C]" />
+            <span className="hidden sm:block flex-1 h-[1px] bg-gradient-to-l from-transparent via-[#D4AF37]/60 to-[#D4AF37]" />
           </div>
 
           {/* Open Registrations & Sponsorships Announcement Banner */}
-          <div className="w-full max-w-3xl bg-[#FAF8F5] dark:bg-white/5 border border-[#F15E1C]/40 dark:border-white/15 rounded-2xl p-6 sm:p-8 text-center shadow-md space-y-3">
-            <h3 className="font-syne text-sm sm:text-base md:text-lg lg:text-xl tracking-[0.2em] font-bold text-[#F15E1C] dark:text-[#D4AF37] uppercase block">
+          <div className="w-full max-w-3xl bg-[#FAF8F5] dark:bg-white/5 border border-[#D4AF37]/40 rounded-2xl p-6 sm:p-8 text-center shadow-md space-y-3">
+            <h3 className="font-syne text-sm sm:text-base md:text-lg lg:text-xl tracking-[0.2em] font-bold text-[#D4AF37] uppercase block">
               REGISTRATIONS &amp; SPONSORSHIPS ARE OPEN
             </h3>
             <p className="font-sans text-base sm:text-lg md:text-xl lg:text-2xl text-[#444444] dark:text-white/90 font-light max-w-2xl mx-auto leading-relaxed">
@@ -70,7 +70,7 @@ export default function HomeUpcomingFeature() {
                 <span className="text-xs sm:text-sm md:text-base font-syne tracking-widest font-bold text-[#666666] dark:text-white/70 uppercase">
                   EVENT DATE
                 </span>
-                <span className="font-serif-display text-xl sm:text-2xl md:text-3xl lg:text-4xl font-light text-[#F15E1C] dark:text-[#D4AF37] uppercase tracking-wide">
+                <span className="font-serif-display text-xl sm:text-2xl md:text-3xl lg:text-4xl font-light text-[#D4AF37] uppercase tracking-wide">
                   TO BE ANNOUNCED
                 </span>
                 <span className="font-sans text-sm sm:text-base md:text-lg text-[#555555] dark:text-white/60 uppercase">
@@ -83,7 +83,7 @@ export default function HomeUpcomingFeature() {
                 <span className="text-xs sm:text-sm md:text-base font-syne tracking-widest font-bold text-[#666666] dark:text-white/70 uppercase">
                   EVENT VENUE
                 </span>
-                <span className="font-serif-display text-xl sm:text-2xl md:text-3xl lg:text-4xl font-light text-[#F15E1C] dark:text-[#D4AF37] uppercase tracking-wide">
+                <span className="font-serif-display text-xl sm:text-2xl md:text-3xl lg:text-4xl font-light text-[#D4AF37] uppercase tracking-wide">
                   TO BE ANNOUNCED
                 </span>
                 <span className="font-sans text-sm sm:text-base md:text-lg text-[#555555] dark:text-white/60 uppercase">
@@ -110,7 +110,7 @@ export default function HomeUpcomingFeature() {
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-3 w-full sm:w-auto">
             <Link
               href="/contact?type=Registration"
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 bg-[#F15E1C] hover:bg-[#ff6f2d] dark:bg-[#D4AF37] dark:hover:bg-[#FFEC69] text-white dark:text-black px-9 py-4 sm:py-4.5 rounded-full font-syne text-base sm:text-lg font-bold tracking-wider uppercase transition-all duration-300 shadow-md group"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 bg-[#D4AF37] hover:bg-[#FFEC69] text-[#111111] border border-[#D4AF37] px-8 py-3.5 rounded-full font-syne text-base font-bold tracking-wider uppercase transition-all duration-300 shadow-md group"
             >
               <span>REGISTER NOW</span>
               <ArrowUpRight className="w-5 h-5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-300" />
@@ -118,7 +118,7 @@ export default function HomeUpcomingFeature() {
 
             <Link
               href="/contact?type=Sponsorship"
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 border border-black/20 dark:border-white/30 bg-transparent hover:bg-black/5 dark:hover:bg-white/10 text-[#111111] dark:text-white px-9 py-4 sm:py-4.5 rounded-full font-syne text-base sm:text-lg font-bold tracking-wider uppercase transition-all duration-300 group"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 border border-[#D4AF37]/60 text-[#111111] dark:text-[#D4AF37] hover:bg-[#D4AF37]/10 px-8 py-3.5 rounded-full font-syne text-base font-bold tracking-wider uppercase transition-all duration-300 group"
             >
               <span>SPONSORSHIP ENQUIRY</span>
               <ArrowUpRight className="w-5 h-5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-300" />

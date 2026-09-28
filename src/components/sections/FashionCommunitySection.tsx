@@ -35,7 +35,7 @@ export default function FashionCommunitySection({ isHomepage = false }: FashionC
 
   if (isHomepage) {
     return (
-      <section id="community" className="relative py-10 sm:py-16 bg-black border-b border-white/10 overflow-hidden select-none">
+      <section id="community" className="relative py-8 sm:py-12 md:py-14 bg-black border-b border-white/10 overflow-hidden select-none">
         <div className="absolute inset-0 pointer-events-none select-none overflow-hidden">
           <div className="editorial-watermark absolute -bottom-10 right-0 text-[14vw] font-serif-display font-light uppercase tracking-tighter leading-none pointer-events-none select-none opacity-30">
             TALENT
@@ -45,12 +45,12 @@ export default function FashionCommunitySection({ isHomepage = false }: FashionC
         <div className="container-editorial relative z-10 max-w-5xl mx-auto px-4 sm:px-6">
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-6 border-b border-white/10">
             <div>
-              <div className="flex items-center gap-3 text-xs sm:text-sm font-syne tracking-micro text-[#F15E1C] dark:text-[#D4AF37] font-bold uppercase mb-2">
-                <span className="h-px w-8 bg-[#F15E1C] dark:bg-[#D4AF37]" />
+              <div className="flex items-center gap-3 text-xs sm:text-sm font-syne tracking-micro text-[#D4AF37] font-bold uppercase mb-2">
+                <span className="h-px w-8 bg-[#D4AF37]" />
                 <span>GLOBAL TALENT ECOSYSTEM</span>
               </div>
               <h2 className="font-serif-display text-4xl sm:text-6xl font-light text-brand-white uppercase">
-                FASHION COMMUNITY &amp; <span className="font-serif italic font-normal text-[#F15E1C] dark:text-[#D4AF37]">TALENT NETWORK</span>
+                FASHION COMMUNITY &amp; <span className="font-serif italic font-normal text-[#D4AF37]">TALENT NETWORK</span>
               </h2>
             </div>
           </div>
@@ -62,7 +62,7 @@ export default function FashionCommunitySection({ isHomepage = false }: FashionC
 
             <Link
               href="/community"
-              className="inline-flex items-center justify-center gap-2.5 bg-[#F15E1C] dark:bg-[#D4AF37] text-white dark:text-black hover:bg-[#e04f10] dark:hover:bg-[#FFEC69] px-8 py-4 rounded-full font-syne text-sm sm:text-base font-bold tracking-wider uppercase transition-all duration-300 shadow-lg shrink-0 group"
+              className="inline-flex items-center justify-center gap-2.5 bg-[#D4AF37] hover:bg-[#FFEC69] text-[#111111] border border-[#D4AF37] px-8 py-3.5 rounded-full font-syne text-sm sm:text-base font-bold tracking-wider uppercase transition-all duration-300 shadow-lg shrink-0 group"
             >
               <span>DISCOVER TALENT NETWORK</span>
               <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 transition-transform duration-300 group-hover:translate-x-1" />

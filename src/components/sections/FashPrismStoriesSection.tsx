@@ -103,17 +103,17 @@ export default function FashPrismStoriesSection() {
   return (
     <section
       id="fashprism-stories"
-      className="relative pt-2 sm:pt-3 pb-6 sm:pb-8 bg-[#050505] border-b border-white/10 text-brand-white overflow-hidden select-none"
+      className="relative py-8 sm:py-12 md:py-14 bg-[#050505] border-b border-white/10 text-brand-white overflow-hidden select-none"
     >
       <div className="container-editorial relative z-10">
         {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-8 sm:mb-10 border-b border-white/10 pb-6 sm:pb-8">
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-6 sm:mb-8 border-b border-white/10 pb-6 sm:pb-8">
           <div>
-            <div className="flex items-center gap-2 text-xs font-syne tracking-micro text-brand-yellow-golden font-bold uppercase mb-3">
+            <div className="flex items-center gap-2 text-xs font-syne tracking-micro text-[#D4AF37] font-bold uppercase mb-3">
               <span>EXCLUSIVE FEATURE ARCHIVE</span>
             </div>
             <h2 className="font-serif-display text-4xl sm:text-6xl lg:text-7xl font-light text-brand-white uppercase leading-none">
-              FASHPRISM <span className="font-serif italic font-normal text-brand-yellow-golden capitalize">Stories</span>
+              FASHPRISM <span className="font-serif italic font-normal text-[#D4AF37] capitalize">Stories</span>
             </h2>
           </div>
           <p className="font-sans text-sm sm:text-base text-brand-platinum/90 max-w-md font-light leading-relaxed">
@@ -131,7 +131,7 @@ export default function FashPrismStoriesSection() {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: idx * 0.12 }}
               onClick={() => openCategoryModal(card.id)}
-              className="group relative flex flex-col justify-between bg-[#080706] border border-white/10 rounded-2xl overflow-hidden hover:border-brand-yellow-golden/70 transition-all duration-500 cursor-pointer shadow-xl"
+              className="group relative flex flex-col justify-between bg-[#080706] border border-white/10 rounded-2xl overflow-hidden hover:border-[#D4AF37]/70 transition-all duration-500 cursor-pointer shadow-xl"
             >
               {/* Top Image Thumbnail Container */}
               <div className="relative aspect-[4/5] w-full overflow-hidden bg-[#030303]">
@@ -145,7 +145,7 @@ export default function FashPrismStoriesSection() {
                 <div className="absolute inset-0 bg-gradient-to-t from-[#080706] via-transparent to-black/40 opacity-90 group-hover:opacity-75 transition-opacity" />
 
                 {/* Top Badge */}
-                <div className="absolute top-4 left-4 text-[10px] font-syne text-brand-yellow-golden font-bold uppercase tracking-wider">
+                <div className="absolute top-4 left-4 text-[10px] font-syne text-[#D4AF37] font-bold uppercase tracking-wider">
                   <span>{card.badge}</span>
                 </div>
               </div>
@@ -161,13 +161,13 @@ export default function FashPrismStoriesSection() {
                   </p>
                 </div>
 
-                <div className="pt-3 border-t border-white/10 flex items-center justify-between text-xs font-syne font-bold uppercase tracking-wider text-brand-yellow-golden group-hover:text-white transition-colors">
+                <div className="pt-3 border-t border-white/10 flex items-center justify-between text-xs font-syne font-bold uppercase tracking-wider text-[#D4AF37] group-hover:text-white transition-colors">
                   <span>VIEW STORY</span>
-                  <ArrowRight className="w-4 h-4 text-brand-yellow-golden group-hover:translate-x-1.5 transition-transform duration-300" />
+                  <ArrowRight className="w-4 h-4 text-[#D4AF37] group-hover:translate-x-1.5 transition-transform duration-300" />
                 </div>
 
                 {/* Animated Bottom Gold Accent Line */}
-                <div className="absolute bottom-0 left-0 w-0 h-[2px] bg-brand-yellow-golden group-hover:w-full transition-all duration-500 ease-out" />
+                <div className="absolute bottom-0 left-0 w-0 h-[2px] bg-[#D4AF37] group-hover:w-full transition-all duration-500 ease-out" />
               </div>
             </motion.div>
           ))}

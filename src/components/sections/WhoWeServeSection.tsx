@@ -98,16 +98,16 @@ export default function WhoWeServeSection() {
   const activeIndex = DISCIPLINES.findIndex((d) => d.id === activeDiscipline.id);
 
   return (
-    <section id="people-creativity" className="relative pt-8 pb-14 sm:pt-16 sm:pb-24 bg-white dark:bg-[#050505] border-b border-black/10 dark:border-white/10 text-[#111111] dark:text-brand-white overflow-hidden">
+    <section id="people-creativity" className="relative py-8 sm:py-12 md:py-14 bg-white dark:bg-[#050505] border-b border-black/10 dark:border-white/10 text-[#111111] dark:text-brand-white overflow-hidden">
       <div className="container-editorial relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-6 border-b border-black/10 dark:border-white/10 mb-8 sm:mb-12">
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-6 border-b border-black/10 dark:border-white/10 mb-6 sm:mb-8">
           <div>
-            <div className="flex items-center gap-2.5 text-xs sm:text-sm md:text-base font-syne tracking-widest text-[#F15E1C] dark:text-[#D4AF37] font-bold uppercase mb-2.5">
+            <div className="flex items-center gap-2.5 text-xs sm:text-sm md:text-base font-syne tracking-widest text-[#D4AF37] font-bold uppercase mb-2.5">
               <span>WHO WE WORK WITH</span>
             </div>
             <h2 className="font-serif-display text-4xl sm:text-6xl lg:text-7xl font-light text-[#111111] dark:text-brand-white uppercase leading-tight tracking-tight">
-              INDUSTRIES WE <span className="font-serif italic font-normal text-[#F15E1C] dark:text-[#D4AF37]">SUPPORT</span>
+              INDUSTRIES WE <span className="font-serif italic font-normal text-[#D4AF37]">SUPPORT</span>
             </h2>
           </div>
           <p className="font-sans text-lg sm:text-xl md:text-2xl text-[#555555] dark:text-brand-platinum/85 max-w-lg font-light leading-relaxed">
@@ -116,7 +116,7 @@ export default function WhoWeServeSection() {
         </div>
 
         {/* 5-Category Industry Visual Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-5 mb-14">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-5 mb-10">
           {[
             {
               title: "JEWELLERY",
@@ -155,7 +155,7 @@ export default function WhoWeServeSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: idx * 0.06 }}
-              className="group relative bg-[#FAF8F5] dark:bg-[#080706] border border-black/10 dark:border-white/10 rounded-2xl p-5 flex flex-col justify-between overflow-hidden hover:border-[#F15E1C]/60 dark:hover:border-[#D4AF37]/60 transition-all duration-300 shadow-sm"
+              className="group relative bg-[#FAF8F5] dark:bg-[#080706] border border-black/10 dark:border-white/10 rounded-2xl p-5 flex flex-col justify-between overflow-hidden hover:border-[#D4AF37]/60 transition-all duration-300 shadow-sm"
             >
               <div className="relative aspect-[4/3] w-full overflow-hidden rounded-xl mb-4 bg-black/5 dark:bg-[#030303] border border-black/10 dark:border-white/10">
                 <Image
@@ -168,7 +168,7 @@ export default function WhoWeServeSection() {
                 />
               </div>
               <div>
-                <h3 className="font-syne text-base sm:text-lg md:text-xl font-bold uppercase tracking-wider text-[#111111] dark:text-brand-white group-hover:text-[#F15E1C] dark:group-hover:text-[#D4AF37] transition-colors mb-1.5">
+                <h3 className="font-syne text-base sm:text-lg md:text-xl font-bold uppercase tracking-wider text-[#111111] dark:text-brand-white group-hover:text-[#D4AF37] transition-colors mb-1.5">
                   {ind.title}
                 </h3>
                 <p className="font-sans text-sm sm:text-base text-[#555555] dark:text-brand-platinum/85 font-light leading-relaxed">
@@ -186,7 +186,7 @@ export default function WhoWeServeSection() {
             className="w-full px-5 py-4 bg-[#FAF8F5] dark:bg-[#0A0908] border border-black/10 dark:border-white/10 rounded-xl flex items-center justify-between text-left shadow-sm"
           >
             <div>
-              <span className="text-xs sm:text-sm font-syne uppercase text-[#F15E1C] dark:text-[#D4AF37] tracking-wider block font-bold mb-0.5">
+              <span className="text-xs sm:text-sm font-syne uppercase text-[#D4AF37] tracking-wider block font-bold mb-0.5">
                 DISCIPLINES
               </span>
               <span className="font-serif-display text-2xl font-normal text-black dark:text-white uppercase">
@@ -211,8 +211,8 @@ export default function WhoWeServeSection() {
                   }}
                   className={`w-full px-5 py-3 text-left flex items-center justify-between text-base font-syne uppercase tracking-wider transition-colors ${
                     activeDiscipline.id === item.id
-                      ? "bg-[#F15E1C]/10 dark:bg-[#D4AF37]/10 text-[#F15E1C] dark:text-[#D4AF37] font-bold"
-                      : "text-black dark:text-white/80 hover:text-[#F15E1C] dark:hover:text-[#D4AF37] hover:bg-black/5 dark:hover:bg-white/5"
+                      ? "bg-[#D4AF37]/10 text-[#D4AF37] font-bold"
+                      : "text-black dark:text-white/80 hover:text-[#D4AF37] hover:bg-black/5 dark:hover:bg-white/5"
                   }`}
                 >
                   <span>{item.label}</span>
@@ -263,7 +263,7 @@ export default function WhoWeServeSection() {
                 className="space-y-4 pt-2"
               >
                 <div>
-                  <span className="text-xs sm:text-sm md:text-base font-syne tracking-widest text-[#F15E1C] dark:text-[#D4AF37] font-bold uppercase block mb-1.5">
+                  <span className="text-xs sm:text-sm md:text-base font-syne tracking-widest text-[#D4AF37] font-bold uppercase block mb-1.5">
                     {activeDiscipline.category}
                   </span>
                   <h3 className="font-serif-display text-3xl sm:text-4xl lg:text-5xl font-light text-black dark:text-white uppercase leading-tight">
@@ -292,7 +292,7 @@ export default function WhoWeServeSection() {
 
           {/* RIGHT: Editorial Discipline Rail */}
           <div className="hidden lg:flex lg:col-span-5 flex-col pl-4 self-stretch">
-            <span className="text-xs sm:text-sm md:text-base font-syne tracking-widest text-[#F15E1C] dark:text-[#D4AF37] font-bold uppercase mb-4">
+            <span className="text-xs sm:text-sm md:text-base font-syne tracking-widest text-[#D4AF37] font-bold uppercase mb-4">
               DISCIPLINES
             </span>
 
@@ -300,7 +300,7 @@ export default function WhoWeServeSection() {
               {/* Editorial Vertical Guide Line */}
               <div className="relative w-[3px] bg-black/10 dark:bg-white/10 rounded-full my-1 self-stretch">
                 <motion.div
-                  className="absolute left-0 w-full bg-[#F15E1C] dark:bg-[#D4AF37] rounded-full shadow-sm"
+                  className="absolute left-0 w-full bg-[#D4AF37] rounded-full shadow-sm"
                   animate={{
                     height: `${100 / DISCIPLINES.length}%`,
                     top: `${(activeIndex * 100) / DISCIPLINES.length}%`,
@@ -323,8 +323,8 @@ export default function WhoWeServeSection() {
                       <span
                         className={`font-serif-display text-2xl lg:text-3xl xl:text-4xl font-light tracking-wide uppercase transition-colors duration-200 ${
                           isActive
-                            ? "text-[#F15E1C] dark:text-[#D4AF37] font-normal"
-                            : "text-black dark:text-white/80 group-hover:text-[#F15E1C] dark:group-hover:text-[#D4AF37]"
+                            ? "text-[#D4AF37] font-normal"
+                            : "text-black dark:text-white/80 group-hover:text-[#D4AF37]"
                         }`}
                       >
                         {item.label}
@@ -333,8 +333,8 @@ export default function WhoWeServeSection() {
                       <ArrowUpRight
                         className={`w-6 h-6 transition-all duration-300 ${
                           isActive
-                            ? "text-[#F15E1C] dark:text-[#D4AF37] translate-x-0.5 -translate-y-0.5 opacity-100"
-                            : "text-black/30 dark:text-white/30 opacity-0 group-hover:opacity-100 group-hover:text-[#F15E1C] dark:group-hover:text-[#D4AF37]"
+                            ? "text-[#D4AF37] translate-x-0.5 -translate-y-0.5 opacity-100"
+                            : "text-black/30 dark:text-white/30 opacity-0 group-hover:opacity-100 group-hover:text-[#D4AF37]"
                         }`}
                       />
                     </div>
@@ -346,7 +346,7 @@ export default function WhoWeServeSection() {
         </div>
 
         {/* CTA Below Industries Section */}
-        <div className="mt-10 sm:mt-14 pt-8 border-t border-black/10 dark:border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
+        <div className="mt-8 sm:mt-10 pt-6 border-t border-black/10 dark:border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
           <div>
             <h4 className="font-serif-display text-2xl sm:text-3xl font-light uppercase text-[#111111] dark:text-white">
               NEED BESPOKE EVENT PRODUCTION FOR YOUR BRAND?
@@ -357,7 +357,7 @@ export default function WhoWeServeSection() {
           </div>
           <Link
             href="/contact?type=IndustryInquiry"
-            className="inline-flex items-center justify-center gap-2.5 bg-[#F15E1C] dark:bg-[#D4AF37] text-white dark:text-black hover:bg-[#e04f10] dark:hover:bg-[#FFEC69] px-7 py-3.5 rounded-full font-syne text-xs sm:text-sm font-bold tracking-wider uppercase transition-all duration-300 shadow-lg group shrink-0 whitespace-nowrap"
+            className="inline-flex items-center justify-center gap-2.5 bg-[#D4AF37] hover:bg-[#FFEC69] text-[#111111] border border-[#D4AF37] px-7 py-3.5 rounded-full font-syne text-xs sm:text-sm font-bold tracking-wider uppercase transition-all duration-300 shadow-lg group shrink-0 whitespace-nowrap"
           >
             <span>BOOK YOUR EVENT EXPERIENCE</span>
             <ArrowUpRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
