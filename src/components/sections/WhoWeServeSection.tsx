@@ -98,7 +98,7 @@ export default function WhoWeServeSection() {
   const activeIndex = DISCIPLINES.findIndex((d) => d.id === activeDiscipline.id);
 
   return (
-    <section id="people-creativity" className="relative py-8 sm:py-12 md:py-14 bg-white dark:bg-[#050505] border-b border-black/10 dark:border-white/10 text-[#111111] dark:text-brand-white overflow-hidden">
+    <section id="people-creativity" className="relative pt-8 sm:pt-12 md:pt-14 pb-5 sm:pb-7 lg:pb-8 bg-white dark:bg-[#050505] border-b border-black/10 dark:border-white/10 text-[#111111] dark:text-brand-white overflow-hidden">
       <div className="container-editorial relative z-10">
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-6 border-b border-black/10 dark:border-white/10 mb-6 sm:mb-8">

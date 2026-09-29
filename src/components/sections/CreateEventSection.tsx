@@ -86,7 +86,7 @@ export default function CreateEventSection() {
   return (
     <section
       id="create-event"
-      className="relative py-12 sm:py-16 md:py-20 bg-black text-brand-white border-b border-white/10 select-none overflow-hidden"
+      className="relative pt-5 sm:pt-7 lg:pt-8 pb-10 sm:pb-14 bg-black text-brand-white border-b border-white/10 select-none overflow-hidden"
     >
       {/* Background Subtle Ambient Glow */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">

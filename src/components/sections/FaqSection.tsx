@@ -46,7 +46,7 @@ export default function FaqSection() {
   };
 
   return (
-    <section id="faq" className="relative py-8 sm:py-12 bg-[#050505] border-b border-white/10 overflow-hidden">
+    <section id="faq" className="relative pt-8 sm:pt-10 pb-4 sm:pb-6 bg-[#050505] border-b border-white/10 overflow-hidden">
       <div className="container-editorial relative z-10 max-w-4xl mx-auto">
         {/* Section Header */}
         <div className="text-center mb-8 sm:mb-10">

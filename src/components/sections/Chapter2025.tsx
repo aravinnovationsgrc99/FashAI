@@ -32,7 +32,7 @@ export default function Chapter2025() {
   ];
 
   return (
-    <section id="our-projects-2025" className="relative w-full py-8 sm:py-12 md:py-14 bg-white dark:bg-[#050505] text-[#111111] dark:text-brand-white border-b border-black/10 dark:border-white/10 overflow-hidden select-none">
+    <section id="our-projects-2025" className="relative w-full pt-4 sm:pt-5 lg:pt-7 pb-5 sm:pb-7 lg:pb-8 bg-white dark:bg-[#050505] text-[#111111] dark:text-brand-white border-b border-black/10 dark:border-white/10 overflow-hidden select-none">
       {/* Background Atmosphere */}
       <div className="absolute inset-0 pointer-events-none select-none overflow-hidden">
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#00000005_1px,transparent_1px),linear-gradient(to_bottom,#00000005_1px,transparent_1px)] dark:bg-[linear-gradient(to_right,#ffffff03_1px,transparent_1px),linear-gradient(to_bottom,#ffffff03_1px,transparent_1px)] bg-[size:4rem_4rem]" />
