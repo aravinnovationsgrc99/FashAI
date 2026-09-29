@@ -86,7 +86,7 @@ export default function OurEventsSection() {
             OUR EVENTS
           </h2>
 
-          <p className="font-sans text-sm sm:text-base text-[#555555] dark:text-brand-platinum/85 font-light mt-2 max-w-xl mx-auto leading-relaxed">
+          <p className="font-sans text-sm sm:text-base text-[#555555] dark:text-brand-platinum/85 font-light mt-2 max-w-xl mx-auto leading-relaxed text-justify sm:text-center">
             FashPrism &amp; premier global event formats produced across haute couture runways and luxury lifestyle showcases.
           </p>
 
@@ -141,7 +141,7 @@ export default function OurEventsSection() {
                     </h3>
                   </div>
 
-                  <p className="font-sans text-xs sm:text-sm text-[#444444] dark:text-brand-platinum/85 font-light leading-relaxed">
+                  <p className="font-sans text-xs sm:text-sm text-[#444444] dark:text-brand-platinum/85 font-light leading-relaxed text-justify">
                     {item.description}
                   </p>
                 </div>

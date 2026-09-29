@@ -34,7 +34,7 @@ export default function WhatWeDoSection() {
               WHAT WE <span className="font-serif italic font-normal text-[#D4AF37]">DO</span>
             </h2>
           </div>
-          <p className="font-sans text-base sm:text-lg md:text-xl text-[#555555] dark:text-brand-platinum/85 max-w-lg font-light leading-relaxed">
+          <p className="font-sans text-base sm:text-lg md:text-xl text-[#555555] dark:text-brand-platinum/85 max-w-lg font-light leading-relaxed text-justify">
             FashAI Universal conceives, designs, and executes specialized event formats across fashion, lifestyle, corporate, product, and technology sectors.
           </p>
         </div>
@@ -78,7 +78,7 @@ export default function WhatWeDoSection() {
                   FASHION EVENTS
                 </h3>
 
-                <p className="font-sans text-sm sm:text-base text-[#555555] dark:text-brand-platinum/90 font-light leading-relaxed">
+                <p className="font-sans text-sm sm:text-base text-[#555555] dark:text-brand-platinum/90 font-light leading-relaxed text-justify">
                   High-impact runway productions, designer showcases, and high-fashion presentations.
                 </p>
 

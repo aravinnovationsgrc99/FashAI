@@ -34,11 +34,11 @@ export default function WhoWeAreSection() {
             </h2>
 
             {/* Concise Subheading */}
-            <p className="font-syne text-xs sm:text-sm md:text-base tracking-[0.15em] sm:tracking-[0.18em] uppercase text-[#333333] dark:text-brand-platinum/90 font-bold mt-2.5 max-w-4xl lg:max-w-5xl mx-auto leading-relaxed">
+            <p className="font-syne text-xs sm:text-sm md:text-base tracking-[0.15em] sm:tracking-[0.18em] uppercase text-[#333333] dark:text-brand-platinum/90 font-bold mt-2.5 max-w-4xl lg:max-w-5xl mx-auto leading-relaxed text-justify sm:text-center">
               PLANNING, PRODUCING &amp; EXECUTING BESPOKE FASHION, LIFESTYLE &amp; BRAND EXPERIENCES ACROSS THE UAE, INDIA &amp; GLOBAL DESTINATIONS
             </p>
 
-            <p className="font-sans text-sm sm:text-base md:text-lg text-[#444444] dark:text-brand-platinum/85 font-light mt-3 max-w-3xl lg:max-w-4xl mx-auto leading-relaxed">
+            <p className="font-sans text-sm sm:text-base md:text-lg text-[#444444] dark:text-brand-platinum/85 font-light mt-3 max-w-3xl lg:max-w-4xl mx-auto leading-relaxed text-justify sm:text-center">
               FashAI Universal helps clients plan, produce, manage and execute high-impact fashion events, runway presentations, product launches, corporate galas and luxury brand experiences.
             </p>
 
