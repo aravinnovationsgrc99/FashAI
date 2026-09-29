@@ -54,7 +54,7 @@ export default function Footer() {
       </div>
 
       {/* Main Editorial Content Container */}
-      <div className="container-editorial relative z-10 py-10 sm:py-14 max-w-6xl mx-auto px-4 sm:px-6">
+      <div className="container-editorial relative z-10 py-10 sm:py-14">
         {/* 3-Column Editorial Grid (Desktop) / Separated Vertical Sections (Mobile) */}
         <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-10 pb-8 border-b border-black/10 dark:border-white/10 items-start">
           

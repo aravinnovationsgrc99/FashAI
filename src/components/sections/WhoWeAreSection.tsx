@@ -7,8 +7,8 @@ import { Globe, Users, Eye, Award, Compass, ArrowRight } from "lucide-react";
 
 export default function WhoWeAreSection() {
   return (
-    <section id="who-we-are" className="relative py-8 sm:py-12 md:py-14 bg-white dark:bg-[#050505] border-b border-black/10 dark:border-white/10 overflow-hidden text-[#111111] dark:text-brand-white">
-      <div className="container-editorial relative z-10 max-w-6xl mx-auto px-4 sm:px-6">
+    <section id="who-we-are" className="relative pt-8 sm:pt-12 md:pt-14 pb-5 sm:pb-7 lg:pb-8 bg-white dark:bg-[#050505] border-b border-black/10 dark:border-white/10 overflow-hidden text-[#111111] dark:text-brand-white">
+      <div className="container-editorial relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -17,7 +17,7 @@ export default function WhoWeAreSection() {
           className="space-y-6 sm:space-y-8"
         >
           {/* Main Title Block */}
-          <div className="text-center max-w-3xl mx-auto">
+          <div className="text-center max-w-5xl mx-auto">
             {/* Top Location Eyebrow */}
             <div className="flex items-center justify-center gap-3 w-full max-w-xs sm:max-w-sm mx-auto mb-2">
               <span className="h-[1px] flex-1 bg-gradient-to-r from-transparent via-[#D4AF37]/70 to-[#D4AF37]" />
@@ -34,11 +34,11 @@ export default function WhoWeAreSection() {
             </h2>
 
             {/* Concise Subheading */}
-            <p className="font-syne text-xs sm:text-sm md:text-base tracking-[0.15em] sm:tracking-[0.18em] uppercase text-[#333333] dark:text-brand-platinum/90 font-bold mt-2.5 max-w-3xl mx-auto leading-relaxed">
+            <p className="font-syne text-xs sm:text-sm md:text-base tracking-[0.15em] sm:tracking-[0.18em] uppercase text-[#333333] dark:text-brand-platinum/90 font-bold mt-2.5 max-w-4xl lg:max-w-5xl mx-auto leading-relaxed">
               PLANNING, PRODUCING &amp; EXECUTING BESPOKE FASHION, LIFESTYLE &amp; BRAND EXPERIENCES ACROSS THE UAE, INDIA &amp; GLOBAL DESTINATIONS
             </p>
 
-            <p className="font-sans text-sm sm:text-base md:text-lg text-[#444444] dark:text-brand-platinum/85 font-light mt-3 max-w-2xl mx-auto leading-relaxed">
+            <p className="font-sans text-sm sm:text-base md:text-lg text-[#444444] dark:text-brand-platinum/85 font-light mt-3 max-w-3xl lg:max-w-4xl mx-auto leading-relaxed">
               FashAI Universal helps clients plan, produce, manage and execute high-impact fashion events, runway presentations, product launches, corporate galas and luxury brand experiences.
             </p>
 

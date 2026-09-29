@@ -42,7 +42,7 @@ export default function FashionCommunitySection({ isHomepage = false }: FashionC
           </div>
         </div>
 
-        <div className="container-editorial relative z-10 max-w-5xl mx-auto px-4 sm:px-6">
+        <div className="container-editorial relative z-10">
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-6 border-b border-white/10">
             <div>
               <div className="flex items-center gap-3 text-xs sm:text-sm font-syne tracking-micro text-[#D4AF37] font-bold uppercase mb-2">
@@ -82,7 +82,7 @@ export default function FashionCommunitySection({ isHomepage = false }: FashionC
         </div>
       </div>
 
-      <div className="container-editorial relative z-10 max-w-6xl mx-auto px-4 sm:px-6">
+      <div className="container-editorial relative z-10">
         {/* Section Header */}
         <div className="mb-10 sm:mb-14 border-b border-white/10 pb-6">
           <div className="flex items-center gap-3 text-xs sm:text-sm font-syne tracking-micro text-brand-orange font-bold uppercase mb-2">

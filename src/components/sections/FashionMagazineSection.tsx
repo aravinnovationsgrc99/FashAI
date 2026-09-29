@@ -255,7 +255,7 @@ export default function FashionMagazineSection({ isFullPage = false }: FashionMa
         </div>
       </div>
 
-      <div className="container-editorial relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="container-editorial relative z-10">
         {/* Magazine Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-6 sm:mb-8 border-b border-black/10 dark:border-white/10 pb-6 sm:pb-8">
           <div>

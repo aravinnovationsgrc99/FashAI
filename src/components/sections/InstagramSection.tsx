@@ -36,7 +36,7 @@ export default function InstagramSection() {
       </div>
 
       {/* Content Container (Center Aligned) */}
-      <div className="container-editorial relative z-10 py-16 sm:py-24 max-w-6xl mx-auto px-4 sm:px-6 w-full">
+      <div className="container-editorial relative z-10 py-16 sm:py-24 w-full">
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}

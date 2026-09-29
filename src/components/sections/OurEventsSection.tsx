@@ -64,7 +64,7 @@ export default function OurEventsSection() {
   return (
     <section
       id="our-events"
-      className="relative py-8 sm:py-12 md:py-14 bg-white dark:bg-[#050505] text-[#111111] dark:text-white border-b border-black/10 dark:border-white/10 overflow-hidden"
+      className="relative pt-4 sm:pt-5 lg:pt-7 pb-8 sm:pb-12 md:pb-14 bg-white dark:bg-[#050505] text-[#111111] dark:text-white border-b border-black/10 dark:border-white/10 overflow-hidden"
     >
       {/* Background Atmosphere */}
       <div className="absolute inset-0 pointer-events-none select-none overflow-hidden">
@@ -73,7 +73,7 @@ export default function OurEventsSection() {
         </div>
       </div>
 
-      <div className="container-editorial relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="container-editorial relative z-10">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-6 sm:mb-8">
           <div className="flex items-center justify-center gap-3 text-xs sm:text-sm font-syne tracking-widest text-[#D4AF37] font-bold uppercase mb-2">
@@ -94,7 +94,7 @@ export default function OurEventsSection() {
         </div>
 
         {/* Homepage Event Grid — 2 Cards on Mobile (LIFESTYLE & RUNWAY), 3 Aligned Cards on Desktop (LIFESTYLE, RUNWAY & BRAND SHOOTS) */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6 lg:gap-6 max-w-6xl mx-auto items-stretch">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6 lg:gap-6 items-stretch">
           {HOMEPAGE_EVENTS.map((item, idx) => (
             <motion.div
               key={item.id}
